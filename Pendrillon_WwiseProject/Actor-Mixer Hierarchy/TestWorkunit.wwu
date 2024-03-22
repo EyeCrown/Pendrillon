@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}" SchemaVersion="110">
+	<AudioObjects>
+		<WorkUnit Name="TestWorkunit" ID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="27"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="Tests" ID="{AE403397-334E-4213-9E47-271652572AA9}" ShortID="217185924">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Pendrillon_FullHD" ID="{9698A263-D52A-442E-8823-40647A41C659}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="sine1kHz" ID="{350068A8-0B7E-4172-8DDB-B16E881F1408}" ShortID="359108234">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Pendrillon_FullHD" ID="{9698A263-D52A-442E-8823-40647A41C659}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="sine1kHz" ID="{E8A97BEF-58CE-4178-9987-31AECEC702A1}">
+									<Language>SFX</Language>
+									<AudioFile>sine1kHz.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="142558535"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="sine1kHz" ID="{E8A97BEF-58CE-4178-9987-31AECEC702A1}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
