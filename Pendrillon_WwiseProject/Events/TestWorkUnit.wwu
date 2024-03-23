@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{3E935A5E-A1AE-483F-8F0C-FC928CDA14FD}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="TestWorkUnit" ID="{3E935A5E-A1AE-483F-8F0C-FC928CDA14FD}" PersistMode="Standalone">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="27"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<Event Name="Play_sine1kHz" ID="{68337A6A-7B52-4321-895C-CFD65FB052D2}">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="27"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{9CAFCBFD-D3B8-40F1-97BA-0A19F05EEAAC}" ShortID="188518967">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sine1kHz" ID="{350068A8-0B7E-4172-8DDB-B16E881F1408}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>
