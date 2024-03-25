@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
 
-public class Dialogue : MonoBehaviour
+public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public string[] lines;
