@@ -35,6 +35,11 @@ public class BasicInkExample : MonoBehaviour {
 			text = text.Trim();
 			// Display the text on screen!
 			CreateContentView(text);
+			foreach (var tag in story.currentTags)
+			{
+				Debug.Log(tag);
+			}
+			
 		}
 
 		// Display all the choices, if there are any!

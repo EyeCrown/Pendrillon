@@ -6,7 +6,7 @@ public class FightingManager : MonoBehaviour
 {
     public static FightingManager Instance { get; private set; }
 
-    public FightingManager()
+    private void Awake()
     {
         if (Instance != null && Instance != this)
         {
