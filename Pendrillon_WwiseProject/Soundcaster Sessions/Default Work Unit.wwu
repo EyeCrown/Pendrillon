@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{E5F490B7-586C-4133-B020-C39AF6E6B074}" SchemaVersion="110">
 	<SoundcasterSessions>
-		<WorkUnit Name="Default Work Unit" ID="{E5F490B7-586C-4133-B020-C39AF6E6B074}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{E5F490B7-586C-4133-B020-C39AF6E6B074}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundcasterSession Name="VolumeMenu_Soundcaster" ID="{5C82B429-EF65-40E7-82A1-3624FE586D73}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="SetHyperacusisOn" ID="{A5AD6591-D757-4D46-9E1E-AEC0C1530393}" WorkUnitID="{3E935A5E-A1AE-483F-8F0C-FC928CDA14FD}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SetHyperacusisOff" ID="{5A95DA84-4597-4D09-BD98-44A22006414C}" WorkUnitID="{3E935A5E-A1AE-483F-8F0C-FC928CDA14FD}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="SetAllVolumesTo75" ID="{A8DCB543-EB9E-4654-9C70-A3841C4D7A18}" WorkUnitID="{3E935A5E-A1AE-483F-8F0C-FC928CDA14FD}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="Main_Volume" ID="{19082A20-41FF-4DD0-B340-3B50E196FF14}"/>
+							<Value>75.3411306042885</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+			</ChildrenList>
+		</WorkUnit>
 	</SoundcasterSessions>
 </WwiseDocument>
