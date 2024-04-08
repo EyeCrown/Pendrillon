@@ -2,7 +2,8 @@
 This is dialogue. #char:Robin
 
 This is a choice. #char:Reine #A:ELOQ:75 #B:STRG:30
-    * [Choice A] -> A 
+    * [Choice A] -> A
+        #char
     * [Choice B] -> B
 
 == A == 

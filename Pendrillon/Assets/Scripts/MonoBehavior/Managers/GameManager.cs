@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     
     public GameState State { get; private set; }
 
+    public List<CharacterHandler> characters;
+
     #endregion
     
     private void Awake()
@@ -36,5 +39,16 @@ public class GameManager : MonoBehaviour
 
         FightingManager = GetComponentInChildren<FightingManager>();
         ActingManager = GetComponentInChildren<ActingManager>();
+    }
+
+    public CharacterHandler GetCharacter(string characterName)
+    {
+        for (int i = 0; i < characters.Count; i++)
+        {
+            if (characters[i].character.name == characterName)
+                return characters[i];
+        }
+
+        return null;
     }
 }

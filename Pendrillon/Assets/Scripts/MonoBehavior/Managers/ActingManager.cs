@@ -25,7 +25,8 @@ public class ActingManager : MonoBehaviour
     public List<Button> choicesButtonList;
     public Button nextDialogueButton;
     public Button backButton;
-    
+
+    private string currentDialogue;
     
     private Stack<string> savedJsonStack;
    
@@ -40,7 +41,10 @@ public class ActingManager : MonoBehaviour
         }
 
         Instance = this;
+    }
 
+    void Start()
+    {
         StartStory();
     }
 
@@ -49,7 +53,7 @@ public class ActingManager : MonoBehaviour
         _story = new Story(inkAsset.text);
         savedJsonStack = new Stack<string>();
 
-        Debug.Log(_story.ob);
+        Debug.Log(_story);
         
         
         Refresh();
@@ -91,28 +95,43 @@ public class ActingManager : MonoBehaviour
         nextDialogueButton.gameObject.SetActive(false);
         backButton.gameObject.SetActive(false);
 
+        // Clear UI of every character on stage
+        foreach (var characterHandler in GameManager.Instance.characters)
+        {
+            characterHandler.ClearUI();
+        }
+        
     }
 
     public void Refresh()
     {
         Clear();
 
-        String dialogue = String.Empty;
+        currentDialogue = String.Empty;
         
         if(savedJsonStack.Count != 0)
             backButton.gameObject.SetActive(true);
         
         if (_story.canContinue)
         {
-            dialogue = _story.Continue();
-            
+            currentDialogue = _story.Continue();
+            currentDialogue = currentDialogue.Trim();
+
             savedJsonStack.Push(_story.state.ToJson());
 
             // Tags
-            foreach (var tag in _story.currentTags)
+            if (_story.currentTags.Count > 0)
             {
-                tagsText.text += tag.Trim() + "\n";
-                ParseTag(tag);
+                foreach (var tag in _story.currentTags)
+                {
+                    tagsText.text += tag.Trim() + "\n";
+                    ParseTag(tag);
+                }
+            }
+            else
+            {
+                
+                dialogueText.text += currentDialogue + "\n";
             }
             
             // Text
@@ -120,9 +139,9 @@ public class ActingManager : MonoBehaviour
             // {
             //     
             // }
-            dialogue = dialogue.Trim();
     
-            dialogueText.text += dialogue + "\n";
+            
+            
 
             // Choices
             if (_story.currentChoices.Count > 0)
@@ -193,9 +212,6 @@ public class ActingManager : MonoBehaviour
 
     }
     
-    
-    
-    
 
     public void OnClickChoiceButton (Choice choice) {
         _story.ChooseChoiceIndex (choice.index);
@@ -212,11 +228,16 @@ public class ActingManager : MonoBehaviour
 
     #region TagHandlers
 
-    private void HandlerTagChar(string author)
+    private void HandlerTagChar(string character)
     {
-        Debug.Log(author + " is speaking");
+        Debug.Log(character + " is speaking");
 
-        dialogueText.text += author + ": ";
+        dialogueText.text += character + ": ";
+
+        CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
+        
+        if(characterHandler != null)
+            characterHandler.UpdateDialogue(currentDialogue);
     }
 
 
