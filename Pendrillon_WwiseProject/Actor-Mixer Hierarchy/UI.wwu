@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{92E32DB4-F792-48B7-9F30-A43B17D69488}" SchemaVersion="110" RootDocumentID="{2269E854-41B3-4C3D-BBD9-5DDDDD9BCC48}" ParentDocumentID="{2269E854-41B3-4C3D-BBD9-5DDDDD9BCC48}">
+	<AudioObjects>
+		<WorkUnit Name="UI" ID="{92E32DB4-F792-48B7-9F30-A43B17D69488}" OwnerID="{2269E854-41B3-4C3D-BBD9-5DDDDD9BCC48}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="12"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="All_UI" ID="{12A47721-B79A-4F2F-A1FD-4C6E72008BD2}" ShortID="764810703">
+					<PropertyList>
+						<Property Name="Color" Type="int16" Value="12"/>
+						<Property Name="OverrideColor" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="UI_HUD" ID="{BA70EBE3-D602-4F89-BE99-20985465DE54}" ShortID="518665551">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="12"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+						<ActorMixer Name="UI_Menu" ID="{3F7659C2-20B7-4A3E-9FE1-FFC5EF87630A}" ShortID="245343154">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="12"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+						<ActorMixer Name="UI_Combat" ID="{4E305E19-4152-4E28-97A4-064468C38C05}" ShortID="409803377">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="12"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
