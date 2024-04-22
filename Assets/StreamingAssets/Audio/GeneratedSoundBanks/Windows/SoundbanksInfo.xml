@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{986487A9-2683-E47A-8688-3D0FE6FDB954}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{317CD0BB-53C9-B5B4-237E-CD60CB6E286E}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -19,26 +19,747 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="96282353" Name="Dry_UI"/>
+				<Bus Id="189108676" Name="Reverb_UI_01"/>
+				<Bus Id="318808210" Name="Dry_Voices"/>
+				<Bus Id="603598863" Name="Reverb_Environment_01"/>
+				<Bus Id="744331921" Name="Reverb_SFX_01"/>
+				<Bus Id="1636724294" Name="MainReverb"/>
+				<Bus Id="2800544509" Name="MainDry"/>
+				<Bus Id="3299242565" Name="Reverb_Voices_01"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3848410326" Name="Dry_Environment"/>
+				<Bus Id="3852188084" Name="MainHyperacusis"/>
+				<Bus Id="3872602748" Name="Dry_SFX"/>
+				<Bus Id="4010064756" Name="Dry_Music"/>
+				<Bus Id="4073358989" Name="Reverb_Music_01"/>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="1006694123" Name="Music_Volume"/>
+				<GameParameter Id="1564184899" Name="SFX_Volume"/>
+				<GameParameter Id="1719345792" Name="UI_Volume"/>
+				<GameParameter Id="2054307141" Name="Environment_Volume"/>
+				<GameParameter Id="2312172015" Name="Main_Volume"/>
+				<GameParameter Id="2888587878" Name="CrowdBoredom"/>
+				<GameParameter Id="3440409837" Name="Voices_Volume"/>
+				<GameParameter Id="3660942794" Name="CrowdHypeLevel"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1672502660" Name="HyperacusisMode">
+					<States>
+						<State Id="435094263" Name="HyperacusisModeOn"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="3527522059" Name="HyperacusisModeOff"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="3660942794" Name="CrowdHypeLevel">
+					<GameParameterRef Id="3660942794"/>
+					<Switches>
+						<Switch Id="486820064" Name="Hype_04"/>
+						<Switch Id="486820065" Name="Hype_05"/>
+						<Switch Id="486820066" Name="Hype_06"/>
+						<Switch Id="486820067" Name="Hype_07"/>
+						<Switch Id="486820069" Name="Hype_01"/>
+						<Switch Id="486820070" Name="Hype_02"/>
+						<Switch Id="486820071" Name="Hype_03"/>
+						<Switch Id="486820076" Name="Hype_08"/>
+						<Switch Id="486820077" Name="Hype_09"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="SFX" Hash="{8EBC4FDC-AF02-50C2-BED0-3A08FC2D2DF5}">
+		<SoundBank Id="2228651116" Type="User" Language="SFX" Hash="{B5669654-C879-8B56-31F7-448DA65EFC55}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>Main_Soundbank.bnk</Path>
 			<Media>
-				<File Id="142558535" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>sine1kHz.wav</ShortName>
-					<CachePath>SFX/sine1kHz_3F75BDB9.wem</CachePath>
+				<File Id="70701178" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_6.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_6_2D9E5AE6.wem</CachePath>
+				</File>
+				<File Id="118107867" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_5.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_5_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="134448714" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_5.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_5_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="162505701" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_6.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_6_445CB1E5.wem</CachePath>
+				</File>
+				<File Id="181744682" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Combat_ConfirmAttacks.wav</ShortName>
+					<CachePath>SFX/UI_Combat_ConfirmAttacks_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="184603848" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_7.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_7_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="188879619" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Combat_SelectAttack_var3.wav</ShortName>
+					<CachePath>SFX/UI_Combat_SelectAttack_var3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="197874328" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdNeutral_3.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdNeutral_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="224451226" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Combat_Hover_var3.wav</ShortName>
+					<CachePath>SFX/UI_Combat_Hover_var3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="243914165" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_2.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="267369805" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_Mockup_CaleBateau.wav</ShortName>
+					<CachePath>SFX/AMB_Mockup_CaleBateau_A29C2F69.wem</CachePath>
+				</File>
+				<File Id="282345528" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_11.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_11_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="286461623" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdNeutral_2.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdNeutral_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="348870517" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Combat_RemoveAttack.wav</ShortName>
+					<CachePath>SFX/UI_Combat_RemoveAttack_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="349866540" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_1.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="394760896" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_7.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_7_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="402083756" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_3.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="416237681" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Combat_Hover_var2.wav</ShortName>
+					<CachePath>SFX/UI_Combat_Hover_var2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="416588007" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_4.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_4_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="433929248" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Combat_SelectAttack_var2.wav</ShortName>
+					<CachePath>SFX/UI_Combat_SelectAttack_var2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="451665736" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_5.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_5_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="514092623" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_4.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_4_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="524081815" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_1.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_1_ECA6FCFF.wem</CachePath>
+				</File>
+				<File Id="543895100" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_3.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="560679518" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_1.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="653903131" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Combat_Hover_var1.wav</ShortName>
+					<CachePath>SFX/UI_Combat_Hover_var1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="687613328" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_2.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="709022877" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_8.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_8_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="727631927" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_3.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="737136298" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Combat_SelectAttack_var4.wav</ShortName>
+					<CachePath>SFX/UI_Combat_SelectAttack_var4_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="738241972" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_6.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_6_B8F0A703.wem</CachePath>
+				</File>
+				<File Id="749104305" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_6.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_6_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="793997462" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Combat_SelectAttack_var1.wav</ShortName>
+					<CachePath>SFX/UI_Combat_SelectAttack_var1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="800469680" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdNeutral_1.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdNeutral_1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="825670896" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_SC_Theater_CrowdChatter.wav</ShortName>
+					<CachePath>SFX/SFX_SC_Theater_CrowdChatter_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="855470147" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_2.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="964190611" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_4.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_4_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1000361129" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>UI_Combat_SelectCharacter.wav</ShortName>
+					<CachePath>SFX/UI_Combat_SelectCharacter_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1025343578" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_6.wav</ShortName>
+					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_6_3F75BDB9.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="185346133" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+					<Plugin Id="302264514" Name="Sine" LibName="Wwise Sine" LibId="6553602"/>
+				</Custom>
+				<ShareSets>
+					<Plugin Id="4165585856" Name="Crowd_Compressor" LibName="Wwise Compressor" LibId="7077891"/>
+				</ShareSets>
+			</Plugins>
 			<Events>
-				<Event Id="3733116919" Name="Play_sine1kHz" DurationType="OneShot" DurationMin="0.9813333" DurationMax="0.9813333">
+				<Event Id="4058101365" Name="GameStart" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1027751980" Name="New_Event_03" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3360090021" Name="Play_CrowdHype" DurationType="OneShot" DurationMin="4.216854" DurationMax="6.216854">
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820066"/>
+							<MediaRefs>
+								<MediaRef Id="70701178"/>
+								<MediaRef Id="162505701"/>
+								<MediaRef Id="197874328"/>
+								<MediaRef Id="286461623"/>
+								<MediaRef Id="416588007"/>
+								<MediaRef Id="451665736"/>
+								<MediaRef Id="524081815"/>
+								<MediaRef Id="543895100"/>
+								<MediaRef Id="687613328"/>
+								<MediaRef Id="738241972"/>
+								<MediaRef Id="800469680"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820065" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="197874328"/>
+								<MediaRef Id="286461623"/>
+								<MediaRef Id="800469680"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820064"/>
+							<MediaRefs>
+								<MediaRef Id="118107867"/>
+								<MediaRef Id="134448714"/>
+								<MediaRef Id="184603848"/>
+								<MediaRef Id="197874328"/>
+								<MediaRef Id="243914165"/>
+								<MediaRef Id="282345528"/>
+								<MediaRef Id="286461623"/>
+								<MediaRef Id="349866540"/>
+								<MediaRef Id="394760896"/>
+								<MediaRef Id="402083756"/>
+								<MediaRef Id="514092623"/>
+								<MediaRef Id="560679518"/>
+								<MediaRef Id="709022877"/>
+								<MediaRef Id="727631927"/>
+								<MediaRef Id="749104305"/>
+								<MediaRef Id="800469680"/>
+								<MediaRef Id="855470147"/>
+								<MediaRef Id="964190611"/>
+								<MediaRef Id="1025343578"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="185346133"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820071"/>
+							<MediaRefs>
+								<MediaRef Id="118107867"/>
+								<MediaRef Id="134448714"/>
+								<MediaRef Id="184603848"/>
+								<MediaRef Id="243914165"/>
+								<MediaRef Id="282345528"/>
+								<MediaRef Id="349866540"/>
+								<MediaRef Id="394760896"/>
+								<MediaRef Id="402083756"/>
+								<MediaRef Id="514092623"/>
+								<MediaRef Id="560679518"/>
+								<MediaRef Id="709022877"/>
+								<MediaRef Id="727631927"/>
+								<MediaRef Id="749104305"/>
+								<MediaRef Id="855470147"/>
+								<MediaRef Id="964190611"/>
+								<MediaRef Id="1025343578"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="185346133"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820070"/>
+							<MediaRefs>
+								<MediaRef Id="118107867"/>
+								<MediaRef Id="134448714"/>
+								<MediaRef Id="184603848"/>
+								<MediaRef Id="243914165"/>
+								<MediaRef Id="282345528"/>
+								<MediaRef Id="349866540"/>
+								<MediaRef Id="394760896"/>
+								<MediaRef Id="402083756"/>
+								<MediaRef Id="514092623"/>
+								<MediaRef Id="560679518"/>
+								<MediaRef Id="709022877"/>
+								<MediaRef Id="727631927"/>
+								<MediaRef Id="749104305"/>
+								<MediaRef Id="855470147"/>
+								<MediaRef Id="964190611"/>
+								<MediaRef Id="1025343578"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="185346133"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820067"/>
+							<MediaRefs>
+								<MediaRef Id="70701178"/>
+								<MediaRef Id="162505701"/>
+								<MediaRef Id="416588007"/>
+								<MediaRef Id="451665736"/>
+								<MediaRef Id="524081815"/>
+								<MediaRef Id="543895100"/>
+								<MediaRef Id="687613328"/>
+								<MediaRef Id="738241972"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820069"/>
+							<MediaRefs>
+								<MediaRef Id="118107867"/>
+								<MediaRef Id="134448714"/>
+								<MediaRef Id="184603848"/>
+								<MediaRef Id="243914165"/>
+								<MediaRef Id="282345528"/>
+								<MediaRef Id="349866540"/>
+								<MediaRef Id="394760896"/>
+								<MediaRef Id="402083756"/>
+								<MediaRef Id="514092623"/>
+								<MediaRef Id="560679518"/>
+								<MediaRef Id="709022877"/>
+								<MediaRef Id="727631927"/>
+								<MediaRef Id="749104305"/>
+								<MediaRef Id="855470147"/>
+								<MediaRef Id="964190611"/>
+								<MediaRef Id="1025343578"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="185346133"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820077"/>
+							<MediaRefs>
+								<MediaRef Id="70701178"/>
+								<MediaRef Id="162505701"/>
+								<MediaRef Id="416588007"/>
+								<MediaRef Id="451665736"/>
+								<MediaRef Id="524081815"/>
+								<MediaRef Id="543895100"/>
+								<MediaRef Id="687613328"/>
+								<MediaRef Id="738241972"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820076"/>
+							<MediaRefs>
+								<MediaRef Id="70701178"/>
+								<MediaRef Id="162505701"/>
+								<MediaRef Id="416588007"/>
+								<MediaRef Id="451665736"/>
+								<MediaRef Id="524081815"/>
+								<MediaRef Id="543895100"/>
+								<MediaRef Id="687613328"/>
+								<MediaRef Id="738241972"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820066"/>
+							<MediaRefs>
+								<MediaRef Id="70701178"/>
+								<MediaRef Id="162505701"/>
+								<MediaRef Id="197874328"/>
+								<MediaRef Id="286461623"/>
+								<MediaRef Id="416588007"/>
+								<MediaRef Id="451665736"/>
+								<MediaRef Id="524081815"/>
+								<MediaRef Id="543895100"/>
+								<MediaRef Id="687613328"/>
+								<MediaRef Id="738241972"/>
+								<MediaRef Id="800469680"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820065" Default="true"/>
+							<MediaRefs>
+								<MediaRef Id="197874328"/>
+								<MediaRef Id="286461623"/>
+								<MediaRef Id="800469680"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820064"/>
+							<MediaRefs>
+								<MediaRef Id="118107867"/>
+								<MediaRef Id="134448714"/>
+								<MediaRef Id="184603848"/>
+								<MediaRef Id="197874328"/>
+								<MediaRef Id="243914165"/>
+								<MediaRef Id="282345528"/>
+								<MediaRef Id="286461623"/>
+								<MediaRef Id="349866540"/>
+								<MediaRef Id="394760896"/>
+								<MediaRef Id="402083756"/>
+								<MediaRef Id="514092623"/>
+								<MediaRef Id="560679518"/>
+								<MediaRef Id="709022877"/>
+								<MediaRef Id="727631927"/>
+								<MediaRef Id="749104305"/>
+								<MediaRef Id="800469680"/>
+								<MediaRef Id="855470147"/>
+								<MediaRef Id="964190611"/>
+								<MediaRef Id="1025343578"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="185346133"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820071"/>
+							<MediaRefs>
+								<MediaRef Id="118107867"/>
+								<MediaRef Id="134448714"/>
+								<MediaRef Id="184603848"/>
+								<MediaRef Id="243914165"/>
+								<MediaRef Id="282345528"/>
+								<MediaRef Id="349866540"/>
+								<MediaRef Id="394760896"/>
+								<MediaRef Id="402083756"/>
+								<MediaRef Id="514092623"/>
+								<MediaRef Id="560679518"/>
+								<MediaRef Id="709022877"/>
+								<MediaRef Id="727631927"/>
+								<MediaRef Id="749104305"/>
+								<MediaRef Id="855470147"/>
+								<MediaRef Id="964190611"/>
+								<MediaRef Id="1025343578"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="185346133"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820070"/>
+							<MediaRefs>
+								<MediaRef Id="118107867"/>
+								<MediaRef Id="134448714"/>
+								<MediaRef Id="184603848"/>
+								<MediaRef Id="243914165"/>
+								<MediaRef Id="282345528"/>
+								<MediaRef Id="349866540"/>
+								<MediaRef Id="394760896"/>
+								<MediaRef Id="402083756"/>
+								<MediaRef Id="514092623"/>
+								<MediaRef Id="560679518"/>
+								<MediaRef Id="709022877"/>
+								<MediaRef Id="727631927"/>
+								<MediaRef Id="749104305"/>
+								<MediaRef Id="855470147"/>
+								<MediaRef Id="964190611"/>
+								<MediaRef Id="1025343578"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="185346133"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820067"/>
+							<MediaRefs>
+								<MediaRef Id="70701178"/>
+								<MediaRef Id="162505701"/>
+								<MediaRef Id="416588007"/>
+								<MediaRef Id="451665736"/>
+								<MediaRef Id="524081815"/>
+								<MediaRef Id="543895100"/>
+								<MediaRef Id="687613328"/>
+								<MediaRef Id="738241972"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820069"/>
+							<MediaRefs>
+								<MediaRef Id="118107867"/>
+								<MediaRef Id="134448714"/>
+								<MediaRef Id="184603848"/>
+								<MediaRef Id="243914165"/>
+								<MediaRef Id="282345528"/>
+								<MediaRef Id="349866540"/>
+								<MediaRef Id="394760896"/>
+								<MediaRef Id="402083756"/>
+								<MediaRef Id="514092623"/>
+								<MediaRef Id="560679518"/>
+								<MediaRef Id="709022877"/>
+								<MediaRef Id="727631927"/>
+								<MediaRef Id="749104305"/>
+								<MediaRef Id="855470147"/>
+								<MediaRef Id="964190611"/>
+								<MediaRef Id="1025343578"/>
+							</MediaRefs>
+							<PluginRefs>
+								<Custom>
+									<PluginRef Id="185346133"/>
+								</Custom>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820077"/>
+							<MediaRefs>
+								<MediaRef Id="70701178"/>
+								<MediaRef Id="162505701"/>
+								<MediaRef Id="416588007"/>
+								<MediaRef Id="451665736"/>
+								<MediaRef Id="524081815"/>
+								<MediaRef Id="543895100"/>
+								<MediaRef Id="687613328"/>
+								<MediaRef Id="738241972"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="Switch" GroupId="3660942794" Id="486820076"/>
+							<MediaRefs>
+								<MediaRef Id="70701178"/>
+								<MediaRef Id="162505701"/>
+								<MediaRef Id="416588007"/>
+								<MediaRef Id="451665736"/>
+								<MediaRef Id="524081815"/>
+								<MediaRef Id="543895100"/>
+								<MediaRef Id="687613328"/>
+								<MediaRef Id="738241972"/>
+							</MediaRefs>
+							<PluginRefs>
+								<ShareSets>
+									<PluginRef Id="4165585856"/>
+								</ShareSets>
+							</PluginRefs>
+						</SwitchContainer>
+					</SwitchContainers>
+				</Event>
+				<Event Id="1004562353" Name="Play_SFX_SC_Cale_Ambiance" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="142558535"/>
+						<MediaRef Id="267369805"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2433984191" Name="Play_SFX_SC_Theater_CrowdChatter" DurationType="OneShot" DurationMin="21.938728" DurationMax="21.938728">
+					<MediaRefs>
+						<MediaRef Id="825670896"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3733116919" Name="Play_sine1kHz" DurationType="OneShot" DurationMin="1" DurationMax="1">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="302264514"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
+				<Event Id="3834997573" Name="Play_UI_Combat_ConfirmAttacks" DurationType="OneShot" DurationMin="2.934354" DurationMax="2.934354">
+					<MediaRefs>
+						<MediaRef Id="181744682"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1992368636" Name="Play_UI_Combat_Hover" DurationType="OneShot" DurationMin="0.24870834" DurationMax="0.2608125">
+					<MediaRefs>
+						<MediaRef Id="224451226"/>
+						<MediaRef Id="416237681"/>
+						<MediaRef Id="653903131"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1534142422" Name="Play_UI_Combat_RemoveAttack" DurationType="OneShot" DurationMin="11.874979" DurationMax="11.874979">
+					<MediaRefs>
+						<MediaRef Id="348870517"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3468982525" Name="Play_UI_Combat_Select_Attack" DurationType="OneShot" DurationMin="0.8950625" DurationMax="1.2872292">
+					<MediaRefs>
+						<MediaRef Id="188879619"/>
+						<MediaRef Id="433929248"/>
+						<MediaRef Id="737136298"/>
+						<MediaRef Id="793997462"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3474027887" Name="Play_UI_Combat_SelectCharacter" DurationType="OneShot" DurationMin="0.90272915" DurationMax="0.90272915">
+					<MediaRefs>
+						<MediaRef Id="1000361129"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="902787362" Name="SetAllVolumesTo75" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="3797495750" Name="SetHyperacusisOff" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1672502660" Id="3527522059" Name="HyperacusisModeOff"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3794163176" Name="SetHyperacusisOn" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1672502660" Id="435094263" Name="HyperacusisModeOn"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3189791475" Name="Stop_SFX_SC_Cale_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="267369805"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1577954137" Name="Stop_SFX_SC_Theater_CrowdChatter" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="825670896"/>
 					</MediaRefs>
 				</Event>
 			</Events>
+			<GameParameters>
+				<GameParameter Id="2888587878" Name="CrowdBoredom"/>
+				<GameParameter Id="3660942794" Name="CrowdHypeLevel"/>
+			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1672502660" Name="HyperacusisMode">
+					<States>
+						<State Id="435094263" Name="HyperacusisModeOn"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="3527522059" Name="HyperacusisModeOff"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+			<SwitchGroups>
+				<SwitchGroup Id="3660942794" Name="CrowdHypeLevel">
+					<GameParameterRef Id="3660942794"/>
+					<Switches>
+						<Switch Id="486820064" Name="Hype_04"/>
+						<Switch Id="486820065" Name="Hype_05"/>
+						<Switch Id="486820066" Name="Hype_06"/>
+						<Switch Id="486820067" Name="Hype_07"/>
+						<Switch Id="486820069" Name="Hype_01"/>
+						<Switch Id="486820070" Name="Hype_02"/>
+						<Switch Id="486820071" Name="Hype_03"/>
+						<Switch Id="486820076" Name="Hype_08"/>
+						<Switch Id="486820077" Name="Hype_09"/>
+					</Switches>
+				</SwitchGroup>
+			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6C8EEF46-C285-4149-281D-421A6DC2F7A0}</FileHash>
+	<FileHash>{3F2EC729-1C20-1465-F5DB-8D3B02DCEEE0}</FileHash>
 </SoundBanksInfo>

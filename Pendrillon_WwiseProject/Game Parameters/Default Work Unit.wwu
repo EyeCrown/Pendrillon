@@ -45,13 +45,13 @@
 				</Folder>
 				<Folder Name="Gameplay_RTPC" ID="{81C3651C-F5D4-4529-8FEA-AE1827B94F05}" ShortID="831822864">
 					<ChildrenList>
-						<GameParameter Name="HypeLevel" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}">
+						<GameParameter Name="CrowdHypeLevel" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}">
 							<PropertyList>
-								<Property Name="InitialValue" Type="Real64" Value="5"/>
-								<Property Name="Max" Type="Real64" Value="10"/>
+								<Property Name="InitialValue" Type="Real64" Value="0.5"/>
+								<Property Name="Max" Type="Real64" Value="1"/>
 							</PropertyList>
 						</GameParameter>
-						<GameParameter Name="New_Game_Parameter" ID="{F575019C-234A-4BCF-AE6B-265B86460363}"/>
+						<GameParameter Name="CrowdBoredom" ID="{61A3171D-F115-49E4-AADA-025E1CEAD958}"/>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

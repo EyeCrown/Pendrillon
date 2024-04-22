@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{F081D849-9317-4319-991B-441C94EE4362}" SchemaVersion="110">
+	<Events>
+		<WorkUnit Name="Pendrillon" ID="{F081D849-9317-4319-991B-441C94EE4362}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="UI" ID="{11366C53-188C-4E4E-AAB0-64EF904A3ED9}" ShortID="225308886">
+					<ChildrenList>
+						<Event Name="Play_UI_Combat_ConfirmAttacks" ID="{C608A27F-ABAE-4764-ADA9-47ABBE221057}">
+							<ChildrenList>
+								<Action Name="" ID="{F35870DC-69F2-41B2-8DF8-73A2C12324FD}" ShortID="956796411">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Combat_ConfirmAttacks" ID="{FEC78CD4-C2B9-4600-8E80-56627C9F5C7B}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UI_Combat_RemoveAttack" ID="{E5654AE6-0ADE-46FA-BB07-D788E4B85A99}">
+							<ChildrenList>
+								<Action Name="" ID="{E59ABA5E-46C7-4654-8B26-7E47CF6317B1}" ShortID="378464155">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Combat_RemoveAttack" ID="{A4B62925-4478-47F3-B2A6-664966EEF348}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UI_Combat_SelectCharacter" ID="{CB9FB582-3D2C-4D9A-887E-94D935B2512F}">
+							<ChildrenList>
+								<Action Name="" ID="{79112172-214C-4551-B3AE-A58DC8BE07F9}" ShortID="531595292">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Combat_SelectCharacter" ID="{1A299A90-8B18-4856-8D78-431B130AE468}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UI_Combat_Select_Attack" ID="{4603530F-44AA-4713-ABC2-CC24483B5CF1}">
+							<ChildrenList>
+								<Action Name="" ID="{B93C0384-4645-498F-B8D7-6AE6952EBE46}" ShortID="774810805">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Combat_Select_Attack" ID="{02C65CCE-3D93-476C-89F7-43984D29726D}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UI_Combat_Hover" ID="{BE0B2D1F-E872-4D0F-B08A-128C0CFEEA2F}">
+							<ChildrenList>
+								<Action Name="" ID="{4610FDAF-5EAD-4B5C-B721-5073722471D9}" ShortID="3602531">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Combat_Hover" ID="{AD36F6F7-0559-4007-9026-B53074294AAD}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="SFX" ID="{6516A83D-449B-4484-BEE3-B49C8906BEBD}" ShortID="231685745"/>
+				<Folder Name="Ambiances" ID="{E1349A6F-D7D5-4836-9241-1895A9830AEA}" ShortID="389265221">
+					<ChildrenList>
+						<Event Name="Play_CrowdHype" ID="{5AA3B44C-A286-49F9-946A-DAA2FF0A6380}">
+							<ChildrenList>
+								<Action Name="" ID="{C8502157-D753-4301-91A7-BD4D2D789424}" ShortID="164291098">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="CrowdHype" ID="{ED62E440-2367-4F7D-8CCD-774FDC384A8C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFX_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}">
+							<ChildrenList>
+								<Action Name="" ID="{9F5B447C-BF1D-43B1-AC3A-C05D4CAC2010}" ShortID="620740651">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_SFX_SC_Theater_CrowdChatter" ID="{1654922F-DE03-41CA-B0F5-C962E501E93C}">
+							<ChildrenList>
+								<Action Name="" ID="{3EB28802-5034-4512-A3DE-0FD42C58BA86}" ShortID="1037318886">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_SFX_SC_Cale_Ambiance" ID="{2676E719-BEDB-44DB-A59C-88A8B74FA143}">
+							<ChildrenList>
+								<Action Name="" ID="{8F725F45-DFDD-46FA-9F0D-A3146D64BBDC}" ShortID="707720677">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SFX_SC_Cale_Ambiance" ID="{CFC7C4F3-9D40-4D56-8C70-9761B6C51F84}">
+							<ChildrenList>
+								<Action Name="" ID="{02624421-9CCA-45C1-AC3C-9413E6357AB9}" ShortID="44024471">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Dialogues" ID="{3BC109D9-01F1-41D8-ABDF-37C9FC14F251}" ShortID="1008342144"/>
+				<Event Name="GameStart" ID="{CA29A0BB-D5BE-4F96-B957-07CF6903C886}"/>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

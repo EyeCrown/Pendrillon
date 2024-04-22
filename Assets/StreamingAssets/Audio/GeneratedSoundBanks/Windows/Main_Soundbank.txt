@@ -1,6 +1,84 @@
 Event	ID	Name			Wwise Object Path	Notes
+	902787362	SetAllVolumesTo75			\TestWorkUnit\InWwiseTests\Menu\SetAllVolumesTo75	
+	1004562353	Play_SFX_SC_Cale_Ambiance			\Pendrillon\Ambiances\Play_SFX_SC_Cale_Ambiance	
+	1027751980	New_Event_03			\TestWorkUnit\InWwiseTests\Menu\New_Event_03	
+	1534142422	Play_UI_Combat_RemoveAttack			\Pendrillon\UI\Play_UI_Combat_RemoveAttack	
+	1577954137	Stop_SFX_SC_Theater_CrowdChatter			\Pendrillon\Ambiances\Stop_SFX_SC_Theater_CrowdChatter	
+	1992368636	Play_UI_Combat_Hover			\Pendrillon\UI\Play_UI_Combat_Hover	
+	2433984191	Play_SFX_SC_Theater_CrowdChatter			\Pendrillon\Ambiances\Play_SFX_SC_Theater_CrowdChatter	
+	3189791475	Stop_SFX_SC_Cale_Ambiance			\Pendrillon\Ambiances\Stop_SFX_SC_Cale_Ambiance	
+	3360090021	Play_CrowdHype			\Pendrillon\Ambiances\Play_CrowdHype	
+	3468982525	Play_UI_Combat_Select_Attack			\Pendrillon\UI\Play_UI_Combat_Select_Attack	
+	3474027887	Play_UI_Combat_SelectCharacter			\Pendrillon\UI\Play_UI_Combat_SelectCharacter	
 	3733116919	Play_sine1kHz			\TestWorkUnit\Play_sine1kHz	
+	3794163176	SetHyperacusisOn			\TestWorkUnit\InWwiseTests\Menu\SetHyperacusisOn	
+	3797495750	SetHyperacusisOff			\TestWorkUnit\InWwiseTests\Menu\SetHyperacusisOff	
+	3834997573	Play_UI_Combat_ConfirmAttacks			\Pendrillon\UI\Play_UI_Combat_ConfirmAttacks	
+	4058101365	GameStart			\Pendrillon\GameStart	
+
+Switch Group	ID	Name			Wwise Object Path	Notes
+	3660942794	CrowdHypeLevel			\Default Work Unit\CrowdHypeLevel	
+
+Switch	ID	Name	Switch Group			Notes
+	486820064	Hype_04	CrowdHypeLevel			
+	486820065	Hype_05	CrowdHypeLevel			
+	486820066	Hype_06	CrowdHypeLevel			
+	486820067	Hype_07	CrowdHypeLevel			
+	486820069	Hype_01	CrowdHypeLevel			
+	486820070	Hype_02	CrowdHypeLevel			
+	486820071	Hype_03	CrowdHypeLevel			
+	486820076	Hype_08	CrowdHypeLevel			
+	486820077	Hype_09	CrowdHypeLevel			
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2888587878	CrowdBoredom			\Default Work Unit\Gameplay_RTPC\CrowdBoredom	
+	3660942794	CrowdHypeLevel			\Default Work Unit\Gameplay_RTPC\CrowdHypeLevel	
+
+Effect plug-ins	ID	Name	Type				Notes
+	4165585856	Crowd_Compressor	Wwise Compressor			
+
+Source plug-ins	ID	Name	Type		Wwise Object Path	Notes
+	185346133	Silence	Wwise Silence		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappy_SurpriseAndBigCrowd\SFX_Theater_SurpriseSilence\Silence\Silence	
+	302264514	Sine	Wwise Sine		\Actor-Mixer Hierarchy\TestWorkunit\Tests\sine1kHz\Sine	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	142558535	sine1kHz	C:\AAA\Cours\Master\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\sine1kHz_3F75BDB9.wem		\Actor-Mixer Hierarchy\TestWorkunit\Tests\sine1kHz		4058
+	70701178	SFX_Theater_CrowdHype_CrowdHappy_6	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdHappy_6_2D9E5AE6.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalHappy\SFX_Theater_Crowd_CrowdHappyHigh\SFX_Theater_Crowd_CrowdHappy\SFX_Theater_CrowdHype_CrowdHappy_6		153444
+	118107867	SFX_Theater_CrowdHype_CrowdUnhappyRND_5	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdUnhappyRND_5_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyHigh\SFX_Theater_Crowd_BooRNDHigh\SFX_Theater_CrowdHype_CrowdUnhappyRND_5		47950
+	134448714	SFX_Theater_CrowdHype_CrowdQuietRND_5	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdQuietRND_5_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyLow\SFX_Theater_Crowd_BooRNDLow\SFX_Theater_CrowdHype_CrowdQuietRND_5		66454
+	162505701	SFX_Theater_CrowdHype_CrowdHappy_6	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdHappy_6_445CB1E5.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalHappy\SFX_Theater_Crowd_CrowdHappyLow\SFX_Theater_Crowd_CrowdHappy\SFX_Theater_CrowdHype_CrowdHappy_6		153056
+	181744682	UI_Combat_ConfirmAttacks	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\UI_Combat_ConfirmAttacks_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_ConfirmAttacks		45508
+	184603848	SFX_Theater_CrowdHype_CrowdQuietRND_7	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdQuietRND_7_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyLow\SFX_Theater_Crowd_BooRNDLow\SFX_Theater_CrowdHype_CrowdQuietRND_7		62124
+	188879619	UI_Combat_SelectAttack_var3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\UI_Combat_SelectAttack_var3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_Select_Attack\UI_Combat_SelectAttack_var3		14921
+	197874328	SFX_Theater_CrowdHype_CrowdNeutral_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdNeutral_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalNeutral\SFX_Theater_CrowdNeutral\SFX_Theater_CrowdHype_CrowdNeutral_3		65607
+	224451226	UI_Combat_Hover_var3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\UI_Combat_Hover_var3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_Hover\UI_Combat_Hover_var3		5191
+	243914165	SFX_Theater_CrowdHype_CrowdQuietRND_2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdQuietRND_2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyLow\SFX_Theater_Crowd_BooRNDLow\SFX_Theater_CrowdHype_CrowdQuietRND_2		56054
+	267369805	AMB_Mockup_CaleBateau	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\AMB_Mockup_CaleBateau_A29C2F69.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Cale\SFX_SC_Cale_Ambiance\AMB_Mockup_CaleBateau		1014440
+	282345528	SFX_Theater_CrowdHype_CrowdUnhappyRND_11	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdUnhappyRND_11_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyHigh\SFX_Theater_Crowd_BooRNDHigh\SFX_Theater_CrowdHype_CrowdUnhappyRND_11		45148
+	286461623	SFX_Theater_CrowdHype_CrowdNeutral_2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdNeutral_2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalNeutral\SFX_Theater_CrowdNeutral\SFX_Theater_CrowdHype_CrowdNeutral_2		75994
+	348870517	UI_Combat_RemoveAttack	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\UI_Combat_RemoveAttack_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_RemoveAttack		14141
+	349866540	SFX_Theater_CrowdHype_CrowdUnhappyRND_1	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdUnhappyRND_1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappy_SurpriseAndBigCrowd\SFX_Theater_CrowdUnhappy_BigCrowd\SFX_Theater_CrowdHype_CrowdUnhappyRND_1		45019
+	394760896	SFX_Theater_CrowdHype_CrowdUnhappyRND_7	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdUnhappyRND_7_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyHigh\SFX_Theater_Crowd_BooRNDHigh\SFX_Theater_CrowdHype_CrowdUnhappyRND_7		51612
+	402083756	SFX_Theater_CrowdHype_CrowdQuietRND_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdQuietRND_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyLow\SFX_Theater_Crowd_BooRNDLow\SFX_Theater_CrowdHype_CrowdQuietRND_3		52601
+	416237681	UI_Combat_Hover_var2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\UI_Combat_Hover_var2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_Hover\UI_Combat_Hover_var2		5549
+	416588007	SFX_Theater_CrowdHype_CrowdHappy_4	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdHappy_4_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalHappy\SFX_Theater_Crowd_CrowdHappyHigh\SFX_Theater_Crowd_CrowdHappy\SFX_Theater_CrowdHype_CrowdHappy_4		119888
+	433929248	UI_Combat_SelectAttack_var2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\UI_Combat_SelectAttack_var2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_Select_Attack\UI_Combat_SelectAttack_var2		13845
+	451665736	SFX_Theater_CrowdHype_CrowdHappy_5	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdHappy_5_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalHappy\SFX_Theater_Crowd_CrowdHappyHigh\SFX_Theater_Crowd_CrowdHappy\SFX_Theater_CrowdHype_CrowdHappy_5		159376
+	514092623	SFX_Theater_CrowdHype_CrowdUnhappyRND_4	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdUnhappyRND_4_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyMid\SFX_Theater_Crowd_BooRNDMid\SFX_Theater_CrowdHype_CrowdUnhappyRND_4		45854
+	524081815	SFX_Theater_CrowdHype_CrowdHappy_1	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdHappy_1_ECA6FCFF.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalHappy\SFX_Theater_Crowd_CrowdHappyHigh\SFX_Theater_Crowd_CrowdHappy\SFX_Theater_CrowdHype_CrowdHappy_1		161254
+	543895100	SFX_Theater_CrowdHype_CrowdHappy_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdHappy_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalHappy\SFX_Theater_Crowd_CrowdHappyHigh\SFX_Theater_Crowd_CrowdHappy\SFX_Theater_CrowdHype_CrowdHappy_3		122216
+	560679518	SFX_Theater_CrowdHype_CrowdQuietRND_1	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdQuietRND_1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyLow\SFX_Theater_Crowd_BooRNDLow\SFX_Theater_CrowdHype_CrowdQuietRND_1		57264
+	653903131	UI_Combat_Hover_var1	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\UI_Combat_Hover_var1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_Hover\UI_Combat_Hover_var1		5287
+	687613328	SFX_Theater_CrowdHype_CrowdHappy_2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdHappy_2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalHappy\SFX_Theater_Crowd_CrowdHappyHigh\SFX_Theater_Crowd_CrowdHappy\SFX_Theater_CrowdHype_CrowdHappy_2		111307
+	709022877	SFX_Theater_CrowdHype_CrowdUnhappyRND_8	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdUnhappyRND_8_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappy_SurpriseAndBigCrowd\SFX_Theater_SurpriseSilence\SFX_Theater_CrowdHype_CrowdUnhappyRND_8		47645
+	727631927	SFX_Theater_CrowdHype_CrowdUnhappyRND_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdUnhappyRND_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappy_SurpriseAndBigCrowd\SFX_Theater_CrowdUnhappy_BigCrowd\SFX_Theater_CrowdHype_CrowdUnhappyRND_3		46116
+	737136298	UI_Combat_SelectAttack_var4	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\UI_Combat_SelectAttack_var4_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_Select_Attack\UI_Combat_SelectAttack_var4		14212
+	738241972	SFX_Theater_CrowdHype_CrowdHappy_6	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdHappy_6_B8F0A703.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalHappy\SFX_Theater_Crowd_CrowdHappyMid\SFX_Theater_Crowd_CrowdHappy\SFX_Theater_CrowdHype_CrowdHappy_6		153689
+	749104305	SFX_Theater_CrowdHype_CrowdUnhappyRND_6	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdUnhappyRND_6_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyHigh\SFX_Theater_Crowd_BooRNDHigh\SFX_Theater_CrowdHype_CrowdUnhappyRND_6		47877
+	793997462	UI_Combat_SelectAttack_var1	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\UI_Combat_SelectAttack_var1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_Select_Attack\UI_Combat_SelectAttack_var1		14734
+	800469680	SFX_Theater_CrowdHype_CrowdNeutral_1	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdNeutral_1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalNeutral\SFX_Theater_CrowdNeutral\SFX_Theater_CrowdHype_CrowdNeutral_1		77148
+	825670896	SFX_SC_Theater_CrowdChatter	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_SC_Theater_CrowdChatter_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\SFX_SC_Theater_CrowdChatter		294919
+	855470147	SFX_Theater_CrowdHype_CrowdUnhappyRND_2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdUnhappyRND_2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappy_SurpriseAndBigCrowd\SFX_Theater_CrowdUnhappy_BigCrowd\SFX_Theater_CrowdHype_CrowdUnhappyRND_2		44622
+	964190611	SFX_Theater_CrowdHype_CrowdQuietRND_4	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdQuietRND_4_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyLow\SFX_Theater_Crowd_BooRNDLow\SFX_Theater_CrowdHype_CrowdQuietRND_4		63705
+	1000361129	UI_Combat_SelectCharacter	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\UI_Combat_SelectCharacter_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_SelectCharacter		13170
+	1025343578	SFX_Theater_CrowdHype_CrowdQuietRND_6	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon_WwiseProject\.cache\Windows\SFX\SFX_Theater_CrowdHype_CrowdQuietRND_6_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\ENV_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyLow\SFX_Theater_Crowd_BooRNDLow\SFX_Theater_CrowdHype_CrowdQuietRND_6		58933
 
