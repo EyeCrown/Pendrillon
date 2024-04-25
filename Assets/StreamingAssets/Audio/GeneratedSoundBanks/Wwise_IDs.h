@@ -28,6 +28,7 @@ namespace AK
         static const AkUniqueID PLAY_UI_HUD_CHOICEBUBBLE_APPEARS = 3153536941U;
         static const AkUniqueID PLAY_UI_HUD_CHOICEBUBBLE_BURST3APPEARS = 785419406U;
         static const AkUniqueID PLAY_UI_HUD_SPEECHBUBBLE_APPEARS = 3687899778U;
+        static const AkUniqueID PLAY_UI_HUD_SPEECHBUBBLESKIP = 2637491412U;
         static const AkUniqueID SETALLVOLUMESTO75 = 902787362U;
         static const AkUniqueID SETHYPERACUSISOFF = 3797495750U;
         static const AkUniqueID SETHYPERACUSISON = 3794163176U;

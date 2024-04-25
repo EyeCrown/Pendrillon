@@ -27,6 +27,25 @@
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
+				<SoundcasterSession Name="Barque + Theatre Mockup DialogueCombat" ID="{51BC5763-13D6-4170-85A8-396C8F070AB0}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_UI_Combat_Hover" ID="{BE0B2D1F-E872-4D0F-B08A-128C0CFEEA2F}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_Combat_Select_Attack" ID="{4603530F-44AA-4713-ABC2-CC24483B5CF1}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_Combat_RemoveAttack" ID="{E5654AE6-0ADE-46FA-BB07-D788E4B85A99}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>

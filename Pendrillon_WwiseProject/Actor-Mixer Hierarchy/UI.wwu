@@ -285,6 +285,28 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<Sound Name="UI_HUD_SpeechBubbleSkip" ID="{9C6A3FE2-581C-4928-8C27-890AE9C2278D}" ShortID="1060188378">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_HUD_SpeechBubbleSkip" ID="{021908B8-2E17-4FD5-A867-B5D0CBBB42C8}">
+											<Language>SFX</Language>
+											<AudioFile>UI_HUD_SpeechBubbleSkip.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="245713975"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_HUD_SpeechBubbleSkip" ID="{021908B8-2E17-4FD5-A867-B5D0CBBB42C8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="UI_Menu" ID="{3F7659C2-20B7-4A3E-9FE1-FFC5EF87630A}" ShortID="245343154">
@@ -300,6 +322,38 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="UI_HUD_SpeechBubbleSkip" ID="{9E8B0BDC-057A-445D-BD82-C585A6F705FF}" ShortID="757436727">
+									<PropertyList>
+										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>430</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_HUD_SpeechBubbleSkip" ID="{2BD929A9-A243-485B-9362-B299BFAA4F7A}">
+											<Language>SFX</Language>
+											<AudioFile>UI_HUD_SpeechBubbleSkip.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="245713975"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_HUD_SpeechBubbleSkip" ID="{2BD929A9-A243-485B-9362-B299BFAA4F7A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="UI_Combat" ID="{4E305E19-4152-4E28-97A4-064468C38C05}" ShortID="409803377">
 							<PropertyList>
@@ -391,70 +445,70 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="UI_Combat_Hover_var1" ID="{AC8B5BA3-730A-4091-A7CA-DFBC14944365}" ShortID="41004107">
+										<Sound Name="UI_Combat_Hover_1_v2" ID="{F820CE85-0D18-431A-9CDA-667D932D6C0A}" ShortID="374998718">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="UI_Combat_Hover_var1" ID="{985558BE-F1DD-40CB-A526-864EBA22B45B}">
+												<AudioFileSource Name="UI_Combat_Hover_1_v2" ID="{5EF90B66-66D8-4BE0-9F4E-77B3488343B9}">
 													<Language>SFX</Language>
-													<AudioFile>UI_Combat_Hover_var1.wav</AudioFile>
+													<AudioFile>UI_Combat_Hover_1_v2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="653903131"/>
+														<MediaID ID="277603230"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="UI_Combat_Hover_var1" ID="{985558BE-F1DD-40CB-A526-864EBA22B45B}" Platform="Linked"/>
+												<ActiveSource Name="UI_Combat_Hover_1_v2" ID="{5EF90B66-66D8-4BE0-9F4E-77B3488343B9}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="UI_Combat_Hover_var2" ID="{51C88B8D-4B5E-41CE-A9B8-77118A6B70C0}" ShortID="86488971">
+										<Sound Name="UI_Combat_Hover_2_v2" ID="{E38EEEB6-13AB-4F31-A964-32083B5B8217}" ShortID="167961825">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="UI_Combat_Hover_var2" ID="{BFB812E4-DAD4-4722-9791-A6E8EC5CF8BE}">
+												<AudioFileSource Name="UI_Combat_Hover_2_v2" ID="{A0FCFD75-4B6F-4721-A324-706C0BFD6450}">
 													<Language>SFX</Language>
-													<AudioFile>UI_Combat_Hover_var2.wav</AudioFile>
+													<AudioFile>UI_Combat_Hover_2_v2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="416237681"/>
+														<MediaID ID="7511743"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="UI_Combat_Hover_var2" ID="{BFB812E4-DAD4-4722-9791-A6E8EC5CF8BE}" Platform="Linked"/>
+												<ActiveSource Name="UI_Combat_Hover_2_v2" ID="{A0FCFD75-4B6F-4721-A324-706C0BFD6450}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="UI_Combat_Hover_var3" ID="{4328AAC2-CE70-47CB-9BE5-96CB85F9A2D0}" ShortID="793252993">
+										<Sound Name="UI_Combat_Hover_3_v2" ID="{47DF8240-619E-4ED8-A52B-31DA54A4DCD5}" ShortID="813016149">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="UI_Combat_Hover_var3" ID="{DFCF57AB-C821-44A6-8005-26D4F8B2FF76}">
+												<AudioFileSource Name="UI_Combat_Hover_3_v2" ID="{1A8D35F9-FA72-4874-A96C-D6C0B1005079}">
 													<Language>SFX</Language>
-													<AudioFile>UI_Combat_Hover_var3.wav</AudioFile>
+													<AudioFile>UI_Combat_Hover_3_v2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="224451226"/>
+														<MediaID ID="325939860"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="UI_Combat_Hover_var3" ID="{DFCF57AB-C821-44A6-8005-26D4F8B2FF76}" Platform="Linked"/>
+												<ActiveSource Name="UI_Combat_Hover_3_v2" ID="{1A8D35F9-FA72-4874-A96C-D6C0B1005079}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -469,92 +523,92 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="UI_Combat_SelectAttack_var1" ID="{9C7A003D-D88D-4C1F-B4DD-757154E38FB9}" ShortID="1054314502">
+										<Sound Name="UI_Combat_SelectAttack_1_v2" ID="{B9DDCB64-8494-4513-A751-4587A6533634}" ShortID="153520834">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="UI_Combat_SelectAttack_var1" ID="{1EA3A2D7-AB54-4E74-9561-4FC0AAEBB877}">
+												<AudioFileSource Name="UI_Combat_SelectAttack_1_v2" ID="{1827AA14-DF83-4C30-83DC-143EFC8BD9F4}">
 													<Language>SFX</Language>
-													<AudioFile>UI_Combat_SelectAttack_var1.wav</AudioFile>
+													<AudioFile>UI_Combat_SelectAttack_1_v2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="793997462"/>
+														<MediaID ID="892671571"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="UI_Combat_SelectAttack_var1" ID="{1EA3A2D7-AB54-4E74-9561-4FC0AAEBB877}" Platform="Linked"/>
+												<ActiveSource Name="UI_Combat_SelectAttack_1_v2" ID="{1827AA14-DF83-4C30-83DC-143EFC8BD9F4}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="UI_Combat_SelectAttack_var2" ID="{CF886C97-9813-4747-8DBC-0112D3F2DB8B}" ShortID="1024334615">
+										<Sound Name="UI_Combat_SelectAttack_2_v2" ID="{84ABA867-7E67-4C9C-B413-BBD662E88D78}" ShortID="615232191">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="UI_Combat_SelectAttack_var2" ID="{F7A8F0C4-D67A-4D33-84E2-481F68FE14BF}">
+												<AudioFileSource Name="UI_Combat_SelectAttack_2_v2" ID="{44D33E9C-BFDC-405E-8994-61623CA16265}">
 													<Language>SFX</Language>
-													<AudioFile>UI_Combat_SelectAttack_var2.wav</AudioFile>
+													<AudioFile>UI_Combat_SelectAttack_2_v2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="433929248"/>
+														<MediaID ID="1016101576"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="UI_Combat_SelectAttack_var2" ID="{F7A8F0C4-D67A-4D33-84E2-481F68FE14BF}" Platform="Linked"/>
+												<ActiveSource Name="UI_Combat_SelectAttack_2_v2" ID="{44D33E9C-BFDC-405E-8994-61623CA16265}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="UI_Combat_SelectAttack_var3" ID="{FB442D1F-3BD6-4F3C-8E8F-F5A4DC8465D7}" ShortID="688568788">
+										<Sound Name="UI_Combat_SelectAttack_3_v2" ID="{9D012E4E-9AD4-4512-B3E4-7FB8DEFD2E06}" ShortID="410683">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="UI_Combat_SelectAttack_var3" ID="{E35B64D6-4D9E-4305-97EE-47DAEB70AE3B}">
+												<AudioFileSource Name="UI_Combat_SelectAttack_3_v2" ID="{494B6108-363E-4C4E-A453-4339611C7DBA}">
 													<Language>SFX</Language>
-													<AudioFile>UI_Combat_SelectAttack_var3.wav</AudioFile>
+													<AudioFile>UI_Combat_SelectAttack_3_v2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="188879619"/>
+														<MediaID ID="595979347"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="UI_Combat_SelectAttack_var3" ID="{E35B64D6-4D9E-4305-97EE-47DAEB70AE3B}" Platform="Linked"/>
+												<ActiveSource Name="UI_Combat_SelectAttack_3_v2" ID="{494B6108-363E-4C4E-A453-4339611C7DBA}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="UI_Combat_SelectAttack_var4" ID="{2720FC37-2C8B-4176-AE07-D581A3BB8607}" ShortID="342170669">
+										<Sound Name="UI_Combat_SelectAttack_4_v2" ID="{54F14B1A-BF30-408C-92D3-F8F509D5452C}" ShortID="67688672">
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="UI_Combat_SelectAttack_var4" ID="{68BDA510-2B8F-432D-A6B6-DE32E2B9D5E3}">
+												<AudioFileSource Name="UI_Combat_SelectAttack_4_v2" ID="{9338640A-835A-4AF4-AEC2-F4E28B0FA10C}">
 													<Language>SFX</Language>
-													<AudioFile>UI_Combat_SelectAttack_var4.wav</AudioFile>
+													<AudioFile>UI_Combat_SelectAttack_4_v2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="737136298"/>
+														<MediaID ID="229672219"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="UI_Combat_SelectAttack_var4" ID="{68BDA510-2B8F-432D-A6B6-DE32E2B9D5E3}" Platform="Linked"/>
+												<ActiveSource Name="UI_Combat_SelectAttack_4_v2" ID="{9338640A-835A-4AF4-AEC2-F4E28B0FA10C}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>

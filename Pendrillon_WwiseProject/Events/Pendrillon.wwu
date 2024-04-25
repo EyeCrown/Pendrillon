@@ -104,6 +104,17 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_UI_HUD_SpeechBubbleSkip" ID="{1FC8680D-3559-4F51-A6D3-713809817F4A}">
+							<ChildrenList>
+								<Action Name="" ID="{609898F2-A721-47A8-9202-2564ABC7F047}" ShortID="153740158">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_HUD_SpeechBubbleSkip" ID="{9C6A3FE2-581C-4928-8C27-890AE9C2278D}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{6516A83D-449B-4484-BEE3-B49C8906BEBD}" ShortID="231685745"/>
