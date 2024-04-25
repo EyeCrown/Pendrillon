@@ -60,6 +60,50 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_UI_Combat_EndTurn" ID="{7AB361E8-8C66-457C-AB9A-0465754A3320}">
+							<ChildrenList>
+								<Action Name="" ID="{DBAE7493-7401-4E1F-AEED-1D85D040950C}" ShortID="684861522">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_Combat_EndTurn" ID="{A5F1F309-C68A-4578-AF7F-D199B698400A}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UI_HUD_ChoiceBubble_Appears" ID="{86021F1F-3409-4F8D-B7C0-D510A5FA9289}">
+							<ChildrenList>
+								<Action Name="" ID="{5E53B7A0-0AFF-43DE-B9D0-FFE0FC995D03}" ShortID="115801656">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_HUD_ChoiceBubble_Appears" ID="{CA2B960A-214B-4BF3-9A63-E1AD7070E3B3}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UI_HUD_ChoiceBubble_Burst3Appears" ID="{30349CF0-60C4-4449-B39B-EF6AC59442F0}">
+							<ChildrenList>
+								<Action Name="" ID="{58CCAC08-4033-44F8-9E6B-ECAE47963987}" ShortID="523833536">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_HUD_ChoiceBubble_BurstAppears" ID="{ECB7D094-5570-430A-B938-6F5CCECAABB5}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_UI_HUD_SpeechBubble_Appears" ID="{9FD67083-E0A1-4160-9B63-6743D08F0F21}">
+							<ChildrenList>
+								<Action Name="" ID="{3C4E511F-1355-4E44-9458-73C97C1B1B74}" ShortID="281271676">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="UI_HUD_SpeechBubble_Appears" ID="{E21765BA-8C30-467C-B4D5-4D2003036281}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{6516A83D-449B-4484-BEE3-B49C8906BEBD}" ShortID="231685745"/>

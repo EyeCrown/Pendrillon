@@ -20,10 +20,14 @@ namespace AK
         static const AkUniqueID PLAY_SFX_SC_THEATER_CROWDCHATTER = 2433984191U;
         static const AkUniqueID PLAY_SINE1KHZ = 3733116919U;
         static const AkUniqueID PLAY_UI_COMBAT_CONFIRMATTACKS = 3834997573U;
+        static const AkUniqueID PLAY_UI_COMBAT_ENDTURN = 3127083572U;
         static const AkUniqueID PLAY_UI_COMBAT_HOVER = 1992368636U;
         static const AkUniqueID PLAY_UI_COMBAT_REMOVEATTACK = 1534142422U;
         static const AkUniqueID PLAY_UI_COMBAT_SELECT_ATTACK = 3468982525U;
         static const AkUniqueID PLAY_UI_COMBAT_SELECTCHARACTER = 3474027887U;
+        static const AkUniqueID PLAY_UI_HUD_CHOICEBUBBLE_APPEARS = 3153536941U;
+        static const AkUniqueID PLAY_UI_HUD_CHOICEBUBBLE_BURST3APPEARS = 785419406U;
+        static const AkUniqueID PLAY_UI_HUD_SPEECHBUBBLE_APPEARS = 3687899778U;
         static const AkUniqueID SETALLVOLUMESTO75 = 902787362U;
         static const AkUniqueID SETHYPERACUSISOFF = 3797495750U;
         static const AkUniqueID SETHYPERACUSISON = 3794163176U;
