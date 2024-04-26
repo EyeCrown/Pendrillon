@@ -9,6 +9,8 @@ public class TargetableAction : FightAction
     
     public override void Perform()
     {
+        
+        
         Debug.Log("Interact with " + target.name);
     }
     

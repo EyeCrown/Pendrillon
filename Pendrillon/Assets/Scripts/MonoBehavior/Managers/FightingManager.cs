@@ -6,6 +6,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 public class FightingManager : MonoBehaviour
 {
@@ -195,7 +196,17 @@ public class FightingManager : MonoBehaviour
     {
         foreach (var action in selectedActions)
         {
-            action.Perform();
+            int success = Random.Range(0, 101);
+
+            if (success <= action.successRate)
+            {
+                Debug.Log(success + "/"+action.successRate+" > Action succeded");
+                action.Perform();
+            }
+            else
+            {
+                Debug.Log(success + "/"+action.successRate+" > Action failed");
+            }
         }
         
         
