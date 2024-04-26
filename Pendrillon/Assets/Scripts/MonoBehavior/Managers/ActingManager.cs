@@ -1,10 +1,10 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class ActingManager : MonoBehaviour
 {
@@ -29,7 +29,12 @@ public class ActingManager : MonoBehaviour
     private string currentDialogue;
     
     private Stack<string> savedJsonStack;
-   
+    
+    public UnityEvent startActingPhase;
+    public UnityEvent nextDialogue;
+    public UnityEvent endOfActingPhase;
+    public UnityEvent clearUI;
+    
     
     
    private void Awake()
@@ -41,6 +46,8 @@ public class ActingManager : MonoBehaviour
         }
 
         Instance = this;
+        
+        
     }
 
     void Start()
@@ -55,29 +62,7 @@ public class ActingManager : MonoBehaviour
 
         Debug.Log(_story);
         
-        
         Refresh();
-    }
-   
-    private void GenerateTheaterEvents()
-    {
-        _story = new Story(inkAsset.text);
-
-        while (_story.canContinue)
-        {
-            Debug.Log(_story.Continue());
-            
-            if( _story.currentChoices.Count > 0 )
-            {
-                for (int i = 0; i < _story.currentChoices.Count; ++i) {
-                    Choice choice = _story.currentChoices [i];
-                    Debug.Log("Choice " + (i + 1) + ". " + choice.text);
-                }
-            }
-
-        }
-        
-        
     }
 
     public void Clear()
@@ -100,13 +85,13 @@ public class ActingManager : MonoBehaviour
         {
             characterHandler.ClearUI();
         }
-        
     }
 
     public void Refresh()
     {
         Clear();
-
+        clearUI.Invoke();
+        
         currentDialogue = String.Empty;
         
         if(savedJsonStack.Count != 0)
@@ -114,6 +99,7 @@ public class ActingManager : MonoBehaviour
         
         if (_story.canContinue)
         {
+            
             currentDialogue = _story.Continue();
             currentDialogue = currentDialogue.Trim();
 
@@ -130,17 +116,8 @@ public class ActingManager : MonoBehaviour
             }
             else
             {
-                
                 dialogueText.text += currentDialogue + "\n";
             }
-            
-            // Text
-            // while (_story.canContinue)
-            // {
-            //     
-            // }
-    
-            
             
 
             // Choices
@@ -166,7 +143,6 @@ public class ActingManager : MonoBehaviour
             {
                 nextDialogueButton.gameObject.SetActive(true);
             }
-            
         }
         else
         {
@@ -178,6 +154,8 @@ public class ActingManager : MonoBehaviour
             button.onClick.AddListener(delegate{
                 StartStory();
             });
+            
+            endOfActingPhase.Invoke();
         }
     }
 
@@ -185,7 +163,7 @@ public class ActingManager : MonoBehaviour
     public void ParseTag(string tag)
     {
         Debug.Log(tag);
-        string[] words = tag.Split("=");
+        string[] words = tag.Split(Constants.Separator);
         
         foreach (var word in words)
         {
@@ -201,10 +179,14 @@ public class ActingManager : MonoBehaviour
     {
         switch (words[0])
         {
-            case Constants.tagCharacter:
+            case Constants.TagCharacter:
                 HandlerTagChar(words[1]);
                 break;
             
+            case Constants.TagMove:
+                HandlerTagMove(words[1]);
+                break;
+                
             default:
                 Debug.LogError("ActingManager.CheckTab(.) > Error: tag unknown.");
                 break;
@@ -236,10 +218,23 @@ public class ActingManager : MonoBehaviour
 
         CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
         
-        if(characterHandler != null)
-            characterHandler.UpdateDialogue(currentDialogue);
+        characterHandler?.UpdateDialogue(currentDialogue);
     }
 
+
+    private void HandlerTagMove(string coordonates)
+    {
+        string[] words = tag.Split(",");
+        string character = words[0];
+        string x = words[1];
+        string y = words[2];
+        
+        Debug.Log($"{character} wants to go to [{x},{y}].   Size of words[]: {words.Length}");
+        
+        CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
+        characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)));
+        
+    }
 
     #endregion
 

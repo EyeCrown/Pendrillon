@@ -14,8 +14,6 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-   
-
     #region Attributes
     public static GameManager Instance { get; private set; }
     public ActingManager   ActingManager   { get; private set; }
@@ -24,6 +22,8 @@ public class GameManager : MonoBehaviour
     public GameState State { get; private set; }
 
     public List<CharacterHandler> characters;
+
+    public GroundGrid gridScene;
 
     #endregion
     
@@ -41,6 +41,23 @@ public class GameManager : MonoBehaviour
         ActingManager = GetComponentInChildren<ActingManager>();
     }
 
+    private void Start()
+    {
+        /*foreach (var character in characters)
+        {
+            GroundCell cell = gridScene.GetCell(character.coordsOnStatge);
+            Vector3 charPos = cell.position;
+            charPos.y = character.transform.position.y;
+            
+            character.transform.position = charPos;
+        }
+        */
+        
+        // BeginGame()
+        
+        
+    }
+
     public CharacterHandler GetCharacter(string characterName)
     {
         for (int i = 0; i < characters.Count; i++)
@@ -51,4 +68,18 @@ public class GameManager : MonoBehaviour
 
         return null;
     }
+
+
+    void BeginGame()
+    {
+        // Tell to AM to Begin
+        //BetterActingManager.Instance.Begin.Invoke();
+    }
+
+    void FromActingPhaseToFightingPhase()
+    {
+        
+    }
+
+
 }
