@@ -4,14 +4,15 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Hit", menuName = "Pendrillon/Attacks/Hit")]
-public class HitEnemy : FightAction
+public class HitEnemy : TargetableAction
 {
     [Range(0, 100)]
     public int damage;
     
     public override void Perform()
     {
-        Debug.Log("Must hit enemy");
+        target.GetComponent<Enemy>().TakeDamageEvent.Invoke(damage);
+        Debug.Log($"Deals {damage} damage to {target.name}");
     }
 
     public override string ToString()

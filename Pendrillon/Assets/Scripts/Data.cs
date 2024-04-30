@@ -7,7 +7,8 @@ public static class Constants
     
     public const string TagCharacter = "char";
     public const string TagMove = "move";
-
+    public const string TagPlaySound = "playsound";
+    
 
     #endregion
 

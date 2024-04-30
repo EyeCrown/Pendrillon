@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Ink.Runtime;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
@@ -25,6 +26,14 @@ public class GameManager : MonoBehaviour
 
     public GroundGrid gridScene;
 
+    
+    public TextAsset inkAsset;
+
+
+    public AK.Wwise.Event _wwiseEvent;
+    
+    
+    
     #endregion
     
     private void Awake()
@@ -43,17 +52,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        /*foreach (var character in characters)
-        {
-            GroundCell cell = gridScene.GetCell(character.coordsOnStatge);
-            Vector3 charPos = cell.position;
-            charPos.y = character.transform.position.y;
-            
-            character.transform.position = charPos;
-        }
-        */
-        
-        // BeginGame()
         
         
     }
@@ -78,6 +76,8 @@ public class GameManager : MonoBehaviour
 
     void FromActingPhaseToFightingPhase()
     {
+        
+        
         
     }
 

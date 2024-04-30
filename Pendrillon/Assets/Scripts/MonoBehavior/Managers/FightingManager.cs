@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -34,7 +35,7 @@ public class FightingManager : MonoBehaviour
     public UnityEvent BeginPlayerTurn;
     public UnityEvent Validate;
     public UnityEvent MustSelectTarget;
-    public UnityAction EndFight;
+    //public UnityAction EndFight;
     
     
     
@@ -77,10 +78,9 @@ public class FightingManager : MonoBehaviour
         selectedActions.Clear();
         
         BeginPlayerTurn.Invoke();
-        
 
     }
-
+    
     void SetupActionButtons()
     {
         Vector2 buttonPos = new Vector2(115, 65);
@@ -102,6 +102,19 @@ public class FightingManager : MonoBehaviour
 
     void BeginTurn()
     {
+        if (player.character.hp <= 0)
+        {
+            Debug.Log("Player is dead.");
+            EndFight(false);
+            return;
+        }
+
+        if (enemies.Count <= 0)
+        {
+            Debug.Log("All enemies are dead.");
+            EndFight(true);
+        }
+        
         actionPoints += 3;
 
         for (int i=0; i< actionsList.Count; i++)
@@ -120,7 +133,7 @@ public class FightingManager : MonoBehaviour
     {
         buttonObject.interactable = false;
         actionPoints -= action.cost;
-        if (action.GetType() == typeof(TargetableAction))
+        if (action is TargetableAction)
         {
             waitingAction = action as TargetableAction;
             MustSelectTarget.Invoke();
@@ -164,6 +177,8 @@ public class FightingManager : MonoBehaviour
         waitingAction.target = target;
         if (waitingAction != null) AddActionToSelection(waitingAction);
         waitingAction = null;
+        
+        ValidateAttacks();
     }
 
 
@@ -191,6 +206,39 @@ public class FightingManager : MonoBehaviour
 
     }
 
+    void EnemiesTurn()
+    {
+        Debug.Log("Enemy turn");
+
+        foreach (var enemy in enemies)
+        {
+            
+            player.character.hp -= enemy.damage;
+            Debug.Log($"Player has lost {enemy.damage} hp.");
+        }
+        
+        BeginPlayerTurn.Invoke();
+    }
+
+    void EndFight(bool win)
+    {
+        String winText = "Fight is over, ";
+        if (win)
+        {
+            Debug.Log(winText + " player WIN the fight");
+            Application.Quit();
+        }
+        else
+        {
+            Debug.Log(winText + " player LOST the fight");
+            Application.Quit();
+        }
+    }
+
+    public void RemoveEnemy(Enemy enemy)
+    {
+        enemies.Remove(enemy);
+    }
 
     IEnumerator DoingAction()
     {
@@ -209,10 +257,9 @@ public class FightingManager : MonoBehaviour
             }
         }
         
-        
         yield return new WaitForSeconds(0.1f);
-        BeginPlayerTurn.Invoke();
-
+        
+        EnemiesTurn();
     }
     
     

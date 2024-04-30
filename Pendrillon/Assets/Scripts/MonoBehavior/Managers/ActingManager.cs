@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
@@ -46,8 +47,6 @@ public class ActingManager : MonoBehaviour
         }
 
         Instance = this;
-        
-        
     }
 
     void Start()
@@ -57,7 +56,7 @@ public class ActingManager : MonoBehaviour
 
     private void StartStory()
     {
-        _story = new Story(inkAsset.text);
+        _story = new Story(GameManager.Instance.inkAsset.text);
         savedJsonStack = new Stack<string>();
 
         Debug.Log(_story);
@@ -105,6 +104,27 @@ public class ActingManager : MonoBehaviour
 
             savedJsonStack.Push(_story.state.ToJson());
 
+            currentDialogue = ParseDialogue(currentDialogue);
+            
+            var output = new List<string>();
+            var knots = _story.mainContentContainer.namedContent.Keys;
+            knots.ToList().ForEach((knot) =>
+            {
+                output.Add(knot);
+
+                var container = _story.KnotContainerWithName(knot);
+                var stitchKeys = container.namedContent.Keys;
+                stitchKeys.ToList().ForEach((stitch) =>
+                {
+                    output.Add(knot + "." + stitch);
+                });
+            });
+
+            foreach (var text in output)
+            {
+                Debug.Log(text);
+            }
+            
             // Tags
             if (_story.currentTags.Count > 0)
             {
@@ -159,6 +179,15 @@ public class ActingManager : MonoBehaviour
         }
     }
 
+    public String ParseDialogue(String text)
+    {
+        String[] words = text.Split(":");
+        
+        HandlerTagChar(words[0].Replace(" ", ""));
+
+        return words[1];
+    }
+
 
     public void ParseTag(string tag)
     {
@@ -187,6 +216,10 @@ public class ActingManager : MonoBehaviour
                 HandlerTagMove(words[1]);
                 break;
                 
+            case Constants.TagPlaySound:
+                
+                GameManager.Instance._wwiseEvent.Post(gameObject);
+                break;
             default:
                 Debug.LogError("ActingManager.CheckTab(.) > Error: tag unknown.");
                 break;
