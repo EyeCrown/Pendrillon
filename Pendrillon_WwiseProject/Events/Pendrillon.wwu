@@ -5,116 +5,124 @@
 			<ChildrenList>
 				<Folder Name="UI" ID="{11366C53-188C-4E4E-AAB0-64EF904A3ED9}" ShortID="225308886">
 					<ChildrenList>
-						<Event Name="Play_UI_Combat_ConfirmAttacks" ID="{C608A27F-ABAE-4764-ADA9-47ABBE221057}">
+						<Folder Name="Combat" ID="{BF93D77E-F71F-4B61-826F-3DB89BFCE035}" ShortID="126775059">
 							<ChildrenList>
-								<Action Name="" ID="{F35870DC-69F2-41B2-8DF8-73A2C12324FD}" ShortID="956796411">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="UI_Combat_ConfirmAttacks" ID="{FEC78CD4-C2B9-4600-8E80-56627C9F5C7B}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="Play_UI_Combat_ConfirmAttacks" ID="{C608A27F-ABAE-4764-ADA9-47ABBE221057}">
+									<ChildrenList>
+										<Action Name="" ID="{F35870DC-69F2-41B2-8DF8-73A2C12324FD}" ShortID="956796411">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Combat_ConfirmAttacks" ID="{FEC78CD4-C2B9-4600-8E80-56627C9F5C7B}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_Combat_EndTurn" ID="{7AB361E8-8C66-457C-AB9A-0465754A3320}">
+									<ChildrenList>
+										<Action Name="" ID="{DBAE7493-7401-4E1F-AEED-1D85D040950C}" ShortID="684861522">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Combat_EndTurn" ID="{A5F1F309-C68A-4578-AF7F-D199B698400A}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_Combat_Hover" ID="{BE0B2D1F-E872-4D0F-B08A-128C0CFEEA2F}">
+									<ChildrenList>
+										<Action Name="" ID="{4610FDAF-5EAD-4B5C-B721-5073722471D9}" ShortID="3602531">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Combat_Hover" ID="{AD36F6F7-0559-4007-9026-B53074294AAD}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_Combat_RemoveAttack" ID="{E5654AE6-0ADE-46FA-BB07-D788E4B85A99}">
+									<ChildrenList>
+										<Action Name="" ID="{E59ABA5E-46C7-4654-8B26-7E47CF6317B1}" ShortID="378464155">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Combat_RemoveAttack" ID="{A4B62925-4478-47F3-B2A6-664966EEF348}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_Combat_Select_Attack" ID="{4603530F-44AA-4713-ABC2-CC24483B5CF1}">
+									<ChildrenList>
+										<Action Name="" ID="{B93C0384-4645-498F-B8D7-6AE6952EBE46}" ShortID="774810805">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Combat_Select_Attack" ID="{02C65CCE-3D93-476C-89F7-43984D29726D}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_Combat_SelectCharacter" ID="{CB9FB582-3D2C-4D9A-887E-94D935B2512F}">
+									<ChildrenList>
+										<Action Name="" ID="{79112172-214C-4551-B3AE-A58DC8BE07F9}" ShortID="531595292">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Combat_SelectCharacter" ID="{1A299A90-8B18-4856-8D78-431B130AE468}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
-						<Event Name="Play_UI_Combat_RemoveAttack" ID="{E5654AE6-0ADE-46FA-BB07-D788E4B85A99}">
+						</Folder>
+						<Folder Name="HUD" ID="{17042A7B-35AA-49D0-81BE-98B8CB18109E}" ShortID="289709157">
 							<ChildrenList>
-								<Action Name="" ID="{E59ABA5E-46C7-4654-8B26-7E47CF6317B1}" ShortID="378464155">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="UI_Combat_RemoveAttack" ID="{A4B62925-4478-47F3-B2A6-664966EEF348}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="Play_UI_HUD_ChoiceBubble_Appears" ID="{86021F1F-3409-4F8D-B7C0-D510A5FA9289}">
+									<ChildrenList>
+										<Action Name="" ID="{5E53B7A0-0AFF-43DE-B9D0-FFE0FC995D03}" ShortID="115801656">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_HUD_ChoiceBubble_Appears" ID="{CA2B960A-214B-4BF3-9A63-E1AD7070E3B3}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_HUD_ChoiceBubble_Burst3Appears" ID="{30349CF0-60C4-4449-B39B-EF6AC59442F0}">
+									<ChildrenList>
+										<Action Name="" ID="{58CCAC08-4033-44F8-9E6B-ECAE47963987}" ShortID="523833536">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_HUD_ChoiceBubble_BurstAppears" ID="{ECB7D094-5570-430A-B938-6F5CCECAABB5}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_HUD_SpeechBubble_Appears" ID="{9FD67083-E0A1-4160-9B63-6743D08F0F21}">
+									<ChildrenList>
+										<Action Name="" ID="{3C4E511F-1355-4E44-9458-73C97C1B1B74}" ShortID="281271676">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_HUD_SpeechBubble_Appears" ID="{E21765BA-8C30-467C-B4D5-4D2003036281}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_HUD_SpeechBubbleSkip" ID="{1FC8680D-3559-4F51-A6D3-713809817F4A}">
+									<ChildrenList>
+										<Action Name="" ID="{609898F2-A721-47A8-9202-2564ABC7F047}" ShortID="153740158">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_HUD_SpeechBubbleSkip" ID="{9C6A3FE2-581C-4928-8C27-890AE9C2278D}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
-						<Event Name="Play_UI_Combat_SelectCharacter" ID="{CB9FB582-3D2C-4D9A-887E-94D935B2512F}">
-							<ChildrenList>
-								<Action Name="" ID="{79112172-214C-4551-B3AE-A58DC8BE07F9}" ShortID="531595292">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="UI_Combat_SelectCharacter" ID="{1A299A90-8B18-4856-8D78-431B130AE468}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_UI_Combat_Select_Attack" ID="{4603530F-44AA-4713-ABC2-CC24483B5CF1}">
-							<ChildrenList>
-								<Action Name="" ID="{B93C0384-4645-498F-B8D7-6AE6952EBE46}" ShortID="774810805">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="UI_Combat_Select_Attack" ID="{02C65CCE-3D93-476C-89F7-43984D29726D}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_UI_Combat_Hover" ID="{BE0B2D1F-E872-4D0F-B08A-128C0CFEEA2F}">
-							<ChildrenList>
-								<Action Name="" ID="{4610FDAF-5EAD-4B5C-B721-5073722471D9}" ShortID="3602531">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="UI_Combat_Hover" ID="{AD36F6F7-0559-4007-9026-B53074294AAD}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_UI_Combat_EndTurn" ID="{7AB361E8-8C66-457C-AB9A-0465754A3320}">
-							<ChildrenList>
-								<Action Name="" ID="{DBAE7493-7401-4E1F-AEED-1D85D040950C}" ShortID="684861522">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="UI_Combat_EndTurn" ID="{A5F1F309-C68A-4578-AF7F-D199B698400A}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_UI_HUD_ChoiceBubble_Appears" ID="{86021F1F-3409-4F8D-B7C0-D510A5FA9289}">
-							<ChildrenList>
-								<Action Name="" ID="{5E53B7A0-0AFF-43DE-B9D0-FFE0FC995D03}" ShortID="115801656">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="UI_HUD_ChoiceBubble_Appears" ID="{CA2B960A-214B-4BF3-9A63-E1AD7070E3B3}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_UI_HUD_ChoiceBubble_Burst3Appears" ID="{30349CF0-60C4-4449-B39B-EF6AC59442F0}">
-							<ChildrenList>
-								<Action Name="" ID="{58CCAC08-4033-44F8-9E6B-ECAE47963987}" ShortID="523833536">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="UI_HUD_ChoiceBubble_BurstAppears" ID="{ECB7D094-5570-430A-B938-6F5CCECAABB5}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_UI_HUD_SpeechBubble_Appears" ID="{9FD67083-E0A1-4160-9B63-6743D08F0F21}">
-							<ChildrenList>
-								<Action Name="" ID="{3C4E511F-1355-4E44-9458-73C97C1B1B74}" ShortID="281271676">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="UI_HUD_SpeechBubble_Appears" ID="{E21765BA-8C30-467C-B4D5-4D2003036281}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_UI_HUD_SpeechBubbleSkip" ID="{1FC8680D-3559-4F51-A6D3-713809817F4A}">
-							<ChildrenList>
-								<Action Name="" ID="{609898F2-A721-47A8-9202-2564ABC7F047}" ShortID="153740158">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="UI_HUD_SpeechBubbleSkip" ID="{9C6A3FE2-581C-4928-8C27-890AE9C2278D}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="SFX" ID="{6516A83D-449B-4484-BEE3-B49C8906BEBD}" ShortID="231685745">
@@ -281,6 +289,9 @@
 						<Event Name="Play_SFX_SC_Cale_Ambiance" ID="{CFC7C4F3-9D40-4D56-8C70-9761B6C51F84}">
 							<ChildrenList>
 								<Action Name="" ID="{02624421-9CCA-45C1-AC3C-9413E6357AB9}" ShortID="44024471">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>

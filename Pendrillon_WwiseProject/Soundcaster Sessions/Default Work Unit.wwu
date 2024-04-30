@@ -34,12 +34,28 @@
 							<Position X="0" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_SFX_SC_Cale_Ambiance" ID="{CFC7C4F3-9D40-4D56-8C70-9761B6C51F84}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_SFX_SC_Cale_Ambiance" ID="{2676E719-BEDB-44DB-A59C-88A8B74FA143}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_UI_Combat_Select_Attack" ID="{4603530F-44AA-4713-ABC2-CC24483B5CF1}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_UI_Combat_RemoveAttack" ID="{E5654AE6-0ADE-46FA-BB07-D788E4B85A99}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_HUD_SpeechBubble_Appears" ID="{9FD67083-E0A1-4160-9B63-6743D08F0F21}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_HUD_SpeechBubbleSkip" ID="{1FC8680D-3559-4F51-A6D3-713809817F4A}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="3" Y="1"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>

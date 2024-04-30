@@ -122,6 +122,13 @@
 					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="VOX_Combat" ID="{160BAC06-62E3-4F0C-B0A1-21FE9A7A4EC0}" ShortID="689949025">
+					<PropertyList>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>

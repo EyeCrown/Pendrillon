@@ -2608,6 +2608,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<BlendContainer Name="SFX_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" ShortID="178246085">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -2617,7 +2624,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="AMB_Mockup_CaleBateau" ID="{2751BC94-914F-45F2-8C37-E9342EB7860B}" ShortID="94795980">
+										<Sound Name="AMB_SC_Cale_Bed_WaterFar" ID="{78C2BBA9-051B-4EF7-8D06-6D4DEB582AA5}" ShortID="168461692">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 											</PropertyList>
@@ -2630,24 +2637,710 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="AMB_Mockup_CaleBateau" ID="{22E49CF9-C4C9-498A-9A2F-8DA709FA0A45}">
+												<AudioFileSource Name="AMB_Mockup_CaleBateau_WaterBed" ID="{C2A48C9F-AE2A-4921-A868-7CBAB24C74E0}">
 													<PropertyList>
-														<Property Name="CrossfadeDuration" Type="Real64" Value="2841.762"/>
-														<Property Name="LoopBegin" Type="Real64" Value="4.75552286585366"/>
-														<Property Name="LoopEnd" Type="Real64" Value="54.2312511432927"/>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="1158.386"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0.641546969126506"/>
+														<Property Name="LoopEnd" Type="Real64" Value="13.3869467557731"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 													</PropertyList>
 													<Language>SFX</Language>
-													<AudioFile>AMB_Mockup_CaleBateau.wav</AudioFile>
+													<AudioFile>AMB_Mockup_CaleBateau_WaterBed.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="267369805"/>
+														<MediaID ID="716954534"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="AMB_Mockup_CaleBateau" ID="{22E49CF9-C4C9-498A-9A2F-8DA709FA0A45}" Platform="Linked"/>
+												<ActiveSource Name="AMB_Mockup_CaleBateau_WaterBed" ID="{C2A48C9F-AE2A-4921-A868-7CBAB24C74E0}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Sound Name="AMB_SC_Cale_Bed_WaterAndCreaking" ID="{D32CA801-178D-4E74-974B-AA432988C4E8}" ShortID="973707670">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SC_Cale_Bed_WaterAndCreaking" ID="{92EA12D1-1817-4B8E-B59F-F6E2277635A0}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="1549.717"/>
+														<Property Name="LoopBegin" Type="Real64" Value="0.851410768072289"/>
+														<Property Name="LoopEnd" Type="Real64" Value="22.3495326618976"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AMB_SC_Cale_Bed_WaterAndCreaking.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="701880715"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SC_Cale_Bed_WaterAndCreaking" ID="{92EA12D1-1817-4B8E-B59F-F6E2277635A0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_SC_Cale_Bed_WoodCreaking" ID="{83D8A7D2-76BF-406B-A8A7-1B5143D13087}" ShortID="1051403437">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SC_Cale_Bed_WoodCreaking" ID="{8C24FF17-8382-47A1-AE26-4167100B402A}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="1611.706"/>
+														<Property Name="LoopBegin" Type="Real64" Value="1.63187063880522"/>
+														<Property Name="LoopEnd" Type="Real64" Value="22.5623853539157"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AMB_SC_Cale_Bed_WoodCreaking.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="28965928"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SC_Cale_Bed_WoodCreaking" ID="{8C24FF17-8382-47A1-AE26-4167100B402A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="AMB_SC_Cale_RND_WaterWaves" ID="{C349857B-FD04-4A00-95B0-7B3C16E41C34}" ShortID="691114830">
+											<PropertyList>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="RND_WaterWaves" ID="{97862AC2-B17D-4D3B-B703-756E21E2A1CA}" ShortID="686641046">
+													<PropertyList>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>6</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="AMB_SC_Cale_RND_Water_01" ID="{B4AF7553-75A8-4C02-9608-D742BDB2528A}" ShortID="120888611">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_Mockup_CaleBateau_RND_Water_01" ID="{9BE6CF4E-902A-4891-8A99-5A078105F68E}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_Mockup_CaleBateau_RND_Water_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="580975801"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_Mockup_CaleBateau_RND_Water_01" ID="{9BE6CF4E-902A-4891-8A99-5A078105F68E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_Water_02" ID="{5767D7A8-C629-4A0D-B129-176650CD176B}" ShortID="716146604">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_Mockup_CaleBateau_RND_Water_02" ID="{3FABFF58-07AC-4460-9C25-54495A4280DB}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_Mockup_CaleBateau_RND_Water_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="560360515"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_Mockup_CaleBateau_RND_Water_02" ID="{3FABFF58-07AC-4460-9C25-54495A4280DB}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_Water_03" ID="{BBB1ACAC-2E37-4084-AC24-F2BEA48D24EF}" ShortID="874993383">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_Mockup_CaleBateau_RND_Water_03" ID="{8FEA97AE-163A-4030-9542-33EEEB9CBC1F}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_Mockup_CaleBateau_RND_Water_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="864666813"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_Mockup_CaleBateau_RND_Water_03" ID="{8FEA97AE-163A-4030-9542-33EEEB9CBC1F}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_Water_04" ID="{EE96A6F9-C28D-4756-A344-7F7B5BDDF661}" ShortID="805435680">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_Mockup_CaleBateau_RND_Water_04" ID="{A4D414A3-E075-4DE5-914A-12D04B688B7D}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_Mockup_CaleBateau_RND_Water_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="271983442"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_Mockup_CaleBateau_RND_Water_04" ID="{A4D414A3-E075-4DE5-914A-12D04B688B7D}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_Water_05" ID="{5F9EF2B7-D6E8-420C-9B11-867DDD28F111}" ShortID="538111359">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_Mockup_CaleBateau_RND_Water_05" ID="{697D6121-7E15-45D3-90B8-70DB6093D1B0}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_Mockup_CaleBateau_RND_Water_05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="76520908"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_Mockup_CaleBateau_RND_Water_05" ID="{697D6121-7E15-45D3-90B8-70DB6093D1B0}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_Water_06" ID="{E97553BE-A02D-4C07-8D7A-7AE39AB31A45}" ShortID="414019720">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_Mockup_CaleBateau_RND_Water_06" ID="{363194FB-484C-40CA-BEE8-010420843BD4}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_Mockup_CaleBateau_RND_Water_06.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="385913905"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_Mockup_CaleBateau_RND_Water_06" ID="{363194FB-484C-40CA-BEE8-010420843BD4}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="RND_WaterWaves" ID="{97862AC2-B17D-4D3B-B703-756E21E2A1CA}"/>
+											</Playlist>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="AMB_SC_Cale_RND_WoodCreakingMechanism" ID="{4396A3DC-3181-4679-82C8-3762F5B88A3E}" ShortID="210535053">
+											<PropertyList>
+												<Property Name="CenterPercentage" Type="int32">
+													<ValueList>
+														<Value>67</Value>
+													</ValueList>
+												</Property>
+												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="OverridePositioning" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="AMB_SC_Cale_RND_WoodCreakingMechanism" ID="{B8A8C06D-6D24-4EF4-939D-61DEEA1ABF22}" ShortID="248570488">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_01" ID="{D1D40896-9A9E-44B3-B1C3-68BAAD62C0E8}" ShortID="72156135">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_01" ID="{2D71C5C3-6DCB-473D-B9DE-86289A8E1001}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="590653695"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_01" ID="{2D71C5C3-6DCB-473D-B9DE-86289A8E1001}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_02" ID="{3FD660B1-5CF4-42B6-B2AE-9C188DEA4112}" ShortID="341982816">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_02" ID="{74996747-A405-424F-9268-F5835FEC65F3}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="326595460"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_02" ID="{74996747-A405-424F-9268-F5835FEC65F3}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_03" ID="{704D2B58-E504-4302-AED9-4607C1D1C2F9}" ShortID="320551737">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_03" ID="{89E29E9F-25B1-4D93-A046-F066AB02B830}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="888645981"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_03" ID="{89E29E9F-25B1-4D93-A046-F066AB02B830}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_04" ID="{3388CEE0-C597-4BA5-B59B-5DD6F37E7CAB}" ShortID="1054320281">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_04" ID="{0C558C16-5BA0-4AAB-A681-8C2C81E7BCFA}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="359339323"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_04" ID="{0C558C16-5BA0-4AAB-A681-8C2C81E7BCFA}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_05" ID="{04F3E836-B511-4823-B1EE-1FEF5FC64B45}" ShortID="672218385">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_05" ID="{A242E3EF-4DAE-4BAC-A2DA-D64336D5FBE1}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="429151901"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_05" ID="{A242E3EF-4DAE-4BAC-A2DA-D64336D5FBE1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_06" ID="{038B488F-8FF8-4589-A7AA-1F6C026456F0}" ShortID="679404477">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_06" ID="{F41591B8-9E0C-4E1E-8419-1D6CFBDF4879}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_06.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="4491730"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_06" ID="{F41591B8-9E0C-4E1E-8419-1D6CFBDF4879}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_07" ID="{D01A3574-72D6-4D81-AD07-69D75BF26582}" ShortID="121131584">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_07" ID="{91BDD38A-C875-41F3-901A-FD1077339896}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_07.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="988007069"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_07" ID="{91BDD38A-C875-41F3-901A-FD1077339896}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_08" ID="{86FB4650-08A4-4CA0-BCD8-469C975F694F}" ShortID="329955072">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_08" ID="{F2FEC25A-E567-4505-A1A8-C600E2FB2303}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_08.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="241125822"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_08" ID="{F2FEC25A-E567-4505-A1A8-C600E2FB2303}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_09" ID="{2091C5A2-B548-4238-95CB-49ED1C7013A0}" ShortID="894354484">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_09" ID="{8BFF9343-C932-4620-8374-3CDDCA856898}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_09.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="799810638"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_09" ID="{8BFF9343-C932-4620-8374-3CDDCA856898}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_10" ID="{058A069D-84A3-4B8E-B305-4D65924DF667}" ShortID="427175344">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_10" ID="{812A4591-1DCC-4ECA-8287-61666196BD7D}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_10.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="928569971"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_10" ID="{812A4591-1DCC-4ECA-8287-61666196BD7D}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingMechanism_11" ID="{9A1A5613-652C-41BD-B03D-F6097440C688}" ShortID="530781055">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_11" ID="{28A247FF-4FCA-4D31-BAE2-3A74F2DA013B}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingMechanism_11.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="286381006"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingMechanism_11" ID="{28A247FF-4FCA-4D31-BAE2-3A74F2DA013B}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="AMB_SC_Cale_RND_WoodCreakingMechanism" ID="{B8A8C06D-6D24-4EF4-939D-61DEEA1ABF22}"/>
+											</Playlist>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="AMB_SC_Cale_RND_WoodCreakingBoat" ID="{6E0154A3-08FE-4D0B-86AF-534F36032C8D}" ShortID="182596969">
+											<PropertyList>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="3"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="AMB_SC_Cale_RND_WoodCreakingBoat" ID="{42420752-661E-49D6-A49B-214BB30C9741}" ShortID="19852100">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingBoat_01" ID="{3848DC29-36B2-4E5C-9247-E68FE55DDB9E}" ShortID="167654469">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_01" ID="{E0B9C0DA-0E46-4839-9ABF-92FBF053023F}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingBoat_01.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1040681811"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_01" ID="{E0B9C0DA-0E46-4839-9ABF-92FBF053023F}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingBoat_02" ID="{30733D09-ED66-4EF4-B5F0-00CCD708457F}" ShortID="573318852">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_02" ID="{BCF4DBC9-2524-450C-9983-927527C9E49E}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingBoat_02.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="302155113"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_02" ID="{BCF4DBC9-2524-450C-9983-927527C9E49E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingBoat_03" ID="{997CC41C-D654-41F4-851B-9C4C59F65682}" ShortID="485114596">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_03" ID="{D5B96234-48F1-4596-B60B-AF3E479CE296}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingBoat_03.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="178914549"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_03" ID="{D5B96234-48F1-4596-B60B-AF3E479CE296}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingBoat_04" ID="{D4F7F330-145A-4468-9DEE-D333A6EA4908}" ShortID="37150441">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_04" ID="{5A51288B-5572-4C99-A9CE-780BD2629658}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingBoat_04.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="97414156"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_04" ID="{5A51288B-5572-4C99-A9CE-780BD2629658}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingBoat_05" ID="{47DC1E25-28D0-4B59-A512-F756415170C3}" ShortID="61273151">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_05" ID="{1D82B7A9-D569-46FB-9C25-85C246CB1BA7}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingBoat_05.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="807378842"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_05" ID="{1D82B7A9-D569-46FB-9C25-85C246CB1BA7}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMB_SC_Cale_RND_WoodCreakingBoat_06" ID="{5D46943C-0334-479A-82F8-A1C2F948E876}" ShortID="44313105">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_06" ID="{1FC6272B-5254-47B7-9DB0-0660D1533B23}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_Cale_RND_WoodCreakingBoat_06.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="488703637"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_Cale_RND_WoodCreakingBoat_06" ID="{1FC6272B-5254-47B7-9DB0-0660D1533B23}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="AMB_SC_Cale_RND_WoodCreakingBoat" ID="{42420752-661E-49D6-A49B-214BB30C9741}"/>
+											</Playlist>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</BlendContainer>
 							</ChildrenList>
