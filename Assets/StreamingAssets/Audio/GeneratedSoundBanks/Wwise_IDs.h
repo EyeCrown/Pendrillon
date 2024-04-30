@@ -54,9 +54,9 @@ namespace AK
 
     namespace SWITCHES
     {
-        namespace CROWDHYPELEVEL
+        namespace CROWDREACTION
         {
-            static const AkUniqueID GROUP = 3660942794U;
+            static const AkUniqueID GROUP = 2134499837U;
 
             namespace SWITCH
             {
@@ -70,14 +70,14 @@ namespace AK
                 static const AkUniqueID HYPE_08 = 486820076U;
                 static const AkUniqueID HYPE_09 = 486820077U;
             } // namespace SWITCH
-        } // namespace CROWDHYPELEVEL
+        } // namespace CROWDREACTION
 
     } // namespace SWITCHES
 
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID CROWDBOREDOM = 2888587878U;
-        static const AkUniqueID CROWDHYPELEVEL = 3660942794U;
+        static const AkUniqueID CROWDREACTION = 2134499837U;
         static const AkUniqueID ENVIRONMENT_VOLUME = 2054307141U;
         static const AkUniqueID MAIN_VOLUME = 2312172015U;
         static const AkUniqueID MUSIC_VOLUME = 1006694123U;

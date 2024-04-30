@@ -3,7 +3,7 @@
 	<Switches>
 		<WorkUnit Name="Default Work Unit" ID="{0DA6A236-D673-4F4D-BFC0-3BF6F4116F84}" PersistMode="Standalone">
 			<ChildrenList>
-				<SwitchGroup Name="CrowdHypeLevel" ID="{27554F3A-C5AB-4DC5-BDED-1FD7A2A15C1F}">
+				<SwitchGroup Name="CrowdReaction" ID="{27554F3A-C5AB-4DC5-BDED-1FD7A2A15C1F}">
 					<PropertyList>
 						<Property Name="UseGameParameter" Type="bool" Value="True"/>
 					</PropertyList>
@@ -19,7 +19,7 @@
 						<Switch Name="Hype_09" ID="{6C80B4E7-5174-4C67-A21E-534E09DAF6DF}"/>
 					</ChildrenList>
 					<SwitchOnRTPC>
-						<GameParameterRef Name="CrowdHypeLevel" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}"/>
+						<GameParameterRef Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}"/>
 						<Curve Name="" ID="{EBFF1D7E-A8CF-482B-8E91-F5C8FFAB338F}">
 							<PropertyList>
 								<Property Name="Flags" Type="int32" Value="65537"/>
