@@ -117,7 +117,114 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="SFX" ID="{6516A83D-449B-4484-BEE3-B49C8906BEBD}" ShortID="231685745"/>
+				<Folder Name="SFX" ID="{6516A83D-449B-4484-BEE3-B49C8906BEBD}" ShortID="231685745">
+					<ChildrenList>
+						<Folder Name="Player" ID="{8BCBBD75-3F04-40E2-80EC-9B31B41D98F1}" ShortID="872929069">
+							<ChildrenList>
+								<Event Name="Play_SFX_Combat_Player_BasicAttack1_Hurt" ID="{6E4F5767-3925-4AE4-97EE-6C6197676551}">
+									<ChildrenList>
+										<Action Name="" ID="{43961A73-CDB0-4C82-947C-7A3DF109B9FE}" ShortID="221117955">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Combat_Player_Hurt" ID="{43F5B8F3-EB09-4483-A68E-79E34234FF50}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_Combat_Player_BasicAttack1" ID="{B8D13DAB-3D6C-4757-9042-01942488B102}">
+									<ChildrenList>
+										<Action Name="" ID="{6A6A6E74-10EF-40A8-98BB-2F9E16BFC37F}" ShortID="222121907">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Combat_Player_BasicAttack1" ID="{F3E92E78-80EE-4B5D-8838-3690584D13D4}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{B589E42D-4F77-4B7F-8D73-5C9B657D4F82}" ShortID="1034673767">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Combat_Player_Attack1" ID="{7E6BD419-A5EA-41C1-A3D9-79205467003F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="NPC" ID="{B86A02B6-3B66-4C70-A5D1-A0A82B080DCD}" ShortID="965421228">
+							<ChildrenList>
+								<Event Name="Play_SFX_Combat_NPC_RoyalGuard_Hurt" ID="{5D8CC151-742E-4E37-9CB9-B9CD506887E7}">
+									<ChildrenList>
+										<Action Name="" ID="{92A1AD72-7E62-40EF-ADBC-5B69E68371E9}" ShortID="937396411">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Combat_NPC_RoyalGuard1_Hurt" ID="{55DFBAD9-2BCE-4A6B-B167-E1353CB04B8E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_Combat_NPC_Bouffon_Hurt" ID="{5705698C-7B2C-404E-B951-1693A1315EC7}">
+									<ChildrenList>
+										<Action Name="" ID="{065A00EF-9D81-4FA0-94BE-0DB2686AB382}" ShortID="1011784262">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Combat_NPC_Bouffon_Hurt" ID="{89793031-0870-4191-9844-790249AAFF45}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_Combat_NPC_Bouffon_Attack1" ID="{C34F17A9-5B2C-41A9-B770-57FFA798BADF}">
+									<ChildrenList>
+										<Action Name="" ID="{B5B6C86E-6C30-4921-B732-3017F346E51B}" ShortID="677141905">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Combat_NPC_Bouffon_Attack1" ID="{ADF7C81E-052F-4571-97B1-1B02E442DB9D}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{E50113F5-28FB-461B-8575-C9D17B4A224E}" ShortID="603963791">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Combat_NPC_Bouffon_Attack1" ID="{235C5E2D-4FDD-4733-A41B-632E7107E1B4}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_Combat_NPC_RoyalGuard_Attack1" ID="{D6C7A0DE-3268-463A-BCFF-E1F850884F22}">
+									<ChildrenList>
+										<Action Name="" ID="{F964C0E3-1C36-4424-88E6-85EAB38CC1C8}" ShortID="33129839">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Combat_NPC_RoyalGuard_Attack1" ID="{6F7E8FFA-89E2-49E0-BB7A-CED2836CDCF0}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{57710008-E76C-4091-BBF3-E9EBD90A9E08}" ShortID="770814387">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Combat_NPC_RoyalGuard1_Attack1" ID="{DE6CDF03-9C0F-46D6-9674-A581BE286B1F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 				<Folder Name="Ambiances" ID="{E1349A6F-D7D5-4836-9241-1895A9830AEA}" ShortID="389265221">
 					<ChildrenList>
 						<Event Name="Play_CrowdHype" ID="{5AA3B44C-A286-49F9-946A-DAA2FF0A6380}">

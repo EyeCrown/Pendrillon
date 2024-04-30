@@ -130,6 +130,52 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="MUS_Combat_Player_BasicAttack1" ID="{738AA848-3F7E-4272-9968-48AA37A308B7}" ShortID="971102868">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Combat_Player_BasicAttack1" ID="{C94C0B14-6392-48BF-90EA-1C0D18255532}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Combat_Player_BasicAttack1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1065024955"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Combat_Player_BasicAttack1" ID="{C94C0B14-6392-48BF-90EA-1C0D18255532}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_Combat_Player_BasicAttack1" ID="{F3E92E78-80EE-4B5D-8838-3690584D13D4}" ShortID="606942813">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Combat_Player_BasicAttack1" ID="{BD2C6365-2D95-4B62-ACC5-A62E173176E5}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Combat_Player_BasicAttack1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="696326227"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Combat_Player_BasicAttack1" ID="{BD2C6365-2D95-4B62-ACC5-A62E173176E5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="SFX_Combat_NPC" ID="{4717DA6A-E157-42DF-B249-75364A06B8FF}" ShortID="836550068">
 							<ReferenceList>
@@ -160,6 +206,30 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_Combat_NPC_Bouffon_Attack1" ID="{ADF7C81E-052F-4571-97B1-1B02E442DB9D}" ShortID="1018854803">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Combat_NPC_Bouffon_Attack1" ID="{1076B320-50AD-415F-A6A1-2C6E106541F7}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Combat_NPC_Bouffon_Attack1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="154636845"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Combat_NPC_Bouffon_Attack1" ID="{1076B320-50AD-415F-A6A1-2C6E106541F7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="SFX_Combat_Moussaillons" ID="{42EA8C81-FA88-4649-85F0-5C86E49E7D0F}" ShortID="740716866">
 									<ReferenceList>
@@ -180,6 +250,30 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_Combat_NPC_RoyalGuard_Attack1" ID="{6F7E8FFA-89E2-49E0-BB7A-CED2836CDCF0}" ShortID="102657216">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Combat_NPC_RoyalGuard_Attack1" ID="{DE6E6346-BA93-423D-918B-F6E4487B1D32}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Combat_NPC_RoyalGuard_Attack1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="375072926"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Combat_NPC_RoyalGuard_Attack1" ID="{DE6E6346-BA93-423D-918B-F6E4487B1D32}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="SFX_Combat_Leviathan" ID="{2E0E6AFD-95FE-4424-A39D-906FC818DBEE}" ShortID="903855245">
 									<ReferenceList>

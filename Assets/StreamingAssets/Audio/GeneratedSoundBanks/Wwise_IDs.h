@@ -14,8 +14,13 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID GAMESTART = 4058101365U;
-        static const AkUniqueID NEW_EVENT_03 = 1027751980U;
         static const AkUniqueID PLAY_CROWDHYPE = 3360090021U;
+        static const AkUniqueID PLAY_SFX_COMBAT_NPC_BOUFFON_ATTACK1 = 3286192894U;
+        static const AkUniqueID PLAY_SFX_COMBAT_NPC_BOUFFON_HURT = 1514626058U;
+        static const AkUniqueID PLAY_SFX_COMBAT_NPC_ROYALGUARD_ATTACK1 = 37105197U;
+        static const AkUniqueID PLAY_SFX_COMBAT_NPC_ROYALGUARD_HURT = 1900933419U;
+        static const AkUniqueID PLAY_SFX_COMBAT_PLAYER_BASICATTACK1 = 3845829926U;
+        static const AkUniqueID PLAY_SFX_COMBAT_PLAYER_BASICATTACK1_HURT = 1280387290U;
         static const AkUniqueID PLAY_SFX_SC_CALE_AMBIANCE = 1004562353U;
         static const AkUniqueID PLAY_SFX_SC_THEATER_CROWDCHATTER = 2433984191U;
         static const AkUniqueID PLAY_SINE1KHZ = 3733116919U;
