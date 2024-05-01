@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}" SchemaVersion="110">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+					<PropertyList>
+						<Property Name="Ratio" Type="Real32" Value="2"/>
+						<Property Name="Threshold" Type="Real32" Value="-29.9"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>

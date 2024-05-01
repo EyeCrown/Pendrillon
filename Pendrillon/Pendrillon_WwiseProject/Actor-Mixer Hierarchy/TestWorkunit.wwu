@@ -31,16 +31,16 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="sine1kHz" ID="{E8A97BEF-58CE-4178-9987-31AECEC702A1}">
+								<SourcePlugin Name="Sine" ID="{1D596A13-EE89-4C1E-A1E8-FED73D5C2BDD}" ShortID="302264514" PluginName="Wwise Sine" CompanyID="0" PluginID="100">
+									<PropertyList>
+										<Property Name="SineFrequency" Type="Real32" Value="1000"/>
+										<Property Name="SineGain" Type="Real32" Value="-18"/>
+									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>sine1kHz.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="142558535"/>
-									</MediaIDList>
-								</AudioFileSource>
+								</SourcePlugin>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="sine1kHz" ID="{E8A97BEF-58CE-4178-9987-31AECEC702A1}" Platform="Linked"/>
+								<ActiveSource Name="Sine" ID="{1D596A13-EE89-4C1E-A1E8-FED73D5C2BDD}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

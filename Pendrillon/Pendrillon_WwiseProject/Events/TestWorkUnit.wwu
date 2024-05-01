@@ -22,6 +22,118 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="InWwiseTests" ID="{0F7C0049-5B3B-45E3-8C75-406036ECC50E}" ShortID="555031054">
+					<ChildrenList>
+						<Folder Name="Menu" ID="{6BB8C8FB-719E-4CAA-A751-4D17631CFAA1}" ShortID="534620837">
+							<ChildrenList>
+								<Event Name="SetHyperacusisOn" ID="{A5AD6591-D757-4D46-9E1E-AEC0C1530393}">
+									<ChildrenList>
+										<Action Name="" ID="{A41CF71A-E4E9-4954-A98D-0D08F4CA3FC6}" ShortID="442833481">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="HyperacusisModeOn" ID="{4C7BFA0E-7B0F-4BB9-91A3-0D5592FE207A}" WorkUnitID="{B9842828-DF03-4C03-8F32-476425273061}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="SetAllVolumesTo75" ID="{A8DCB543-EB9E-4654-9C70-A3841C4D7A18}">
+									<ChildrenList>
+										<Action Name="" ID="{CC3862FF-BCC1-44EE-A0A3-3AAFFD7AC2BD}" ShortID="112794652">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="75"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Environment_Volume" ID="{CEE89D78-1B7E-4D51-9450-E9BDB6FC83F7}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{8EEE239F-37F1-4E5D-894C-51B9A574C7C9}" ShortID="667170629">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="75"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Main_Volume" ID="{19082A20-41FF-4DD0-B340-3B50E196FF14}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{5C429D3D-72EC-422F-A5E8-B1C200DF5210}" ShortID="520414152">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="75"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Music_Volume" ID="{0DEF2135-992A-418F-9A75-DCAC5D85ED44}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{89869297-A03F-4715-A2AA-3A9F51BB45B1}" ShortID="678319487">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="75"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Volume" ID="{55C54716-8F65-444E-84CA-8DF18B47BD1E}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{A8A1E605-94DE-4CDD-AF4F-E79B58C29059}" ShortID="423607364">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="75"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Volume" ID="{97F26571-678B-4C43-A716-1FBCD1CD6C89}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{F7747F2C-2B0A-4069-BB3C-0BC092722717}" ShortID="852320828">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="75"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Voices_Volume" ID="{29D65E4A-55EC-48A4-8560-A7CDEEAC1C83}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="SetHyperacusisOff" ID="{5A95DA84-4597-4D09-BD98-44A22006414C}">
+									<ChildrenList>
+										<Action Name="" ID="{651ECD94-FA00-4D6A-948A-3BD3BFC344F1}" ShortID="137277828">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="HyperacusisModeOff" ID="{8FA5BD4D-9587-4FA8-A059-D856AA4BE330}" WorkUnitID="{B9842828-DF03-4C03-8F32-476425273061}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -1,6 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{3144A32B-FCB3-4C74-897D-A50BBF588497}" SchemaVersion="110">
 	<GameParameters>
-		<WorkUnit Name="Default Work Unit" ID="{3144A32B-FCB3-4C74-897D-A50BBF588497}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{3144A32B-FCB3-4C74-897D-A50BBF588497}" PersistMode="Standalone">
+			<ChildrenList>
+				<Folder Name="Menu_VolumeSliders" ID="{6FD4EBC7-F808-4902-BE3D-D2854BE0500F}" ShortID="965523879">
+					<ChildrenList>
+						<GameParameter Name="UI_Volume" ID="{97F26571-678B-4C43-A716-1FBCD1CD6C89}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="27"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="Music_Volume" ID="{0DEF2135-992A-418F-9A75-DCAC5D85ED44}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="26"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="Environment_Volume" ID="{CEE89D78-1B7E-4D51-9450-E9BDB6FC83F7}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="5"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="Voices_Volume" ID="{29D65E4A-55EC-48A4-8560-A7CDEEAC1C83}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="19"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="SFX_Volume" ID="{55C54716-8F65-444E-84CA-8DF18B47BD1E}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="23"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="Main_Volume" ID="{19082A20-41FF-4DD0-B340-3B50E196FF14}">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="10"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
+						</GameParameter>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Gameplay_RTPC" ID="{81C3651C-F5D4-4529-8FEA-AE1827B94F05}" ShortID="831822864">
+					<ChildrenList>
+						<GameParameter Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0.5"/>
+								<Property Name="Max" Type="Real64" Value="1"/>
+							</PropertyList>
+						</GameParameter>
+						<GameParameter Name="CrowdBoredom" ID="{61A3171D-F115-49E4-AADA-025E1CEAD958}"/>
+					</ChildrenList>
+				</Folder>
+			</ChildrenList>
+		</WorkUnit>
 	</GameParameters>
 </WwiseDocument>

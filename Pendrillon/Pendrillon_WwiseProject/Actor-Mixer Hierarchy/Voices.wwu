@@ -1,0 +1,464 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}" SchemaVersion="110" RootDocumentID="{2269E854-41B3-4C3D-BBD9-5DDDDD9BCC48}" ParentDocumentID="{2269E854-41B3-4C3D-BBD9-5DDDDD9BCC48}">
+	<AudioObjects>
+		<WorkUnit Name="Voices" ID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}" OwnerID="{2269E854-41B3-4C3D-BBD9-5DDDDD9BCC48}" PersistMode="Nested">
+			<PropertyList>
+				<Property Name="Color" Type="int16" Value="19"/>
+				<Property Name="OverrideColor" Type="bool" Value="True"/>
+			</PropertyList>
+			<ChildrenList>
+				<ActorMixer Name="VOX_Dialog" ID="{E95D1B69-F390-41C2-84AB-33254B095CA9}" ShortID="901597809">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="VOX_Dial_Full" ID="{A046CE9D-BA78-4B41-8A31-50C844B3CEAF}" ShortID="711490431">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<ActorMixer Name="Bouffon" ID="{C0E868A7-CD4D-46F7-995F-44199E60F7A5}" ShortID="1066710430">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+								</ActorMixer>
+								<ActorMixer Name="Gardes" ID="{784000DE-0686-4C31-B69B-E3BE8D0D7BAD}" ShortID="78202432">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+								</ActorMixer>
+								<ActorMixer Name="Juge" ID="{56993A0D-E8DF-400D-9B4C-75F58C726BD3}" ShortID="671661644">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+								</ActorMixer>
+								<ActorMixer Name="Moussaillons" ID="{0FE5B91F-F3A9-4AC7-A69B-022B3ACD1DAC}" ShortID="331825906">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+								</ActorMixer>
+								<ActorMixer Name="Passeur" ID="{FB46F687-DDA3-410D-A245-9EA418E39813}" ShortID="505674627">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+								</ActorMixer>
+								<ActorMixer Name="Player" ID="{769B339A-9B67-4B23-9BD5-51F5C428D0FB}" ShortID="1005384544">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+								</ActorMixer>
+								<ActorMixer Name="Pretre" ID="{D7F27B48-4F2B-4217-9AFD-E404589B8FCA}" ShortID="263025939">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+								</ActorMixer>
+								<ActorMixer Name="Sireine" ID="{617DAF5A-2344-4B22-8948-0C4C36112D41}" ShortID="934550579">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+								</ActorMixer>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="VOX_Dial_Simple" ID="{4EBF00B3-317B-4AC7-9869-253A25B6AF63}" ShortID="331224415">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="VOX_Combat" ID="{160BAC06-62E3-4F0C-B0A1-21FE9A7A4EC0}" ShortID="689949025">
+					<PropertyList>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>8</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<ActorMixer Name="Bouffon" ID="{E563D235-9D35-4E01-A801-7E5F80989ED1}" ShortID="516037736">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="VOX_Combat_NPC_Bouffon_Attack1" ID="{235C5E2D-4FDD-4733-A41B-632E7107E1B4}" ShortID="1039335298">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_Combat_NPC_Bouffon_Attack1" ID="{AAD68B5B-48C5-477A-9AE1-1226F936DF04}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_Combat_NPC_Bouffon_Attack1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="68900219"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_Combat_NPC_Bouffon_Attack1" ID="{AAD68B5B-48C5-477A-9AE1-1226F936DF04}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VOX_Combat_NPC_Bouffon_Hurt" ID="{89793031-0870-4191-9844-790249AAFF45}" ShortID="66812248">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>7</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_Combat_NPC_Bouffon_Hurt" ID="{DA4F27A3-2579-41FE-86B8-5E4EEA239883}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_Combat_NPC_Bouffon_Hurt.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1007796362"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_Combat_NPC_Bouffon_Hurt" ID="{DA4F27A3-2579-41FE-86B8-5E4EEA239883}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="Gardes" ID="{22ECB24C-F809-4236-80F2-EC55A5F8BF6B}" ShortID="487496528">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="VOX_Combat_NPC_RoyalGuard1_Attack1" ID="{DE6CDF03-9C0F-46D6-9674-A581BE286B1F}" ShortID="434588299">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_Combat_NPC_RoyalGuard1_Attack1" ID="{4D250EDC-C1CF-41E2-BFFF-CF1F88D50A84}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_Combat_NPC_RoyalGuard1_Attack1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="828352719"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_Combat_NPC_RoyalGuard1_Attack1" ID="{4D250EDC-C1CF-41E2-BFFF-CF1F88D50A84}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VOX_Combat_NPC_RoyalGuard1_Hurt" ID="{55DFBAD9-2BCE-4A6B-B167-E1353CB04B8E}" ShortID="913635385">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_Combat_NPC_RoyalGuard1_Hurt" ID="{F8C1B495-3371-4999-9330-D775DC332473}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_Combat_NPC_RoyalGuard1_Hurt.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="13105253"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_Combat_NPC_RoyalGuard1_Hurt" ID="{F8C1B495-3371-4999-9330-D775DC332473}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VOX_Combat_NPC_RoyalGuard2_Attack1" ID="{8A39E538-74C8-4151-A788-6C9D1D155440}" ShortID="986183447">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_Combat_NPC_RoyalGuard2_Attack1" ID="{CD7A5680-7570-4124-9E79-F177FCA0C402}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_Combat_NPC_RoyalGuard2_Attack1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="153264769"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_Combat_NPC_RoyalGuard2_Attack1" ID="{CD7A5680-7570-4124-9E79-F177FCA0C402}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VOX_Combat_NPC_RoyalGuard2_Hurt" ID="{CEFAC4E6-AF09-487B-B5DC-03B39DB6E2DD}" ShortID="660450631">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_Combat_NPC_RoyalGuard2_Hurt" ID="{15F9A58B-D2D6-428F-B7BC-30983BA5828C}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_Combat_NPC_RoyalGuard2_Hurt.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="34596526"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_Combat_NPC_RoyalGuard2_Hurt" ID="{15F9A58B-D2D6-428F-B7BC-30983BA5828C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="Juge" ID="{7BDF70DB-7255-469F-8CA3-A6317BB12BD3}" ShortID="390261980">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+						<ActorMixer Name="Moussaillons" ID="{025DB49E-C982-40DB-926F-9FE09A607597}" ShortID="1032323834">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+						<ActorMixer Name="Passeur" ID="{FC9E6168-BFE3-4C44-8E06-CA22CCB61799}" ShortID="727947402">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+						<ActorMixer Name="Player" ID="{619DABF9-F522-4E75-877E-A9ABC94299F8}" ShortID="899377884">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="VOX_Combat_Player_Attack1" ID="{7E6BD419-A5EA-41C1-A3D9-79205467003F}" ShortID="800834633">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{42312728-5C84-4A8A-842C-2EC8ADB60BF2}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="51"/>
+															<Property Name="Min" Type="Real64" Value="-76"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_Combat_Player_Attack1" ID="{0F782948-792C-4EE6-ACDB-A5762E5309A0}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_Combat_Player_Attack1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1062970758"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_Combat_Player_Attack1" ID="{0F782948-792C-4EE6-ACDB-A5762E5309A0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VOX_Combat_Player_Hurt" ID="{43F5B8F3-EB09-4483-A68E-79E34234FF50}" ShortID="414099556">
+									<PropertyList>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{739AA1F3-4E87-47D8-BE0D-D1A0CE10D820}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Max" Type="Real64" Value="151"/>
+															<Property Name="Min" Type="Real64" Value="-126"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_Combat_Player_Hurt" ID="{0318C501-984D-4893-9718-59F8F03D8274}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_Combat_Player_Hurt.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="882016150"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_Combat_Player_Hurt" ID="{0318C501-984D-4893-9718-59F8F03D8274}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="Pretre" ID="{EC7908D0-5CF9-45A0-B7A6-7665A7944094}" ShortID="25357583">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+						<ActorMixer Name="Sireine" ID="{08E73207-F564-4D0F-95F6-E55EC5C364CC}" ShortID="836339496">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+						</ActorMixer>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

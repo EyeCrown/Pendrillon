@@ -1,6 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{0DA6A236-D673-4F4D-BFC0-3BF6F4116F84}" SchemaVersion="110">
 	<Switches>
-		<WorkUnit Name="Default Work Unit" ID="{0DA6A236-D673-4F4D-BFC0-3BF6F4116F84}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{0DA6A236-D673-4F4D-BFC0-3BF6F4116F84}" PersistMode="Standalone">
+			<ChildrenList>
+				<SwitchGroup Name="CrowdReaction" ID="{27554F3A-C5AB-4DC5-BDED-1FD7A2A15C1F}">
+					<PropertyList>
+						<Property Name="UseGameParameter" Type="bool" Value="True"/>
+					</PropertyList>
+					<ChildrenList>
+						<Switch Name="Hype_01" ID="{6FE51898-ED61-4D42-BA7D-9CFC12A21193}"/>
+						<Switch Name="Hype_02" ID="{D701ED42-4EB1-4789-BF8A-FD769F010AEA}"/>
+						<Switch Name="Hype_03" ID="{3304183F-FC8D-455E-8F45-D2610810B3C7}"/>
+						<Switch Name="Hype_04" ID="{7D3D890E-0DD0-4DB0-A487-2893EA7921D4}"/>
+						<Switch Name="Hype_05" ID="{7BAF1D0C-D0FF-45B9-AEBF-3DD84C173452}"/>
+						<Switch Name="Hype_06" ID="{E9D40200-B585-4FE3-B917-5118A09DA24C}"/>
+						<Switch Name="Hype_07" ID="{A4B6237A-78DA-4CD9-A22C-7B244B2B4FBC}"/>
+						<Switch Name="Hype_08" ID="{385F4FFC-43AD-4E95-AFF6-2BE9E102C03D}"/>
+						<Switch Name="Hype_09" ID="{6C80B4E7-5174-4C67-A21E-534E09DAF6DF}"/>
+					</ChildrenList>
+					<SwitchOnRTPC>
+						<GameParameterRef Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}"/>
+						<Curve Name="" ID="{EBFF1D7E-A8CF-482B-8E91-F5C8FFAB338F}">
+							<PropertyList>
+								<Property Name="Flags" Type="int32" Value="65537"/>
+							</PropertyList>
+							<PointList>
+								<Point>
+									<XPos>0</XPos>
+									<YPos>1</YPos>
+									<Flags>5</Flags>
+								</Point>
+								<Point>
+									<XPos>0.126117</XPos>
+									<YPos>1</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.149764</XPos>
+									<YPos>2</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.249606</XPos>
+									<YPos>3</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.349448</XPos>
+									<YPos>4</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.449291</XPos>
+									<YPos>5</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.550709</XPos>
+									<YPos>6</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.650026</XPos>
+									<YPos>7</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.75092</XPos>
+									<YPos>8</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>0.852338</XPos>
+									<YPos>9</YPos>
+									<Flags>0</Flags>
+								</Point>
+								<Point>
+									<XPos>1</XPos>
+									<YPos>9</YPos>
+									<Flags>37</Flags>
+								</Point>
+							</PointList>
+						</Curve>
+					</SwitchOnRTPC>
+				</SwitchGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</Switches>
 </WwiseDocument>

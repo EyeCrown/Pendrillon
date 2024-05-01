@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{B9842828-DF03-4C03-8F32-476425273061}" SchemaVersion="110">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{B9842828-DF03-4C03-8F32-476425273061}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{B9842828-DF03-4C03-8F32-476425273061}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="HyperacusisMode" ID="{953B7465-ED71-429C-ACB5-3CDC959F38FA}">
+					<ChildrenList>
+						<State Name="None" ID="{5BA632EA-E74D-4A6D-88CC-9F9D0CCCDC94}"/>
+						<State Name="HyperacusisModeOn" ID="{4C7BFA0E-7B0F-4BB9-91A3-0D5592FE207A}"/>
+						<State Name="HyperacusisModeOff" ID="{8FA5BD4D-9587-4FA8-A059-D856AA4BE330}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>
