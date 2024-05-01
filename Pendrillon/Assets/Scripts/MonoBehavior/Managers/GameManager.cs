@@ -58,12 +58,22 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        foreach (var character in characters)
+        // foreach (var character in characters)
+        // {
+        //     CharacterHandler characterHandler = Instantiate(character, transform);
+        //     characterHandler.Dialogue.AddListener(characterHandler.UpdateDialogue);
+        //     character = characterHandler;
+        // }
+
+        for (int i = 0; i < characters.Count; i++)
         {
-            CharacterHandler characterHandler = Instantiate(character, transform);
+            CharacterHandler characterHandler = Instantiate(characters[i]);
+            characterHandler.transform.position = new Vector3(-5 + i * 1.5f, 0, 5);
             characterHandler.Dialogue.AddListener(characterHandler.UpdateDialogue);
+            characters[i] = characterHandler;
         }
         
+        FightingManager.Instance.player = GetCharacter("PLAYER");
         
         BeginGame();
     }
@@ -89,18 +99,19 @@ public class GameManager : MonoBehaviour
     void FromActingPhaseToFightingPhase(List<String> enemiesToFight)
     {
         Debug.Log("GM.FromActingPhaseToFightingPhase > Can prepare the fight");
-        SceneManager.LoadScene("DemoFightingScene");
+        //SceneManager.LoadScene("DemoFightingScene");
 
+        float x = 0, z = 0;
         foreach (var enemyName in enemiesToFight)
         {
-            Enemy enemy = Instantiate(enemyPrefab, FightingManager.Instance.transform).GetComponent<Enemy>();
+            Enemy enemy = Instantiate(enemyPrefab).GetComponent<Enemy>();
+            enemy.transform.position = new Vector3(1.5f + x, 0, 3.0f + z);
             enemy._character = GetCharacter(enemyName).character;
             enemy.damage = 5;
             FightingManager.Instance.enemies.Add(enemy);
-            FightingManager.Instance.BeginPlayerTurn.Invoke();
         }
         
-        
+        FightingManager.Instance.BeginPlayerTurn.Invoke();
     }
 
 

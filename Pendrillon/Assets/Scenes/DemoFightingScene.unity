@@ -167,9 +167,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b431187214d0d6e41bf24e5b8e656dc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkAsset: {fileID: 4900000, guid: 8dd891f4bd4c4a549aba0fb66440de85, type: 3}
+  charactersOnStage: []
+  canvas: {fileID: 0}
   dialogueText: {fileID: 0}
   tagsText: {fileID: 0}
+  choiceButtonPrefab: {fileID: 0}
   choicesButtonList:
   - {fileID: 0}
   - {fileID: 0}
@@ -227,6 +229,9 @@ MonoBehaviour:
   nameText: {fileID: 0}
   dialogueText: {fileID: 0}
   coordsOnStatge: {x: 0, y: 0}
+  Dialogue:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!136 &359326059
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -309,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 359326057}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.41, y: 0, z: 2.07}
+  m_LocalPosition: {x: -4, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1101,8 +1106,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characters:
   - {fileID: 0}
+  enemyPrefab: {fileID: 0}
   gridScene: {fileID: 0}
   inkAsset: {fileID: 0}
+  _wwiseEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!4 &1286597836
 Transform:
   m_ObjectHideFlags: 0
@@ -1600,7 +1610,7 @@ PrefabInstance:
     - target: {fileID: 5551810189669334834, guid: edd0006ad04f5e342840f68fd926c4c4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.45
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5551810189669334834, guid: edd0006ad04f5e342840f68fd926c4c4,
         type: 3}
@@ -1610,7 +1620,7 @@ PrefabInstance:
     - target: {fileID: 5551810189669334834, guid: edd0006ad04f5e342840f68fd926c4c4,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.83
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5551810189669334834, guid: edd0006ad04f5e342840f68fd926c4c4,
         type: 3}

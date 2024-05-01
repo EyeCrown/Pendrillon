@@ -43,6 +43,7 @@ public class FightingManager : MonoBehaviour
     
     // UI Debug 
     public Canvas canvas;
+    public GameObject uiParent;
     public TextMeshProUGUI playerDataText;
     public TextMeshProUGUI actionSelectedText;
     public Button buttonPrefab;
@@ -64,14 +65,14 @@ public class FightingManager : MonoBehaviour
 
     void Start()
     {
+        uiParent.gameObject.SetActive(false);
+        player = GameManager.Instance.GetCharacter("PLAYER");
         player.character.Initialize();
 
         foreach (var enemy in enemies)
         {
             enemy.Initialize();
         }
-
-        SetupActionButtons();
         
         actionSelectedText.text = String.Empty;
         selectedActions.Clear();
@@ -82,11 +83,18 @@ public class FightingManager : MonoBehaviour
 
     void BeginFight()
     {
+        uiParent.gameObject.SetActive(true);
         player.character.Initialize();
-
+        player.transform.position = new Vector3(-4.0f, 0, 2.0f);
+        
+        float x = 0, z = 0;
         foreach (var enemy in enemies)
         {
+            enemy.transform.position = new Vector3(1.5f + x, 0, 3.0f + z);
             enemy.Initialize();
+            
+            x += 1.5f;
+            z -= 1.5f;
         }
         SetupActionButtons();
         BeginTurn();
@@ -94,12 +102,12 @@ public class FightingManager : MonoBehaviour
     
     void SetupActionButtons()
     {
-        Vector2 buttonPos = new Vector2(115, 65);
+        Vector2 buttonPos = new Vector2(115, 100);
         foreach (var action in actionsList)
         {
             Debug.Log(action.GetType());
             
-            Button button = Instantiate(buttonPrefab, canvas.transform);
+            Button button = Instantiate(buttonPrefab, uiParent.transform);
             button.GetComponent<RectTransform>().position = buttonPos;
             button.GetComponentInChildren<TextMeshProUGUI>().text = action.ToString();
             

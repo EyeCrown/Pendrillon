@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -18,7 +19,7 @@ public struct Characteristic
 {
     
     private CharacteristicType type;
-    [Range(0, 100)]
+    [Range(0, 10)]
     [SerializeField] private int baseValue;
     
     //[HideInInspector]
@@ -40,6 +41,12 @@ public struct Characteristic
     {
         currValue = baseValue;
     }
+
+    public void SetupBase(int value)
+    {
+        baseValue = value;
+        Initialize();
+    }
 }
 
 [CreateAssetMenu(fileName = "Character", menuName = "Pendrillon/Character")]
@@ -51,11 +58,11 @@ public class Character : ScriptableObject
     public int hp;
     public const int baseHp = 20;
     
-    public Characteristic charisma      = new Characteristic(CharacteristicType.CHARISMA,       50);
-    public Characteristic strength      = new Characteristic(CharacteristicType.STRENGTH,       50);
-    public Characteristic dexterity     = new Characteristic(CharacteristicType.DEXTERITY,      50);
-    public Characteristic constitution  = new Characteristic(CharacteristicType.CONSTITUTION,   50);
-    public Characteristic luck          = new Characteristic(CharacteristicType.LUCK,           50);
+    public Characteristic charisma      = new Characteristic(CharacteristicType.CHARISMA,       5);
+    public Characteristic strength      = new Characteristic(CharacteristicType.STRENGTH,       5);
+    public Characteristic dexterity     = new Characteristic(CharacteristicType.DEXTERITY,      5);
+    public Characteristic constitution  = new Characteristic(CharacteristicType.CONSTITUTION,   5);
+    public Characteristic luck          = new Characteristic(CharacteristicType.LUCK,           5);
     
     public AnimationCurve movementCurve = AnimationCurve.Linear(0.0f, 0.0f, 1.0f, 1.0f);
 

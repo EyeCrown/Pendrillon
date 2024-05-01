@@ -17,6 +17,7 @@ public class ActingManager : MonoBehaviour
     
     // UI
     public Canvas canvas;
+    public GameObject uiParent;
     // Text box
     public TextMeshProUGUI dialogueText;
     
@@ -52,7 +53,7 @@ public class ActingManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         
         startActingPhase.AddListener(StartStory);
-
+        endOfActingPhase.AddListener(CloseUI);
     }
 
     void Start()
@@ -61,9 +62,19 @@ public class ActingManager : MonoBehaviour
 
     private void StartStory()
     {
+        uiParent.gameObject.SetActive(true);
         _story = new Story(GameManager.Instance.inkAsset.text);
         savedJsonStack = new Stack<string>();
 
+
+        GameManager.Instance.GetCharacter("PLAYER").character.charisma.SetupBase((int)_story.variablesState["p_char"]);
+        GameManager.Instance.GetCharacter("PLAYER").character.strength.SetupBase((int)_story.variablesState["p_stre"]);
+        GameManager.Instance.GetCharacter("PLAYER").character.dexterity.SetupBase((int)_story.variablesState["p_dext"]);
+        GameManager.Instance.GetCharacter("PLAYER").character.constitution.SetupBase((int)_story.variablesState["p_comp"]);
+        GameManager.Instance.GetCharacter("PLAYER").character.luck.SetupBase((int)_story.variablesState["p_luck"]);
+        
+        Debug.Log($"AM.StartStory() > GameManager.Instance.GetCharacter(\"PLAYER\").character:{GameManager.Instance.GetCharacter("PLAYER").character.ToString()}");
+        
         Debug.Log(_story);
         
         Refresh();
@@ -158,7 +169,7 @@ public class ActingManager : MonoBehaviour
                 for (int i = 0; i < _story.currentChoices.Count; i++)
                 {
                     Choice choice = _story.currentChoices[i];
-                    Button button = Instantiate(choiceButtonPrefab, canvas.transform);
+                    Button button = Instantiate(choiceButtonPrefab, uiParent.transform);
                     button.GetComponent<RectTransform>().position = buttonPos;
                     button.GetComponentInChildren<TextMeshProUGUI>().text = _story.currentChoices[i].text;
                     
@@ -167,6 +178,7 @@ public class ActingManager : MonoBehaviour
                     });
                     buttonPos.x += button.GetComponent<RectTransform>().sizeDelta.x + 10;
                     choicesButtonList.Add(button);
+                    Debug.Log($"AM.Refresh() > button.GetComponentInChildren<TextMeshProUGUI>().text:{button.GetComponentInChildren<TextMeshProUGUI>().text}");
                 }
             }
             else //if(!_story.canContinue)
@@ -231,6 +243,12 @@ public class ActingManager : MonoBehaviour
         }
         
 
+    }
+
+    void CloseUI(List<String> list)
+    {
+        Debug.Log("AM.CloseUI()");
+        uiParent.gameObject.SetActive(false);
     }
 
     public String ParseDialogue(String text)
