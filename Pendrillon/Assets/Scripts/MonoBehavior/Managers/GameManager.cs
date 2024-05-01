@@ -29,6 +29,9 @@ public class GameManager : MonoBehaviour
     
     public GroundGrid gridScene;
 
+    public Transform playerPos;
+    public Transform enemyPos;
+    
     
     public TextAsset inkAsset;  
     
@@ -74,6 +77,8 @@ public class GameManager : MonoBehaviour
         }
         
         FightingManager.Instance.player = GetCharacter("PLAYER");
+        FightingManager.Instance.player.transform.position = playerPos.position;
+        FightingManager.Instance.player.transform.LookAt(Camera.main.transform);
         
         BeginGame();
     }
@@ -111,10 +116,13 @@ public class GameManager : MonoBehaviour
         foreach (var enemyName in enemiesToFight)
         {
             Enemy enemy = Instantiate(enemyPrefab).GetComponent<Enemy>();
-            enemy.transform.position = new Vector3(1.5f + x, 0, 3.0f + z);
+            enemy.transform.position = enemyPos.position;
             enemy._character = GetCharacter(enemyName).character;
-            enemy.damage = 5;
+            //enemy.damage = 5;
             FightingManager.Instance.enemies.Add(enemy);
+            
+            x += 1.5f;
+            z -= 1.5f;
         }
         
         FightingManager.Instance.BeginFight();

@@ -90,16 +90,17 @@ public class FightingManager : MonoBehaviour
     {
         uiParent.gameObject.SetActive(true);
         player.character.Initialize();
-        player.transform.position = new Vector3(-4.0f, 0, 2.0f);
+        //player.transform.position = new Vector3(-4.0f, 0, 2.0f);
         
         float x = 0, z = 0;
         foreach (var enemy in enemies)
         {
-            enemy.transform.position = new Vector3(1.5f + x, 0, 3.0f + z);
+            enemy.transform.position = GameManager.Instance.enemyPos.position + new Vector3(1.5f + x, 0, 3.0f + z);
+            enemy.transform.LookAt(Camera.main.transform);
             enemy.Initialize();
             
-            x += 1.5f;
-            z -= 1.5f;
+            x += 3.0f;
+            z += 3.0f;
         }
         SetupActionButtons();
         BeginTurn();
