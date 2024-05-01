@@ -10,9 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f13e5ec86714e34bbbe167e42e27995, type: 3}
-  m_Name: TargetableAction
+  m_Name: Sword Charge
   m_EditorClassIdentifier: 
-  successRate: 40
-  cost: 2
-  description: Targetable action
+  characteristic: 1
+  damage: 4
+  precison: 90
+  cost: 3
+  description: Hit your enemy with a sword charge. Deals 4 dmg.
+  accesibleByDefault: 1
+  dependence: {fileID: 0}
+  usableOnce: 0
   target: {fileID: 0}

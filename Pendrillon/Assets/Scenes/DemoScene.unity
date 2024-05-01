@@ -288,10 +288,10 @@ RectTransform:
   - {fileID: 252073605}
   m_Father: {fileID: 568716598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &197069803
 GameObject:
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 2.7230225}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -496,8 +496,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -580, y: -17.919}
-  m_SizeDelta: {x: 740, y: 496.17}
+  m_AnchoredPosition: {x: 736, y: -25}
+  m_SizeDelta: {x: 455.4, y: 302.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &362671594
 GameObject:
@@ -712,8 +712,12 @@ MonoBehaviour:
   player: {fileID: 0}
   enemies: []
   actionsList:
-  - {fileID: 11400000, guid: 9fc8bd61a03e0ac4a908b7c048ff6e46, type: 2}
-  - {fileID: 11400000, guid: 5108232e4c6576744b545dfbffe9dcf3, type: 2}
+  - {fileID: 11400000, guid: 15fc2cdf531604345b3148fe1a92548c, type: 2}
+  - {fileID: 11400000, guid: 1c0c359c12d321b40bfd98987d2b26d1, type: 2}
+  - {fileID: 11400000, guid: 50a59649b75b57b4f9a8e4484b40cb98, type: 2}
+  - {fileID: 11400000, guid: 69e16fb9bc771d04991a113b74ea06d2, type: 2}
+  - {fileID: 11400000, guid: c3237c8cb118f1c4986a3153f31fb633, type: 2}
+  - {fileID: 11400000, guid: 811bde4e27b6ccc46af1bba199d11877, type: 2}
   actionPoints: 0
   selectedActions: []
   BeginPlayerTurn:
@@ -723,6 +727,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   MustSelectTarget:
+    m_PersistentCalls:
+      m_Calls: []
+  ValidateTarget:
     m_PersistentCalls:
       m_Calls: []
   canvas: {fileID: 568716597}
@@ -970,8 +977,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 380}
-  m_SizeDelta: {x: 1800, y: 200}
+  m_AnchoredPosition: {x: 0, y: 336.75}
+  m_SizeDelta: {x: 0, y: -673.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &524331238
 MonoBehaviour:
@@ -1652,10 +1659,10 @@ RectTransform:
   - {fileID: 1617536857}
   m_Father: {fileID: 568716598}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1426214830
 GameObject:
@@ -1931,7 +1938,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -1871, y: -726}
+  m_AnchoredPosition: {x: -1877, y: -308}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1475272760
@@ -2195,7 +2202,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 421, y: 303}
+  m_AnchoredPosition: {x: -494, y: -194}
   m_SizeDelta: {x: 987.0654, y: 387.8622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617536858
@@ -2972,10 +2979,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 35
-  m_fontSizeBase: 36
+  m_fontSize: 59.5
+  m_fontSizeBase: 59.5
   m_fontWeight: 400
-  m_enableAutoSizing: 1
+  m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 35
   m_fontStyle: 0
@@ -3008,7 +3015,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -606.1825, w: 0}
+  m_margin: {x: 0, y: 0, z: -606.1825, w: -286.02103}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

@@ -165,7 +165,7 @@ public class ActingManager : MonoBehaviour
             // Choices
             if (_story.currentChoices.Count > 0)
             {
-                Vector2 buttonPos = new Vector2(115, 100);
+                Vector2 buttonPos = new Vector2(150, 150);
                 for (int i = 0; i < _story.currentChoices.Count; i++)
                 {
                     Choice choice = _story.currentChoices[i];
@@ -176,7 +176,7 @@ public class ActingManager : MonoBehaviour
                     button.onClick.AddListener (delegate {
                         OnClickChoiceButton (choice);
                     });
-                    buttonPos.x += button.GetComponent<RectTransform>().sizeDelta.x + 10;
+                    buttonPos.x += button.GetComponent<RectTransform>().sizeDelta.x + 20;
                     choicesButtonList.Add(button);
                     Debug.Log($"AM.Refresh() > button.GetComponentInChildren<TextMeshProUGUI>().text:{button.GetComponentInChildren<TextMeshProUGUI>().text}");
                 }

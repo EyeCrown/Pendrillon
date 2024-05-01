@@ -9,14 +9,15 @@ public class TargetableAction : FightAction
     
     public override void Perform()
     {
-        
+        base.Perform();
+        target.GetComponent<Enemy>().TakeDamageEvent.Invoke(damage);
         
         Debug.Log("Interact with " + target.name);
     }
     
     public override string ToString()
     {
-        return base.ToString() + "\nTarget: " + target.ToString() + "";
+        return base.ToString(); // + "\nTarget: " + target.ToString() + "";
     }
 
     public void AssignTarget(GameObject targetToAssign)

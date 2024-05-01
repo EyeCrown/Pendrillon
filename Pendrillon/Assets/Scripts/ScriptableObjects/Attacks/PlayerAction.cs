@@ -12,6 +12,7 @@ public class PlayerAction : FightAction
     
     public override void Perform()
     {
+        base.Perform();
         FightingManager.Instance.player.character.ModifyCharacteristic(type, value);
         Debug.Log("Modifying "+ type.ToString() + " with " + value.ToString());
     }

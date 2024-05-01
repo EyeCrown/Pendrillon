@@ -30,6 +30,7 @@ public class Enemy : MonoBehaviour
         
         canBeTargeted = false;
         FightingManager.Instance.MustSelectTarget.AddListener(BecomeTargetable);
+        FightingManager.Instance.ValidateTarget.AddListener(BecomeUntargetable);
     }
     
     public void Initialize()
@@ -45,6 +46,13 @@ public class Enemy : MonoBehaviour
         
         Debug.Log(gameObject.name + " can be targeted");
     }
+    void BecomeUntargetable(FightAction action)
+    {
+        canBeTargeted = false;
+        GetComponent<Renderer>().material.color = Color.white;
+        
+        Debug.Log(gameObject.name + " can be targeted");
+    }
 
     public void TakeDamage(int damage)
     {
@@ -55,6 +63,31 @@ public class Enemy : MonoBehaviour
             FightingManager.Instance.RemoveEnemy(this);
             Destroy(gameObject);
         }
+    }
+
+    public int GetDamage()
+    {
+        int whatAttack = Random.Range(0, 3);
+        Debug.Log($"Enemy.GetDamage > attack type: {whatAttack}");
+        int damageAttack = 0;
+        switch (whatAttack)
+        {
+            case 0:
+                if (Random.Range(0, 10) < 9)
+                    damageAttack = 1;
+                break;
+            case 1:
+                if (Random.Range(0, 10) < 7)
+                    damageAttack = 2;
+                break;
+            case 2:
+                damageAttack = 0;
+                if (Random.Range(0, 10) < 6)
+                    TakeDamageEvent.Invoke(-4);
+                break;
+        }
+
+        return damageAttack;
     }
     
     

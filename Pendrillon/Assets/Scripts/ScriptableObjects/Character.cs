@@ -56,7 +56,7 @@ public class Character : ScriptableObject
     public new String name;
 
     public int hp;
-    public const int baseHp = 20;
+    public const int baseHp = 15;
     
     public Characteristic charisma      = new Characteristic(CharacteristicType.CHARISMA,       5);
     public Characteristic strength      = new Characteristic(CharacteristicType.STRENGTH,       5);

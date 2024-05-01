@@ -33,6 +33,7 @@ public class FightingManager : MonoBehaviour
     public UnityEvent BeginPlayerTurn;
     public UnityEvent Validate;
     public UnityEvent MustSelectTarget;
+    public UnityEvent<FightAction> ValidateTarget;
     //public UnityAction EndFight;
     
     
@@ -49,6 +50,8 @@ public class FightingManager : MonoBehaviour
     public Button buttonPrefab;
     private List<Button> buttonsList;
     
+    public List<Tuple<FightAction, Button>> actionButtonList;
+    
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -59,8 +62,10 @@ public class FightingManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(this.gameObject);
         
-        BeginPlayerTurn.AddListener(BeginFight);
+        BeginPlayerTurn.AddListener(BeginTurn);
         BeginPlayerTurn.AddListener(UpdateUIText);
+        
+        ValidateTarget.AddListener(UpdateDependences);
     }
 
     void Start()
@@ -78,10 +83,10 @@ public class FightingManager : MonoBehaviour
         selectedActions.Clear();
         
         //BeginPlayerTurn.Invoke();
-
+        actionButtonList = new List<Tuple<FightAction, Button>>();
     }
 
-    void BeginFight()
+    public void BeginFight()
     {
         uiParent.gameObject.SetActive(true);
         player.character.Initialize();
@@ -102,20 +107,26 @@ public class FightingManager : MonoBehaviour
     
     void SetupActionButtons()
     {
-        Vector2 buttonPos = new Vector2(115, 100);
+        Vector2 buttonPos = new Vector2(150, 150);
         foreach (var action in actionsList)
         {
-            Debug.Log(action.GetType());
+            action.alreadyUse = false;
+            Debug.Log($"FM.SetupActionButtons > {actionButtonList.ToString()}");
             
             Button button = Instantiate(buttonPrefab, uiParent.transform);
             button.GetComponent<RectTransform>().position = buttonPos;
             button.GetComponentInChildren<TextMeshProUGUI>().text = action.ToString();
             
             button.onClick.AddListener(delegate {SelectAction(action, button);});
-            Debug.Log(action.ToString());
+            //Debug.Log(action.ToString());
 
-            buttonPos.x += button.GetComponent<RectTransform>().sizeDelta.x + 10;
+            buttonPos.x += button.GetComponent<RectTransform>().sizeDelta.x + 20;
             buttonsList.Add(button);
+            
+            if (!action.accesibleByDefault)
+                button.gameObject.SetActive(false);
+            
+            actionButtonList.Add(new Tuple<FightAction, Button>(action, button));
         }
     }
 
@@ -136,12 +147,12 @@ public class FightingManager : MonoBehaviour
         
         actionPoints += 3;
 
-        for (int i=0; i< actionsList.Count; i++)
+        for (int i=0; i< actionButtonList.Count; i++)
         {
-            if (actionsList[i].cost > actionPoints)
-                buttonsList[i].interactable = false;
+            if (actionButtonList[i].Item1.cost <= actionPoints && !(actionButtonList[i].Item1.usableOnce && actionButtonList[i].Item1.alreadyUse))
+                actionButtonList[i].Item2.interactable = true;
             else
-                buttonsList[i].interactable = true;
+                actionButtonList[i].Item2.interactable = false;
         }
         
         playerDataText.text = actionPoints+"PA\n" + player.character;
@@ -161,8 +172,6 @@ public class FightingManager : MonoBehaviour
         {
             AddActionToSelection(action);
         }
-
-        
     }
 
     void AddActionToSelection(FightAction action)
@@ -174,15 +183,16 @@ public class FightingManager : MonoBehaviour
             Debug.Log("Add " + action.name + " to list actions");
             //buttonObject.gameObject.SetActive(false);
             
-            for (int i=0; i< actionsList.Count; i++)
+            for (int i=0; i< actionButtonList.Count; i++)
             {
-                if (actionsList[i].cost > actionPoints)
-                    buttonsList[i].interactable = false;
+                if (actionButtonList[i].Item1.cost > actionPoints)
+                    actionButtonList[i].Item2.interactable = false;
                 else
-                    buttonsList[i].interactable = true;
+                    actionButtonList[i].Item2.interactable = true;
             }
         
             playerDataText.text = actionPoints+"PA\n" + player.character;
+            ValidateTarget.Invoke(action);
         }
         else
         {
@@ -193,11 +203,26 @@ public class FightingManager : MonoBehaviour
 
     public void AddTargetableAction(GameObject target)
     {
+        ValidateTarget.Invoke(waitingAction);
+        
         waitingAction.target = target;
+        
         if (waitingAction != null) AddActionToSelection(waitingAction);
         waitingAction = null;
         
         ValidateAttacks();
+    }
+
+    public void UpdateDependences(FightAction action)
+    {
+        foreach (var tuple in actionButtonList)
+        {
+            if (tuple.Item1.dependence == action)
+            {
+                Debug.Log($"FC.UpdateDependences(FightAction action) > Dependence found between {action.name} & {tuple.Item1.name}");
+                tuple.Item2.gameObject.SetActive(true);
+            }
+        }
     }
 
 
@@ -210,7 +235,7 @@ public class FightingManager : MonoBehaviour
     public void ValidateAttacks()
     {
         Debug.Log("Launch all attacks: \n" + actionSelectedText.text);
-
+        
         StartCoroutine(DoingAction());
         
         //playerDataText.text = actionPoints+"PA\n" + player.character.ToString();
@@ -231,9 +256,9 @@ public class FightingManager : MonoBehaviour
 
         foreach (var enemy in enemies)
         {
-            
-            player.character.hp -= enemy.damage;
-            Debug.Log($"Player has lost {enemy.damage} hp.");
+            int hits = enemy.GetDamage();
+            player.character.hp -= hits;
+            Debug.Log($"Player has lost {hits} hp.");
         }
         
         BeginPlayerTurn.Invoke();
@@ -263,17 +288,8 @@ public class FightingManager : MonoBehaviour
     {
         foreach (var action in selectedActions)
         {
-            int success = Random.Range(0, 101);
-
-            if (success <= action.successRate)
-            {
-                Debug.Log(success + "/"+action.successRate+" > Action succeded");
-                action.Perform();
-            }
-            else
-            {
-                Debug.Log(success + "/"+action.successRate+" > Action failed");
-            }
+            
+            action.Perform();
         }
         
         yield return new WaitForSeconds(0.1f);

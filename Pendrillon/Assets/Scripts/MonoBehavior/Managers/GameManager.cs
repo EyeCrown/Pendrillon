@@ -94,6 +94,12 @@ public class GameManager : MonoBehaviour
     {
         // Tell to AM to Begin
         ActingManager.Instance.startActingPhase.Invoke();
+        /*String marcello = "MARCELLO";
+        String rudolf = "RUDOLF";
+        List<String> enemies = new List<string>();
+        enemies.Add(marcello);
+        enemies.Add(rudolf);
+        FromActingPhaseToFightingPhase(enemies);*/
     }
 
     void FromActingPhaseToFightingPhase(List<String> enemiesToFight)
@@ -111,7 +117,7 @@ public class GameManager : MonoBehaviour
             FightingManager.Instance.enemies.Add(enemy);
         }
         
-        FightingManager.Instance.BeginPlayerTurn.Invoke();
+        FightingManager.Instance.BeginFight();
     }
 
 
