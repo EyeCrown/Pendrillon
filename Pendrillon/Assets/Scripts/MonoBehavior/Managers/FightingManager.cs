@@ -2,10 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -58,8 +56,9 @@ public class FightingManager : MonoBehaviour
             return;
         }
         Instance = this;
+        DontDestroyOnLoad(this.gameObject);
         
-        BeginPlayerTurn.AddListener(BeginTurn);
+        BeginPlayerTurn.AddListener(BeginFight);
         BeginPlayerTurn.AddListener(UpdateUIText);
     }
 
@@ -77,8 +76,20 @@ public class FightingManager : MonoBehaviour
         actionSelectedText.text = String.Empty;
         selectedActions.Clear();
         
-        BeginPlayerTurn.Invoke();
+        //BeginPlayerTurn.Invoke();
 
+    }
+
+    void BeginFight()
+    {
+        player.character.Initialize();
+
+        foreach (var enemy in enemies)
+        {
+            enemy.Initialize();
+        }
+        SetupActionButtons();
+        BeginTurn();
     }
     
     void SetupActionButtons()

@@ -16,7 +16,7 @@ public class CharacterHandler : MonoBehaviour
 
     public Vector2Int coordsOnStatge;
 
-    //public UnityEvent<string> Dialogue;
+    public UnityEvent<string> Dialogue;
 
     // Movements attributes
     // 
@@ -24,21 +24,28 @@ public class CharacterHandler : MonoBehaviour
     
     private void Awake()
     {
-        //nameText.text = character.name;
+        nameText.text = character.name;
         //nameText.text = _tempCharName;
         //dialogueText.text = String.Empty;
-
+        Dialogue.AddListener(UpdateDialogue);
+        
+        Debug.Log($"{character.name} se réveille.");
+        canvas.worldCamera = Camera.main;
+        canvas.gameObject.SetActive(true);
     }
 
     void Start()
     {
         //SetPosition(coordsOnStatge);
+        
     }
     
     public void UpdateDialogue(string text)
     {
+        //Debug.Log($"CharacterHandler.UpdateDialogue > {character.name}:{text}");
         canvas.gameObject.SetActive(true);
-        //dialogueText.text = text;
+        dialogueText.text = text;
+        //Debug.Log($"CharacterHandler.UpdateDialogue > dialogueText.text:{dialogueText.text}");
     }
 
     public void ClearUI()

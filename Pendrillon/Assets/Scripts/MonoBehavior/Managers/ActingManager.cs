@@ -11,11 +11,12 @@ public class ActingManager : MonoBehaviour
 {
     public static ActingManager Instance { get; private set; }
 
-    public TextAsset inkAsset;
     public Story _story;
+
+    public List<GameObject> charactersOnStage;
     
     // UI
-    
+    public Canvas canvas;
     // Text box
     public TextMeshProUGUI dialogueText;
     
@@ -23,6 +24,7 @@ public class ActingManager : MonoBehaviour
     public TextMeshProUGUI tagsText;
     
     // Buttons
+    public Button choiceButtonPrefab;
     public List<Button> choicesButtonList;
     public Button nextDialogueButton;
     public Button backButton;
@@ -33,7 +35,7 @@ public class ActingManager : MonoBehaviour
     
     public UnityEvent startActingPhase;
     public UnityEvent nextDialogue;
-    public UnityEvent endOfActingPhase;
+    public UnityEvent<List<String>> endOfActingPhase;
     public UnityEvent clearUI;
     
     
@@ -47,11 +49,14 @@ public class ActingManager : MonoBehaviour
         }
 
         Instance = this;
+        DontDestroyOnLoad(this.gameObject);
+        
+        startActingPhase.AddListener(StartStory);
+
     }
 
     void Start()
     {
-        StartStory();
     }
 
     private void StartStory()
@@ -71,11 +76,10 @@ public class ActingManager : MonoBehaviour
 
         foreach (var button in choicesButtonList)
         {
-            TextMeshProUGUI textButton = button.GetComponentInChildren<TextMeshProUGUI>();
-            textButton.text = String.Empty;
-            
-            button.gameObject.SetActive(false);
+            Destroy(button.gameObject);
         }
+        choicesButtonList.Clear();
+        
         nextDialogueButton.gameObject.SetActive(false);
         backButton.gameObject.SetActive(false);
 
@@ -100,13 +104,24 @@ public class ActingManager : MonoBehaviour
         {
             
             currentDialogue = _story.Continue();
+            //Debug.Log(currentDialogue);
+            
+            if (currentDialogue == String.Empty)
+                Refresh();
+            
             currentDialogue = currentDialogue.Trim();
 
             savedJsonStack.Push(_story.state.ToJson());
-
+            
             currentDialogue = ParseDialogue(currentDialogue);
             
-            var output = new List<string>();
+            dialogueText.text += currentDialogue;
+
+            Debug.Log($"AC.Refresh() > _story.state.currentPathString:{_story.state.currentPathString}");
+            CheckBeginOfFight(_story.state.currentPathString);
+            
+            
+            /*var output = new List<string>();
             var knots = _story.mainContentContainer.namedContent.Keys;
             knots.ToList().ForEach((knot) =>
             {
@@ -123,7 +138,7 @@ public class ActingManager : MonoBehaviour
             foreach (var text in output)
             {
                 Debug.Log(text);
-            }
+            }*/
             
             // Tags
             if (_story.currentTags.Count > 0)
@@ -131,32 +146,27 @@ public class ActingManager : MonoBehaviour
                 foreach (var tag in _story.currentTags)
                 {
                     tagsText.text += tag.Trim() + "\n";
-                    ParseTag(tag);
+                    //ParseTag(tag);
                 }
-            }
-            else
-            {
-                dialogueText.text += currentDialogue + "\n";
             }
             
 
             // Choices
             if (_story.currentChoices.Count > 0)
             {
-                int numberChoices = Math.Min(4, _story.currentChoices.Count);
-
-                for (int i = 0; i < numberChoices; i++)
+                Vector2 buttonPos = new Vector2(115, 100);
+                for (int i = 0; i < _story.currentChoices.Count; i++)
                 {
-                    Choice choice = _story.currentChoices [i];
-                    Button button = choicesButtonList[i];
-                    button.gameObject.SetActive(true);
-
-                    TextMeshProUGUI textButton = button.GetComponentInChildren<TextMeshProUGUI>();
-                    textButton.text = _story.currentChoices[i].text;
+                    Choice choice = _story.currentChoices[i];
+                    Button button = Instantiate(choiceButtonPrefab, canvas.transform);
+                    button.GetComponent<RectTransform>().position = buttonPos;
+                    button.GetComponentInChildren<TextMeshProUGUI>().text = _story.currentChoices[i].text;
                     
                     button.onClick.AddListener (delegate {
                         OnClickChoiceButton (choice);
                     });
+                    buttonPos.x += button.GetComponent<RectTransform>().sizeDelta.x + 10;
+                    choicesButtonList.Add(button);
                 }
             }
             else //if(!_story.canContinue)
@@ -167,25 +177,71 @@ public class ActingManager : MonoBehaviour
         else
         {
             Debug.Log("Reach end of content.");
-            Button button = choicesButtonList[0];
-            button.gameObject.SetActive(true);
-            TextMeshProUGUI textButton = button.GetComponentInChildren<TextMeshProUGUI>();
-            textButton.text = "Restart?";
-            button.onClick.AddListener(delegate{
-                StartStory();
-            });
             
-            endOfActingPhase.Invoke();
+            // Button button = choicesButtonList[0];
+            // button.gameObject.SetActive(true);
+            // TextMeshProUGUI textButton = button.GetComponentInChildren<TextMeshProUGUI>();
+            // textButton.text = "Restart?";
+            // button.onClick.AddListener(delegate{
+            //     StartStory();
+            // });
+            
         }
+    }
+
+    void CheckBeginOfFight(String path)
+    {
+        if (path == null)
+        {
+            return;
+        }
+        
+        String[] words = path.Split(".");
+
+        if (words.Length <= 1)
+            return;
+        
+        Debug.Log($"AC.CheckBeginOfFight > words[1]:{words[1]}");
+        
+        String marcello = "MARCELLO";
+        String rudolf = "RUDOLF";
+        List<String> enemies = new List<string>();
+        
+        switch (words[1])
+        {
+            case "battle_against_two_guards":
+                enemies.Add(marcello);
+                enemies.Add(rudolf);
+                Debug.Log($"AC.CheckBeginOfFight > battle_against_two_guards");
+                endOfActingPhase.Invoke(enemies);
+
+                break;
+            case "battle_against_marcello":
+                enemies.Add(marcello);
+                Debug.Log($"AC.CheckBeginOfFight > battle_against_marcello");
+                endOfActingPhase.Invoke(enemies);
+
+                break;
+            case "battle_against_rudolf":
+                enemies.Add(rudolf);
+                Debug.Log($"AC.CheckBeginOfFight > battle_against_rudolf");
+                endOfActingPhase.Invoke(enemies);
+
+                break;
+        }
+        
+
     }
 
     public String ParseDialogue(String text)
     {
         String[] words = text.Split(":");
+        String speaker = words[0].Replace(" ", "");
+        String result = String.Join(":", words.Skip(1));
         
-        HandlerTagChar(words[0].Replace(" ", ""));
+        HandlerTagChar(speaker, result);
 
-        return words[1];
+        return result;
     }
 
 
@@ -209,7 +265,7 @@ public class ActingManager : MonoBehaviour
         switch (words[0])
         {
             case Constants.TagCharacter:
-                HandlerTagChar(words[1]);
+                //HandlerTagChar(words[1]);
                 break;
             
             case Constants.TagMove:
@@ -221,7 +277,7 @@ public class ActingManager : MonoBehaviour
                 GameManager.Instance._wwiseEvent.Post(gameObject);
                 break;
             default:
-                Debug.LogError("ActingManager.CheckTab(.) > Error: tag unknown.");
+                //Debug.LogError("ActingManager.CheckTab(.) > Error: tag unknown.");
                 break;
         }
 
@@ -243,15 +299,16 @@ public class ActingManager : MonoBehaviour
 
     #region TagHandlers
 
-    private void HandlerTagChar(string character)
+    private void HandlerTagChar(string character, string text)
     {
-        Debug.Log(character + " is speaking");
-
         dialogueText.text += character + ": ";
-
         CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
+        //Debug.Log($"AM.HandlerTagChar > {character} <> {text}");
         
-        characterHandler?.UpdateDialogue(currentDialogue);
+        characterHandler?.Dialogue.Invoke(text);
+        
+        characterHandler?.UpdateDialogue(text);
+        
     }
 
 
@@ -262,7 +319,7 @@ public class ActingManager : MonoBehaviour
         string x = words[1];
         string y = words[2];
         
-        Debug.Log($"{character} wants to go to [{x},{y}].   Size of words[]: {words.Length}");
+        //Debug.Log($"{character} wants to go to [{x},{y}].   Size of words[]: {words.Length}");
         
         CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
         characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)));

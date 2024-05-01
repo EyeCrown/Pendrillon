@@ -4,6 +4,7 @@ using Ink.Runtime;
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -24,11 +25,13 @@ public class GameManager : MonoBehaviour
 
     public List<CharacterHandler> characters;
 
+    public GameObject enemyPrefab;
+    
     public GroundGrid gridScene;
 
     
-    public TextAsset inkAsset;
-
+    public TextAsset inkAsset;  
+    
 
     public AK.Wwise.Event _wwiseEvent;
     
@@ -45,22 +48,31 @@ public class GameManager : MonoBehaviour
         }
 
         Instance = this;
+        DontDestroyOnLoad(this.gameObject);
 
         FightingManager = GetComponentInChildren<FightingManager>();
         ActingManager = GetComponentInChildren<ActingManager>();
+
+        ActingManager.endOfActingPhase.AddListener(FromActingPhaseToFightingPhase);
     }
 
     private void Start()
     {
+        foreach (var character in characters)
+        {
+            CharacterHandler characterHandler = Instantiate(character, transform);
+            characterHandler.Dialogue.AddListener(characterHandler.UpdateDialogue);
+        }
         
         
+        BeginGame();
     }
 
     public CharacterHandler GetCharacter(string characterName)
     {
         for (int i = 0; i < characters.Count; i++)
         {
-            if (characters[i].character.name == characterName)
+            if (characters[i].character.name.ToUpper() == characterName)
                 return characters[i];
         }
 
@@ -71,12 +83,22 @@ public class GameManager : MonoBehaviour
     void BeginGame()
     {
         // Tell to AM to Begin
-        //BetterActingManager.Instance.Begin.Invoke();
+        ActingManager.Instance.startActingPhase.Invoke();
     }
 
-    void FromActingPhaseToFightingPhase()
+    void FromActingPhaseToFightingPhase(List<String> enemiesToFight)
     {
-        
+        Debug.Log("GM.FromActingPhaseToFightingPhase > Can prepare the fight");
+        SceneManager.LoadScene("DemoFightingScene");
+
+        foreach (var enemyName in enemiesToFight)
+        {
+            Enemy enemy = Instantiate(enemyPrefab, FightingManager.Instance.transform).GetComponent<Enemy>();
+            enemy._character = GetCharacter(enemyName).character;
+            enemy.damage = 5;
+            FightingManager.Instance.enemies.Add(enemy);
+            FightingManager.Instance.BeginPlayerTurn.Invoke();
+        }
         
         
     }
