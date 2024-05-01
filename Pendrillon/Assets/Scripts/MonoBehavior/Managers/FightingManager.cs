@@ -48,7 +48,7 @@ public class FightingManager : MonoBehaviour
     public TextMeshProUGUI playerDataText;
     public TextMeshProUGUI actionSelectedText;
     public Button buttonPrefab;
-    private List<Button> buttonsList;
+    
     
     public List<Tuple<FightAction, Button>> actionButtonList;
     
@@ -121,7 +121,7 @@ public class FightingManager : MonoBehaviour
             //Debug.Log(action.ToString());
 
             buttonPos.x += button.GetComponent<RectTransform>().sizeDelta.x + 20;
-            buttonsList.Add(button);
+            //buttonsList.Add(button);
             
             if (!action.accesibleByDefault)
                 button.gameObject.SetActive(false);

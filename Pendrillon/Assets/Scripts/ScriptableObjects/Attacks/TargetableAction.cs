@@ -10,9 +10,11 @@ public class TargetableAction : FightAction
     public override void Perform()
     {
         base.Perform();
-        target.GetComponent<Enemy>().TakeDamageEvent.Invoke(damage);
-        
-        Debug.Log("Interact with " + target.name);
+        if (Random.Range(0, 100) < precison)
+        {
+            target.GetComponent<Enemy>().TakeDamageEvent.Invoke(damage);
+            Debug.Log("Interact with " + target.name);
+        }
     }
     
     public override string ToString()

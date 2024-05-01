@@ -57,12 +57,16 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         hp -= damage;
-        hpText.text = hp + "HP";
         if (hp <= 0)
         {
             FightingManager.Instance.RemoveEnemy(this);
             Destroy(gameObject);
         }
+
+        if (hp > 8)
+            hp = 8;
+        hpText.text = hp + "HP";
+
     }
 
     public int GetDamage()

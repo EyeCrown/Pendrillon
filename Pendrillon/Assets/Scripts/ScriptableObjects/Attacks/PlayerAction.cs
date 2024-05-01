@@ -13,8 +13,11 @@ public class PlayerAction : FightAction
     public override void Perform()
     {
         base.Perform();
-        FightingManager.Instance.player.character.ModifyCharacteristic(type, value);
-        Debug.Log("Modifying "+ type.ToString() + " with " + value.ToString());
+        if (Random.Range(0, 100) < precison)
+        {
+            FightingManager.Instance.player.character.ModifyCharacteristic(type, value);
+            Debug.Log("Modifying "+ type.ToString() + " with " + value.ToString());
+        }
     }
     
     public override string ToString()
