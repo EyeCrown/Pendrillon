@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: d664756f5b41e444ae9662dbadd76a26
     GuidInternal: 
-    m_lastTime: -8584881621641953455
+    m_lastTime: -8584871004376707626
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: e852ce5b774edb409c22df7662f4b6c6
     GuidInternal: 
-    m_lastTime: -8584881621642033234
+    m_lastTime: -8584870502408128321
     List:
     - name: Dry_Environment
       guid: 188dca5216c3db46bfecf8a187b2ec9f
@@ -317,7 +317,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: 9730c34004a92e42aaad5077c739aa47
     GuidInternal: 
-    m_lastTime: -8584881621641983372
+    m_lastTime: -8584870502408108341
     List:
     - name: Main_Soundbank
       guid: c77ee99ea6e4b94388380f2945111b85
@@ -334,19 +334,6 @@ MonoBehaviour:
         guid: c77ee99ea6e4b94388380f2945111b85
       Path: SoundBanks\Default Work Unit\Main_Soundbank
   EventWwu:
-  - PhysicalPath: Events\Characters.wwu
-    PathAndIcons:
-    - ElementName: Events
-      ObjectType: 5
-      guid: 00000000000000000000000000000000
-    - ElementName: Characters
-      ObjectType: 12
-      guid: 2b6a9c5c0d4b934c8b89c3d60009b368
-    ParentPath: Events\Characters
-    guid: 2b6a9c5c0d4b934c8b89c3d60009b368
-    GuidInternal: 
-    m_lastTime: -8584881621642056721
-    List: []
   - PhysicalPath: Events\Default Work Unit.wwu
     PathAndIcons:
     - ElementName: Events
@@ -358,8 +345,654 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: 11efaa552a72ce4e888199d7f1070991
     GuidInternal: 
-    m_lastTime: -8584881621642056721
+    m_lastTime: -8584871004376846476
     List: []
+  - PhysicalPath: Events\Pendrillon.wwu
+    PathAndIcons:
+    - ElementName: Events
+      ObjectType: 5
+      guid: 00000000000000000000000000000000
+    - ElementName: Pendrillon
+      ObjectType: 12
+      guid: 49d881f017931943991b441c94ee4362
+    ParentPath: Events\Pendrillon
+    guid: 49d881f017931943991b441c94ee4362
+    GuidInternal: 
+    m_lastTime: -8584870502408148322
+    List:
+    - name: Ambiances
+      guid: 6f9a34e1d5d7364892411895a9830aea
+      id: 1404066300
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: Ambiances
+        ObjectType: 4
+        guid: 6f9a34e1d5d7364892411895a9830aea
+      Path: Events\Pendrillon\Ambiances
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Combat
+      guid: 7ed793bf1ff7614b826f3db89bfce035
+      id: 2764240573
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: Combat
+        ObjectType: 4
+        guid: 7ed793bf1ff7614b826f3db89bfce035
+      Path: Events\Pendrillon\UI\Combat
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Dialogues
+      guid: d909c13bf101d841abdf37c9fc14f251
+      id: 1669749310
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: Dialogues
+        ObjectType: 4
+        guid: d909c13bf101d841abdf37c9fc14f251
+      Path: Events\Pendrillon\Dialogues
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: GameStart
+      guid: bba029cabed5964fb95707cf6903c886
+      id: 4058101365
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: GameStart
+        ObjectType: 3
+        guid: bba029cabed5964fb95707cf6903c886
+      Path: Events\Pendrillon\GameStart
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: HUD
+      guid: 7b2a0417aa35d04981be98b8cb18109e
+      id: 646625284
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: HUD
+        ObjectType: 4
+        guid: 7b2a0417aa35d04981be98b8cb18109e
+      Path: Events\Pendrillon\UI\HUD
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: NPC
+      guid: b6026ab8663b704ca5d1a0a82b080dcd
+      id: 662417162
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 3da816659b448444bee3b49c8906bebd
+      - ElementName: NPC
+        ObjectType: 4
+        guid: b6026ab8663b704ca5d1a0a82b080dcd
+      Path: Events\Pendrillon\SFX\NPC
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_CrowdHype
+      guid: 4cb4a35a86a2f949946adaa2ff0a6380
+      id: 3360090021
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: Ambiances
+        ObjectType: 4
+        guid: 6f9a34e1d5d7364892411895a9830aea
+      - ElementName: Play_CrowdHype
+        ObjectType: 3
+        guid: 4cb4a35a86a2f949946adaa2ff0a6380
+      Path: Events\Pendrillon\Ambiances\Play_CrowdHype
+      maxAttenuation: 0
+      maxDuration: 6.216854
+      minDuration: 4.216854
+    - name: Play_SFX_Combat_NPC_Bouffon_Attack1
+      guid: a9174fc32c5ba941b77057ffa798badf
+      id: 3286192894
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 3da816659b448444bee3b49c8906bebd
+      - ElementName: NPC
+        ObjectType: 4
+        guid: b6026ab8663b704ca5d1a0a82b080dcd
+      - ElementName: Play_SFX_Combat_NPC_Bouffon_Attack1
+        ObjectType: 3
+        guid: a9174fc32c5ba941b77057ffa798badf
+      Path: Events\Pendrillon\SFX\NPC\Play_SFX_Combat_NPC_Bouffon_Attack1
+      maxAttenuation: 0
+      maxDuration: 1.0658854
+      minDuration: 1.0658854
+    - name: Play_SFX_Combat_NPC_Bouffon_Hurt
+      guid: 8c6905572c7b4e40b9511693a1315ec7
+      id: 1514626058
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 3da816659b448444bee3b49c8906bebd
+      - ElementName: NPC
+        ObjectType: 4
+        guid: b6026ab8663b704ca5d1a0a82b080dcd
+      - ElementName: Play_SFX_Combat_NPC_Bouffon_Hurt
+        ObjectType: 3
+        guid: 8c6905572c7b4e40b9511693a1315ec7
+      Path: Events\Pendrillon\SFX\NPC\Play_SFX_Combat_NPC_Bouffon_Hurt
+      maxAttenuation: 0
+      maxDuration: 0.37409374
+      minDuration: 0.37409374
+    - name: Play_SFX_Combat_NPC_RoyalGuard_Attack1
+      guid: dea0c7d668323a46bcffe1f850884f22
+      id: 37105197
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 3da816659b448444bee3b49c8906bebd
+      - ElementName: NPC
+        ObjectType: 4
+        guid: b6026ab8663b704ca5d1a0a82b080dcd
+      - ElementName: Play_SFX_Combat_NPC_RoyalGuard_Attack1
+        ObjectType: 3
+        guid: dea0c7d668323a46bcffe1f850884f22
+      Path: Events\Pendrillon\SFX\NPC\Play_SFX_Combat_NPC_RoyalGuard_Attack1
+      maxAttenuation: 0
+      maxDuration: 1.0658854
+      minDuration: 1.0658854
+    - name: Play_SFX_Combat_NPC_RoyalGuard_Hurt
+      guid: 51c18c5d2e74374e9cb9b9cd506887e7
+      id: 1900933419
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 3da816659b448444bee3b49c8906bebd
+      - ElementName: NPC
+        ObjectType: 4
+        guid: b6026ab8663b704ca5d1a0a82b080dcd
+      - ElementName: Play_SFX_Combat_NPC_RoyalGuard_Hurt
+        ObjectType: 3
+        guid: 51c18c5d2e74374e9cb9b9cd506887e7
+      Path: Events\Pendrillon\SFX\NPC\Play_SFX_Combat_NPC_RoyalGuard_Hurt
+      maxAttenuation: 0
+      maxDuration: 0.37409374
+      minDuration: 0.37409374
+    - name: Play_SFX_Combat_Player_BasicAttack1
+      guid: ab3dd1b86c3d5747904201942488b102
+      id: 3845829926
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 3da816659b448444bee3b49c8906bebd
+      - ElementName: Player
+        ObjectType: 4
+        guid: 75bdcb8b043fe24080ec9b31b41d98f1
+      - ElementName: Play_SFX_Combat_Player_BasicAttack1
+        ObjectType: 3
+        guid: ab3dd1b86c3d5747904201942488b102
+      Path: Events\Pendrillon\SFX\Player\Play_SFX_Combat_Player_BasicAttack1
+      maxAttenuation: 0
+      maxDuration: 1.4744792
+      minDuration: 1.4744792
+    - name: Play_SFX_Combat_Player_BasicAttack1_Hurt
+      guid: 67574f6e2539e44a97ee6c6197676551
+      id: 1280387290
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 3da816659b448444bee3b49c8906bebd
+      - ElementName: Player
+        ObjectType: 4
+        guid: 75bdcb8b043fe24080ec9b31b41d98f1
+      - ElementName: Play_SFX_Combat_Player_BasicAttack1_Hurt
+        ObjectType: 3
+        guid: 67574f6e2539e44a97ee6c6197676551
+      Path: Events\Pendrillon\SFX\Player\Play_SFX_Combat_Player_BasicAttack1_Hurt
+      maxAttenuation: 0
+      maxDuration: 0.40233573
+      minDuration: 0.3428474
+    - name: Play_SFX_SC_Cale_Ambiance
+      guid: f3c4c7cf409d564d8c709761b6c51f84
+      id: 1004562353
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: Ambiances
+        ObjectType: 4
+        guid: 6f9a34e1d5d7364892411895a9830aea
+      - ElementName: Play_SFX_SC_Cale_Ambiance
+        ObjectType: 3
+        guid: f3c4c7cf409d564d8c709761b6c51f84
+      Path: Events\Pendrillon\Ambiances\Play_SFX_SC_Cale_Ambiance
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Play_SFX_SC_Theater_CrowdChatter
+      guid: 7159358a656adb45983fdb2cd3f0cc31
+      id: 2433984191
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: Ambiances
+        ObjectType: 4
+        guid: 6f9a34e1d5d7364892411895a9830aea
+      - ElementName: Play_SFX_SC_Theater_CrowdChatter
+        ObjectType: 3
+        guid: 7159358a656adb45983fdb2cd3f0cc31
+      Path: Events\Pendrillon\Ambiances\Play_SFX_SC_Theater_CrowdChatter
+      maxAttenuation: 0
+      maxDuration: 21.938728
+      minDuration: 21.938728
+    - name: Play_UI_Combat_ConfirmAttacks
+      guid: 7fa208c6aeab6447ada947abbe221057
+      id: 3834997573
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: Combat
+        ObjectType: 4
+        guid: 7ed793bf1ff7614b826f3db89bfce035
+      - ElementName: Play_UI_Combat_ConfirmAttacks
+        ObjectType: 3
+        guid: 7fa208c6aeab6447ada947abbe221057
+      Path: Events\Pendrillon\UI\Combat\Play_UI_Combat_ConfirmAttacks
+      maxAttenuation: 0
+      maxDuration: 2.934354
+      minDuration: 2.934354
+    - name: Play_UI_Combat_EndTurn
+      guid: e861b37a668c7c45ab9a0465754a3320
+      id: 3127083572
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: Combat
+        ObjectType: 4
+        guid: 7ed793bf1ff7614b826f3db89bfce035
+      - ElementName: Play_UI_Combat_EndTurn
+        ObjectType: 3
+        guid: e861b37a668c7c45ab9a0465754a3320
+      Path: Events\Pendrillon\UI\Combat\Play_UI_Combat_EndTurn
+      maxAttenuation: 0
+      maxDuration: 2.332354
+      minDuration: 2.332354
+    - name: Play_UI_Combat_Hover
+      guid: 1f2d0bbe72e80f4db08a128c0cfeea2f
+      id: 1992368636
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: Combat
+        ObjectType: 4
+        guid: 7ed793bf1ff7614b826f3db89bfce035
+      - ElementName: Play_UI_Combat_Hover
+        ObjectType: 3
+        guid: 1f2d0bbe72e80f4db08a128c0cfeea2f
+      Path: Events\Pendrillon\UI\Combat\Play_UI_Combat_Hover
+      maxAttenuation: 0
+      maxDuration: 0.26082292
+      minDuration: 0.24869792
+    - name: Play_UI_Combat_RemoveAttack
+      guid: e64a65e5de0afa46bb07d788e4b85a99
+      id: 1534142422
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: Combat
+        ObjectType: 4
+        guid: 7ed793bf1ff7614b826f3db89bfce035
+      - ElementName: Play_UI_Combat_RemoveAttack
+        ObjectType: 3
+        guid: e64a65e5de0afa46bb07d788e4b85a99
+      Path: Events\Pendrillon\UI\Combat\Play_UI_Combat_RemoveAttack
+      maxAttenuation: 0
+      maxDuration: 11.874979
+      minDuration: 11.874979
+    - name: Play_UI_Combat_Select_Attack
+      guid: 0f530346aa441347abc2cc24483b5cf1
+      id: 3468982525
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: Combat
+        ObjectType: 4
+        guid: 7ed793bf1ff7614b826f3db89bfce035
+      - ElementName: Play_UI_Combat_Select_Attack
+        ObjectType: 3
+        guid: 0f530346aa441347abc2cc24483b5cf1
+      Path: Events\Pendrillon\UI\Combat\Play_UI_Combat_Select_Attack
+      maxAttenuation: 0
+      maxDuration: 1.2872396
+      minDuration: 0.8950625
+    - name: Play_UI_Combat_SelectCharacter
+      guid: 82b59fcb2c3d9a4d887e94d935b2512f
+      id: 3474027887
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: Combat
+        ObjectType: 4
+        guid: 7ed793bf1ff7614b826f3db89bfce035
+      - ElementName: Play_UI_Combat_SelectCharacter
+        ObjectType: 3
+        guid: 82b59fcb2c3d9a4d887e94d935b2512f
+      Path: Events\Pendrillon\UI\Combat\Play_UI_Combat_SelectCharacter
+      maxAttenuation: 0
+      maxDuration: 0.90272915
+      minDuration: 0.90272915
+    - name: Play_UI_HUD_ChoiceBubble_Appears
+      guid: 1f1f028609348d4fb7c0d510a5fa9289
+      id: 3153536941
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: HUD
+        ObjectType: 4
+        guid: 7b2a0417aa35d04981be98b8cb18109e
+      - ElementName: Play_UI_HUD_ChoiceBubble_Appears
+        ObjectType: 3
+        guid: 1f1f028609348d4fb7c0d510a5fa9289
+      Path: Events\Pendrillon\UI\HUD\Play_UI_HUD_ChoiceBubble_Appears
+      maxAttenuation: 0
+      maxDuration: 0.4243646
+      minDuration: 0.42435417
+    - name: Play_UI_HUD_ChoiceBubble_Burst3Appears
+      guid: f09c3430c4604944b39bef6ac59442f0
+      id: 785419406
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: HUD
+        ObjectType: 4
+        guid: 7b2a0417aa35d04981be98b8cb18109e
+      - ElementName: Play_UI_HUD_ChoiceBubble_Burst3Appears
+        ObjectType: 3
+        guid: f09c3430c4604944b39bef6ac59442f0
+      Path: Events\Pendrillon\UI\HUD\Play_UI_HUD_ChoiceBubble_Burst3Appears
+      maxAttenuation: 0
+      maxDuration: 0.6243646
+      minDuration: 0.6243542
+    - name: Play_UI_HUD_SpeechBubble_Appears
+      guid: 8370d69fa1e060419b636743d08f0f21
+      id: 3687899778
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: HUD
+        ObjectType: 4
+        guid: 7b2a0417aa35d04981be98b8cb18109e
+      - ElementName: Play_UI_HUD_SpeechBubble_Appears
+        ObjectType: 3
+        guid: 8370d69fa1e060419b636743d08f0f21
+      Path: Events\Pendrillon\UI\HUD\Play_UI_HUD_SpeechBubble_Appears
+      maxAttenuation: 0
+      maxDuration: 1.3783542
+      minDuration: 1.3783542
+    - name: Play_UI_HUD_SpeechBubbleSkip
+      guid: 0d68c81f5935514fa6d3713809817f4a
+      id: 2637491412
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      - ElementName: HUD
+        ObjectType: 4
+        guid: 7b2a0417aa35d04981be98b8cb18109e
+      - ElementName: Play_UI_HUD_SpeechBubbleSkip
+        ObjectType: 3
+        guid: 0d68c81f5935514fa6d3713809817f4a
+      Path: Events\Pendrillon\UI\HUD\Play_UI_HUD_SpeechBubbleSkip
+      maxAttenuation: 0
+      maxDuration: 0.14202084
+      minDuration: 0.14202084
+    - name: Player
+      guid: 75bdcb8b043fe24080ec9b31b41d98f1
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 3da816659b448444bee3b49c8906bebd
+      - ElementName: Player
+        ObjectType: 4
+        guid: 75bdcb8b043fe24080ec9b31b41d98f1
+      Path: Events\Pendrillon\SFX\Player
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: SFX
+      guid: 3da816659b448444bee3b49c8906bebd
+      id: 393239870
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: SFX
+        ObjectType: 4
+        guid: 3da816659b448444bee3b49c8906bebd
+      Path: Events\Pendrillon\SFX
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Stop_SFX_SC_Cale_Ambiance
+      guid: 19e77626dbbedb44a59c88a8b74fa143
+      id: 3189791475
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: Ambiances
+        ObjectType: 4
+        guid: 6f9a34e1d5d7364892411895a9830aea
+      - ElementName: Stop_SFX_SC_Cale_Ambiance
+        ObjectType: 3
+        guid: 19e77626dbbedb44a59c88a8b74fa143
+      Path: Events\Pendrillon\Ambiances\Stop_SFX_SC_Cale_Ambiance
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: Stop_SFX_SC_Theater_CrowdChatter
+      guid: 2f92541603deca41b0f5c962e501e93c
+      id: 1577954137
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: Ambiances
+        ObjectType: 4
+        guid: 6f9a34e1d5d7364892411895a9830aea
+      - ElementName: Stop_SFX_SC_Theater_CrowdChatter
+        ObjectType: 3
+        guid: 2f92541603deca41b0f5c962e501e93c
+      Path: Events\Pendrillon\Ambiances\Stop_SFX_SC_Theater_CrowdChatter
+      maxAttenuation: 0
+      maxDuration: 0
+      minDuration: 0
+    - name: UI
+      guid: 536c36118c184e4eaab064ef904a3ed9
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Pendrillon
+        ObjectType: 12
+        guid: 49d881f017931943991b441c94ee4362
+      - ElementName: UI
+        ObjectType: 4
+        guid: 536c36118c184e4eaab064ef904a3ed9
+      Path: Events\Pendrillon\UI
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   - PhysicalPath: Events\TestWorkUnit.wwu
     PathAndIcons:
     - ElementName: Events
@@ -371,7 +1004,7 @@ MonoBehaviour:
     ParentPath: Events\TestWorkUnit
     guid: 5e5a933eaea13f488f0cfc928cda14fd
     GuidInternal: 
-    m_lastTime: -8584881621642043242
+    m_lastTime: -8584870502408138311
     List:
     - name: InWwiseTests
       guid: 49007c0f3b5be3458c75406036ecc50e
@@ -410,29 +1043,6 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: -1
       minDuration: -1
-    - name: New_Event_03
-      guid: 8d1c4907ff82a342864f6c9ddf595f9a
-      id: 1027751980
-      PathAndIcons:
-      - ElementName: Events
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: TestWorkUnit
-        ObjectType: 12
-        guid: 5e5a933eaea13f488f0cfc928cda14fd
-      - ElementName: InWwiseTests
-        ObjectType: 4
-        guid: 49007c0f3b5be3458c75406036ecc50e
-      - ElementName: Menu
-        ObjectType: 4
-        guid: fbc8b86b9e71aa4ca7514d17631cfaa1
-      - ElementName: New_Event_03
-        ObjectType: 3
-        guid: 8d1c4907ff82a342864f6c9ddf595f9a
-      Path: Events\TestWorkUnit\InWwiseTests\Menu\New_Event_03
-      maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
     - name: Play_sine1kHz
       guid: 6a7a3368527b2143895ccfd65fb052d2
       id: 3733116919
@@ -448,8 +1058,8 @@ MonoBehaviour:
         guid: 6a7a3368527b2143895ccfd65fb052d2
       Path: Events\TestWorkUnit\Play_sine1kHz
       maxAttenuation: 0
-      maxDuration: 0.9813333
-      minDuration: 0.9813333
+      maxDuration: 1
+      minDuration: 1
     - name: SetAllVolumesTo75
       guid: 43b5dca89eeb54469c70a3841c4d7a18
       id: 902787362
@@ -471,8 +1081,8 @@ MonoBehaviour:
         guid: 43b5dca89eeb54469c70a3841c4d7a18
       Path: Events\TestWorkUnit\InWwiseTests\Menu\SetAllVolumesTo75
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: SetHyperacusisOff
       guid: 84da955a9745094dbd9844a22006414c
       id: 3797495750
@@ -494,8 +1104,8 @@ MonoBehaviour:
         guid: 84da955a9745094dbd9844a22006414c
       Path: Events\TestWorkUnit\InWwiseTests\Menu\SetHyperacusisOff
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
+      maxDuration: 0
+      minDuration: 0
     - name: SetHyperacusisOn
       guid: 9165ada557d7464d9e1eaec0c1530393
       id: 3794163176
@@ -517,21 +1127,8 @@ MonoBehaviour:
         guid: 9165ada557d7464d9e1eaec0c1530393
       Path: Events\TestWorkUnit\InWwiseTests\Menu\SetHyperacusisOn
       maxAttenuation: 0
-      maxDuration: -1
-      minDuration: -1
-  - PhysicalPath: Events\Theater.wwu
-    PathAndIcons:
-    - ElementName: Events
-      ObjectType: 5
-      guid: 00000000000000000000000000000000
-    - ElementName: Theater
-      ObjectType: 12
-      guid: 49d881f017931943991b441c94ee4362
-    ParentPath: Events\Theater
-    guid: 49d881f017931943991b441c94ee4362
-    GuidInternal: 
-    m_lastTime: -8584881621642043242
-    List: []
+      maxDuration: 0
+      minDuration: 0
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -544,8 +1141,42 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 2ba34431b3fc744c897da50bbf588497
     GuidInternal: 
-    m_lastTime: -8584881621642043242
+    m_lastTime: -8584870502408138311
     List:
+    - name: CrowdBoredom
+      guid: 1d17a36115f1e449aada025e1cead958
+      id: 2888587878
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2ba34431b3fc744c897da50bbf588497
+      - ElementName: Gameplay_RTPC
+        ObjectType: 4
+        guid: 1c65c381d4f529458feaae1827b94f05
+      - ElementName: CrowdBoredom
+        ObjectType: 13
+        guid: 1d17a36115f1e449aada025e1cead958
+      Path: Game Parameters\Default Work Unit\Gameplay_RTPC\CrowdBoredom
+    - name: CrowdReaction
+      guid: 1b8fca546593974e91248c15561c77d5
+      id: 2134499837
+      PathAndIcons:
+      - ElementName: Game Parameters
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: 2ba34431b3fc744c897da50bbf588497
+      - ElementName: Gameplay_RTPC
+        ObjectType: 4
+        guid: 1c65c381d4f529458feaae1827b94f05
+      - ElementName: CrowdReaction
+        ObjectType: 13
+        guid: 1b8fca546593974e91248c15561c77d5
+      Path: Game Parameters\Default Work Unit\Gameplay_RTPC\CrowdReaction
     - name: Environment_Volume
       guid: 789de8ce7e1b514d9450e9bdb6fc83f7
       id: 2054307141
@@ -577,23 +1208,6 @@ MonoBehaviour:
         ObjectType: 4
         guid: 1c65c381d4f529458feaae1827b94f05
       Path: Game Parameters\Default Work Unit\Gameplay_RTPC
-    - name: HypeLevel
-      guid: 1b8fca546593974e91248c15561c77d5
-      id: 1870457369
-      PathAndIcons:
-      - ElementName: Game Parameters
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 2ba34431b3fc744c897da50bbf588497
-      - ElementName: Gameplay_RTPC
-        ObjectType: 4
-        guid: 1c65c381d4f529458feaae1827b94f05
-      - ElementName: HypeLevel
-        ObjectType: 13
-        guid: 1b8fca546593974e91248c15561c77d5
-      Path: Game Parameters\Default Work Unit\Gameplay_RTPC\HypeLevel
     - name: Main_Volume
       guid: 202a0819ff41d04db3403b50e196ff14
       id: 2312172015
@@ -642,23 +1256,6 @@ MonoBehaviour:
         ObjectType: 13
         guid: 3521ef0d2a998f419a75dcac5d85ed44
       Path: Game Parameters\Default Work Unit\Menu_VolumeSliders\Music_Volume
-    - name: New_Game_Parameter
-      guid: 9c0175f54a23cf4bae6b265b86460363
-      id: 3671138082
-      PathAndIcons:
-      - ElementName: Game Parameters
-        ObjectType: 5
-        guid: 00000000000000000000000000000000
-      - ElementName: Default Work Unit
-        ObjectType: 12
-        guid: 2ba34431b3fc744c897da50bbf588497
-      - ElementName: Gameplay_RTPC
-        ObjectType: 4
-        guid: 1c65c381d4f529458feaae1827b94f05
-      - ElementName: New_Game_Parameter
-        ObjectType: 13
-        guid: 9c0175f54a23cf4bae6b265b86460363
-      Path: Game Parameters\Default Work Unit\Gameplay_RTPC\New_Game_Parameter
     - name: SFX_Volume
       guid: 1647c555658f4e4484ca8df18b47bd1e
       id: 1564184899
@@ -722,7 +1319,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: 282884b903df034c8f32476425273061
     GuidInternal: 
-    m_lastTime: -8584881621641973401
+    m_lastTime: -8584870502408098326
     List:
     - name: HyperacusisMode
       guid: 65743b9571ed9c42acb53cdc959f38fa
@@ -802,11 +1399,11 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: 36a2a60d73d64d4fbfc03bf6f4116f84
     GuidInternal: 
-    m_lastTime: -8584881621641963428
+    m_lastTime: -8584870502408098326
     List:
-    - name: CrowdHypeLevel
+    - name: CrowdReaction
       guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
-      id: 3660942794
+      id: 2134499837
       PathAndIcons:
       - ElementName: Switches
         ObjectType: 5
@@ -814,10 +1411,10 @@ MonoBehaviour:
       - ElementName: Default Work Unit
         ObjectType: 12
         guid: 36a2a60d73d64d4fbfc03bf6f4116f84
-      - ElementName: CrowdHypeLevel
+      - ElementName: CrowdReaction
         ObjectType: 11
         guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
-      Path: Switches\Default Work Unit\CrowdHypeLevel
+      Path: Switches\Default Work Unit\CrowdReaction
       values:
       - name: Hype_01
         guid: 9818e56f61ed424dba7d9cfc12a21193
@@ -829,7 +1426,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 36a2a60d73d64d4fbfc03bf6f4116f84
-        - ElementName: CrowdHypeLevel
+        - ElementName: CrowdReaction
           ObjectType: 11
           guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
         - ElementName: Hype_01
@@ -845,7 +1442,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 36a2a60d73d64d4fbfc03bf6f4116f84
-        - ElementName: CrowdHypeLevel
+        - ElementName: CrowdReaction
           ObjectType: 11
           guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
         - ElementName: Hype_02
@@ -861,7 +1458,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 36a2a60d73d64d4fbfc03bf6f4116f84
-        - ElementName: CrowdHypeLevel
+        - ElementName: CrowdReaction
           ObjectType: 11
           guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
         - ElementName: Hype_03
@@ -877,7 +1474,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 36a2a60d73d64d4fbfc03bf6f4116f84
-        - ElementName: CrowdHypeLevel
+        - ElementName: CrowdReaction
           ObjectType: 11
           guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
         - ElementName: Hype_04
@@ -893,7 +1490,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 36a2a60d73d64d4fbfc03bf6f4116f84
-        - ElementName: CrowdHypeLevel
+        - ElementName: CrowdReaction
           ObjectType: 11
           guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
         - ElementName: Hype_05
@@ -909,7 +1506,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 36a2a60d73d64d4fbfc03bf6f4116f84
-        - ElementName: CrowdHypeLevel
+        - ElementName: CrowdReaction
           ObjectType: 11
           guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
         - ElementName: Hype_06
@@ -925,7 +1522,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 36a2a60d73d64d4fbfc03bf6f4116f84
-        - ElementName: CrowdHypeLevel
+        - ElementName: CrowdReaction
           ObjectType: 11
           guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
         - ElementName: Hype_07
@@ -941,7 +1538,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 36a2a60d73d64d4fbfc03bf6f4116f84
-        - ElementName: CrowdHypeLevel
+        - ElementName: CrowdReaction
           ObjectType: 11
           guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
         - ElementName: Hype_08
@@ -957,7 +1554,7 @@ MonoBehaviour:
         - ElementName: Default Work Unit
           ObjectType: 12
           guid: 36a2a60d73d64d4fbfc03bf6f4116f84
-        - ElementName: CrowdHypeLevel
+        - ElementName: CrowdReaction
           ObjectType: 11
           guid: 3a4f5527abc5c54dbded1fd7a2a15c1f
         - ElementName: Hype_09
@@ -978,7 +1575,7 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: d41fcdb63de82c43a123cce6354a5e00
     GuidInternal: 
-    m_lastTime: -8584881621641963428
+    m_lastTime: -8584871004376717696
     List: []
   ExpandedFileSystemItemIds: 05000000080000000e0000002000000021000000
   ExpandedWaapiItemIds: 05000000080000000e0000002000000021000000
