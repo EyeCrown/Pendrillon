@@ -1,0 +1,54 @@
+Switch Group	ID	Name			Wwise Object Path	Notes
+	2134499837	CrowdReaction			\Default Work Unit\CrowdReaction	
+
+Switch	ID	Name	Switch Group			Notes
+	486820064	Hype_04	CrowdReaction			
+	486820065	Hype_05	CrowdReaction			
+	486820066	Hype_06	CrowdReaction			
+	486820067	Hype_07	CrowdReaction			
+	486820069	Hype_01	CrowdReaction			
+	486820070	Hype_02	CrowdReaction			
+	486820071	Hype_03	CrowdReaction			
+	486820076	Hype_08	CrowdReaction			
+	486820077	Hype_09	CrowdReaction			
+
+State Group	ID	Name			Wwise Object Path	Notes
+	1672502660	HyperacusisMode			\Default Work Unit\HyperacusisMode	
+
+State	ID	Name	State Group			Notes
+	435094263	HyperacusisModeOn	HyperacusisMode			
+	748895195	None	HyperacusisMode			
+	3527522059	HyperacusisModeOff	HyperacusisMode			
+
+Custom State	ID	Name	State Group	Owner		Notes
+	554665538	HyperacusisModeOn	HyperacusisMode	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\MainDry		
+	763966496	HyperacusisModeOff	HyperacusisMode	\Master-Mixer Hierarchy\Default Work Unit\Master Audio Bus\MainDry		
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	1006694123	Music_Volume			\Default Work Unit\Menu_VolumeSliders\Music_Volume	
+	1564184899	SFX_Volume			\Default Work Unit\Menu_VolumeSliders\SFX_Volume	
+	1719345792	UI_Volume			\Default Work Unit\Menu_VolumeSliders\UI_Volume	
+	2054307141	Environment_Volume			\Default Work Unit\Menu_VolumeSliders\Environment_Volume	
+	2312172015	Main_Volume			\Default Work Unit\Menu_VolumeSliders\Main_Volume	
+	3440409837	Voices_Volume			\Default Work Unit\Menu_VolumeSliders\Voices_Volume	
+
+Audio Bus	ID	Name			Wwise Object Path	Notes
+	96282353	Dry_UI			\Default Work Unit\Master Audio Bus\MainDry\Dry_UI	
+	189108676	Reverb_UI_01			\Default Work Unit\Master Audio Bus\MainReverb\Reverb_UI_01	
+	318808210	Dry_Voices			\Default Work Unit\Master Audio Bus\MainDry\Dry_Voices	
+	603598863	Reverb_Environment_01			\Default Work Unit\Master Audio Bus\MainReverb\Reverb_Environment_01	
+	744331921	Reverb_SFX_01			\Default Work Unit\Master Audio Bus\MainReverb\Reverb_SFX_01	
+	1636724294	MainReverb			\Default Work Unit\Master Audio Bus\MainReverb	
+	2800544509	MainDry			\Default Work Unit\Master Audio Bus\MainDry	
+	3299242565	Reverb_Voices_01			\Default Work Unit\Master Audio Bus\MainReverb\Reverb_Voices_01	
+	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	3848410326	Dry_Environment			\Default Work Unit\Master Audio Bus\MainDry\Dry_Environment	
+	3852188084	MainHyperacusis			\Default Work Unit\Master Audio Bus\MainHyperacusis	
+	3872602748	Dry_SFX			\Default Work Unit\Master Audio Bus\MainDry\Dry_SFX	
+	4010064756	Dry_Music			\Default Work Unit\Master Audio Bus\MainDry\Dry_Music	
+	4073358989	Reverb_Music_01			\Default Work Unit\Master Audio Bus\MainReverb\Reverb_Music_01	
+
+Audio Devices	ID	Name	Type				Notes
+	2317455096	No_Output	No Output			
+	3859886410	System	System			
+
