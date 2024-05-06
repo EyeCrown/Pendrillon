@@ -1,132 +1,141 @@
-using System;
 using System.Collections.Generic;
 using Ink.Runtime;
 using UnityEngine;
-using TMPro;
-using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 
-public enum GameState
+
+/*public enum GameState
 {
     ACTING,
     FIGHTING,
     PAUSE,
     
-}
+}*/
 
-public class GameManager : MonoBehaviour
+namespace MonoBehavior.Managers
 {
-    #region Attributes
-    public static GameManager Instance { get; private set; }
-    public ActingManager   ActingManager   { get; private set; }
-    public FightingManager FightingManager { get; private set; }
-    
-    public GameState State { get; private set; }
-
-    public List<CharacterHandler> characters;
-
-    public GameObject enemyPrefab;
-    
-    public GroundGrid gridScene;
-
-    public Transform playerPos;
-    public Transform enemyPos;
-    
-    
-    public TextAsset inkAsset;  
-    
-
-    public AK.Wwise.Event _wwiseEvent;
-    
-    
-    
-    #endregion
-    
-    private void Awake()
+    public class GameManager : MonoBehaviour
     {
-        if (Instance != null && Instance != this)
-        {
-            Destroy(this);
-            return;
-        }
+        #region Attributes
+        public static GameManager Instance { get; private set; }
+    
+        //public GameState State { get; private set; }
 
-        Instance = this;
-        DontDestroyOnLoad(this.gameObject);
-
-        FightingManager = GetComponentInChildren<FightingManager>();
-        ActingManager = GetComponentInChildren<ActingManager>();
-
-        ActingManager.endOfActingPhase.AddListener(FromActingPhaseToFightingPhase);
-    }
-
-    private void Start()
-    {
-        // foreach (var character in characters)
-        // {
-        //     CharacterHandler characterHandler = Instantiate(character, transform);
-        //     characterHandler.Dialogue.AddListener(characterHandler.UpdateDialogue);
-        //     character = characterHandler;
-        // }
-
-        for (int i = 0; i < characters.Count; i++)
-        {
-            CharacterHandler characterHandler = Instantiate(characters[i]);
-            characterHandler.transform.position = new Vector3(-5 + i * 1.5f, 0, 5);
-            characterHandler.Dialogue.AddListener(characterHandler.UpdateDialogue);
-            characters[i] = characterHandler;
-        }
+        public List<Character> _charactersBase = new List<Character>();
+        public List<CharacterHandler> _characters = new List<CharacterHandler>();
         
-        FightingManager.Instance.player = GetCharacter("PLAYER");
-        FightingManager.Instance.player.transform.position = playerPos.position;
-        FightingManager.Instance.player.transform.LookAt(Camera.main.transform);
         
-        BeginGame();
-    }
+        public GameObject _characterPrefab;
+        public GameObject _enemyPrefab;
+    
+        public GroundGrid _gridScene;
 
-    public CharacterHandler GetCharacter(string characterName)
-    {
-        for (int i = 0; i < characters.Count; i++)
+        public Transform _playerPos;
+        public Transform _enemyPos;
+        
+        [SerializeField] private TextAsset _inkAsset;
+        [HideInInspector] public Story _story;
+
+        public Vector2 _buttonPos = new Vector2(150, 150);
+        public AK.Wwise.Event _wwiseEvent;
+    
+        #endregion
+
+        #region UnityAPI
+        private void Awake()
         {
-            if (characters[i].character.name.ToUpper() == characterName)
-                return characters[i];
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this);
+                return;
+            }
+
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+
+            /*if (_inkAsset == null)
+            Resources.Load<TextAsset>("InkFiles/");*/
+        
+            _story = new Story(_inkAsset.text);
+
+            ActingManager.Instance.PhaseEnded.AddListener(FromActingPhaseToFightingPhase);
         }
 
-        return null;
-    }
+        private void Start()
+        {
+            // foreach (var character in _characters)
+            // {
+            //     CharacterHandler characterHandler = Instantiate(character, transform);
+            //     characterHandler.DialogueUpdate.AddListener(characterHandler.UpdateDialogue);
+            //     character = characterHandler;
+            // }
+
+            for (var i = 0; i < _charactersBase.Count; i++)
+            {
+                var character = Instantiate(_characterPrefab);
+                character.transform.position = new Vector3(-5 + i * 1.5f, 0, 5);
+                character.GetComponent<CharacterHandler>().character = _charactersBase[i];
+                character.GetComponent<CharacterHandler>().DialogueUpdate.AddListener(
+                    character.GetComponent<CharacterHandler>().UpdateDialogue);
+
+                character.name = character.GetComponent<CharacterHandler>().character.name;
+                
+                _characters.Add(character.GetComponent<CharacterHandler>());
+            }
+        
+            FightingManager.Instance.player = GetCharacter("PLAYER");
+            FightingManager.Instance.player.transform.position = _playerPos.position;
+            FightingManager.Instance.player.transform.LookAt(Camera.main.transform);
+        
+            BeginGame();
+        }
+        #endregion
+    
+    
+        public CharacterHandler GetCharacter(string characterName)
+        {
+            for (var i = 0; i < _characters.Count; i++)
+            {
+                if (_characters[i].character.name.ToLower() == characterName.ToLower())
+                    return _characters[i];
+            }
+
+            return null;
+        }
 
 
-    void BeginGame()
-    {
-        // Tell to AM to Begin
-        ActingManager.Instance.startActingPhase.Invoke();
-        /*String marcello = "MARCELLO";
+        void BeginGame()
+        {
+            // Tell to AM to Begin
+            ActingManager.Instance.PhaseStart.Invoke();
+            /*String marcello = "MARCELLO";
         String rudolf = "RUDOLF";
         List<String> enemies = new List<string>();
         enemies.Add(marcello);
         enemies.Add(rudolf);
         FromActingPhaseToFightingPhase(enemies);*/
-    }
-
-    void FromActingPhaseToFightingPhase(List<String> enemiesToFight)
-    {
-        Debug.Log("GM.FromActingPhaseToFightingPhase > Can prepare the fight");
-        //SceneManager.LoadScene("DemoFightingScene");
-
-        float x = 0, z = 0;
-        foreach (var enemyName in enemiesToFight)
-        {
-            Enemy enemy = Instantiate(enemyPrefab).GetComponent<Enemy>();
-            enemy.transform.position = enemyPos.position;
-            enemy._character = GetCharacter(enemyName).character;
-            //enemy.damage = 5;
-            FightingManager.Instance.enemies.Add(enemy);
-            
-            x += 1.5f;
-            z -= 1.5f;
         }
+
+        void FromActingPhaseToFightingPhase()
+        {
+            Debug.Log("GM.FromActingPhaseToFightingPhase > Can prepare the fight");
+            //SceneManager.LoadScene("DemoFightingScene");
+            
+            float x = 0, z = 0;
+            foreach (var enemyCharacter in ActingManager.Instance.GetEnemiesToFight())
+            {
+                var enemy = Instantiate(_enemyPrefab).GetComponent<Enemy>();
+                enemy.transform.position = _enemyPos.position;
+                enemy._character = enemyCharacter.character;
+                //enemy.damage = 5;
+                FightingManager.Instance.enemies.Add(enemy);
+            
+                x += 1.5f;
+                z -= 1.5f;
+            }
         
-        FightingManager.Instance.BeginFight();
+            FightingManager.Instance.BeginFight();
+        }
+
+
     }
-
-
 }

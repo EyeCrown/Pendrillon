@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using MonoBehavior.Managers;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "OnPlayerAction", menuName = "Pendrillon/Fight Action/OnPlayerAction")]

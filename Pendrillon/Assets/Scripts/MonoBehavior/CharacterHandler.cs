@@ -1,67 +1,74 @@
 using System;
 using System.Collections;
+using MonoBehavior.Managers;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
 
 public class CharacterHandler : MonoBehaviour
 {
+    #region Attributes
+
     public Character character;
 
-    public string _tempCharName;
-
-    public Canvas canvas;
+    public Canvas _canvas;
     public TextMeshProUGUI nameText;
-    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI _dialogueText;
 
     public Vector2Int coordsOnStatge;
 
-    public UnityEvent<string> Dialogue;
+    public UnityEvent<string> DialogueUpdate;
 
     // Movements attributes
     // 
-    
-    
+
+    #endregion
+
+
+    #region UnityAPI
+
     private void Awake()
     {
-        nameText.text = character.name;
+        //nameText.text = character.name;
         //nameText.text = _tempCharName;
-        //dialogueText.text = String.Empty;
-        Dialogue.AddListener(UpdateDialogue);
+        //_dialogueText.text = String.Empty;
         
-        Debug.Log($"{character.name} se réveille.");
-        canvas.worldCamera = Camera.main;
-        canvas.gameObject.SetActive(true);
+        DialogueUpdate.AddListener(UpdateDialogue);
+        
+        _canvas.worldCamera = Camera.main;
+        _canvas.gameObject.SetActive(true);
     }
 
     void Start()
     {
+        nameText.text = character.name;
+        ActingManager.Instance.ClearUI.AddListener(OnClearUI);
+        Debug.Log($"{character.name} se réveille.");
+
         //SetPosition(coordsOnStatge);
         
     }
+
+    #endregion
     
     public void UpdateDialogue(string text)
     {
         //Debug.Log($"CharacterHandler.UpdateDialogue > {character.name}:{text}");
-        canvas.gameObject.SetActive(true);
-        dialogueText.text = text;
-        //Debug.Log($"CharacterHandler.UpdateDialogue > dialogueText.text:{dialogueText.text}");
+        _canvas.gameObject.SetActive(true);
+        _dialogueText.text = text;
+        //Debug.Log($"CharacterHandler.UpdateDialogue > _dialogueText.text:{_dialogueText.text}");
     }
 
-    public void ClearUI()
-    {
-        //dialogueText.text = String.Empty;
-        canvas.gameObject.SetActive(false);
-    }
+    
 
     public void SetPosition(Vector2Int positionOnStage)
     {
-        transform.position = GameManager.Instance.gridScene.GetCell(positionOnStage).position;
+        transform.position = GameManager.Instance._gridScene.GetCell(positionOnStage).position;
     }
     
     public void Move(Vector2Int destination)
     {
-        Vector3 end = GameManager.Instance.gridScene.GetCell(destination).position;
+        Vector3 end = GameManager.Instance._gridScene.GetCell(destination).position;
         float duration = 3.0f;
 
         StartCoroutine(LerpPosition(end, duration));
@@ -79,5 +86,19 @@ public class CharacterHandler : MonoBehaviour
             yield return null;
         }
         transform.position = targetPosition;
+    }
+
+    private void OnClearUI()
+    {
+        _dialogueText.text = String.Empty;
+        _canvas.gameObject.SetActive(false);
+    }
+
+    public void OnUpdateDialogue(String dialogue)
+    {
+        //Debug.Log($"CharacterHandler.UpdateDialogue > {character.name}:{text}");
+        _canvas.gameObject.SetActive(true);
+        _dialogueText.text = dialogue;
+        //Debug.Log($"CharacterHandler.UpdateDialogue > _dialogueText.text:{_dialogueText.text}");
     }
 }
