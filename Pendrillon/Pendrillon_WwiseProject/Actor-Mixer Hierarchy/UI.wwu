@@ -640,6 +640,50 @@
 										<ActiveSource Name="UI_Combat_EndTurn" ID="{D2BB4F9C-07F6-44F4-ACC7-385BC9D97673}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="UI_Combat_Buff" ID="{F8B2886C-CBC5-44DE-B14A-3348566B0BA8}" ShortID="975989742">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Combat_Buff" ID="{C6C6F764-9992-4D79-96A3-3E1BFEF6622B}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Combat_Buff.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="740118306"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Combat_Buff" ID="{C6C6F764-9992-4D79-96A3-3E1BFEF6622B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="UI_Combat_Debuff" ID="{F205BF4D-DFEB-487B-9AA9-CA723B1E75B2}" ShortID="691517367">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="UI_Combat_Debuff" ID="{71D92D61-663F-40D1-B3FA-86FAFAAE613D}">
+											<Language>SFX</Language>
+											<AudioFile>UI_Combat_Debuff.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="605287387"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="UI_Combat_Debuff" ID="{71D92D61-663F-40D1-B3FA-86FAFAAE613D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 					</ChildrenList>

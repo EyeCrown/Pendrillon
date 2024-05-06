@@ -14,7 +14,9 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID GAMESTART = 4058101365U;
+        static const AkUniqueID PLAY_AMB_SC_PONT = 4193452235U;
         static const AkUniqueID PLAY_CROWDHYPE = 3360090021U;
+        static const AkUniqueID PLAY_FOL_HUMANOID_HURT = 786277887U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_BOUFFON_ATTACK1 = 3286192894U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_BOUFFON_HURT = 1514626058U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_ROYALGUARD_ATTACK1 = 37105197U;
@@ -24,7 +26,9 @@ namespace AK
         static const AkUniqueID PLAY_SFX_SC_CALE_AMBIANCE = 1004562353U;
         static const AkUniqueID PLAY_SFX_SC_THEATER_CROWDCHATTER = 2433984191U;
         static const AkUniqueID PLAY_SINE1KHZ = 3733116919U;
+        static const AkUniqueID PLAY_UI_COMBAT_BUFF = 3928347901U;
         static const AkUniqueID PLAY_UI_COMBAT_CONFIRMATTACKS = 3834997573U;
+        static const AkUniqueID PLAY_UI_COMBAT_DEBUFF = 3013650276U;
         static const AkUniqueID PLAY_UI_COMBAT_ENDTURN = 3127083572U;
         static const AkUniqueID PLAY_UI_COMBAT_HOVER = 1992368636U;
         static const AkUniqueID PLAY_UI_COMBAT_REMOVEATTACK = 1534142422U;
@@ -37,6 +41,7 @@ namespace AK
         static const AkUniqueID SETALLVOLUMESTO75 = 902787362U;
         static const AkUniqueID SETHYPERACUSISOFF = 3797495750U;
         static const AkUniqueID SETHYPERACUSISON = 3794163176U;
+        static const AkUniqueID STOP_AMB_SC_PONT = 32026905U;
         static const AkUniqueID STOP_SFX_SC_CALE_AMBIANCE = 3189791475U;
         static const AkUniqueID STOP_SFX_SC_THEATER_CROWDCHATTER = 1577954137U;
     } // namespace EVENTS

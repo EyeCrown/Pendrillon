@@ -73,6 +73,28 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_UI_Combat_Buff" ID="{D0B1A21A-BAA6-4EBD-8CA5-91C3DA6A97D3}">
+									<ChildrenList>
+										<Action Name="" ID="{BEB79658-77CC-4F07-B7E1-326CB2A98ED2}" ShortID="155516089">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Combat_Buff" ID="{F8B2886C-CBC5-44DE-B14A-3348566B0BA8}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_Combat_Debuff" ID="{4A24A8FF-EE53-4113-89BB-160F19CB7DA0}">
+									<ChildrenList>
+										<Action Name="" ID="{0B785761-80B1-4E5E-8156-7F3DA280B102}" ShortID="616180138">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_Combat_Debuff" ID="{F205BF4D-DFEB-487B-9AA9-CA723B1E75B2}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="HUD" ID="{17042A7B-35AA-49D0-81BE-98B8CB18109E}" ShortID="289709157">
@@ -231,6 +253,17 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="Play_FOL_Humanoid_Hurt" ID="{63903447-7F62-4B05-BEBC-FD706C5037C0}">
+							<ChildrenList>
+								<Action Name="" ID="{4D21C96B-0205-49AE-9803-A176EF649A46}" ShortID="141404269">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FOL_Humanoid_Hurt" ID="{CE37D5BE-CD1D-4079-8342-05B1EFB66A4B}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Ambiances" ID="{E1349A6F-D7D5-4836-9241-1895A9830AEA}" ShortID="389265221">
@@ -257,35 +290,6 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Stop_SFX_SC_Theater_CrowdChatter" ID="{1654922F-DE03-41CA-B0F5-C962E501E93C}">
-							<ChildrenList>
-								<Action Name="" ID="{3EB28802-5034-4512-A3DE-0FD42C58BA86}" ShortID="1037318886">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Stop_SFX_SC_Cale_Ambiance" ID="{2676E719-BEDB-44DB-A59C-88A8B74FA143}">
-							<ChildrenList>
-								<Action Name="" ID="{8F725F45-DFDD-46FA-9F0D-A3146D64BBDC}" ShortID="707720677">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="2"/>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Event Name="Play_SFX_SC_Cale_Ambiance" ID="{CFC7C4F3-9D40-4D56-8C70-9761B6C51F84}">
 							<ChildrenList>
 								<Action Name="" ID="{02624421-9CCA-45C1-AC3C-9413E6357AB9}" ShortID="44024471">
@@ -294,12 +298,70 @@
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="SFX_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+											<ObjectRef Name="AMB_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="Play_AMB_SC_Pont" ID="{04DEBB85-E569-4C98-90A1-616560225229}">
+							<ChildrenList>
+								<Action Name="" ID="{F8450574-D038-4E8F-A5C4-17C24AC093F3}" ShortID="863308079">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SC_Pont" ID="{90386080-2AA8-4D81-B8F1-639920457433}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Folder Name="StopAmbiances" ID="{0819E4AB-EEAB-40B4-BB83-31CBBC48810C}" ShortID="361750159">
+							<ChildrenList>
+								<Event Name="Stop_AMB_SC_Pont" ID="{966B7322-683E-4522-80F2-CEB3ECB31B5E}">
+									<ChildrenList>
+										<Action Name="" ID="{3E3A2BF8-A3DA-4834-9B45-2E2F3E93AB6D}" ShortID="586565612">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AMB_SC_Pont" ID="{90386080-2AA8-4D81-B8F1-639920457433}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_SFX_SC_Cale_Ambiance" ID="{2676E719-BEDB-44DB-A59C-88A8B74FA143}">
+									<ChildrenList>
+										<Action Name="" ID="{8F725F45-DFDD-46FA-9F0D-A3146D64BBDC}" ShortID="707720677">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AMB_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_SFX_SC_Theater_CrowdChatter" ID="{1654922F-DE03-41CA-B0F5-C962E501E93C}">
+									<ChildrenList>
+										<Action Name="" ID="{3EB28802-5034-4512-A3DE-0FD42C58BA86}" ShortID="1037318886">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Dialogues" ID="{3BC109D9-01F1-41D8-ABDF-37C9FC14F251}" ShortID="1008342144"/>
