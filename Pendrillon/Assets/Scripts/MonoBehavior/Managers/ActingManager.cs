@@ -216,10 +216,8 @@ namespace MonoBehavior.Managers
                 PhaseEnded.Invoke();
             }
         }
-
         
-    
-
+        
         public void ParseTag(string tagName)
         {
             Debug.Log(tagName);
@@ -239,22 +237,18 @@ namespace MonoBehavior.Managers
         {
             switch (words[0])
             {
-            
                 case Constants.TagMove:
                     HandlerTagMove(words[1]);
                     break;
-                
                 case Constants.TagPlaySound:
                 
                     GameManager.Instance._wwiseEvent.Post(gameObject);
                     break;
             }
-
         }
 
 
         #region ButtonHandlers
-
         public void OnClickChoiceButton (Choice choice) {
             GameManager.Instance._story.ChooseChoiceIndex (choice.index);
             Refresh();
@@ -270,7 +264,6 @@ namespace MonoBehavior.Managers
         #endregion
 
         #region EventHandlers
-
         void OnPhaseStart()
         {
             _uiParent.gameObject.SetActive(true);
@@ -312,12 +305,7 @@ namespace MonoBehavior.Managers
         #endregion
         
         
-        
-
-
         #region TagHandlers
-    
-
         // TODO: refactor movements
         private void HandlerTagMove(string coordonates)
         {
@@ -332,12 +320,6 @@ namespace MonoBehavior.Managers
             characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)));
         
         }
-
         #endregion
-
-
-        
-
-
     }
 }

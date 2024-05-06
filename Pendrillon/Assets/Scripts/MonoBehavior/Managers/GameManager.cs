@@ -35,7 +35,7 @@ namespace MonoBehavior.Managers
         [SerializeField] private TextAsset _inkAsset;
         [HideInInspector] public Story _story;
 
-        public Vector2 _buttonPos = new Vector2(150, 150);
+        public Vector2 _buttonPos = new Vector2(250, 150);
         public AK.Wwise.Event _wwiseEvent;
     
         #endregion
@@ -62,17 +62,11 @@ namespace MonoBehavior.Managers
 
         private void Start()
         {
-            // foreach (var character in _characters)
-            // {
-            //     CharacterHandler characterHandler = Instantiate(character, transform);
-            //     characterHandler.DialogueUpdate.AddListener(characterHandler.UpdateDialogue);
-            //     character = characterHandler;
-            // }
-
             for (var i = 0; i < _charactersBase.Count; i++)
             {
                 var character = Instantiate(_characterPrefab);
-                character.transform.position = new Vector3(-5 + i * 1.5f, 0, 5);
+                character.transform.position = _enemyPos.position + new Vector3(i * 3.0f, 0, i * 2.5f);
+                character.transform.rotation = _enemyPos.rotation;
                 character.GetComponent<CharacterHandler>().character = _charactersBase[i];
                 character.GetComponent<CharacterHandler>().DialogueUpdate.AddListener(
                     character.GetComponent<CharacterHandler>().UpdateDialogue);
