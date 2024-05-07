@@ -12,6 +12,7 @@ public class CharacterHandler : MonoBehaviour
     public Character _character;
 
     public Canvas _canvas;
+    private GameObject _uiActing;
     public TextMeshProUGUI _nameText;
     public TextMeshProUGUI _dialogueText;
 
@@ -33,8 +34,9 @@ public class CharacterHandler : MonoBehaviour
         DialogueUpdate.AddListener(OnDialogueUpdate);
         
         _canvas         = transform.Find("Canvas").GetComponent<Canvas>();
-        _nameText       = transform.Find("Canvas/NameBox/NameText").GetComponent<TextMeshProUGUI>();
-        _dialogueText   = transform.Find("Canvas/DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
+        _uiActing       = transform.Find("Canvas/ACTING_PART").gameObject;
+        _nameText       = _uiActing.transform.Find("NameBox/NameText").GetComponent<TextMeshProUGUI>();
+        _dialogueText   = _uiActing.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
 
         _canvas.worldCamera = Camera.main;
         _canvas.gameObject.SetActive(true);
@@ -54,7 +56,7 @@ public class CharacterHandler : MonoBehaviour
     public void OnDialogueUpdate(string text)
     {
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > {_character.name}:{text}");
-        _canvas.gameObject.SetActive(true);
+        _uiActing.SetActive(true);
         _dialogueText.text = text;
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > _dialogueText.text:{_dialogueText.text}");
     }
@@ -98,13 +100,13 @@ public class CharacterHandler : MonoBehaviour
     private void OnClearUI()
     {
         _dialogueText.text = String.Empty;
-        _canvas.gameObject.SetActive(false);
+        _uiActing.SetActive(false);
     }
 
     public void OnUpdateDialogue(String dialogue)
     {
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > {_character.name}:{text}");
-        _canvas.gameObject.SetActive(true);
+        _uiActing.SetActive(true);
         _dialogueText.text = dialogue;
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > _dialogueText.text:{_dialogueText.text}");
     }

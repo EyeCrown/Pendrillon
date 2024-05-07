@@ -22,29 +22,23 @@ namespace MonoBehavior.Managers
     
         private Turn turn;*/
 
-        public CharacterHandler player;
-
-        public List<Enemy> enemies;
-    
-        public List<FightAction> actionsList;
-
-        public int actionPoints;
-
-        public List<FightAction> selectedActions;
-
+        public CharacterHandler _player;
+        public List<Enemy> _enemies;
         
+        public int _actionPoints;
+
+        public List<FightAction> _actionsList;
+        public List<FightAction> _selectedActions;
+        public List<Tuple<FightAction, Button>> _actionButtonList;
+
         // Targetable
         private TargetableAction _waitingAction;
-    
-    
+        
         // UI Debug 
         public GameObject _uiParent;
-        public TextMeshProUGUI playerDataText;
-        public TextMeshProUGUI actionSelectedText;
-        public Button buttonPrefab;
-    
-    
-        public List<Tuple<FightAction, Button>> actionButtonList;
+        public TextMeshProUGUI _playerDataText;
+        public TextMeshProUGUI _actionSelectedText;
+        public Button _buttonPrefab;
         
         #endregion
 
@@ -59,11 +53,13 @@ namespace MonoBehavior.Managers
         //public UnityAction EndFight;
 
         #endregion
-    
-    
-    
-        
-    
+
+
+
+
+
+        #region UnityAPI
+
         private void Awake()
         {
             if (Instance != null && Instance != this)
@@ -74,40 +70,42 @@ namespace MonoBehavior.Managers
             Instance = this;
             //DontDestroyOnLoad(this.gameObject);
         
+            BeginFight.AddListener(OnBeginFight);
             BeginPlayerTurn.AddListener(BeginTurn);
             BeginPlayerTurn.AddListener(UpdateUIText);
-        
             ValidateTarget.AddListener(UpdateDependences);
         }
 
         void Start()
         {
             _uiParent.gameObject.SetActive(false);
-            //player = GameManager.Instance.GetPlayer();
-            //player._character.Initialize();
+            //_player = GameManager.Instance.GetPlayer();
+            //_player._character.Initialize();
 
-            foreach (var enemy in enemies)
+            foreach (var enemy in _enemies)
             {
                 enemy.Initialize();
             }
         
-            actionSelectedText.text = String.Empty;
-            selectedActions.Clear();
+            _actionSelectedText.text = String.Empty;
+            _selectedActions.Clear();
         
             //BeginPlayerTurn.Invoke();
-            actionButtonList = new List<Tuple<FightAction, Button>>();
+            _actionButtonList = new List<Tuple<FightAction, Button>>();
         }
+
+        #endregion
 
         public void OnBeginFight()
         {
             _uiParent.gameObject.SetActive(true);
             
-            player = GameManager.Instance.GetPlayer();
-            player._character.Initialize();
-            //player.transform.position = new Vector3(-4.0f, 0, 2.0f);
+            _player = GameManager.Instance.GetPlayer();
+            _player._character.Initialize();
+            //_player.transform.position = new Vector3(-4.0f, 0, 2.0f);
         
             float x = 0, z = 0;
-            foreach (var enemy in enemies)
+            foreach (var enemy in _enemies)
             {
                 enemy.transform.position = GameManager.Instance._enemyPos.position + new Vector3(1.5f + x, 0, 3.0f + z);
                 enemy.transform.LookAt(Camera.main.transform);
@@ -123,12 +121,12 @@ namespace MonoBehavior.Managers
         void SetupActionButtons()
         {
             Vector2 buttonPos = new Vector2(150, 150);
-            foreach (var action in actionsList)
+            foreach (var action in _actionsList)
             {
                 action.alreadyUse = false;
-                Debug.Log($"FM.SetupActionButtons > {actionButtonList.ToString()}");
+                Debug.Log($"FM.SetupActionButtons > {_actionButtonList.ToString()}");
             
-                Button button = Instantiate(buttonPrefab, _uiParent.transform);
+                Button button = Instantiate(_buttonPrefab, _uiParent.transform);
                 button.GetComponent<RectTransform>().position = buttonPos;
                 button.GetComponentInChildren<TextMeshProUGUI>().text = action.ToString();
             
@@ -141,43 +139,43 @@ namespace MonoBehavior.Managers
                 if (!action.accesibleByDefault)
                     button.gameObject.SetActive(false);
             
-                actionButtonList.Add(new Tuple<FightAction, Button>(action, button));
+                _actionButtonList.Add(new Tuple<FightAction, Button>(action, button));
             }
         }
 
         void BeginTurn()
         {
-            if (player._character.hp <= 0)
+            if (_player._character.hp <= 0)
             {
                 Debug.Log("Player is dead.");
                 EndFight(false);
                 return;
             }
 
-            if (enemies.Count <= 0)
+            if (_enemies.Count <= 0)
             {
                 Debug.Log("All enemies are dead.");
                 EndFight(true);
             }
         
-            actionPoints += 3;
+            _actionPoints += 3;
 
-            for (int i=0; i< actionButtonList.Count; i++)
+            for (int i=0; i< _actionButtonList.Count; i++)
             {
-                if (actionButtonList[i].Item1.cost <= actionPoints && !(actionButtonList[i].Item1.usableOnce && actionButtonList[i].Item1.alreadyUse))
-                    actionButtonList[i].Item2.interactable = true;
+                if (_actionButtonList[i].Item1.cost <= _actionPoints && !(_actionButtonList[i].Item1.usableOnce && _actionButtonList[i].Item1.alreadyUse))
+                    _actionButtonList[i].Item2.interactable = true;
                 else
-                    actionButtonList[i].Item2.interactable = false;
+                    _actionButtonList[i].Item2.interactable = false;
             }
         
-            playerDataText.text = actionPoints+"PA\n" + player._character;
+            _playerDataText.text = _actionPoints+"PA\n" + _player._character;
             Debug.Log("Begin");
         }
 
         public void SelectAction(FightAction action, Button buttonObject)
         {
             buttonObject.interactable = false;
-            actionPoints -= action.cost;
+            _actionPoints -= action.cost;
             if (action is TargetableAction)
             {
                 _waitingAction = action as TargetableAction;
@@ -191,22 +189,22 @@ namespace MonoBehavior.Managers
 
         void AddActionToSelection(FightAction action)
         {
-            if (selectedActions.Count < 3)
+            if (_selectedActions.Count < 3)
             {
-                selectedActions.Add(action);
-                actionSelectedText.text += action.name + "\n";
+                _selectedActions.Add(action);
+                _actionSelectedText.text += action.name + "\n";
                 Debug.Log("Add " + action.name + " to list actions");
                 //buttonObject.gameObject.SetActive(false);
             
-                for (int i=0; i< actionButtonList.Count; i++)
+                for (int i=0; i< _actionButtonList.Count; i++)
                 {
-                    if (actionButtonList[i].Item1.cost > actionPoints)
-                        actionButtonList[i].Item2.interactable = false;
+                    if (_actionButtonList[i].Item1.cost > _actionPoints)
+                        _actionButtonList[i].Item2.interactable = false;
                     else
-                        actionButtonList[i].Item2.interactable = true;
+                        _actionButtonList[i].Item2.interactable = true;
                 }
         
-                playerDataText.text = actionPoints+"PA\n" + player._character;
+                _playerDataText.text = _actionPoints+"PA\n" + _player._character;
                 ValidateTarget.Invoke(action);
             }
             else
@@ -230,7 +228,7 @@ namespace MonoBehavior.Managers
 
         public void UpdateDependences(FightAction action)
         {
-            foreach (var tuple in actionButtonList)
+            foreach (var tuple in _actionButtonList)
             {
                 if (tuple.Item1.dependence == action)
                 {
@@ -243,18 +241,18 @@ namespace MonoBehavior.Managers
 
         private void UpdateUIText()
         {
-            playerDataText.text = actionPoints+"PA\n" + player._character;
+            _playerDataText.text = _actionPoints+"PA\n" + _player._character;
         }
 
 
         public void ValidateAttacks()
         {
-            Debug.Log("Launch all attacks: \n" + actionSelectedText.text);
+            Debug.Log("Launch all attacks: \n" + _actionSelectedText.text);
         
             StartCoroutine(DoingAction());
         
-            actionSelectedText.text = String.Empty;
-            selectedActions.Clear();
+            _actionSelectedText.text = String.Empty;
+            _selectedActions.Clear();
 
         }
 
@@ -262,10 +260,10 @@ namespace MonoBehavior.Managers
         {
             Debug.Log("Enemy turn");
 
-            foreach (var enemy in enemies)
+            foreach (var enemy in _enemies)
             {
                 int hits = enemy.GetDamage();
-                player._character.hp -= hits;
+                _player._character.hp -= hits;
                 Debug.Log($"Player has lost {hits} hp.");
             }
         
@@ -289,14 +287,13 @@ namespace MonoBehavior.Managers
 
         public void RemoveEnemy(Enemy enemy)
         {
-            enemies.Remove(enemy);
+            _enemies.Remove(enemy);
         }
 
         IEnumerator DoingAction()
         {
-            foreach (var action in selectedActions)
+            foreach (var action in _selectedActions)
             {
-            
                 action.Perform();
             }
         

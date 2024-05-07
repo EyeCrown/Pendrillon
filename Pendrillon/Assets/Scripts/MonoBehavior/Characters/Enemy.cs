@@ -14,9 +14,11 @@ public class Enemy : MonoBehaviour
     public int _hp;
     public int _damage;
     
+    private bool _canBeTargeted;
+    
     [SerializeField] private GameObject _uiFight;
     [SerializeField] private TextMeshProUGUI _hpText;
-    private bool _canBeTargeted;
+    
     
     #endregion
 
@@ -36,9 +38,11 @@ public class Enemy : MonoBehaviour
         FightingManager.Instance.ValidateTarget.AddListener(OnBecomeUntargetable);
         FightingManager.Instance.BeginFight.AddListener(OnBeginFight);
 
-        _uiFight = transform.Find("Canvas/FightDataBox").gameObject;
+        _uiFight = transform.Find("Canvas/FIGHT_PART").gameObject;
         _hpText = _uiFight.GetComponentInChildren<TextMeshProUGUI>();
         _uiFight.SetActive(false);
+
+        //_character = gameObject.GetComponent<CharacterHandler>()._character;
     }
     
     void Start()
@@ -130,8 +134,6 @@ public class Enemy : MonoBehaviour
         {
             FightingManager.Instance.AddTargetableAction(this.gameObject);
             _canBeTargeted = false;
-            GetComponent<Renderer>().material.color = Color.white;
-
         }
     }
 }

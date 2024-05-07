@@ -1851,6 +1851,9 @@ MonoBehaviour:
   actionSelectedText: {fileID: 1617536858}
   buttonPrefab: {fileID: 5587408428531989028, guid: 4ef0b94d574e05546a739007a8e910a7,
     type: 3}
+  BeginFight:
+    m_PersistentCalls:
+      m_Calls: []
   BeginPlayerTurn:
     m_PersistentCalls:
       m_Calls: []
@@ -5736,7 +5739,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1a21b4ee74311c74084d8d979dd8e53e, type: 2}
   - {fileID: 11400000, guid: c4305806737424b4f9ea5bab81d6fd30, type: 2}
   _characters: []
-  _player: {fileID: 8700564801285164923, guid: 598cde86737f46b42abac00923589c95, type: 3}
+  _player: {fileID: 0}
+  _playerCharacter: {fileID: 11400000, guid: 36239629bb22d2d4d93aca931305c114, type: 2}
   _characterPrefab: {fileID: 8241601096825971287, guid: 59c0214aad52b934d9b76b043de5be64,
     type: 3}
   _enemyPrefab: {fileID: 220482475024121913, guid: edd0006ad04f5e342840f68fd926c4c4,

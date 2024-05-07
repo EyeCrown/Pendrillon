@@ -16,7 +16,7 @@ public class PlayerAction : FightAction
         base.Perform();
         if (Random.Range(0, 100) < precison)
         {
-            FightingManager.Instance.player._character.ModifyCharacteristic(type, value);
+            FightingManager.Instance._player._character.ModifyCharacteristic(type, value);
             Debug.Log("Modifying "+ type.ToString() + " with " + value.ToString());
         }
     }

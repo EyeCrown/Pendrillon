@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using Ink.Runtime;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -93,7 +94,9 @@ namespace MonoBehavior.Managers
                 _currentDialogue = GameManager.Instance._story.Continue();
                 //Debug.Log(_currentDialogue);
                 //Debug.Log($"AC.Refresh() > GameManager.Instance._story.state.currentPathString:{GameManager.Instance._story.state.currentPathString}");
-                CheckBeginOfFight(GameManager.Instance._story.state.currentPathString);
+                if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
+                    return;
+                
             
                 if (_currentDialogue == String.Empty)
                     Refresh();
@@ -190,32 +193,33 @@ namespace MonoBehavior.Managers
             //Debug.Log($"AM.Refresh() > button.GetComponentInChildren<TextMeshProUGUI>().text:{button.GetComponentInChildren<TextMeshProUGUI>().text}");
         }
 
-        void CheckBeginOfFight(String path)
+        bool CheckBeginOfFight(String path)
         {
             if (path == null)
-                return;
+                return false;
         
             String[] words = path.Split(".");
-
             if (words.Length <= 1)
-                return;
+                return false;
         
             String[] battleWords = words[1].Split("_");
-            if (battleWords[0].ToLower() == "battle")
-            {
-                _enemiesToFight.Clear();
-                foreach (var enemyName in battleWords.Skip(1))
-                {
-                    CharacterHandler character = GameManager.Instance.GetCharacter(enemyName);
-                    if (character != null)
-                    {
-                        _enemiesToFight.Add(character);
-                        //Debug.Log($"AC.CheckBeginOfFight > Add {enemyName} to fight");
-                    }
-                }
+            if (battleWords[0].ToLower() != "battle")
+                return false;
             
-                PhaseEnded.Invoke();
+            
+            _enemiesToFight.Clear();
+            foreach (var enemyName in battleWords.Skip(1))
+            {
+                CharacterHandler character = GameManager.Instance.GetCharacter(enemyName);
+                if (character != null)
+                {
+                    _enemiesToFight.Add(character);
+                    //Debug.Log($"AC.CheckBeginOfFight > Add {enemyName} to fight");
+                }
             }
+            
+            PhaseEnded.Invoke();
+            return true;
         }
         
         

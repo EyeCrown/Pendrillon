@@ -20,7 +20,6 @@ public class FightAction : ScriptableObject
 
     public virtual void Perform()
     {
-        Debug.Log("mon cul");
         alreadyUse = true;
     }
 
