@@ -22,7 +22,8 @@ namespace MonoBehavior.Managers
 
         public List<Character> _charactersBase = new List<Character>();
         public List<CharacterHandler> _characters = new List<CharacterHandler>();
-        
+
+        public CharacterHandler _player;
         
         public GameObject _characterPrefab;
         public GameObject _enemyPrefab;
@@ -62,38 +63,55 @@ namespace MonoBehavior.Managers
 
         private void Start()
         {
-            for (var i = 0; i < _charactersBase.Count; i++)
-            {
-                var character = Instantiate(_characterPrefab);
-                character.transform.position = _enemyPos.position + new Vector3(i * 3.0f, 0, i * 2.5f);
-                character.transform.rotation = _enemyPos.rotation;
-                character.GetComponent<CharacterHandler>().character = _charactersBase[i];
-                character.GetComponent<CharacterHandler>().DialogueUpdate.AddListener(
-                    character.GetComponent<CharacterHandler>().UpdateDialogue);
-
-                character.name = character.GetComponent<CharacterHandler>().character.name;
-                
-                _characters.Add(character.GetComponent<CharacterHandler>());
-            }
+            SetupPlayer();
+            SetupCharacters();
         
-            FightingManager.Instance.player = GetCharacter("PLAYER");
+            FightingManager.Instance.player = GetPlayer();
             FightingManager.Instance.player.transform.position = _playerPos.position;
             FightingManager.Instance.player.transform.LookAt(Camera.main.transform);
         
             BeginGame();
         }
         #endregion
-    
+
+        public void SetupPlayer()
+        {
+            _player = Instantiate(_player);
+            _player.transform.position = _playerPos.position;
+            _player.transform.rotation = _playerPos.rotation;
+            _player.name = _player.GetComponent<CharacterHandler>()._character.name;
+        }
+        
+        public void SetupCharacters()
+        {
+            for (var i = 0; i < _charactersBase.Count; i++)
+            {
+                var character = Instantiate(_characterPrefab);
+                character.transform.position = _enemyPos.position + new Vector3(i * 3.0f, 0, i * 2.5f);
+                character.transform.rotation = _enemyPos.rotation;
+                character.GetComponent<CharacterHandler>()._character = _charactersBase[i];
+                character.GetComponent<Enemy>().enabled = false;
+
+                character.name = character.GetComponent<CharacterHandler>()._character.name;
+                
+                _characters.Add(character.GetComponent<CharacterHandler>());
+            }
+        }
     
         public CharacterHandler GetCharacter(string characterName)
         {
             for (var i = 0; i < _characters.Count; i++)
             {
-                if (_characters[i].character.name.ToLower() == characterName.ToLower())
+                if (_characters[i]._character.name.ToLower() == characterName.ToLower())
                     return _characters[i];
             }
 
             return null;
+        }
+
+        public CharacterHandler GetPlayer()
+        {
+            return _player;
         }
 
 
@@ -102,11 +120,11 @@ namespace MonoBehavior.Managers
             // Tell to AM to Begin
             ActingManager.Instance.PhaseStart.Invoke();
             /*String marcello = "MARCELLO";
-        String rudolf = "RUDOLF";
-        List<String> enemies = new List<string>();
-        enemies.Add(marcello);
-        enemies.Add(rudolf);
-        FromActingPhaseToFightingPhase(enemies);*/
+            String rudolf = "RUDOLF";
+            List<String> enemies = new List<string>();
+            enemies.Add(marcello);
+            enemies.Add(rudolf);
+            FromActingPhaseToFightingPhase(enemies);*/
         }
 
         void FromActingPhaseToFightingPhase()
@@ -114,20 +132,18 @@ namespace MonoBehavior.Managers
             Debug.Log("GM.FromActingPhaseToFightingPhase > Can prepare the fight");
             //SceneManager.LoadScene("DemoFightingScene");
             
-            float x = 0, z = 0;
             foreach (var enemyCharacter in ActingManager.Instance.GetEnemiesToFight())
+            for (int i = 0; i < ActingManager.Instance.GetEnemiesToFight().Count; i++)
             {
-                var enemy = Instantiate(_enemyPrefab).GetComponent<Enemy>();
-                enemy.transform.position = _enemyPos.position;
-                enemy._character = enemyCharacter.character;
-                //enemy.damage = 5;
-                FightingManager.Instance.enemies.Add(enemy);
-            
-                x += 1.5f;
-                z -= 1.5f;
+                enemyCharacter.transform.position = _enemyPos.position + new Vector3(i * 3.0f, 0, i * 2.5f);;
+                enemyCharacter._character = enemyCharacter._character;
+
+                enemyCharacter.GetComponent<Enemy>().enabled = true;
+                
+                FightingManager.Instance.enemies.Add(enemyCharacter.GetComponent<Enemy>());
             }
         
-            FightingManager.Instance.BeginFight();
+            FightingManager.Instance.BeginFight.Invoke();
         }
 
 

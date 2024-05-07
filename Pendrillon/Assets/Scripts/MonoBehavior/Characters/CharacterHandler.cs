@@ -9,57 +9,59 @@ public class CharacterHandler : MonoBehaviour
 {
     #region Attributes
 
-    public Character character;
+    public Character _character;
 
     public Canvas _canvas;
-    public TextMeshProUGUI nameText;
+    public TextMeshProUGUI _nameText;
     public TextMeshProUGUI _dialogueText;
 
-    public Vector2Int coordsOnStatge;
+    public Vector2Int _coordsOnStatge;
+    
+    #endregion
+
+    #region Events
 
     public UnityEvent<string> DialogueUpdate;
 
-    // Movements attributes
-    // 
-
     #endregion
-
-
+    
     #region UnityAPI
 
     private void Awake()
     {
-        //nameText.text = character.name;
-        //nameText.text = _tempCharName;
-        //_dialogueText.text = String.Empty;
+        ActingManager.Instance.ClearUI.AddListener(OnClearUI);
+        DialogueUpdate.AddListener(OnDialogueUpdate);
         
-        DialogueUpdate.AddListener(UpdateDialogue);
-        
+        _canvas         = transform.Find("Canvas").GetComponent<Canvas>();
+        _nameText       = transform.Find("Canvas/NameBox/NameText").GetComponent<TextMeshProUGUI>();
+        _dialogueText   = transform.Find("Canvas/DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
+
         _canvas.worldCamera = Camera.main;
         _canvas.gameObject.SetActive(true);
+
     }
 
     void Start()
     {
-        nameText.text = character.name;
-        ActingManager.Instance.ClearUI.AddListener(OnClearUI);
-        Debug.Log($"{character.name} se réveille.");
+        _nameText.text = _character.name;
+        //Debug.Log($"{_character.name} se réveille.");
 
         //SetPosition(coordsOnStatge);
-        
     }
 
     #endregion
     
-    public void UpdateDialogue(string text)
+    public void OnDialogueUpdate(string text)
     {
-        //Debug.Log($"CharacterHandler.UpdateDialogue > {character.name}:{text}");
+        //Debug.Log($"CharacterHandler.OnDialogueUpdate > {_character.name}:{text}");
         _canvas.gameObject.SetActive(true);
         _dialogueText.text = text;
-        //Debug.Log($"CharacterHandler.UpdateDialogue > _dialogueText.text:{_dialogueText.text}");
+        //Debug.Log($"CharacterHandler.OnDialogueUpdate > _dialogueText.text:{_dialogueText.text}");
     }
 
-    
+
+
+    #region Movements
 
     public void SetPosition(Vector2Int positionOnStage)
     {
@@ -81,12 +83,17 @@ public class CharacterHandler : MonoBehaviour
 
         while (time < duration)
         {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, character.movementCurve.Evaluate(time/duration));
+            transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
             time += Time.deltaTime;
             yield return null;
         }
         transform.position = targetPosition;
     }
+
+    #endregion
+
+
+    #region EventHandlers
 
     private void OnClearUI()
     {
@@ -96,9 +103,11 @@ public class CharacterHandler : MonoBehaviour
 
     public void OnUpdateDialogue(String dialogue)
     {
-        //Debug.Log($"CharacterHandler.UpdateDialogue > {character.name}:{text}");
+        //Debug.Log($"CharacterHandler.OnDialogueUpdate > {_character.name}:{text}");
         _canvas.gameObject.SetActive(true);
         _dialogueText.text = dialogue;
-        //Debug.Log($"CharacterHandler.UpdateDialogue > _dialogueText.text:{_dialogueText.text}");
+        //Debug.Log($"CharacterHandler.OnDialogueUpdate > _dialogueText.text:{_dialogueText.text}");
     }
+
+    #endregion
 }

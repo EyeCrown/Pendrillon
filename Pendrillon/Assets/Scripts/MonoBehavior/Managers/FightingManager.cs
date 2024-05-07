@@ -10,15 +10,17 @@ namespace MonoBehavior.Managers
 {
     public class FightingManager : MonoBehaviour
     {
+        #region Attributes
+
         public static FightingManager Instance { get; private set; }
 
-        public enum Turn
+        /*public enum Turn
         {
             Player,
             Enemy,
         } 
     
-        private Turn turn;
+        private Turn turn;*/
 
         public CharacterHandler player;
 
@@ -30,21 +32,12 @@ namespace MonoBehavior.Managers
 
         public List<FightAction> selectedActions;
 
-
-        public UnityEvent BeginPlayerTurn;
-        public UnityEvent Validate;
-        public UnityEvent MustSelectTarget;
-        public UnityEvent<FightAction> ValidateTarget;
-        //public UnityAction EndFight;
-    
-    
-    
+        
         // Targetable
-        private TargetableAction waitingAction;
+        private TargetableAction _waitingAction;
     
     
         // UI Debug 
-        public Canvas _canvas;
         public GameObject _uiParent;
         public TextMeshProUGUI playerDataText;
         public TextMeshProUGUI actionSelectedText;
@@ -52,6 +45,24 @@ namespace MonoBehavior.Managers
     
     
         public List<Tuple<FightAction, Button>> actionButtonList;
+        
+        #endregion
+
+
+        #region Events
+
+        public UnityEvent BeginFight;
+        public UnityEvent BeginPlayerTurn;
+        public UnityEvent Validate;
+        public UnityEvent MustSelectTarget;
+        public UnityEvent<FightAction> ValidateTarget;
+        //public UnityAction EndFight;
+
+        #endregion
+    
+    
+    
+        
     
         private void Awake()
         {
@@ -72,8 +83,8 @@ namespace MonoBehavior.Managers
         void Start()
         {
             _uiParent.gameObject.SetActive(false);
-            //player = GameManager.Instance.GetCharacter("player");
-            //player.character.Initialize();
+            //player = GameManager.Instance.GetPlayer();
+            //player._character.Initialize();
 
             foreach (var enemy in enemies)
             {
@@ -87,11 +98,12 @@ namespace MonoBehavior.Managers
             actionButtonList = new List<Tuple<FightAction, Button>>();
         }
 
-        public void BeginFight()
+        public void OnBeginFight()
         {
             _uiParent.gameObject.SetActive(true);
-            player = GameManager.Instance.GetCharacter("player");
-            player.character.Initialize();
+            
+            player = GameManager.Instance.GetPlayer();
+            player._character.Initialize();
             //player.transform.position = new Vector3(-4.0f, 0, 2.0f);
         
             float x = 0, z = 0;
@@ -135,7 +147,7 @@ namespace MonoBehavior.Managers
 
         void BeginTurn()
         {
-            if (player.character.hp <= 0)
+            if (player._character.hp <= 0)
             {
                 Debug.Log("Player is dead.");
                 EndFight(false);
@@ -158,7 +170,7 @@ namespace MonoBehavior.Managers
                     actionButtonList[i].Item2.interactable = false;
             }
         
-            playerDataText.text = actionPoints+"PA\n" + player.character;
+            playerDataText.text = actionPoints+"PA\n" + player._character;
             Debug.Log("Begin");
         }
 
@@ -168,7 +180,7 @@ namespace MonoBehavior.Managers
             actionPoints -= action.cost;
             if (action is TargetableAction)
             {
-                waitingAction = action as TargetableAction;
+                _waitingAction = action as TargetableAction;
                 MustSelectTarget.Invoke();
             }
             else
@@ -194,7 +206,7 @@ namespace MonoBehavior.Managers
                         actionButtonList[i].Item2.interactable = true;
                 }
         
-                playerDataText.text = actionPoints+"PA\n" + player.character;
+                playerDataText.text = actionPoints+"PA\n" + player._character;
                 ValidateTarget.Invoke(action);
             }
             else
@@ -206,12 +218,12 @@ namespace MonoBehavior.Managers
 
         public void AddTargetableAction(GameObject target)
         {
-            ValidateTarget.Invoke(waitingAction);
+            ValidateTarget.Invoke(_waitingAction);
         
-            waitingAction.target = target;
+            _waitingAction.target = target;
         
-            if (waitingAction != null) AddActionToSelection(waitingAction);
-            waitingAction = null;
+            if (_waitingAction != null) AddActionToSelection(_waitingAction);
+            _waitingAction = null;
         
             ValidateAttacks();
         }
@@ -231,7 +243,7 @@ namespace MonoBehavior.Managers
 
         private void UpdateUIText()
         {
-            playerDataText.text = actionPoints+"PA\n" + player.character;
+            playerDataText.text = actionPoints+"PA\n" + player._character;
         }
 
 
@@ -240,13 +252,6 @@ namespace MonoBehavior.Managers
             Debug.Log("Launch all attacks: \n" + actionSelectedText.text);
         
             StartCoroutine(DoingAction());
-        
-            //playerDataText.text = actionPoints+"PA\n" + player.character.ToString();
-
-            /*foreach (var button in buttonsList)
-        {
-            button.gameObject.SetActive(true);
-        }*/
         
             actionSelectedText.text = String.Empty;
             selectedActions.Clear();
@@ -260,7 +265,7 @@ namespace MonoBehavior.Managers
             foreach (var enemy in enemies)
             {
                 int hits = enemy.GetDamage();
-                player.character.hp -= hits;
+                player._character.hp -= hits;
                 Debug.Log($"Player has lost {hits} hp.");
             }
         

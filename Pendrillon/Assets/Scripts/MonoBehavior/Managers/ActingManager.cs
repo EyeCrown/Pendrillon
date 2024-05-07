@@ -33,7 +33,7 @@ namespace MonoBehavior.Managers
         private Stack<string> savedJsonStack;
 
 
-        private List<CharacterHandler> _enemiesToFight;
+        private List<CharacterHandler> _enemiesToFight = new List<CharacterHandler>();
 
         #endregion
 
@@ -127,15 +127,16 @@ namespace MonoBehavior.Managers
             // get character speaking
             String speaker = words[0].Replace(" ", "");
             String dialogue = String.Join(":", words.Skip(1));
-        
+
             // send to character the dialogue
-            if (GameManager.Instance.GetCharacter(speaker) == null)
-            {
+            if (speaker == GameManager.Instance.GetPlayer()._character.name)
+                GameManager.Instance.GetPlayer().OnDialogueUpdate(dialogue);
+            else if (GameManager.Instance.GetCharacter(speaker) == null)
                 Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {speaker}");
-                
-            }
             else
-                GameManager.Instance.GetCharacter(speaker).UpdateDialogue(dialogue);
+                GameManager.Instance.GetCharacter(speaker).OnDialogueUpdate(dialogue);
+            
+            
         
             _dialogueText.text = _currentDialogue;
         }
@@ -269,16 +270,13 @@ namespace MonoBehavior.Managers
             _uiParent.gameObject.SetActive(true);
             savedJsonStack = new Stack<string>();
 
-
-            GameManager.Instance.GetCharacter("PLAYER").character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
-            GameManager.Instance.GetCharacter("PLAYER").character.strength.SetupBase((int)GameManager.Instance._story.variablesState["p_stre"]);
-            GameManager.Instance.GetCharacter("PLAYER").character.dexterity.SetupBase((int)GameManager.Instance._story.variablesState["p_dext"]);
-            GameManager.Instance.GetCharacter("PLAYER").character.constitution.SetupBase((int)GameManager.Instance._story.variablesState["p_comp"]);
-            GameManager.Instance.GetCharacter("PLAYER").character.luck.SetupBase((int)GameManager.Instance._story.variablesState["p_luck"]);
+            GameManager.Instance.GetPlayer()._character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
+            GameManager.Instance.GetPlayer()._character.strength.SetupBase((int)GameManager.Instance._story.variablesState["p_stre"]);
+            GameManager.Instance.GetPlayer()._character.dexterity.SetupBase((int)GameManager.Instance._story.variablesState["p_dext"]);
+            GameManager.Instance.GetPlayer()._character.constitution.SetupBase((int)GameManager.Instance._story.variablesState["p_comp"]);
+            GameManager.Instance.GetPlayer()._character.luck.SetupBase((int)GameManager.Instance._story.variablesState["p_luck"]);
         
-            //Debug.Log($"AM.OnPhaseStart() > GameManager.Instance.GetCharacter(\"PLAYER\").character:{GameManager.Instance.GetCharacter("PLAYER").character}");
-        
-            //Debug.Log(GameManager.Instance._story);
+            //Debug.Log($"AM.OnPhaseStart() > GameManager.Instance.GetCharacter(\"PLAYER\")._character:{GameManager.Instance.GetPlayer()._character}");
         
             Refresh();
         }
@@ -287,6 +285,7 @@ namespace MonoBehavior.Managers
             Debug.Log("AM.OnPhaseEnded()");
             // Clear UI
             _uiParent.gameObject.SetActive(false);
+            ClearUI.Invoke();
         }
         void OnClearUI()
         {
