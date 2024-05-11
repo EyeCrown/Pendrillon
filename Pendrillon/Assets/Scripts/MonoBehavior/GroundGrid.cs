@@ -1,15 +1,14 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundGrid : MonoBehaviour
 {
-    [SerializeField] private Grid _grid;
+    [SerializeField] public Grid _grid;
     
     [Range(1, 20)] public int width = 1;
     //[Range(1, 5)] public int height = 1;
-    [Range(1, 20)] public int depth = 1;
+    [Range(1, 50)] public int depth = 1;
 
     private GroundCell[] cells;
     

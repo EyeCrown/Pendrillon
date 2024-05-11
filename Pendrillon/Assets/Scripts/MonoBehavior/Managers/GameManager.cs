@@ -25,9 +25,6 @@ namespace MonoBehavior.Managers
 
         public CharacterHandler _player;
         
-        // Tmp
-        public Character _playerCharacter;
-        
         public GameObject _characterPrefab;
         public GameObject _enemyPrefab;
     
@@ -80,13 +77,10 @@ namespace MonoBehavior.Managers
         public void SetupPlayer()
         {
             _player = Instantiate(_characterPrefab).GetComponent<CharacterHandler>();
-            _player.transform.position = _playerPos.position;
+            //_player.transform.position = _playerPos.position;
+            _player.transform.position = _gridScene._grid.GetCellCenterWorld(new Vector3Int(4, 0, 6)); // GetCell(_playerCoordsOnStage).position;
             _player.transform.rotation = _playerPos.rotation;
-            //_player.name = _player.GetComponent<CharacterHandler>()._character.name;
-            _player._character = _playerCharacter;
-            _player.name = _playerCharacter.name;
-            
-            Destroy(GetComponent<Enemy>());
+            _player.name = _player.GetComponent<CharacterHandler>()._character.name;
         }
         
         public void SetupCharacters()
@@ -97,7 +91,6 @@ namespace MonoBehavior.Managers
                 character.transform.position = _enemyPos.position + new Vector3(i * 3.0f, 0, i * 2.5f);
                 character.transform.rotation = _enemyPos.rotation;
                 character.GetComponent<CharacterHandler>()._character = _charactersBase[i];
-                character.GetComponent<Enemy>()._character = _charactersBase[i];
                 character.GetComponent<Enemy>().enabled = false;
 
                 character.name = character.GetComponent<CharacterHandler>()._character.name;
@@ -126,28 +119,24 @@ namespace MonoBehavior.Managers
         void BeginGame()
         {
             // Tell to AM to Begin
-
-            
-            if (true) // Want to test battle part
-                _story.ChoosePathString("boat_slip_1.guards_are_called");
-            
             ActingManager.Instance.PhaseStart.Invoke();
+            /*String marcello = "MARCELLO";
+            String rudolf = "RUDOLF";
+            List<String> enemies = new List<string>();
+            enemies.Add(marcello);
+            enemies.Add(rudolf);
+            FromActingPhaseToFightingPhase(enemies);*/
         }
 
         void FromActingPhaseToFightingPhase()
         {
             Debug.Log("GM.FromActingPhaseToFightingPhase > Can prepare the fight");
             //SceneManager.LoadScene("DemoFightingScene");
-
-            foreach (var character in _characters)
-            {
-                character.transform.position = new Vector3(-100, -100, -100);
-            }
             
+            foreach (var enemyCharacter in ActingManager.Instance.GetEnemiesToFight())
             for (int i = 0; i < ActingManager.Instance.GetEnemiesToFight().Count; i++)
             {
-                CharacterHandler enemyCharacter = ActingManager.Instance.GetEnemiesToFight()[i];
-                enemyCharacter.transform.position = _enemyPos.position + new Vector3(i * 3.0f, 0, i * 2.5f);
+                enemyCharacter.transform.position = _enemyPos.position + new Vector3(i * 3.0f, 0, i * 2.5f);;
                 enemyCharacter._character = enemyCharacter._character;
 
                 enemyCharacter.GetComponent<Enemy>().enabled = true;

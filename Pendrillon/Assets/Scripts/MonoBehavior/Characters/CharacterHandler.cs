@@ -14,9 +14,15 @@ public class CharacterHandler : MonoBehaviour
     public Canvas _canvas;
     private GameObject _uiActing;
     public TextMeshProUGUI _nameText;
+
+    //public DialogueBox _dialogueBox;
+    
     public TextMeshProUGUI _dialogueText;
 
     public Vector2Int _coordsOnStatge;
+
+
+    [Range(1, 200)] [SerializeField] private int maxLengthDialogue;
     
     #endregion
 
@@ -60,8 +66,12 @@ public class CharacterHandler : MonoBehaviour
         _dialogueText.text = text;
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > _dialogueText.text:{_dialogueText.text}");
     }
-
-
+    
+    
+    
+    
+    
+    
 
     #region Movements
 
