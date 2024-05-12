@@ -74,6 +74,10 @@ namespace MonoBehavior.Managers
             BeginPlayerTurn.AddListener(BeginTurn);
             BeginPlayerTurn.AddListener(UpdateUIText);
             ValidateTarget.AddListener(UpdateDependences);
+            
+            _uiParent       = GameObject.Find("Canvas/FIGHTING_PART").gameObject;
+            _playerDataText       = _uiParent.transform.Find("PlayerDataText").GetComponent<TextMeshProUGUI>();
+            _actionSelectedText   = _uiParent.transform.Find("ActionSelectedText").GetComponent<TextMeshProUGUI>();
         }
 
         void Start()

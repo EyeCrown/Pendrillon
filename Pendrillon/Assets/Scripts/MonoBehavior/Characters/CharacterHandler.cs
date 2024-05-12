@@ -14,8 +14,6 @@ public class CharacterHandler : MonoBehaviour
     public Canvas _canvas;
     private GameObject _uiActing;
     public TextMeshProUGUI _nameText;
-
-    //public DialogueBox _dialogueBox;
     
     public TextMeshProUGUI _dialogueText;
 
@@ -68,21 +66,17 @@ public class CharacterHandler : MonoBehaviour
     }
     
     
-    
-    
-    
-    
 
     #region Movements
 
     public void SetPosition(Vector2Int positionOnStage)
     {
-        transform.position = GameManager.Instance._gridScene.GetCell(positionOnStage).position;
+        //transform.position = GameManager.Instance._gridScene._grid.GetCellCenterWorld(V);
     }
     
     public void Move(Vector2Int destination)
     {
-        Vector3 end = GameManager.Instance._gridScene.GetCell(destination).position;
+        Vector3 end = Vector3.zero; // GameManager.Instance._gridScene.GetCell(destination).position;
         float duration = 3.0f;
 
         StartCoroutine(LerpPosition(end, duration));

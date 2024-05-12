@@ -694,8 +694,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8241601096825971287}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.048210803, y: 0.62737983, z: 0.03896527, w: 0.7762422}
+  m_LocalPosition: {x: -13.81, y: 0.4, z: -5.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -715,11 +715,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cce8bc1ad488694ca1c96e2a5656e0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _character: {fileID: 0}
+  _character: {fileID: 11400000, guid: 36239629bb22d2d4d93aca931305c114, type: 2}
   _canvas: {fileID: 0}
   _nameText: {fileID: 0}
   _dialogueText: {fileID: 0}
   _coordsOnStatge: {x: 0, y: 0}
+  maxLengthDialogue: 0
   DialogueUpdate:
     m_PersistentCalls:
       m_Calls: []

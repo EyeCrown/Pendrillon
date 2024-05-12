@@ -1835,21 +1835,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4126e74c9cfb00b408b5e9ea2587f0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  enemies: []
-  actionsList:
-  - {fileID: 11400000, guid: 15fc2cdf531604345b3148fe1a92548c, type: 2}
+  _player: {fileID: 0}
+  _enemies: []
+  _actionPoints: 0
+  _actionsList:
   - {fileID: 11400000, guid: 1c0c359c12d321b40bfd98987d2b26d1, type: 2}
+  - {fileID: 11400000, guid: 15fc2cdf531604345b3148fe1a92548c, type: 2}
   - {fileID: 11400000, guid: 50a59649b75b57b4f9a8e4484b40cb98, type: 2}
   - {fileID: 11400000, guid: 69e16fb9bc771d04991a113b74ea06d2, type: 2}
   - {fileID: 11400000, guid: c3237c8cb118f1c4986a3153f31fb633, type: 2}
   - {fileID: 11400000, guid: 811bde4e27b6ccc46af1bba199d11877, type: 2}
-  actionPoints: 0
-  selectedActions: []
+  _selectedActions: []
   _uiParent: {fileID: 1349724278}
-  playerDataText: {fileID: 2098009066}
-  actionSelectedText: {fileID: 1617536858}
-  buttonPrefab: {fileID: 5587408428531989028, guid: 4ef0b94d574e05546a739007a8e910a7,
+  _playerDataText: {fileID: 0}
+  _actionSelectedText: {fileID: 0}
+  _buttonPrefab: {fileID: 5587408428531989028, guid: 4ef0b94d574e05546a739007a8e910a7,
     type: 3}
   BeginFight:
     m_PersistentCalls:
@@ -5662,7 +5662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!156049354 &1274117892
 Grid:
   m_ObjectHideFlags: 0
@@ -5684,7 +5684,7 @@ Transform:
   m_GameObject: {fileID: 1274117891}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.67, y: 0, z: -2.31}
+  m_LocalPosition: {x: -23.56, y: 0.236, z: -6.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5703,8 +5703,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grid: {fileID: 1274117892}
-  width: 9
-  depth: 6
+  width: 19
+  depth: 13
+  _playerPosition: {x: 16, y: 1}
+  _enemyPosition: {x: 8, y: 8}
 --- !u!1 &1286597834
 GameObject:
   m_ObjectHideFlags: 0
@@ -5739,11 +5741,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1a21b4ee74311c74084d8d979dd8e53e, type: 2}
   - {fileID: 11400000, guid: c4305806737424b4f9ea5bab81d6fd30, type: 2}
   _characters: []
-  _player: {fileID: 0}
-  _playerCharacter: {fileID: 11400000, guid: 36239629bb22d2d4d93aca931305c114, type: 2}
+  _playerData: {fileID: 11400000, guid: 36239629bb22d2d4d93aca931305c114, type: 2}
+  _player: {fileID: 636588902162026476, guid: 59c0214aad52b934d9b76b043de5be64, type: 3}
   _characterPrefab: {fileID: 8241601096825971287, guid: 59c0214aad52b934d9b76b043de5be64,
-    type: 3}
-  _enemyPrefab: {fileID: 220482475024121913, guid: edd0006ad04f5e342840f68fd926c4c4,
     type: 3}
   _gridScene: {fileID: 1274117894}
   _playerPos: {fileID: 2047131942}
@@ -5887,7 +5887,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1349724279}
   m_Layer: 5
-  m_Name: FIGHT_PART
+  m_Name: FIGHTING_PART
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7307,7 +7307,7 @@ GameObject:
   - component: {fileID: 1617536859}
   - component: {fileID: 1617536858}
   m_Layer: 5
-  m_Name: SelectedAttackText
+  m_Name: ActionSelectedText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

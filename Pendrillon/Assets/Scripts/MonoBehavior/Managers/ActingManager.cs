@@ -176,7 +176,7 @@ namespace MonoBehavior.Managers
         {
             Choice choice = GameManager.Instance._story.currentChoices[index];
             Button button = Instantiate(_choiceButtonPrefab, _uiParent.transform);
-                
+            
             Vector2 offset = new Vector2(index * (button.GetComponent<RectTransform>().sizeDelta.x + 20), 0);
         
             button.GetComponent<RectTransform>().position = 
