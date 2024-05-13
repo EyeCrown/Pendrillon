@@ -70,7 +70,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{EEB7ED0B-C6CD-369E-6059-25BB0F1A8B2C}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{AFE2BB57-C509-2FC3-E3D6-26BB73276452}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -485,6 +485,10 @@
 				<File Id="687613328" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_2.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="692255836" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>VOX_NPC_Leviathan_Defeated.wav</ShortName>
+					<CachePath>SFX/VOX_NPC_Leviathan_Defeated_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="696326227" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Combat_Player_BasicAttack1.wav</ShortName>
@@ -1384,6 +1388,11 @@
 						<MediaRef Id="245713975"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2437757803" Name="Play_VOX_NPC_Leviathan_Defeated" DurationType="OneShot" DurationMin="11.485886" DurationMax="11.485886">
+					<MediaRefs>
+						<MediaRef Id="692255836"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1893591346" Name="Play_VOX_PlayerF_EmotionsPlaceholder_Agree" DurationType="OneShot" DurationMin="0.85361457" DurationMax="0.85361457">
 					<MediaRefs>
 						<MediaRef Id="767010373"/>
@@ -1649,5 +1658,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{96F2EB66-02D3-CF8F-C320-8D0A917414C9}</FileHash>
+	<FileHash>{5535C1E4-8043-19EC-9DAD-A0586BE9838B}</FileHash>
 </SoundBanksInfo>

@@ -306,6 +306,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_VOX_NPC_Leviathan_Defeated" ID="{29769FB5-F649-4755-AF31-5E3CA6E65AAF}">
+									<ChildrenList>
+										<Action Name="" ID="{8DB09D00-BD58-4158-9187-6D8441FBB18A}" ShortID="1052030013">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Leviathan_Defeated" ID="{7FD7CEBD-F902-4AFE-9A75-84AA6BB12F0A}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="Play_FOL_Humanoid_Hurt" ID="{63903447-7F62-4B05-BEBC-FD706C5037C0}">
