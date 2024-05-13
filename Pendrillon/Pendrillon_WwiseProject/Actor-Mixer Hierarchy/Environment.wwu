@@ -21,7 +21,7 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<ActorMixer Name="ENV_Theater" ID="{F4BDEDAC-420E-4C21-A383-536C0DB068F1}" ShortID="789678465">
+						<ActorMixer Name="AMB_Theater" ID="{F4BDEDAC-420E-4C21-A383-536C0DB068F1}" ShortID="789678465">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -2580,7 +2580,7 @@
 								</Sound>
 							</ChildrenList>
 						</ActorMixer>
-						<ActorMixer Name="ENV_Barque" ID="{6575CB74-7EC0-48A9-9845-F9335BE16980}" ShortID="745220091">
+						<ActorMixer Name="AMB_Barque" ID="{6575CB74-7EC0-48A9-9845-F9335BE16980}" ShortID="745220091">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -2590,7 +2590,7 @@
 								</Reference>
 							</ReferenceList>
 						</ActorMixer>
-						<ActorMixer Name="ENV_Cale" ID="{DAFAD3D0-A777-4118-A27F-1DA298F2B1C9}" ShortID="684507484">
+						<ActorMixer Name="AMB_Cale" ID="{DAFAD3D0-A777-4118-A27F-1DA298F2B1C9}" ShortID="684507484">
 							<PropertyList>
 								<Property Name="MakeUpGain" Type="Real64">
 									<ValueList>
@@ -2607,7 +2607,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<BlendContainer Name="SFX_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" ShortID="178246085">
+								<BlendContainer Name="AMB_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" ShortID="178246085">
 									<PropertyList>
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
@@ -3345,7 +3345,7 @@
 								</BlendContainer>
 							</ChildrenList>
 						</ActorMixer>
-						<ActorMixer Name="ENV_Port" ID="{84FEFA11-1489-444A-9FAB-D229836A0680}" ShortID="257397641">
+						<ActorMixer Name="AMB_Port" ID="{84FEFA11-1489-444A-9FAB-D229836A0680}" ShortID="257397641">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -3355,7 +3355,7 @@
 								</Reference>
 							</ReferenceList>
 						</ActorMixer>
-						<ActorMixer Name="ENV_Eglise" ID="{45566B62-20B6-4A5D-A74A-538876046798}" ShortID="112947212">
+						<ActorMixer Name="AMB_Eglise" ID="{45566B62-20B6-4A5D-A74A-538876046798}" ShortID="112947212">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -3365,7 +3365,7 @@
 								</Reference>
 							</ReferenceList>
 						</ActorMixer>
-						<ActorMixer Name="ENV_Tribunal" ID="{8B19E3C6-8868-4825-B5E1-F6F901C9D7E9}" ShortID="141077431">
+						<ActorMixer Name="AMB_Tribunal" ID="{8B19E3C6-8868-4825-B5E1-F6F901C9D7E9}" ShortID="141077431">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -3375,7 +3375,7 @@
 								</Reference>
 							</ReferenceList>
 						</ActorMixer>
-						<ActorMixer Name="ENV_Pont" ID="{42AF7425-4A0E-42D5-A7B0-D289A84F78C3}" ShortID="315226495">
+						<ActorMixer Name="AMB_Pont" ID="{42AF7425-4A0E-42D5-A7B0-D289A84F78C3}" ShortID="315226495">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -3384,16 +3384,1003 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
-						</ActorMixer>
-						<ActorMixer Name="ENV_Ventre" ID="{838DD2AF-E73A-4D14-9573-C3887063E1E4}" ShortID="346159480">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-								</Reference>
-							</ReferenceList>
+							<ChildrenList>
+								<BlendContainer Name="AMB_SC_Pont" ID="{90386080-2AA8-4D81-B8F1-639920457433}" ShortID="98967393">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<BlendContainer Name="ENV_SC_Pont-Weather" ID="{8B3BB833-0DB0-40EA-A8EE-3D442B870E50}" ShortID="333291673">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="AMB_SC_PontTempete_Bed_Rain" ID="{2FE89184-1AB5-48B7-92A2-3B43CFE000F6}" ShortID="440258326">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SC_PontTempete_Bed_Rain" ID="{F577368B-DE48-4451-A895-68BC0D920435}">
+															<PropertyList>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="3295.584"/>
+																<Property Name="LoopBegin" Type="Real64" Value="2.26323230421687"/>
+																<Property Name="LoopEnd" Type="Real64" Value="81.4763629518072"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>AMB_SC_PontTempete_Bed_Rain.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="92586305"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SC_PontTempete_Bed_Rain" ID="{F577368B-DE48-4451-A895-68BC0D920435}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SC_PontTempete_Bed_Thunder" ID="{918EAE19-FEEB-43FA-B008-5993D71A078D}" ShortID="116749933">
+													<PropertyList>
+														<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SC_PontTempete_Bed_Thunder" ID="{57F6DAF5-0A6D-4116-84C3-55610C38F77C}">
+															<PropertyList>
+																<Property Name="CrossfadeDuration" Type="Real64" Value="2636.467"/>
+																<Property Name="LoopBegin" Type="Real64" Value="3.26911332831325"/>
+																<Property Name="LoopEnd" Type="Real64" Value="26.152906626506"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="29.1705496987952"/>
+															</PropertyList>
+															<Language>SFX</Language>
+															<AudioFile>AMB_SC_PontTempete_Bed_Thunder.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="821980279"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SC_PontTempete_Bed_Thunder" ID="{57F6DAF5-0A6D-4116-84C3-55610C38F77C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<RandomSequenceContainer Name="AMB_SC_Pont-Weather_OS_Thunder" ID="{3E92595F-4F9C-4290-AC35-81E5F2ACB0E4}" ShortID="743693805">
+													<PropertyList>
+														<Property Name="InitialDelay" Type="Real64">
+															<ValueList>
+																<Value>2</Value>
+															</ValueList>
+														</Property>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>6</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+														<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<RandomSequenceContainer Name="ENV_SC_PontTempete_RND_Thunder" ID="{B2507410-625B-43C5-9806-72E6CE9298E4}" ShortID="753123019">
+															<PropertyList>
+																<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+																<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="8">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{49C47712-50CF-40F3-9AED-E621FEBE7D2B}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="2"/>
+																					<Property Name="Min" Type="Real64" Value="-3"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<RandomSequenceContainer Name="AMB_SC_PontTempete_RND_ThunderClose" ID="{7D9CC3E0-F650-4957-8867-49E30F3EBF75}" ShortID="244899296">
+																	<PropertyList>
+																		<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<Sound Name="AMB_SC_PontTempete_RND_Thunder_Close_1" ID="{5CADC0E5-35E8-4F67-BB32-3D80E829149D}" ShortID="578121274">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_Thunder_Close_1" ID="{245C24C1-7A89-4FB1-B8FF-EB0364434F91}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_Thunder_Close_1.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="914931857"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_Thunder_Close_1" ID="{245C24C1-7A89-4FB1-B8FF-EB0364434F91}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_Thunder_Close_2" ID="{E600510D-1C3F-4F30-A42B-58022FB6E281}" ShortID="201757702">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_Thunder_Close_2" ID="{E349F3B5-7320-4834-9D13-BA496A04E96E}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_Thunder_Close_2.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="335360850"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_Thunder_Close_2" ID="{E349F3B5-7320-4834-9D13-BA496A04E96E}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_Thunder_Close_3" ID="{87DA9A18-1FFC-453E-8475-BAD74176CBD6}" ShortID="176618079">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_Thunder_Close_3" ID="{7E23B1F2-157B-4181-8552-82AC7F6991F7}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_Thunder_Close_3.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="683766544"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_Thunder_Close_3" ID="{7E23B1F2-157B-4181-8552-82AC7F6991F7}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_Thunder_Close_4" ID="{05AC1EEB-6851-4282-8287-E8BD3ED88439}" ShortID="440808501">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_Thunder_Close_4" ID="{62F6B03F-3958-4914-B797-3DC9389F72EB}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_Thunder_Close_4.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="99871185"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_Thunder_Close_4" ID="{62F6B03F-3958-4914-B797-3DC9389F72EB}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																	</ChildrenList>
+																</RandomSequenceContainer>
+																<RandomSequenceContainer Name="AMB_SC_PontTempete_RND_ThunderFar" ID="{7AD98FD1-54BD-4B97-BFAF-E9AFB6822549}" ShortID="488144959">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<Sound Name="AMB_SC_PontTempete_RND_Thunder_Far_1" ID="{EF9E4F35-93D8-472E-B1CB-AEA1679AA8C9}" ShortID="745029080">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_Thunder_Far_1" ID="{3DB68EE5-3B44-472B-A368-780C2AABFA63}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_Thunder_Far_1.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="52455275"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_Thunder_Far_1" ID="{3DB68EE5-3B44-472B-A368-780C2AABFA63}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_Thunder_Far_2" ID="{32463F18-5311-4C74-86D7-A81001A41280}" ShortID="54477368">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_Thunder_Far_2" ID="{522F2C19-CA51-4D90-B01A-42E1C991A609}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_Thunder_Far_2.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="208400254"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_Thunder_Far_2" ID="{522F2C19-CA51-4D90-B01A-42E1C991A609}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																	</ChildrenList>
+																</RandomSequenceContainer>
+																<RandomSequenceContainer Name="AMB_SC_PontTempete_RND_ThunderMidDistance" ID="{545FC854-4108-460D-BA0E-6FA976D2D8FB}" ShortID="707966576">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<Sound Name="AMB_SC_PontTempete_RND_Thunder_MidDistance_1" ID="{CFF0B907-C820-433A-A1D4-5F13E1B30092}" ShortID="658355540">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_Thunder_MidDistance_1" ID="{AF672596-436F-47A6-B728-5AADDECB1069}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_Thunder_MidDistance_1.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="389552647"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_Thunder_MidDistance_1" ID="{AF672596-436F-47A6-B728-5AADDECB1069}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_Thunder_MidDistance_2" ID="{F244E816-5903-4CA8-97D7-57A7B15227AB}" ShortID="537434406">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_Thunder_MidDistance_2" ID="{AE7DCE59-FC0E-4CBD-98DC-FDE816E8B473}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_Thunder_MidDistance_2.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="489405462"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_Thunder_MidDistance_2" ID="{AE7DCE59-FC0E-4CBD-98DC-FDE816E8B473}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																	</ChildrenList>
+																</RandomSequenceContainer>
+															</ChildrenList>
+															<Playlist>
+																<ItemRef Name="AMB_SC_PontTempete_RND_ThunderClose" ID="{7D9CC3E0-F650-4957-8867-49E30F3EBF75}"/>
+																<ItemRef Name="AMB_SC_PontTempete_RND_ThunderFar" ID="{7AD98FD1-54BD-4B97-BFAF-E9AFB6822549}"/>
+																<ItemRef Name="AMB_SC_PontTempete_RND_ThunderClose" ID="{7D9CC3E0-F650-4957-8867-49E30F3EBF75}"/>
+																<ItemRef Name="AMB_SC_PontTempete_RND_ThunderMidDistance" ID="{545FC854-4108-460D-BA0E-6FA976D2D8FB}"/>
+															</Playlist>
+														</RandomSequenceContainer>
+														<Sound Name="AMB_SC_PontTempete_Thunder_Close_1" ID="{AA096DAA-9556-4D31-A50F-D4B314E88F15}" ShortID="434980014">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMB_SC_PontTempete_Thunder_Close_1" ID="{08BA7886-89D2-47B2-A3E4-ABA42A3D2005}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMB_SC_PontTempete_Thunder_Close_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="914931857"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMB_SC_PontTempete_Thunder_Close_1" ID="{08BA7886-89D2-47B2-A3E4-ABA42A3D2005}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+													<Playlist>
+														<ItemRef Name="AMB_SC_PontTempete_Thunder_Close_1" ID="{AA096DAA-9556-4D31-A50F-D4B314E88F15}"/>
+														<ItemRef Name="ENV_SC_PontTempete_RND_Thunder" ID="{B2507410-625B-43C5-9806-72E6CE9298E4}"/>
+													</Playlist>
+												</RandomSequenceContainer>
+											</ChildrenList>
+										</BlendContainer>
+										<BlendContainer Name="AMB_SC_Pont-SeaBoat" ID="{11D30BEA-4CFA-417A-A68D-BFE42D6F1EE6}" ShortID="359794021">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="AMB_SC_PontTempete_RND_BoatCreakingSequenceGenerator" ID="{2878B971-0CE8-4749-A607-0700A5EE2E5D}" ShortID="530865524">
+													<PropertyList>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+														<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+														<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="6"/>
+														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+														<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<RandomSequenceContainer Name="AMB_SC_PontTempete_RND_BoatCreaking" ID="{CF5B707E-A86D-49EB-8F73-AF7082AD0605}" ShortID="668367547">
+															<PropertyList>
+																<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
+																<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismLoopCount" Type="int32" Value="4"/>
+																<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+																<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.8"/>
+																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<RandomSequenceContainer Name="AMB_SC_PontTempete_RND_BoatCreaking" ID="{B7693071-EEE8-4D8F-BBCA-92307B0AC654}" ShortID="544706754">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_01" ID="{014580C0-552B-4496-92FC-C87E9C3605F7}" ShortID="202113389">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_01" ID="{AE57D557-45BC-4CC0-B912-8934FFBC5C81}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_01.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="636157940"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_01" ID="{AE57D557-45BC-4CC0-B912-8934FFBC5C81}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_02" ID="{693F17F4-3A8F-4EEA-9E8F-BA74F38C3FE7}" ShortID="1059831908">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_02" ID="{A1D6D144-B760-4526-853F-4B9969D269F7}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_02.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="590551012"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_02" ID="{A1D6D144-B760-4526-853F-4B9969D269F7}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_03" ID="{A86C4D6D-73B9-432E-89FA-6C40B941E993}" ShortID="1011269500">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_03" ID="{7AAF99E6-A106-40B3-997B-4C4C1A97B301}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_03.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="212733977"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_03" ID="{7AAF99E6-A106-40B3-997B-4C4C1A97B301}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_04" ID="{12F87645-4611-4185-86E4-1D1B0E5356FF}" ShortID="149305530">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_04" ID="{3FC0D13C-A064-4A67-8C84-5D7CADC05561}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_04.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="756338795"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_04" ID="{3FC0D13C-A064-4A67-8C84-5D7CADC05561}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_05" ID="{FEB38601-DEEE-4284-98E4-BDA7BBFE9ABF}" ShortID="291066754">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_05" ID="{8F527B79-A57E-47EE-B6FB-E64F1CC2AAA4}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_05.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="789280311"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_05" ID="{8F527B79-A57E-47EE-B6FB-E64F1CC2AAA4}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_06" ID="{4FFDDE94-5EBE-4191-B0F5-4D6BF57C962D}" ShortID="29590591">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_06" ID="{9BD2C5B4-9490-4829-93BE-F019C380C2B6}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_06.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="71742877"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_06" ID="{9BD2C5B4-9490-4829-93BE-F019C380C2B6}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_07" ID="{6D87C82C-19DF-4B1A-B9E7-882169073000}" ShortID="340603227">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_07" ID="{0BDD6165-160E-4584-B9BA-DF3A56AC388A}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_07.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="1005052698"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_07" ID="{0BDD6165-160E-4584-B9BA-DF3A56AC388A}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_08" ID="{4D121707-578A-4AA9-A5A9-1FDF550F738A}" ShortID="717011951">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_08" ID="{44C7A125-7793-4B89-BD30-216D9D0FA1B5}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_08.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="859404060"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_08" ID="{44C7A125-7793-4B89-BD30-216D9D0FA1B5}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_09" ID="{508000F7-57A1-4372-B99A-43F3A17175A0}" ShortID="438436428">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_09" ID="{42D72426-4EC5-49E2-8678-2157C61BA557}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_09.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="519832428"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_09" ID="{42D72426-4EC5-49E2-8678-2157C61BA557}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_10" ID="{D26F4920-E21C-4D1E-86B5-9DE79AA1DD27}" ShortID="560410970">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_10" ID="{2DDDA834-25BA-47CA-99FF-A9FF2AD3A1F4}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_10.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="208442806"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_10" ID="{2DDDA834-25BA-47CA-99FF-A9FF2AD3A1F4}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="AMB_SC_PontTempete_RND_BoatCreaking_11" ID="{D6076735-60E7-4154-AC3B-C02B264EDCF8}" ShortID="693088090">
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="AMB_SC_PontTempete_BoatCreaking_11" ID="{C15C204C-3FCB-4807-8044-8D4B19A33461}">
+																					<Language>SFX</Language>
+																					<AudioFile>AMB_SC_PontTempete_BoatCreaking_11.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="58096542"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="AMB_SC_PontTempete_BoatCreaking_11" ID="{C15C204C-3FCB-4807-8044-8D4B19A33461}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																	</ChildrenList>
+																</RandomSequenceContainer>
+															</ChildrenList>
+															<Playlist>
+																<ItemRef Name="AMB_SC_PontTempete_RND_BoatCreaking" ID="{B7693071-EEE8-4D8F-BBCA-92307B0AC654}"/>
+															</Playlist>
+														</RandomSequenceContainer>
+													</ChildrenList>
+													<Playlist>
+														<ItemRef Name="AMB_SC_PontTempete_RND_BoatCreaking" ID="{CF5B707E-A86D-49EB-8F73-AF7082AD0605}"/>
+													</Playlist>
+												</RandomSequenceContainer>
+												<Sound Name="AMB_SC_PontTempete_Bed_StormWaves" ID="{05420838-56A0-4BC4-BC03-D70001DC8CD1}" ShortID="853925781">
+													<PropertyList>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-9</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SC_PontTempete_Bed_StormWaves" ID="{C88C4F72-C788-499F-91BA-CD333D925480}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SC_PontTempete_Bed_StormWaves.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="153762116"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SC_PontTempete_Bed_StormWaves" ID="{C88C4F72-C788-499F-91BA-CD333D925480}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="AMB_SC_PontTempete_Bed_DarkWaves" ID="{D98B51C1-E5CF-4FAC-9D5F-8658AA791E9D}" ShortID="517011342">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="AMB_SC_PontTempete_Bed_DarkWaves" ID="{D7D23E00-D231-45C3-AAB2-5E08D551EADC}">
+															<Language>SFX</Language>
+															<AudioFile>AMB_SC_PontTempete_Bed_DarkWaves.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="810016171"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="AMB_SC_PontTempete_Bed_DarkWaves" ID="{D7D23E00-D231-45C3-AAB2-5E08D551EADC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<RandomSequenceContainer Name="ENV_SC_PontTempete_RND_Waves" ID="{D83480FC-F384-4DD0-B53E-5CBC0F7F5CB9}" ShortID="777460774">
+													<PropertyList>
+														<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+														<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="4">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{AE52C4D5-7EF5-46A5-814D-011006A7C593}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="2"/>
+																			<Property Name="Min" Type="Real64" Value="-3"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+														<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<RandomSequenceContainer Name="ENV_SC_PontTempete_RND_Waves" ID="{A39D5267-33D9-4449-A21C-D272B0C6B13A}" ShortID="252067554">
+															<PropertyList>
+																<Property Name="Pitch" Type="int32">
+																	<ModifierList>
+																		<ModifierInfo>
+																			<Modifier Name="" ID="{418C8037-14F1-45FF-8D3E-EAA5BF427C7F}">
+																				<PropertyList>
+																					<Property Name="Enabled" Type="bool" Value="True"/>
+																					<Property Name="Max" Type="Real64" Value="126"/>
+																					<Property Name="Min" Type="Real64" Value="-126"/>
+																				</PropertyList>
+																			</Modifier>
+																		</ModifierInfo>
+																	</ModifierList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="AMB_SC_PontTempete_RND_HugeWave_1" ID="{6264DB63-78BF-413F-A88B-207B407BFB2D}" ShortID="329551560">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_PontTempete_RND_HugeWave_1" ID="{ECDA02E9-0BB0-42A0-B142-129662BDB7AE}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_PontTempete_RND_HugeWave_1.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="947545656"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_PontTempete_RND_HugeWave_1" ID="{ECDA02E9-0BB0-42A0-B142-129662BDB7AE}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_PontTempete_RND_HugeWave_2" ID="{DD120DB1-478A-41B1-921D-3C1607FDFEB1}" ShortID="346284245">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_PontTempete_RND_HugeWave_2" ID="{004DE14D-A943-40DA-B570-6F5CD34900DD}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_PontTempete_RND_HugeWave_2.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="78346071"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_PontTempete_RND_HugeWave_2" ID="{004DE14D-A943-40DA-B570-6F5CD34900DD}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_PontTempete_RND_HugeWave_3" ID="{F8EB3B96-7078-40AA-8330-C36A2DEF4CFE}" ShortID="6156743">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_PontTempete_RND_HugeWave_3" ID="{6BF1D6E1-1967-46F7-95FB-D7D62EC690D2}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_PontTempete_RND_HugeWave_3.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="657140677"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_PontTempete_RND_HugeWave_3" ID="{6BF1D6E1-1967-46F7-95FB-D7D62EC690D2}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_PontTempete_RND_HugeWave_4" ID="{B6205FF4-728A-43C9-8E9E-D2DAB9A363B5}" ShortID="470838299">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_PontTempete_RND_HugeWave_4" ID="{F5FE9BA7-3A72-4A78-9098-EFA5FD3F2E69}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_PontTempete_RND_HugeWave_4.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="192352510"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_PontTempete_RND_HugeWave_4" ID="{F5FE9BA7-3A72-4A78-9098-EFA5FD3F2E69}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_PontTempete_RND_HugeWave_5" ID="{E7038AA6-24A0-49BB-9A3B-DA14D8470343}" ShortID="980513582">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_PontTempete_RND_HugeWave_5" ID="{6B2ED593-E02E-40E2-922B-DBD1B8F8765E}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_PontTempete_RND_HugeWave_5.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="232733815"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_PontTempete_RND_HugeWave_5" ID="{6B2ED593-E02E-40E2-922B-DBD1B8F8765E}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_PontTempete_RND_HugeWave_6" ID="{FE9B396E-7E2B-49F3-A21F-91F9D0061B50}" ShortID="181886121">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_PontTempete_RND_HugeWave_6" ID="{52004F6D-62A7-4F4C-BC5A-39DAA30A7A9A}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_PontTempete_RND_HugeWave_6.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="367750095"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_PontTempete_RND_HugeWave_6" ID="{52004F6D-62A7-4F4C-BC5A-39DAA30A7A9A}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_PontTempete_RND_HugeWave_7" ID="{18E8B417-04EF-4FE5-802B-F45BC13C3DD8}" ShortID="562268381">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_PontTempete_RND_HugeWave_7" ID="{070ABBD5-B25D-4631-8F5F-4F459BF205B1}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_PontTempete_RND_HugeWave_7.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="874406933"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_PontTempete_RND_HugeWave_7" ID="{070ABBD5-B25D-4631-8F5F-4F459BF205B1}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+														</RandomSequenceContainer>
+													</ChildrenList>
+													<Playlist>
+														<ItemRef Name="ENV_SC_PontTempete_RND_Waves" ID="{A39D5267-33D9-4449-A21C-D272B0C6B13A}"/>
+													</Playlist>
+												</RandomSequenceContainer>
+											</ChildrenList>
+										</BlendContainer>
+									</ChildrenList>
+								</BlendContainer>
+							</ChildrenList>
 						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>

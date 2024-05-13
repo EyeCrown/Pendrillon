@@ -62,6 +62,24 @@
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
+				<SoundcasterSession Name="Public Reaction" ID="{BCB14403-B44E-44FD-BD8E-8267C11C0D35}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_CrowdHype" ID="{5AA3B44C-A286-49F9-946A-DAA2FF0A6380}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}"/>
+							<Value>0.5</Value>
+						</RTPCValue>
+					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Hype_05" ID="{7BAF1D0C-D0FF-45B9-AEBF-3DD84C173452}"/>
+					</CurrentSwitchList>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>
