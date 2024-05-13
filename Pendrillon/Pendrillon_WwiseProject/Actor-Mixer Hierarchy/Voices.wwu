@@ -118,6 +118,1057 @@
 									<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<ActorMixer Name="VOX_" ID="{2E6DDB73-0772-46D8-9F21-CED1CFF72422}" ShortID="1056930634">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<ActorMixer Name="VOX_PlayerF_EmotionsPlaceholder" ID="{7CFF7437-A76C-4665-B959-4B254C4AACA7}" ShortID="368013593">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Agree_EN" ID="{61BDB49F-C5D5-4513-AD88-0AF8C2DF5AD4}" ShortID="603533147">
+													<PropertyList>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Agree_EN" ID="{F02489C5-F6D7-4361-9B0B-C06B80484044}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Agree_EN.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="700674364"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Agree_EN" ID="{F02489C5-F6D7-4361-9B0B-C06B80484044}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Agree" ID="{80ED5758-DBC5-4211-897F-A5B7EE691383}" ShortID="268663583">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Agree_FR" ID="{0AF06595-89C0-4A6E-A6AA-C0BA398DA93C}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Agree_FR.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="767010373"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Agree_FR" ID="{0AF06595-89C0-4A6E-A6AA-C0BA398DA93C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Confident" ID="{DA9641F7-4E36-49F0-8BB3-82C6404FE4FC}" ShortID="634055577">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Confident" ID="{9EEFE47E-610D-46F0-AD33-060CF6CF3645}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Confident.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="109845882"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Confident" ID="{9EEFE47E-610D-46F0-AD33-060CF6CF3645}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Defying" ID="{33891CD6-35E3-47BD-BD9E-5BB3E8E9AA23}" ShortID="474144425">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Defying" ID="{7936298E-97E2-4FD3-A91E-8A60DDB9C8E2}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Defying.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="832772224"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Defying" ID="{7936298E-97E2-4FD3-A91E-8A60DDB9C8E2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Disagree_EN" ID="{AC16042C-8783-4C8F-AA0F-A4C579070C06}" ShortID="949752178">
+													<PropertyList>
+														<Property Name="Inclusion" Type="bool">
+															<ValueList>
+																<Value>False</Value>
+															</ValueList>
+														</Property>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Disagree_EN" ID="{98C8E719-42F2-4B7B-AA92-5F2A6FF9D4B8}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Disagree_EN.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="36683202"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Disagree_EN" ID="{98C8E719-42F2-4B7B-AA92-5F2A6FF9D4B8}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Disagree" ID="{3F86670C-08A0-497C-B20E-9988229F7831}" ShortID="656180141">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Disagree_FR" ID="{327C95CB-238A-4C7D-88D4-16B36286C608}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Disagree_FR.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="580699223"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Disagree_FR" ID="{327C95CB-238A-4C7D-88D4-16B36286C608}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Disgust" ID="{37E8C962-CF0E-4706-9237-424C0E3D25C8}" ShortID="927802597">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Disgust" ID="{C29B8865-6790-407F-8804-6FBFF5291E0D}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Disgust.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="823092522"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Disgust" ID="{C29B8865-6790-407F-8804-6FBFF5291E0D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Explain" ID="{F55EAA9C-F636-4C09-956E-2282BE3AEE53}" ShortID="682887839">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Explain" ID="{603ED91A-2E26-4310-8795-B6BA68ED4E0B}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Explain.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="738408177"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Explain" ID="{603ED91A-2E26-4310-8795-B6BA68ED4E0B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Happy" ID="{FD1C4899-FD45-4D70-93DB-8FDF7DD408BC}" ShortID="933083063">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Happy" ID="{0295E2D4-688C-471C-A59E-C88F5932C877}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Happy.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1073125311"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Happy" ID="{0295E2D4-688C-471C-A59E-C88F5932C877}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_IronicLaugh" ID="{DBBE72ED-1286-440F-94BC-A8CA9467646D}" ShortID="57760635">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_IronicLaugh" ID="{C1F6AA03-4804-41C7-91F6-856E67166DF4}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_IronicLaugh.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="469436330"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_IronicLaugh" ID="{C1F6AA03-4804-41C7-91F6-856E67166DF4}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Laugh" ID="{A4952C68-980B-446F-950C-6F29DECCBF75}" ShortID="401912440">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Laugh" ID="{42CF496D-DC2F-49A5-A641-529493E0B9C0}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Laugh.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="857154088"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Laugh" ID="{42CF496D-DC2F-49A5-A641-529493E0B9C0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_NotConfident" ID="{37845A34-B8E4-4187-BDE5-5C5E70D2E5AB}" ShortID="136090666">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_NotConfident" ID="{73839A3B-89C5-4DD5-8769-8C204DACC5A5}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_NotConfident.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="125699152"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_NotConfident" ID="{73839A3B-89C5-4DD5-8769-8C204DACC5A5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Sad" ID="{E74B2EAD-2572-4812-83BF-D719C7D1B71B}" ShortID="457092481">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Sad" ID="{9FCDD0B9-BCC7-4D3D-98D7-F4440FE4E050}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Sad.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="112318698"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Sad" ID="{9FCDD0B9-BCC7-4D3D-98D7-F4440FE4E050}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Scared" ID="{67639B87-A242-4C28-A9E5-6125C6111CAE}" ShortID="949546182">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Scared" ID="{81D10245-F7A3-48B5-870F-B7DDA9AC74BB}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Scared.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1063278946"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Scared" ID="{81D10245-F7A3-48B5-870F-B7DDA9AC74BB}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Surprised" ID="{9912C6D3-E77A-4E2B-B0DE-7AA43AC29F32}" ShortID="484602365">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Surprised" ID="{08CD00E8-F84A-4F4D-AC4F-5B714B7C9D55}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Surprised.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="906327481"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Surprised" ID="{08CD00E8-F84A-4F4D-AC4F-5B714B7C9D55}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<RandomSequenceContainer Name="VOX_PlayerF_EmotionsPlaceholder_Puzzled" ID="{8D41686D-29FA-4BAC-8971-B9BC74EC7767}" ShortID="754654454">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Puzzled_1" ID="{BB40ABF2-B7F4-4A9E-A845-DF2E4A5CAF4D}" ShortID="366535088">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Puzzled_1" ID="{E5451FD5-D950-469C-A015-0A1436A41744}">
+																	<Language>English(US)</Language>
+																	<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Puzzled_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="123230149"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Puzzled_1" ID="{E5451FD5-D950-469C-A015-0A1436A41744}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Puzzled_2" ID="{399391C1-ABCC-42B8-9561-CEE1CAA6F4B8}" ShortID="694492386">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Puzzled_2" ID="{2EB14A67-A872-4C90-9841-45DDAA43BB7A}">
+																	<Language>English(US)</Language>
+																	<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Puzzled_2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="562698216"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Puzzled_2" ID="{2EB14A67-A872-4C90-9841-45DDAA43BB7A}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="VOX_PlayerF_EmotionsPlaceholder_Smug" ID="{C52DC74A-FC51-4D50-BB9D-2B7BF75E7DF4}" ShortID="772109435">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Smug_1" ID="{833546C1-520A-4366-9384-A935CB7FA649}" ShortID="377725773">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Smug_1" ID="{30115CB8-BB3C-48D2-A1BE-FC63776F920C}">
+																	<Language>English(US)</Language>
+																	<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Smug_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="1044215189"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Smug_1" ID="{30115CB8-BB3C-48D2-A1BE-FC63776F920C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_PlayerF_EmotionsPlaceholder_Smug_2" ID="{2FE2D3E1-2DCC-4432-BEB3-0150B1C8F770}" ShortID="473724388">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_PlayerF_EmotionsPlaceholder_Smug_2" ID="{39305A1F-418B-46D4-B836-393EB25AE7AC}">
+																	<Language>English(US)</Language>
+																	<AudioFile>VOX_PlayerF_EmotionsPlaceholder_Smug_2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="207041841"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_PlayerF_EmotionsPlaceholder_Smug_2" ID="{39305A1F-418B-46D4-B836-393EB25AE7AC}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+											</ChildrenList>
+										</ActorMixer>
+										<ActorMixer Name="VOX_PlayerM_EmotionsPlaceholder" ID="{F86FFC49-87CF-4578-AAA1-6116FE22C154}" ShortID="406408508">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Agree_EN" ID="{D4D44891-558D-4EA7-8A57-472DB658A339}" ShortID="172877855">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Agree_EN" ID="{9933A605-15F3-41A9-9A2E-C1292A98E4C5}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Agree_EN.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="12247141"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Agree_EN" ID="{9933A605-15F3-41A9-9A2E-C1292A98E4C5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Agree" ID="{6017A9A6-8987-4CDC-BEC0-DB07D6BD1BF8}" ShortID="770928098">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Agree_FR" ID="{9787FE75-1C3C-4223-BEE4-939D69A60BE5}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Agree_FR.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="438582979"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Agree_FR" ID="{9787FE75-1C3C-4223-BEE4-939D69A60BE5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Confident" ID="{825CB2B1-7807-4C1B-ACCA-F94632BB057D}" ShortID="532345455">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Confident" ID="{4F89B884-4F5B-44F4-A69F-74A4C5271173}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Confident.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1034762441"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Confident" ID="{4F89B884-4F5B-44F4-A69F-74A4C5271173}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Defying" ID="{0BF59EDD-5436-431C-93F1-49AE2AB4B8D4}" ShortID="257168489">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Defying" ID="{0DCD94FA-79B1-41D6-8642-52F1E2B31477}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Defying.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="79971785"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Defying" ID="{0DCD94FA-79B1-41D6-8642-52F1E2B31477}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Disagree_EN" ID="{19B82D40-5621-4FEC-BA0F-C2454D876239}" ShortID="718074531">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Disagree_EN" ID="{642CF2CB-1806-48B9-B334-8E34066F758D}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Disagree_EN.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="678584217"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Disagree_EN" ID="{642CF2CB-1806-48B9-B334-8E34066F758D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Disagree" ID="{FB2A4A2A-DE72-40F5-B092-561F22DC8756}" ShortID="362188477">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Disagree_FR" ID="{FD4A4762-C0AF-4C8E-9909-4C39FC15E573}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Disagree_FR.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1016137786"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Disagree_FR" ID="{FD4A4762-C0AF-4C8E-9909-4C39FC15E573}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Disgust" ID="{E527C6E8-0B09-411F-9FD1-745163C6582F}" ShortID="729464612">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Disgust" ID="{4484D736-CDF3-4C22-BF21-157A16CA98CF}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Disgust.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1035215011"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Disgust" ID="{4484D736-CDF3-4C22-BF21-157A16CA98CF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Explain" ID="{544FEAE2-0AB5-49A2-89F5-90D58E2F17E2}" ShortID="101041760">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Explain" ID="{9103D0EF-F41D-4F96-B647-AE42132994CF}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Explain.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="419561864"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Explain" ID="{9103D0EF-F41D-4F96-B647-AE42132994CF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Happy" ID="{F330677D-152A-4CAD-A62A-85F265B02935}" ShortID="946143029">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Happy" ID="{D67837F3-0D4B-46F1-8F20-A1E7563C7B63}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Happy.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="756610383"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Happy" ID="{D67837F3-0D4B-46F1-8F20-A1E7563C7B63}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_IronicLaugh" ID="{D343692D-2043-45BF-A4CE-24EAF15D44B3}" ShortID="558073604">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_IronicLaugh" ID="{E198EA45-0F02-4A06-800B-153F0B719B58}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_IronicLaugh.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="43397250"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_IronicLaugh" ID="{E198EA45-0F02-4A06-800B-153F0B719B58}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Laugh" ID="{6C4F77D2-04D5-4F71-99DC-2DB99E12C61B}" ShortID="534587621">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Laugh" ID="{D1E33FAA-3CDF-4F39-AEE0-3487F608AC4C}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Laugh.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="262433455"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Laugh" ID="{D1E33FAA-3CDF-4F39-AEE0-3487F608AC4C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_NotConfident" ID="{FA1A7940-B6AF-4A1A-84F9-B47C9871B2F4}" ShortID="42586698">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_NotConfident" ID="{40341434-9CC6-4341-A8CB-34442319BD0F}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_NotConfident.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="51299058"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_NotConfident" ID="{40341434-9CC6-4341-A8CB-34442319BD0F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Sad" ID="{F2EE5C8A-186B-4814-ABE1-1720A495F66C}" ShortID="1042228463">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Sad" ID="{92C55996-049F-40A7-B235-D173A3CA79D8}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Sad.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="470995573"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Sad" ID="{92C55996-049F-40A7-B235-D173A3CA79D8}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Scared" ID="{6A1325CD-1F34-488C-AABD-F051B8057848}" ShortID="948062048">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Scared" ID="{A4897044-AC6C-4A2B-B14F-E046E8701CD0}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Scared.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="869715775"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Scared" ID="{A4897044-AC6C-4A2B-B14F-E046E8701CD0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Surprised" ID="{F8F211EA-BD5E-45CE-885C-7C9D9C886094}" ShortID="57360562">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Surprised" ID="{E5C96550-4A01-4171-8139-B75FE71D4991}">
+															<Language>English(US)</Language>
+															<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Surprised.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="229222859"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Surprised" ID="{E5C96550-4A01-4171-8139-B75FE71D4991}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<RandomSequenceContainer Name="VOX_PlayerM_EmotionsPlaceholder_Smug" ID="{60D04D15-2CDB-4565-8FBC-C937802C0485}" ShortID="830443224">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Smug_1" ID="{5A8E8CFA-2511-444A-BEF0-8C3F0BE1F6FD}" ShortID="315384">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Smug_1" ID="{CF4DFDA1-653B-4BA4-AF9A-3F18D99F9C81}">
+																	<Language>English(US)</Language>
+																	<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Smug_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="227431470"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Smug_1" ID="{CF4DFDA1-653B-4BA4-AF9A-3F18D99F9C81}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Smug_2" ID="{8C1B8308-6967-416D-9273-0945DCF81C4F}" ShortID="362623355">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Smug_2" ID="{D82176B5-67F4-4833-93C7-CF412EFCE45D}">
+																	<Language>English(US)</Language>
+																	<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Smug_2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="218098152"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Smug_2" ID="{D82176B5-67F4-4833-93C7-CF412EFCE45D}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="VOX_PlayerM_EmotionsPlaceholder_Puzzled" ID="{CD0B6C9D-0CEE-4E6A-9A65-91CA78D30E14}" ShortID="304743557">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Puzzled_1" ID="{6FD5F04B-7CA8-4B6B-A47D-8583454CC815}" ShortID="963979434">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Puzzled_1" ID="{A0BD52D1-B44A-4099-9480-CD8AD9432B60}">
+																	<Language>English(US)</Language>
+																	<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Puzzled_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="517215529"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Puzzled_1" ID="{A0BD52D1-B44A-4099-9480-CD8AD9432B60}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_PlayerM_EmotionsPlaceholder_Puzzled_2" ID="{9CE956D7-9058-4410-A525-D441760E305C}" ShortID="673421513">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_PlayerM_EmotionsPlaceholder_Puzzled_2" ID="{35465DBB-0F2E-4977-ACD5-FB1FE01F2FDE}">
+																	<Language>English(US)</Language>
+																	<AudioFile>VOX_PlayerM_EmotionsPlaceholder_Puzzled_2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="659849968"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_PlayerM_EmotionsPlaceholder_Puzzled_2" ID="{35465DBB-0F2E-4977-ACD5-FB1FE01F2FDE}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+											</ChildrenList>
+										</ActorMixer>
+									</ChildrenList>
+								</ActorMixer>
+							</ChildrenList>
 						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>
@@ -455,6 +1506,318 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
+						</ActorMixer>
+						<ActorMixer Name="Leviathan" ID="{30B9E990-6F29-454C-883D-65EC70754522}" ShortID="941877923">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="VOX_NPC_Leviathan_Spawn" ID="{6960BD20-9B80-454B-80C9-24118E73D53F}" ShortID="885700895">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_NPC_Leviathan_Spawn" ID="{F989BFBF-2982-472D-AB24-5E45C68C8BC5}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_NPC_Leviathan_Spawn.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="557710724"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_NPC_Leviathan_Spawn" ID="{F989BFBF-2982-472D-AB24-5E45C68C8BC5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="VOX_NPC_Leviathan_TurnStart" ID="{ACD9B789-46B1-4066-8A09-1835389F86D2}" ShortID="279638872">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_NPC_Leviathan_TurnStart" ID="{D8DB505F-1F69-41D3-9968-66E4A4D37626}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_NPC_Leviathan_TurnStart.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="961294404"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_NPC_Leviathan_TurnStart" ID="{D8DB505F-1F69-41D3-9968-66E4A4D37626}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="VOX_NPC_Leviathan_AttackTail" ID="{33146712-828E-4770-871F-4FC931049191}" ShortID="972924896">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="VOX_NPC_Leviathan_AttackTail_1" ID="{6A618BFA-B841-44F3-ACD6-8A721A69B54A}" ShortID="1041522480">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_AttackTail_1" ID="{093EDD2E-DE33-450C-A10E-81E20021885A}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_AttackTail_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="332836691"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_AttackTail_1" ID="{093EDD2E-DE33-450C-A10E-81E20021885A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_AttackTail_2" ID="{AB79E502-A33D-4906-8003-D2F11BF49859}" ShortID="286193502">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_AttackTail_2" ID="{E7D84276-842A-4D4E-B6F0-AD557A80C833}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_AttackTail_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="106527913"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_AttackTail_2" ID="{E7D84276-842A-4D4E-B6F0-AD557A80C833}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="VOX_NPC_Leviathan_Hurt" ID="{2570FD7F-B6F5-4594-8C21-D889F4CF3910}" ShortID="31142948">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="VOX_NPC_Leviathan_Hurt_1" ID="{FBCC5C8C-3052-445A-843E-F608CDF2EDD6}" ShortID="529833622">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Hurt_1" ID="{12DB88ED-BAD3-455F-8787-F287D2C2EF77}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Hurt_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="953067962"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Hurt_1" ID="{12DB88ED-BAD3-455F-8787-F287D2C2EF77}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_Hurt_2" ID="{8FF50077-DB34-4B5B-BB89-C7C26A44DF08}" ShortID="785467193">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Hurt_2" ID="{38837FD7-EE45-4366-A596-05DA0BFEFE46}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Hurt_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="737385051"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Hurt_2" ID="{38837FD7-EE45-4366-A596-05DA0BFEFE46}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_Hurt_3" ID="{528524EC-3DBC-4D58-A861-57EF060E5D61}" ShortID="42804262">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Hurt_3" ID="{249881EF-4835-414B-8406-DD92BCB5EDD5}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Hurt_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="869604069"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Hurt_3" ID="{249881EF-4835-414B-8406-DD92BCB5EDD5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_Hurt_4" ID="{B68AC9A8-05BD-438D-B54B-EFB37DE145DE}" ShortID="150711775">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Hurt_4" ID="{6E125F52-E2A7-433F-B323-638E7188A9C3}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Hurt_4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="109491327"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Hurt_4" ID="{6E125F52-E2A7-433F-B323-638E7188A9C3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="VOX_NPC_Leviathan_Underwater" ID="{D50211A4-3815-4811-92FD-F88AF0505D9E}" ShortID="309337221">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="VOX_NPC_Leviathan_Underwater_1" ID="{7F7E937D-AC30-45DB-8824-0C7029BE06D4}" ShortID="944667682">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Underwater_1" ID="{65B987A0-805C-4878-880F-3042B47074F3}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Underwater_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="516243609"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Underwater_1" ID="{65B987A0-805C-4878-880F-3042B47074F3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_Underwater_2" ID="{C816CC09-E85F-4358-998F-3CA8BDB69770}" ShortID="642527497">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Underwater_2" ID="{F8BEEEF4-221E-4CAA-A5E8-3BD9D5358B90}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Underwater_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="719646880"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Underwater_2" ID="{F8BEEEF4-221E-4CAA-A5E8-3BD9D5358B90}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_Underwater_3" ID="{927D33BA-A14E-46A1-A7B6-81DB1B1CF9B8}" ShortID="201590745">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Underwater_3" ID="{E8960DBE-0E8B-4821-AB01-3B3B5B5862FF}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Underwater_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="558614219"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Underwater_3" ID="{E8960DBE-0E8B-4821-AB01-3B3B5B5862FF}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<Sound Name="VOX_NPC_Leviathan_Defeated" ID="{7FD7CEBD-F902-4AFE-9A75-84AA6BB12F0A}" ShortID="984367902">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="VOX_NPC_Leviathan_Defeated" ID="{EECDD446-4CEA-4519-BE4B-A77CC0167582}">
+											<Language>SFX</Language>
+											<AudioFile>VOX_NPC_Leviathan_Defeated.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="692255836"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="VOX_NPC_Leviathan_Defeated" ID="{EECDD446-4CEA-4519-BE4B-A77CC0167582}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>
