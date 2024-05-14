@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -27,18 +28,20 @@ namespace MonoBehavior.Managers
         
         public int _actionPoints;
 
-        public List<FightAction> _actionsList;
+        public List<FightAction> _actions;
         public List<FightAction> _selectedActions;
-        public List<Tuple<FightAction, Button>> _actionButtonList;
+
+        public List<FightActionButton> _ActionButtons;
+        
 
         // Targetable
-        private TargetableAction _waitingAction;
+         private TargetableAction _waitingAction;
         
         // UI Debug 
         public GameObject _uiParent;
         public TextMeshProUGUI _playerDataText;
         public TextMeshProUGUI _actionSelectedText;
-        public Button _buttonPrefab;
+        public GameObject _buttonPrefab;
         
         #endregion
 
@@ -47,9 +50,16 @@ namespace MonoBehavior.Managers
 
         public UnityEvent BeginFight;
         public UnityEvent BeginPlayerTurn;
+        public UnityEvent PlayerReadyToPlay;
+        public UnityEvent EndPlayerTurn;
+        public UnityEvent BeginEnemyTurn;
+
+        public UnityEvent<FightAction> AddFightAction;
+        
         public UnityEvent Validate;
+        
         public UnityEvent MustSelectTarget;
-        public UnityEvent<FightAction> ValidateTarget;
+        public UnityEvent<Enemy> ValidateTarget;
         //public UnityAction EndFight;
 
         #endregion
@@ -68,9 +78,18 @@ namespace MonoBehavior.Managers
             //DontDestroyOnLoad(this.gameObject);
         
             BeginFight.AddListener(OnBeginFight);
+            
             BeginPlayerTurn.AddListener(OnBeginTurn);
-            BeginPlayerTurn.AddListener(OnUpdateUIText);
-            ValidateTarget.AddListener(UpdateDependences);
+            
+            PlayerReadyToPlay.AddListener(OnUpdateUIText);
+            
+            AddFightAction.AddListener(OnAddFightAction);
+            
+            EndPlayerTurn.AddListener(OnEndPlayerTurn);
+            
+            BeginEnemyTurn.AddListener(OnBeginEnemyTurn);
+            
+            ValidateTarget.AddListener(OnValidateTarget);
             
             _uiParent       = GameObject.Find("Canvas/FIGHTING_PART").gameObject;
             _playerDataText       = _uiParent.transform.Find("PlayerDataText").GetComponent<TextMeshProUGUI>();
@@ -92,7 +111,7 @@ namespace MonoBehavior.Managers
             _selectedActions.Clear();
         
             //BeginPlayerTurn.Invoke();
-            _actionButtonList = new List<Tuple<FightAction, Button>>();
+            //_actionButtonList = new List<Tuple<FightAction, Button>>();
         }
 
         #endregion
@@ -113,57 +132,40 @@ namespace MonoBehavior.Managers
                 FightingManager.Instance._enemies.Add(enemy.GetComponent<Enemy>());
             }
         }
+        
+        void SetupActionButtons()
+        {
+            //Debug.Log($"FM.SetupActionButtons > {_actionButtonList}");
+
+            Vector2 buttonPos = new Vector2(150, 150);
+            foreach (var action in _actions)
+            {
+                action.alreadyUse = false;
+                
+                var actionButton = Instantiate(_buttonPrefab, _uiParent.transform);
+
+                actionButton.GetComponent<FightActionButton>().Initialize(action, buttonPos);
+
+                buttonPos.x += actionButton.GetComponent<Button>().GetComponent<RectTransform>().sizeDelta.x + 20;
+            
+                if (!action.accesibleByDefault)
+                    actionButton.gameObject.SetActive(false);
+                
+            }
+        }
+
+
+        public void PassTurn()
+        {
+            _selectedActions.Clear();
+            
+            BeginEnemyTurn.Invoke();
+        }
 
         #endregion
         
-        
-        
-        
-        
-    
-        void SetupActionButtons()
-        {
-            Vector2 buttonPos = new Vector2(150, 150);
-            foreach (var action in _actionsList)
-            {
-                action.alreadyUse = false;
-                Debug.Log($"FM.SetupActionButtons > {_actionButtonList.ToString()}");
-            
-                Button button = Instantiate(_buttonPrefab, _uiParent.transform);
-                button.GetComponent<RectTransform>().position = buttonPos;
-                button.GetComponentInChildren<TextMeshProUGUI>().text = action.ToString();
-            
-                button.onClick.AddListener(delegate {SelectAction(action, button);});
-                //Debug.Log(action.ToString());
 
-                buttonPos.x += button.GetComponent<RectTransform>().sizeDelta.x + 20;
-                //buttonsList.Add(button);
-            
-                if (!action.accesibleByDefault)
-                    button.gameObject.SetActive(false);
-            
-                _actionButtonList.Add(new Tuple<FightAction, Button>(action, button));
-            }
-        }
-
-        
-
-        public void SelectAction(FightAction action, Button buttonObject)
-        {
-            buttonObject.interactable = false;
-            _actionPoints -= action.cost;
-            if (action is TargetableAction)
-            {
-                _waitingAction = action as TargetableAction;
-                MustSelectTarget.Invoke();
-            }
-            else
-            {
-                AddActionToSelection(action);
-            }
-        }
-
-        void AddActionToSelection(FightAction action)
+        /*void AddActionToSelection(FightAction action)
         {
             if (_selectedActions.Count < 3)
             {
@@ -172,25 +174,19 @@ namespace MonoBehavior.Managers
                 Debug.Log("Add " + action.name + " to list actions");
                 //buttonObject.gameObject.SetActive(false);
             
-                for (int i=0; i< _actionButtonList.Count; i++)
-                {
-                    if (_actionButtonList[i].Item1.cost > _actionPoints)
-                        _actionButtonList[i].Item2.interactable = false;
-                    else
-                        _actionButtonList[i].Item2.interactable = true;
-                }
+                
         
                 _playerDataText.text = _actionPoints+"PA\n" + _player._character;
-                ValidateTarget.Invoke(action);
+                //ValidateTarget.Invoke(action);
             }
             else
             {
                 Debug.Log("List full !");
             }
-        }
+        }*/
 
 
-        public void AddTargetableAction(GameObject target)
+        /*public void AddTargetableAction(GameObject target)
         {
             ValidateTarget.Invoke(_waitingAction);
         
@@ -200,24 +196,8 @@ namespace MonoBehavior.Managers
             _waitingAction = null;
         
             ValidateAttacks();
-        }
-
-        public void UpdateDependences(FightAction action)
-        {
-            foreach (var tuple in _actionButtonList)
-            {
-                if (tuple.Item1.dependence == action)
-                {
-                    Debug.Log($"FC.UpdateDependences(FightAction action) > Dependence found between {action.name} & {tuple.Item1.name}");
-                    tuple.Item2.gameObject.SetActive(true);
-                }
-            }
-        }
-
-
+        }*/
         
-
-
         public void ValidateAttacks()
         {
             Debug.Log("Launch all attacks: \n" + _actionSelectedText.text);
@@ -306,26 +286,75 @@ namespace MonoBehavior.Managers
             }
         
             _actionPoints += 3;
-
-            for (int i=0; i< _actionButtonList.Count; i++)
-            {
-                if (_actionButtonList[i].Item1.cost <= _actionPoints && !(_actionButtonList[i].Item1.usableOnce && _actionButtonList[i].Item1.alreadyUse))
-                    _actionButtonList[i].Item2.interactable = true;
-                else
-                    _actionButtonList[i].Item2.interactable = false;
-            }
         
-            _playerDataText.text = _actionPoints+"PA\n" + _player._character;
+            
             Debug.Log("Begin");
+            PlayerReadyToPlay.Invoke();
+        }
+
+
+        private void OnAddFightAction(FightAction action)
+        {
+            //_selectedActions.Add(action);
+            _actionPoints -= action.cost;
+            
+            if (_selectedActions.Count < 3)
+            {
+                _selectedActions.Add(action);
+                
+                // update ui
+                _actionSelectedText.text += action.name + "\n";
+                
+                // debug
+                Debug.Log("Add " + action.name + " to list actions");
+                
+                OnUpdateUIText();
+            }
+            else
+            {
+                Debug.Log("List full !");
+            }
         }
         
         private void OnUpdateUIText()
         {
             _playerDataText.text = _actionPoints+"PA\n" + _player._character;
+            
+            _actionSelectedText.text = "Selected actions: ";
+            foreach (var action in _selectedActions)
+            {
+                _actionSelectedText.text += "> " + action.name + "\n";
+            }
+        }
+
+        private void OnEndPlayerTurn()
+        {
+            
+            // Do attacks
+            StartCoroutine(DoingAction());
+            
+            BeginEnemyTurn.Invoke();
+        }
+
+        void OnBeginEnemyTurn()
+        {
+            EnemiesTurn();
+        }
+
+        void OnValidateTarget(Enemy target)
+        {
+            foreach (var action in _selectedActions)
+            {
+                if (action is TargetableAction)
+                {
+                    (action as TargetableAction).AssignTarget(target);
+                }
+            }
+            
+            EndPlayerTurn.Invoke();
         }
         
         #endregion
-        
         
 
         #region Coroutines
@@ -337,8 +366,6 @@ namespace MonoBehavior.Managers
                 action.Perform();            
                 yield return new WaitForSeconds(0.1f);
             }
-            
-            EnemiesTurn();
         }
 
         #endregion
