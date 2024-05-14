@@ -39,7 +39,14 @@ namespace MonoBehavior.Managers
         public TextMeshProUGUI _playerDataText;
         public TextMeshProUGUI _actionSelectedText;
         public Button _buttonPrefab;
-        
+
+        // Sound
+        [SerializeField] private AK.Wwise.Event _wwiseSelectAttack;
+        [SerializeField] private AK.Wwise.Event _wwiseConfirmAttack;
+        [SerializeField] private AK.Wwise.Event _wwiseRemoveAttack;
+        [SerializeField] private AK.Wwise.Event _wwiseSelectCharacter;
+        [SerializeField] private AK.Wwise.Event _wwiseEndTurn;
+
         #endregion
 
 
@@ -220,13 +227,14 @@ namespace MonoBehavior.Managers
 
         public void AddTargetableAction(GameObject target)
         {
+            PlaySoundSelectCharacter();
             ValidateTarget.Invoke(_waitingAction);
         
             _waitingAction.target = target;
         
             if (_waitingAction != null) AddActionToSelection(_waitingAction);
             _waitingAction = null;
-        
+
             ValidateAttacks();
         }
 
@@ -306,6 +314,35 @@ namespace MonoBehavior.Managers
             EnemiesTurn();
         }
     
+        #region Sound
+
+        private void PlaySoundConfirmAttack()
+        {
+            _wwiseConfirmAttack.Post(gameObject);
+        }
+
+        private void PlaySoundEndTurn()
+        {
+            _wwiseEndTurn.Post(gameObject);
+        }
+
+        private void PlaySoundRemoveAttack()
+        {
+            _wwiseRemoveAttack.Post(gameObject);
+        }
+
+        private void PlaySoundSelectAttack()
+        {
+            _wwiseSelectAttack.Post(gameObject);
+        }
+
+        private void PlaySoundSelectCharacter()
+        {
+            _wwiseSelectCharacter.Post(gameObject);
+        }
+
+
+        #endregion Sound
     
     }
 }

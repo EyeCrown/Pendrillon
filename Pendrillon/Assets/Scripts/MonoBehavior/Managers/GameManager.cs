@@ -37,7 +37,7 @@ namespace MonoBehavior.Managers
         [HideInInspector] public Story _story;
 
         public Vector2 _buttonPos = new Vector2(250, 150);
-        public AK.Wwise.Event _wwiseEvent;
+        [HideInInspector] public AK.Wwise.Event _wwiseEvent;
     
         #endregion
 
@@ -126,7 +126,7 @@ namespace MonoBehavior.Managers
 
         void BeginGame()
         {
-            _story.ChoosePathString("boat_slip_1.guards_are_called");
+           // _story.ChoosePathString("boat_slip_1.guards_are_called");
             // Tell to AM to Begin
             ActingManager.Instance.PhaseStart.Invoke();
             /*String marcello = "MARCELLO";
