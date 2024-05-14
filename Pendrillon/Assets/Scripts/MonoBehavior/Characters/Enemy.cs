@@ -43,6 +43,8 @@ public class Enemy : MonoBehaviour
         _uiFight.SetActive(false);
 
         //_character = gameObject.GetComponent<CharacterHandler>()._character;
+        GetComponent<Collider>().enabled = false;
+
     }
     
     void Start()
@@ -97,15 +99,16 @@ public class Enemy : MonoBehaviour
     void OnBecomeTargetable()
     {
         _canBeTargeted = true;
-        
+        GetComponent<Collider>().enabled = true;
         // Signs to indicate that target is now selectable 
         //GetComponent<Renderer>().material.color = Color.red;
-        
+
         //Debug.Log(gameObject.name + " can be targeted");
     }
     void OnBecomeUntargetable(FightAction action)
     {
         _canBeTargeted = false;
+        GetComponent<Collider>().enabled = false;
         
         //GetComponent<Renderer>().material.color = Color.white;
         

@@ -38,7 +38,15 @@ namespace MonoBehavior.Managers
 
         public Vector2 _buttonPos = new Vector2(250, 150);
         public AK.Wwise.Event _wwiseEvent;
-    
+
+        [Header("Timers")] 
+        [Range(0, 5)] public float _timeButtonSpawnInSec;
+        
+        
+        
+        [Header("Debug")]
+        [SerializeField] private bool _goDirectToFight;
+        
         #endregion
 
         #region UnityAPI
@@ -126,15 +134,12 @@ namespace MonoBehavior.Managers
 
         void BeginGame()
         {
-            _story.ChoosePathString("boat_slip_1.guards_are_called");
+            if (_goDirectToFight)
+                _story.ChoosePathString("boat_slip_1.guards_are_called");
+            
+            
             // Tell to AM to Begin
             ActingManager.Instance.PhaseStart.Invoke();
-            /*String marcello = "MARCELLO";
-            String rudolf = "RUDOLF";
-            List<String> enemies = new List<string>();
-            enemies.Add(marcello);
-            enemies.Add(rudolf);
-            PrepareFightingPhase(enemies);*/
         }
 
         void PrepareFightingPhase()
@@ -162,7 +167,10 @@ namespace MonoBehavior.Managers
         
             FightingManager.Instance.BeginFight.Invoke();
         }
-
+        
+        
+        
+        
         void GeneratePlayerStats()
         {
 
@@ -182,3 +190,6 @@ namespace MonoBehavior.Managers
 
     }
 }
+
+
+
