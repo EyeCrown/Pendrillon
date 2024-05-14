@@ -69,6 +69,11 @@ namespace MonoBehavior.Managers
             //Debug.Log(MethodBase.GetCurrentMethod()?.Name);
         }
 
+        void Start()
+        {
+            _uiParent.SetActive(false);
+        }
+        
         #endregion
 
         #region Getters

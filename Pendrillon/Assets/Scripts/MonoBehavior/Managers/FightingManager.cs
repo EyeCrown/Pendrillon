@@ -53,11 +53,8 @@ namespace MonoBehavior.Managers
         //public UnityAction EndFight;
 
         #endregion
-
-
-
-
-
+        
+        
         #region UnityAPI
 
         private void Awake()
@@ -71,8 +68,8 @@ namespace MonoBehavior.Managers
             //DontDestroyOnLoad(this.gameObject);
         
             BeginFight.AddListener(OnBeginFight);
-            BeginPlayerTurn.AddListener(BeginTurn);
-            BeginPlayerTurn.AddListener(UpdateUIText);
+            BeginPlayerTurn.AddListener(OnBeginTurn);
+            BeginPlayerTurn.AddListener(OnUpdateUIText);
             ValidateTarget.AddListener(UpdateDependences);
             
             _uiParent       = GameObject.Find("Canvas/FIGHTING_PART").gameObject;
@@ -100,27 +97,29 @@ namespace MonoBehavior.Managers
 
         #endregion
 
-        public void OnBeginFight()
+        #region Methods
+
+        public void InitializeEnemies(List<CharacterHandler> enemies)
         {
-            _uiParent.gameObject.SetActive(true);
-            
-            _player = GameManager.Instance.GetPlayer();
-            _player._character.Initialize();
-            //_player.transform.position = new Vector3(-4.0f, 0, 2.0f);
-        
-            float x = 0, z = 0;
-            foreach (var enemy in _enemies)
+            for (int i = 0; i < enemies.Count; i++)
             {
-                enemy.transform.position = GameManager.Instance._enemyPos.position + new Vector3(1.5f + x, 0, 3.0f + z);
-                enemy.transform.LookAt(Camera.main.transform);
-                enemy.Initialize();
-            
-                x += 3.0f;
-                z += 3.0f;
+                var enemy = enemies[i];
+                enemy.transform.position =
+                    GameManager.Instance._gridScene._grid.GetCellCenterWorld(new Vector3Int(4 + i * 2, 0, 6 + i * 2));
+                //enemyCharacter._character = GetCharacter(enemyCharacter._character.name)._character;
+
+                enemy.GetComponent<Enemy>().enabled = true;
+                
+                FightingManager.Instance._enemies.Add(enemy.GetComponent<Enemy>());
             }
-            SetupActionButtons();
-            BeginTurn();
         }
+
+        #endregion
+        
+        
+        
+        
+        
     
         void SetupActionButtons()
         {
@@ -147,34 +146,7 @@ namespace MonoBehavior.Managers
             }
         }
 
-        void BeginTurn()
-        {
-            if (_player._character.hp <= 0)
-            {
-                Debug.Log("Player is dead.");
-                EndFight(false);
-                return;
-            }
-
-            if (_enemies.Count <= 0)
-            {
-                Debug.Log("All enemies are dead.");
-                EndFight(true);
-            }
         
-            _actionPoints += 3;
-
-            for (int i=0; i< _actionButtonList.Count; i++)
-            {
-                if (_actionButtonList[i].Item1.cost <= _actionPoints && !(_actionButtonList[i].Item1.usableOnce && _actionButtonList[i].Item1.alreadyUse))
-                    _actionButtonList[i].Item2.interactable = true;
-                else
-                    _actionButtonList[i].Item2.interactable = false;
-            }
-        
-            _playerDataText.text = _actionPoints+"PA\n" + _player._character;
-            Debug.Log("Begin");
-        }
 
         public void SelectAction(FightAction action, Button buttonObject)
         {
@@ -243,10 +215,7 @@ namespace MonoBehavior.Managers
         }
 
 
-        private void UpdateUIText()
-        {
-            _playerDataText.text = _actionPoints+"PA\n" + _player._character;
-        }
+        
 
 
         public void ValidateAttacks()
@@ -294,17 +263,85 @@ namespace MonoBehavior.Managers
             _enemies.Remove(enemy);
         }
 
+
+        #region EventHandlers
+
+        public void OnBeginFight()
+        {
+            _uiParent.gameObject.SetActive(true);
+            
+            _player = GameManager.Instance.GetPlayer();
+            _player._character.Initialize();
+            //_player.transform.position = new Vector3(-4.0f, 0, 2.0f);
+        
+            float x = 0, z = 0;
+            foreach (var enemy in _enemies)
+            {
+                enemy.transform.position = GameManager.Instance._enemyPos.position + new Vector3(1.5f + x, 0, 3.0f + z);
+                enemy.transform.LookAt(Camera.main.transform);
+                enemy.Initialize();
+            
+                x += 3.0f;
+                z += 3.0f;
+            }
+            SetupActionButtons();
+            
+            // TODO: Connect with applausemeter to check who begin
+            BeginPlayerTurn.Invoke();
+        }
+
+        void OnBeginTurn()
+        {
+            if (_player._character.hp <= 0)
+            {
+                Debug.Log("Player is dead.");
+                EndFight(false);
+                return;
+            }
+
+            if (_enemies.Count <= 0)
+            {
+                Debug.Log("All enemies are dead.");
+                EndFight(true);
+            }
+        
+            _actionPoints += 3;
+
+            for (int i=0; i< _actionButtonList.Count; i++)
+            {
+                if (_actionButtonList[i].Item1.cost <= _actionPoints && !(_actionButtonList[i].Item1.usableOnce && _actionButtonList[i].Item1.alreadyUse))
+                    _actionButtonList[i].Item2.interactable = true;
+                else
+                    _actionButtonList[i].Item2.interactable = false;
+            }
+        
+            _playerDataText.text = _actionPoints+"PA\n" + _player._character;
+            Debug.Log("Begin");
+        }
+        
+        private void OnUpdateUIText()
+        {
+            _playerDataText.text = _actionPoints+"PA\n" + _player._character;
+        }
+        
+        #endregion
+        
+        
+
+        #region Coroutines
+
         IEnumerator DoingAction()
         {
             foreach (var action in _selectedActions)
             {
-                action.Perform();
+                action.Perform();            
+                yield return new WaitForSeconds(0.1f);
             }
-        
-            yield return new WaitForSeconds(0.1f);
-        
+            
             EnemiesTurn();
         }
+
+        #endregion
     
     
     }
