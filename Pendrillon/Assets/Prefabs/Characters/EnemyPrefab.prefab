@@ -123,8 +123,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 11400000, guid: cd76aa0b4a8c12a479cee6e6cdaa1568, type: 2}
-  hp: 0
-  damage: 0
+  _baseHP: 0
+  _hp: 0
+  _damage: 0
+  _uiFight: {fileID: 0}
+  _hpText: {fileID: 0}
   TakeDamageEvent:
     m_PersistentCalls:
       m_Calls: []
