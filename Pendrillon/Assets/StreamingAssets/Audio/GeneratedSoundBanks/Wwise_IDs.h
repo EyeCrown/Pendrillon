@@ -14,22 +14,25 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID GAMESTART = 4058101365U;
-        static const AkUniqueID PLAY_AMB_SC_PONT = 4193452235U;
+        static const AkUniqueID PLAY_AMB_SC_BARQUE_AMBIANCE = 2018964231U;
+        static const AkUniqueID PLAY_AMB_SC_CALE_AMBIANCE = 4168969102U;
+        static const AkUniqueID PLAY_AMB_SC_EGLISE_AMBIANCE = 679935618U;
+        static const AkUniqueID PLAY_AMB_SC_PONT_AMBIANCE = 1799027646U;
+        static const AkUniqueID PLAY_AMB_SC_THEATER_CROWDCHATTER = 23769754U;
         static const AkUniqueID PLAY_CROWDHYPE = 3360090021U;
         static const AkUniqueID PLAY_FOL_HUMANOID_HURT = 786277887U;
+        static const AkUniqueID PLAY_FOL_PLAYER_WALK_STEPPLANK = 2657927902U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_BOUFFON_ATTACK1 = 3286192894U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_BOUFFON_HURT = 1514626058U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_ROYALGUARD_ATTACK1 = 37105197U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_ROYALGUARD_HURT = 1900933419U;
         static const AkUniqueID PLAY_SFX_COMBAT_PLAYER_BASICATTACK1 = 3845829926U;
-        static const AkUniqueID PLAY_SFX_COMBAT_PLAYER_BASICATTACK1_HURT = 1280387290U;
+        static const AkUniqueID PLAY_SFX_COMBAT_PLAYER_HURT = 663250794U;
         static const AkUniqueID PLAY_SFX_NPC_LEVIATHAN_ATTACKTAIL = 3912902577U;
         static const AkUniqueID PLAY_SFX_NPC_LEVIATHAN_HURT = 731471392U;
         static const AkUniqueID PLAY_SFX_NPC_LEVIATHAN_SPAWN = 3734683120U;
         static const AkUniqueID PLAY_SFX_NPC_LEVIATHAN_TURNSTART = 1526748126U;
         static const AkUniqueID PLAY_SFX_NPC_LEVIATHAN_UNDERWATER = 1458930736U;
-        static const AkUniqueID PLAY_SFX_SC_CALE_AMBIANCE = 1004562353U;
-        static const AkUniqueID PLAY_SFX_SC_THEATER_CROWDCHATTER = 2433984191U;
         static const AkUniqueID PLAY_SINE1KHZ = 3733116919U;
         static const AkUniqueID PLAY_UI_COMBAT_BUFF = 3928347901U;
         static const AkUniqueID PLAY_UI_COMBAT_CONFIRMATTACKS = 3834997573U;
@@ -78,9 +81,11 @@ namespace AK
         static const AkUniqueID SETALLVOLUMESTO75 = 902787362U;
         static const AkUniqueID SETHYPERACUSISOFF = 3797495750U;
         static const AkUniqueID SETHYPERACUSISON = 3794163176U;
-        static const AkUniqueID STOP_AMB_SC_PONT = 32026905U;
-        static const AkUniqueID STOP_SFX_SC_CALE_AMBIANCE = 3189791475U;
-        static const AkUniqueID STOP_SFX_SC_THEATER_CROWDCHATTER = 1577954137U;
+        static const AkUniqueID STOP_AMB_SC_BARQUE_AMBIANCE = 248367681U;
+        static const AkUniqueID STOP_AMB_SC_CALE_AMBIANCE = 1268519836U;
+        static const AkUniqueID STOP_AMB_SC_EGLISE_AMBIANCE = 3403986516U;
+        static const AkUniqueID STOP_AMB_SC_PONT_AMBIANCE = 581511488U;
+        static const AkUniqueID STOP_AMB_SC_THEATER_CROWDCHATTER = 2638164736U;
     } // namespace EVENTS
 
     namespace STATES

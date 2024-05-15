@@ -162,172 +162,229 @@
 					<ChildrenList>
 						<Folder Name="Player" ID="{8BCBBD75-3F04-40E2-80EC-9B31B41D98F1}" ShortID="872929069">
 							<ChildrenList>
-								<Event Name="Play_SFX_Combat_Player_BasicAttack1_Hurt" ID="{6E4F5767-3925-4AE4-97EE-6C6197676551}">
+								<Folder Name="Combat" ID="{2B6A170F-A0D9-4DE7-8F6F-815921F236B4}" ShortID="748254307">
 									<ChildrenList>
-										<Action Name="" ID="{43961A73-CDB0-4C82-947C-7A3DF109B9FE}" ShortID="221117955">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_Combat_Player_Hurt" ID="{43F5B8F3-EB09-4483-A68E-79E34234FF50}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
+										<Event Name="Play_SFX_Combat_Player_BasicAttack1" ID="{B8D13DAB-3D6C-4757-9042-01942488B102}">
+											<ChildrenList>
+												<Action Name="" ID="{6A6A6E74-10EF-40A8-98BB-2F9E16BFC37F}" ShortID="222121907">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="SFX_Combat_Player_BasicAttack1" ID="{F3E92E78-80EE-4B5D-8838-3690584D13D4}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{B589E42D-4F77-4B7F-8D73-5C9B657D4F82}" ShortID="1034673767">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="0.3"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_Combat_Player_Attack1" ID="{7E6BD419-A5EA-41C1-A3D9-79205467003F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_Combat_Player_Hurt" ID="{6E4F5767-3925-4AE4-97EE-6C6197676551}">
+											<ChildrenList>
+												<Action Name="" ID="{43961A73-CDB0-4C82-947C-7A3DF109B9FE}" ShortID="221117955">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_Combat_Player_Hurt" ID="{43F5B8F3-EB09-4483-A68E-79E34234FF50}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{A0B71D14-1F0B-44D4-B787-7B951B4A0D69}" ShortID="656449351">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="41"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Play_FOL_Humanoid_Hurt" ID="{63903447-7F62-4B05-BEBC-FD706C5037C0}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
-								</Event>
-								<Event Name="Play_SFX_Combat_Player_BasicAttack1" ID="{B8D13DAB-3D6C-4757-9042-01942488B102}">
+								</Folder>
+								<Folder Name="Foley" ID="{A0AAC921-8138-4F09-8CA6-922845035195}" ShortID="441379274">
 									<ChildrenList>
-										<Action Name="" ID="{6A6A6E74-10EF-40A8-98BB-2F9E16BFC37F}" ShortID="222121907">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="SFX_Combat_Player_BasicAttack1" ID="{F3E92E78-80EE-4B5D-8838-3690584D13D4}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{B589E42D-4F77-4B7F-8D73-5C9B657D4F82}" ShortID="1034673767">
-											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.3"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_Combat_Player_Attack1" ID="{7E6BD419-A5EA-41C1-A3D9-79205467003F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
+										<Event Name="Play_FOL_Player_Walk_StepPlank" ID="{0F09D264-F41E-48D2-BF6F-77753D0D16E1}">
+											<ChildrenList>
+												<Action Name="" ID="{51E8ACDA-ED2B-4A86-A214-6F3C73FE88C5}" ShortID="1031546907">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="FOL_Player_Walk_Step" ID="{2E5B3906-A08E-4B24-9A70-F572152C16D7}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
-								</Event>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="NPC" ID="{B86A02B6-3B66-4C70-A5D1-A0A82B080DCD}" ShortID="965421228">
 							<ChildrenList>
-								<Event Name="Play_SFX_Combat_NPC_RoyalGuard_Hurt" ID="{5D8CC151-742E-4E37-9CB9-B9CD506887E7}">
+								<Folder Name="Leviathan" ID="{91DC85CF-B327-40DC-9638-5E849D09CFAE}" ShortID="797778391">
 									<ChildrenList>
-										<Action Name="" ID="{92A1AD72-7E62-40EF-ADBC-5B69E68371E9}" ShortID="937396411">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_Combat_NPC_RoyalGuard1_Hurt" ID="{55DFBAD9-2BCE-4A6B-B167-E1353CB04B8E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
+										<Event Name="Play_SFX_NPC_Leviathan_AttackTail" ID="{2C611244-EC64-4072-941D-51E9E5EEDCD2}">
+											<ChildrenList>
+												<Action Name="" ID="{4EE3B0E0-3D53-4334-8D85-941773D5C956}" ShortID="203689571">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_NPC_Leviathan_AttackTail" ID="{33146712-828E-4770-871F-4FC931049191}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_NPC_Leviathan_Hurt" ID="{042A3936-AFB1-49AE-A3E6-3710542566C6}">
+											<ChildrenList>
+												<Action Name="" ID="{7AC51DA8-AD33-48A7-A429-9CA184765166}" ShortID="266213868">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_NPC_Leviathan_Hurt" ID="{2570FD7F-B6F5-4594-8C21-D889F4CF3910}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_NPC_Leviathan_Spawn" ID="{D3E9710B-F1DA-4230-9F44-9ED91AC3A965}">
+											<ChildrenList>
+												<Action Name="" ID="{46587C49-6CB5-4547-9ED4-DA9101BE3CB9}" ShortID="628437251">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_NPC_Leviathan_Spawn" ID="{6960BD20-9B80-454B-80C9-24118E73D53F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_NPC_Leviathan_TurnStart" ID="{F79BD5DB-4545-4DD4-9377-0AD1F0B96D68}">
+											<ChildrenList>
+												<Action Name="" ID="{04F4F899-7C35-4D76-B33D-F9CF8A7DDC65}" ShortID="1069335221">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_NPC_Leviathan_TurnStart" ID="{ACD9B789-46B1-4066-8A09-1835389F86D2}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_NPC_Leviathan_Underwater" ID="{1FC47171-B938-4AB8-9A21-44E3D8766915}">
+											<ChildrenList>
+												<Action Name="" ID="{41641F9E-A63A-4E00-B499-86835BCB0273}" ShortID="560269545">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_NPC_Leviathan_Underwater" ID="{D50211A4-3815-4811-92FD-F88AF0505D9E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_NPC_Leviathan_Defeated" ID="{29769FB5-F649-4755-AF31-5E3CA6E65AAF}">
+											<ChildrenList>
+												<Action Name="" ID="{8DB09D00-BD58-4158-9187-6D8441FBB18A}" ShortID="1052030013">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_NPC_Leviathan_Defeated" ID="{7FD7CEBD-F902-4AFE-9A75-84AA6BB12F0A}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
-								</Event>
-								<Event Name="Play_SFX_Combat_NPC_Bouffon_Hurt" ID="{5705698C-7B2C-404E-B951-1693A1315EC7}">
+								</Folder>
+								<Folder Name="Bouffon" ID="{FD9932AA-38AA-4348-81A2-1698E4EB3933}" ShortID="96306302">
 									<ChildrenList>
-										<Action Name="" ID="{065A00EF-9D81-4FA0-94BE-0DB2686AB382}" ShortID="1011784262">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_Combat_NPC_Bouffon_Hurt" ID="{89793031-0870-4191-9844-790249AAFF45}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
+										<Event Name="Play_SFX_Combat_NPC_Bouffon_Attack1" ID="{C34F17A9-5B2C-41A9-B770-57FFA798BADF}">
+											<ChildrenList>
+												<Action Name="" ID="{B5B6C86E-6C30-4921-B732-3017F346E51B}" ShortID="677141905">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="SFX_Combat_NPC_Bouffon_Attack1" ID="{ADF7C81E-052F-4571-97B1-1B02E442DB9D}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{E50113F5-28FB-461B-8575-C9D17B4A224E}" ShortID="603963791">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="0.1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_Combat_NPC_Bouffon_Attack1" ID="{235C5E2D-4FDD-4733-A41B-632E7107E1B4}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_Combat_NPC_Bouffon_Hurt" ID="{5705698C-7B2C-404E-B951-1693A1315EC7}">
+											<ChildrenList>
+												<Action Name="" ID="{065A00EF-9D81-4FA0-94BE-0DB2686AB382}" ShortID="1011784262">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_Combat_NPC_Bouffon_Hurt" ID="{89793031-0870-4191-9844-790249AAFF45}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{E45425C2-1B31-4128-A524-478F2198669B}" ShortID="531180175">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="41"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Play_FOL_Humanoid_Hurt" ID="{63903447-7F62-4B05-BEBC-FD706C5037C0}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_Combat_NPC_RoyalGuard_Attack1" ID="{D6C7A0DE-3268-463A-BCFF-E1F850884F22}">
+											<ChildrenList>
+												<Action Name="" ID="{F964C0E3-1C36-4424-88E6-85EAB38CC1C8}" ShortID="33129839">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="SFX_Combat_NPC_RoyalGuard_Attack1" ID="{6F7E8FFA-89E2-49E0-BB7A-CED2836CDCF0}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{57710008-E76C-4091-BBF3-E9EBD90A9E08}" ShortID="770814387">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="0.1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_Combat_NPC_RoyalGuard1_Attack1" ID="{DE6CDF03-9C0F-46D6-9674-A581BE286B1F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_Combat_NPC_RoyalGuard_Hurt" ID="{5D8CC151-742E-4E37-9CB9-B9CD506887E7}">
+											<ChildrenList>
+												<Action Name="" ID="{92A1AD72-7E62-40EF-ADBC-5B69E68371E9}" ShortID="937396411">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_Combat_NPC_RoyalGuard1_Hurt" ID="{55DFBAD9-2BCE-4A6B-B167-E1353CB04B8E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{773C6AF6-2E3D-4FC2-86DE-D8D7A3FFA882}" ShortID="782238518">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="41"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Play_FOL_Humanoid_Hurt" ID="{63903447-7F62-4B05-BEBC-FD706C5037C0}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
-								</Event>
-								<Event Name="Play_SFX_Combat_NPC_Bouffon_Attack1" ID="{C34F17A9-5B2C-41A9-B770-57FFA798BADF}">
-									<ChildrenList>
-										<Action Name="" ID="{B5B6C86E-6C30-4921-B732-3017F346E51B}" ShortID="677141905">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="SFX_Combat_NPC_Bouffon_Attack1" ID="{ADF7C81E-052F-4571-97B1-1B02E442DB9D}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{E50113F5-28FB-461B-8575-C9D17B4A224E}" ShortID="603963791">
-											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.1"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_Combat_NPC_Bouffon_Attack1" ID="{235C5E2D-4FDD-4733-A41B-632E7107E1B4}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_SFX_Combat_NPC_RoyalGuard_Attack1" ID="{D6C7A0DE-3268-463A-BCFF-E1F850884F22}">
-									<ChildrenList>
-										<Action Name="" ID="{F964C0E3-1C36-4424-88E6-85EAB38CC1C8}" ShortID="33129839">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="SFX_Combat_NPC_RoyalGuard_Attack1" ID="{6F7E8FFA-89E2-49E0-BB7A-CED2836CDCF0}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{57710008-E76C-4091-BBF3-E9EBD90A9E08}" ShortID="770814387">
-											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.1"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_Combat_NPC_RoyalGuard1_Attack1" ID="{DE6CDF03-9C0F-46D6-9674-A581BE286B1F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_SFX_NPC_Leviathan_Spawn" ID="{D3E9710B-F1DA-4230-9F44-9ED91AC3A965}">
-									<ChildrenList>
-										<Action Name="" ID="{46587C49-6CB5-4547-9ED4-DA9101BE3CB9}" ShortID="628437251">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_NPC_Leviathan_Spawn" ID="{6960BD20-9B80-454B-80C9-24118E73D53F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_SFX_NPC_Leviathan_AttackTail" ID="{2C611244-EC64-4072-941D-51E9E5EEDCD2}">
-									<ChildrenList>
-										<Action Name="" ID="{4EE3B0E0-3D53-4334-8D85-941773D5C956}" ShortID="203689571">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_NPC_Leviathan_AttackTail" ID="{33146712-828E-4770-871F-4FC931049191}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_SFX_NPC_Leviathan_Hurt" ID="{042A3936-AFB1-49AE-A3E6-3710542566C6}">
-									<ChildrenList>
-										<Action Name="" ID="{7AC51DA8-AD33-48A7-A429-9CA184765166}" ShortID="266213868">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_NPC_Leviathan_Hurt" ID="{2570FD7F-B6F5-4594-8C21-D889F4CF3910}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_SFX_NPC_Leviathan_Underwater" ID="{1FC47171-B938-4AB8-9A21-44E3D8766915}">
-									<ChildrenList>
-										<Action Name="" ID="{41641F9E-A63A-4E00-B499-86835BCB0273}" ShortID="560269545">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_NPC_Leviathan_Underwater" ID="{D50211A4-3815-4811-92FD-F88AF0505D9E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_SFX_NPC_Leviathan_TurnStart" ID="{F79BD5DB-4545-4DD4-9377-0AD1F0B96D68}">
-									<ChildrenList>
-										<Action Name="" ID="{04F4F899-7C35-4D76-B33D-F9CF8A7DDC65}" ShortID="1069335221">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_NPC_Leviathan_TurnStart" ID="{ACD9B789-46B1-4066-8A09-1835389F86D2}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_NPC_Leviathan_Defeated" ID="{29769FB5-F649-4755-AF31-5E3CA6E65AAF}">
-									<ChildrenList>
-										<Action Name="" ID="{8DB09D00-BD58-4158-9187-6D8441FBB18A}" ShortID="1052030013">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_NPC_Leviathan_Defeated" ID="{7FD7CEBD-F902-4AFE-9A75-84AA6BB12F0A}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Event Name="Play_FOL_Humanoid_Hurt" ID="{63903447-7F62-4B05-BEBC-FD706C5037C0}">
@@ -356,9 +413,12 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_SFX_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}">
+						<Event Name="Play_AMB_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}">
 							<ChildrenList>
 								<Action Name="" ID="{9F5B447C-BF1D-43B1-AC3A-C05D4CAC2010}" ShortID="620740651">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
@@ -367,7 +427,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_SFX_SC_Cale_Ambiance" ID="{CFC7C4F3-9D40-4D56-8C70-9761B6C51F84}">
+						<Event Name="Play_AMB_SC_Cale_Ambiance" ID="{CFC7C4F3-9D40-4D56-8C70-9761B6C51F84}">
 							<ChildrenList>
 								<Action Name="" ID="{02624421-9CCA-45C1-AC3C-9413E6357AB9}" ShortID="44024471">
 									<PropertyList>
@@ -381,9 +441,12 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="Play_AMB_SC_Pont" ID="{04DEBB85-E569-4C98-90A1-616560225229}">
+						<Event Name="Play_AMB_SC_Pont_Ambiance" ID="{04DEBB85-E569-4C98-90A1-616560225229}">
 							<ChildrenList>
 								<Action Name="" ID="{F8450574-D038-4E8F-A5C4-17C24AC093F3}" ShortID="863308079">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="AMB_SC_Pont" ID="{90386080-2AA8-4D81-B8F1-639920457433}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
@@ -394,11 +457,12 @@
 						</Event>
 						<Folder Name="StopAmbiances" ID="{0819E4AB-EEAB-40B4-BB83-31CBBC48810C}" ShortID="361750159">
 							<ChildrenList>
-								<Event Name="Stop_AMB_SC_Pont" ID="{966B7322-683E-4522-80F2-CEB3ECB31B5E}">
+								<Event Name="Stop_AMB_SC_Pont_Ambiance" ID="{966B7322-683E-4522-80F2-CEB3ECB31B5E}">
 									<ChildrenList>
 										<Action Name="" ID="{3E3A2BF8-A3DA-4834-9B45-2E2F3E93AB6D}" ShortID="586565612">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -408,7 +472,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Stop_SFX_SC_Cale_Ambiance" ID="{2676E719-BEDB-44DB-A59C-88A8B74FA143}">
+								<Event Name="Stop_AMB_SC_Cale_Ambiance" ID="{2676E719-BEDB-44DB-A59C-88A8B74FA143}">
 									<ChildrenList>
 										<Action Name="" ID="{8F725F45-DFDD-46FA-9F0D-A3146D64BBDC}" ShortID="707720677">
 											<PropertyList>
@@ -423,11 +487,12 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Stop_SFX_SC_Theater_CrowdChatter" ID="{1654922F-DE03-41CA-B0F5-C962E501E93C}">
+								<Event Name="Stop_AMB_SC_Theater_CrowdChatter" ID="{1654922F-DE03-41CA-B0F5-C962E501E93C}">
 									<ChildrenList>
 										<Action Name="" ID="{3EB28802-5034-4512-A3DE-0FD42C58BA86}" ShortID="1037318886">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -437,8 +502,66 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Stop_AMB_SC_Barque_Ambiance" ID="{C6D281E1-F333-4A01-89DF-19B443EFA4D6}">
+									<ChildrenList>
+										<Action Name="" ID="{09A3645B-2EF0-40E0-A16D-0401E3401766}" ShortID="152653243">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AMB_SC_Barque_Ambiance" ID="{41A0F2C9-5CC7-42C9-8C85-63629FB80BF6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_AMB_SC_Eglise_Ambiance" ID="{8EAD1DB9-CDF5-450F-A640-D9A6C0731612}">
+									<ChildrenList>
+										<Action Name="" ID="{5EA48829-5989-4380-B3BA-FDFB91BAD4A9}" ShortID="949238401">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AMC_SC_Eglise_Ambiance" ID="{16AED275-433D-4BA2-AD15-4F6366409748}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="Play_AMB_SC_Barque_Ambiance" ID="{A4F67341-F783-426C-8CD2-FB5F40ECA153}">
+							<ChildrenList>
+								<Action Name="" ID="{4D73751E-A4E3-4A3F-85FD-E85151E2559E}" ShortID="377280417">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMB_SC_Barque_Ambiance" ID="{41A0F2C9-5CC7-42C9-8C85-63629FB80BF6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_AMB_SC_Eglise_Ambiance" ID="{320BA2C2-4602-48AB-9A88-3CABF3F58C1C}">
+							<ChildrenList>
+								<Action Name="" ID="{4595B467-AC2E-4575-A3DA-7C2A8793D287}" ShortID="846010623">
+									<PropertyList>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="AMC_SC_Eglise_Ambiance" ID="{16AED275-433D-4BA2-AD15-4F6366409748}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Dialogues" ID="{3BC109D9-01F1-41D8-ABDF-37C9FC14F251}" ShortID="1008342144">
