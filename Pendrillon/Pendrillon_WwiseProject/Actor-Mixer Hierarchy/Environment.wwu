@@ -2515,69 +2515,76 @@
 												</GroupingList>
 											</GroupingInfo>
 										</SwitchContainer>
+										<Sound Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" ShortID="454556823">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_SC_Theater_CrowdChatter" ID="{CDC287D0-DB08-40D5-85B8-8BA78FEE9C3D}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_SC_Theater_CrowdChatter.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="825670896"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{9FAD4598-DEE0-4E77-82E6-0257374AD7B2}" ShortID="349630063">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="CrowdBoredom" ID="{61A3171D-F115-49E4-AADA-025E1CEAD958}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{9A487932-9E27-4D3D-9A60-D722EC67D9BF}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>100</XPos>
+																						<YPos>0</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_SC_Theater_CrowdChatter" ID="{CDC287D0-DB08-40D5-85B8-8BA78FEE9C3D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</ActorMixer>
-								<Sound Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" ShortID="454556823">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="SFX_SC_Theater_CrowdChatter" ID="{CDC287D0-DB08-40D5-85B8-8BA78FEE9C3D}">
-											<Language>SFX</Language>
-											<AudioFile>SFX_SC_Theater_CrowdChatter.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="825670896"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ObjectLists>
-										<ObjectList Name="RTPC">
-											<Reference>
-												<Local>
-													<RTPC Name="" ID="{9FAD4598-DEE0-4E77-82E6-0257374AD7B2}" ShortID="349630063">
-														<PropertyList>
-															<Property Name="PropertyName" Type="string" Value="Volume"/>
-														</PropertyList>
-														<ReferenceList>
-															<Reference Name="ControlInput">
-																<ObjectRef Name="CrowdBoredom" ID="{61A3171D-F115-49E4-AADA-025E1CEAD958}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
-															</Reference>
-															<Reference Name="Curve">
-																<Custom>
-																	<Curve Name="" ID="{9A487932-9E27-4D3D-9A60-D722EC67D9BF}">
-																		<PropertyList>
-																			<Property Name="Flags" Type="int32" Value="3"/>
-																		</PropertyList>
-																		<PointList>
-																			<Point>
-																				<XPos>0</XPos>
-																				<YPos>-200</YPos>
-																				<Flags>5</Flags>
-																			</Point>
-																			<Point>
-																				<XPos>100</XPos>
-																				<YPos>0</YPos>
-																				<Flags>37</Flags>
-																			</Point>
-																		</PointList>
-																	</Curve>
-																</Custom>
-															</Reference>
-														</ReferenceList>
-													</RTPC>
-												</Local>
-											</Reference>
-										</ObjectList>
-									</ObjectLists>
-									<ActiveSourceList>
-										<ActiveSource Name="SFX_SC_Theater_CrowdChatter" ID="{CDC287D0-DB08-40D5-85B8-8BA78FEE9C3D}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="AMB_Barque" ID="{6575CB74-7EC0-48A9-9845-F9335BE16980}" ShortID="745220091">
@@ -2589,6 +2596,496 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<BlendContainer Name="AMB_SC_Barque_Ambiance" ID="{41A0F2C9-5CC7-42C9-8C85-63629FB80BF6}" ShortID="843079122">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="AMB_SC_Barque_Bed_Darkwind" ID="{A9091B5C-4B21-42B0-A13F-BD62690CC44E}" ShortID="400591354">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SC_Barque_Bed_Darkwind" ID="{3B739B78-0F06-41E4-A67A-8374BDCEDCD0}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="1575.064"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.400618787650603"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0667697979417667"/>
+														<Property Name="LoopBegin" Type="Real64" Value="1.20185636295181"/>
+														<Property Name="LoopEnd" Type="Real64" Value="21.1660259475402"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AMB_SC_Barque_Bed_Darkwind.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="997735127"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SC_Barque_Bed_Darkwind" ID="{3B739B78-0F06-41E4-A67A-8374BDCEDCD0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_SC_Barque_Bed_WaterWaves" ID="{D9B88DB0-2E62-4373-B665-D3BE863C86F4}" ShortID="997997066">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SC_Barque_Bed_WaterWaves" ID="{77C9F177-1018-46FA-9AA9-5B2BA2877BE1}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="3715.282"/>
+														<Property Name="LoopBegin" Type="Real64" Value="4.2524312876506"/>
+														<Property Name="LoopEnd" Type="Real64" Value="91.852515813253"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AMB_SC_Barque_Bed_WaterWaves.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="694302993"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SC_Barque_Bed_WaterWaves" ID="{77C9F177-1018-46FA-9AA9-5B2BA2877BE1}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="AMB_SC_Barque_RND" ID="{B846A8CF-688D-4020-B51C-71B8E4A13A41}" ShortID="303669033">
+											<PropertyList>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="AMB_SC_Barque_RNDSequence" ID="{0FBE356E-A24E-44E8-ADEC-3FE5BDBD331A}" ShortID="774702591">
+													<PropertyList>
+														<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+														<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+														<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+														<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<RandomSequenceContainer Name="AMB_SC_Barque_RND_BoatCreaking" ID="{7810FAA3-A293-4423-8570-2C8C4774DCBE}" ShortID="388214180">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="AMB_SC_Barque_RND_BoatCreaking_1" ID="{79BBFEBE-4C3B-4263-9C85-394D5456240A}" ShortID="730660061">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_BoatCreaking_1" ID="{E6DC1A63-9BEA-4B64-8C9D-5DE669739C5D}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_BoatCreaking_1.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="803939243"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_BoatCreaking_1" ID="{E6DC1A63-9BEA-4B64-8C9D-5DE669739C5D}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_BoatCreaking_2" ID="{CEA94D29-2247-4907-AF2F-1F64268CF2E8}" ShortID="654101130">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_BoatCreaking_2" ID="{6E45FD14-04A1-454C-B40F-6D03381F9FAE}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_BoatCreaking_2.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="762300672"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_BoatCreaking_2" ID="{6E45FD14-04A1-454C-B40F-6D03381F9FAE}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_BoatCreaking_3" ID="{8859FCF5-2643-4053-A1D9-C4775CB25B3D}" ShortID="847012364">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_BoatCreaking_3" ID="{80B2AD04-6B64-4638-A61C-FCA9524B8F8B}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_BoatCreaking_3.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="584567493"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_BoatCreaking_3" ID="{80B2AD04-6B64-4638-A61C-FCA9524B8F8B}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_BoatCreaking_4" ID="{67A91F47-BAC1-437B-8E24-6617BEDCADC3}" ShortID="652340780">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_BoatCreaking_4" ID="{5BC4315F-E29C-4B13-8362-4D94B35E63AA}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_BoatCreaking_4.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="1032318081"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_BoatCreaking_4" ID="{5BC4315F-E29C-4B13-8362-4D94B35E63AA}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_BoatCreaking_5" ID="{3D138893-91DC-4DF3-A4FB-A4BB9807171D}" ShortID="1025923921">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_BoatCreaking_5" ID="{8FB88F1E-B648-4B4C-AEBF-741C7E943D1A}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_BoatCreaking_5.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="345700573"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_BoatCreaking_5" ID="{8FB88F1E-B648-4B4C-AEBF-741C7E943D1A}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+														</RandomSequenceContainer>
+														<RandomSequenceContainer Name="AMB_SC_Barque_RND_Lantern" ID="{D55F1794-7DC1-4EB1-B9DE-054E1617BD17}" ShortID="151260471">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="AMB_SC_Barque_RND_Lantern_01" ID="{CC16EB3A-B20D-4A99-A8F4-3CBF9FEC0D8C}" ShortID="677237589">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_Lantern_01" ID="{227846A7-FDA8-44EA-99B5-36601F5A09E5}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_Lantern_01.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="1067579051"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_Lantern_01" ID="{227846A7-FDA8-44EA-99B5-36601F5A09E5}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_Lantern_02" ID="{7C4EAC7B-FDC6-4E63-8A94-C05B466D009A}" ShortID="636945141">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_Lantern_02" ID="{A7B4C1D7-D18D-44A7-8543-D9A99A6129C9}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_Lantern_02.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="924900935"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_Lantern_02" ID="{A7B4C1D7-D18D-44A7-8543-D9A99A6129C9}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_Lantern_03" ID="{30F52F1E-8F68-4A43-9A0E-815627EBB164}" ShortID="375110115">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_Lantern_03" ID="{77CD2F15-3BC0-423E-AE01-1EC865B9F00E}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_Lantern_03.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="14069993"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_Lantern_03" ID="{77CD2F15-3BC0-423E-AE01-1EC865B9F00E}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_Lantern_04" ID="{F7FF8E76-50D1-4796-A47B-8D802AD809A1}" ShortID="1008059029">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_Lantern_04" ID="{A6839534-8608-4A1D-84E6-32430C63F29A}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_Lantern_04.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="286015810"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_Lantern_04" ID="{A6839534-8608-4A1D-84E6-32430C63F29A}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_Lantern_05" ID="{0E0FD774-C3E9-4E8F-9E73-F22B241DB44F}" ShortID="170356788">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_Lantern_05" ID="{9EAA2490-A780-4CA1-89A8-5133CAA986E0}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_Lantern_05.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="504662385"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_Lantern_05" ID="{9EAA2490-A780-4CA1-89A8-5133CAA986E0}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_Lantern_06" ID="{43FD84E4-9442-4D4D-98CC-983152D3E347}" ShortID="866106583">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_Lantern_06" ID="{DAF355F8-95EE-4BB7-9102-A4D87F43A66E}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_Lantern_06.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="1037953015"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_Lantern_06" ID="{DAF355F8-95EE-4BB7-9102-A4D87F43A66E}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_Lantern_07" ID="{CA0FE4CE-F3E4-4924-AAF3-73F4FC220636}" ShortID="458559360">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_Lantern_07" ID="{9960084C-1B67-46D1-BD8F-180396D8EF75}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_Lantern_07.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="389667938"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_Lantern_07" ID="{9960084C-1B67-46D1-BD8F-180396D8EF75}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_Lantern_08" ID="{6688EC84-C0BD-403E-B9C5-43DA63BB5ED6}" ShortID="899456409">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_Lantern_08" ID="{BE02A6A2-612E-4ACB-A661-488F772D12EF}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_Lantern_08.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="503956771"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_Lantern_08" ID="{BE02A6A2-612E-4ACB-A661-488F772D12EF}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="AMB_SC_Barque_RND_Lantern_09" ID="{93907AE4-15E5-4A53-8341-D8BB424343EB}" ShortID="182698885">
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="AMB_SC_Barque_RND_Lantern_09" ID="{0538DFAB-9296-474C-9C46-D418656E5F26}">
+																			<Language>SFX</Language>
+																			<AudioFile>AMB_SC_Barque_RND_Lantern_09.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="23547510"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="AMB_SC_Barque_RND_Lantern_09" ID="{0538DFAB-9296-474C-9C46-D418656E5F26}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+														</RandomSequenceContainer>
+													</ChildrenList>
+													<Playlist>
+														<ItemRef Name="AMB_SC_Barque_RND_BoatCreaking" ID="{7810FAA3-A293-4423-8570-2C8C4774DCBE}"/>
+														<ItemRef Name="AMB_SC_Barque_RND_Lantern" ID="{D55F1794-7DC1-4EB1-B9DE-054E1617BD17}"/>
+													</Playlist>
+												</RandomSequenceContainer>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="AMB_SC_Barque_RNDSequence" ID="{0FBE356E-A24E-44E8-ADEC-3FE5BDBD331A}"/>
+											</Playlist>
+										</RandomSequenceContainer>
+										<Sound Name="AMB_SC_Barque_Bed_MechanismRolling" ID="{72FE446F-18D5-44E1-8654-8F8F7A02A29F}" ShortID="977165976">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SC_Barque_Bed_MechanismRolling" ID="{21EE53F1-CD98-45AA-9283-4B91721CFEBB}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="1303.336"/>
+														<Property Name="LoopBegin" Type="Real64" Value="1.31626788403614"/>
+														<Property Name="LoopEnd" Type="Real64" Value="27.3783719879518"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AMB_SC_Barque_Bed_MechanismRolling.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="822969233"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SC_Barque_Bed_MechanismRolling" ID="{21EE53F1-CD98-45AA-9283-4B91721CFEBB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</BlendContainer>
+							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="AMB_Cale" ID="{DAFAD3D0-A777-4118-A27F-1DA298F2B1C9}" ShortID="684507484">
 							<PropertyList>
@@ -3346,6 +3843,10 @@
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="AMB_Port" ID="{84FEFA11-1489-444A-9FAB-D229836A0680}" ShortID="257397641">
+							<PropertyList>
+								<Property Name="Color" Type="int16" Value="9"/>
+								<Property Name="OverrideColor" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -3364,6 +3865,251 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<BlendContainer Name="AMC_SC_Eglise_Ambiance" ID="{16AED275-433D-4BA2-AD15-4F6366409748}" ShortID="943808178">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="AMC_SC_Eglise_Bed_ChurchMystic" ID="{53C11C80-86AD-4BB2-B70D-6B61713312C2}" ShortID="394509001">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMC_SC_Eglise_Bed_ChurchMystic" ID="{4A945EBC-B8FD-4823-9EE9-6303B68781F3}">
+													<PropertyList>
+														<Property Name="LoopBegin" Type="Real64" Value="8.43669352409639"/>
+														<Property Name="LoopEnd" Type="Real64" Value="26.3327100903614"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AMC_SC_Eglise_Bed_ChurchMystic.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="796709831"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMC_SC_Eglise_Bed_ChurchMystic" ID="{4A945EBC-B8FD-4823-9EE9-6303B68781F3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMC_SC_Eglise_Bed_ChurchSilent" ID="{2324300D-6CAC-4FB2-8F5E-C0DFEB596759}" ShortID="446919183">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMC_SC_Eglise_Bed_ChurchSilent" ID="{805CE536-D343-417A-8845-0DE3CB7EDE1C}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="2054.992"/>
+														<Property Name="FadeInDuration" Type="Real64" Value="1.53159964859438"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.25809971134538"/>
+														<Property Name="LoopBegin" Type="Real64" Value="1.53159964859438"/>
+														<Property Name="LoopEnd" Type="Real64" Value="16.4099962349398"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AMC_SC_Eglise_Bed_ChurchSilent.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="583238607"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMC_SC_Eglise_Bed_ChurchSilent" ID="{805CE536-D343-417A-8845-0DE3CB7EDE1C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="AMB_SC_Eglise_RND" ID="{3F194D5B-870E-4933-AE4A-F9D33F4AFA8C}" ShortID="449861288">
+											<PropertyList>
+												<Property Name="InitialDelay" Type="Real64">
+													<ValueList>
+														<Value>2.5</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="4"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="AMB_SC_Eglise_RND_ChoirChord" ID="{680BE413-3BDA-4AD3-9C37-1AC5187AB8E9}" ShortID="1062750713">
+													<PropertyList>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-7</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="AMC_SC_Eglise_RND_ChoirChord_1" ID="{06579B42-B874-42F4-9037-365B0FE6BC85}" ShortID="806844135">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>41</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_ChoirChord_1" ID="{874583C5-33C9-47B2-991E-B811D45F0285}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_ChoirChord_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="721833753"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_ChoirChord_1" ID="{874583C5-33C9-47B2-991E-B811D45F0285}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMC_SC_Eglise_RND_ChoirChord_2" ID="{2DA19EC1-23B3-45A7-9A51-CE7242DCF08A}" ShortID="100668344">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>47</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_ChoirChord_2" ID="{53E70CA8-CD8D-4D2E-89F2-E73EE2CA7809}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_ChoirChord_2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="852967546"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_ChoirChord_2" ID="{53E70CA8-CD8D-4D2E-89F2-E73EE2CA7809}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMC_SC_Eglise_RND_ChoirChord_3" ID="{20759B63-94C2-4BBD-A1EF-454CCA78EF08}" ShortID="1039422269">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>76</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_ChoirChord_3" ID="{C47915B7-E516-4E2E-8D40-4B86F26CD41E}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_ChoirChord_3.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="801773847"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_ChoirChord_3" ID="{C47915B7-E516-4E2E-8D40-4B86F26CD41E}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMC_SC_Eglise_RND_ChoirChord_4" ID="{779EBDEE-7F71-4860-9C2D-0CD793CEF0D7}" ShortID="320119855">
+															<PropertyList>
+																<Property Name="Weight" Type="Real64">
+																	<ValueList>
+																		<Value>43</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_ChoirChord_4" ID="{89BD9EE3-4911-49A8-AF60-7CD2570B7A2D}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_ChoirChord_4.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="790654419"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_ChoirChord_4" ID="{89BD9EE3-4911-49A8-AF60-7CD2570B7A2D}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="AMB_SC_Eglise_RND_ChoirChord" ID="{680BE413-3BDA-4AD3-9C37-1AC5187AB8E9}"/>
+											</Playlist>
+										</RandomSequenceContainer>
+									</ChildrenList>
+								</BlendContainer>
+							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="AMB_Tribunal" ID="{8B19E3C6-8868-4825-B5E1-F6F901C9D7E9}" ShortID="141077431">
 							<ReferenceList>
