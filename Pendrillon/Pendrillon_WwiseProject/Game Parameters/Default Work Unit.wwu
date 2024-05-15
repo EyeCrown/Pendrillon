@@ -43,7 +43,7 @@
 						</GameParameter>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="Gameplay_RTPC" ID="{81C3651C-F5D4-4529-8FEA-AE1827B94F05}" ShortID="831822864">
+				<Folder Name="System_RTPC" ID="{81C3651C-F5D4-4529-8FEA-AE1827B94F05}" ShortID="831822864">
 					<ChildrenList>
 						<GameParameter Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}">
 							<PropertyList>
@@ -52,8 +52,14 @@
 							</PropertyList>
 						</GameParameter>
 						<GameParameter Name="CrowdBoredom" ID="{61A3171D-F115-49E4-AADA-025E1CEAD958}"/>
+						<GameParameter Name="AmbianceFatigue" ID="{D7454268-6505-48E5-AFDE-47F4443C6058}">
+							<PropertyList>
+								<Property Name="InitialValue" Type="Real64" Value="0"/>
+							</PropertyList>
+						</GameParameter>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="StoryRTPC" ID="{60ABBB66-7E90-42AC-A77D-556A0CDB7501}" ShortID="526382456"/>
 			</ChildrenList>
 		</WorkUnit>
 	</GameParameters>
