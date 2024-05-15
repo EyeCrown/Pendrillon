@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -73,9 +74,15 @@ namespace MonoBehavior.Managers
         
             ClearUI.AddListener(OnClearUI);
         
+            _nextDialogueButton.onClick.AddListener(OnClickNextDialogue);
             //Debug.Log(MethodBase.GetCurrentMethod()?.Name);
         }
 
+        void Start()
+        {
+            _uiParent.SetActive(false);
+        }
+        
         #endregion
 
         #region Getters
@@ -119,15 +126,6 @@ namespace MonoBehavior.Managers
             else
             {
                 Debug.Log("Reach end of content.");
-            
-                // Button button = _choicesButtonList[0];
-                // button.gameObject.SetActive(true);
-                // TextMeshProUGUI textButton = button.GetComponentInChildren<TextMeshProUGUI>();
-                // textButton.text = "Restart?";
-                // button.onClick.AddListener(delegate{
-                //     OnPhaseStart();
-                // });
-            
             }
         }
 
@@ -147,10 +145,7 @@ namespace MonoBehavior.Managers
                 Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {speaker}");
             else
                 GameManager.Instance.GetCharacter(speaker).OnDialogueUpdate(dialogue);
-
-            // play sound
-            PlaySoundDialogAppears();
-        
+            
             _dialogueText.text = _currentDialogue;
         }
         
@@ -162,7 +157,6 @@ namespace MonoBehavior.Managers
                 foreach (var tagName in GameManager.Instance._story.currentTags)
                 {
                     _tagsText.text += tagName.Trim() + "\n";
-                    //ParseTag(tag);
                 }
             }
         }
@@ -171,16 +165,12 @@ namespace MonoBehavior.Managers
         {
             if (GameManager.Instance._story.currentChoices.Count > 0)
             {
-                for (int i = 0; i < GameManager.Instance._story.currentChoices.Count; i++)
-                {
-                    GenerateButton(i);
-                    PlaySoundChoiceButtonAppears();
-                    
-                }
+                StartCoroutine(GenerateButtonCoroutine());
             }
-            else // if there is 
+            else 
             {
                 _nextDialogueButton.gameObject.SetActive(true);
+                // TODO: Make button subscribe correct action (=> next dialogue)
             }
         }
 
@@ -200,7 +190,8 @@ namespace MonoBehavior.Managers
             button.onClick.AddListener (delegate {
                 OnClickChoiceButton (choice);
             });
-                
+
+            button.interactable = false; // De base les boutons sont désactivées
             _choicesButtonList.Add(button);
             //Debug.Log($"AM.Refresh() > button.GetComponentInChildren<TextMeshProUGUI>().text:{button.GetComponentInChildren<TextMeshProUGUI>().text}");
         }
@@ -235,37 +226,23 @@ namespace MonoBehavior.Managers
         }
         
         
-        public void ParseTag(string tagName)
-        {
-            Debug.Log(tagName);
-            string[] words = tagName.Split(Constants.Separator);
         
-            foreach (var word in words)
-            {
-                Debug.Log("word: " + word);
-            }
-
-            CheckTag(words);
-        
-        }
-
-
-        private void CheckTag(string[] words)
-        {
-            switch (words[0])
-            {
-                case Constants.TagMove:
-                    HandlerTagMove(words[1]);
-                    break;
-                case Constants.TagPlaySound:
-                
-                    GameManager.Instance._wwiseEvent.Post(gameObject);
-                    break;
-            }
-        }
-
 
         #region ButtonHandlers
+
+        #region NextButton
+        public void OnClickNextDialogue()
+        {
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Call next dialogue");
+            Refresh();
+        }
+
+        public void OnClickContinueCurrentDialogue()
+        {
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} ><");
+        }
+        #endregion
+        
         public void OnClickChoiceButton (Choice choice) {
             GameManager.Instance._story.ChooseChoiceIndex (choice.index);
             PlaySoundChoiceButtonClicked();
@@ -322,6 +299,35 @@ namespace MonoBehavior.Managers
         
         
         #region TagHandlers
+        
+        public void ParseTag(string tagName)
+        {
+            Debug.Log(tagName);
+            string[] words = tagName.Split(Constants.Separator);
+        
+            foreach (var word in words)
+            {
+                Debug.Log("word: " + word);
+            }
+
+            CheckTag(words);
+        
+        }
+        
+        private void CheckTag(string[] words)
+        {
+            switch (words[0])
+            {
+                case Constants.TagMove:
+                    HandlerTagMove(words[1]);
+                    break;
+                case Constants.TagPlaySound:
+                
+                    GameManager.Instance._wwiseEvent.Post(gameObject);
+                    break;
+            }
+        }
+
         // TODO: refactor movements
         private void HandlerTagMove(string coordonates)
         {
@@ -370,5 +376,26 @@ namespace MonoBehavior.Managers
     
 
         #endregion SoundHandler
+
+        #region Coroutines
+
+        IEnumerator GenerateButtonCoroutine()
+        {
+            for (int i = 0; i < GameManager.Instance._story.currentChoices.Count; i++)
+            {
+                yield return new WaitForSeconds(GameManager.Instance._timeButtonSpawnInSec);
+
+                GenerateButton(i);
+                
+                // play sound button creation
+            }
+
+            foreach (var button in _choicesButtonList)
+            {
+                button.interactable = true;
+            }
+        }
+
+        #endregion
     }
 }
