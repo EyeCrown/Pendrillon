@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         TakeDamageEvent.AddListener(OnTakeDamage);
-        FightingManager.Instance.MustSelectTarget.AddListener(OnBecomeTargetable);
+        FightingManager.Instance.CanSelectTarget.AddListener(OnBecomeTargetable);
         FightingManager.Instance.ValidateTarget.AddListener(OnBecomeUntargetable);
         FightingManager.Instance.BeginFight.AddListener(OnBeginFight);
 

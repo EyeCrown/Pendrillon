@@ -12,8 +12,9 @@ public class TargetableAction : FightAction
         base.Perform();
         if (Random.Range(0, 100) < precison)
         {
-            target.TakeDamageEvent.Invoke(damage);
             Debug.Log("Interact with " + target.name);
+
+            target.TakeDamageEvent.Invoke(damage);
         }
     }
     

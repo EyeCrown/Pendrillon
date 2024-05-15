@@ -58,7 +58,7 @@ namespace MonoBehavior.Managers
         
         public UnityEvent Validate;
         
-        public UnityEvent MustSelectTarget;
+        public UnityEvent CanSelectTarget;
         public UnityEvent<Enemy> ValidateTarget;
         //public UnityAction EndFight;
 
@@ -296,11 +296,15 @@ namespace MonoBehavior.Managers
         private void OnAddFightAction(FightAction action)
         {
             //_selectedActions.Add(action);
-            _actionPoints -= action.cost;
+            
             
             if (_selectedActions.Count < 3)
             {
+                _actionPoints -= action.cost;
                 _selectedActions.Add(action);
+                
+                if (action is TargetableAction)
+                    CanSelectTarget.Invoke();
                 
                 // update ui
                 _actionSelectedText.text += action.name + "\n";
@@ -366,6 +370,8 @@ namespace MonoBehavior.Managers
                 action.Perform();            
                 yield return new WaitForSeconds(0.1f);
             }
+            _selectedActions.Clear();
+            OnUpdateUIText();
         }
 
         #endregion

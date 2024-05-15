@@ -28,7 +28,7 @@ public class FightActionButton : MonoBehaviour
         _button = GetComponent<Button>();
         _button.interactable = false;
 
-        
+        // Connect event listeners
         FightingManager.Instance.PlayerReadyToPlay.AddListener(OnPlayerReadyToPlay);
         FightingManager.Instance.AddFightAction.AddListener(OnAddFightAction);
         
@@ -83,16 +83,27 @@ public class FightActionButton : MonoBehaviour
 
     void OnPlayerReadyToPlay()
     {
-        if (_action.dependence == null)
-            RefreshAvailability();
+        //if (_action.dependence == null)
+        RefreshAvailability();
     }
     
     void OnAddFightAction(FightAction action)
     {
-        Debug.Log($"{gameObject.name}.OnAddFightAction > {_action.dependence?.name} == {action.name}");
-        if (_action.dependence == null || _action.dependence.name == action.name)
+        if (_action.dependence == null)
         {
             RefreshAvailability();
+        }
+        else if (_action.dependence == action)
+        {
+            Debug.Log($"{gameObject.name}.OnAddFightAction > Dependancie detected \n{_action.dependence} == {action} ");
+            // Unlock access
+            gameObject.SetActive(true);
+            RefreshAvailability();
+        }
+        else
+        {
+            // do noting
+            Debug.Log($"{gameObject.name}.OnAddFightAction > {_action.dependence} == {action}");
         }
     }
     
