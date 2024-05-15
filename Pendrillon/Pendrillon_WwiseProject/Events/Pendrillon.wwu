@@ -295,6 +295,28 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Play_VOX_NPC_Leviathan_Scream" ID="{A0E1EB1B-69FB-45FD-8706-1837909E4572}">
+											<ChildrenList>
+												<Action Name="" ID="{609B19BC-67D4-498A-A699-0EDA1C0EF96B}" ShortID="964744008">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_NPC_Leviathan_Scream" ID="{7875C7FE-E0E2-4857-AEB2-A1696495F582}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_NPC_Leviathan_AttackJaw" ID="{DF43C24A-0C88-4D00-A0ED-D13BB5CB9D9F}">
+											<ChildrenList>
+												<Action Name="" ID="{62798591-E918-4C30-A62F-DEEC434A0339}" ShortID="562928944">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="VOX_NPC_Leviathan_AttackJaw" ID="{FFBE6772-D361-4258-AA99-84D2387B405D}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Bouffon" ID="{FD9932AA-38AA-4348-81A2-1698E4EB3933}" ShortID="96306302">
@@ -398,6 +420,57 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="Story" ID="{DA9DD13B-37E9-442F-9697-2C4191A3F530}" ShortID="1048747360">
+							<ChildrenList>
+								<Event Name="Play_SFX_Story_JudgeBellFar" ID="{094103A7-F46F-473E-B8AC-C0E8303B6209}">
+									<ChildrenList>
+										<Action Name="" ID="{EACED7B5-63BC-4DA2-9D29-00773838CFCC}" ShortID="970579542">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Story_JudgeBellFar" ID="{0136B741-CE42-4E9B-94CE-C2D24623CD4E}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_Story_SC_Eglise_LightIreneLamp" ID="{7C42C82D-573A-43F2-B90D-98F6D25543CD}">
+									<ChildrenList>
+										<Action Name="" ID="{E9AE6865-08B1-40F1-8FFA-D26AE5F98EDC}" ShortID="668218770">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Story_SC_Eglise_Bed_Story_LampOn" ID="{28D441F6-5AF3-4205-BB64-93493EAA72E7}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{A476038E-24E8-4F2A-94C1-4BE421F655C8}" ShortID="670619856">
+											<PropertyList>
+												<Property Name="AbsoluteOrRelative" Type="int16" Value="1"/>
+												<Property Name="ActionType" Type="int16" Value="12"/>
+												<Property Name="Delay" Type="Real64" Value="5"/>
+												<Property Name="FadeTime" Type="Real64" Value="15"/>
+												<Property Name="Volume" Type="Real64" Value="-6"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Story_SC_Eglise_Bed_Story_LampOn" ID="{28D441F6-5AF3-4205-BB64-93493EAA72E7}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_Story_SC_Eglise_GuardsSearchingFar" ID="{AE4BE1C8-CD9C-43E3-9DBF-81B34A0D1FD6}">
+									<ChildrenList>
+										<Action Name="" ID="{C5A1EB60-3E0D-4C07-9D6F-97B35C74F9A3}" ShortID="350326781">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Story_SC_Eglise_GuardsSearchingFar" ID="{31843ADA-9751-47F4-B434-A877ADB8169F}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Ambiances" ID="{E1349A6F-D7D5-4836-9241-1895A9830AEA}" ShortID="389265221">
@@ -527,6 +600,18 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="AMC_SC_Eglise_Ambiance" ID="{16AED275-433D-4BA2-AD15-4F6366409748}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{F4432B76-099B-4FE6-8C29-D2713A5793E8}" ShortID="1062726951">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Story_SC_Eglise_Bed_Story_LampOn" ID="{28D441F6-5AF3-4205-BB64-93493EAA72E7}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -904,6 +989,17 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="Play_VOX_NPC_Priest_SC_Eglise_1rstEncounter" ID="{633AB96E-38B6-4DA9-8A43-D55FE05DE9AE}">
+							<ChildrenList>
+								<Action Name="" ID="{207D21FF-7B8E-4E62-8761-142DFB7C27C6}" ShortID="35996506">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="VOX_NPC_Leviathan_Hurt" ID="{2570FD7F-B6F5-4594-8C21-D889F4CF3910}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Event Name="GameStart" ID="{CA29A0BB-D5BE-4F96-B957-07CF6903C886}"/>

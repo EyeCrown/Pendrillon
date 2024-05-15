@@ -71,6 +71,10 @@
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
 						<RTPCValue>
+							<GameParameterRef Name="AmbianceFatigue" ID="{D7454268-6505-48E5-AFDE-47F4443C6058}"/>
+							<Value>0</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="CrowdBoredom" ID="{61A3171D-F115-49E4-AADA-025E1CEAD958}"/>
 							<Value>72</Value>
 						</RTPCValue>
@@ -95,6 +99,22 @@
 						<Module>
 							<ObjectRef Name="Play_AMB_SC_Eglise_Ambiance" ID="{320BA2C2-4602-48AB-9A88-3CABF3F58C1C}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_AMB_SC_Eglise_Ambiance" ID="{8EAD1DB9-CDF5-450F-A640-D9A6C0731612}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_Story_SC_Eglise_LightIreneLamp" ID="{7C42C82D-573A-43F2-B90D-98F6D25543CD}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_Story_SC_Eglise_GuardsSearchingFar" ID="{AE4BE1C8-CD9C-43E3-9DBF-81B34A0D1FD6}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_Story_JudgeBellFar" ID="{094103A7-F46F-473E-B8AC-C0E8303B6209}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="2" Y="0"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>

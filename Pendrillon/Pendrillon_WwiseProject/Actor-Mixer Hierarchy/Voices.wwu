@@ -1817,6 +1817,206 @@
 										<ActiveSource Name="VOX_NPC_Leviathan_Defeated" ID="{EECDD446-4CEA-4519-BE4B-A77CC0167582}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<RandomSequenceContainer Name="VOX_NPC_Leviathan_AttackJaw" ID="{FFBE6772-D361-4258-AA99-84D2387B405D}" ShortID="787066482">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="VOX_NPC_Leviathan_AttackTail_1" ID="{0285DBC4-8AA9-43B6-B484-DF8CCFF1AAE9}" ShortID="212405584">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_AttackTail_1" ID="{6954BF9B-DBDA-4B89-A750-60905B1A2107}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_AttackTail_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="332836691"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_AttackTail_1" ID="{6954BF9B-DBDA-4B89-A750-60905B1A2107}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_AttackTail_2" ID="{47EB19DD-85F0-4A63-81FE-77ED7DF42EC6}" ShortID="619377247">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_AttackTail_2" ID="{417681D7-901E-4780-A1E9-7BDEECEB0BB3}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_AttackTail_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="106527913"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_AttackTail_2" ID="{417681D7-901E-4780-A1E9-7BDEECEB0BB3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_AttackJaw_1" ID="{306DCBBE-FDE8-412A-A1BE-E7A5EA05DEA3}" ShortID="100900338">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_AttackJaw_1" ID="{0ED31308-6A11-4324-A83C-23A5ABFF540E}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_AttackJaw_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="148372322"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_AttackJaw_1" ID="{0ED31308-6A11-4324-A83C-23A5ABFF540E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_AttackJaw_2" ID="{CF934BF2-645A-4606-8FA2-3624B8037691}" ShortID="311599994">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_AttackJaw_2" ID="{C153C17F-9FA3-4CCD-8FE1-51587083B5C4}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_AttackJaw_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="305708203"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_AttackJaw_2" ID="{C153C17F-9FA3-4CCD-8FE1-51587083B5C4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="VOX_NPC_Leviathan_Scream" ID="{7875C7FE-E0E2-4857-AEB2-A1696495F582}" ShortID="699577403">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="VOX_NPC_Leviathan_Scream_1" ID="{1CA6E26F-1AA3-40DC-BDE8-8C84976A8E3F}" ShortID="98782226">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Scream_1" ID="{D062260F-34BC-488D-9F6F-10326EBC098C}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Scream_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="279408314"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Scream_1" ID="{D062260F-34BC-488D-9F6F-10326EBC098C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_Scream_2" ID="{9D2A8972-047A-4734-92F2-3E4045D68E31}" ShortID="47401684">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Scream_2" ID="{D0C9BA7F-F80F-477F-87E3-813FE1F5CC48}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Scream_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="455376796"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Scream_2" ID="{D0C9BA7F-F80F-477F-87E3-813FE1F5CC48}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_Scream_3" ID="{849CD5A8-572D-4494-8425-7FA140578960}" ShortID="649914388">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Scream_3" ID="{3702BD1F-4D70-4355-BFB6-1320F3F0CA80}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Scream_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="198347337"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Scream_3" ID="{3702BD1F-4D70-4355-BFB6-1320F3F0CA80}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_NPC_Leviathan_Scream_4" ID="{02D0BAED-FD43-4922-9C75-97A146C04A06}" ShortID="536439412">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Scream_4" ID="{E801D0D0-E58A-48E0-9B83-3A513952F484}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Scream_4.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="338660528"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Scream_4" ID="{E801D0D0-E58A-48E0-9B83-3A513952F484}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
 						</ActorMixer>
 					</ChildrenList>

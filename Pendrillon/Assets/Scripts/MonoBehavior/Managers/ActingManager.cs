@@ -259,6 +259,7 @@ namespace MonoBehavior.Managers
                     break;
                 case Constants.TagPlaySound:
                 
+                    
                     GameManager.Instance._wwiseEvent.Post(gameObject);
                     break;
             }

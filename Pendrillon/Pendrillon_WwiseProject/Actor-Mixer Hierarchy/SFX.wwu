@@ -987,6 +987,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="SFX_Story_JudgeBellFar" ID="{0136B741-CE42-4E9B-94CE-C2D24623CD4E}" ShortID="878558825">
+							<PropertyList>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -1037,6 +1044,188 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="SFX_Story_SC_Eglise_Bed_Story_LampOn" ID="{28D441F6-5AF3-4205-BB64-93493EAA72E7}" ShortID="452109551">
+									<PropertyList>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_Story_SC_Eglise_Bed_Story_LampOn" ID="{41CE84D2-8EEA-44FA-B7AB-C9B4699444ED}" ShortID="498919415">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>4</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_SC_Eglise_Bed_Story_LampOn" ID="{EE6B9268-1730-4E3E-BEC9-05D0B9F5F9E5}">
+													<Language>SFX</Language>
+													<AudioFile>AMB_SC_Eglise_Bed_Story_LampOn.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="957555470"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_SC_Eglise_Bed_Story_LampOn" ID="{EE6B9268-1730-4E3E-BEC9-05D0B9F5F9E5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Story_SC_Eglise_LightIreneLamp" ID="{CBC3526F-B74B-47A7-A740-4DF02F91EA28}" ShortID="1066569439">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Story_SC_Eglise_LightIreneLamp" ID="{E5EFB1F3-2C69-4EFF-99AB-02EC3F0FD66A}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Story_SC_Eglise_LightIreneLamp.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="626361040"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Story_SC_Eglise_LightIreneLamp" ID="{E5EFB1F3-2C69-4EFF-99AB-02EC3F0FD66A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="SFX_Story_SC_Eglise_LightIreneLamp" ID="{CBC3526F-B74B-47A7-A740-4DF02F91EA28}"/>
+										<ItemRef Name="SFX_Story_SC_Eglise_Bed_Story_LampOn" ID="{41CE84D2-8EEA-44FA-B7AB-C9B4699444ED}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="SFX_Story_SC_Eglise_GuardsSearchingFar" ID="{31843ADA-9751-47F4-B434-A877ADB8169F}" ShortID="275916004">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="SFX_Story_SC_Eglise_GuardsSearchingFar_1" ID="{A7059822-E431-47E3-9CCA-A49D56EABC68}" ShortID="301915736">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Story_SC_Eglise_GuardsSearchingFar_1" ID="{7476BF32-41FB-4BE1-9B32-D1E374C96FE9}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Story_SC_Eglise_GuardsSearchingFar_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="81920463"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Story_SC_Eglise_GuardsSearchingFar_1" ID="{7476BF32-41FB-4BE1-9B32-D1E374C96FE9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Story_SC_Eglise_GuardsSearchingFar_2" ID="{543C4926-B691-489A-8E67-6973A898CEC8}" ShortID="443215120">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Story_SC_Eglise_GuardsSearchingFar_2" ID="{FC1E9889-A58D-44AC-814D-2E02AC0E786B}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Story_SC_Eglise_GuardsSearchingFar_2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="594127183"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Story_SC_Eglise_GuardsSearchingFar_2" ID="{FC1E9889-A58D-44AC-814D-2E02AC0E786B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Story_SC_Eglise_GuardsSearchingFar_3" ID="{7F8DBE16-23C1-4383-BB89-C94D130B0643}" ShortID="928483553">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>2</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Story_SC_Eglise_GuardsSearchingFar_3" ID="{9976CC45-C5D7-4D5D-9C2E-FA813CF8B3B3}">
+													<Language>SFX</Language>
+													<AudioFile>SFX_Story_SC_Eglise_GuardsSearchingFar_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="565196038"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Story_SC_Eglise_GuardsSearchingFar_3" ID="{9976CC45-C5D7-4D5D-9C2E-FA813CF8B3B3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="SFX_Story_SC_Eglise_GuardsSearchingFar_1" ID="{A7059822-E431-47E3-9CCA-A49D56EABC68}"/>
+										<ItemRef Name="SFX_Story_SC_Eglise_GuardsSearchingFar_2" ID="{543C4926-B691-489A-8E67-6973A898CEC8}"/>
+										<ItemRef Name="SFX_Story_SC_Eglise_GuardsSearchingFar_3" ID="{7F8DBE16-23C1-4383-BB89-C94D130B0643}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="SC_Pont" ID="{2582885C-0E16-49FF-B5CF-1E4792BF2B74}" ShortID="388884900">
 							<ReferenceList>
