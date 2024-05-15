@@ -16,10 +16,9 @@ public class Enemy : MonoBehaviour
     
     private bool _canBeTargeted;
     
-    // UI
     [SerializeField] private GameObject _uiFight;
     [SerializeField] private TextMeshProUGUI _hpText;
-    [SerializeField] private GameObject _targetIndicator;
+    
     
     #endregion
 
@@ -42,10 +41,8 @@ public class Enemy : MonoBehaviour
         _uiFight = transform.Find("Canvas/FIGHT_PART").gameObject;
         _hpText = _uiFight.GetComponentInChildren<TextMeshProUGUI>();
         _uiFight.SetActive(false);
-        _targetIndicator.SetActive(false);
-        //_character = gameObject.GetComponent<CharacterHandler>()._character;
-        GetComponent<Collider>().enabled = false;
 
+        //_character = gameObject.GetComponent<CharacterHandler>()._character;
     }
     
     void Start()
@@ -100,18 +97,17 @@ public class Enemy : MonoBehaviour
     void OnBecomeTargetable()
     {
         _canBeTargeted = true;
-        GetComponent<Collider>().enabled = true;
-        // Signs to indicate that target is now selectable
-        _targetIndicator.SetActive(true);
-
+        
+        // Signs to indicate that target is now selectable 
+        //GetComponent<Renderer>().material.color = Color.red;
+        
         //Debug.Log(gameObject.name + " can be targeted");
     }
-    void OnBecomeUntargetable(Enemy _)
+    void OnBecomeUntargetable(FightAction action)
     {
         _canBeTargeted = false;
-        GetComponent<Collider>().enabled = false;
         
-        _targetIndicator.SetActive(false);
+        //GetComponent<Renderer>().material.color = Color.white;
         
         //Debug.Log(gameObject.name + " can be targeted");
     }
@@ -136,7 +132,7 @@ public class Enemy : MonoBehaviour
     void OnMouseDown(){
         if (_canBeTargeted)
         {
-            FightingManager.Instance.ValidateTarget.Invoke(this);
+            FightingManager.Instance.AddTargetableAction(this.gameObject);
             _canBeTargeted = false;
         }
     }
