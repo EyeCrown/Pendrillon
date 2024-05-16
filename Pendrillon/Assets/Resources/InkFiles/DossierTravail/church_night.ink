@@ -18,6 +18,7 @@ VAR irene_was_a_sireine = true
 -> start
 
 = start
+#playsound:Play_MUS_Story_SC_Eglise_Intro
 // Player arrive dans l'Église puis avance jusqu'à la statue.
 // Après un moment.
 - ???: Irène acceuille en sa demeure tous ceux qui ont besoin d'un toit...
@@ -61,7 +62,7 @@ VAR irene_was_a_sireine = true
                 AGATHE: J'en ai bien peur, en effet...
     * [Rester silencieux.]
 // Bruits de gardes à l'extérieur
-- AGATHE: ... #playsound:guards_searching_far_away
+- AGATHE: ... #playsound:Play_SFX_Story_SC_Eglise_GuardsSearchingFar #playsound:Play_MUS_Story_SC_Eglise_GuardsSearching
 - AGATHE: Rassurez-vous, vous êtes au seul endroit que les gardes de la Couronne ne viendront pas fouiller...
     * [(Mentir) Personne ne me recherche. {t(CHAR, -40)}]
         {sc(CHAR, -30): -> lie_about_being_chased_S | -> lie_about_being_chased_F}
@@ -81,7 +82,7 @@ VAR irene_was_a_sireine = true
     * [Chaque jour.] PLAYER: Pas un seul jour ne passe sans que j'implore la Déesse pour son pardon.
             ~ trial(t_2_show_plenty_regrets_1)
         AGATHE: Peut-être ne vous êtes-vous pas contenté de voler une miche de pain...
-- AGATHE: Quoi qu'il en soit, seule Irène est en droit de juger vos actes en ces lieux. #playsound:irene_theme #light:irene_statue
+- AGATHE: Quoi qu'il en soit, seule Irène est en droit de juger vos actes en ces lieux. #playsound:Play_MUS_Story_SC_Eglise_ImploreStatue #light:irene_statue
 // PLAYER se tourne vers la statue
     * [(Avec intensité) Implorer la statue. {t(CHAR, -10)}]
         {sc(CHAR, -10): -> implore_irene_S | -> implore_irene_F}
@@ -103,7 +104,7 @@ VAR irene_was_a_sireine = true
         AGATHE: En voilà un sage questionnement. Je ne puis vous apporter une réponse...
         AGATHE: Plutôt que de me demander à moi... Peut-être pourriez-vous vous adresser à elle directement ?
 - AGATHE: Voyez-vous la lampe qui se tient dans sa main ? Faites-en briller la flamme, si vous souhaitez prier la Déesse.
-    * [Allumer la lampe d'Irène.] #anim_event:light_on_irene_lamp
+    * [Allumer la lampe d'Irène.] #anim_event:light_on_irene_lamp #playsound:Play_SFX_Story_SC_Eglise_LightIreneLamp #playsound:Play_MUS_Story_SC_Eglise_LightOn
         AGATHE: Désormais que sa flamme berce ces lieux, n'hésitez plus : parlez-lui.
         ** [Se confesser.] PLAYER: J'ai ramené de mon voyage...
             ~ trial(t_2_light_on_irene_torch)
@@ -129,7 +130,7 @@ VAR irene_was_a_sireine = true
 
 // Ask about the different stained glass illustrations
 = stained_glass
-#light:stained_glass
+#light:stained_glass #playsound:Play_MUS_Story_SC_Eglise_StainedGlassMentionned
 * {stained_glass_1_talk == false} [Le bébé au milieu de la tempête.] PLAYER: Ce bébé, au milieu de la tempête... c'est Elle ?
     ~ stained_glass_1_talk = true
     -> baby_in_the_middle_of_a_tempest
@@ -159,6 +160,7 @@ VAR irene_was_a_sireine = true
 
 // Stained glass of Irene as a baby, in the middle of a tempest
 = baby_in_the_middle_of_a_tempest
+#playsound:Play_MUS_Story_SC_Eglise_StainedGlassBaby
 AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheurs fut pris dans ses entrailles.
     * [Et ensuite ?] PLAYER: Et puis ? Que leur est-il arrivé ?
     * [S'en sont-ils sorti ?] PLAYER: Ont-il pû regager la terre ferme ?
@@ -293,6 +295,7 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
 
 // Stained glass of Irene next ton the lighthouse
 = irene_next_to_the_lighthouse
+#playsound:Play_MUS_Story_SC_Eglise_StainedGlassLookingOcean
 - AGATHE: Savez-vous ce que disait l'homme qui l'éleva comme sa fille ?
     * [Qui pourrait le prétendre ?] PLAYER: J'aimerais bien connaître celui qui le prétend.
         AGATHE: Les Écrits nous renseignent à ce sujet, mon enfant.
@@ -403,6 +406,7 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
 
 // Stained glass of a man tied to a wheel, about to be sentenced to death
 = man_tied_to_a_wheel
+#playsound:Play_MUS_Story_SC_Eglise_StainedGlassHim
 AGATHE: C'est Lui, en effet. L'homme a souffert pour sauver sa fille, et notre peuple tout entier.
     * [Nous lui devons tant.] PLAYER: Notre dette à son égard est immense. Sans lui, le Déluge nous aurait emporté.
         AGATHE: Sans lui, nous aurions été avalés par les eaux, comme les impies.
@@ -517,6 +521,7 @@ AGATHE: C'est Lui, en effet. L'homme a souffert pour sauver sa fille, et notre p
 
 // Stained glass of a ship reaching land (broken)
 = ship_reaching_land
+#playsound:Play_MUS_Story_SC_Eglise_StainedGlassBroken
 - Le destin fait bien les choses, mon enfant. Il représente le retour du navire d'Irène à Miraterre, après un siècle de voyage... Or, c'est un temps dont nous ne savons rien.
     * [Que voulez-vous dire ?] PLAYER: Que voulez-vous dire par là ? Ne sait-on pas que le navire a vogué durant un siècle ? Ne sait-on pas qu'Irène fut transfigurée en figure de proue ?
         AGATHE: Nous savons cela. Mais nous ignorons tout le reste...
