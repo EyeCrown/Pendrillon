@@ -62,12 +62,13 @@ namespace MonoBehavior.Managers
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
 
+            _gridScene = GameObject.Find("Grid").GetComponent<GroundGrid>();
+            
             // Connect Events
             ActingManager.Instance.PhaseEnded.AddListener(PrepareFightingPhase);
             
             /*if (_inkAsset == null)
             Resources.Load<TextAsset>("InkFiles/");*/
-        
             _story = new Story(_inkAsset.text);
             
         }
@@ -137,7 +138,7 @@ namespace MonoBehavior.Managers
         
         void BeginGame()
         {
-            MoveCharactersOutsideScene();
+            //MoveCharactersOutsideScene();
             if (_goDirectToFight)
             {
                 var enemies = new List<CharacterHandler>();

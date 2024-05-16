@@ -7,7 +7,7 @@ using UnityEngine;
 public class HitEnemy : TargetableAction
 {
     [Range(0, 100)]
-    public int damage;
+    public new int damage;
     
     public override void Perform()
     {

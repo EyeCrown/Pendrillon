@@ -1,7 +1,7 @@
 
-Marcello:This is dialogue. #playsound:Play_sine1kHz
+Marcello:This is dialogue. #playsound:Play_sine1kHz #anim:Player:Angry
 
-This is a choice. #char:Reine #A:ELOQ:75 #B:STRG:30
+Marcello:This is a choice. 
     * [Choice A] -> A
         #char
     * [Choice B] -> B

@@ -602,7 +602,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &148885498
 RectTransform:
   m_ObjectHideFlags: 0
@@ -669,14 +669,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _charactersOnStage: []
-  _uiParent: {fileID: 148885497}
-  _dialogueText: {fileID: 1684796008}
-  _tagsText: {fileID: 252073603}
+  _uiParent: {fileID: 0}
+  _dialogueText: {fileID: 0}
+  _tagsText: {fileID: 0}
   _choiceButtonPrefab: {fileID: 839975030731081523, guid: cb5dd4f7c7d745d45b75a7510e19f50f,
     type: 3}
   _choicesButtonList: []
-  _nextDialogueButton: {fileID: 1475272760}
-  _backButton: {fileID: 1520642}
+  _nextDialogueButton: {fileID: 0}
+  _backButton: {fileID: 0}
   PhaseStart:
     m_PersistentCalls:
       m_Calls: []
@@ -1838,19 +1838,12 @@ MonoBehaviour:
   _player: {fileID: 0}
   _enemies: []
   _actionPoints: 0
-  _actions:
-  - {fileID: 11400000, guid: 15fc2cdf531604345b3148fe1a92548c, type: 2}
-  - {fileID: 11400000, guid: 1c0c359c12d321b40bfd98987d2b26d1, type: 2}
-  - {fileID: 11400000, guid: 50a59649b75b57b4f9a8e4484b40cb98, type: 2}
-  - {fileID: 11400000, guid: 69e16fb9bc771d04991a113b74ea06d2, type: 2}
-  - {fileID: 11400000, guid: c3237c8cb118f1c4986a3153f31fb633, type: 2}
+  _actions: []
   _selectedActions: []
-  _ActionButtons: []
-  _uiParent: {fileID: 1349724278}
+  _uiParent: {fileID: 0}
   _playerDataText: {fileID: 0}
   _actionSelectedText: {fileID: 0}
-  _buttonPrefab: {fileID: 5360541214188630175, guid: 4ef0b94d574e05546a739007a8e910a7,
-    type: 3}
+  _buttonPrefab: {fileID: 0}
   BeginFight:
     m_PersistentCalls:
       m_Calls: []
@@ -5887,19 +5880,19 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c4305806737424b4f9ea5bab81d6fd30, type: 2}
   _characters: []
   _playerData: {fileID: 11400000, guid: 36239629bb22d2d4d93aca931305c114, type: 2}
-  _player: {fileID: 636588902162026476, guid: 59c0214aad52b934d9b76b043de5be64, type: 3}
+  _player: {fileID: 8700564801285164923, guid: 598cde86737f46b42abac00923589c95, type: 3}
   _characterPrefab: {fileID: 8241601096825971287, guid: 59c0214aad52b934d9b76b043de5be64,
     type: 3}
-  _gridScene: {fileID: 1274117894}
+  _gridScene: {fileID: 0}
   _playerPos: {fileID: 2047131942}
   _enemyPos: {fileID: 1399118768}
-  _inkAsset: {fileID: 4900000, guid: e324f8cdb966b9142b0932ea9e928330, type: 3}
+  _inkAsset: {fileID: 4900000, guid: aea10bacd7190834bbefc610ad03a9e7, type: 3}
   _buttonPos: {x: 250, y: 150}
   _wwiseEvent:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
-  _timeButtonSpawnInSec: 0.5
+  _timeButtonSpawnInSec: 0
   _goDirectToFight: 0
 --- !u!4 &1286597836
 Transform:

@@ -77,24 +77,19 @@ namespace MonoBehavior.Managers
             Instance = this;
             //DontDestroyOnLoad(this.gameObject);
         
-            BeginFight.AddListener(OnBeginFight);
-            
-            BeginPlayerTurn.AddListener(OnBeginTurn);
-            
-            PlayerReadyToPlay.AddListener(OnUpdateUIText);
-            
-            AddFightAction.AddListener(OnAddFightAction);
-            
-            EndPlayerTurn.AddListener(OnEndPlayerTurn);
-            
-            BeginEnemyTurn.AddListener(OnBeginEnemyTurn);
-            
-            ValidateTarget.AddListener(OnValidateTarget);
-            
             _uiParent       = GameObject.Find("Canvas/FIGHTING_PART").gameObject;
             _playerDataText       = _uiParent.transform.Find("PlayerDataText").GetComponent<TextMeshProUGUI>();
             _actionSelectedText   = _uiParent.transform.Find("ActionSelectedText").GetComponent<TextMeshProUGUI>();
-        }
+            
+            BeginFight.AddListener(OnBeginFight);
+            BeginPlayerTurn.AddListener(OnBeginTurn);
+            PlayerReadyToPlay.AddListener(OnUpdateUIText);
+            AddFightAction.AddListener(OnAddFightAction);
+            EndPlayerTurn.AddListener(OnEndPlayerTurn);
+            BeginEnemyTurn.AddListener(OnBeginEnemyTurn);
+            ValidateTarget.AddListener(OnValidateTarget);
+            
+            }
 
         void Start()
         {

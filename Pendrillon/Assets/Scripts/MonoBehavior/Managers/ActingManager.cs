@@ -59,13 +59,21 @@ namespace MonoBehavior.Managers
 
             Instance = this;
             //DontDestroyOnLoad(this.gameObject);
-        
+            
+            // Connect Attributes
+            _uiParent       = GameObject.Find("Canvas/ACTING_PART").gameObject;
+            _dialogueText   = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
+            _tagsText       = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
+            _nextDialogueButton = _uiParent.transform.Find("DialogueBox/NextButton").GetComponent<Button>();
+            _backButton     = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
+            
+            // Connect Events
             PhaseStart.AddListener(OnPhaseStart);
             PhaseEnded.AddListener(OnPhaseEnded);
-        
             ClearUI.AddListener(OnClearUI);
         
             _nextDialogueButton.onClick.AddListener(OnClickNextDialogue);
+            
             //Debug.Log(MethodBase.GetCurrentMethod()?.Name);
         }
 
@@ -255,12 +263,12 @@ namespace MonoBehavior.Managers
             _uiParent.gameObject.SetActive(true);
             savedJsonStack = new Stack<string>();
 
-            GameManager.Instance.GetPlayer()._character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
-            GameManager.Instance.GetPlayer()._character.strength.SetupBase((int)GameManager.Instance._story.variablesState["p_stre"]);
-            GameManager.Instance.GetPlayer()._character.dexterity.SetupBase((int)GameManager.Instance._story.variablesState["p_dext"]);
-            GameManager.Instance.GetPlayer()._character.constitution.SetupBase((int)GameManager.Instance._story.variablesState["p_comp"]);
-            GameManager.Instance.GetPlayer()._character.luck.SetupBase((int)GameManager.Instance._story.variablesState["p_luck"]);
-        
+            // GameManager.Instance.GetPlayer()._character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
+            // GameManager.Instance.GetPlayer()._character.strength.SetupBase((int)GameManager.Instance._story.variablesState["p_stre"]);
+            // GameManager.Instance.GetPlayer()._character.dexterity.SetupBase((int)GameManager.Instance._story.variablesState["p_dext"]);
+            // GameManager.Instance.GetPlayer()._character.constitution.SetupBase((int)GameManager.Instance._story.variablesState["p_comp"]);
+            // GameManager.Instance.GetPlayer()._character.luck.SetupBase((int)GameManager.Instance._story.variablesState["p_luck"]);
+            
             //Debug.Log($"AM.OnPhaseStart() > GameManager.Instance.GetCharacter(\"PLAYER\")._character:{GameManager.Instance.GetPlayer()._character}");
         
             Refresh();
@@ -313,9 +321,11 @@ namespace MonoBehavior.Managers
                     HandlerTagMove(words[1]);
                     break;
                 case Constants.TagPlaySound:
-
                     HandleTagPlaysound(words[1]);
                     //GameManager.Instance._wwiseEvent.Post(gameObject);
+                    break;
+                case Constants.TagAnim:
+                    HandleTagAnim(words.Skip(1).Cast<String>().ToArray());
                     break;
             }
         }
@@ -342,6 +352,14 @@ namespace MonoBehavior.Managers
             
             AkSoundEngine.PostEvent(soundToPlay, gameObject);
             
+        }
+        
+        
+        private void HandleTagAnim(string[] data)
+        {
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {data[0]} must play {data[1]} anim");
+            //TODO: Finish animator
+            //GameManager.Instance.GetCharacter(data[0])._anim.Play(data[1]);
         }
         #endregion
 

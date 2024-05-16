@@ -11,6 +11,8 @@ public class CharacterHandler : MonoBehaviour
 
     public Character _character;
 
+    public Animator _anim;
+    
     public Canvas _canvas;
     private GameObject _uiActing;
     public TextMeshProUGUI _nameText;
@@ -36,6 +38,8 @@ public class CharacterHandler : MonoBehaviour
     {
         ActingManager.Instance.ClearUI.AddListener(OnClearUI);
         DialogueUpdate.AddListener(OnDialogueUpdate);
+
+        _anim = GetComponentInChildren<Animator>();
         
         _canvas         = transform.Find("Canvas").GetComponent<Canvas>();
         _uiActing       = transform.Find("Canvas/ACTING_PART").gameObject;
