@@ -1,0 +1,632 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1902337257970686848
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5909378323504118095}
+  m_Layer: 0
+  m_Name: RotHead
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5909378323504118095
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902337257970686848}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.000000021855694, y: 1.1102232e-16, z: -1.1102232e-16, w: 1}
+  m_LocalPosition: {x: -0.0279, y: 0.0199, z: 0.0001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3603272827357787088}
+  - {fileID: 6729103051838385326}
+  m_Father: {fileID: 683781439639994277}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4938813332717869449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8463063633703797953}
+  m_Layer: 0
+  m_Name: Mesh_Sc_Tempete_Leviathan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8463063633703797953
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4938813332717869449}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -23.01, y: 1.86, z: -7.596568}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5344861602219661817}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1078610898685417550
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5344861602219661817}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.00157
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05954
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0015
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1.1102232e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1.1102232e-16
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96caca2c0f8179949bd1514db262ea49, type: 2}
+    - target: {fileID: 919132149155446097, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh_Sc_Tempete_Leviathan_Body_Part2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5909378323504118095}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 778b1affb1fa96c42889aabef837c0c2, type: 3}
+--- !u!4 &683781439639994277 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 778b1affb1fa96c42889aabef837c0c2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1078610898685417550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3858420458546730043
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5909378323504118095}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0059
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0004
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96caca2c0f8179949bd1514db262ea49, type: 2}
+    - target: {fileID: 919132149155446097, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh_Sc_Tempete_Leviathan_Head_Bot_Front
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8033401720481663907}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: adea6bf8f7e2ac64093545724bf2d79b, type: 3}
+--- !u!4 &3603272827357787088 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: adea6bf8f7e2ac64093545724bf2d79b,
+    type: 3}
+  m_PrefabInstance: {fileID: 3858420458546730043}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5595293944021843474
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8463063633703797953}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96caca2c0f8179949bd1514db262ea49, type: 2}
+    - target: {fileID: 919132149155446097, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh_Sc_Tempete_Leviathan_Body_Part1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 683781439639994277}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 812a073aa5a33b542b5fae409200ac4d, type: 3}
+--- !u!4 &5344861602219661817 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 812a073aa5a33b542b5fae409200ac4d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5595293944021843474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6550532867140586309
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5909378323504118095}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0078
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0005
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0014
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96caca2c0f8179949bd1514db262ea49, type: 2}
+    - target: {fileID: 919132149155446097, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh_Sc_Tempete_Leviathan_Head_Top_Front
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7098872841167593519}
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 4017aadf43adc5f4789ae504664a7810, type: 3}
+--- !u!4 &6729103051838385326 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4017aadf43adc5f4789ae504664a7810,
+    type: 3}
+  m_PrefabInstance: {fileID: 6550532867140586309}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7282032807500253124
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6729103051838385326}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0009999974
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.000029997587
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.003490008
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 5.303218e-32
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 2.4264699e-24
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96caca2c0f8179949bd1514db262ea49, type: 2}
+    - target: {fileID: 919132149155446097, guid: 19cd43773b4763541997940b4de10dae,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh_Sc_Tempete_Leviathan_Head_Top_Back
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 19cd43773b4763541997940b4de10dae, type: 3}
+--- !u!4 &7098872841167593519 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 19cd43773b4763541997940b4de10dae,
+    type: 3}
+  m_PrefabInstance: {fileID: 7282032807500253124}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7563471425234742344
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3603272827357787088}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0030900054
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00073999894
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.0015800007
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99939257
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000002184242
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -7.616629e-10
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.034849633
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -3.994
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 96caca2c0f8179949bd1514db262ea49, type: 2}
+    - target: {fileID: 919132149155446097, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh_Sc_Tempete_Leviathan_Head_Bot_Back
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94f1b6584d83b2f4cbbd9aa44285cb27, type: 3}
+--- !u!4 &8033401720481663907 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 94f1b6584d83b2f4cbbd9aa44285cb27,
+    type: 3}
+  m_PrefabInstance: {fileID: 7563471425234742344}
+  m_PrefabAsset: {fileID: 0}
