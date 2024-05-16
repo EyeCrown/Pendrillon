@@ -30,6 +30,15 @@ namespace MonoBehavior.Managers
         [SerializeField] private Button _nextDialogueButton;
         [SerializeField] private Button _backButton;
 
+        //Sound
+        [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButton;
+
+        /* Cet event est lancé depuis le bouton vert d'UI
+         [SerializeField] private AK.Wwise.Event _wwiseNextDialogueButton; */
+        [SerializeField] private AK.Wwise.Event _wwiseBackButton;
+        [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButtonAppears;
+        [SerializeField] private AK.Wwise.Event _wwiseDialogAppears;
+
         private string _currentDialogue;
     
         private Stack<string> savedJsonStack;
@@ -136,7 +145,10 @@ namespace MonoBehavior.Managers
                 Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {speaker}");
             else
                 GameManager.Instance.GetCharacter(speaker).OnDialogueUpdate(dialogue);
-            
+
+            // play sound
+            PlaySoundDialogAppears();
+
             _dialogueText.text = _currentDialogue;
         }
         
@@ -237,12 +249,14 @@ namespace MonoBehavior.Managers
         
         public void OnClickChoiceButton (Choice choice) {
             GameManager.Instance._story.ChooseChoiceIndex (choice.index);
+            PlaySoundChoiceButtonClicked();
             Refresh();
         }
 
         public void OnClickBackButton()
         {
             GameManager.Instance._story.state.LoadJson(savedJsonStack.Pop());
+            PlaySoundBackButton();
             Refresh();
 
         }
@@ -345,6 +359,39 @@ namespace MonoBehavior.Managers
         }
         #endregion
 
+        //Le code pour le son :) par Romain
+        #region SoundHandler
+
+        private void PlaySoundChoiceButtonClicked()
+        {
+            _wwiseChoiceDialogueButton.Post(gameObject);
+        }
+
+        /*
+        private void PlaySoundNextButton()
+        {
+            _wwiseNextDialogueButton.Post(gameObject);
+        }
+        */
+
+        private void PlaySoundBackButton()
+        {
+            _wwiseBackButton.Post(gameObject);
+        }
+
+        private void PlaySoundDialogAppears()
+        {
+            _wwiseDialogAppears.Post(gameObject);
+        }
+
+        private void PlaySoundChoiceButtonAppears()
+        {
+            _wwiseChoiceDialogueButtonAppears.Post(gameObject);
+        }
+
+
+        #endregion SoundHandler
+
 
         #region Coroutines
 
@@ -355,7 +402,8 @@ namespace MonoBehavior.Managers
                 yield return new WaitForSeconds(GameManager.Instance._timeButtonSpawnInSec);
 
                 GenerateButton(i);
-                
+                PlaySoundChoiceButtonAppears();
+
                 // play sound button creation
             }
 
