@@ -48,7 +48,9 @@ namespace MonoBehavior.Managers
         [SerializeField] private bool _goDirectToFight;
         
         #endregion
-
+        
+        //add comments
+        
         #region UnityAPI
         private void Awake()
         {
