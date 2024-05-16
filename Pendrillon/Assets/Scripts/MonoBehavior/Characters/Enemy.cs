@@ -16,9 +16,10 @@ public class Enemy : MonoBehaviour
     
     private bool _canBeTargeted;
     
+    // UI
     [SerializeField] private GameObject _uiFight;
     [SerializeField] private TextMeshProUGUI _hpText;
-    
+    [SerializeField] private GameObject _targetIndicator;
     
     #endregion
 
@@ -34,15 +35,17 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         TakeDamageEvent.AddListener(OnTakeDamage);
-        FightingManager.Instance.MustSelectTarget.AddListener(OnBecomeTargetable);
+        FightingManager.Instance.CanSelectTarget.AddListener(OnBecomeTargetable);
         FightingManager.Instance.ValidateTarget.AddListener(OnBecomeUntargetable);
         FightingManager.Instance.BeginFight.AddListener(OnBeginFight);
 
         _uiFight = transform.Find("Canvas/FIGHT_PART").gameObject;
         _hpText = _uiFight.GetComponentInChildren<TextMeshProUGUI>();
         _uiFight.SetActive(false);
-
+        _targetIndicator.SetActive(false);
         //_character = gameObject.GetComponent<CharacterHandler>()._character;
+        GetComponent<Collider>().enabled = false;
+
     }
     
     void Start()
@@ -97,17 +100,18 @@ public class Enemy : MonoBehaviour
     void OnBecomeTargetable()
     {
         _canBeTargeted = true;
-        
-        // Signs to indicate that target is now selectable 
-        //GetComponent<Renderer>().material.color = Color.red;
-        
+        GetComponent<Collider>().enabled = true;
+        // Signs to indicate that target is now selectable
+        _targetIndicator.SetActive(true);
+
         //Debug.Log(gameObject.name + " can be targeted");
     }
-    void OnBecomeUntargetable(FightAction action)
+    void OnBecomeUntargetable(Enemy _)
     {
         _canBeTargeted = false;
+        GetComponent<Collider>().enabled = false;
         
-        //GetComponent<Renderer>().material.color = Color.white;
+        _targetIndicator.SetActive(false);
         
         //Debug.Log(gameObject.name + " can be targeted");
     }
@@ -132,7 +136,7 @@ public class Enemy : MonoBehaviour
     void OnMouseDown(){
         if (_canBeTargeted)
         {
-            FightingManager.Instance.AddTargetableAction(this.gameObject);
+            FightingManager.Instance.ValidateTarget.Invoke(this);
             _canBeTargeted = false;
         }
     }

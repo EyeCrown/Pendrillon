@@ -38,7 +38,15 @@ namespace MonoBehavior.Managers
 
         public Vector2 _buttonPos = new Vector2(250, 150);
         public AK.Wwise.Event _wwiseEvent;
-    
+
+        [Header("Timers")] 
+        [Range(0, 5)] public float _timeButtonSpawnInSec;
+        
+        
+        
+        [Header("Debug")]
+        [SerializeField] private bool _goDirectToFight;
+        
         #endregion
 
         #region UnityAPI
@@ -76,12 +84,14 @@ namespace MonoBehavior.Managers
 
         public void SetupPlayer()
         {
-            GeneratePlayerStats();
+            //GeneratePlayerStats();
             _player = Instantiate(_characterPrefab).GetComponent<CharacterHandler>();
             _player.transform.position = _gridScene.GetWorldPositon(_gridScene._playerPosition);
             
+            Destroy(_player.GetComponent<Enemy>());
+            
             _player.transform.rotation = _playerPos.rotation;
-
+            
             _player.name = "Player"; //_player.GetComponent<CharacterHandler>()._character.name;
         }
         
@@ -122,47 +132,47 @@ namespace MonoBehavior.Managers
         {
             return _player;
         }
-
-
+        
+        
         void BeginGame()
         {
-            _story.ChoosePathString("boat_slip_1.guards_are_called");
-            // Tell to AM to Begin
-            ActingManager.Instance.PhaseStart.Invoke();
-            /*String marcello = "MARCELLO";
-            String rudolf = "RUDOLF";
-            List<String> enemies = new List<string>();
-            enemies.Add(marcello);
-            enemies.Add(rudolf);
-            PrepareFightingPhase(enemies);*/
+            MoveCharactersOutsideScene();
+            if (_goDirectToFight)
+            {
+                var enemies = new List<CharacterHandler>();
+                enemies.Add(GetCharacter("Marcello"));
+                enemies.Add(GetCharacter("Rudolf"));
+                
+                FightingManager.Instance.InitializeEnemies(enemies);
+                FightingManager.Instance.BeginFight.Invoke();
+            }
+            else
+            {
+                ActingManager.Instance.PhaseStart.Invoke();
+            }
         }
 
         void PrepareFightingPhase()
         {
             //Debug.Log("GM.PrepareFightingPhase > Can prepare the fight");
 
+            MoveCharactersOutsideScene();
+            
+            // TODO: Maybe put event call into Initialize function ?
+            FightingManager.Instance.InitializeEnemies(ActingManager.Instance.GetEnemiesToFight());
+            FightingManager.Instance.BeginFight.Invoke();
+        }
+
+        void MoveCharactersOutsideScene()
+        {
             foreach (var character in _characters)
             {
                 character.transform.position = new Vector3(-999, -999, -999);
             }
-            
-            
-            for (int i = 0; i < ActingManager.Instance.GetEnemiesToFight().Count; i++)
-            {
-                var enemyCharacter = ActingManager.Instance.GetEnemiesToFight()[i];
-                //enemyCharacter.transform.position = _enemyPos.position + new Vector3(i * 3.0f, 0, i * 2.5f);
-                enemyCharacter.transform.position =
-                    _gridScene._grid.GetCellCenterWorld(new Vector3Int(4 + i * 2, 0, 6 + i * 2));
-                //enemyCharacter._character = GetCharacter(enemyCharacter._character.name)._character;
-
-                enemyCharacter.GetComponent<Enemy>().enabled = true;
-                
-                FightingManager.Instance._enemies.Add(enemyCharacter.GetComponent<Enemy>());
-            }
-        
-            FightingManager.Instance.BeginFight.Invoke();
         }
-
+        
+        
+        
         void GeneratePlayerStats()
         {
 
@@ -182,3 +192,6 @@ namespace MonoBehavior.Managers
 
     }
 }
+
+
+
