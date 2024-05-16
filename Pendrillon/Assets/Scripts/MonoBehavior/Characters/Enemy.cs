@@ -34,7 +34,7 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         TakeDamageEvent.AddListener(OnTakeDamage);
-        FightingManager.Instance.MustSelectTarget.AddListener(OnBecomeTargetable);
+        FightingManager.Instance.CanSelectTarget.AddListener(OnBecomeTargetable);
         FightingManager.Instance.ValidateTarget.AddListener(OnBecomeUntargetable);
         FightingManager.Instance.BeginFight.AddListener(OnBeginFight);
 
@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
         
         //Debug.Log(gameObject.name + " can be targeted");
     }
-    void OnBecomeUntargetable(FightAction action)
+    void OnBecomeUntargetable(Enemy _)
     {
         _canBeTargeted = false;
         
@@ -132,7 +132,7 @@ public class Enemy : MonoBehaviour
     void OnMouseDown(){
         if (_canBeTargeted)
         {
-            FightingManager.Instance.AddTargetableAction(this.gameObject);
+            //FightingManager.Instance.AddTargetableAction(this.gameObject);
             _canBeTargeted = false;
         }
     }
