@@ -148,6 +148,7 @@ namespace MonoBehavior.Managers
                 foreach (var tagName in GameManager.Instance._story.currentTags)
                 {
                     _tagsText.text += tagName.Trim() + "\n";
+                    ParseTag(tagName);
                 }
             }
         }
@@ -312,12 +313,14 @@ namespace MonoBehavior.Managers
                     HandlerTagMove(words[1]);
                     break;
                 case Constants.TagPlaySound:
-                
-                    GameManager.Instance._wwiseEvent.Post(gameObject);
+
+                    HandleTagPlaysound(words[1]);
+                    //GameManager.Instance._wwiseEvent.Post(gameObject);
                     break;
             }
         }
 
+        
         // TODO: refactor movements
         private void HandlerTagMove(string coordonates)
         {
@@ -331,6 +334,14 @@ namespace MonoBehavior.Managers
             CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
             characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)));
         
+        }
+
+        private void HandleTagPlaysound(string soundToPlay)
+        {
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Play sound {soundToPlay}");
+            
+            AkSoundEngine.PostEvent(soundToPlay, gameObject);
+            
         }
         #endregion
 

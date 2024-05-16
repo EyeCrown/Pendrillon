@@ -84,7 +84,7 @@ namespace MonoBehavior.Managers
 
         public void SetupPlayer()
         {
-            GeneratePlayerStats();
+            //GeneratePlayerStats();
             _player = Instantiate(_characterPrefab).GetComponent<CharacterHandler>();
             _player.transform.position = _gridScene.GetWorldPositon(_gridScene._playerPosition);
             
