@@ -31,7 +31,7 @@ namespace MonoBehavior.Managers
         public List<FightAction> _actions;
         public List<FightAction> _selectedActions;
 
-        public List<FightActionButton> _ActionButtons;
+        //public List<FightActionButton> _ActionButtons;
         
 
         // Targetable
@@ -144,7 +144,7 @@ namespace MonoBehavior.Managers
                 
                 var actionButton = Instantiate(_buttonPrefab, _uiParent.transform);
 
-                actionButton.GetComponent<FightActionButton>().Initialize(action, buttonPos);
+                //actionButton.GetComponent<FightActionButton>().Initialize(action, buttonPos);
 
                 buttonPos.x += actionButton.GetComponent<Button>().GetComponent<RectTransform>().sizeDelta.x + 20;
             
@@ -351,7 +351,7 @@ namespace MonoBehavior.Managers
             {
                 if (action is TargetableAction)
                 {
-                    (action as TargetableAction).AssignTarget(target);
+                    //(action as TargetableAction).AssignTarget(target);
                 }
             }
             
