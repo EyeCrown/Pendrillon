@@ -40,7 +40,9 @@ namespace MonoBehavior.Managers
         [HideInInspector] public AK.Wwise.Event _wwiseEvent;
     
         #endregion
-
+        
+        //add comments
+        
         #region UnityAPI
         private void Awake()
         {
