@@ -32,15 +32,14 @@ namespace MonoBehavior.Managers
         [SerializeField] private Button _backButton;
         
         private string _currentDialogue;
-    
         private Stack<string> savedJsonStack;
-
         private bool mustWait = false;
         private float timeToWait = 0.0f;
         
+        private List<CharacterHandler> _enemiesToFight = new();
 
-        private List<CharacterHandler> _enemiesToFight = new List<CharacterHandler>();
-
+        private List<Action> tagMethods = new();
+        
         //Sound
         [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButton;
 
@@ -49,6 +48,8 @@ namespace MonoBehavior.Managers
         [SerializeField] private AK.Wwise.Event _wwiseBackButton;
         [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButtonAppears;
         [SerializeField] private AK.Wwise.Event _wwiseDialogAppears;
+        
+        
         
         #endregion
 
@@ -377,6 +378,10 @@ namespace MonoBehavior.Managers
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {data[0]} must play {data[1]} anim");
 
+            tagMethods.Add(() => 
+                StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1]))
+                ); 
+            
             StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1]));
 
         }
