@@ -244,7 +244,8 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
 - #audience:surprise
     * [Moi, tuer le Léviathan ?] PLAYER: Suis-je en plein rêve, ou me demandes-tu vraiment d'aller tuer le Léviathan ? #audience:laugther
         ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse.
-    * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. Moi, tuer le Léviathan ? #audience:laugther
+    * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. #audience:laugther
+        #anim:Arle:laugh
         ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse.
     * [Il va falloir me payer grassement.] PLAYER: Moi, tuer le Léviathan ? Il faudrait me payer une somme mirifique !
 - ARLE: Souvenez-vous : celui - ou celle - qui m'envoie est d'une richesse dont vous n'avez pas idée.
