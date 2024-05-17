@@ -71,7 +71,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{DA1F16E8-F3BD-A243-A79E-8472EA62635E}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{C3E85719-9071-5DED-E619-C4D4748069E0}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -98,6 +98,10 @@
 				<File Id="23547510" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Barque_RND_Lantern_09.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_RND_Lantern_09_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="26324386" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_SC_Theater_SkillCheck_Roll.wav</ShortName>
+					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="28965928" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_Bed_WoodCreaking.wav</ShortName>
@@ -430,6 +434,10 @@
 				<File Id="375072926" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Combat_NPC_RoyalGuard_Attack1.wav</ShortName>
 					<CachePath>SFX/SFX_Combat_NPC_RoyalGuard_Attack1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="383381705" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_NPC_Leviathan_AttackJaw_1.wav</ShortName>
+					<CachePath>SFX/SFX_NPC_Leviathan_AttackJaw_1_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="385913905" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_Mockup_CaleBateau_RND_Water_06.wav</ShortName>
@@ -1002,6 +1010,10 @@
 				<File Id="1037953015" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Barque_RND_Lantern_06.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_RND_Lantern_06_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1038087885" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_NPC_Leviathan_AttackJaw_2.wav</ShortName>
+					<CachePath>SFX/SFX_NPC_Leviathan_AttackJaw_2_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1040681811" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingBoat_01.wav</ShortName>
@@ -1620,6 +1632,10 @@
 				<Event Id="1404048347" Name="Play_MUS_Story_SC_Eglise_Intro" DurationType="OneShot" DurationMin="16.543282" DurationMax="16.543282">
 					<MediaRefs>
 						<MediaRef Id="326270977"/>
+						<MediaRef Id="721833753"/>
+						<MediaRef Id="790654419"/>
+						<MediaRef Id="801773847"/>
+						<MediaRef Id="852967546"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2686241022" Name="Play_MUS_Story_SC_Eglise_LightOn" DurationType="OneShot" DurationMin="4.6535" DurationMax="4.6535">
@@ -1694,10 +1710,12 @@
 						<ActionPostEventEntry Id="786277887" Name="Play_FOL_Humanoid_Hurt"/>
 					</ActionPostEvent>
 				</Event>
-				<Event Id="3899960099" Name="Play_SFX_NPC_Leviathan_AttackJaw" DurationType="OneShot" DurationMin="2.1927083" DurationMax="2.2197604">
+				<Event Id="3899960099" Name="Play_SFX_NPC_Leviathan_AttackJaw" DurationType="OneShot" DurationMin="2.2442293" DurationMax="2.3236458">
 					<MediaRefs>
 						<MediaRef Id="148372322"/>
 						<MediaRef Id="305708203"/>
+						<MediaRef Id="383381705"/>
+						<MediaRef Id="1038087885"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3912902577" Name="Play_SFX_NPC_Leviathan_AttackTail" DurationType="OneShot" DurationMin="1.7326875" DurationMax="1.8046354">
@@ -1729,6 +1747,11 @@
 						<MediaRef Id="516243609"/>
 						<MediaRef Id="558614219"/>
 						<MediaRef Id="719646880"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1891121838" Name="Play_SFX_SC_Theater_SkillCheck_Roll" DurationType="OneShot" DurationMin="2.5235834" DurationMax="2.5235834">
+					<MediaRefs>
+						<MediaRef Id="26324386"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="750758881" Name="Play_SFX_Story_JudgeBellFar" DurationType="OneShot" DurationMin="8.710969" DurationMax="8.710969">
@@ -2164,5 +2187,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{1D0EAE46-D47F-C5A6-5E92-239901E5A7E9}</FileHash>
+	<FileHash>{77DCFC11-793E-BBBA-6261-CC5AE3B3D302}</FileHash>
 </SoundBanksInfo>
