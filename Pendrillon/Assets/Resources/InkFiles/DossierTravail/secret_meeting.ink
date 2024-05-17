@@ -76,18 +76,17 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
         ** (dancing_F) #anim:Player:dancing_failure
             SOUFFLEUR: L'idée n'était pas mauvaise... Mais un conseil : la prochaine fois, fais appel à un talent que tu possèdes vraiment, l'ami !
             -> failure_entertaining_audience
-    * [Briser une caisse. {t(STRE, -10)}]
-        {sc(CHAR, 0): -> breaking_crate_entertaining_S | -> breaking_crate_entertaining_F}
-        ** (breaking_crate_entertaining_S) #anim:Player:break_crate_success
+    * [Faire des pompes. {t(STRE, -10)}]
+        {sc(CHAR, 0): -> do_pushups_S | -> do_pushups_F}
+        ** (do_pushups_S) #anim:Player:break_crate_success
             {
-                - threat_jester == true: SOUFFLEUR: Bien joué ! J'ai l'impression que tu suis souvent la voie de la violence... Mais qui suis-je pour juger, hein ? Continue comme ça !
-                - else: SOUFFLEUR: Tu te décides à utiliser la force. Tu perds patience, l'ami ? En tout cas, félicitation, ça fonctionne !
+                - threat_jester == true: SOUFFLEUR: Bien joué ! J'ai l'impression que tu comptes pas mal sur tes muscles... Mais qui suis-je pour juger, hein ? Continue comme ça !
             }
             -> success_entertaining_audience
-        ** (breaking_crate_entertaining_F) #anim:Player:break_crate_failure
+        ** (do_pushups_F) #anim:Player:break_crate_failure
             SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, comme on dit. Surtout, garde la tête haute, l'ami !
             -> failure_entertaining_audience
-    * [Hypnotiser le public par votre charisme. {t(CHAR, -20)}]
+    * [Hypnotiser le public. {t(CHAR, -20)}]
         {sc(CHAR, 0): -> hypnotise_S | -> hypnotise_F}
         ** (hypnotise_S) #anim:Player:hypnotise_success
             SOUFFLEUR: ...
