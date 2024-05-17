@@ -17,14 +17,14 @@ VAR player_is_hidden = false // Define if the player is hidden or not
 -> start
 
 = start
-- ???: (Écœurée) Ça sent mauvais là-dedans...   #anim:Player:Nervous    #anim:Marcello:Angry    #anim:Rudolf:Dance 
-    * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...                 #anim:Player:Laughing   #anim:Marcello:Dance
+- ???: (Écœurée) Ça sent mauvais là-dedans...   #anim:Player:Nervous 
+    * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...                 //#anim:Player:Laughing   #anim:Marcello:Dance
         ** [Désolé pour l'odeur...] PLAYER: Les marins ne sont pas dérangés par ce genre d'odeur. Mais ce n'est pas du goût de tout le monde...     #anim:Player:Surprised
         ** [Ça peut nous être profitable !] PLAYER: Avec un peu de chance, l'odeur fera passer aux gardes l'envie de trop s'attarder.               #anim:Player:Defeat
         ** [Impossible d'aérer.] PLAYER: C'est le problème d'une cale de bâteau : difficile d'aérer un navire plongé dans l'eau.                    #anim:Player:Surprised
-    * [Ça sent les ennuis...] PLAYER: Ça sent les emmerdes.     #anim:Player:Laughing   #anim:Marcello:Surprised
-    * [L'odeur de la liberté !] PLAYER: Le poisson pas frais et le sel marin : l'odeur de la liberté !      #anim:Player:Dance
-- ???: ...       #anim:Player:Dance
+    * [Ça sent les ennuis...] PLAYER: Ça sent les emmerdes.     //#anim:Player:Laughing   #anim:Marcello:Surprised
+    * [L'odeur de la liberté !] PLAYER: Le poisson pas frais et le sel marin : l'odeur de la liberté !      //#anim:Player:Dance
+- ???: ...       #anim:Player:Surprised
 - ???: Que fera t-on s'ils me trouvent ?
     * [Je vous protégerai. {t(CHAR, 0)}]
         {sc(CHAR, 0): -> protect_S | -> protect_F}

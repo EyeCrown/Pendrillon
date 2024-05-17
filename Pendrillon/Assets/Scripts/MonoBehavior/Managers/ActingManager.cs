@@ -73,12 +73,20 @@ namespace MonoBehavior.Managers
             Instance = this;
             //DontDestroyOnLoad(this.gameObject);
         
+            // Connect Attributes
+            _uiParent       = GameObject.Find("Canvas/ACTING_PART").gameObject;
+            _dialogueText   = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
+            _tagsText       = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
+            _nextDialogueButton = _uiParent.transform.Find("DialogueBox/NextButton").GetComponent<Button>();
+            _backButton     = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
+            
+            // Connect Events
             PhaseStart.AddListener(OnPhaseStart);
             PhaseEnded.AddListener(OnPhaseEnded);
-        
             ClearUI.AddListener(OnClearUI);
         
             _nextDialogueButton.onClick.AddListener(OnClickNextDialogue);
+            
             //Debug.Log(MethodBase.GetCurrentMethod()?.Name);
         }
 
@@ -368,8 +376,9 @@ namespace MonoBehavior.Managers
         private void HandleTagAnim(string[] data)
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {data[0]} must play {data[1]} anim");
-            
-            GameManager.Instance.GetCharacter(data[0])._anim.SetTrigger(data[1]);
+
+            StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1]));
+
         }
 
         private void HandleTagWait(string timeToWaitString)

@@ -47,9 +47,6 @@ namespace MonoBehavior.Managers
         
         [Header("Debug")]
         [SerializeField] private bool _goDirectToFight;
-
-
-        public bool isAngry;
         #endregion
         
         //add comments
@@ -85,12 +82,6 @@ namespace MonoBehavior.Managers
             FightingManager.Instance._player = GetPlayer();
         
             BeginGame();
-        }
-
-        void Update()
-        {
-            GetPlayer()._anim.SetBool("Angry", isAngry);
-            //Debug.Log($"GM.{MethodBase.GetCurrentMethod().Name} > isAngry : {isAngry}");
         }
         
         #endregion

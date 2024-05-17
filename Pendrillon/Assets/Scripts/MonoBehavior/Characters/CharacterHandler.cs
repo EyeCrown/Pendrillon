@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Reflection;
 using MonoBehavior.Managers;
 using UnityEngine;
 using TMPro;
@@ -58,9 +59,9 @@ public class CharacterHandler : MonoBehaviour
         //Debug.Log($"{_character.name} se réveille.");
 
         //SetPosition(coordsOnStatge);
-        
-        //_anim.SetBool("Angry", true);
     }
+
+    
 
     #endregion
     
@@ -106,6 +107,9 @@ public class CharacterHandler : MonoBehaviour
     #endregion
 
     
+    
+    
+    
     private void ResetAllAnimTriggers()
     {
         foreach (var param in _anim.parameters)
@@ -134,6 +138,37 @@ public class CharacterHandler : MonoBehaviour
         _uiActing.SetActive(true);
         _dialogueText.text = dialogue;
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > _dialogueText.text:{_dialogueText.text}");
+    }
+
+    #endregion
+
+    #region Coroutine
+
+    public IEnumerator PlayAndWaitForAnimCoroutine(string triggerName)
+    {
+        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation start");
+
+        _anim.SetTrigger(triggerName);
+        
+        //Wait until we enter the current state
+        while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(triggerName))
+        {
+            yield return null;
+        }
+
+        //Now, Wait until the current state is done playing
+        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
+        {
+            yield return null;
+        }
+        
+        //Done playing. Do something below!
+        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation ended");
+        if (!_anim.GetCurrentAnimatorStateInfo(0).loop)
+        {
+            Debug.Log("Animation is loop so go back to idle");
+            _anim.SetTrigger("Idle");
+        }
     }
 
     #endregion
