@@ -144,8 +144,8 @@ namespace MonoBehavior.Managers
                 Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {speaker}");
             else
                 GameManager.Instance.GetCharacter(speaker).OnDialogueUpdate(dialogue);
-            
-            _dialogueText.text = _currentDialogue;
+
+            StartCoroutine(GenerateText());
         }
         
     
@@ -359,7 +359,7 @@ namespace MonoBehavior.Managers
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {data[0]} must play {data[1]} anim");
             //TODO: Finish animator
-            //GameManager.Instance.GetCharacter(data[0])._anim.Play(data[1]);
+            GameManager.Instance.GetCharacter(data[0])._anim.Play(data[1]);
         }
         #endregion
 
@@ -381,6 +381,15 @@ namespace MonoBehavior.Managers
             {
                 button.interactable = true;
             }
+        }
+
+        IEnumerator GenerateText()
+        {
+
+            yield return new WaitForSeconds(GameManager.Instance._timeTextToAppearInSec);
+            
+            _dialogueText.text = _currentDialogue;    
+        
         }
 
         #endregion

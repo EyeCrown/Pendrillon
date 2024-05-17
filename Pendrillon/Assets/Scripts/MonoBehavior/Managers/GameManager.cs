@@ -40,6 +40,7 @@ namespace MonoBehavior.Managers
 
         [Header("Timers")] 
         [Range(0, 5)] public float _timeButtonSpawnInSec;
+        [Range(0, 5)] public float _timeTextToAppearInSec;
         
         
         
