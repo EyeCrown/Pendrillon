@@ -784,7 +784,6 @@ GameObject:
   - component: {fileID: 636588902162026476}
   - component: {fileID: 5553399239084506320}
   - component: {fileID: -9101743682919766738}
-  - component: {fileID: -8146457047291803223}
   m_Layer: 0
   m_Name: CharacterPrefab
   m_TagString: Untagged
@@ -823,6 +822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 11400000, guid: 36239629bb22d2d4d93aca931305c114, type: 2}
+  _anim: {fileID: 0}
   _canvas: {fileID: 0}
   _nameText: {fileID: 0}
   _dialogueText: {fileID: 0}
@@ -879,27 +879,6 @@ CapsuleCollider:
   m_Height: 4
   m_Direction: 1
   m_Center: {x: 0, y: 2, z: 0}
---- !u!95 &-8146457047291803223
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8241601096825971287}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f38a8c24e1a08d546b52b71171428568, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8354867170456414859
 GameObject:
   m_ObjectHideFlags: 0

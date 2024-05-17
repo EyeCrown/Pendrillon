@@ -15,4 +15,4 @@ INCLUDE trip_return.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
--> church_night
+-> trip_return

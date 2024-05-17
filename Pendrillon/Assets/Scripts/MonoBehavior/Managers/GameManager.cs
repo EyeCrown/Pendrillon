@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Reflection;
 using Ink.Runtime;
 using UnityEngine;
 
@@ -46,7 +47,9 @@ namespace MonoBehavior.Managers
         
         [Header("Debug")]
         [SerializeField] private bool _goDirectToFight;
-        
+
+
+        public bool isAngry;
         #endregion
         
         //add comments
@@ -83,6 +86,13 @@ namespace MonoBehavior.Managers
         
             BeginGame();
         }
+
+        void Update()
+        {
+            GetPlayer()._anim.SetBool("Angry", isAngry);
+            //Debug.Log($"GM.{MethodBase.GetCurrentMethod().Name} > isAngry : {isAngry}");
+        }
+        
         #endregion
 
         public void SetupPlayer()

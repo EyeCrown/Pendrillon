@@ -36,10 +36,8 @@ public class CharacterHandler : MonoBehaviour
 
     private void Awake()
     {
-        ActingManager.Instance.ClearUI.AddListener(OnClearUI);
-        DialogueUpdate.AddListener(OnDialogueUpdate);
-
         _anim = GetComponentInChildren<Animator>();
+        ResetAllAnimTriggers();
         
         _canvas         = transform.Find("Canvas").GetComponent<Canvas>();
         _uiActing       = transform.Find("Canvas/ACTING_PART").gameObject;
@@ -49,6 +47,9 @@ public class CharacterHandler : MonoBehaviour
         _canvas.worldCamera = Camera.main;
         _canvas.gameObject.SetActive(true);
 
+        ActingManager.Instance.ClearUI.AddListener(OnClearUI);
+        DialogueUpdate.AddListener(OnDialogueUpdate);
+        
     }
 
     void Start()
@@ -57,6 +58,8 @@ public class CharacterHandler : MonoBehaviour
         //Debug.Log($"{_character.name} se réveille.");
 
         //SetPosition(coordsOnStatge);
+        
+        //_anim.SetBool("Angry", true);
     }
 
     #endregion
@@ -102,6 +105,18 @@ public class CharacterHandler : MonoBehaviour
 
     #endregion
 
+    
+    private void ResetAllAnimTriggers()
+    {
+        foreach (var param in _anim.parameters)
+        {
+            if (param.type == AnimatorControllerParameterType.Trigger)
+            {
+                _anim.ResetTrigger(param.name);
+            }
+        }
+    }
+    
 
     #region EventHandlers
 
@@ -109,6 +124,8 @@ public class CharacterHandler : MonoBehaviour
     {
         _dialogueText.text = String.Empty;
         _uiActing.SetActive(false);
+        
+        _anim.SetTrigger("Idle");
     }
 
     public void OnUpdateDialogue(String dialogue)

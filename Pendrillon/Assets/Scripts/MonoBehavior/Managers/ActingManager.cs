@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using Ink.Runtime;
@@ -35,6 +36,9 @@ namespace MonoBehavior.Managers
         private Stack<string> savedJsonStack;
 
 
+        private bool mustWait = false;
+        private float timeToWait = 0.0f;
+        
         private List<CharacterHandler> _enemiesToFight = new List<CharacterHandler>();
 
         #endregion
@@ -117,8 +121,8 @@ namespace MonoBehavior.Managers
                     Refresh();
                 //savedJsonStack.Push(GameManager.Instance._story.state.ToJson());
                 
-                HandleDialogue();
                 HandleTags();
+                HandleDialogue();
                 HandleChoices();
             
             }
@@ -327,6 +331,9 @@ namespace MonoBehavior.Managers
                 case Constants.TagAnim:
                     HandleTagAnim(words.Skip(1).Cast<String>().ToArray());
                     break;
+                case Constants.TagWait:
+                    HandleTagWait(words[1]);
+                    break;
             }
         }
 
@@ -358,8 +365,18 @@ namespace MonoBehavior.Managers
         private void HandleTagAnim(string[] data)
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {data[0]} must play {data[1]} anim");
-            //TODO: Finish animator
-            GameManager.Instance.GetCharacter(data[0])._anim.Play(data[1]);
+            
+            GameManager.Instance.GetCharacter(data[0])._anim.SetTrigger(data[1]);
+        }
+
+        private void HandleTagWait(string timeToWaitString)
+        {
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Dialogue must wait {timeToWaitString}");
+
+            timeToWait = float.Parse(timeToWaitString, CultureInfo.InvariantCulture);
+            mustWait = true;
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Dialogue must wait {timeToWait}");
+
         }
         #endregion
 
@@ -385,11 +402,19 @@ namespace MonoBehavior.Managers
 
         IEnumerator GenerateText()
         {
-
-            yield return new WaitForSeconds(GameManager.Instance._timeTextToAppearInSec);
+            if (mustWait)
+            {
+                yield return new WaitForSeconds(timeToWait);
+            }
+            else
+            {
+                yield return new WaitForSeconds(GameManager.Instance._timeTextToAppearInSec);
+            }
             
-            _dialogueText.text = _currentDialogue;    
-        
+            _dialogueText.text = _currentDialogue;
+
+
+            mustWait = false;
         }
 
         #endregion
