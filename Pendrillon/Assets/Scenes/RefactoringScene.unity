@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1273174, g: 0.13414761, b: 0.12107885, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -677,6 +677,22 @@ MonoBehaviour:
   _choicesButtonList: []
   _nextDialogueButton: {fileID: 0}
   _backButton: {fileID: 0}
+  _wwiseChoiceDialogueButton:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  _wwiseBackButton:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  _wwiseChoiceDialogueButtonAppears:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  _wwiseDialogAppears:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   PhaseStart:
     m_PersistentCalls:
       m_Calls: []
@@ -2563,6 +2579,74 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524331236}
   m_CullTransparentMesh: 1
+--- !u!1001 &527109755
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3160181146502998945, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.57298565
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160181146502998945, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.92528534
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160181146502998945, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.027975082
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160181146502998945, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160181146502998945, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160181146502998945, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160181146502998945, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160181146502998945, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160181146502998945, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3160181146502998945, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711753542475024535, guid: 3402fab92822a114d8a04342ff9bb11b,
+        type: 3}
+      propertyPath: m_Name
+      value: AUDIO_Cale
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3402fab92822a114d8a04342ff9bb11b, type: 3}
 --- !u!1 &537411027
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,9 +5977,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   _timeButtonSpawnInSec: 3
-  _timeTextToAppearInSec: 1
   _goDirectToFight: 0
-  isAngry: 0
 --- !u!4 &1286597836
 Transform:
   m_ObjectHideFlags: 0
@@ -9159,3 +9241,4 @@ SceneRoots:
   - {fileID: 1274117893}
   - {fileID: 2047131942}
   - {fileID: 1399118768}
+  - {fileID: 527109755}

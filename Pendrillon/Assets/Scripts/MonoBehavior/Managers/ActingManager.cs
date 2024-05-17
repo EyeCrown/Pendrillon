@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using Ink.Runtime;
@@ -29,14 +30,26 @@ namespace MonoBehavior.Managers
         public List<Button> _choicesButtonList;
         [SerializeField] private Button _nextDialogueButton;
         [SerializeField] private Button _backButton;
-
+        
         private string _currentDialogue;
     
         private Stack<string> savedJsonStack;
 
+        private bool mustWait = false;
+        private float timeToWait = 0.0f;
+        
 
         private List<CharacterHandler> _enemiesToFight = new List<CharacterHandler>();
 
+        //Sound
+        [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButton;
+
+        /* Cet event est lancé depuis le bouton vert d'UI
+         [SerializeField] private AK.Wwise.Event _wwiseNextDialogueButton; */
+        [SerializeField] private AK.Wwise.Event _wwiseBackButton;
+        [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButtonAppears;
+        [SerializeField] private AK.Wwise.Event _wwiseDialogAppears;
+        
         #endregion
 
         #region Events
