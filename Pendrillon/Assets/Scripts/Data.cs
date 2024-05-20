@@ -10,6 +10,7 @@ public static class Constants
     public const string TagAnim = "anim";
     public const string TagWait = "wait";
     public const string TagSleep = "sleep";
+    public const string TagBox = "box";
     
 
     #endregion

@@ -40,6 +40,7 @@ namespace MonoBehavior.Managers
 
         private List<Action> _tagMethods = new();
         private bool isActionDone = false;
+        private bool _dialogueAlreadyHandle = false;
         //private IEnumerator<Action> _tagMethods;
         
         //Sound
@@ -114,7 +115,8 @@ namespace MonoBehavior.Managers
         public void Refresh()
         {
             ClearUI.Invoke();
-        
+
+            _dialogueAlreadyHandle = false;
             _currentDialogue = String.Empty;
         
             // if(savedJsonStack.Count != 0)
@@ -153,24 +155,32 @@ namespace MonoBehavior.Managers
 
         void HandleDialogue()
         {
-            // split dialogue in 2
-            String[] words = _currentDialogue.Split(":");
+            if (!_dialogueAlreadyHandle)
+            {
+                // split dialogue in 2
+                String[] words = _currentDialogue.Split(":");
         
-            // get character speaking
-            String speaker = words[0].Replace(" ", "");
-            String dialogue = String.Join(":", words.Skip(1));
+                // get character speaking
+                String speaker = words[0].Replace(" ", "");
+                String dialogue = String.Join(":", words.Skip(1));
+                
+                _tagMethods.Add(() =>
+                {
+                    // send to character the dialogue
+                    if (speaker == GameManager.Instance.GetPlayer()._character.name)
+                        GameManager.Instance.GetPlayer().OnDialogueUpdate(dialogue);
+                    else if (GameManager.Instance.GetCharacter(speaker) == null)
+                        Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {speaker}");
+                    else
+                        GameManager.Instance.GetCharacter(speaker).OnDialogueUpdate(dialogue);
+                    // play sound
+                    PlaySoundDialogAppears();
 
-            // send to character the dialogue
-            if (speaker == GameManager.Instance.GetPlayer()._character.name)
-                GameManager.Instance.GetPlayer().OnDialogueUpdate(dialogue);
-            else if (GameManager.Instance.GetCharacter(speaker) == null)
-                Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {speaker}");
-            else
-                GameManager.Instance.GetCharacter(speaker).OnDialogueUpdate(dialogue);
-            // play sound
-            PlaySoundDialogAppears();
+                    StartCoroutine(GenerateText());
+                });
+                _dialogueAlreadyHandle = true;
 
-            StartCoroutine(GenerateText());
+            }
         }
         
     
@@ -359,6 +369,9 @@ namespace MonoBehavior.Managers
                 case Constants.TagSleep:
                     HandleTagSleep(words[1]);
                     break;
+                case Constants.TagBox:
+                    HandleDialogue();
+                    break;
             }
         }
 
@@ -501,9 +514,10 @@ namespace MonoBehavior.Managers
             }
             
             _dialogueText.text = _currentDialogue;
-
-
+            
             mustWait = false;
+            
+            TagActionOver();
         }
 
 
