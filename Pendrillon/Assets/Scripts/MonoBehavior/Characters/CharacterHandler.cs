@@ -83,7 +83,8 @@ public class CharacterHandler : MonoBehaviour
     
     public void Move(Vector2Int destination)
     {
-        Vector3 end = Vector3.zero; // GameManager.Instance._gridScene.GetCell(destination).position;
+        Vector3 end = GameManager.Instance._gridScene.GetWorldPositon(destination);
+        transform.LookAt(end);
         float duration = 3.0f;
 
         StartCoroutine(LerpPosition(end, duration));

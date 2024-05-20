@@ -354,7 +354,7 @@ namespace MonoBehavior.Managers
             switch (words[0])
             {
                 case Constants.TagMove:
-                    HandlerTagMove(words[1]);
+                    HandlerTagMove(words.Skip(1).Cast<String>().ToArray());
                     break;
                 case Constants.TagPlaySound:
                     HandleTagPlaysound(words[1]);
@@ -382,12 +382,12 @@ namespace MonoBehavior.Managers
         }
         
         // TODO: refactor movements
-        private void HandlerTagMove(string coordonates)
+        private void HandlerTagMove(string[] data)
         {
-            string[] words = coordonates.Split(",");
-            string character = words[0];
-            string x = words[1];
-            string y = words[2];
+            //[] words = coordonates.Split(",");
+            string character = data[0];
+            string x = data[1];
+            string y = data[2];
         
             //Debug.Log($"{character} wants to go to [{x},{y}].   Size of words[]: {words.Length}");
         
