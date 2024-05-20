@@ -78,7 +78,7 @@ public class CharacterHandler : MonoBehaviour
 
     public void SetPosition(Vector2Int positionOnStage)
     {
-        //transform.position = GameManager.Instance._gridScene._grid.GetCellCenterWorld(V);
+        transform.position = GameManager.Instance._gridScene.GetWorldPositon(positionOnStage);
     }
     
     public void Move(Vector2Int destination)
@@ -87,6 +87,8 @@ public class CharacterHandler : MonoBehaviour
         transform.LookAt(end);
         float duration = 3.0f;
 
+        //TODO: Add animations when moving
+        
         StartCoroutine(LerpPosition(end, duration));
     }
     
