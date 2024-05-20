@@ -9,6 +9,7 @@ public static class Constants
     public const string TagPlaySound = "playsound";
     public const string TagAnim = "anim";
     public const string TagWait = "wait";
+    public const string TagSleep = "sleep";
     
 
     #endregion

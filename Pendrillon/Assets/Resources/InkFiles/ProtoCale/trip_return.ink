@@ -17,9 +17,10 @@ VAR player_is_hidden = false // Define if the player is hidden or not
 -> start
 
 = start
-#sleep:2.0
+#sleep:2.5
 #playsound:crate_search
 #anim:Player:Nervous
+#wait:5
 #box
 #anim:Marcello:Dance
 - ???: (Écœurée) Ça sent mauvais là-dedans...    

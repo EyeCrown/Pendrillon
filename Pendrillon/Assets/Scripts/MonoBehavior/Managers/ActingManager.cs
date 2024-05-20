@@ -34,12 +34,12 @@ namespace MonoBehavior.Managers
         private string _currentDialogue;
         private Stack<string> savedJsonStack;
         private bool mustWait = false;
-        private float timeToWait = 0.0f;
+        private float _timeToWait = 0.0f;
         
         private List<CharacterHandler> _enemiesToFight = new();
 
         private List<Action> _tagMethods = new();
-        private bool isDone = false;
+        private bool isActionDone = false;
         //private IEnumerator<Action> _tagMethods;
         
         //Sound
@@ -176,6 +176,7 @@ namespace MonoBehavior.Managers
     
         void HandleTags()
         {
+            _tagMethods.Clear();
             if (GameManager.Instance._story.currentTags.Count > 0)
             {
                 foreach (var tagName in GameManager.Instance._story.currentTags)
@@ -355,13 +356,16 @@ namespace MonoBehavior.Managers
                 case Constants.TagWait:
                     HandleTagWait(words[1]);
                     break;
+                case Constants.TagSleep:
+                    HandleTagSleep(words[1]);
+                    break;
             }
         }
 
         void TagActionOver()
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > TagAction is over");
-            isDone = true;
+            isActionDone = true;
         }
         
         // TODO: refactor movements
@@ -404,7 +408,7 @@ namespace MonoBehavior.Managers
 
             _tagMethods.Add(() => 
                 StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1], TagActionOver))
-                );
+            );
             //StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1]));
 
         }
@@ -413,14 +417,21 @@ namespace MonoBehavior.Managers
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Dialogue must wait {timeToWaitString}");
 
-            timeToWait = float.Parse(timeToWaitString, CultureInfo.InvariantCulture);
+            var timeToWait = float.Parse(timeToWaitString, CultureInfo.InvariantCulture);
             mustWait = true;
             
-            _tagMethods.Add(() =>
-            {
-                Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Dialogue must wait {timeToWait}");
-                TagActionOver();
-            });
+            _tagMethods.Add(() => StartCoroutine(WaitingCoroutine(timeToWait)));
+
+        }
+        
+        private void HandleTagSleep(string timeToSleepString)
+        {
+
+            var timeToWait = float.Parse(timeToSleepString, CultureInfo.InvariantCulture);
+            mustWait = true;
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Actions must wait {timeToWait} seconds before begin");
+
+            _tagMethods.Insert(0, () => StartCoroutine(WaitingCoroutine(timeToWait)));
 
         }
         #endregion
@@ -482,7 +493,7 @@ namespace MonoBehavior.Managers
         {
             if (mustWait)
             {
-                yield return new WaitForSeconds(timeToWait);
+                yield return new WaitForSeconds(_timeToWait);
             }
             else
             {
@@ -495,22 +506,56 @@ namespace MonoBehavior.Managers
             mustWait = false;
         }
 
+
+        IEnumerator WaitingCoroutine(float timeToWait)
+        {
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Begin waiting for {timeToWait} seconds");
+            yield return new WaitForSeconds(timeToWait);
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Finish waiting for {timeToWait} seconds");
+
+            TagActionOver();
+        }
+        
+
+        /// <summary>
+        /// Execute Tag methods one by one
+        /// </summary>
+        /// <returns></returns>
         IEnumerator ExecuteTagMethods()
         {
-            foreach (var action in _tagMethods)
+            var i = 0;
+            while (i < _tagMethods.Count)
             {
-                isDone = false;
+                if (!_tagMethods.Any())
+                    break;                
+                isActionDone = false;
+                Debug.Log($"{nameof(ExecuteTagMethods)} > Start action");
+
+                _tagMethods[i]();
+                while (!isActionDone)
+                {
+                    //Debug.Log($"{nameof(ExecuteTagMethods)} > Wait to finish");
+                    yield return null;
+                }
+                Debug.Log($"{nameof(ExecuteTagMethods)} > Action is done");
+                ++i;
+            }
+            /*foreach (var action in _tagMethods)
+            {
+                if (!_tagMethods.Any())
+                    break;                
+                isActionDone = false;
                 Debug.Log($"{nameof(ExecuteTagMethods)} > Start action");
 
                 action();
-                while (!isDone)
+                while (!isActionDone)
                 {
-                    Debug.Log($"{nameof(ExecuteTagMethods)} > Wait to finish");
+                    //Debug.Log($"{nameof(ExecuteTagMethods)} > Wait to finish");
                     yield return null;
                 }
                 Debug.Log($"{nameof(ExecuteTagMethods)} > Action is done");
 
-            }
+            }*/
         }
 
         #endregion

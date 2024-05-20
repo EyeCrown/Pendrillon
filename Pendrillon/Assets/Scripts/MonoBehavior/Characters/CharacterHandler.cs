@@ -73,7 +73,6 @@ public class CharacterHandler : MonoBehaviour
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > _dialogueText.text:{_dialogueText.text}");
     }
     
-    
 
     #region Movements
 
@@ -107,9 +106,6 @@ public class CharacterHandler : MonoBehaviour
     #endregion
 
     
-    
-    
-    
     private void ResetAllAnimTriggers()
     {
         foreach (var param in _anim.parameters)
@@ -142,11 +138,12 @@ public class CharacterHandler : MonoBehaviour
 
     #endregion
 
+    
     #region Coroutine
 
     public IEnumerator PlayAndWaitForAnimCoroutine(string triggerName, System.Action callbackOnFinish)
     {
-        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation start");
+        //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation start");
 
         _anim.SetTrigger(triggerName);
         
@@ -164,10 +161,10 @@ public class CharacterHandler : MonoBehaviour
         
         //Done playing. Do something below!
         callbackOnFinish();
-        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation ended");
+        //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation ended");
         if (!_anim.GetCurrentAnimatorStateInfo(0).loop)
         {
-            Debug.Log("Animation is loop so go back to idle");
+            //Debug.Log("Animation is not a loop so go back to idle");
             _anim.SetTrigger("Idle");
         }
     }
