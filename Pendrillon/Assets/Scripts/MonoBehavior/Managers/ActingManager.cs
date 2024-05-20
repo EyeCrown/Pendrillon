@@ -38,7 +38,9 @@ namespace MonoBehavior.Managers
         
         private List<CharacterHandler> _enemiesToFight = new();
 
-        private List<Action> tagMethods = new();
+        private List<Action> _tagMethods = new();
+        private bool isDone = false;
+        //private IEnumerator<Action> _tagMethods;
         
         //Sound
         [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButton;
@@ -126,15 +128,22 @@ namespace MonoBehavior.Managers
                 if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
                     return;
                 
-            
                 if (_currentDialogue == String.Empty)
                     Refresh();
                 //savedJsonStack.Push(GameManager.Instance._story.state.ToJson());
                 
-                HandleDialogue();
                 HandleTags();
+                HandleDialogue();
                 HandleChoices();
-            
+
+                /*foreach (var method in _tagMethods)
+                {
+                    Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Do method in list {method.Method.Name}");
+                    method();
+                }*/
+
+                StartCoroutine(ExecuteTagMethods());
+
             }
             else
             {
@@ -317,13 +326,13 @@ namespace MonoBehavior.Managers
         
         public void ParseTag(string tagName)
         {
-            Debug.Log(tagName);
+            //Debug.Log(tagName);
             string[] words = tagName.Split(Constants.Separator);
         
-            foreach (var word in words)
-            {
-                Debug.Log("word: " + word);
-            }
+            // foreach (var word in words)
+            // {
+            //     Debug.Log("word: " + word);
+            // }
 
             CheckTag(words);
         
@@ -349,6 +358,11 @@ namespace MonoBehavior.Managers
             }
         }
 
+        void TagActionOver()
+        {
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > TagAction is over");
+            isDone = true;
+        }
         
         // TODO: refactor movements
         private void HandlerTagMove(string coordonates)
@@ -361,16 +375,26 @@ namespace MonoBehavior.Managers
             //Debug.Log($"{character} wants to go to [{x},{y}].   Size of words[]: {words.Length}");
         
             CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
-            characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)));
-        
+            //characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)));
+            
+            _tagMethods.Add(() =>
+            {
+                characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)));
+                TagActionOver();
+            });
         }
 
         private void HandleTagPlaysound(string soundToPlay)
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Play sound {soundToPlay}");
             
-            AkSoundEngine.PostEvent(soundToPlay, gameObject);
-            
+            //AkSoundEngine.PostEvent(soundToPlay, gameObject);
+
+            _tagMethods.Add(() =>
+            {
+                AkSoundEngine.PostEvent(soundToPlay, gameObject);
+                TagActionOver();
+            });
         }
         
         
@@ -378,21 +402,25 @@ namespace MonoBehavior.Managers
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {data[0]} must play {data[1]} anim");
 
-            tagMethods.Add(() => 
-                StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1]))
-                ); 
-            
-            StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1]));
+            _tagMethods.Add(() => 
+                StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1], TagActionOver))
+                );
+            //StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1]));
 
         }
-
+        
         private void HandleTagWait(string timeToWaitString)
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Dialogue must wait {timeToWaitString}");
 
             timeToWait = float.Parse(timeToWaitString, CultureInfo.InvariantCulture);
             mustWait = true;
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Dialogue must wait {timeToWait}");
+            
+            _tagMethods.Add(() =>
+            {
+                Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > Dialogue must wait {timeToWait}");
+                TagActionOver();
+            });
 
         }
         #endregion
@@ -465,6 +493,24 @@ namespace MonoBehavior.Managers
 
 
             mustWait = false;
+        }
+
+        IEnumerator ExecuteTagMethods()
+        {
+            foreach (var action in _tagMethods)
+            {
+                isDone = false;
+                Debug.Log($"{nameof(ExecuteTagMethods)} > Start action");
+
+                action();
+                while (!isDone)
+                {
+                    Debug.Log($"{nameof(ExecuteTagMethods)} > Wait to finish");
+                    yield return null;
+                }
+                Debug.Log($"{nameof(ExecuteTagMethods)} > Action is done");
+
+            }
         }
 
         #endregion

@@ -144,7 +144,7 @@ public class CharacterHandler : MonoBehaviour
 
     #region Coroutine
 
-    public IEnumerator PlayAndWaitForAnimCoroutine(string triggerName)
+    public IEnumerator PlayAndWaitForAnimCoroutine(string triggerName, System.Action callbackOnFinish)
     {
         Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation start");
 
@@ -163,6 +163,7 @@ public class CharacterHandler : MonoBehaviour
         }
         
         //Done playing. Do something below!
+        callbackOnFinish();
         Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation ended");
         if (!_anim.GetCurrentAnimatorStateInfo(0).loop)
         {
