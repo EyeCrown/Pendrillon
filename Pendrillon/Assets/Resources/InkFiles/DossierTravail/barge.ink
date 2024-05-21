@@ -94,10 +94,109 @@ SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance ! 
 - #audience:ovation
 - PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ?
 - PLAYER: Un jour où je me trouvais à quai, je reçus une missive dont j’ignorais tout de l’expéditeur. Habituellement, je ne prête aucune attention à ce genre d’épistole, mais, cette fois-ci, un détail m’empêcha de la jeter directement au feu...
-    * [L'écriture.] PLAYER: La lettre était dotée d’une impeccable calligraphie. Ce détail, voyez-vous, n’es pas à prendre à la légère. Une si belle écriture ne peut signifier qu’une chose : votre expéditeur est du genre fortuné.
-    * [Le destinataire.] PLAYER: La lettre était destiné à un certain {p_name} Jehovah Banes. Cette personne n’est autre que moi-même. Rien d’étonnant me direz-vous. Détrompez-vous : la seule personne à m’appeler ainsi est ma mère. Or, ma mère est absolument et irrémédiablement illétrée...
+    * [L'écriture.] PLAYER: La lettre était dotée d’une impeccable calligraphie. Ce détail, vois-tu, n’es pas à prendre à la légère. Une si belle écriture ne peut signifier qu’une chose : votre expéditeur est du genre fortuné.
+    * [Le destinataire.] PLAYER: La lettre était destiné à un certain {p_name} Jehovah Banes. Cette personne n’est autre que moi-même. Rien d’étonnant pourrait-on dire. Détrompe-toi : la seule personne à m’appeler ainsi est ma mère. Or, ma mère est absolument et irrémédiablement illétrée...
     * [L'odeur.] PLAYER: J’ai reçu bien des lettres dans ma vie, certaines avaient l’odeur du purin, du sel marin ou encore celle des impôts impayés, mais jamais encore n’avais-je reçu une missive à l’odeur si... délicate. L'odeur d'un expéditeur fortuné.
 - PLAYER: La lettre, d'un expéditeur inconnu, me donnait rendez-vous pour « une cause de la plus haute importance ». Piqué de curiosité, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous : la cale de mon propre navire.
+- -> end_scene
+
+// Scène 2
+= scene_2
+#sleep:5
+PASSEUR: ...
+#sleep:3
+PASSEUR: Pourquoi avoir accepté une mission si périlleuse ?
+    * [Pour la fortune !] PLAYER: Pour la fortune, évidemment !
+    * [Pour la gloire !] PLAYER: Pour la gloire, cela va sans dire !
+    * [Pour l'aventure !] PLAYER: Pour l'aventure bien entendu !
+- #audience:applause
+PASSEUR: Tout de même... De là à te confronter à une créature mythique telle que le Léviathan...
+PLAYER: À dire vrai...
+    * [Je ne crois pas au Léviathan.] PLAYER: Je ne crois pas à ces histoires à dormir debout... Je prévoyais de faire le voyage, prétendre avoir terassé le monstre et retourner à bon port, l'esprit léger.
+        PASSEUR: Dans votre histoire, tu racontes pourtant avoir promis de ramener le cœur de la bête.
+            ** [J'avais un plan.] PLAYER: Personne n'a jamais vu le Léviathan de près : un cœur de baleine aurait bien assez fait illusion...
+            ** [Je n'avais pas pensé à ça.] PLAYER: Je suis un homme de l'improvisation. J'aurai trouvé quelque chose...
+    * [Je rêvais le voir.] PLAYER: Je rêve de l'apercevoir, depuis petit. Ma mère me racontait des récits de marins l'ayant aperçu, au loin.
+        PASSEUR: N'étais-tu pas effrayé ?
+            ** [Si, mais tout de même...] PLAYER: Seul un idiot ne le serait pas. Mais ce sont ces histoires de créatures mythiques qui ont fait de moi le marin que je suis, alors...
+            ** [Pas le moins du monde.] PLAYER: Ce sont ces histoires de créatures mythiques qui ont fait de moi le marin que je suis. J'étais prêt à prendre tous les risques...
+- PASSEUR: Et que s'est-il passé après ? #wait:4
+    * [(Pensif)] #anim:Player:thoughtful
+    * [(Triste)] #anim:Player:sad
+    * [(Courroucé)] #anim:Player:angry
+- PLAYER: ...
+    * [(Mentir) J'ai tué le monstre.] PLAYER: J'ai trouvé le monstre à l'endroit indiqué par la carte, et je l'ai tué, avec l'aide de mon équipage. Quelle bataille avons-nous livrée !
+    * [(Éluder la question) Rien...] PLAYER: Je me suis rendu sur place, je n'ai trouvé aucune créature, bien entendu, et je suis rentré. Fin de l'histoire. Passionnant, n'est-ce pas ?
+- #sleep:4
+- PASSEUR: Pourquoi ne pas me dire ce qu'il s'est réellement passé ? Votre âme s'en verra peut-être allégée...
+PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, nous sommes revenus...
+    * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons.
+    * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire.
+#sleep:5
+- -> end_scene
+
+// Scène 3
+= scene_3
+#sleep:5
+PASSEUR: Ainsi, votre ami s'est fait arrêter par les gardes...
+#sleep:5
+PASSEUR: Tu es bien silencieux... Que ressentais-tu, à cet instant ?
+    * [(Furieux)]
+    * [(Impuissant)]
+    * [(Anéanti)]
+- #sleep:4
+- PASSEUR: Ton regard suffit à m'apporter une réponse...
+- #sleep:5
+- PASSEUR: Tu devais te sentir bien seul... Dis-moi plutôt : où t'es-tu rendu, après cela ?
+    * [Tous les gardes en avaient après moi...] PLAYER: Tous les gardes de la ville étaient à mes trousses...
+    * [J'ai trouvé un refuge...] PLAYER: J'ai trouvé un endroit pour passer la nuit...
+- -> end_scene
+
+// Scène 4
+= scene_4
+#sleep:5
+PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse...
+    * [Tout à fait.] PLAYER: Jamais n'a t-on vu âme plus acceuillante. Cependant...
+    * [En un sens...] PLAYER: D'une certaine manière, j'en convient... Mais...
+    * [C'est ce que je pensais.] PLAYER: La même pensée me traversai l'esprit, alors que je m'endormais... Toutefois...
+- PASSEUR: Quoi donc ?
+    * [(Colère froide)]
+    * [(Tragique)]
+    * [(Déception)]
+- #audience:shock
+- PASSEUR: Parle, je t'en prie.
+- PLAYER: À mon réveil...
+    * [Une mauvaise surprise m'attendait.] PLAYER: ... une surprise des plus désagréables m'attendait...
+    * [Je m'apprêtais à en découdre.] PLAYER: ... j'allais devoir livrer bataille...
+    * [Je fus trahi.] PLAYER: ... je fus malheureux de constater qu'on m'avait trahi...
+- -> end_scene
+
+// Scène 5
+= scene_5
+#sleep:10
+PASSEUR: Notre voyage s'avera des plus captivants, toutefois...
+#sleep:2
+#anim:Passeur:show_door
+PASSEUR: ... il arrive déjà à son terme, j'en ai peur.
+#sleep:3
+PASSEUR: Vois-tu ces portes, devant nous ? Dans quelques instants, tu sauras si nous pouvons faire demi-tour, ensemble...
+PASSEUR: ... ou si c'est ici que nos chemins se sépareront.
+    * [Que va t-il se passer ?] PLAYER: Que va t-il se passer ? Parle donc, Passeur... et ne me ménages pas.
+        PASSEUR: Cela, je ne puis te le dire, voyageur. Je connais ton passé, mais j'ignore tout de ton destin.
+    * [Où mènent ces portes ?] PLAYER: Où mènent ces portes, Passeur ?
+        PASSEUR: Tu le sauras bientôt, ou ne le saura jamais. Attendons un instant...
+    * [(Rester silencieux).]
+- PASSEUR: Si les portes s'ouvrent, alors nous seront tenus de passer...
+    * [Qui nous y oblige ?] PLAYER: Qui nous y contraint, Passeur ?
+        PASSEUR: La Loi.
+    * [Faisons demi-tour.] PLAYER: Faisons demi-tour, je t'en prie.
+        PASSEUR: Je regrette, ce n'est pas à moi d'en décider.
+    * [J'ai peur...] PLAYER: j'ai si peur...
+        PASSEUR: ... Je comprends.
+- #sleep:5
+- #anim:open_trial_doors
+- #sleep:5
+- PASSEUR: Tu vas devoir affronter ton destin. Ainsi en-ont décidé les portes, voyageur...
 - -> end_scene
 
 = end_scene
