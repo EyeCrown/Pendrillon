@@ -154,12 +154,23 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_SFX_SC_Theater_SkillCheck_Roll" ID="{C4DF4063-F42F-49AC-B31A-9CCF38B83A4F}">
+								<Event Name="Play_UI_HUD_SkillCheck_Failed" ID="{F3BC03B4-5F58-40C0-A686-6D3329E4DEC7}">
 									<ChildrenList>
-										<Action Name="" ID="{00A28193-95AD-4F62-A235-948D66E230AE}" ShortID="673336486">
+										<Action Name="" ID="{BB13E009-8063-4710-9025-2A8E82FA78FD}" ShortID="140367893">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="SFX_SC_Theater_SkillCheck_Roll" ID="{B3A918A3-1A75-4213-BF0F-D564B1B821C8}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+													<ObjectRef Name="UI_HUD_SkillCheck_Failed" ID="{3DC74F1B-89BA-4DFC-9894-4A87AA2C6739}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_HUD_SkillCheck_Success" ID="{971E56CA-D095-4FB3-BF42-7FB1B5ACBB96}">
+									<ChildrenList>
+										<Action Name="" ID="{A2342085-4855-4DF6-8901-30A36CEAFB97}" ShortID="393036560">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_HUD_SkillCheck_Success" ID="{4545A394-2810-4635-B39B-24724902FE6B}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
