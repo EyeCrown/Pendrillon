@@ -389,15 +389,15 @@ namespace MonoBehavior.Managers
             string character = data[0];
             string x = data[1];
             string y = data[2];
-        
-            //Debug.Log($"{character} wants to go to [{x},{y}].   Size of words[]: {words.Length}");
+            string speed = data.Length == 4 ? data[3] : Constants.NormalName;
+
+            Debug.Log($"{character} wants to go to [{x},{y}] at {speed} speed.   Size of words[]: {data.Length}");
         
             CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
             
             _tagMethods.Add(() =>
             {
-                characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)));
-                TagActionOver();
+                characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)), speed, TagActionOver);
             });
         }
 

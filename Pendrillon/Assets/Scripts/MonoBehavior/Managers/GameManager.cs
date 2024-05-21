@@ -54,6 +54,12 @@ namespace MonoBehavior.Managers
         #region UnityAPI
         private void Awake()
         {
+            var text = " Hello "+"  World  "+"  !";
+            
+            Debug.Log($"{text.Trim()}");
+            
+            
+            
             if (Instance != null && Instance != this)
             {
                 Destroy(this);

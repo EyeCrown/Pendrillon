@@ -80,30 +80,52 @@ public class CharacterHandler : MonoBehaviour
     {
         transform.position = GameManager.Instance._gridScene.GetWorldPositon(positionOnStage);
     }
+
+    private static float GetSpeed(string speedText)
+    {
+        float speed = 0;
+
+        switch (speedText)
+        {
+            case Constants.SlowName:    speed = Constants.SlowSpeed;
+                break;
+            case Constants.NormalName:  speed = Constants.NormalSpeed;
+                break;
+            case Constants.QuickName:   speed = Constants.QuickSpeed;
+                break;
+        }
+
+        return speed;
+    }
     
-    public void Move(Vector2Int destination)
+    public void Move(Vector2Int destination, string speedText, System.Action callbackOnFinish)
     {
         Vector3 end = GameManager.Instance._gridScene.GetWorldPositon(destination);
         transform.LookAt(end);
-        float duration = 3.0f;
-
-        //TODO: Add animations when moving
         
-        StartCoroutine(LerpPosition(end, duration));
+        float speed = GetSpeed(speedText);
+        float distance = Vector3.Distance(transform.position, end);
+        float duration = distance / speed;
+        
+        //TODO: Add animations when moving
+
+        StartCoroutine(LerpPosition(end, duration, callbackOnFinish));
     }
     
-    IEnumerator LerpPosition(Vector3 targetPosition, float duration)
+    IEnumerator LerpPosition(Vector3 targetPosition, float duration, System.Action callbackOnFinish)
     {
         float time = 0.0f;
         Vector3 startPosition = transform.position;
 
-        while (time < duration)
+        while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
         {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
             transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
             time += Time.deltaTime;
             yield return null;
         }
         transform.position = targetPosition;
+        callbackOnFinish();
     }
 
     #endregion

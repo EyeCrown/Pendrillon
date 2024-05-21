@@ -15,12 +15,23 @@ public static class Constants
 
     #endregion
 
-    #region CHARACTER
+    #region SPEED
 
-    
+    public const string SlowName    = "slow";
+    public const float  SlowSpeed   = 0.5f;
+    public const string NormalName  = "walk";
+    public const float  NormalSpeed = 2.0f;
+    public const string QuickName   = "run";
+    public const float  QuickSpeed  = 4.0f;
 
     #endregion
-    
-    
+
+    #region CHARACTER
+
+
+
+    #endregion
+
+
 }
 
