@@ -507,59 +507,6 @@
 				</Folder>
 				<Folder Name="Ambiances" ID="{E1349A6F-D7D5-4836-9241-1895A9830AEA}" ShortID="389265221">
 					<ChildrenList>
-						<Event Name="Play_CrowdHype" ID="{5AA3B44C-A286-49F9-946A-DAA2FF0A6380}">
-							<ChildrenList>
-								<Action Name="" ID="{C8502157-D753-4301-91A7-BD4D2D789424}" ShortID="164291098">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="CrowdHype" ID="{ED62E440-2367-4F7D-8CCD-774FDC384A8C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_AMB_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}">
-							<ChildrenList>
-								<Action Name="" ID="{9F5B447C-BF1D-43B1-AC3A-C05D4CAC2010}" ShortID="620740651">
-									<PropertyList>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_AMB_SC_Cale_Ambiance" ID="{CFC7C4F3-9D40-4D56-8C70-9761B6C51F84}">
-							<ChildrenList>
-								<Action Name="" ID="{02624421-9CCA-45C1-AC3C-9413E6357AB9}" ShortID="44024471">
-									<PropertyList>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_AMB_SC_Pont_Ambiance" ID="{04DEBB85-E569-4C98-90A1-616560225229}">
-							<ChildrenList>
-								<Action Name="" ID="{F8450574-D038-4E8F-A5C4-17C24AC093F3}" ShortID="863308079">
-									<PropertyList>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_SC_Pont" ID="{90386080-2AA8-4D81-B8F1-639920457433}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Folder Name="StopAmbiances" ID="{0819E4AB-EEAB-40B4-BB83-31CBBC48810C}" ShortID="361750159">
 							<ChildrenList>
 								<Event Name="Stop_AMB_SC_Pont_Ambiance" ID="{966B7322-683E-4522-80F2-CEB3ECB31B5E}">
@@ -651,34 +598,205 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
-						<Event Name="Play_AMB_SC_Barque_Ambiance" ID="{A4F67341-F783-426C-8CD2-FB5F40ECA153}">
+						<Folder Name="AudienceReacts" ID="{E60B6003-B695-4D89-822D-2BBE5D00CE02}" ShortID="916491699">
 							<ChildrenList>
-								<Action Name="" ID="{4D73751E-A4E3-4A3F-85FD-E85151E2559E}" ShortID="377280417">
-									<PropertyList>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_SC_Barque_Ambiance" ID="{41A0F2C9-5CC7-42C9-8C85-63629FB80BF6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="Play_CrowdReaction_CurrentReactionLevel" ID="{5AA3B44C-A286-49F9-946A-DAA2FF0A6380}">
+									<ChildrenList>
+										<Action Name="" ID="{C8502157-D753-4301-91A7-BD4D2D789424}" ShortID="164291098">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdHype" ID="{ED62E440-2367-4F7D-8CCD-774FDC384A8C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_CrowdReaction_Laughter" ID="{07908038-D771-41CB-B5DB-B7DE3302A5B4}">
+									<ChildrenList>
+										<Action Name="" ID="{92B9604F-5830-498F-9354-978978FAB24D}" ShortID="1061550054">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sine1kHz" ID="{350068A8-0B7E-4172-8DDB-B16E881F1408}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_CrowdReaction_Horrified" ID="{BCD924EB-FC0B-46B4-87D4-7EED32261CA3}">
+									<ChildrenList>
+										<Action Name="" ID="{28430328-745E-4B34-91C7-A59BE5605271}" ShortID="416136692">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sine1kHz" ID="{350068A8-0B7E-4172-8DDB-B16E881F1408}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_CrowdReaction_Surprised" ID="{34D116CE-0DAB-44BB-A59C-8886C70761B5}">
+									<ChildrenList>
+										<Action Name="" ID="{0D37D6FD-3B90-40FE-A894-39EA4E3D4EE7}" ShortID="730197226">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sine1kHz" ID="{350068A8-0B7E-4172-8DDB-B16E881F1408}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_CrowdReaction_Booing" ID="{47EFA13E-9B6A-43C1-9540-EBBE82D03F4E}">
+									<ChildrenList>
+										<Action Name="" ID="{930AE165-9D06-49E8-A473-38454591DA84}" ShortID="662867714">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="0.2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{BA744CAD-4132-4820-8371-B6B35E5999A3}" ShortID="305396055">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdHype" ID="{ED62E440-2367-4F7D-8CCD-774FDC384A8C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_CrowdReaction_Ovation" ID="{7DE3BEA2-DFF4-45B3-8BB1-9CED696ABB7F}">
+									<ChildrenList>
+										<Action Name="" ID="{871FDB16-5C97-465A-AC6A-A88DA323EB14}" ShortID="887575530">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="sine1kHz" ID="{350068A8-0B7E-4172-8DDB-B16E881F1408}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_CrowdReaction_Applause" ID="{F45BEE56-65B2-4BB0-956C-B7898C5503A4}">
+									<ChildrenList>
+										<Action Name="" ID="{2B3C991A-E348-4ABA-818E-76A911E348F5}" ShortID="160309109">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="0.64"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{575DA3A0-E775-427A-8180-434764B185A5}" ShortID="595404451">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Theater_CrowdGlobalHappy" ID="{32C6ABA8-C03A-48A1-9254-C544D754492C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_CrowdReaction_Confused" ID="{A6FDDC92-DBEF-46A2-85A5-F400AA78DE1D}">
+									<ChildrenList>
+										<Action Name="" ID="{86FDAF22-BDB8-4467-BF64-99FE46378F33}" ShortID="26556279">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{AD3B6099-8682-4AA7-A12C-F8901A9CE9C7}" ShortID="570832796">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdHype" ID="{ED62E440-2367-4F7D-8CCD-774FDC384A8C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
-						<Event Name="Play_AMB_SC_Eglise_Ambiance" ID="{320BA2C2-4602-48AB-9A88-3CABF3F58C1C}">
+						</Folder>
+						<Folder Name="PlayAmbiances" ID="{01FCF146-BF18-45A3-A422-54F625DEF4C9}" ShortID="478229591">
 							<ChildrenList>
-								<Action Name="" ID="{4595B467-AC2E-4575-A3DA-7C2A8793D287}" ShortID="846010623">
-									<PropertyList>
-										<Property Name="FadeTime" Type="Real64" Value="1"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMC_SC_Eglise_Ambiance" ID="{16AED275-433D-4BA2-AD15-4F6366409748}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
+								<Event Name="Play_AMB_SC_Barque_Ambiance" ID="{A4F67341-F783-426C-8CD2-FB5F40ECA153}">
+									<ChildrenList>
+										<Action Name="" ID="{4D73751E-A4E3-4A3F-85FD-E85151E2559E}" ShortID="377280417">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AMB_SC_Barque_Ambiance" ID="{41A0F2C9-5CC7-42C9-8C85-63629FB80BF6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_AMB_SC_Cale_Ambiance" ID="{CFC7C4F3-9D40-4D56-8C70-9761B6C51F84}">
+									<ChildrenList>
+										<Action Name="" ID="{02624421-9CCA-45C1-AC3C-9413E6357AB9}" ShortID="44024471">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AMB_SC_Cale_Ambiance" ID="{3241566A-DB58-4257-864F-3BB8016318F6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_AMB_SC_Eglise_Ambiance" ID="{320BA2C2-4602-48AB-9A88-3CABF3F58C1C}">
+									<ChildrenList>
+										<Action Name="" ID="{4595B467-AC2E-4575-A3DA-7C2A8793D287}" ShortID="846010623">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AMC_SC_Eglise_Ambiance" ID="{16AED275-433D-4BA2-AD15-4F6366409748}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_AMB_SC_Pont_Ambiance" ID="{04DEBB85-E569-4C98-90A1-616560225229}">
+									<ChildrenList>
+										<Action Name="" ID="{F8450574-D038-4E8F-A5C4-17C24AC093F3}" ShortID="863308079">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AMB_SC_Pont" ID="{90386080-2AA8-4D81-B8F1-639920457433}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_AMB_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}">
+									<ChildrenList>
+										<Action Name="" ID="{9F5B447C-BF1D-43B1-AC3A-C05D4CAC2010}" ShortID="620740651">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
-						</Event>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Dialogues" ID="{3BC109D9-01F1-41D8-ABDF-37C9FC14F251}" ShortID="1008342144">
