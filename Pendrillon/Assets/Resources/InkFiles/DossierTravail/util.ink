@@ -184,3 +184,12 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
         }
     }
     ~ return applausemeter_mult
+
+// Add the item to the inventory
+=== function add_to_inventory(pItem) ===
+{
+    - print_debug:
+        {pItem} ajouté à l'inventaire.
+        (DEBUG: Inventaire non codé.)
+        _______________
+}
