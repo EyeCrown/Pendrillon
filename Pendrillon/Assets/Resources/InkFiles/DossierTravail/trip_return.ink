@@ -16,8 +16,8 @@ VAR player_won_battle = false // Define if the player won the battle or not
 // Scene
 === trip_return ===
 // Define the actors of the scene
-#actor:PLAYER:Player:PLAYER
-#actor:Sireine:???
+#actor:Player:PLAYER
+#actor:Naïda:???
 #actor:Arle:ÉPIEUR
 #actor:Marcello:MARCELLO
 #actor:Capucine:CAPUCINE

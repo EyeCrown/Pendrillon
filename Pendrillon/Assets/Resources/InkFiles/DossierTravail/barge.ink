@@ -6,7 +6,7 @@
 // Scene
 === barge ===
 // Define the actors of the scene
-#actor:PLAYER:Player:PLAYER
+#actor:Player:PLAYER
 #actor:Passeur:PASSEUR
 #actor:Prompter:SOUFFLEUR
 // Start the scene
