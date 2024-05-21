@@ -216,7 +216,7 @@ RUDOLF: Alors, qu'as-tu à répondre, marin d'eau douce ?
         {sc(CHAR, -20): -> lie_about_fugitive_S | -> lie_about_fugitive_F}
         ** (lie_about_fugitive_S) PLAYER: Cet individu ment. D'ailleurs, il m'a détroussé de cinq pièces d'or !
             RUDOLF: Il a l'air de dire vrai. T'en penses quoi, Marcello ?
-            MARCELLO: J'en pense que je vais fouillés le navire dans le doute. Garde un œil sur lui. #anim:Marcello:seek_intruder_near_sireine
+            MARCELLO: J'en pense que je vais fouiller le navire dans le doute. Garde un œil sur lui. #anim:Marcello:seek_intruder_near_sireine
             PLAYER: Je vois que vos ne voulez pas lâcher l'affaire...
                 *** (knock_out_rudolf) [Assommer Rudolf. {t(STRE, -10)}]
                     {sc(STRE, -10): -> battle_marcello | -> battle_marcello_rudolf}

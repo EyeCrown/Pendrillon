@@ -18,11 +18,11 @@ VAR failed_breaking_jester_crate = false
 = start
 // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
-- #wait:6 #audience:normal_applause
+- #sleep:6 #audience:normal_applause
     * [Attendre encore.]
-- #wait:6 #audience:mild_applause
+- #sleep:6 #audience:mild_applause
     * [Attendre plus fort.]
-- #wait:6 #audience:discontent
+- #sleep:6 #audience:discontent
 SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se montrer... tu vas devoir meubler !
     * [(Ironique) Quelle ponctualité...] PLAYER: Espérons que mon mystérieux interlocuteur arrive avant...
         ** [(Humour) Conclure avec légèreté. {t(CHAR, 10)}]
@@ -53,20 +53,20 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
             ~ threat_jester = true
             *** (threat_waiting_S) PLAYER: ...que la dent qui restera dans le bec de qui me fait attendre aussi longtemps !
                 SOUFFLEUR: Certaines situations devraient être gérées avec diplomatie et tact... pas celle-ci ! Une quesion cependant : es-tu en train de menacer le personnage, ou l'actrice ? Quelle que soit la réponse, le public est avec toi, continue comme ça !
-            *** (threat_waiting_F) PLAYER: ...Euh... que les dernières... xxx de patiente.
+            *** (threat_waiting_F) PLAYER: ...Euh... que mes dernières... onces de patience.
                 SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convainquant. Ne te laisse pas abattre, tu auras d'autres occasions !
                 ~ has_fail = true
-- #wait:4 #audience:booing
+- #sleep:4 #audience:booing
     * [(S'adresser à l'actrice) Il est temps.] PLAYER: Je crois VRAIMENT qu'il est temps, désormais.
         ???: ... Laisse moi un peu de temps, tu veux ?
-- #wait:3 #audience:booing
+- #sleep:3 #audience:booing
     * [(À l'actrice, chuchotant) Qui payera mes heures supplémentaires ?] PLAYER: Psssst... Je suis trop mal payé pour que la pièce dure toute la nuit. Dépêche-toi un peu !
     * [(À l'actrice, chuchotant) Es-tu en grève ?] PLAYER: Psssst... Tu es en grève ? Qu'es-ce qu'il te prend, encore ?
 - ???: Laissons-les se languir encore un peu... Ça ne rendra mon apparition que plus mémorable !
     * [Se montrer conciliant.] PLAYER: Je n'en doute pas... Je vais faire ce que je peux pour meubler. Je t'en prie, ne tarde pas.
     * [Hausser le ton.] PLAYER: Le public va t'acceuillir avec des applaudissements... et moi avec un coup de pied au derrière !
     * [Ignorer la voix.]
-- #wait:3 #audience:booing
+- #sleep:3 #audience:booing
 - SOUFFLEUR: Trouve autre chose pour les divertir... N'importe quoi qui te passe par la tête ! Surtout, ne reste pas planté là !
     * [Effectuer une danse. {t(DEXT, -10)}]
         {sc(CHAR, 0): -> dancing_S | -> dancing_F}
@@ -76,18 +76,17 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
         ** (dancing_F) #anim:Player:dancing_failure
             SOUFFLEUR: L'idée n'était pas mauvaise... Mais un conseil : la prochaine fois, fais appel à un talent que tu possèdes vraiment, l'ami !
             -> failure_entertaining_audience
-    * [Briser une caisse. {t(STRE, -10)}]
-        {sc(CHAR, 0): -> breaking_crate_entertaining_S | -> breaking_crate_entertaining_F}
-        ** (breaking_crate_entertaining_S) #anim:Player:break_crate_success
+    * [Faire des pompes. {t(STRE, -10)}]
+        {sc(CHAR, 0): -> do_pushups_S | -> do_pushups_F}
+        ** (do_pushups_S) #anim:Player:break_crate_success
             {
-                - threat_jester == true: SOUFFLEUR: Bien joué ! J'ai l'impression que tu suis souvent la voie de la violence... Mais qui suis-je pour juger, hein ? Continue comme ça !
-                - else: SOUFFLEUR: Tu te décides à utiliser la force. Tu perds patience, l'ami ? En tout cas, félicitation, ça fonctionne !
+                - threat_jester == true: SOUFFLEUR: Bien joué ! J'ai l'impression que tu comptes pas mal sur tes muscles... Mais qui suis-je pour juger, hein ? Continue comme ça !
             }
             -> success_entertaining_audience
-        ** (breaking_crate_entertaining_F) #anim:Player:break_crate_failure
+        ** (do_pushups_F) #anim:Player:break_crate_failure
             SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, comme on dit. Surtout, garde la tête haute, l'ami !
             -> failure_entertaining_audience
-    * [Hypnotiser le public par votre charisme. {t(CHAR, -20)}]
+    * [Hypnotiser le public. {t(CHAR, -20)}]
         {sc(CHAR, 0): -> hypnotise_S | -> hypnotise_F}
         ** (hypnotise_S) #anim:Player:hypnotise_success
             SOUFFLEUR: ...
@@ -126,7 +125,7 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
 {
     - failed_breaking_jester_crate == true: ???: Désirant briser cette malheureuse caisse, messire...
         ???: ... vous n'avez abîmé que votre dignité.
-        #wait:2
+        #sleep:2
         ???: Sauf votre respect. #anim:Arle:bow #audience:laughter
 }
     * [Que faisais-tu caché ?] PLAYER: Que faisais-tu là, caché tel un rat ?
@@ -198,6 +197,16 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
     * [Sans soucis.] PLAYER : Je n'y vois aucun problème. Dis-m'en plus : qui voulez-vous voir périr ?
             ARLE: Un poisson, messire. Un gros poisson.
             -> big_fish
+- ARLE: Prenez ceci, voulez-vous ? #anim:Arle:give_map
+    * [Qu'est-ce que c'est ?] PLAYER: Qu'est-ce donc ?
+- ARLE: Un marin tel que vous ne reconnait-il pas une carte quand il en voit une, messire ?
+    * [Quel endroit indique t-elle ?] PLAYER: Quel est l'endroit qu'elle indique ?
+        ARLE: En voilà une question intéressante...
+    * [Une carte, pourquoi donc ?] PLAYER: Pourquoi aurais-je besoin d'une carte, je te prie ?
+        ARLE: Vous le saurez bien assez tôt...
+    * [Je sais déjà aller où je veux.] PLAYER: Je n'ai nul besoin de carte. Je puis déjà aller où je le désire...
+        ARLE: Prenez-là tout de même, faites-moi confiance...
+~ add_to_inventory(i_map_leviathan)
 - ARLE: Puis-je vous raconter une petite histoire, messire ?
     * [J'adore les histoires !] PLAYER: Je t'en prie.
     * [Fais vite.] PLAYER: Je n'ai point ton temps, presse-toi.
@@ -233,7 +242,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
     * [Le Léviathan !] PLAYER: Le léviathan ! #audience:shock
         ARLE: Le Léviathan, messire.
     * [Rester silencieux.]
-- ARLE: C'est pourquoi nous sommes là aujourd'hui, n'est-ce pas ? Mais cette petite histoire ne se finit pas si bien...
+- ARLE: C'est pourquoi nous jouissons d'être en vie aujourd'hui, n'est-ce pas ? Mais cette petite histoire ne se finit pas si bien...
     * [Pourquoi donc ?] PLAYER: Et pourquoi donc ?
     * [Je sais pourquoi.] PLAYER: J'ai une idée de ce que tu vas dire...
         ARLE: Je vous en prie, messire, concluez.
@@ -244,7 +253,8 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
 - #audience:surprise
     * [Moi, tuer le Léviathan ?] PLAYER: Suis-je en plein rêve, ou me demandes-tu vraiment d'aller tuer le Léviathan ? #audience:laugther
         ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse.
-    * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. Moi, tuer le Léviathan ? #audience:laugther
+    * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. #audience:laugther
+        #anim:Arle:laugh
         ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse.
     * [Il va falloir me payer grassement.] PLAYER: Moi, tuer le Léviathan ? Il faudrait me payer une somme mirifique !
 - ARLE: Souvenez-vous : celui - ou celle - qui m'envoie est d'une richesse dont vous n'avez pas idée.
@@ -258,7 +268,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
                 ARLE: Vous êtes dur en affaire, messire. Alors disons le double !
             *** (negociate_F) PLAYER: Mon navire, voyez-vous... est au régime. Il pèse de moins en mois et...
                 ARLE: Messire, ces simagrées ne vous honorent pas. Notre position est ferme, j'en ai peur.
-- ARLE: Qu'en dites-vous, messire ? Acceptez vous d'aller tuer l'immonde Léviathan, sinon pour la gloire ou le service rendu à la population, du moins pour la fortune ?
+- ARLE: Qu'en dites-vous, messire ? Ramenez-nous le cœur de l'immonde Léviathan, sinon pour la gloire ou le service rendu à la population, du moins pour la fortune. Affaire conclue ?
     * [Accepter.]
     * [Accepter.]
     * [À bien y réfléchir...]
