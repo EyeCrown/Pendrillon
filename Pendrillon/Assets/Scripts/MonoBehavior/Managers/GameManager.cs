@@ -54,9 +54,11 @@ namespace MonoBehavior.Managers
         #region UnityAPI
         private void Awake()
         {
-            var text = " Hello "+"  World  "+"  !";
-            
-            Debug.Log($"{text.Trim()}");
+            /*  Test with Trim()
+             var text = "   Hello       "+"      World      "+"     !";
+            text = text.Trim();
+            Debug.Log($"{("   Hello       ".Trim() + "      World      ".Trim() + "     !".Trim())}");
+            */
             
             
             
@@ -102,6 +104,8 @@ namespace MonoBehavior.Managers
             
             _player.transform.rotation = _playerPos.rotation;
             
+            _player._character._nicknames.Clear();
+            _player._character._nicknames.Add(_player._character.name);
             _player.name = "Player"; //_player.GetComponent<CharacterHandler>()._character.name;
         }
         
@@ -115,9 +119,13 @@ namespace MonoBehavior.Managers
                 
                 character.transform.rotation = _enemyPos.rotation;
                 character.GetComponent<CharacterHandler>()._character = _charactersBase[i];
+                character.GetComponent<CharacterHandler>()._character._nicknames.Clear();
+                character.GetComponent<CharacterHandler>()._character._nicknames.Add(character.GetComponent<CharacterHandler>()._character.name);
+
                 character.GetComponent<Enemy>()._character = _charactersBase[i];
                 character.GetComponent<Enemy>().enabled = false;
-
+                
+                
                 character.name = character.GetComponent<CharacterHandler>()._character.name;
                 
                 _characters.Add(character.GetComponent<CharacterHandler>());
@@ -129,15 +137,19 @@ namespace MonoBehavior.Managers
             if (characterName.ToLower() == "player")
                 return GetPlayer();
             
-            for (var i = 0; i < _characters.Count; i++)
+            foreach (var character in _characters)
             {
-                if (_characters[i]._character.name.ToLower() == characterName.ToLower())
-                    return _characters[i];
+                foreach (var nickname in character._character._nicknames)
+                {
+                    if (characterName == nickname)
+                        return character;
+                }
             }
 
             return null;
         }
 
+        
         public CharacterHandler GetPlayer()
         {
             return _player;

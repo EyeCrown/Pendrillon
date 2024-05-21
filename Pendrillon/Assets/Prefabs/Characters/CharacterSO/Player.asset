@@ -12,23 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f73c359c6924a0b498c24a5559cfd6ba, type: 3}
   m_Name: Player
   m_EditorClassIdentifier: 
-  name: PLAYER
+  name: Player
+  _nicknames:
+  - Player
+  - PLAYER
   hp: 0
   charisma:
-    baseValue: 50
-    currValue: 50
+    baseValue: 5
+    currValue: 5
   strength:
-    baseValue: 50
-    currValue: 60
+    baseValue: 5
+    currValue: 5
   dexterity:
-    baseValue: 50
-    currValue: 50
+    baseValue: 5
+    currValue: 5
   constitution:
-    baseValue: 50
-    currValue: 50
+    baseValue: 5
+    currValue: 5
   luck:
-    baseValue: 50
-    currValue: 50
+    baseValue: 5
+    currValue: 5
   movementCurve:
     serializedVersion: 2
     m_Curve:

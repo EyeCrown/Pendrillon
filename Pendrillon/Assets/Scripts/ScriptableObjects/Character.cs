@@ -55,6 +55,8 @@ public class Character : ScriptableObject
 {
     public new String name;
 
+    public List<string> _nicknames = new List<string>();
+    
     public int hp;
     public const int baseHp = 15;
     

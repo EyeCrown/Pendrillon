@@ -125,8 +125,10 @@ namespace MonoBehavior.Managers
             if (GameManager.Instance._story.canContinue)
             {
                 _currentDialogue = GameManager.Instance._story.Continue();
-                //Debug.Log(_currentDialogue);
-                //Debug.Log($"AC.Refresh() > GameManager.Instance._story.state.currentPathString:{GameManager.Instance._story.state.currentPathString}");
+                
+                Debug.Log($"AM.Refresh > _story.state.currentPathString:" +
+                          $"{GameManager.Instance._story.state.currentPathString}");
+                
                 if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
                     return;
                 
@@ -307,6 +309,13 @@ namespace MonoBehavior.Managers
         
             //Debug.Log($"AM.OnPhaseStart() > GameManager.Instance.GetCharacter(\"PLAYER\")._character:{GameManager.Instance.GetPlayer()._character}");
         
+            var beginSceneName = "trip_return";
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > " +
+                      $"GameManager.Instance._story.path:" +
+                      $"{GameManager.Instance._story.path}");
+
+            
+            
             Refresh();
         }
         void OnPhaseEnded()
@@ -355,7 +364,7 @@ namespace MonoBehavior.Managers
             switch (words[0])
             {
                 case Constants.TagMove:
-                    HandlerTagMove(words.Skip(1).Cast<String>().ToArray());
+                    HandleTagMove(words.Skip(1).Cast<String>().ToArray());
                     break;
                 case Constants.TagPlaySound:
                     HandleTagPlaysound(words[1]);
@@ -373,17 +382,38 @@ namespace MonoBehavior.Managers
                 case Constants.TagBox:
                     HandleDialogue();
                     break;
+                case Constants.TagActor:
+                    HandleTagActor(words.Skip(1).Cast<String>().ToArray());
+                    break;
             }
         }
 
         // ReSharper disable Unity.PerformanceAnalysis
         void TagActionOver()
         {
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > TagAction is over");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > TagAction is over");
             isActionDone = true;
         }
         
-        private void HandlerTagMove(string[] data)
+        private void HandleTagActor(string[] data)
+        {
+            //[] words = coordonates.Split(",");
+            string character = data[0];
+            
+            string debugList = "";
+            foreach (var item in data)
+                debugList += item + ", ";
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {character}'s alias : {debugList}");
+        
+            
+            CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
+            foreach (var nickname in data.Skip(1).Cast<String>())
+            {
+                characterHandler._character._nicknames.Add(nickname);
+            }
+        }
+        
+        private void HandleTagMove(string[] data)
         {
             //[] words = coordonates.Split(",");
             string character = data[0];
@@ -391,14 +421,11 @@ namespace MonoBehavior.Managers
             string y = data[2];
             string speed = data.Length == 4 ? data[3] : Constants.NormalName;
 
-            Debug.Log($"{character} wants to go to [{x},{y}] at {speed} speed.   Size of words[]: {data.Length}");
+            //Debug.Log($"{character} wants to go to [{x},{y}] at {speed} speed.   Size of words[]: {data.Length}");
         
             CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
-            
             _tagMethods.Add(() =>
-            {
-                characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)), speed, TagActionOver);
-            });
+                characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)), speed, TagActionOver));
         }
 
         private void HandleTagPlaysound(string soundToPlay)
@@ -417,7 +444,7 @@ namespace MonoBehavior.Managers
         
         private void HandleTagAnim(string[] data)
         {
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {data[0]} must play {data[1]} anim");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {data[0]} must play {data[1]} anim");
 
             _tagMethods.Add(() => 
                 StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1], TagActionOver))
@@ -428,7 +455,7 @@ namespace MonoBehavior.Managers
         
         private void HandleTagWait(string timeToWaitString)
         {
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Dialogue must wait {timeToWaitString}");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Dialogue must wait {timeToWaitString}");
 
             var timeToWait = float.Parse(timeToWaitString, CultureInfo.InvariantCulture);
             mustWait = true;
@@ -442,7 +469,7 @@ namespace MonoBehavior.Managers
 
             var timeToWait = float.Parse(timeToSleepString, CultureInfo.InvariantCulture);
             mustWait = true;
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Actions must wait {timeToWait} seconds before begin");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Actions must wait {timeToWait} seconds before begin");
 
             _tagMethods.Insert(0, () => StartCoroutine(WaitingCoroutine(timeToWait)));
 
@@ -542,7 +569,7 @@ namespace MonoBehavior.Managers
                 if (!_tagMethods.Any())
                     break;                
                 isActionDone = false;
-                Debug.Log($"{nameof(ExecuteTagMethods)} > Start action");
+                //Debug.Log($"{nameof(ExecuteTagMethods)} > Start action");
 
                 _tagMethods[i]();
                 while (!isActionDone)
@@ -550,7 +577,7 @@ namespace MonoBehavior.Managers
                     //Debug.Log($"{nameof(ExecuteTagMethods)} > Wait to finish");
                     yield return null;
                 }
-                Debug.Log($"{nameof(ExecuteTagMethods)} > Action is done");
+                //Debug.Log($"{nameof(ExecuteTagMethods)} > Action is done");
                 ++i;
             }
         }
