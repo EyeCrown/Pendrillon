@@ -311,7 +311,7 @@ PLAYER: Laissez-là, bande de gougnafiers !
 CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la.
 #anim:Player:try_attack
 #anim:Marcello:defend
-#anim:Marcello:attack
+#anim:Marcello:attackt
 #anim:Player:hurt
 CAPUCINE: Allons-nous-en avec notre trouvaille. Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts, il finira sa triste vie au cachot.
 #move(Capucine)
