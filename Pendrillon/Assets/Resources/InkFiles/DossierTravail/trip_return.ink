@@ -11,6 +11,7 @@ VAR player_is_stinky = false // Player is stinky if he searches through the back
 VAR sireine_is_stinky = false // Sireine is stinky if she hides in the back crate
 VAR jester_fled = false // Define if the jester fled or not
 VAR player_is_hidden = false // Define if the player is hidden or not
+VAR player_won_battle = false // Define if the player won the battle or not
 
 // Scene
 === trip_return ===
@@ -19,7 +20,7 @@ VAR player_is_hidden = false // Define if the player is hidden or not
 #actor:Sireine:???
 #actor:Arle:ÉPIEUR
 #actor:Marcello:MARCELLO
-#actor:Rudolf:RUDOLF
+#actor:Capucine:CAPUCINE
 // Start the scene
 -> start
 
@@ -150,33 +151,33 @@ VAR player_is_hidden = false // Define if the player is hidden or not
 // The guards arrive
 = guards_arrive
 #playsound:guards_arrive
-MARCELLO: J'ai entendu du bruit. #anim:Marcello:enter_scene
-RUDOLF: (Ironique) Tu entends des voix, maintenant ? Peut-être la Déesse en personne qui te cause... #anim:Rudolf:enter_scene
-MARCELLO: Tu me crois fou ?
-RUDOLF: Que tu sois cinglé ou non... On doit fouiller tous les navires qui arrivent au port.
+MARCELLO: J'ai entendu du bruit dans la cale. #anim:Marcello:enter_scene
+CAPUCINE: (Ironique) Tu entends des voix, maintenant ? Peut-être la Déesse en personne qui te cause... #anim:Capucine:enter_scene
+MARCELLO: Vous me croyez fou, cheffe ?
+CAPUCINE: Que tu sois cinglé ou non... Nous devons fouiller tous les navires qui arrivent au port.
 - {player_is_hidden: -> player_hidden | -> player_not_hidden}
 
 
 //The guards arrive while the player is hidden
 = player_hidden
 #playsound:guards_arrive
-MARCELLO: Il n'y a personne.
+MARCELLO: Il n'y a personne, cheffe.
 * [Rester discret. {t(DEXT, -10)}]
-    {sc(DEXT, -10): -> discretion_1_S | -> discretion_1_F} #anim:Rudolf:seek_intruder_near_player
-    ** (discretion_1_S) RUDOLF: Je ne vois personne. Et toi ?
-        -- {player_is_stinky: MARCELLO: Je ne vois personne, mais ça pue le poisson mort par ici. -> player_is_found | -> player_not_found}
-    ** (discretion_1_F) RUDOLF: Là ! Derrière cette caisse ! Il y a quelqu'un ! #anim:Player:stop_hiding
+    {sc(DEXT, -10): -> discretion_1_S | -> discretion_1_F} #anim:Marcello:seek_intruder_near_player
+    ** (discretion_1_S) MARCELLO: Je ne vois personne. Et toi ?
+        -- {player_is_stinky: CAPUCINE: Je ne vois personne, mais ça pue le poisson mort par ici. -> player_is_found | -> player_not_found}
+    ** (discretion_1_F) MARCELLO: Là ! Derrière cette caisse ! Il y a quelqu'un ! #anim:Player:stop_hiding
         -> player_is_found
 * [Sortir de sa cachette] #anim:Player:stop_hiding
     -> player_not_hidden 
-- (player_not_found) MARCELLO: Laisse-moi regarder de plus près...
+- (player_not_found) CAPUCINE: Laisse-moi regarder de plus près...
     * {has_bone} [Assommer le garde avec l'os.] #anim:Player:attack
-        {sc(STRE, 20): -> battle_rudolf | -> battle_marcello_rudolf}
+        {sc(STRE, 20): -> battle_capucine_with_marcello_hurt | -> battle_marcello_capucine_full_life}
     * {has_coconut} [Envoyer la noix de coco.] #anim:Player:throw
-        {sc(DEXT, 10): -> battle_rudolf | -> battle_marcello_rudolf}
+        {sc(DEXT, 10): -> battle_capucine_with_marcello_hurt | -> battle_marcello_capucine_full_life}
     * [Attaquer le garde par surprise.]
-        {sc(DEXT, -20): -> battle_rudolf | -> battle_marcello_rudolf}
-- (player_is_found) MARCELLO: Qui es-tu ? {player_is_stinky: Tu empestes le poisson pourri !}
+        {sc(DEXT, -20): -> battle_capucine_with_marcello_hurt | -> battle_marcello_capucine_full_life}
+- (player_is_found) CAPUCINE: Qui es-tu, maraud ? {player_is_stinky: Tu empestes le poisson pourri !}
     -> player_not_hidden
 
 
@@ -184,67 +185,68 @@ MARCELLO: Il n'y a personne.
 = player_not_hidden
 #playsound:guards_arrive
 * [S'annoncer.] PLAYER: Bonjour, messieurs.
-- RUDOLF: Décline ton identité, vite !
+- CAPUCINE: Décline ton identité, et vite !
     * [Je suis le capitaine.] PLAYER: Vous vous trouvez sur mon humble navire.
-        RUDOLF: C'est toi le capitaine, hein ?
+        CAPUCINE: C'est toi le capitaine ?
     * [(Mentir) Un simple moussaillon. {t(CHAR, 10)}] PLAYER: Je suis un simple moussaillon.
         {sc(CHAR, 10): -> lie_about_not_being_capitaine_S | -> lie_about_not_being_capitaine_F}
-            ** (lie_about_not_being_capitaine_S) RUDOLF: Il a l'air de dire vrai, non ?
-            ** (lie_about_not_being_capitaine_F) RUDOLF: Tu mens comme tu respires, pas vrai ?
-- MARCELLO: Il a l'air louche...
+            ** (lie_about_not_being_capitaine_S) MARCELLO: Il a l'air de dire vrai, cheffe.
+            ** (lie_about_not_being_capitaine_F) MARCELLO: Tu mens comme tu respires, pas vrai ?
+- MARCELLO: Le fripon a l'air louche...
     * [Toi-même.] PLAYER: C'est toi qui est louche, morpion.
         MARCELLO: Répète ça pour voir, abruti !
         ** [Répéter.] PLAYER: Louche et sourdingue, en plus de ça.
-            MARCELLO: Je vais t'apprendre à insulter un garde de la Coronne ! -> battle_marcello_rudolf
+            MARCELLO: Je vais t'apprendre à insulter un garde de la Coronne ! -> battle_marcello_capucine_full_life
         ** [Calmer le jeu. {t(CHAR, 10)}]
             {sc(CHAR, 10): -> try_diplomacy_S | -> try_diplomacy_F}
             *** (try_diplomacy_S) -> calm_the_situation
             *** (try_diplomacy_F) PLAYER: Euh... Pardon, j'ai tendance à dire tout haut ce que je pense tout bas... -> calm_the_situation
     * (calm_the_situation) [Amadouer.] PLAYER: Et si nous remontions sur le pont, pour discuter entre amis ?
-        RUDOLF: Un garde de la Coronne n'a d'ordre à recevoir de personne.
+        CAPUCINE: Un garde de la Coronne n'a d'ordre à recevoir de personne.
         ** [Faire de l'esprit.] PLAYER: Pas même de la Reine ?
-            RUDOLF: Hein ?
-            MARCELLO: Il a pas tort, Rudolf.
-            RUDOLF: Cet abruti se fiche de nous. Mais il ne va pas rire longtemps...
+            CAPUCINE: Que baragouines-tu encore ?
+            MARCELLO: Il a pas tort, cheffe.
+            CAPUCINE: Cet abruti se fiche de nous. Mais il ne va pas rire longtemps...
                 -> confronted_about_fugitive
         ** [Que faites-vous sur mon navire ?] PLAYER: Puis-je vous demander ce que vous faites ici, mes braves ?
-            RUDOLF: Tous les bâteaux qui arrivent au port royal doivent être fouiller, c'est la loi.
-            MARCELLO: Et nul ne doit ignorer la loi... Caches-tu quelque chose ?
-- (confronted_about_fugitive) MARCELLO: Quelqu'un qui sortait de la cale nous a dit qu'un fugitif se cachait ici.
-RUDOLF: Alors, qu'as-tu à répondre, marin d'eau douce ?
+            MARCELLO: Tous les bâteaux qui arrivent au port royal doivent être fouiller, c'est la loi.
+            CAPUCINE: Et nul ne doit ignorer la loi... Caches-tu quelque chose ?
+- (confronted_about_fugitive) CAPUCINE: Quelqu'un qui sortait de la cale nous a dit qu'un fugitif se cachait ici.
+MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
     * [Baratiner. {t(CHAR, -20)}]
         {sc(CHAR, -20): -> lie_about_fugitive_S | -> lie_about_fugitive_F}
         ** (lie_about_fugitive_S) PLAYER: Cet individu ment. D'ailleurs, il m'a détroussé de cinq pièces d'or !
-            RUDOLF: Il a l'air de dire vrai. T'en penses quoi, Marcello ?
-            MARCELLO: J'en pense que je vais fouiller le navire dans le doute. Garde un œil sur lui. #anim:Marcello:seek_intruder_near_sireine
+            MARCELLO: Il a l'air de dire vrai. T'en penses quoi, Marcello ?
+            CAPUCINE: J'en pense que je vais fouiller le navire dans le doute. Garde un œil sur lui. #anim:Capucine:seek_intruder_near_sireine
             PLAYER: Je vois que vos ne voulez pas lâcher l'affaire...
-                *** (knock_out_rudolf) [Assommer Rudolf. {t(STRE, -10)}]
-                    {sc(STRE, -10): -> battle_marcello | -> battle_marcello_rudolf}
+                *** (knock_out_capucine) [Assommer Capucine. {t(STRE, -10)}]
+                    {sc(STRE, -10): -> battle_marcello_with_capucine_hurt | -> battle_marcello_capucine_full_life}
                 *** (knock_out_marcello) [Assommer Marcello. {t(STRE, -10)}]
-                    {sc(STRE, -10): -> battle_rudolf | -> battle_marcello_rudolf}
+                    {sc(STRE, -10): -> battle_capucine_with_marcello_hurt | -> battle_marcello_capucine_full_life}
         ** (lie_about_fugitive_F) PLAYER: Le type que vous avez vu sortir d'ici est atteint d'une maladie rare.
-            RUDOLF: Une maladie rare ?
+            CAPUCINE: Une maladie rare ?
             PLAYER: Absolument. Une maladie qui lui fait voir des fugitifs qui ne sont pas là.
-            RUDOLF: ...
+            CAPUCINE: ...
             MARCELLO: ...
-            RUDOLF: Il nous prend pour des idiots ou je rêve ?
-            MARCELLO: On va t'apprendre à mentir à des gardes de la Couronne ! ->battle_marcello_rudolf
+            CAPUCINE: Il nous prend pour des idiots ou je rêve ?
+            MARCELLO: On va t'apprendre à mentir à des gardes de la Couronne ! ->battle_marcello_capucine_full_life
     * [Intimider. {t(CHAR, -30)}]
         {sc(CHAR, -30): -> intimidate_guards_S | -> intimidate_guards_F}
         ** (intimidate_guards_S) PLAYER: Le marin d'eau douce va te noyer de coups, si tu continues de l'ouvrir.
-            RUDOLF: Pardon, m'sieur.
-            MARCELLO: Ne t'excuse pas, abruti. Et toi, je vais t'apprendre à menacer un garde de la Couronne ! -> battle_marcello
+            MARCELLO: Pardon, m'sieur.
+            CAPUCINE: Ne t'excuse pas, abruti. Et toi, je vais t'apprendre à menacer un garde de la Couronne ! -> battle_marcello_with_capucine_hurt
         ** (intimidate_guards_F) PLAYER: T'as vu mes biscoteaux ? Tu veux les voir de plus près, peut-être ?
-            RUDOLF: ...
+            CAPUCINE: ...
             MARCELLO: ...
-            RUDOLF: Il se croit intimidant, cet idiot ?
-            MARCELLO: On va t'apprendre à menacer des gardes de la Couronne ! -> battle_marcello_rudolf
+            CAPUCINE: Il se croit intimidant, cet idiot ?
+            MARCELLO: On va t'apprendre à menacer des gardes de la Couronne ! -> battle_marcello_capucine_full_life
     * {p_gold > 0} [Soudoyer.] PLAYER: Est-ce que {p_gold} pièces d'or porraient vous faire changer quitter mon navire sans faire de vagues ? Si vous me permettez l'expression...
         ~ trial(t_1_bribe_guards)
-        MARCELLO : Laisse-moi te débarasser de ces pièces...
-            ** [Donner les pièces.] PLAYER: Voilà pour toi, mon brave. #playsound:gold_coins
-                MARCELLO: Ma mère m'a appris à ne pas mordre la main de celui qui te soud-... qui te nourris. J'ai des principes !
-                MARCELLO: Mon camarade, en revanche, va se faire un plaisir de te faire passer à tabac. -> battle_rudolf
+        CAPUCINE : Laisse-moi te débarasser de ces pièces...
+            ** [Donner les pièces.] PLAYER: Voilà pour toi, mon amie. #playsound:gold_coins
+                CAPUCINE: Nous allons maintenant t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde, quadruple forban.
+                MARCELLO: C'est là qu'on le frappe, cheffe ?
+                CAPUCINE: En effet, Marcello. C'est là qu'on le frappe. -> battle_capucine_with_marcello_hurt
             ** [Assommer Marcello.] -> knock_out_marcello
 
 // The guards are called by the Jester
@@ -253,27 +255,71 @@ RUDOLF: Alors, qu'as-tu à répondre, marin d'eau douce ?
 MARCELLO: J'ai entendu quelqu'un hurler. #anim:Marcello:enter_scene
 ÉPIEUR: Mes braves ! Cet homme cache une fugitive ! Il est armé, méfiez-vous !
 MARCELLO: Il ne fera pas long feu !
-RUDOLF : En garde !
-    -> battle_marcello_rudolf
+CAPUCINE : En garde !
+    -> battle_marcello_capucine_full_life
 
 
 // Battle against two guards
-= battle_marcello_rudolf
+= battle_marcello_capucine_full_life
 Combat contre les deux gardes.
 - -> end_scene
 
 
-// Battle against marcello
-= battle_marcello
-Combat contre Marcello uniquement.
+// Battle against Marcello with Capucine hurt
+= battle_marcello_with_capucine_hurt
+Combat contre Marcello et Capucine, où Capucine est blessée.
 - -> end_scene
 
-// Battle against rudolf
-= battle_rudolf
-Combat contre Rudolf uniquement.
+// Battle against Capucine with Marcello hurt
+= battle_capucine_with_marcello_hurt
+Combat contre Capucine et Marcello, où Marcello est blessé.
 - -> end_scene
 
-
+// After the battle
+= after_battle
+{
+    - player_won_battle:
+        MARCELLO: Je crois qu'on lui a donné une bonne lesson, cheffe.
+        CAPUCINE: Pas du tout, abruti. Cette truandaille nous a rossé. Les gardes de la Couronne vont encore passer pour des moins-que-rien.
+        MARCELLO: Vraiment ? Vengons-nous en lui brisant les côtelettes, cheffe !
+        CAPUCINE: C'est précisemment ce que nous venons d'échouer à faire, triple baveux. #anim:Marcello:ashamed
+    - else:
+        CAPUCINE: Voilà qui t'enseignera les mérites de ne pas manquer de respect aux gardes de la Couronne, vulgaire truandaille.
+        MARCELLO: Bien dit, cheffe ! J'ajouterai une petite insulte afin de marquer le coup.
+        CAPUCINE: Je viens précisément de le faire, triple baveux. #anim:Marcello:ashamed
+}
+#sleep:3
+#playsound:sounds_inside_the_crate
+CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans !
+MARCELLO : Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang.
+CAPUCINE: Bloque-lui la route tandis que j'y jette un œil.
+#anim:Marcello:block_the_way
+{
+    - sireine_hideout == "crate_back":
+        #move(Capucine)
+        #anim:Capucine:search_crate
+    - sireine_hideout == "crate_front":
+        #move(Capucine)
+        #anim:Capucine:search_crate
+    - sireine_hideout == "barrel":
+        #move(Capucine)
+        #anim:Capucine:search_barrel
+}
+CAPUCINE: Tiens-donc... Mais qui voilà ?
+#anim:Sireine:out_of_hideout
+PLAYER: Laissez-là, bande de gougnafiers !
+CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la.
+#anim:Player:try_attack
+#anim:Marcello:defend
+#anim:Marcello:attack
+#anim:Player:hurt
+CAPUCINE: Allons-nous-en avec notre trouvaille. Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts, il finira sa triste vie au cachot.
+#move(Capucine)
+#sleep:3
+// Marcello remet un coup gratuit au Player
+#anim:Marcello:attack
+#anim:Player:hurt
+#move(Marcello)
 // End the scene
 = end_scene
 Fin de la scène.
