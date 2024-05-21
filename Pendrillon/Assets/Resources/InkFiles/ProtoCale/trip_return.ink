@@ -26,7 +26,11 @@ VAR player_is_hidden = false // Define if the player is hidden or not
 = start
 #sleep:0.1
 #move:Player:5:5
+#anim:Rudolf:Surprised
+#box
+#wait:2
 #move:Rudolf:5:5:run
+#anim:Marcello:Dance
 - ???: (Écœurée) Ça sent mauvais là-dedans...    
     * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...                 #move:Player:5:5   #anim:Marcello:Dance
         ** [Désolé pour l'odeur...] PLAYER: Les marins ne sont pas dérangés par ce genre d'odeur. Mais ce n'est pas du goût de tout le monde...     #anim:Player:Surprised

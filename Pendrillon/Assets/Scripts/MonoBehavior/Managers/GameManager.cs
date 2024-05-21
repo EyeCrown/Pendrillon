@@ -26,8 +26,11 @@ namespace MonoBehavior.Managers
         public Character _playerData;
         public CharacterHandler _player;
         
-        public GameObject _characterPrefab;
-    
+        [SerializeField] private GameObject _characterPrefab;
+        
+        public Prompter _prompter;
+        [SerializeField] private GameObject _prompterPrefab;
+
         public GroundGrid _gridScene;
 
         public Transform _playerPos;
@@ -86,7 +89,9 @@ namespace MonoBehavior.Managers
         {
             SetupPlayer();
             SetupCharacters();
-
+            SetupPrompter();
+            
+            
             FightingManager.Instance._player = GetPlayer();
         
             BeginGame();
@@ -131,6 +136,14 @@ namespace MonoBehavior.Managers
                 _characters.Add(character.GetComponent<CharacterHandler>());
             }
         }
+
+        public void SetupPrompter()
+        {
+            _prompter = Instantiate(_prompterPrefab).GetComponent<Prompter>();
+            _prompter.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100));
+            _prompter.name = Constants.PrompterName;
+        }
+        
     
         public CharacterHandler GetCharacter(string characterName)
         {

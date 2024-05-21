@@ -14,15 +14,14 @@ public class CharacterHandler : MonoBehaviour
 
     public Animator _anim;
     
+    // UI
     public Canvas _canvas;
     private GameObject _uiActing;
     public TextMeshProUGUI _nameText;
-    
     public TextMeshProUGUI _dialogueText;
 
     public Vector2Int _coordsOnStatge;
-
-
+    
     [Range(1, 200)] [SerializeField] private int maxLengthDialogue;
     
     #endregion
@@ -64,14 +63,6 @@ public class CharacterHandler : MonoBehaviour
     
 
     #endregion
-    
-    public void OnDialogueUpdate(string text)
-    {
-        //Debug.Log($"CharacterHandler.OnDialogueUpdate > {_character.name}:{text}");
-        _uiActing.SetActive(true);
-        _dialogueText.text = text;
-        //Debug.Log($"CharacterHandler.OnDialogueUpdate > _dialogueText.text:{_dialogueText.text}");
-    }
     
 
     #region Movements
@@ -153,12 +144,10 @@ public class CharacterHandler : MonoBehaviour
         _anim.SetTrigger("Idle");
     }
 
-    public void OnUpdateDialogue(String dialogue)
+    public void OnDialogueUpdate(string text)
     {
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > {_character.name}:{text}");
         _uiActing.SetActive(true);
-        _dialogueText.text = dialogue;
-        //Debug.Log($"CharacterHandler.OnDialogueUpdate > _dialogueText.text:{_dialogueText.text}");
     }
 
     #endregion

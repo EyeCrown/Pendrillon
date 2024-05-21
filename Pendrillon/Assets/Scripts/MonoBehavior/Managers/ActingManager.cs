@@ -22,6 +22,7 @@ namespace MonoBehavior.Managers
     
         // UI
         public GameObject _uiParent;
+        public GameObject _dialogueBox;
         public TextMeshProUGUI _dialogueText;   // Text box
         public TextMeshProUGUI _tagsText;       // Tags box
     
@@ -78,11 +79,12 @@ namespace MonoBehavior.Managers
             //DontDestroyOnLoad(this.gameObject);
         
             // Connect Attributes
-            _uiParent       = GameObject.Find("Canvas/ACTING_PART").gameObject;
-            _dialogueText   = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
-            _tagsText       = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
+            _uiParent           = GameObject.Find("Canvas/ACTING_PART").gameObject;
+            _dialogueBox        = _uiParent.transform.Find("DialogueBox").gameObject;
+            _dialogueText       = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
+            _tagsText           = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
             _nextDialogueButton = _uiParent.transform.Find("DialogueBox/NextButton").GetComponent<Button>();
-            _backButton     = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
+            _backButton         = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
             
             // Connect Events
             PhaseStart.AddListener(OnPhaseStart);
@@ -126,8 +128,10 @@ namespace MonoBehavior.Managers
             {
                 _currentDialogue = GameManager.Instance._story.Continue();
                 
-                Debug.Log($"AM.Refresh > _story.state.currentPathString:" +
-                          $"{GameManager.Instance._story.state.currentPathString}");
+                Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
+                
+                // Debug.Log($"AM.Refresh > _story.state.currentPathString:" +
+                //           $"{GameManager.Instance._story.state.currentPathString}");
                 
                 if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
                     return;
@@ -165,21 +169,30 @@ namespace MonoBehavior.Managers
                 // get character speaking
                 String speaker = words[0].Replace(" ", "");
                 String dialogue = String.Join(":", words.Skip(1));
-                
+
                 _tagMethods.Add(() =>
                 {
                     // send to character the dialogue
-                    if (speaker == GameManager.Instance.GetPlayer()._character.name)
-                        GameManager.Instance.GetPlayer().OnDialogueUpdate(dialogue);
-                    else if (GameManager.Instance.GetCharacter(speaker) == null)
-                        Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {speaker}");
+                    if (speaker.ToLower() == Constants.PrompterName)
+                    {
+                        GameManager.Instance._prompter.DialogueUpdate.Invoke(dialogue);
+                    }
                     else
-                        GameManager.Instance.GetCharacter(speaker).OnDialogueUpdate(dialogue);
-                    // play sound
-                    PlaySoundDialogAppears();
-
-                    StartCoroutine(GenerateText());
+                    {
+                        if (GameManager.Instance.GetCharacter(speaker) == null)
+                            Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {speaker}");
+                        else
+                            GameManager.Instance.GetCharacter(speaker).DialogueUpdate.Invoke(dialogue);
+                            
+                        // play sound
+                        PlaySoundDialogAppears();
+        
+                        StartCoroutine(GenerateText());
+                    }
+                    
                 });
+                
+                
                 _dialogueAlreadyHandle = true;
 
             }
@@ -309,10 +322,10 @@ namespace MonoBehavior.Managers
         
             //Debug.Log($"AM.OnPhaseStart() > GameManager.Instance.GetCharacter(\"PLAYER\")._character:{GameManager.Instance.GetPlayer()._character}");
         
-            var beginSceneName = "trip_return";
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > " +
-                      $"GameManager.Instance._story.path:" +
-                      $"{GameManager.Instance._story.path}");
+            //var beginSceneName = "trip_return";
+            // Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > " +
+            //           $"GameManager.Instance._story.path:" +
+            //           $"{GameManager.Instance._story.path}");
 
             
             
@@ -336,6 +349,7 @@ namespace MonoBehavior.Managers
             }
             _choicesButtonList.Clear();
         
+            _dialogueBox.SetActive(false);
             _nextDialogueButton.gameObject.SetActive(false);
             _backButton.gameObject.SetActive(false);
         }
@@ -531,6 +545,7 @@ namespace MonoBehavior.Managers
 
         IEnumerator GenerateText()
         {
+            _dialogueBox.SetActive(true);
             if (mustWait)
             {
                 yield return new WaitForSeconds(_timeToWait);
