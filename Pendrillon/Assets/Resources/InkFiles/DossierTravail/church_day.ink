@@ -64,7 +64,7 @@ AGATHE: Lorsque j’ai appris pourquoi vous étiez recherché, j’ai su qu’il
 // Battle against Capucine, Marcello and Agathe
 = battle_capucine_marcello_agathe
 Combat entre Capucine, Marcello et la prêtresse Agathe.
--> end_scene
+-> barge.scene_5
 
 = end_scene
 -> END

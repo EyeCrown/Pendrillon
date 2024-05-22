@@ -262,18 +262,18 @@ CAPUCINE : En garde !
 // Battle against two guards
 = battle_marcello_capucine_full_life
 Combat contre les deux gardes.
-- -> end_scene
+- -> after_battle
 
 
 // Battle against Marcello with Capucine hurt
 = battle_marcello_with_capucine_hurt
 Combat contre Marcello et Capucine, où Capucine est blessée.
-- -> end_scene
+- -> after_battle
 
 // Battle against Capucine with Marcello hurt
 = battle_capucine_with_marcello_hurt
 Combat contre Capucine et Marcello, où Marcello est blessé.
-- -> end_scene
+- -> after_battle
 
 // After the battle
 = after_battle
@@ -320,6 +320,8 @@ CAPUCINE: Allons-nous-en avec notre trouvaille. Si ce maraud se trouve encore su
 #anim:Marcello:attack
 #anim:Player:hurt
 #move(Marcello)
+-> barge.scene_3
+
 // End the scene
 = end_scene
 Fin de la scène.

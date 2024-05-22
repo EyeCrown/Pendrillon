@@ -274,7 +274,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
     * [À bien y réfléchir...]
         ** [Accepter.]
 - #audience:ovation
-- -> end_scene
+- -> barge.scene_2
 
 // End the scene
 = end_scene
