@@ -15,6 +15,10 @@ public static class Constants
     public const string TagBox          = "box";            // #box
     public const string TagScreenShake  = "screenshake";    // #screenshake:Intensity:Time  Intensity: Puissance du screenshake     Time: durée du screenshake en secondes
 
+    public const string TagCurtains     = "curtains";       // #curtains
+    public const string TagOpenCurtains = "open";           // #curtains
+    public const string TagCloseCurtains = "close";         // #curtains
+    
     #endregion
 
     #region SPEED

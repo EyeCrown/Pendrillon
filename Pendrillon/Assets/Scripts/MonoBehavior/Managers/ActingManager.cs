@@ -18,19 +18,17 @@ namespace MonoBehavior.Managers
         #region Attributes
         public static ActingManager Instance { get; private set; }
     
-        public List<GameObject> _charactersOnStage;
-    
         // UI
-        public GameObject _uiParent;
-        public GameObject _dialogueBox;
-        public TextMeshProUGUI _dialogueText;   // Text box
-        public TextMeshProUGUI _tagsText;       // Tags box
+        [HideInInspector] public GameObject _uiParent { get; private set; }
+        private GameObject _dialogueBox;
+        private TextMeshProUGUI _dialogueText;   // Text box
+        private TextMeshProUGUI _tagsText;       // Tags box
     
         // Buttons
         [SerializeField] private Button _choiceButtonPrefab;
-        public List<Button> _choicesButtonList;
-        [SerializeField] private Button _nextDialogueButton;
-        [SerializeField] private Button _backButton;
+        private List<Button> _choicesButtonList;
+        private Button _nextDialogueButton;
+        private Button _backButton;
         
         private string _currentDialogue;
         private Stack<string> savedJsonStack;
@@ -39,12 +37,13 @@ namespace MonoBehavior.Managers
         
         private List<CharacterHandler> _enemiesToFight = new();
 
+        // Tag list ordering
         private List<Action> _tagMethods = new();
-        private bool isActionDone = false;
+        private bool _isActionDone = false;
         private bool _dialogueAlreadyHandle = false;
-        //private IEnumerator<Action> _tagMethods;
         
         //Sound
+        [Header("=== Wwise attributes ===")]
         [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButton;
 
         /* Cet event est lancé depuis le bouton vert d'UI
@@ -53,30 +52,27 @@ namespace MonoBehavior.Managers
         [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButtonAppears;
         [SerializeField] private AK.Wwise.Event _wwiseDialogAppears;
         
-        
-        
         #endregion
 
         #region Events
-    
-        public UnityEvent PhaseStart;
-        public UnityEvent PhaseEnded;
-        public UnityEvent NextDialogue;
-        public UnityEvent ClearUI;
+        
+        [HideInInspector] public UnityEvent PhaseStart;
+        [HideInInspector] public UnityEvent PhaseEnded;
+        [HideInInspector] public UnityEvent NextDialogue;
+        [HideInInspector] public UnityEvent ClearUI;
     
         #endregion
     
         #region UnityAPI
         private void Awake()
         {
+            // Singleton pattern
             if (Instance != null && Instance != this)
             {
                 Destroy(this);
                 return;
             }
-
             Instance = this;
-            //DontDestroyOnLoad(this.gameObject);
         
             // Connect Attributes
             _uiParent           = GameObject.Find("Canvas/ACTING_PART").gameObject;
@@ -409,7 +405,7 @@ namespace MonoBehavior.Managers
         void TagActionOver()
         {
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > TagAction is over");
-            isActionDone = true;
+            _isActionDone = true;
         }
         
         private void HandleTagActor(string[] data)
@@ -464,9 +460,9 @@ namespace MonoBehavior.Managers
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {data[0]} must play {data[1]} anim");
 
             _tagMethods.Add(() => 
-                StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1], TagActionOver))
+                StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAnimCoroutine(data[1], TagActionOver))
             );
-            //StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAndWaitForAnimCoroutine(data[1]));
+            //StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAnimCoroutine(data[1]));
 
         }
         
@@ -505,6 +501,13 @@ namespace MonoBehavior.Managers
                 
                 _tagMethods.Add(() => StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver, intensity, time)));
             }
+        }
+
+        private void HandleCurtains()
+        {
+            //TODO: Make curtains tag handlers
+            
+            
         }
         
         #endregion
@@ -602,11 +605,11 @@ namespace MonoBehavior.Managers
             {
                 if (!_tagMethods.Any())
                     break;                
-                isActionDone = false;
+                _isActionDone = false;
                 //Debug.Log($"{nameof(ExecuteTagMethods)} > Start action");
 
                 _tagMethods[i]();
-                while (!isActionDone)
+                while (!_isActionDone)
                 {
                     //Debug.Log($"{nameof(ExecuteTagMethods)} > Wait to finish");
                     yield return null;

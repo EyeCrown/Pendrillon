@@ -12,17 +12,17 @@ public class CharacterHandler : MonoBehaviour
 
     public Character _character;
 
-    public Animator _anim;
+    Animator _anim;
     
     // UI
-    public Canvas _canvas;
-    private GameObject _uiActing;
-    public TextMeshProUGUI _nameText;
-    public TextMeshProUGUI _dialogueText;
+    Canvas _canvas;
+    GameObject _uiActing;
+    TextMeshProUGUI _nameText;
+    TextMeshProUGUI _dialogueText;
 
     public Vector2Int _coordsOnStatge;
     
-    [Range(1, 200)] [SerializeField] private int maxLengthDialogue;
+    //[Range(1, 200)] [SerializeField] private int maxLengthDialogue;
     
     #endregion
 
@@ -100,25 +100,9 @@ public class CharacterHandler : MonoBehaviour
         
         //TODO: Add animations when moving
 
-        StartCoroutine(LerpPosition(end, duration, callbackOnFinish));
+        StartCoroutine(MovePositionCoroutine(end, duration, callbackOnFinish));
     }
     
-    IEnumerator LerpPosition(Vector3 targetPosition, float duration, System.Action callbackOnFinish)
-    {
-        float time = 0.0f;
-        Vector3 startPosition = transform.position;
-
-        while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
-        {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
-            transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
-            time += Time.deltaTime;
-            yield return null;
-        }
-        transform.position = targetPosition;
-        callbackOnFinish();
-    }
-
     #endregion
 
     
@@ -155,23 +139,19 @@ public class CharacterHandler : MonoBehaviour
     
     #region Coroutine
 
-    public IEnumerator PlayAndWaitForAnimCoroutine(string triggerName, System.Action callbackOnFinish)
+    public IEnumerator PlayAnimCoroutine(string triggerName, System.Action callbackOnFinish)
     {
         //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation start");
-
+        
         _anim.SetTrigger(triggerName);
         
         //Wait until we enter the current state
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(triggerName))
-        {
             yield return null;
-        }
-
+        
         //Now, Wait until the current state is done playing
         while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
-        {
             yield return null;
-        }
         
         //Done playing. Do something below!
         callbackOnFinish();
@@ -181,6 +161,23 @@ public class CharacterHandler : MonoBehaviour
             //Debug.Log("Animation is not a loop so go back to idle");
             _anim.SetTrigger("Idle");
         }
+    }
+    
+    IEnumerator MovePositionCoroutine(Vector3 targetPosition, float duration, System.Action callbackOnFinish)
+    {
+        float time = 0.0f;
+        Vector3 startPosition = transform.position;
+
+        while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
+            transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
+            time += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = targetPosition;
+        transform.LookAt(Camera.main.transform);
+        callbackOnFinish();
     }
 
     #endregion

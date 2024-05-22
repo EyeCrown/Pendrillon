@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
@@ -10,7 +11,6 @@ using UnityEngine;
     ACTING,
     FIGHTING,
     PAUSE,
-    
 }*/
 
 namespace MonoBehavior.Managers
@@ -25,7 +25,6 @@ namespace MonoBehavior.Managers
         public List<Character> _charactersBase = new List<Character>();
         public List<CharacterHandler> _characters = new List<CharacterHandler>();
 
-        public Character _playerData;
         public CharacterHandler _player;
         
         [SerializeField] private GameObject _characterPrefab;
@@ -62,20 +61,12 @@ namespace MonoBehavior.Managers
         #region UnityAPI
         private void Awake()
         {
-            /*  Test with Trim()
-             var text = "   Hello       "+"      World      "+"     !";
-            text = text.Trim();
-            Debug.Log($"{("   Hello       ".Trim() + "      World      ".Trim() + "     !".Trim())}");
-            */
-            
-            
-            
+            // Singleton pattern
             if (Instance != null && Instance != this)
             {
                 Destroy(this);
                 return;
             }
-
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
 
@@ -117,7 +108,8 @@ namespace MonoBehavior.Managers
             
             Destroy(_player.GetComponent<Enemy>());
             
-            _player.transform.rotation = _playerPos.rotation;
+            //_player.transform.rotation = _playerPos.rotation;
+            _player.transform.LookAt(Camera.main.transform);
             
             _player._character._nicknames.Clear();
             _player._character._nicknames.Add(_player._character.name);
@@ -132,7 +124,8 @@ namespace MonoBehavior.Managers
                 
                 character.transform.position = _gridScene.GetWorldPositon(_gridScene._enemyPosition + new Vector2Int(i*3, i*2)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
                 
-                character.transform.rotation = _enemyPos.rotation;
+                //character.transform.rotation = _enemyPos.rotation;
+                character.transform.LookAt(Camera.main.transform);
                 character.GetComponent<CharacterHandler>()._character = _charactersBase[i];
                 character.GetComponent<CharacterHandler>()._character._nicknames.Clear();
                 character.GetComponent<CharacterHandler>()._character._nicknames.Add(character.GetComponent<CharacterHandler>()._character.name);
@@ -222,21 +215,27 @@ namespace MonoBehavior.Managers
         void GeneratePlayerStats()
         {
 
-            _playerData.name = "Player";//(string) _story.variablesState["p_name"];
-            _playerData.hp = (int) _story.variablesState["p_hp"];
+            _player._character.name = "Player";//(string) _story.variablesState["p_name"];
+            _player._character.hp = (int) _story.variablesState["p_hp"];
             
-            _playerData.charisma.SetupBase((int)_story.variablesState["p_char"]);
-            _playerData.strength.SetupBase((int)_story.variablesState["p_stre"]);
-            _playerData.dexterity.SetupBase((int)_story.variablesState["p_dext"]);
-            _playerData.constitution.SetupBase((int)_story.variablesState["p_comp"]);
-            _playerData.luck.SetupBase((int)_story.variablesState["p_luck"]);
-
-
-            _player._character = _playerData;
-            Debug.Log($"Player data: {_playerData}");
+            _player._character.charisma.SetupBase((int)_story.variablesState["p_char"]);
+            _player._character.strength.SetupBase((int)_story.variablesState["p_stre"]);
+            _player._character.dexterity.SetupBase((int)_story.variablesState["p_dext"]);
+            _player._character.constitution.SetupBase((int)_story.variablesState["p_comp"]);
+            _player._character.luck.SetupBase((int)_story.variablesState["p_luck"]);
+            
+            Debug.Log($"Player data: {_player._character}");
         }
 
-        public IEnumerator ScreenShakeCoroutine(System.Action callbackOnFinish, float intensity = Constants.ScreenShakeIntensity, float time = Constants.ScreenShakeTime)
+        void GenerateCharacterStats(ref Character character, string inkId)
+        {
+            
+        }
+        
+        
+        #region Coroutines
+
+        public IEnumerator ScreenShakeCoroutine(Action callbackOnFinish, float intensity = Constants.ScreenShakeIntensity, float time = Constants.ScreenShakeTime)
         {
             Debug.Log($"GM.{MethodBase.GetCurrentMethod().Name} > Begin screen shake with {intensity} intensity during {time} seconds");
             _cameraPerlin.m_AmplitudeGain = intensity;
@@ -247,5 +246,7 @@ namespace MonoBehavior.Managers
 
             callbackOnFinish();
         }
+
+        #endregion
     }
 }
