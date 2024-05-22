@@ -6,7 +6,7 @@
 // Scene
 === barge ===
 // Define the actors of the scene
-#actor:PLAYER:Player:PLAYER
+#actor:Player:PLAYER
 #actor:Passeur:PASSEUR
 #actor:Prompter:SOUFFLEUR
 // Start the scene
@@ -98,7 +98,7 @@ SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance ! 
     * [Le destinataire.] PLAYER: La lettre était destiné à un certain {p_name} Jehovah Banes. Cette personne n’est autre que moi-même. Rien d’étonnant pourrait-on dire. Détrompe-toi : la seule personne à m’appeler ainsi est ma mère. Or, ma mère est absolument et irrémédiablement illétrée...
     * [L'odeur.] PLAYER: J’ai reçu bien des lettres dans ma vie, certaines avaient l’odeur du purin, du sel marin ou encore celle des impôts impayés, mais jamais encore n’avais-je reçu une missive à l’odeur si... délicate. L'odeur d'un expéditeur fortuné.
 - PLAYER: La lettre, d'un expéditeur inconnu, me donnait rendez-vous pour « une cause de la plus haute importance ». Piqué de curiosité, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous : la cale de mon propre navire.
-- -> end_scene
+- -> secret_meeting
 
 // Scène 2
 = scene_2
@@ -133,7 +133,7 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, no
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons.
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire.
 #sleep:5
-- -> end_scene
+- -> trip_return
 
 // Scène 3
 = scene_3
@@ -150,7 +150,7 @@ PASSEUR: Tu es bien silencieux... Que ressentais-tu, à cet instant ?
 - PASSEUR: Tu devais te sentir bien seul... Dis-moi plutôt : où t'es-tu rendu, après cela ?
     * [Tous les gardes en avaient après moi...] PLAYER: Tous les gardes de la ville étaient à mes trousses...
     * [J'ai trouvé un refuge...] PLAYER: J'ai trouvé un endroit pour passer la nuit...
-- -> end_scene
+- -> church_night
 
 // Scène 4
 = scene_4
@@ -169,7 +169,7 @@ PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse...
     * [Une mauvaise surprise m'attendait.] PLAYER: ... une surprise des plus désagréables m'attendait...
     * [Je m'apprêtais à en découdre.] PLAYER: ... j'allais devoir livrer bataille...
     * [Je fus trahi.] PLAYER: ... je fus malheureux de constater qu'on m'avait trahi...
-- -> end_scene
+- -> church_day
 
 // Scène 5
 = scene_5
@@ -197,7 +197,7 @@ PASSEUR: ... ou si c'est ici que nos chemins se sépareront.
 - #anim:open_trial_doors
 - #sleep:5
 - PASSEUR: Tu vas devoir affronter ton destin. Ainsi en-ont décidé les portes, voyageur...
-- -> end_scene
+- -> tribunal_1
 
 = end_scene
 -> END

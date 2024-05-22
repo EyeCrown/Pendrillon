@@ -147,16 +147,16 @@ VAR irene_was_a_sireine = true
     {
         - stained_glass_1_talk == true && stained_glass_2_talk == true && stained_glass_3_talk == true && stained_glass_4_talk == true:
             #anim:Player:go_to_sleep_on_bench
-            -> end_scene
+            -> barge.scene_4
         - else:
             AGATHE: Êtes vous certain de ne pas vouloir ?
                 * [J'ai changé d'avis.] PLAYER: Sans doute ne souffrirais-je pas d'entendre encore un peu parler votre sagesse...
                     -> stained_glass
                 * [Je souhaite me reposer...] PLAYER: Veuillez me pardonnez, prêtresse. Le sommeil m'emporte déjà...
                     #anim:Player:go_to_sleep_on_bench
-                    -> end_scene
+                    -> barge.scene_4
     }
-    -> end_scene
+    -> barge.scene_4
 
 // Stained glass of Irene as a baby, in the middle of a tempest
 = baby_in_the_middle_of_a_tempest
