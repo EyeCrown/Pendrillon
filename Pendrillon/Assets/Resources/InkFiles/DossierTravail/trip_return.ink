@@ -96,7 +96,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
     * [(Tiraillé) Parfois...] PLAYER: Il est des jours où je crois être le plus vil des hommes... #trial
         ~ trial(t_1_show_regrets_1)
 - ???: J'entends des bruits. Quelqu'un vient. #playsound:activity_far
-* [Cachez-vous.] PLAYER: Il va falloir vous trover une cachette, et en vitesse.
+* [Cachez-vous.] PLAYER: Il va falloir vous trouver une cachette, et en vitesse.
     -- (hide_sireine) ???: Les bruits se rapprochent ! #playsound:activity_close
         #anim:Arle:enter_scene #anim:Arle:hide
         *** [Dans la caisse du fond.] Cette caisse, au fond ! Vite ! #anim:Sireine:hide
@@ -184,7 +184,7 @@ MARCELLO: Il n'y a personne, cheffe.
 // The guards arrive while the player is not hidden
 = player_not_hidden
 #playsound:guards_arrive
-* [S'annoncer.] PLAYER: Bonjour, messieurs.
+* [S'annoncer.] PLAYER: Bien le bonjour.
 - CAPUCINE: Décline ton identité, et vite !
     * [Je suis le capitaine.] PLAYER: Vous vous trouvez sur mon humble navire.
         CAPUCINE: C'est toi le capitaine ?
@@ -192,17 +192,17 @@ MARCELLO: Il n'y a personne, cheffe.
         {sc(CHAR, 10): -> lie_about_not_being_capitaine_S | -> lie_about_not_being_capitaine_F}
             ** (lie_about_not_being_capitaine_S) MARCELLO: Il a l'air de dire vrai, cheffe.
             ** (lie_about_not_being_capitaine_F) MARCELLO: Tu mens comme tu respires, pas vrai ?
-- MARCELLO: Le fripon a l'air louche...
-    * [Toi-même.] PLAYER: C'est toi qui est louche, morpion.
+- CAPUCINE: Le fripon a l'air louche...
+    * [Vous-mêmes.] PLAYER: C'est vous qui êtes louche, les morpions.
         MARCELLO: Répète ça pour voir, abruti !
-        ** [Répéter.] PLAYER: Louche et sourdingue, en plus de ça.
-            MARCELLO: Je vais t'apprendre à insulter un garde de la Coronne ! -> battle_marcello_capucine_full_life
+        ** [Répéter.] PLAYER: Louches et sourdingues, en plus de ça.
+            MARCELLO: Nous allons t'apprendre à insulter des gardes de la Couronne ! -> battle_marcello_capucine_full_life
         ** [Calmer le jeu. {t(CHAR, 10)}]
             {sc(CHAR, 10): -> try_diplomacy_S | -> try_diplomacy_F}
             *** (try_diplomacy_S) -> calm_the_situation
             *** (try_diplomacy_F) PLAYER: Euh... Pardon, j'ai tendance à dire tout haut ce que je pense tout bas... -> calm_the_situation
     * (calm_the_situation) [Amadouer.] PLAYER: Et si nous remontions sur le pont, pour discuter entre amis ?
-        CAPUCINE: Un garde de la Coronne n'a d'ordre à recevoir de personne.
+        CAPUCINE: Un garde de la Couronne n'a d'ordre à recevoir de personne.
         ** [Faire de l'esprit.] PLAYER: Pas même de la Reine ?
             CAPUCINE: Que baragouines-tu encore ?
             MARCELLO: Il a pas tort, cheffe.

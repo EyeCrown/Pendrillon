@@ -30,7 +30,7 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
             *** (joke_punctuality_S) PLAYER: ...avant les premiers rayons du soleil. Je n'ai pas prévu ma crème solaire.
                 SOUFFLEUR: Bien joué l'ami ! Continue de divertir le public pour ne pas qu'il s'ennuie...
             *** (joke_punctuality_F) PLAYER: ...euh... avant les premiers rayons du soleil... qui lui-même n'est pourtant... euh... pas très ponctuel ?
-                SOUFFLEUR: Tu as fait ce qu'on appelle un four. Un bide. Un coup d'épée dans l'eau... Un flop, en d'autres termes. Mais je ne suis pas là pour te descendre... Ne te laisse pas abattre, tu auras d'autres occasions !
+                SOUFFLEUR: Tu as fait ce qu'on appelle un four. Un bide. Un coup d'épée dans l'eau... Un flop, en d'autres termes. Mais je ne suis pas là pour te descendre... Ne te laisse pas abattre l'ami, tu auras d'autres occasions !
                 ~ has_fail = true
         ** [(Menace) Conclure avec panache. {t(STRE, 10)}]
             {sc(CHAR, 0): -> threat_ponctuality_S | -> threat_ponctuality_F}
@@ -58,11 +58,11 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
                 ~ has_fail = true
 - #sleep:4 #audience:booing
     * [(S'adresser à l'actrice) Il est temps.] PLAYER: Je crois VRAIMENT qu'il est temps, désormais.
-        ???: ... Laisse moi un peu de temps, tu veux ?
+        ???: ... Laisse moi un peu de temps, veux-tu ?
 - #sleep:3 #audience:booing
-    * [(À l'actrice, chuchotant) Qui payera mes heures supplémentaires ?] PLAYER: Psssst... Je suis trop mal payé pour que la pièce dure toute la nuit. Dépêche-toi un peu !
+    * [(À l'actrice, chuchotant) Qui payera mes heures supplémentaires ?] PLAYER: Psssst... Je suis trop mal payé pour que la pièce dure toute la nuit. Dépêche-toi !
     * [(À l'actrice, chuchotant) Es-tu en grève ?] PLAYER: Psssst... Tu es en grève ? Qu'es-ce qu'il te prend, encore ?
-- ???: Laissons-les se languir encore un peu... Ça ne rendra mon apparition que plus mémorable !
+- ???: Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable !
     * [Se montrer conciliant.] PLAYER: Je n'en doute pas... Je vais faire ce que je peux pour meubler. Je t'en prie, ne tarde pas.
     * [Hausser le ton.] PLAYER: Le public va t'acceuillir avec des applaudissements... et moi avec un coup de pied au derrière !
     * [Ignorer la voix.]
@@ -151,7 +151,7 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
             ???: Me présenter ? Cela, je sais le faire, et fort bien !
             #anim:Arle:charisma
             --- (arle_presentation) ???: Je suis Arle, pour vous servir, messire.
-    * [Es-tu l'auteur de la lettre ?] PLAYER: Est-ce donc toi qui a écrit la lettre que j'ai reçu la veille ?
+    * [Es-tu l'auteur de la lettre ?] PLAYER: Est-ce donc toi qui a écrit la lettre que j'ai reçue la veille ?
         ???: Je sais faire bien des choses, messire...
         ???: ... Faire la belle...
         #anim:Arle:charisma
@@ -217,7 +217,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
 - ARLE: Cette femme passait son temps à regarder l'océan. #anim:Arle:look_around
 - ARLE: Elle savait, voyez-vous, qu'un beau jour il se mettrait en colère ! #anim:Arle:monster
     * [Parles-tu du Déluge ?] PLAYER: Est-ce du Déluge dont tu parles ?
-        ARLE: Tout à fait. Et cette femme...
+        ARLE: Tout à fait. Et cette femme... #anim:Arle:applause
         ** [Irène.] PLAYER: Irène.
             ARLE: Elle-même.
     * [Ne pas l'interrompre.]
@@ -238,10 +238,10 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
 - ARLE: Avec la montée des Eaux vint d'autres fléaux. L'un d'eux était un poisson...
 - #anim_event:arle_rope #anim:Arle:swimming // Arle, accroché à une corde, mime un poisson qui nage
 - ARLE: Ce poisson, voyez-vous, était si gros qu'il aurait pu avaler une ville entière. #audience:surprise
-- ARLE: Plus d'une fois, il manqua d'engloutir le navire d'Irène... Fort heureusement, la Déesse était pleine de ressources ! #audience:applause
     * [Le Léviathan !] PLAYER: Le léviathan ! #audience:shock
         ARLE: Le Léviathan, messire.
     * [Rester silencieux.]
+- ARLE: Plus d'une fois, il manqua d'engloutir le navire d'Irène... Fort heureusement, la Déesse était pleine de ressources ! #audience:applause
 - ARLE: C'est pourquoi nous jouissons d'être en vie aujourd'hui, n'est-ce pas ? Mais cette petite histoire ne se finit pas si bien...
     * [Pourquoi donc ?] PLAYER: Et pourquoi donc ?
     * [Je sais pourquoi.] PLAYER: J'ai une idée de ce que tu vas dire...
@@ -256,11 +256,11 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
     * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. #audience:laugther
         #anim:Arle:laugh
         ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse.
-    * [Il va falloir me payer grassement.] PLAYER: Moi, tuer le Léviathan ? Il faudrait me payer une somme mirifique !
+    * [Il va falloir me payer grassement.] PLAYER: Si ton maître veut me faire courir un tel risque... Il a interêt à me payer grassement !
 - ARLE: Souvenez-vous : celui - ou celle - qui m'envoie est d'une richesse dont vous n'avez pas idée.
     * [Annoncez-moi la somme.] PLAYER: De quelle somme parle t-on ?
     * [Il a interêt...] PLAYER: Au vu de la mission, il ne le sera plus autant après m'avoir payé.
-- ARLE: Si vous acceptez de ramener le cœur du terrible Léviathan, mon maître - ou ma maîtresse - vous offrira le poids de votre navire en or.
+- ARLE: Si vous acceptez de ramener le cœur du terrible Léviathan, mon maître vous offrira le poids de votre navire en or.
     * [Une sacré somme.] PLAYER: Une somme qui n'est pas à prendre à la légère...
     * [(Négocier) Mon navire est léger. {t(CHAR, -20)}]
         {sc(CHAR, -20): -> negociate_S | -> negociate_F} 
