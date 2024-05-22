@@ -26,7 +26,7 @@ namespace MonoBehavior.Managers
     
         // Buttons
         [SerializeField] private Button _choiceButtonPrefab;
-        private List<Button> _choicesButtonList;
+        public List<Button> _choicesButtonList;
         private Button _nextDialogueButton;
         private Button _backButton;
         
@@ -79,7 +79,7 @@ namespace MonoBehavior.Managers
             _dialogueBox        = _uiParent.transform.Find("DialogueBox").gameObject;
             _dialogueText       = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
             _tagsText           = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
-            _nextDialogueButton = _uiParent.transform.Find("DialogueBox/NextButton").GetComponent<Button>();
+            _nextDialogueButton = _uiParent.transform.Find("NextButton").GetComponent<Button>();
             _backButton         = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
             
             // Connect Events
