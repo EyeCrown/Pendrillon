@@ -5,15 +5,15 @@ public static class Constants
 
     public const string Separator = ":";    // Separator between tags paramaters
 
-    public const string TagActor = "actor";         // #actor:Character:Name1:Name2:...:NameN   Character: nom du personnage    Name1: 1er surnom     Name2: 2ème surnom  ...  NameN: Nième surnom   
+    public const string TagActor        = "actor";         // #actor:Character:Name1:Name2:...:NameN   Character: nom du personnage    Name1: 1er surnom     Name2: 2ème surnom  ...  NameN: Nième surnom   
     
-    public const string TagMove = "move";           // #move:Character:X:Y          Character: nom du personnage    X: position en X    Y: position en Y
-    public const string TagPlaySound = "playsound"; // #playsound:Sound             Sound: son à jouer
-    public const string TagAnim = "anim";           // #anim:Character:Animation    Character: nom du personnage    Animation: animation à jouer
-    public const string TagWait = "wait";           // #wait:Time           Time: temps d'attente en secondes
-    public const string TagSleep = "sleep";         // #sleep:Time          Time: temps d'attente en secondes
-    public const string TagBox = "box";             // #box
-    
+    public const string TagMove         = "move";           // #move:Character:X:Y          Character: nom du personnage    X: position en X    Y: position en Y
+    public const string TagPlaySound    = "playsound";      // #playsound:Sound             Sound: son à jouer
+    public const string TagAnim         = "anim";           // #anim:Character:Animation    Character: nom du personnage    Animation: animation à jouer
+    public const string TagWait         = "wait";           // #wait:Time           Time: temps d'attente en secondes
+    public const string TagSleep        = "sleep";          // #sleep:Time          Time: temps d'attente en secondes
+    public const string TagBox          = "box";            // #box
+    public const string TagScreenShake  = "screenshake";    // #screenshake:Intensity:Time  Intensity: Puissance du screenshake     Time: durée du screenshake en secondes
 
     #endregion
 
@@ -34,6 +34,12 @@ public static class Constants
 
     #endregion
 
+    #region ScreenShake
+
+    public const float ScreenShakeIntensity = 3.0f;
+    public const float ScreenShakeTime = 1.0f;
+
+    #endregion
 
 }
 

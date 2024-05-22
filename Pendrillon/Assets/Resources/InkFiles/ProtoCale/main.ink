@@ -15,4 +15,4 @@ INCLUDE trip_return.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
--> secret_meeting
+-> trip_return

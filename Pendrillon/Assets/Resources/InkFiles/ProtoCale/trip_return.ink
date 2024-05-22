@@ -26,10 +26,12 @@ VAR player_is_hidden = false // Define if the player is hidden or not
 = start
 #sleep:0.1
 #move:Player:5:5
+#screenshake
 #anim:Rudolf:Surprised
 #box
 #wait:2
 #move:Rudolf:5:5:run
+#screenshake:10:5.0
 #anim:Marcello:Dance
 - ???: (Écœurée) Ça sent mauvais là-dedans...    
     * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...                 #move:Player:5:5   #anim:Marcello:Dance

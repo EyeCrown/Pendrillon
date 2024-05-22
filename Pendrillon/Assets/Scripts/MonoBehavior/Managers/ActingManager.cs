@@ -399,6 +399,9 @@ namespace MonoBehavior.Managers
                 case Constants.TagActor:
                     HandleTagActor(words.Skip(1).Cast<String>().ToArray());
                     break;
+                case Constants.TagScreenShake:
+                    HandleScreenShake(words);
+                    break;
             }
         }
 
@@ -488,6 +491,22 @@ namespace MonoBehavior.Managers
             _tagMethods.Insert(0, () => StartCoroutine(WaitingCoroutine(timeToWait)));
 
         }
+
+        private void HandleScreenShake(string[] data)
+        {
+            if (data.Length == 1)
+            {
+                _tagMethods.Add(() => StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver)));
+            }
+            else
+            {
+                var intensity = float.Parse(data[1], CultureInfo.InvariantCulture);
+                var time = float.Parse(data[2], CultureInfo.InvariantCulture);
+                
+                _tagMethods.Add(() => StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver, intensity, time)));
+            }
+        }
+        
         #endregion
 
         //Le code pour le son :) par Romain

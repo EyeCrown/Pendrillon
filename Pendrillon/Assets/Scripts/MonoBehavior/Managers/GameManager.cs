@@ -1,5 +1,7 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using Cinemachine;
 using Ink.Runtime;
 using UnityEngine;
 
@@ -40,12 +42,15 @@ namespace MonoBehavior.Managers
         [HideInInspector] public Story _story;
 
         public Vector2 _buttonPos = new Vector2(250, 150);
+        
         public AK.Wwise.Event _wwiseEvent;
 
+        private CinemachineBasicMultiChannelPerlin _cameraPerlin;
+        
+        
         [Header("Timers")] 
         [Range(0, 5)] public float _timeButtonSpawnInSec;
         [Range(0, 5)] public float _timeTextToAppearInSec;
-        
         
         
         [Header("Debug")]
@@ -75,6 +80,9 @@ namespace MonoBehavior.Managers
             DontDestroyOnLoad(this.gameObject);
 
             _gridScene = GameObject.Find("Grid").GetComponent<GroundGrid>();
+            _cameraPerlin = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>()
+                .GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            _cameraPerlin.m_AmplitudeGain = 0.0f;
             
             // Connect Events
             ActingManager.Instance.PhaseEnded.AddListener(PrepareFightingPhase);
@@ -98,6 +106,8 @@ namespace MonoBehavior.Managers
         }
         
         #endregion
+
+        #region Setup
 
         public void SetupPlayer()
         {
@@ -143,6 +153,8 @@ namespace MonoBehavior.Managers
             _prompter.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100));
             _prompter.name = Constants.PrompterName;
         }
+
+        #endregion
         
     
         public CharacterHandler GetCharacter(string characterName)
@@ -222,6 +234,18 @@ namespace MonoBehavior.Managers
 
             _player._character = _playerData;
             Debug.Log($"Player data: {_playerData}");
+        }
+
+        public IEnumerator ScreenShakeCoroutine(System.Action callbackOnFinish, float intensity = Constants.ScreenShakeIntensity, float time = Constants.ScreenShakeTime)
+        {
+            Debug.Log($"GM.{MethodBase.GetCurrentMethod().Name} > Begin screen shake with {intensity} intensity during {time} seconds");
+            _cameraPerlin.m_AmplitudeGain = intensity;
+            yield return new WaitForSeconds(time);
+            _cameraPerlin.m_AmplitudeGain = 0.0f;
+            
+            Debug.Log($"GM.{MethodBase.GetCurrentMethod().Name} > End screen shake");
+
+            callbackOnFinish();
         }
     }
 }
