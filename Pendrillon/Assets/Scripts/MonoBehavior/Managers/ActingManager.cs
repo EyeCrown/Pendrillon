@@ -26,7 +26,7 @@ namespace MonoBehavior.Managers
     
         // Buttons
         [SerializeField] private Button _choiceButtonPrefab;
-        private List<Button> _choicesButtonList;
+        public List<Button> _choicesButtonList;
         private Button _nextDialogueButton;
         private Button _backButton;
         
@@ -41,6 +41,8 @@ namespace MonoBehavior.Managers
         private List<Action> _tagMethods = new();
         private bool _isActionDone = false;
         private bool _dialogueAlreadyHandle = false;
+
+        private Dictionary<string, Transform> _directions = new Dictionary<string, Transform>();
         
         //Sound
         [Header("=== Wwise attributes ===")]
@@ -79,8 +81,25 @@ namespace MonoBehavior.Managers
             _dialogueBox        = _uiParent.transform.Find("DialogueBox").gameObject;
             _dialogueText       = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
             _tagsText           = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
-            _nextDialogueButton = _uiParent.transform.Find("DialogueBox/NextButton").GetComponent<Button>();
+            _nextDialogueButton = _uiParent.transform.Find("NextButton").GetComponent<Button>();
             _backButton         = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
+
+            var dirTransform = GameObject.Find("Directions").transform;
+            Debug.Log(dirTransform);
+            // Front
+            var dirPos = dirTransform;
+            dirPos.position +=   new Vector3(30, 0, 0);
+            _directions.Add(Constants.StageFront, dirPos);
+            // Back
+            dirPos.position += dirTransform.transform.position + new Vector3(-30, 0, 0);
+            _directions.Add(Constants.StageBack, dirPos);
+            // Garden
+            dirPos.position += dirTransform.transform.position + new Vector3(0, 0, -30);
+            _directions.Add(Constants.StageGarden, dirPos);
+            // Courtyard
+            dirPos.position += dirTransform.transform.position + new Vector3(0, 0, 30);
+            _directions.Add(Constants.StageCourtyard, dirPos);
+
             
             // Connect Events
             PhaseStart.AddListener(OnPhaseStart);
@@ -138,7 +157,7 @@ namespace MonoBehavior.Managers
                 
                 HandleTags();
                 HandleDialogue();
-                HandleChoices();
+                //HandleChoices();
 
                 /*foreach (var method in _tagMethods)
                 {
@@ -147,6 +166,7 @@ namespace MonoBehavior.Managers
                 }*/
 
                 StartCoroutine(ExecuteTagMethods());
+                HandleChoices();
 
             }
             else
@@ -216,6 +236,7 @@ namespace MonoBehavior.Managers
             }
             else 
             {
+                Debug.Log("Activate next button");
                 _nextDialogueButton.gameObject.SetActive(true);
                 // TODO: Make button subscribe correct action (=> next dialogue)
             }
@@ -282,6 +303,7 @@ namespace MonoBehavior.Managers
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Call next dialogue");
             Refresh();
+            //_nextDialogueButton.gameObject.SetActive(false);
         }
 
         public void OnClickContinueCurrentDialogue()
@@ -368,7 +390,7 @@ namespace MonoBehavior.Managers
         
         }
         
-        // ReSharper disable Unity.PerformanceAnalysis
+        
         private void CheckTag(string[] words)
         {
             switch (words[0])
@@ -398,10 +420,16 @@ namespace MonoBehavior.Managers
                 case Constants.TagScreenShake:
                     HandleScreenShake(words);
                     break;
+                case Constants.TagLook:
+                    HandleLook(words.Skip(1).Cast<String>().ToArray());
+                    break;
+                default:
+                    Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag.");
+                    break;
             }
         }
 
-        // ReSharper disable Unity.PerformanceAnalysis
+        
         void TagActionOver()
         {
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > TagAction is over");
@@ -503,12 +531,45 @@ namespace MonoBehavior.Managers
             }
         }
 
-        private void HandleCurtains()
+        private void HandleLook(string[] data)
         {
-            //TODO: Make curtains tag handlers
+            Debug.Log($"AM.HandleLook > {data[0]} must look to {data[1]}");
+            var character = GameManager.Instance.GetCharacter(data[0]);
+
+            Transform target = null;
             
+            var other = GameManager.Instance.GetCharacter(data[1]);
+            if (other != null)
+            {
+                target = other.transform;
+            }
+            else
+            {
+                if (_directions.ContainsKey(data[1]))
+                    target = _directions[data[1]];
+                else
+                    Debug.LogError($"AM.{MethodBase.GetCurrentMethod().Name} > {data[2]} is unvalid");
+            }
             
+            if (target == null)
+                return;
+            
+            _tagMethods.Add(() =>
+            {
+                
+                character.transform.LookAt(target);
+                TagActionOver();
+            });
+
         }
+        
+        //TODO: Make curtains tag handlers
+        /*private void HandleCurtains()
+        {
+            
+            
+            
+        }*/
         
         #endregion
 

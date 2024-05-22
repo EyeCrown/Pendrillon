@@ -14,14 +14,16 @@ public static class Constants
     public const string TagSleep        = "sleep";          // #sleep:Time          Time: temps d'attente en secondes
     public const string TagBox          = "box";            // #box
     public const string TagScreenShake  = "screenshake";    // #screenshake:Intensity:Time  Intensity: Puissance du screenshake     Time: durée du screenshake en secondes
-
-    public const string TagCurtains     = "curtains";       // #curtains
-    public const string TagOpenCurtains = "open";           // #curtains
-    public const string TagCloseCurtains = "close";         // #curtains
+    public const string TagLook         = "look";           // #look:Character:Target       Character: nom du personnage    Target: cible vers laquelle se tourner
+    
+    
+    // public const string TagCurtains     = "curtains";       // #curtains
+    // public const string TagOpenCurtains = "open";           // #curtains
+    // public const string TagCloseCurtains = "close";         // #curtains
     
     #endregion
 
-    #region SPEED
+    #region MovementSpeed
 
     public const string SlowName    = "slow";
     public const float  SlowSpeed   = 0.5f;
@@ -32,7 +34,7 @@ public static class Constants
 
     #endregion
 
-    #region CHARACTER
+    #region Characters
 
     public const string PrompterName = "souffleur";
 
@@ -45,5 +47,13 @@ public static class Constants
 
     #endregion
 
+    #region LookDirection
+
+    public const string StageBack       = "back";
+    public const string StageFront      = "front";
+    public const string StageGarden     = "left";
+    public const string StageCourtyard  = "right";
+
+    #endregion
 }
 
