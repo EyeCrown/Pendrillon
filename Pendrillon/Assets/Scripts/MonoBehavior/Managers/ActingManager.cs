@@ -18,6 +18,10 @@ namespace MonoBehavior.Managers
     {
         #region Attributes
         public static ActingManager Instance { get; private set; }
+        
+        // Scene
+        // TODO: put the name of the first scene (in Constants)
+        private string _stage = "UNDEFINED";      // Name of the actual set
     
         // UI
         [HideInInspector] public GameObject _uiParent { get; private set; }
@@ -87,7 +91,6 @@ namespace MonoBehavior.Managers
             _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<Image>();
 
             var dirTransform = GameObject.Find("Directions").transform;
-            Debug.Log(dirTransform);
             // Front
             var dirPos = dirTransform;
             dirPos.position +=   new Vector3(30, 0, 0);
@@ -140,21 +143,30 @@ namespace MonoBehavior.Managers
         
             // if(savedJsonStack.Count != 0)
             //     _backButton.gameObject.SetActive(true);
-        
+            
             if (GameManager.Instance._story.canContinue)
             {
                 _currentDialogue = GameManager.Instance._story.Continue();
+                //Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
                 
-                Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
-                
-                // Debug.Log($"AM.Refresh > _story.state.currentPathString:" +
-                //           $"{GameManager.Instance._story.state.currentPathString}");
+                var path = GameManager.Instance._story.state.currentPathString;
+                Debug.Log($"AM.Refresh > _story.state.currentPathString: {path}");
+
+                string[] words = path != null ? path.Split(".") : new []{_stage};
+                Debug.Log($"AM.Refresh > Location: {words[0]}");
+
+                if (words[0] != _stage)
+                {
+                    Debug.Log($"AM.Refresh > Change from {_stage} to {words[0]}");
+                    // TODO: DoChangeOfSet()
+                    _stage = words[0];
+                }
                 
                 if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
                     return;
                 
-                if (_currentDialogue == String.Empty)
-                    Refresh();
+                // if (_currentDialogue == String.Empty)
+                //     Refresh();
                 //savedJsonStack.Push(GameManager.Instance._story.state.ToJson());
                 
                 HandleTags();
@@ -335,6 +347,9 @@ namespace MonoBehavior.Managers
         #region EventHandlers
         void OnPhaseStart()
         {
+            Debug.Log($"AM.OnPhaseStart > _story.state.currentPathString: " +
+                      $"{GameManager.Instance._story.state.currentPointer}");
+            
             _uiParent.gameObject.SetActive(true);
             savedJsonStack = new Stack<string>();
 
@@ -350,8 +365,6 @@ namespace MonoBehavior.Managers
             // Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > " +
             //           $"GameManager.Instance._story.path:" +
             //           $"{GameManager.Instance._story.path}");
-
-            
             
             Refresh();
         }
@@ -457,7 +470,7 @@ namespace MonoBehavior.Managers
             string debugList = "";
             foreach (var item in data)
                 debugList += item + ", ";
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {character}'s alias : {debugList}");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {character}'s alias : {debugList}");
         
             
             CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);

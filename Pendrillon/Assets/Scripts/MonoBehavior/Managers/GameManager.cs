@@ -88,7 +88,11 @@ namespace MonoBehavior.Managers
             
             /*if (_inkAsset == null)
             Resources.Load<TextAsset>("InkFiles/");*/
+            
             _story = new Story(_inkAsset.text);
+
+            var path = _story.state.currentPointer;
+            Debug.Log($"GM.Awake > _story.state.currentPathString: {path}");   
             
         }
 
@@ -196,7 +200,7 @@ namespace MonoBehavior.Managers
                 FightingManager.Instance.BeginFight.Invoke();
             }
             else
-            {
+            {  
                 ActingManager.Instance.PhaseStart.Invoke();
             }
         }
