@@ -77,16 +77,16 @@ VAR irene_was_a_sireine = true
         AGATHE: En êtes-vous certain ? Il est davantage de mortels trop cléments avec eux-mêmes, que vierge de tout péché.
     * [Quelque fois...] PLAYER: Parfois... Lorsque la nuit vient et que la lune éclaire mes actes d'une lumière nouvelle...
         AGATHE: On dit parfois que la nuit porte conseil. Elle porte davantage encore le poids de nos fautes...
-            ~ trial(t_2_show_some_regrets_1)
+            ~ trial(t_3_show_some_regrets_1)
     * [Chaque jour.] PLAYER: Pas un seul jour ne passe sans que j'implore la Déesse pour son pardon.
-            ~ trial(t_2_show_plenty_regrets_1)
+            ~ trial(t_3_show_plenty_regrets_1)
         AGATHE: Peut-être ne vous êtes-vous pas contenté de voler une miche de pain...
 - AGATHE: Quoi qu'il en soit, seule Irène est en droit de juger vos actes en ces lieux. #playsound:irene_theme #light:irene_statue
 // PLAYER se tourne vers la statue
     * [(Avec intensité) Implorer la statue. {t(CHAR, -10)}]
         {sc(CHAR, -10): -> implore_irene_S | -> implore_irene_F}
         ** (implore_irene_S) PLAYER: Ô divine apparition. Sachez me venir en aide, victime que je suis...
-            ~ trial(t_2_implore_irene)
+            ~ trial(t_3_implore_irene)
             *** [...de la folie des Hommes.] PLAYER: ...des Hommes et de leur folie !
                 AGATHE: Irène a eu a souffir elle aussi de leurs aliéantions.
             *** [...de ma propre convoitise.] PLAYER: ...de mes propres désirs !
@@ -94,7 +94,7 @@ VAR irene_was_a_sireine = true
             *** [...du plus funeste destin.] PLAYER: ...d'un destin des plus tragiques !
                 AGATHE: Soyez reconnaissant des épreuves que la Déesse dresse sur votre chemin, car dans ces adversités se cachent des trésors de sagesse.
         ** (implore_irene_F) PLAYER: C'est de votre faute à vous, là-haut !
-            ~ trial(t_2_blame_irene)
+            ~ trial(t_3_blame_irene)
             AGATHE: {claim_to_be_free: N'était-ce pas vous qui, un instant plus tôt, prétendiez être libre, dans vos pensées comme dans vos actes ? | Blâmer notre Sauveuse pour vos malheurs est insensé et cruel.}
     * [Elle ressemble à la proue d'un navire.] PLAYER: Elle est pareille à la figure de proue d'un navire.
         AGATHE: Cette statue représente Irène guidant l'humanité vers la terre promise. Après des jours et des nuits passés à veiller sur le pont du Vaisseau...
@@ -106,20 +106,20 @@ VAR irene_was_a_sireine = true
     * [Allumer la lampe d'Irène.] #anim_event:light_on_irene_lamp
         AGATHE: Désormais que sa flamme berce ces lieux, n'hésitez plus : parlez-lui.
         ** [Se confesser.] PLAYER: J'ai ramené de mon voyage...
-            ~ trial(t_2_light_on_irene_torch)
+            ~ trial(t_3_light_on_irene_torch)
             ~ irene_torch_is_on = true
             *** [...un trésor interdit.] PLAYER: ...un trésor qui m'était interdit.
             *** [...un bagage de trop.] PLAYER: ...un bagage de plus. Un bagage de trop. Un poids sur ma conscience.
             *** [...un tas problèmes.] PLAYER: ...tout un lot d'embêtements.
             --- PLAYER: Irène, trouvez en votre bonne âme la force de me pardonner, et d'alléger par la même le poids de mes supplices !
         ** [Lui demander de l'aide.] PLAYER: Irène, je vous en congure, venez-moi en aide. Ô, allégez le poids de mes supplices !
-            ~ trial(t_2_light_on_irene_torch)
+            ~ trial(t_3_light_on_irene_torch)
             ~ irene_torch_is_on = true
         ** [Éteindre la lampe.] PLAYER: J'ai changé d'avis. La lampe restera éteinte, j'en ai peur.
             -> lamp_off
         -- AGATHE: Irène saura entendre vos prières, mon enfant. Sachez, à votre tour, entendre son récit.
     * [Laisser la lampe éteinte.] PLAYER: Elle restera éteinte, j'en ai peur.
-        ~ trial(t_2_no_light_on_irene_torch)
+        ~ trial(t_3_no_light_on_irene_torch)
         -- (lamp_off) AGATHE: ... Et votre cœur, quant à lui, ne connaîtra la lumière de la rédemption.
         ** [Mon cœur va très bien.] PLAYER: Mon cœur, comme vous dites, se porte bien ainsi.
         ** [Je ne suis pas croyant.] PLAYER: Veuillez me pardonner, mais... Je n'ai jamais cru à tout cela...
@@ -167,13 +167,13 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
         AGATHE: Quelle autre voix que la Sienne sauraient étouffer les vents les plus impétueux ?
             -> irene_voice
     * [J'en doute.] PLAYER: Par ce temps ? Croyez un marin lorsqu'il vous dit ceci : c'est parfaitement impossible...
-            ~ trial(t_2_doubt_about_irene_cryings)
+            ~ trial(t_3_doubt_about_irene_cryings)
         AGATHE: Les vents les plus impétueux ne sauraient étouffer la voix de la Déesse.
         -- (irene_voice)
         ** [La Déesse ?] PLAYER: Irène ? C'était sa voix que les pêcheurs entendaient ?
             AGATHE: Vous le saurez bien assez tôt. -> should_i_proceed
         ** [(Avec dédain) Toujours elle...] PLAYER: Encore Elle ? La dent d'un indigeant tombe à l'autre bout du pays, et on se tourne vers Elle plutôt que vers la pomme dans laquelle il a croqué !
-                ~ trial(t_2_insult_interest_about_irene)
+                ~ trial(t_3_insult_interest_about_irene)
             AGATHE: Vous auriez été de ceux qui la traitaient de folle quand vint le moment d'annoncer le Déluge...
             *** [Le Déluge ?] PLAYER: Le Déluge ? Je n'y voit aucun rapport.
                 AGATHE: J'y viendrais. -> should_i_proceed
@@ -182,7 +182,7 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
                 **** [Si vous y tenez...] PLAYER: Puisque vous y tenez tant...
                 ---- -> continue_about_the_crying
             *** [Peut-être.] PLAYER: Peut-être. Quel sôt pourrait prétendre qu'il aurait, en un autre temps et une autre vie, fait le bon choix plutôt que le mauvais ?
-                    ~ trial(t_2_not_believing_irene_predictions)
+                    ~ trial(t_3_not_believing_irene_predictions)
                 AGATHE: En cela, vous avez raison. -> should_i_proceed
 - (continue_about_the_crying) AGATHE: Tout occupés qu'ils étaient à affronter l'écume, ils hésitèrent à envoyer un canot chercher la source des pleurs...
     * [Cela les honorerait.] PLAYER: Des pleurs ? Au milieu de la houle ? Ma curiosité - sinon mon honneur - l'aurait emporté sur ma prudence.
@@ -192,7 +192,7 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
     * [Écouter en silence.]
 - AGATHE: L'un d'eux, n'écoutant que son courage...
     * [... ou sa bêtise.] PLAYER: ...ou sa stupidité...
-        ~ trial(t_2_insult_irene_savior)
+        ~ trial(t_3_insult_irene_savior)
     * [Rester silencieux.]
 - AGATHE: L'un d'eux, dis-je, affreta un canot et suivit le son des pleurs au cœur de la tempête.
 - AGATHE: Après une bataille livrée à la houle et gagnée de justesse, il découvrit sur un rocher, allongé, un bébé.
@@ -202,13 +202,13 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
         {sc(CHAR, -30): -> moved_by_the_baby_S | -> moved_by_the_baby_F}
         ** (moved_by_the_baby_S) PLAYER: Imaginer cet enfant - la Déesse ! - pleurant au milieu de la tempête... Quelle vision poignante ! #anim:Player:emotionnal
             AGATHE: L'innocence du nouveau-né résistant à la cruauté de l'océan. Il n'est de plus belles images à garder en son cœur.
-                ~ trial(t_2_moved_by_baby_irene)
+                ~ trial(t_3_moved_by_baby_irene)
         ** (moved_by_the_baby_F) PLAYER: Ô quelle magnifique, suprême - que dis-je - apothéotique vision !
-            ~ trial(t_2_fake_about_feeling_for_the_baby)
+            ~ trial(t_3_fake_about_feeling_for_the_baby)
             AGATHE: Vous en faites trop... Il est des occasions où le sage sait rester sobre mais sincère.
     * [Ça n'a ni queue ni tête...] PLAYER: Balivernes. Des mythes pour tirer la larme des culs bénis.
         AGATHE: Mon enfant, soyez sûr qu'Irène entend tout. Les chants les plus clairs comme les paroles les plus sinistres.
-            ~ trial(t_2_religion_is_to_make_naive_cry)
+            ~ trial(t_3_religion_is_to_make_naive_cry)
 - AGATHE: Le marin garda l'enfant contre sa poitrine, et manqua de couler en le ramenant au reste de l'équipage. Fort heureusement, tous deux survécurent...
 - AGATHE: Mais, la tempête n'en avait pas fini avec eux. Perdus au milieu de la houle, l'océan à perte de vue... Les pêcheurs n'apercevaient plus un espoir de terre ferme.
     * [Ils vont s'en sortir.] PLAYER: Je garde espoir pour ces braves gens : ils s'en sortiront !
@@ -219,17 +219,17 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
         AGATHE: Jamais les braves pêcheurs ainsi que l'enfant n'auraient eu la moindre chance, sans l'aide du personnage que je m'apprête à introduire, un homme du nom de...
 - (ernest)
     * [...Eugène, sans nul doute.] PLAYER: Vous parlez sans l'ombre d'un doute du célèbre Eugène.
-        ~ trial(t_2_does_not_know_ernest)
+        ~ trial(t_3_does_not_know_ernest)
         AGATHE: Je n'ai aucune idée de qui donc est cet Eugène. L'homme que je mentionne n'est autre qu'Ernest.
     * [...Edmond, évidemment.] PLAYER: Vous parlez sans l'ombre d'un doute du fameux Edmond.
-        ~ trial(t_2_does_not_know_ernest)
+        ~ trial(t_3_does_not_know_ernest)
     * [...Ernest, cela va sans dire.] PLAYER: Vous faites sans doute allusion au pieu Ernest.
-        ~ trial(t_2_know_ernest)
+        ~ trial(t_3_know_ernest)
         AGATHE: La Déesse le bénisse, entre tous les hommes.
     * [(Avec certitude) Je sais qui. {t(LUCK, -20)}]
         {sc(CHAR, -30): -> player_knows_ernest_S | -> player_knows_ernest_F}
         ** (player_knows_ernest_S) PLAYER: Vous faites sans doute allusion au pieu Ernest.
-            ~ trial(t_2_know_ernest)
+            ~ trial(t_3_know_ernest)
             AGATHE: Absolument
         ** (player_knows_ernest_F) PLAYER: Vous parlez sans l'ombre d'un doute du célèbre Edgar.
             AGATHE: Edgar, vous dites ?
@@ -240,8 +240,8 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
                 PLAYER: (Les yeux fous) Il vous attend peut-être de l'autre coté, prêt à vous suriner.
                 AGATHE: ...
                 AGATHE: L'homme auquel je faisais en réalité allusion est Ernest, la Déesse le bénisse.
-                ~ trial(t_2_rant_about_edgar_the_traquenard)
-                ~ trial(t_2_does_not_know_ernest)
+                ~ trial(t_3_rant_about_edgar_the_traquenard)
+                ~ trial(t_3_does_not_know_ernest)
 - AGATHE: Ernest, le gardien du phare.
     * [Qu'a t-il donc fait ?] PLAYER: Qu'a t-il fait pour les aider ?
         AGATHE: Cette nuit-là, Ernest dormait dans son phare, usé par une journée de labeur. Pourtant, au plus profond de son sommeil, il entendit une voix...
@@ -269,16 +269,16 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
     * [Louée soit la lumière !] PLAYER: Louée soit la lumière qui sauva les pêcheurs et l'enfant d'une mort certaine.
 - AGATHE: En effet. Après des efforts considérables, les braves hommes purent regagner la terre ferme sains et saufs.
     * [(Avec émotion) Magnifique.] PLAYER: S'il est des histoires qui émeuvent un marin, c'est bien celle d'un équipage qui regagne les siens.
-        ~ trial(t_2_believe_in_lighthouse_sacred_light)
+        ~ trial(t_3_believe_in_lighthouse_sacred_light)
     * [Difficile à croire.] PLAYER: Toute cette histoire me semble tenir davantage du mythe que de la réalité, chère prêtresse.
-        ~ trial(t_2_does_not_believe_in_lighthouse_sacred_light)
+        ~ trial(t_3_does_not_believe_in_lighthouse_sacred_light)
         AGATHE: Cher enfant, vous sembles confondre le tonnage d'un mortel et l'étoffe d'une Sainte. Cessez ces doutes impies...
 - AGATHE: Savez-vous seulement ce que les pêcheurs firent pour remercier Ernest ?
     * [Ils lui offrèrent l'enfant.] PLAYER: Ils lui confièrent la garde de l'enfant sacré.
-        -- (know_fishermen_gift) ~ trial(t_2_know_fishermen_holy_gift)
+        -- (know_fishermen_gift) ~ trial(t_3_know_fishermen_holy_gift)
         AGATHE: Précisément.
     * [Ils s'en prirent à lui.] PLAYER: Je connais les Hommes, et leur cœur impur. Ils s'en prirent à leur sauveur, n'est-ce pas ?
-        ~ trial(t_2_does_not_know_fishermen_holy_gift)
+        ~ trial(t_3_does_not_know_fishermen_holy_gift)
         AGATHE: Ces pêcheurs risquèrent leur vie pour sauver une pauvre âme de la noyade. Ils ne firent rien de cela, et confièrent plutôt l'enfant sacré à leur sauveur.
     * [Seul un idiot l'ignorerais. {t(LUCK, 20)}]
         {sc(LUCK, 0): -> know_fishermen_gift_S | -> know_fishermen_gift_F}
@@ -303,7 +303,7 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
             *** [L'océan l'obsédait ?] PLAYER: L'océan exercait sur elle une fascination.
                 AGATHE: C'est ainsi qu'il parlait d'elle, en effet.
         ** [Encore faut-il y croire...] PLAYER: Pour cela, il eût fallu qu'ils ne racontent autre chose que des mythes...
-            ~trial(t_2_does_not_believe_the_sacred_writings)
+            ~trial(t_3_does_not_believe_the_sacred_writings)
             AGATHE: Mon enfant, il est des récits qui doivent être entendus avec le cœur, non avec la raison.
                 -> irene_obsessed_with_ocean
     * [Je l'ignore.] PLAYER: Je dois avouer mon ignorance. Que disait-il donc ?
@@ -323,7 +323,7 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
         AGATHE: Quiquonque prétend qu'Irène, la Pupille des eaux, est de cette engeance, périront noyés par le Juste.
         ** [Que l'océan les avale.] PLAYER: Que l'océan soit leur tombeau.
         ** [Ont-ils vraiement tort ?] PLAYER: Pourtant, cela expliquerait certains détails des Écrits, ne pensez-vous pas ?
-            ~ trial(t_2_question_if_irene_is_a_sireine)
+            ~ trial(t_3_question_if_irene_is_a_sireine)
             ~ irene_was_a_sireine = true
             AGATHE: Mon enfant, vous jouez à un jeu dangereux. Il est des prêtresses qui étudient les Écrits leur vie durant pour tenter d'en percer ses mystères... Préferez laisser ces zones d'ombres intactes...
             AGATHE: ... au fait de les éclairer d'une lumière impie.
@@ -377,26 +377,26 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
     * [...de fuire ces terres hostiles.] PLAYER: ...de fuire ces terres hostiles. ».
 - AGATHE: Ce que cet homme a fait pour sa fille... pour notre peuple tout entier...
     * [Louons son sacrifice.] PLAYER: Nous ne pouvons, nous autres mortels, que louer son sacrifice.
-        ~ trial(t_2_show_judge_respect)
+        ~ trial(t_3_show_judge_respect)
         AGATHE: La tâche que nos aïeux lui ont confié lorsqu'il fût libéré est à la hauteur de notre respect à son égard, ne pensez-vous pas ?
         ** [Sans nul doute.] PLAYER: Qui d'autre que cet être héroïque aurait pu la mener à bien ? J'y suis tout entier favorable.
-            ~ trial(t_2_validate_judge_position)
+            ~ trial(t_3_validate_judge_position)
                 AGATHE: Chacun doit l'être.
         ** [C'était peut-être une erreur...] PLAYER: Loin de moi l'idée d'entamer sa légende... Mais je pense que cette tâche fût pour lui un fardeau.
-            ~ trial(t_2_question_judge_position)
+            ~ trial(t_3_question_judge_position)
             -> close_judge_discussion
     * [Ce qu'il est devenu après...] PLAYER: Certains disent qu'il aurait dû être sanctifié, plutôt que...
         AGATHE: ... plutôt que ce qu'il est devenu ?
         ** [Peut-être...] PLAYER: J'ôse le dire, en effet. Son sacrifice fut salvateur pour nos ancêtres, mais au lieu de lui faire atteindre la béatitude, cela l'a... consumé... #audience:choc
-            ~ trial(t_2_question_judge_position)
+            ~ trial(t_3_question_judge_position)
             -> close_judge_discussion
         ** [Oubliez.] PLAYER: Ce n'est pas ce que je voulais dire. Disons que la tâche qui lui incombe est épuisante.
             AGATHE: Qu'auraient dû faire nos aïeux, selon vous ?
                 *** [Ils ont bien fait.] PLAYER: Leur décision était bonne. Qui d'autre que cet être héroïque aurait pu la mener à bien ?
-                    ~ trial(t_2_validate_judge_position)
+                    ~ trial(t_3_validate_judge_position)
                     -> close_judge_discussion
                 *** [Abréger ses souffrances.] PLAYER: Prêter au pauvre homme un tel labeur... Peut-être aurait-il mieux valu le laisser partir.
-                        ~ trial(t_2_question_judge_position)
+                        ~ trial(t_3_question_judge_position)
                     ---- (close_judge_discussion) AGATHE: Nul ne doit jamais se prononcer sur ce sujet. Restons-en là, je vous en conjure. 
 // Return to the stained glass conversation
 - -> stained_glass
@@ -416,7 +416,7 @@ AGATHE: C'est Lui, en effet. L'homme a souffert pour sauver sa fille, et notre p
             *** [Si l'on en croit les légendes...] PLAYER: Si l'on en croit ce que racontent nos mythes... Ne croyez-vous pas que les sireines existent ?
                 ---- (believing_in_the_sireine) AGATHE: Si le le crois ? Je le sais. Ces êtres sont bel et bien une réalité, la Déesse nous en protège.
                 **** [Pourquoi tant de haine ?] PLAYER: Pourquoi tant de méfiance ? Pourquoi ces êtres seraient-ils nécessairement mauvais ?
-                    ~ trial(t_2_defend_sireine)
+                    ~ trial(t_3_defend_sireine)
                     AGATHE: Le Déluge les a emporté, pas nous. Cette punition divine n'est-elle pas un signe suffisant ?
                     ***** [Peut-être.] PLAYER: Peut-être bien, en effet. Revenons à notre discussion au sujet de l'homme enchaîné à sa roue.
                             -> continue_about_the_judge
@@ -467,7 +467,7 @@ AGATHE: C'est Lui, en effet. L'homme a souffert pour sauver sa fille, et notre p
                         ***** [Jamais.] PLAYER: D'aucune manière.
                         ***** [Un lionceau, alors ?] PLAYER: Un lionceau, peut-être ?
                 *** [Quelle froideur...] PLAYER: On pourrait y voir une certaine... froideur...
-                        ~ trial(t_2_criticise_irene_coldness)
+                        ~ trial(t_3_criticise_irene_coldness)
                     AGATHE: Le jugement d'un homme sur une émanation du Divin.
             ** [A t-elle tenté de le sauver ?] PLAYER: A t-elle essayé de lui venir en aide ?
                 AGATHE: Jamais Irène ne dérogea de son devoir. On dit qu'elle versa une unique larme. Mais elle savait que même lors des pièces tragiques, chacun doit jouer son rôle...
@@ -476,9 +476,9 @@ AGATHE: C'est Lui, en effet. L'homme a souffert pour sauver sa fille, et notre p
         ** [Que voulez-vous dire] PLAYER: Qu'entendez-vous par là, prêtresse ?
             AGATHE: Que la justice ne devrait repprocher à un Homme l'impureté de son cœur, car là est ce qui le sépare de la Déesse elle-même.
             *** [De sages paroles.] PLAYER: Un discours auquel j'adhère sans détours.
-                ~ trial(t_2_law_can_be_lax)
+                ~ trial(t_3_law_can_be_lax)
             *** [Du laxisme.] PLAYER: Laxisme ! La Loi n'est rien si elle ne peut repprocher à un Homme ses fautes, fussent-elles les conséquences de son humanité.
-                ~ trial(t_2_law_should_not_be_lax)
+                ~ trial(t_3_law_should_not_be_lax)
 - (continue_about_the_judge) AGATHE: Puis-je vous poser une question, mon enfant ?
     * [Je vous en prie.] PLAYER: Je vous écoute, prêtresse.
     * [Si vous insistez...] PLAYER: Si vous y tenez...

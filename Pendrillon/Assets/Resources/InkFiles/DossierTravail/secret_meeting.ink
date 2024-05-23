@@ -29,34 +29,42 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
             {sc(CHAR, 0): -> joke_punctuality_S | -> joke_punctuality_F}
             *** (joke_punctuality_S) PLAYER: ...avant les premiers rayons du soleil. Je n'ai pas prévu ma crème solaire.
                 SOUFFLEUR: Bien joué l'ami ! Continue de divertir le public pour ne pas qu'il s'ennuie...
+                #audience:applause
             *** (joke_punctuality_F) PLAYER: ...euh... avant les premiers rayons du soleil... qui lui-même n'est pourtant... euh... pas très ponctuel ?
                 SOUFFLEUR: Tu as fait ce qu'on appelle un four. Un bide. Un coup d'épée dans l'eau... Un flop, en d'autres termes. Mais je ne suis pas là pour te descendre... Ne te laisse pas abattre l'ami, tu auras d'autres occasions !
+                #audience:booing
                 ~ has_fail = true
         ** [(Menace) Conclure avec panache. {t(STRE, 10)}]
             {sc(CHAR, 0): -> threat_ponctuality_S | -> threat_ponctuality_F}
             ~ threat_jester = true
             *** (threat_ponctuality_S) PLAYER: ...avant que je ne juge bon de punir un tel manque de manière.
                 SOUFFLEUR: Certaines situations devraient être gérées avec diplomatie et tact... pas celle-ci ! Une quesion cependant : es-tu en train de menacer le personnage, ou l'actrice ? Quelle que soit la réponse, le public est avec toi, continue comme ça !
+                #audience:applause
             *** (threat_ponctuality_F) PLAYER: ...avant que je me mette en colère !!
                 SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convainquant. Ne te laisse pas abattre, tu auras d'autres occasions !
+                #audience:booing
                 ~ has_fail = true
     * [(Soupirant) Je suis tout à fait seul.] PLAYER: Je me trouve bien seul. Aussi seul...
         ** [(Humour) Conclure avec légèreté. {t(CHAR, 10)}]
             {sc(CHAR, 0): -> joke_wainting_S | -> joke_waiting_F}
             *** (joke_wainting_S) PLAYER: ...aussi seul qu'un poux sur le crâne lustré d'un chauve.
                 SOUFFLEUR: Bien joué, l'ami ! Continue de divertir le public pour ne pas qu'il s'ennuie...
+                #audience:applause
             *** (joke_waiting_F) PLAYER: ...aussi seul.. euh... que mes dernières... miettes de patience ?
                 SOUFFLEUR: Tu as fait ce qu'on appelle un four. Un bide. Un coup d'épée dans l'eau... Un flop, en d'autres termes. Mais je ne suis pas là pour te descendre... Ne te laisse pas abattre, tu auras d'autres occasions !
+                #audience:booing
                 ~ has_fail = true
         ** [(Menace) Conclure avec poigne. {t(STRE, 10)}]
             {sc(STRE, 0): -> threat_waiting_S | -> threat_waiting_F}
             ~ threat_jester = true
             *** (threat_waiting_S) PLAYER: ...que la dent qui restera dans le bec de qui me fait attendre aussi longtemps !
                 SOUFFLEUR: Certaines situations devraient être gérées avec diplomatie et tact... pas celle-ci ! Une quesion cependant : es-tu en train de menacer le personnage, ou l'actrice ? Quelle que soit la réponse, le public est avec toi, continue comme ça !
+                #audience:applause
             *** (threat_waiting_F) PLAYER: ...Euh... que mes dernières... onces de patience.
                 SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convainquant. Ne te laisse pas abattre, tu auras d'autres occasions !
+                #audience:booing
                 ~ has_fail = true
-- #sleep:4 #audience:booing
+- // La scène continue
     * [(S'adresser à l'actrice) Il est temps.] PLAYER: Je crois VRAIMENT qu'il est temps, désormais.
         ???: ... Laisse moi un peu de temps, veux-tu ?
 - #sleep:3 #audience:booing
@@ -213,37 +221,20 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
     * [Hors de question.] PLAYER: 
         ARLE: Si je ne le fais pas pour vous, messire...
         ARLE: Je le ferai pour eux. #anim:Arle:show_audience
-- ARLE: Il était une fois une jeune femme. #anim:Arle:hello
-- ARLE: Cette femme passait son temps à regarder l'océan. #anim:Arle:look_around
-- ARLE: Elle savait, voyez-vous, qu'un beau jour il se mettrait en colère ! #anim:Arle:monster
-    * [Parles-tu du Déluge ?] PLAYER: Est-ce du Déluge dont tu parles ?
-        ARLE: Tout à fait. Et cette femme... #anim:Arle:applause
-        ** [Irène.] PLAYER: Irène.
-            ARLE: Elle-même.
-    * [Ne pas l'interrompre.]
-        ARLE : Cette femme, peut-être l'avez vous deviné, n'était autre que...
-        ** [Irène.] PLAYER: Irène.
-            ARLE: Elle-même.
-- ARLE: Irène savait que le Déluge viendrait. Pour sauver ceux qui le pourraient, elle fit construire...
-    * [Une tour, c'est évident.] PLAYER: Une tour ! Tout le monde sait ça. #audience:booing
-        ARLE: Un navire, messire.
-    * [Un navire, comme chacun sait.] PLAYER: Un navire, comme le disent les Écrits. #audience:applause
-        ARLE: Vous dites vrai ! #anim:Arle:applause
-    * [Un barrage, bien entendu.] PLAYER: Un barrage, quelle question !
-        ARLE: Un navire, messire.
-- ARLE: Quand le Déluge vint, le bateau en sauva quelques uns... Mais ce n'est pas là la conclusion de mon histoire...
-    * [Je suis tout ouïe.] PLAYER: Je suis pendu à vos lèvres.
-    * [Tu n'es pas un bon conteur.] PLAYER: Tu manque de talent dans l'art de conter.
-    * [Conclus vite, par pitié.] PLAYER: Il serait temps de conclure, justement.
-- ARLE: Avec la montée des Eaux vint d'autres fléaux. L'un d'eux était un poisson...
+- ARLE: Il était une fois... une terrible tempête. #audience:shock
+ARLE: Pas n'importe quelle tempête : celle-ci dura près d'un siècle.
+ARLE: Les océans se déchaînèrent, l'eau avala tout sur son passage...
+ARLE: Et les humains durent survivre à bord d'un grand navire, cent années durant.
+- ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poisson...
 - #anim_event:arle_rope #anim:Arle:swimming // Arle, accroché à une corde, mime un poisson qui nage
 - ARLE: Ce poisson, voyez-vous, était si gros qu'il aurait pu avaler une ville entière. #audience:surprise
     * [Le Léviathan !] PLAYER: Le léviathan ! #audience:shock
         ARLE: Le Léviathan, messire.
     * [Rester silencieux.]
-- ARLE: Plus d'une fois, il manqua d'engloutir le navire d'Irène... Fort heureusement, la Déesse était pleine de ressources ! #audience:applause
+- ARLE: Plus d'une fois, il manqua d'engloutir le navire des Hommes... Fort heureusement, la Déesse était pleine de ressources ! #audience:applause
 - ARLE: C'est pourquoi nous jouissons d'être en vie aujourd'hui, n'est-ce pas ? Mais cette petite histoire ne se finit pas si bien...
     * [Pourquoi donc ?] PLAYER: Et pourquoi donc ?
+        ARLE: Pour la simple raison que la créature nage toujours dans nos océans à l'heure où nous parlons, messire...
     * [Je sais pourquoi.] PLAYER: J'ai une idée de ce que tu vas dire...
         ARLE: Je vous en prie, messire, concluez.
         ** [Le Léviathan est toujours vivant.] PLAYER: Le Léviathan est toujours en vie.
@@ -269,10 +260,34 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
             *** (negociate_F) PLAYER: Mon navire, voyez-vous... est au régime. Il pèse de moins en mois et...
                 ARLE: Messire, ces simagrées ne vous honorent pas. Notre position est ferme, j'en ai peur.
 - ARLE: Qu'en dites-vous, messire ? Ramenez-nous le cœur de l'immonde Léviathan, sinon pour la gloire ou le service rendu à la population, du moins pour la fortune. Affaire conclue ?
-    * [Accepter.]
-    * [Accepter.]
-    * [À bien y réfléchir...]
-        ** [Accepter.]
+- ARLE: Ramenez-nous le cœur de l'immonde Léviathan, sinon pour la gloire, pour l'interêt de la Couronne.
+    * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la Couronne qui t'envoie ?
+        -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ?
+            ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour Elle !
+                ~ trial(t_1_respect_the_crown)
+            ** [La Reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence.
+                ~ trial(t_1_disrespect_the_crown)
+                ARLE: Ces petites rimes, messire, pourraient vous coûter cher.
+    * [Pour la Reine Constance ?] PLAYER: Est-ce la Reine elle-même qui demande mon renfort ?
+        ARLE: Nulle demande ne saurait provenir de la bouche de la Reine, messire. Seulement des ordres...
+        -> to_the_crown
+    * [Crache le morceau.] PLAYER: Que veux-tu dire ? Sois franche, s'il t'est seulement possible de l'être.
+        ARLE: Aucun de nous deux n'ignore qu'une telle mission exige de grands efforts...
+        ARLE: Or, de grands efforts exigent une grande volonté. Une volonté d'aider, messire.
+        -> to_the_crown
+- ARLE: Puis-je ajouter, messire, que vaincre le Léviathan constituerait une offrande de taille à la Déesse Elle-même.
+    * [J'en serais honoré !] PLAYER: Voilà qui éteint mes dernières hésitations.
+        ~ trial(t_1_respect_irene)
+    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme de la dernière pluie.
+        ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix.
+        ~ trial(t_1_disrespect_irene)
+    * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la Reine, ni pour la Déesse, mais pour mon seul profit.
+        ~ trial(t_1_disrespect_the_crown)
+        ~ trial(t_1_disrespect_irene)
+        ~ trial(t_1_gold_digger)
+- ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ?
+    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur.
+    * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche...
 - #audience:ovation
 - -> barge.scene_2
 

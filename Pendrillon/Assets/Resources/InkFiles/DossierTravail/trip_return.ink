@@ -47,7 +47,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
             *** (lie_S) PLAYER: Je suis ce qu'on appelle un honnête homme.
                 ???: Vous semblez sincère.
             *** (lie_F) PLAYER: Je suis blanc comme neige au soleil.
-                ~ trial(t_1_lawless_1)
+                ~ trial(t_2_lawless_1)
                 ???: Vous mentez très mal, mon ami.
         ** [Certes.] C'est vrai, je l'admet. Mais ne dit-on pas que nul homme n'a à rougir d'une faute avouée ?
             ???: Je n'ai jamais entendu cela, non.
@@ -77,7 +77,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
         ** (crate_front_search_F) PLAYER: Je n'ai rien trouvé.
 - ???: Ne peut-on pas éviter que des gardes ne viennent fourrer leur nez ici ?
     * [Dans d'autres circonstances...] PLAYER: Il est certains ports où je connais du monde. À Miraterre, en revanche...
-            ~ trial(t_1_lawless_2)
+            ~ trial(t_2_lawless_2)
         ???: Quoi donc ?
         PLAYER: Il est plus difficile de convaincre des gardes de fermes les yeux par ici.
         ???: Pourquoi est-ce différent à Miraterre ?
@@ -85,16 +85,16 @@ VAR player_won_battle = false // Define if the player won the battle or not
     * [C'est la Loi.] PLAYER: Certaines lois sont sujettes à interpretations, mais...
         ???: ...mais ?
         PLAYER: ...mais pas celle que nous avons bravée, j'en ai peur. #playsound:judge_bell
-            ~ trial(t_1_lawfull_1)
+            ~ trial(t_2_lawfull_1)
 - ???: ...
 - ???: N'éprouvez-vous jamais aucun regret ? Si la Loi et la Foi l'interdisent...
     * [Sans foi ni loi.] PLAYER: Je me fiche de la Loi comme de la Foi. #trial
-        ~ trial(t_1_against_law_1)
-        ~ trial(t_1_against_crown_1)
+        ~ trial(t_2_against_law_1)
+        ~ trial(t_2_against_crown_1)
     * [Pas le temps pour des regrets.] PLAYER: L'heure n'est pas au regret.
-        ~ trial(t_1_show_no_regrets_1)
+        ~ trial(t_2_show_no_regrets_1)
     * [(Tiraillé) Parfois...] PLAYER: Il est des jours où je crois être le plus vil des hommes... #trial
-        ~ trial(t_1_show_regrets_1)
+        ~ trial(t_2_show_regrets_1)
 - ???: J'entends des bruits. Quelqu'un vient. #playsound:activity_far
 * [Cachez-vous.] PLAYER: Il va falloir vous trouver une cachette, et en vitesse.
     -- (hide_sireine) ???: Les bruits se rapprochent ! #playsound:activity_close
@@ -127,7 +127,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
                         ****** [Attaquer. {t(STRE, -10)}]
                             {sc(STRE, -10): -> attack_jester_S | -> attack_jester_F}
                             ******* (attack_jester_S) ÉPIEUR: (Hurlant) À moi ! Au secours ! #anim:Player:attack
-                                ~ trial(t_1_jester_attacked)
+                                ~ trial(t_2_jester_attacked)
                                 -> guards_are_called
                             ******* (attack_jester_F) ÉPIEUR: Trop lent !
                                 -> jester_flee
@@ -241,7 +241,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             CAPUCINE: Il se croit intimidant, cet idiot ?
             MARCELLO: On va t'apprendre à menacer des gardes de la Couronne ! -> battle_marcello_capucine_full_life
     * {p_gold > 0} [Soudoyer.] PLAYER: Est-ce que {p_gold} pièces d'or porraient vous faire changer quitter mon navire sans faire de vagues ? Si vous me permettez l'expression...
-        ~ trial(t_1_bribe_guards)
+        ~ trial(t_2_bribe_guards)
         CAPUCINE : Laisse-moi te débarasser de ces pièces...
             ** [Donner les pièces.] PLAYER: Voilà pour toi, mon amie. #playsound:gold_coins
                 CAPUCINE: Nous allons maintenant t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde, quadruple forban.

@@ -66,8 +66,6 @@ PASSEUR: Commence par te présenter : qui es-tu ?
 - SOUFFLEUR: ...
 #sleep:2
 - SOUFFLEUR: C'est là qu'on va avoir un petit problème, l'ami.
-SOUFFLEUR: Je pensais avoir prévu le coup, mais...
-SOUFFLEUR: Je n'avais pas réalisé que ça arriverai si tôt.
 SOUFFLEUR: Le metteur en scène de cette pièce, le célèbre Jean Ornicar... son nom te dit sans doute quelque chose.
 SOUFFLEUR: Le respectable Ornicar a quitté la troupe. En assez mauvais termes, vois-tu.
 #sleep:2
@@ -84,16 +82,9 @@ SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance ! 
         ~ p_name = "Ambroise"
     * [On m'appelle Octave...] PLAYER: Je répond au doux nom de Octave... #anim:Player:bow
         ~ p_name = "Octave"
-- #audience:applause
-    * [... un explorateur.] PLAYER: ...un explorateur au service de la Couronne.
-        ~ p_job = "explorer"
-    * [... un chasseur de baleines.] PLAYER: ...un chasseur de baleines.
-        ~ p_job = "hunter"
-    * [... un pirate.] PLAYER: ...un pirate aux ordres de personne.
-        ~ p_job = "pirate"
 - #audience:ovation
 - PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ?
-- PLAYER: Un jour où je me trouvais à quai, je reçus une missive dont j’ignorais tout de l’expéditeur. Habituellement, je ne prête aucune attention à ce genre d’épistole, mais, cette fois-ci, un détail m’empêcha de la jeter directement au feu...
+- PLAYER: Un jour où je me trouvais à quai, je reçus la missive d'un expéditeur inconnu. Habituellement, une lettre de cette nature finit au feu, mais un détail attira mon attention...
     * [L'écriture.] PLAYER: La lettre était dotée d’une impeccable calligraphie. Ce détail, vois-tu, n’es pas à prendre à la légère. Une si belle écriture ne peut signifier qu’une chose : notre expéditeur est du genre fortuné.
     * [Le destinataire.] PLAYER: La lettre était destiné à un certain {p_name} Jehovah Banes. Cette personne n’est autre que moi-même. Rien d’étonnant pourrait-on dire. Au contraire : la seule personne à m’appeler ainsi est ma mère. Or, ma mère est absolument et irrémédiablement illétrée...
     * [L'odeur.] PLAYER: J’ai reçu bien des lettres dans ma vie, certaines avaient l’odeur du purin, du sel marin ou encore celle des impôts impayés, mais jamais encore n’avais-je reçu une missive à l’odeur si... délicate. L'odeur d'un expéditeur fortuné.
@@ -110,7 +101,7 @@ PASSEUR: Pourquoi avoir accepté une mission si périlleuse ?
     * [Pour la gloire !] PLAYER: Pour la gloire, cela va sans dire !
     * [Pour l'aventure !] PLAYER: Pour l'aventure bien entendu !
 - #audience:applause
-PASSEUR: Tout de même... De là à te confronter à une créature mythique telle que le Léviathan...
+- PASSEUR: Tout de même... De là à te confronter à une créature mythique telle que le Léviathan...
 PLAYER: À dire vrai...
     * [Je ne crois pas au Léviathan.] PLAYER: Je ne crois pas à ces histoires à dormir debout... Je prévoyais de faire le voyage, prétendre avoir terassé le monstre et retourner à bon port, l'esprit léger.
         PASSEUR: Dans ton histoire, tu racontes pourtant avoir promis de ramener le cœur de la bête.
