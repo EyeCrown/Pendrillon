@@ -73,13 +73,13 @@ VAR irene_was_a_sireine = true
         AGATHE: ... plus personne ne me rendrait visite.
 - AGATHE: Quoique vous ayez fait... En éprouvez-vous des remords ?
     * [Rien à me reprocher.] PLAYER: Je n'ai rien fait qui mérite que j'implore le pardon de qui que ce soit.
-            ~ trial(t_2_show_no_regrets_1)
+            ~ trial(t_2_show_no_regrets)
         AGATHE: En êtes-vous certain ? Il est davantage de mortels trop cléments avec eux-mêmes, que vierge de tout péché.
     * [Quelque fois...] PLAYER: Parfois... Lorsque la nuit vient et que la lune éclaire mes actes d'une lumière nouvelle...
         AGATHE: On dit parfois que la nuit porte conseil. Elle porte davantage encore le poids de nos fautes...
-            ~ trial(t_3_show_some_regrets_1)
+            ~ trial(t_3_show_some_regrets)
     * [Chaque jour.] PLAYER: Pas un seul jour ne passe sans que j'implore la Déesse pour son pardon.
-            ~ trial(t_3_show_plenty_regrets_1)
+            ~ trial(t_3_show_plenty_regrets)
         AGATHE: Peut-être ne vous êtes-vous pas contenté de voler une miche de pain...
 - AGATHE: Quoi qu'il en soit, seule Irène est en droit de juger vos actes en ces lieux. #playsound:irene_theme #light:irene_statue
 // PLAYER se tourne vers la statue
