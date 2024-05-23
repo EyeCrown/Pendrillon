@@ -9,6 +9,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace MonoBehavior.Managers
@@ -23,11 +24,12 @@ namespace MonoBehavior.Managers
         private GameObject _dialogueBox;
         private TextMeshProUGUI _dialogueText;   // Text box
         private TextMeshProUGUI _tagsText;       // Tags box
+        private Image _nextDialogueIndicator;
+        
     
         // Buttons
         [SerializeField] private Button _choiceButtonPrefab;
         public List<Button> _choicesButtonList;
-        private Button _nextDialogueButton;
         private Button _backButton;
         
         private string _currentDialogue;
@@ -81,8 +83,8 @@ namespace MonoBehavior.Managers
             _dialogueBox        = _uiParent.transform.Find("DialogueBox").gameObject;
             _dialogueText       = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
             _tagsText           = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
-            _nextDialogueButton = _uiParent.transform.Find("NextButton").GetComponent<Button>();
             _backButton         = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
+            _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<Image>();
 
             var dirTransform = GameObject.Find("Directions").transform;
             Debug.Log(dirTransform);
@@ -106,7 +108,7 @@ namespace MonoBehavior.Managers
             PhaseEnded.AddListener(OnPhaseEnded);
             ClearUI.AddListener(OnClearUI);
         
-            _nextDialogueButton.onClick.AddListener(OnClickNextDialogue);
+            //_nextDialogueButton.onClick.AddListener(OnClickNextDialogue);
             
             //Debug.Log(MethodBase.GetCurrentMethod()?.Name);
         }
@@ -166,7 +168,7 @@ namespace MonoBehavior.Managers
                 }*/
 
                 StartCoroutine(ExecuteTagMethods());
-                HandleChoices();
+                //HandleChoices();
 
             }
             else
@@ -237,8 +239,12 @@ namespace MonoBehavior.Managers
             else 
             {
                 Debug.Log("Activate next button");
-                _nextDialogueButton.gameObject.SetActive(true);
+                
                 // TODO: Make button subscribe correct action (=> next dialogue)
+
+                GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+                //_nextDialogueIndicator.gameObject.SetActive(true);
+                StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
         }
 
@@ -299,7 +305,7 @@ namespace MonoBehavior.Managers
         #region ButtonHandlers
 
         #region NextButton
-        public void OnClickNextDialogue()
+        public void OnClickNextDialogue(InputAction.CallbackContext context)
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Call next dialogue");
             Refresh();
@@ -368,8 +374,15 @@ namespace MonoBehavior.Managers
             _choicesButtonList.Clear();
         
             _dialogueBox.SetActive(false);
-            _nextDialogueButton.gameObject.SetActive(false);
+            
             _backButton.gameObject.SetActive(false);
+            
+            GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
+            if (_nextDialogueIndicator.color.a != 0)
+                StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 1, 0, 0.1f));
+
+            //_nextDialogueIndicator.gameObject.SetActive(false);
+
         }
         #endregion
         
@@ -653,6 +666,27 @@ namespace MonoBehavior.Managers
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Finish waiting for {timeToWait} seconds");
             TagActionOver();
         }
+
+
+        IEnumerator FadeImageCoroutine(Image img, float begin, float end, float duration)
+        {
+            var timeElapsed = 0.0f;
+
+            Color color;
+            while (timeElapsed < duration)
+            {
+                color = img.color;
+                color.a = Mathf.Lerp(begin, end, timeElapsed/duration);
+                img.color = color;
+
+                timeElapsed += Time.deltaTime;
+                
+                yield return null;
+            }
+            color = img.color;
+            color.a = end;
+            img.color = color;
+        }
         
 
         /// <summary>
@@ -678,6 +712,8 @@ namespace MonoBehavior.Managers
                 //Debug.Log($"{nameof(ExecuteTagMethods)} > Action is done");
                 ++i;
             }
+            
+            HandleChoices();
         }
 
         #endregion
