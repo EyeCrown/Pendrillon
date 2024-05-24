@@ -189,10 +189,13 @@ namespace MonoBehavior.Managers
                 
                 if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
                     return;
-                
+
                 if (_currentDialogue == String.Empty)
+                {
+                    Debug.Log($"AM.Refresh > RECURSIVE CALL");
                     Refresh();
-                //savedJsonStack.Push(GameManager.Instance._story.state.ToJson());
+                    return;
+                }
                 
                 HandleTags();
                 HandleDialogue();
@@ -330,7 +333,7 @@ namespace MonoBehavior.Managers
 
             button.interactable = false; // De base les boutons sont désactivées
             _choicesButtonList.Add(button);
-            //Debug.Log($"AM.Refresh() > button.GetComponentInChildren<TextMeshProUGUI>().text:{button.GetComponentInChildren<TextMeshProUGUI>().text}");
+            //Debug.Log($"AM.Refresh > button.GetComponentInChildren<TextMeshProUGUI>().text:{button.GetComponentInChildren<TextMeshProUGUI>().text}");
         }
 
         void SetButtonType(Button button, string choiceText)
@@ -411,7 +414,7 @@ namespace MonoBehavior.Managers
         #region NextButton
         public void OnClickNextDialogue(InputAction.CallbackContext context)
         {
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Call next dialogue");
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Call next dialogue || Refresh call");
             Refresh();
             //_nextDialogueButton.gameObject.SetActive(false);
         }
@@ -425,17 +428,10 @@ namespace MonoBehavior.Managers
         public void OnClickChoiceButton (Choice choice)
         {
             _historyText.text += $"     > {choice.text}\n";
-            GameManager.Instance._story.ChooseChoiceIndex (choice.index);
+            GameManager.Instance._story.ChooseChoiceIndex(choice.index);
             Refresh();
         }
-
-        public void OnClickBackButton()
-        {
-            //GameManager.Instance._story.state.LoadJson(savedJsonStack.Pop());
-            //Refresh();
-            Debug.Log("BackButton > Must go back in the story");
-        }
-
+        
         public void OnClickHistory(InputAction.CallbackContext context)
         {
             Debug.Log($"AM.OnClickHistory");
@@ -478,7 +474,7 @@ namespace MonoBehavior.Managers
             _historyBox.SetActive(false);
             GameManager.Instance._playerInput.Player.History.performed += OnClickHistory;
 
-            
+            Debug.Log($"AM.OnPhaseStart > Start story | Refresh call ");
             Refresh();
         }
         void OnPhaseEnded()
@@ -570,7 +566,7 @@ namespace MonoBehavior.Managers
         
         void TagActionOver()
         {
-            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > TagAction is over");
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > TagAction is over");
             _isActionDone = true;
         }
         
@@ -606,39 +602,38 @@ namespace MonoBehavior.Managers
             //Debug.Log($"{character} wants to go to [{x},{y}] at {speed} speed.   Size of words[]: {data.Length}");
         
             CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
-            _tagMethods.Add(() =>
-                characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)), speed, TagActionOver));
+
+            void MoveAction() =>
+                characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)), speed, TagActionOver);
+            
+            _tagMethods.Add(MoveAction);
         }
 
         void HandleTagPlaysound(string soundToPlay)
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Play sound {soundToPlay}");
             
-            //AkSoundEngine.PostEvent(soundToPlay, gameObject);
-
-            _tagMethods.Add(() =>
+            void PlaysoundAction()
             {
-                try
-                {
-                    AkSoundEngine.PostEvent(soundToPlay, gameObject);
-
-                }
-                catch
-                {
-                }
+                AkSoundEngine.PostEvent(soundToPlay, gameObject);
 
                 TagActionOver();
-            });
+            }
+            
+            _tagMethods.Add(PlaysoundAction);
         }
         
         
         void HandleTagAnim(string[] data)
         {
-            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {data[0]} must play {data[1]} anim");
-
-            _tagMethods.Add(() => 
-                StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAnimCoroutine(data[1], TagActionOver))
-            );
+            var trigger = data[1];
+            
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {data[0]} must play {trigger} anim");
+            
+            void AnimAction() =>
+                StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAnimCoroutine(trigger, TagActionOver));
+            
+            _tagMethods.Add(AnimAction);
             //StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAnimCoroutine(data[1]));
 
         }
@@ -649,8 +644,10 @@ namespace MonoBehavior.Managers
 
             var timeToWait = float.Parse(timeToWaitString, CultureInfo.InvariantCulture);
             mustWait = true;
+
+            void WaitAction() => StartCoroutine(WaitingCoroutine(timeToWait));
             
-            _tagMethods.Add(() => StartCoroutine(WaitingCoroutine(timeToWait)));
+            _tagMethods.Add(WaitAction);
 
         }
         
@@ -661,7 +658,9 @@ namespace MonoBehavior.Managers
             mustWait = true;
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Actions must wait {timeToWait} seconds before begin");
 
-            _tagMethods.Insert(0, () => StartCoroutine(WaitingCoroutine(timeToWait)));
+            void SleepAction() => StartCoroutine(WaitingCoroutine(timeToWait));
+            
+            _tagMethods.Insert(0, SleepAction);
 
         }
 
@@ -669,15 +668,25 @@ namespace MonoBehavior.Managers
         {
             if (data.Length == 1)
             {
-                _tagMethods.Add(() => StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver)));
+                void ScreenShakeAction()
+                {
+                    StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver));
+                }
+                _tagMethods.Add(ScreenShakeAction);
             }
             else
             {
                 var intensity = float.Parse(data[1], CultureInfo.InvariantCulture);
                 var time = float.Parse(data[2], CultureInfo.InvariantCulture);
                 
-                _tagMethods.Add(() => StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver, intensity, time)));
+                void ScreenShakeAction()
+                {
+                    StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver, intensity, time));
+                }
+                _tagMethods.Add(ScreenShakeAction);
             }
+            
+
         }
 
         void HandleLook(string[] data)
@@ -702,13 +711,14 @@ namespace MonoBehavior.Managers
             
             if (target == null)
                 return;
-            
-            _tagMethods.Add(() =>
+
+            void LookAction()
             {
-                
                 character.transform.LookAt(target);
                 TagActionOver();
-            });
+            }
+
+            _tagMethods.Add(LookAction);
 
         }
         
@@ -861,15 +871,15 @@ namespace MonoBehavior.Managers
                 if (!_tagMethods.Any())
                     break;                
                 _isActionDone = false;
-                //Debug.Log($"{nameof(ExecuteTagMethods)} > Start action");
+                Debug.Log($"{_tagMethods[i].Method.Name} > Start action");
 
                 _tagMethods[i]();
                 while (!_isActionDone)
                 {
-                    //Debug.Log($"{nameof(ExecuteTagMethods)} > Wait to finish");
+                    //Debug.Log($"{_tagMethods[i].Method.Name} > Wait to finish");
                     yield return null;
                 }
-                //Debug.Log($"{nameof(ExecuteTagMethods)} > Action is done");
+                Debug.Log($"{_tagMethods[i].Method.Name} > Action is done");
                 ++i;
             }
             
