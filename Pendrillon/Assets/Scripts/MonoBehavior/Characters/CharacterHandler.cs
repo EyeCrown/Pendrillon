@@ -141,26 +141,36 @@ public class CharacterHandler : MonoBehaviour
 
     public IEnumerator PlayAnimCoroutine(string triggerName, System.Action callbackOnFinish)
     {
-        //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation start");
+        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation {triggerName} start");
         
         _anim.SetTrigger(triggerName);
         
         //Wait until we enter the current state
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(triggerName))
+        {
+            Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation on the way");
+
             yield return null;
+        }
         
         //Now, Wait until the current state is done playing
         while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
+        {
+            Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation running");
+
             yield return null;
+
+        }
         
+        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation ended");
+
         //Done playing. Do something below!
         callbackOnFinish();
-        //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation ended");
-        if (!_anim.GetCurrentAnimatorStateInfo(0).loop)
-        {
-            //Debug.Log("Animation is not a loop so go back to idle");
-            _anim.SetTrigger("Idle");
-        }
+        // if (!_anim.GetCurrentAnimatorStateInfo(0).loop)
+        // {
+        //     //Debug.Log("Animation is not a loop so go back to idle");
+        //     _anim.SetTrigger("Idle");
+        // }
     }
     
     IEnumerator MovePositionCoroutine(Vector3 targetPosition, float duration, System.Action callbackOnFinish)
