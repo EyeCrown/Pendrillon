@@ -7,12 +7,13 @@
 				<Platform Name="Windows" ReferencePlatform="Windows" ID="{AD0D0F5F-2182-491F-BAF3-0473A13EA663}"/>
 			</Platforms>
 			<LanguageList>
-				<Language Name="English(US)" ID="{496F9080-7CEE-4252-A4C9-36C4F88FAC24}"/>
 				<Language Name="External" ID="{F3630200-B348-453C-A346-DEBC9AC9DFA7}"/>
+				<Language Name="French(FR)" ID="{C487FD1D-163D-47C1-BC2E-A493057F8624}"/>
 				<Language Name="Mixed" ID="{A700E827-10DC-4BBA-946C-6CDCD456460A}"/>
 				<Language Name="SFX" ID="{615CD14B-B173-4F81-91CA-8EB7E84E1C1C}"/>
 			</LanguageList>
 			<PropertyList>
+				<Property Name="DefaultLanguage" Type="string" Value="French(FR)"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
 					<ValueList>
 						<Value Platform="Mac"></Value>
@@ -8193,7 +8194,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="McDSP ML1" PluginType="3" CompanyID="256" PluginID="103">
+				<SharedPropertyList ClassName="" PluginType="3" CompanyID="256" PluginID="103">
 					<PropertyList>
 						<Property Name="Ceiling" Type="Real32">
 							<ValueList>
@@ -8552,7 +8553,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="McDSP FutzBox" PluginType="3" CompanyID="256" PluginID="110">
+				<SharedPropertyList ClassName="" PluginType="3" CompanyID="256" PluginID="110">
 					<PropertyList>
 						<Property Name="Balance" Type="Real32">
 							<ValueList>
@@ -11677,7 +11678,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="Wwise Motion Generator (Deprecated)" PluginType="2" CompanyID="0" PluginID="405">
+				<SharedPropertyList ClassName="" PluginType="2" CompanyID="0" PluginID="405">
 					<PropertyList>
 						<Property Name="AttackTime" Type="Real32">
 							<ValueList>
@@ -11736,7 +11737,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="Wwise Motion Source" PluginType="2" CompanyID="0" PluginID="409">
+				<SharedPropertyList ClassName="" PluginType="2" CompanyID="0" PluginID="409">
 					<PropertyList>
 						<Property Name="Channel1" Type="int16">
 							<ValueList>
@@ -11845,7 +11846,7 @@
 						</Property>
 					</PropertyList>
 				</SharedPropertyList>
-				<SharedPropertyList ClassName="Wwise Motion" PluginType="7" CompanyID="0" PluginID="507">
+				<SharedPropertyList ClassName="" PluginType="7" CompanyID="0" PluginID="507">
 					<PropertyList>
 						<Property Name="BypassEffect" Type="bool">
 							<ValueList>
