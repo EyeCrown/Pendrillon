@@ -125,7 +125,7 @@ public class CharacterHandler : MonoBehaviour
         _dialogueText.text = String.Empty;
         _uiActing.SetActive(false);
         
-        _anim.SetTrigger("Idle");
+        //_anim.SetTrigger("Idle");
     }
 
     public void OnDialogueUpdate(string text)
@@ -148,7 +148,7 @@ public class CharacterHandler : MonoBehaviour
         //Wait until we enter the current state
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(triggerName))
         {
-            Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation on the way");
+            //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation on the way");
 
             yield return null;
         }
@@ -156,7 +156,7 @@ public class CharacterHandler : MonoBehaviour
         //Now, Wait until the current state is done playing
         while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
         {
-            Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation running");
+            //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation running");
 
             yield return null;
 
