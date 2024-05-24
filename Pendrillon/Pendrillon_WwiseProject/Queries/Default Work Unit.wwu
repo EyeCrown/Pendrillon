@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{FE9B2A64-B04D-4694-9560-30490AEE3FDB}" SchemaVersion="110">
 	<Queries>
-		<WorkUnit Name="Default Work Unit" ID="{FE9B2A64-B04D-4694-9560-30490AEE3FDB}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{FE9B2A64-B04D-4694-9560-30490AEE3FDB}" PersistMode="Standalone">
+			<ChildrenList>
+				<Query Name="New Query" ID="{26C46BB9-D0CC-4A58-B7FE-13BCAAC70F5A}">
+					<ChildrenList>
+						<SearchCriteria Name="GeneralName" ID="{A3C5E15F-F34D-4E08-B4E5-EF49650DF613}" SearchOperationID="{82CCCD47-591B-4BD8-B3CE-89A8172A1802}">
+							<PropertyList>
+								<Property Name="UserString" Type="string" Value="Leviathan"/>
+							</PropertyList>
+						</SearchCriteria>
+					</ChildrenList>
+				</Query>
+			</ChildrenList>
+		</WorkUnit>
 	</Queries>
 </WwiseDocument>
