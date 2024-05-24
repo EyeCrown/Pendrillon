@@ -746,6 +746,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choiceButtonPrefab: {fileID: 839975030731081523, guid: cb5dd4f7c7d745d45b75a7510e19f50f,
     type: 3}
+  _choiceButtonLeftPrefab: {fileID: 0}
+  _choiceButtonMiddlePrefab: {fileID: 0}
+  _choiceButtonRightPrefab: {fileID: 0}
   _choicesButtonList: []
   _wwiseChoiceDialogueButton:
     idInternal: 0
@@ -1539,7 +1542,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 10}
   m_SizeDelta: {x: 1509.3862, y: 735.3649}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &262893520

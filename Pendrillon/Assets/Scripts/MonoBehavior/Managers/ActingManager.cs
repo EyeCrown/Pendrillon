@@ -47,6 +47,9 @@ namespace MonoBehavior.Managers
     
         // Buttons
         [SerializeField] Button _choiceButtonPrefab;
+        [SerializeField] Button _choiceButtonLeftPrefab;
+        [SerializeField] Button _choiceButtonMiddlePrefab;
+        [SerializeField] Button _choiceButtonRightPrefab;
         public List<Button> _choicesButtonList;
         Button _backButton;
         
@@ -285,7 +288,30 @@ namespace MonoBehavior.Managers
         void GenerateButton(int index)
         {
             Choice choice = GameManager.Instance._story.currentChoices[index];
-            Button button = Instantiate(_choiceButtonPrefab, _uiParent.transform);
+            Button button;
+
+            switch (GameManager.Instance._story.currentChoices.Count)
+            {
+                case 1 :
+                    button = Instantiate(_choiceButtonMiddlePrefab, _uiParent.transform);
+                    break;
+                case 2:
+                    if (index == 0)
+                        button = Instantiate(_choiceButtonLeftPrefab, _uiParent.transform);
+                    else
+                        button = Instantiate(_choiceButtonRightPrefab, _uiParent.transform);
+                    break;
+                case 3:
+                    if (index == 0)
+                        button = Instantiate(_choiceButtonLeftPrefab, _uiParent.transform);
+                    else if (index == 1)
+                        button = Instantiate(_choiceButtonMiddlePrefab, _uiParent.transform);
+                    else
+                        button = Instantiate(_choiceButtonRightPrefab, _uiParent.transform);
+                    break;
+                default:
+                    return;
+            }
             
             // Button Position
             float t = (float) (index + 1) / (GameManager.Instance._story.currentChoices.Count + 1);
