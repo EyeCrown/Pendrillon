@@ -9,6 +9,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 namespace MonoBehavior.Managers
@@ -17,17 +18,22 @@ namespace MonoBehavior.Managers
     {
         #region Attributes
         public static ActingManager Instance { get; private set; }
+        
+        // Scene
+        // TODO: put the name of the first scene (in Constants)
+        private string _stage = "UNDEFINED";      // Name of the actual set
     
         // UI
         [HideInInspector] public GameObject _uiParent { get; private set; }
         private GameObject _dialogueBox;
         private TextMeshProUGUI _dialogueText;   // Text box
         private TextMeshProUGUI _tagsText;       // Tags box
+        private Image _nextDialogueIndicator;
+        
     
         // Buttons
         [SerializeField] private Button _choiceButtonPrefab;
         public List<Button> _choicesButtonList;
-        private Button _nextDialogueButton;
         private Button _backButton;
         
         private string _currentDialogue;
@@ -41,6 +47,8 @@ namespace MonoBehavior.Managers
         private List<Action> _tagMethods = new();
         private bool _isActionDone = false;
         private bool _dialogueAlreadyHandle = false;
+
+        private Dictionary<string, Transform> _directions = new Dictionary<string, Transform>();
         
         //Sound
         [Header("=== Wwise attributes ===")]
@@ -79,15 +87,31 @@ namespace MonoBehavior.Managers
             _dialogueBox        = _uiParent.transform.Find("DialogueBox").gameObject;
             _dialogueText       = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
             _tagsText           = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
-            _nextDialogueButton = _uiParent.transform.Find("NextButton").GetComponent<Button>();
             _backButton         = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
+            _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<Image>();
+
+            var dirTransform = GameObject.Find("Directions").transform;
+            // Front
+            var dirPos = dirTransform;
+            dirPos.position +=   new Vector3(30, 0, 0);
+            _directions.Add(Constants.StageFront, dirPos);
+            // Back
+            dirPos.position += dirTransform.transform.position + new Vector3(-30, 0, 0);
+            _directions.Add(Constants.StageBack, dirPos);
+            // Garden
+            dirPos.position += dirTransform.transform.position + new Vector3(0, 0, -30);
+            _directions.Add(Constants.StageGarden, dirPos);
+            // Courtyard
+            dirPos.position += dirTransform.transform.position + new Vector3(0, 0, 30);
+            _directions.Add(Constants.StageCourtyard, dirPos);
+
             
             // Connect Events
             PhaseStart.AddListener(OnPhaseStart);
             PhaseEnded.AddListener(OnPhaseEnded);
             ClearUI.AddListener(OnClearUI);
         
-            _nextDialogueButton.onClick.AddListener(OnClickNextDialogue);
+            //_nextDialogueButton.onClick.AddListener(OnClickNextDialogue);
             
             //Debug.Log(MethodBase.GetCurrentMethod()?.Name);
         }
@@ -119,26 +143,35 @@ namespace MonoBehavior.Managers
         
             // if(savedJsonStack.Count != 0)
             //     _backButton.gameObject.SetActive(true);
-        
+            
             if (GameManager.Instance._story.canContinue)
             {
                 _currentDialogue = GameManager.Instance._story.Continue();
+                //Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
                 
-                Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
-                
-                // Debug.Log($"AM.Refresh > _story.state.currentPathString:" +
-                //           $"{GameManager.Instance._story.state.currentPathString}");
+                var path = GameManager.Instance._story.state.currentPathString;
+                Debug.Log($"AM.Refresh > _story.state.currentPathString: {path}");
+
+                string[] words = path != null ? path.Split(".") : new []{_stage};
+                Debug.Log($"AM.Refresh > Location: {words[0]}");
+
+                if (words[0] != _stage)
+                {
+                    Debug.Log($"AM.Refresh > Change from {_stage} to {words[0]}");
+                    // TODO: DoChangeOfSet()
+                    _stage = words[0];
+                }
                 
                 if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
                     return;
                 
-                if (_currentDialogue == String.Empty)
-                    Refresh();
+                // if (_currentDialogue == String.Empty)
+                //     Refresh();
                 //savedJsonStack.Push(GameManager.Instance._story.state.ToJson());
                 
                 HandleTags();
                 HandleDialogue();
-                HandleChoices();
+                //HandleChoices();
 
                 /*foreach (var method in _tagMethods)
                 {
@@ -147,6 +180,7 @@ namespace MonoBehavior.Managers
                 }*/
 
                 StartCoroutine(ExecuteTagMethods());
+                //HandleChoices();
 
             }
             else
@@ -216,8 +250,13 @@ namespace MonoBehavior.Managers
             }
             else 
             {
-                _nextDialogueButton.gameObject.SetActive(true);
+                Debug.Log("Activate next button");
+                
                 // TODO: Make button subscribe correct action (=> next dialogue)
+
+                GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+                //_nextDialogueIndicator.gameObject.SetActive(true);
+                StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
         }
 
@@ -278,10 +317,11 @@ namespace MonoBehavior.Managers
         #region ButtonHandlers
 
         #region NextButton
-        public void OnClickNextDialogue()
+        public void OnClickNextDialogue(InputAction.CallbackContext context)
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Call next dialogue");
             Refresh();
+            //_nextDialogueButton.gameObject.SetActive(false);
         }
 
         public void OnClickContinueCurrentDialogue()
@@ -307,6 +347,9 @@ namespace MonoBehavior.Managers
         #region EventHandlers
         void OnPhaseStart()
         {
+            Debug.Log($"AM.OnPhaseStart > _story.state.currentPathString: " +
+                      $"{GameManager.Instance._story.state.currentPointer}");
+            
             _uiParent.gameObject.SetActive(true);
             savedJsonStack = new Stack<string>();
 
@@ -322,8 +365,6 @@ namespace MonoBehavior.Managers
             // Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > " +
             //           $"GameManager.Instance._story.path:" +
             //           $"{GameManager.Instance._story.path}");
-
-            
             
             Refresh();
         }
@@ -346,8 +387,15 @@ namespace MonoBehavior.Managers
             _choicesButtonList.Clear();
         
             _dialogueBox.SetActive(false);
-            _nextDialogueButton.gameObject.SetActive(false);
+            
             _backButton.gameObject.SetActive(false);
+            
+            GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
+            if (_nextDialogueIndicator.color.a != 0)
+                StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 1, 0, 0.1f));
+
+            //_nextDialogueIndicator.gameObject.SetActive(false);
+
         }
         #endregion
         
@@ -368,7 +416,7 @@ namespace MonoBehavior.Managers
         
         }
         
-        // ReSharper disable Unity.PerformanceAnalysis
+        
         private void CheckTag(string[] words)
         {
             switch (words[0])
@@ -398,10 +446,16 @@ namespace MonoBehavior.Managers
                 case Constants.TagScreenShake:
                     HandleScreenShake(words);
                     break;
+                case Constants.TagLook:
+                    HandleLook(words.Skip(1).Cast<String>().ToArray());
+                    break;
+                default:
+                    Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag.");
+                    break;
             }
         }
 
-        // ReSharper disable Unity.PerformanceAnalysis
+        
         void TagActionOver()
         {
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > TagAction is over");
@@ -416,7 +470,7 @@ namespace MonoBehavior.Managers
             string debugList = "";
             foreach (var item in data)
                 debugList += item + ", ";
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {character}'s alias : {debugList}");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {character}'s alias : {debugList}");
         
             
             CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
@@ -503,12 +557,45 @@ namespace MonoBehavior.Managers
             }
         }
 
-        private void HandleCurtains()
+        private void HandleLook(string[] data)
         {
-            //TODO: Make curtains tag handlers
+            Debug.Log($"AM.HandleLook > {data[0]} must look to {data[1]}");
+            var character = GameManager.Instance.GetCharacter(data[0]);
+
+            Transform target = null;
             
+            var other = GameManager.Instance.GetCharacter(data[1]);
+            if (other != null)
+            {
+                target = other.transform;
+            }
+            else
+            {
+                if (_directions.ContainsKey(data[1]))
+                    target = _directions[data[1]];
+                else
+                    Debug.LogError($"AM.{MethodBase.GetCurrentMethod().Name} > {data[2]} is unvalid");
+            }
             
+            if (target == null)
+                return;
+            
+            _tagMethods.Add(() =>
+            {
+                
+                character.transform.LookAt(target);
+                TagActionOver();
+            });
+
         }
+        
+        //TODO: Make curtains tag handlers
+        /*private void HandleCurtains()
+        {
+            
+            
+            
+        }*/
         
         #endregion
 
@@ -592,6 +679,27 @@ namespace MonoBehavior.Managers
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Finish waiting for {timeToWait} seconds");
             TagActionOver();
         }
+
+
+        IEnumerator FadeImageCoroutine(Image img, float begin, float end, float duration)
+        {
+            var timeElapsed = 0.0f;
+
+            Color color;
+            while (timeElapsed < duration)
+            {
+                color = img.color;
+                color.a = Mathf.Lerp(begin, end, timeElapsed/duration);
+                img.color = color;
+
+                timeElapsed += Time.deltaTime;
+                
+                yield return null;
+            }
+            color = img.color;
+            color.a = end;
+            img.color = color;
+        }
         
 
         /// <summary>
@@ -617,6 +725,8 @@ namespace MonoBehavior.Managers
                 //Debug.Log($"{nameof(ExecuteTagMethods)} > Action is done");
                 ++i;
             }
+            
+            HandleChoices();
         }
 
         #endregion

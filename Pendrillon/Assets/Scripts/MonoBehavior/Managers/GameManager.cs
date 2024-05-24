@@ -5,6 +5,7 @@ using System.Reflection;
 using Cinemachine;
 using Ink.Runtime;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 /*public enum GameState
 {
@@ -32,11 +33,13 @@ namespace MonoBehavior.Managers
         public Prompter _prompter;
         [SerializeField] private GameObject _prompterPrefab;
 
+        [Header("=== Locations ===")]
         public GroundGrid _gridScene;
 
         public Transform _playerPos;
         public Transform _enemyPos;
         
+        [Header("=== Ink File ===")]
         [SerializeField] private TextAsset _inkAsset;
         [HideInInspector] public Story _story;
 
@@ -44,19 +47,21 @@ namespace MonoBehavior.Managers
         
         public AK.Wwise.Event _wwiseEvent;
 
+        // Screen shake
         private CinemachineBasicMultiChannelPerlin _cameraPerlin;
+
+        [HideInInspector] public PlayerInputs _playerInput = null;
         
         
-        [Header("Timers")] 
+        [Header("=== Timers ===")] 
         [Range(0, 5)] public float _timeButtonSpawnInSec;
         [Range(0, 5)] public float _timeTextToAppearInSec;
         
         
-        [Header("Debug")]
+        [Header("=== Debug ===")]
         [SerializeField] private bool _goDirectToFight;
         #endregion
         
-        //add comments
         
         #region UnityAPI
         private void Awake()
@@ -70,17 +75,24 @@ namespace MonoBehavior.Managers
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
 
+            // Connect Attributes
             _gridScene = GameObject.Find("Grid").GetComponent<GroundGrid>();
             _cameraPerlin = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>()
                 .GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-            _cameraPerlin.m_AmplitudeGain = 0.0f;
+
+            _playerInput = new PlayerInputs();
+            
             
             // Connect Events
             ActingManager.Instance.PhaseEnded.AddListener(PrepareFightingPhase);
             
             /*if (_inkAsset == null)
             Resources.Load<TextAsset>("InkFiles/");*/
+            
             _story = new Story(_inkAsset.text);
+
+            var path = _story.state.currentPointer;
+            Debug.Log($"GM.Awake > _story.state.currentPathString: {path}");   
             
         }
 
@@ -90,9 +102,10 @@ namespace MonoBehavior.Managers
             SetupCharacters();
             SetupPrompter();
             
-            
             FightingManager.Instance._player = GetPlayer();
-        
+            
+            _cameraPerlin.m_AmplitudeGain = 0.0f;
+
             BeginGame();
         }
         
@@ -187,7 +200,7 @@ namespace MonoBehavior.Managers
                 FightingManager.Instance.BeginFight.Invoke();
             }
             else
-            {
+            {  
                 ActingManager.Instance.PhaseStart.Invoke();
             }
         }
@@ -248,5 +261,15 @@ namespace MonoBehavior.Managers
         }
 
         #endregion
+
+        private void OnEnable()
+        {
+            _playerInput.Enable();
+        }
+
+        private void OnDisable()
+        {
+            _playerInput.Disable();
+        }
     }
 }
