@@ -16,39 +16,52 @@ namespace MonoBehavior.Managers
 {
     public class ActingManager : MonoBehaviour
     {
+        enum ActState
+        {
+            Choose,
+            Wait,
+            Next,
+        }
+        
+        
         #region Attributes
         public static ActingManager Instance { get; private set; }
+
+        private ActState status;
         
         // Scene
         // TODO: put the name of the first scene (in Constants)
-        private string _stage = "UNDEFINED";      // Name of the actual set
+        string _stage = "UNDEFINED";      // Name of the actual set
     
         // UI
         [HideInInspector] public GameObject _uiParent { get; private set; }
-        private GameObject _dialogueBox;
-        private TextMeshProUGUI _dialogueText;   // Text box
-        private TextMeshProUGUI _tagsText;       // Tags box
-        private Image _nextDialogueIndicator;
+        GameObject _dialogueBox;
+        TextMeshProUGUI _dialogueText;      // Text box
+        TextMeshProUGUI _tagsText;          // Tags box
+        GameObject _historyBox;        // History box
+        TextMeshProUGUI _historyText;
+        Image _nextDialogueIndicator;
         
     
         // Buttons
-        [SerializeField] private Button _choiceButtonPrefab;
+        [SerializeField] Button _choiceButtonPrefab;
         public List<Button> _choicesButtonList;
-        private Button _backButton;
+        Button _backButton;
         
-        private string _currentDialogue;
-        private Stack<string> savedJsonStack;
-        private bool mustWait = false;
-        private float _timeToWait = 0.0f;
+        // Dialogue
+        string _currentDialogue;
+        //Stack<string> savedJsonStack;
+        bool mustWait = false;
+        float _timeToWait = 0.0f;
         
-        private List<CharacterHandler> _enemiesToFight = new();
+        List<CharacterHandler> _enemiesToFight = new();
 
         // Tag list ordering
-        private List<Action> _tagMethods = new();
-        private bool _isActionDone = false;
-        private bool _dialogueAlreadyHandle = false;
+        List<Action> _tagMethods = new();
+        bool _isActionDone = false;
+        bool _dialogueAlreadyHandle = false;
 
-        private Dictionary<string, Transform> _directions = new Dictionary<string, Transform>();
+        Dictionary<string, Transform> _directions = new Dictionary<string, Transform>();
         
         //Sound
         [Header("=== Wwise attributes ===")]
@@ -72,7 +85,7 @@ namespace MonoBehavior.Managers
         #endregion
     
         #region UnityAPI
-        private void Awake()
+        void Awake()
         {
             // Singleton pattern
             if (Instance != null && Instance != this)
@@ -83,13 +96,16 @@ namespace MonoBehavior.Managers
             Instance = this;
         
             // Connect Attributes
-            _uiParent           = GameObject.Find("Canvas/ACTING_PART").gameObject;
-            _dialogueBox        = _uiParent.transform.Find("DialogueBox").gameObject;
-            _dialogueText       = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
-            _tagsText           = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
-            _backButton         = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
+            _uiParent = GameObject.Find("Canvas/ACTING_PART").gameObject;
+            _dialogueBox    = _uiParent.transform.Find("DialogueBox").gameObject;
+            _dialogueText   = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
+            _tagsText       = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
+            _backButton     = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
             _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<Image>();
-
+            _historyBox     = _uiParent.transform.Find("History").gameObject;
+            _historyText    = _historyBox.transform.Find("Scroll View/Viewport/Content").GetComponent<TextMeshProUGUI>();
+            
+            
             var dirTransform = GameObject.Find("Directions").transform;
             // Front
             var dirPos = dirTransform;
@@ -148,6 +164,10 @@ namespace MonoBehavior.Managers
             {
                 _currentDialogue = GameManager.Instance._story.Continue();
                 //Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
+                
+                // Add to history
+                _historyText.text += _currentDialogue + "\n";
+                
                 
                 var path = GameManager.Instance._story.state.currentPathString;
                 Debug.Log($"AM.Refresh > _story.state.currentPathString: {path}");
@@ -254,7 +274,7 @@ namespace MonoBehavior.Managers
                 
                 // TODO: Make button subscribe correct action (=> next dialogue)
 
-                GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+                GoNext();
                 //_nextDialogueIndicator.gameObject.SetActive(true);
                 StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
@@ -330,16 +350,38 @@ namespace MonoBehavior.Managers
         }
         #endregion
         
-        public void OnClickChoiceButton (Choice choice) {
+        public void OnClickChoiceButton (Choice choice)
+        {
+            _historyText.text += $"     > {choice.text}\n";
             GameManager.Instance._story.ChooseChoiceIndex (choice.index);
             Refresh();
         }
 
         public void OnClickBackButton()
         {
-            GameManager.Instance._story.state.LoadJson(savedJsonStack.Pop());
-            Refresh();
+            //GameManager.Instance._story.state.LoadJson(savedJsonStack.Pop());
+            //Refresh();
+            Debug.Log("BackButton > Must go back in the story");
+        }
 
+        public void OnClickHistory(InputAction.CallbackContext context)
+        {
+            Debug.Log($"AM.OnClickHistory");
+
+            if (_historyBox.activeSelf)
+            {
+                Debug.Log($"AM.OnClickHistory > Hide history");
+                _historyBox.SetActive(false);
+                if (status == ActState.Next)
+                    GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+            }
+            else
+            {
+                Debug.Log($"AM.OnClickHistory > Display history");
+                _historyBox.SetActive(true);
+                if (status == ActState.Next)
+                    GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
+            }
         }
 
         #endregion
@@ -351,7 +393,6 @@ namespace MonoBehavior.Managers
                       $"{GameManager.Instance._story.state.currentPointer}");
             
             _uiParent.gameObject.SetActive(true);
-            savedJsonStack = new Stack<string>();
 
             GameManager.Instance.GetPlayer()._character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
             GameManager.Instance.GetPlayer()._character.strength.SetupBase((int)GameManager.Instance._story.variablesState["p_stre"]);
@@ -361,10 +402,10 @@ namespace MonoBehavior.Managers
         
             //Debug.Log($"AM.OnPhaseStart() > GameManager.Instance.GetCharacter(\"PLAYER\")._character:{GameManager.Instance.GetPlayer()._character}");
         
-            //var beginSceneName = "trip_return";
-            // Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > " +
-            //           $"GameManager.Instance._story.path:" +
-            //           $"{GameManager.Instance._story.path}");
+            _historyText.text = String.Empty;
+            _historyBox.SetActive(false);
+            GameManager.Instance._playerInput.Player.History.performed += OnClickHistory;
+
             
             Refresh();
         }
@@ -390,7 +431,6 @@ namespace MonoBehavior.Managers
             
             _backButton.gameObject.SetActive(false);
             
-            GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
             if (_nextDialogueIndicator.color.a != 0)
                 StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 1, 0, 0.1f));
 
@@ -402,7 +442,7 @@ namespace MonoBehavior.Managers
         
         #region TagHandlers
 
-        private void ParseTag(string tagName)
+        void ParseTag(string tagName)
         {
             //Debug.Log(tagName);
             string[] words = tagName.Split(Constants.Separator);
@@ -417,7 +457,7 @@ namespace MonoBehavior.Managers
         }
         
         
-        private void CheckTag(string[] words)
+        void CheckTag(string[] words)
         {
             switch (words[0])
             {
@@ -462,7 +502,7 @@ namespace MonoBehavior.Managers
             _isActionDone = true;
         }
         
-        private void HandleTagActor(string[] data)
+        void HandleTagActor(string[] data)
         {
             //[] words = coordonates.Split(",");
             string character = data[0];
@@ -480,7 +520,7 @@ namespace MonoBehavior.Managers
             }
         }
         
-        private void HandleTagMove(string[] data)
+        void HandleTagMove(string[] data)
         {
             //[] words = coordonates.Split(",");
             string character = data[0];
@@ -495,7 +535,7 @@ namespace MonoBehavior.Managers
                 characterHandler?.Move(new Vector2Int(Int32.Parse(x), Int32.Parse(y)), speed, TagActionOver));
         }
 
-        private void HandleTagPlaysound(string soundToPlay)
+        void HandleTagPlaysound(string soundToPlay)
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Play sound {soundToPlay}");
             
@@ -509,7 +549,7 @@ namespace MonoBehavior.Managers
         }
         
         
-        private void HandleTagAnim(string[] data)
+        void HandleTagAnim(string[] data)
         {
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {data[0]} must play {data[1]} anim");
 
@@ -520,7 +560,7 @@ namespace MonoBehavior.Managers
 
         }
         
-        private void HandleTagWait(string timeToWaitString)
+        void HandleTagWait(string timeToWaitString)
         {
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Dialogue must wait {timeToWaitString}");
 
@@ -531,7 +571,7 @@ namespace MonoBehavior.Managers
 
         }
         
-        private void HandleTagSleep(string timeToSleepString)
+        void HandleTagSleep(string timeToSleepString)
         {
 
             var timeToWait = float.Parse(timeToSleepString, CultureInfo.InvariantCulture);
@@ -542,7 +582,7 @@ namespace MonoBehavior.Managers
 
         }
 
-        private void HandleScreenShake(string[] data)
+        void HandleScreenShake(string[] data)
         {
             if (data.Length == 1)
             {
@@ -557,7 +597,7 @@ namespace MonoBehavior.Managers
             }
         }
 
-        private void HandleLook(string[] data)
+        void HandleLook(string[] data)
         {
             Debug.Log($"AM.HandleLook > {data[0]} must look to {data[1]}");
             var character = GameManager.Instance.GetCharacter(data[0]);
@@ -590,7 +630,7 @@ namespace MonoBehavior.Managers
         }
         
         //TODO: Make curtains tag handlers
-        /*private void HandleCurtains()
+        /* void HandleCurtains()
         {
             
             
@@ -633,6 +673,29 @@ namespace MonoBehavior.Managers
         #endregion SoundHandler
 
 
+        #region Status
+
+        void GoChoose()
+        {
+            GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
+            status = ActState.Choose;
+        }
+
+        
+        void GoWait()
+        {
+            GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
+            status = ActState.Wait;
+        }
+
+        void GoNext()
+        {
+            GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+            status = ActState.Next;
+        }
+        
+        #endregion
+
         #region Coroutines
 
         IEnumerator GenerateButtonCoroutine()
@@ -650,6 +713,7 @@ namespace MonoBehavior.Managers
             {
                 button.interactable = true;
             }
+            GoChoose();
         }
 
         IEnumerator GenerateText()
