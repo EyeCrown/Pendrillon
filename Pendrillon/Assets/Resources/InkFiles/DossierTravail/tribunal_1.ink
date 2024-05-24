@@ -89,6 +89,37 @@ JUGE ERNEST: Silence ! J'exige le silence !
 - JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle.
 #move(Arle)
 #anim:Arle:bow_audience
-
+- JUGE ERNEST: Décrivez au jury votre rencontre avec l'accusé, je vous prie.
+ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège d'occuper, au sein de la Couronne, un rôle de tout premier plan...
+JUGE ERNEST: Poursuivez, je vous prie. #anim:Arle:bow
+ARLE: J'aime à penser que je suis, pour ce rôle, une actrice à la hauteur.
+#sleep:2
+JUGE ERNEST: Veuillez ne pas vous répandre en détails inutiles. #audience:laugh #anim:Arle:sad1
+ARLE: ...
+ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à messire le scélérat 
+une mission de la plus haute importance.
+    * [Scélérat toi même.] PLAYER: Scélérat toi même, crétine ! #audience:laugh
+        ~ audience_judgement(0.01)
+        JUGE ERNEST: Silence ! Le Juge egige le silence ! #anim:Judge:bell
+        JUGE ERNEST: Ce procès n'est pas une fanfaronnade ! Membres du jury, soyez dignes de la tâche qui vous incombe !
+        JUGE ERNEST: Quant à vous, cessez d'objecter quand la parole ne vous a pas été donnée par le Juge en personne !
+        ~ audience_judgement(-0.02)
+        JUGE ERNEST: Témoin, vous mentionniez une mission confiée à l'accusé par la Couronne.
+    * [Rester silencieux.]
+JUGE ERNEST: Précisez quelle était la nature de cette mision, je vous prie. #anim:Arle:bow
+ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme accusé, était de tuer le Léviathan, et d'en ramener l'organe vital.
+#sleep:1
+ARLE: Je veux bien entendu parler de son cœur, Votre Honneur. #audience:laugh #anim:Judge:bell
+JUGE ERNEST: Bien, bien... Est-ce tout ?
+ARLE: Puis-ajouter une dernière chose, Votre Honneur ?
+JUGE ERNEST: Soyez brève. #anim:Arle:bow
+ARLE: Entendez bien que mon ambition, Votre Honneur, n'est point de prêter à mon image plus d'éloges qu'elle n'en mérite.
+JUGE ERNEST: Bon, bon... Concluez.
+ARLE: Je voulais simplement signifier, au profit de la Vérité ainsi que la Justice, qu'à peine notre bonne Reine Constance m'eut chargée de confier à messire ladite mission, mon cœur me fit comprendre que l'effroyable était bien loin d'être à la hauteur de la tâche. #audience:laugh #audience:applause #anim:Arle:bow
+- JUGE ERNEST: J'en appelle à l'accusé : qu'avez-vous à dire pour votre défense ?
+    * [On ne m'a confié aucune mission.] PLAYER: J'annonce, au jury comme à Votre Honneur, que jamais on ne me confia pareille mission. #audience:debate
+        ARLE: Le gredin ment, Votre Honneur !
+    * [Arle doute t-elle de notre reine ?]
+    * [Je n'ai rien à objecter.]
 // Player va raconter la tempête (flashback)
 -> tempest
