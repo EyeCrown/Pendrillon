@@ -590,6 +590,9 @@ namespace MonoBehavior.Managers
             {
                 characterHandler._character._nicknames.Add(nickname);
             }
+            
+            characterHandler.transform.position = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(10, 10)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
+
         }
         
         void HandleTagMove(string[] data)
@@ -615,7 +618,15 @@ namespace MonoBehavior.Managers
 
             _tagMethods.Add(() =>
             {
-                AkSoundEngine.PostEvent(soundToPlay, gameObject);
+                try
+                {
+                    AkSoundEngine.PostEvent(soundToPlay, gameObject);
+
+                }
+                catch
+                {
+                }
+
                 TagActionOver();
             });
         }
