@@ -71,7 +71,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{C7D90665-64BF-5B60-BA63-DA00C3CCE201}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{8C315096-E06C-9EF7-DE27-B07FA267498F}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -694,6 +694,10 @@
 				<File Id="539971268" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_Eglise_LightOn.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_Eglise_LightOn_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="540212977" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MUS_Story_SC_Barque_Intro .wav</ShortName>
+					<CachePath>SFX/MUS_Story_SC_Barque_Intro _3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="543895100" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_3.wav</ShortName>
@@ -2770,6 +2774,11 @@
 						<MediaRef Id="699052000"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="35443424" Name="Play_MUS_Story_SC_Barque_Intro" DurationType="OneShot" DurationMin="4.1335" DurationMax="4.1335">
+					<MediaRefs>
+						<MediaRef Id="540212977"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1658195833" Name="Play_MUS_Story_SC_Barque_LostAFriend" DurationType="OneShot" DurationMin="4.1335" DurationMax="4.1335">
 					<MediaRefs>
 						<MediaRef Id="244340315"/>
@@ -3626,5 +3635,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{16B66ACA-2429-8F00-3981-4CAB4FCFFA00}</FileHash>
+	<FileHash>{3591EA2A-B5C9-106C-84FC-4703CCFA8947}</FileHash>
 </SoundBanksInfo>

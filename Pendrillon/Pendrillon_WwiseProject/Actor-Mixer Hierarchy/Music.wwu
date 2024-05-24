@@ -577,6 +577,28 @@
 										<ActiveSource Name="MUS_Story_SC_Eglise_StainedGlassMentionned" ID="{E67EAA66-9C7A-45B6-BACB-E4F200D60C26}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="MUS_Story_SC_Barque_Intro " ID="{644B6302-CE0D-43A0-A0DF-BA8F589C6382}" ShortID="154221741">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Barque_Intro " ID="{175A73BF-A51C-4721-B8D9-85348DC48C46}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Barque_Intro .wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="540212977"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Barque_Intro " ID="{175A73BF-A51C-4721-B8D9-85348DC48C46}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="MUS_Pont" ID="{F75BE034-53BC-4BED-8FE6-39D4E547DC64}" ShortID="662143979">
