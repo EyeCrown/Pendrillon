@@ -11,6 +11,8 @@ VAR failed_breaking_jester_crate = false
 #actor:Player:PLAYER
 #actor:Arle:???:ARLE
 #actor:Prompter:SOUFFLEUR
+#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
+#anim:Arle:hide
 // Start the scene
 -> start
 
@@ -18,103 +20,100 @@ VAR failed_breaking_jester_crate = false
 = start
 // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
-- #sleep:6 #audience:normal_applause
+- #sleep:6 #audience:applause
     * [Attendre encore.]
-- #sleep:6 #audience:mild_applause
+- #sleep:6 #audience:debate
     * [Attendre plus fort.]
-- #sleep:6 #audience:discontent
-SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se montrer... tu vas devoir meubler !
-    * [(Ironique) Quelle ponctualité...] PLAYER: Espérons que mon mystérieux interlocuteur arrive avant...
+- #sleep:6 #audience:booing
+SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se montrer... tu vas devoir meubler ! #anim:Souffleur:colere2 #playsound:VOX_Souffleur_partenairedescene
+    * [(Ironique) Quelle ponctualité...] PLAYER: Espérons que mon mystérieux interlocuteur arrive avant... #anim:Player:joie1
         ** [(Humour) Conclure avec légèreté. {t(CHAR, 10)}]
             {sc(CHAR, 0): -> joke_punctuality_S | -> joke_punctuality_F}
-            *** (joke_punctuality_S) PLAYER: ...avant les premiers rayons du soleil. Je n'ai pas prévu ma crème solaire.
-                SOUFFLEUR: Bien joué l'ami ! Continue de divertir le public pour ne pas qu'il s'ennuie...
+            *** (joke_punctuality_S) PLAYER: ...avant les premiers rayons du soleil. Je n'ai pas prévu ma crème solaire. #anim:Player:joie1
+                SOUFFLEUR: Bien joué l'ami ! Continue de divertir le public pour ne pas qu'il s'ennuie... #anim:Souffleur:joie2 #playsound:VOX_Souffleur_bienjouelamicontinue
                 #audience:applause
-            *** (joke_punctuality_F) PLAYER: ...euh... avant les premiers rayons du soleil... qui lui-même n'est pourtant... euh... pas très ponctuel ?
-                SOUFFLEUR: Tu as fait ce qu'on appelle un four. Un bide. Un coup d'épée dans l'eau... Un flop, en d'autres termes. Mais je ne suis pas là pour te descendre... Ne te laisse pas abattre l'ami, tu auras d'autres occasions !
+            *** (joke_punctuality_F) PLAYER: ...euh... avant les premiers rayons du soleil... qui lui-même n'est pourtant... euh... pas très ponctuel ? #anim:Player:stress2
+                SOUFFLEUR: Tu as fait ce qu'on appelle un four. Un bide. Un coup d'épée dans l'eau... Un flop, en d'autres termes. Mais je ne suis pas là pour te descendre... Ne te laisse pas abattre l'ami, tu auras d'autres occasions ! #anim:Souffleur:neutre2 #playsound:VOX_Souffleur_cestunfour
                 #audience:booing
                 ~ has_fail = true
         ** [(Menace) Conclure avec panache. {t(STRE, 10)}]
             {sc(CHAR, 0): -> threat_ponctuality_S | -> threat_ponctuality_F}
             ~ threat_jester = true
-            *** (threat_ponctuality_S) PLAYER: ...avant que je ne juge bon de punir un tel manque de manière.
-                SOUFFLEUR: Certaines situations devraient être gérées avec diplomatie et tact... pas celle-ci ! Une quesion cependant : es-tu en train de menacer le personnage, ou l'actrice ? Quelle que soit la réponse, le public est avec toi, continue comme ça !
-                #audience:applause
-            *** (threat_ponctuality_F) PLAYER: ...avant que je me mette en colère !!
-                SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convainquant. Ne te laisse pas abattre, tu auras d'autres occasions !
-                #audience:booing
+            *** (threat_ponctuality_S) PLAYER: ...avant que je ne juge bon de punir un tel manque de manière. #anim:Player:swordattack
+                SOUFFLEUR: Certaines situations devraient être gérées avec diplomatie et tact... pas celle-ci ! Une quesion cependant : es-tu en train de menacer le personnage, ou l'actrice ? Quelle que soit la réponse, le public est avec toi, continue comme ça ! #anim:Souffleur:joie2 #audience:applause #playsound:VOX_Souffleur_certainessituations
+            *** (threat_ponctuality_F) PLAYER: ...avant que je me mette en colère !! #anim:Player:colere3 #audience:booing
+                SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convainquant. Ne te laisse pas abattre, tu auras d'autres occasions ! #anim:Souffleur:neutre2 #playsound:VOX_Souffleur_yadelidee
                 ~ has_fail = true
-    * [(Soupirant) Je suis tout à fait seul.] PLAYER: Je me trouve bien seul. Aussi seul...
+    * [(Soupirant) Je suis tout à fait seul.] PLAYER: Je me trouve bien seul. Aussi seul... #anim:Player:triste1
         ** [(Humour) Conclure avec légèreté. {t(CHAR, 10)}]
             {sc(CHAR, 0): -> joke_wainting_S | -> joke_waiting_F}
-            *** (joke_wainting_S) PLAYER: ...aussi seul qu'un poux sur le crâne lustré d'un chauve.
-                SOUFFLEUR: Bien joué, l'ami ! Continue de divertir le public pour ne pas qu'il s'ennuie...
+            *** (joke_wainting_S) PLAYER: ...aussi seul qu'un poux sur le crâne lustré d'un chauve. #anim:Player:joie1
+                SOUFFLEUR: Bien joué, l'ami ! Continue de divertir le public pour ne pas qu'il s'ennuie. #anim:Souffleur:joie2 #playsound:VOX_Souffleur_bienjouelamicontinue
                 #audience:applause
-            *** (joke_waiting_F) PLAYER: ...aussi seul.. euh... que mes dernières... miettes de patience ?
-                SOUFFLEUR: Tu as fait ce qu'on appelle un four. Un bide. Un coup d'épée dans l'eau... Un flop, en d'autres termes. Mais je ne suis pas là pour te descendre... Ne te laisse pas abattre, tu auras d'autres occasions !
+            *** (joke_waiting_F) PLAYER: ...aussi seul.. euh... que mes dernières... miettes de patience ? #anim:Player:stress1
+                SOUFFLEUR: Tu as fait ce qu'on appelle un four. Un bide. Un coup d'épée dans l'eau... Un flop, en d'autres termes. Mais je ne suis pas là pour te descendre... Ne te laisse pas abattre, tu auras d'autres occasions ! #anim:Souffleur:neutre2 #playsound:VOX_Souffleur_cestunfour
                 #audience:booing
                 ~ has_fail = true
         ** [(Menace) Conclure avec poigne. {t(STRE, 10)}]
             {sc(STRE, 0): -> threat_waiting_S | -> threat_waiting_F}
             ~ threat_jester = true
-            *** (threat_waiting_S) PLAYER: ...que la dent qui restera dans le bec de qui me fait attendre aussi longtemps !
-                SOUFFLEUR: Certaines situations devraient être gérées avec diplomatie et tact... pas celle-ci ! Une quesion cependant : es-tu en train de menacer le personnage, ou l'actrice ? Quelle que soit la réponse, le public est avec toi, continue comme ça !
-                #audience:applause
-            *** (threat_waiting_F) PLAYER: ...Euh... que mes dernières... onces de patience.
-                SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convainquant. Ne te laisse pas abattre, tu auras d'autres occasions !
+            *** (threat_waiting_S) PLAYER: ...que la dent qui restera dans le bec de qui me fait attendre aussi longtemps ! #anim:Player:swordattack
+                SOUFFLEUR: Certaines situations devraient être gérées avec diplomatie et tact... pas celle-ci ! Une quesion cependant : es-tu en train de menacer le personnage, ou l'actrice ? Quelle que soit la réponse, le public est avec toi, continue comme ça ! #anim:Souffleur:joie2 #audience:applause #playsound:VOX_Souffleur_certainessituations
+            *** (threat_waiting_F) PLAYER: ...Euh... que mes dernières... onces de patience. #anim:Player:stress1
+                SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convainquant. Ne te laisse pas abattre, tu auras d'autres occasions ! #anim:Souffleur:neutre2 #playsound:VOX_Souffleur_yadelidee
                 #audience:booing
                 ~ has_fail = true
 - // La scène continue
-    * [(S'adresser à l'actrice) Il est temps.] PLAYER: Je crois VRAIMENT qu'il est temps, désormais.
-        ???: ... Laisse moi un peu de temps, veux-tu ?
+    * [(S'adresser à l'actrice) Il est temps.] PLAYER: Je crois VRAIMENT qu'il est temps, désormais. #anim:Player:neutre2 #playsound:VOX_Player_VRAIMENTtemps
+        ???: ... Laisse moi un peu de temps, veux-tu ? #playsound:VOX_Arle_laissemoi
 - #sleep:3 #audience:booing
-    * [(À l'actrice, chuchotant) Qui payera mes heures supplémentaires ?] PLAYER: Psssst... Je suis trop mal payé pour que la pièce dure toute la nuit. Dépêche-toi !
-    * [(À l'actrice, chuchotant) Es-tu en grève ?] PLAYER: Psssst... Tu es en grève ? Qu'es-ce qu'il te prend, encore ?
-- ???: Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable !
-    * [Se montrer conciliant.] PLAYER: Je n'en doute pas... Je vais faire ce que je peux pour meubler. Je t'en prie, ne tarde pas.
-    * [Hausser le ton.] PLAYER: Le public va t'acceuillir avec des applaudissements... et moi avec un coup de pied au derrière !
+    * [(À l'actrice, chuchotant) Qui payera mes heures supplémentaires ?] PLAYER: Psssst... Je suis trop mal payé pour que la pièce dure toute la nuit. Dépêche-toi ! #anim:Player:chuchote #playsound:VOX_Player_heuressupp
+    * [(À l'actrice, chuchotant) Es-tu en grève ?] PLAYER: Psssst... Tu es en grève ? Qu'es-ce qu'il te prend, encore ? #anim:Player:chuchote #playsound:VOX_Player_tuesengreve
+- ???: Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable ! #playsound:VOX_Arle_laissonslesselanguir
+    * [Se montrer conciliant.] PLAYER: Je n'en doute pas... Je vais faire ce que je peux pour meubler. Je t'en prie, ne tarde pas. #anim:Player:chuchote #playsound:VOX_Player_jevaismeubler
+    * [Hausser le ton.] PLAYER: Le public va t'acceuillir avec des applaudissements... et moi avec un coup de pied au derrière ! #anim:Player:chuchote #playsound:VOX_Player_panpanculcul
     * [Ignorer la voix.]
 - #sleep:3 #audience:booing
-- SOUFFLEUR: Trouve autre chose pour les divertir... N'importe quoi qui te passe par la tête ! Surtout, ne reste pas planté là !
+- SOUFFLEUR: Trouve autre chose pour les divertir... N'importe quoi qui te passe par la tête ! Surtout, ne reste pas planté là ! #anim:Souffleur:neutre2
     * [Effectuer une danse. {t(DEXT, -10)}]
         {sc(CHAR, 0): -> dancing_S | -> dancing_F}
-        ** (dancing_S) #anim:Player:dancing_success
-            SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur.
+        ** (dancing_S) #anim:Player:dancing_success #audience:applause
+            SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur. #anim:Souffleur:joie2
             -> success_entertaining_audience
-        ** (dancing_F) #anim:Player:dancing_failure
-            SOUFFLEUR: L'idée n'était pas mauvaise... Mais un conseil : la prochaine fois, fais appel à un talent que tu possèdes vraiment, l'ami !
+        ** (dancing_F) #anim:Player:dancing_failure #audience:debate
+            SOUFFLEUR: L'idée n'était pas mauvaise... Mais un conseil : la prochaine fois, fais appel à un talent que tu possèdes vraiment, l'ami ! #anim:Souffleur:deception1
             -> failure_entertaining_audience
     * [Faire des pompes. {t(STRE, -10)}]
         {sc(CHAR, 0): -> do_pushups_S | -> do_pushups_F}
-        ** (do_pushups_S) #anim:Player:break_crate_success
+        ** (do_pushups_S) #anim:Player:pompe_success #audience:applause
             {
-                - threat_jester == true: SOUFFLEUR: Bien joué ! J'ai l'impression que tu comptes pas mal sur tes muscles... Mais qui suis-je pour juger, hein ? Continue comme ça !
+                - threat_jester == true: SOUFFLEUR: Bien joué ! J'ai l'impression que tu comptes pas mal sur tes muscles... Mais qui suis-je pour juger, hein ? Continue comme ça ! #anim:Souffleur:joie2
             }
             -> success_entertaining_audience
-        ** (do_pushups_F) #anim:Player:break_crate_failure
-            SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, comme on dit. Surtout, garde la tête haute, l'ami !
+        ** (do_pushups_F) #anim:Player:pompe_failure #audience:debate
+            SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, comme on dit. Surtout, garde la tête haute, l'ami ! #anim:Souffleur:neutre2
             -> failure_entertaining_audience
     * [Hypnotiser le public. {t(CHAR, -20)}]
         {sc(CHAR, 0): -> hypnotise_S | -> hypnotise_F}
-        ** (hypnotise_S) #anim:Player:hypnotise_success
+        ** (hypnotise_S) #anim:Player:hypnotise_success #audience:applause
             SOUFFLEUR: ...
-            SOUFFLEUR: Aucune idée de ce qu'il s'est passé, mais ça a fonctionné ! Bien joué, l'ami !
+            SOUFFLEUR: Aucune idée de ce qu'il s'est passé, mais ça a fonctionné ! Bien joué, l'ami ! #anim:Souffleur:joie2
             -> success_entertaining_audience
-        ** (hypnotise_F) #anim:Player:hypnotise_failure
+        ** (hypnotise_F) #anim:Player:hypnotise_failure #audience:debate
             SOUFFLEUR: ...
-            SOUFFLEUR: Je ne suis pas sûr que faire appel au... paranormal..? soit une bone idée, l'ami. Bien tenté tout de même !
+            SOUFFLEUR: Je ne suis pas sûr que faire appel au... paranormal..? soit une bone idée, l'ami. Bien tenté tout de même ! #anim:Souffleur:neutre2
             -> failure_entertaining_audience
-            *** (success_entertaining_audience) ???: Hé ! Ne me vole pas la vedette, compris ?
-            *** (failure_entertaining_audience) ???: Merci d'avoir tout loupé, camarade ! Ça me permettra de briller encore plus !
+            *** (success_entertaining_audience) ???: Hé ! Ne me vole pas la vedette, compris ? #playsound:VOX_Arle_nevolepasvedette
+            *** (failure_entertaining_audience) ???: Merci d'avoir tout loupé, camarade ! Ça me permettra de briller encore plus ! #playsound:VOX_Arle_mercitoutloupe
 - // On voit un bout du JESTER qui dépasse d'une caisses
-    * [(À L'ACTRICE) On te voit, là...] PLAYER: Psssst... Hé ! Tout le monde peut te voir, caché derrière la caisse !
-    * [(AU PUBLIC) Je crois que je suis épié !] PLAYER: J'ai la sensation que je ne suis pas aussi seul que je le croyais... Quelqu'un m'épie !
+    * [(À L'ACTRICE) On te voit, là...] PLAYER: Psssst... Hé ! Tout le monde peut te voir, caché derrière la caisse ! #anim:Player:chuchote #playsound:VOX_Player_toutlemondepeuttevoir
+    * [(AU PUBLIC) Je crois que je suis épié !] PLAYER: J'ai la sensation que je ne suis pas aussi seul que je le croyais... Quelqu'un m'épie ! #anim:Player:neutre3 #playsound:VOX_Player_quelquunmepie
         #audience:applause
 - // Le JESTER ne bouge pas, caché derrière sa caisse
     * [Tirer la caisse.]
-        #anim:Player:pull_crate
+        #anim:Player:pull_crate #anim:Arle:hide_surprise
         // Quand le joueur tire la caisse, le JESTER continue de la suivre pour se cacher derrière
-    * [Raisonner l'actrice.] PLAYER: Le public n'attend que ton apparition ! C'est maintenant ou jamais.
+    * [Raisonner l'actrice.] PLAYER: Le public n'attend que ton apparition ! C'est maintenant ou jamais. #anim:Player:neutre2 #playsound:VOX_Player_lepublicnattend
         ???: J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré.
         ** [C'est de la paranoia.] PLAYER: À ce stade, c'est carrément de la paranoia.
         ** [C'est de bonne guerre.] PLAYER: Peut-être bien, oui... Ça t'apprendra à me laisser seul sur scène !
