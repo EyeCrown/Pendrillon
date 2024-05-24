@@ -23,19 +23,17 @@ VAR player_is_hidden = false // Define if the player is hidden or not
 
 = start
 #sleep:0.1
-
 #box
-#wait:3
+#wait:1
 - ???: Alors, on n'attend pas Patrick ?!
 - ???: (Écœurée) Ça sent mauvais là-dedans...    
-    * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...                 #move:Player:5:5   #anim:Marcello:Dance
-        ** [Désolé pour l'odeur...] PLAYER: Les marins ne sont pas dérangés par ce genre d'odeur. Mais ce n'est pas du goût de tout le monde...     #anim:Player:Surprised
+    * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...  
+        ** [Désolé pour l'odeur...] PLAYER: Les marins ne sont pas dérangés par ce genre d'odeur. Mais ce n'est pas du goût de tout le monde...     
         ** [Ça peut nous être profitable !] PLAYER: Avec un peu de chance, l'odeur fera passer aux gardes l'envie de trop s'attarder.               #anim:Player:Defeat
-        ** [Impossible d'aérer.] PLAYER: C'est le problème d'une cale de bâteau : difficile d'aérer un navire plongé dans l'eau.                    #anim:Player:Surprised
     * [Ça sent les ennuis...] PLAYER: Ça sent les emmerdes.     //#anim:Player:Laughing   #anim:Marcello:Surprised
     * [L'odeur de la liberté !] PLAYER: Le poisson pas frais et le sel marin : l'odeur de la liberté !      //#anim:Player:Dance
 #box
-#wait:3
+#wait:1
 - ???: ...       //#anim:Player:Surprised
 - ???: Que fera t-on s'ils me trouvent ?
     * [Je vous protégerai. {t(CHAR, 0)}]
@@ -44,18 +42,7 @@ VAR player_is_hidden = false // Define if the player is hidden or not
             ???: (Inquiète) Espérons qu'on n'en arrive pas là.
         ** (protect_F) PLAYER: Euh.. Je.. Je vous défendrai ?
             ???: (Se retient de rire) Ne le prenez pas mal, mais... vous n'êtes pas très convainquant.
-    * [On improvisera.] PLAYER: On improvisera, comme j'en ai l'habitude.
-        ???: Ce n'est pas la première fois que vous avez des ennuis avec la Couronne, n'est-ce pas ?
-        ** [(Mentir) C'est une première. {t(CHAR, -20)}]
-        {sc(CHAR, -20): -> lie_S | -> lie_F}
-            *** (lie_S) PLAYER: Je suis ce qu'on appelle un honnête homme.
-                ???: Vous semblez sincère.
-            *** (lie_F) PLAYER: Je suis blanc comme neige au soleil.
-                ~ trial(t_1_lawless_1)
-                ???: Vous mentez très mal, mon ami.
-        ** [Certes.] C'est vrai, je l'admet. Mais ne dit-on pas que nul homme n'a à rougir d'une faute avouée ?
-            ???: Je n'ai jamais entendu cela, non.
-            *** [...] PLAYER: J'ai dû l'inventer, alors.
+    
 - ???: Et maintenant ? Qu'avez-vous en tête ?
     * [Fouiller la caisse du fond. {t(LUCK, 0)}] #playsound:crate_search
     {sc(LUCK, 0): -> crate_back_search_S | -> crate_back_search_F}

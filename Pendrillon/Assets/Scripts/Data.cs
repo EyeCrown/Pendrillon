@@ -61,5 +61,16 @@ public static class Constants
     public const string FirstSetOnStage = "barge";
 
     #endregion
+
+    #region Button types
+
+    public const string TypeCharisma = "Charisma";
+    public const string TypeStrength = "Strength";
+    public const string TypeDexterity = "Dexterity";
+    public const string TypeComposition = "Composition";
+    public const string TypeLuck = "Luck";
+
+
+    #endregion
 }
 

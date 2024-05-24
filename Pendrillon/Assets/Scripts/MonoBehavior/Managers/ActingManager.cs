@@ -23,7 +23,6 @@ namespace MonoBehavior.Managers
             Next,
         }
         
-        
         #region Attributes
         public static ActingManager Instance { get; private set; }
 
@@ -41,6 +40,9 @@ namespace MonoBehavior.Managers
         GameObject _historyBox;        // History box
         TextMeshProUGUI _historyText;
         Image _nextDialogueIndicator;
+        float _minButtonPosX = -960;
+        float _maxButtonPosX =  960;
+        float _buttonPosY =  -260;
         
     
         // Buttons
@@ -285,14 +287,17 @@ namespace MonoBehavior.Managers
             Choice choice = GameManager.Instance._story.currentChoices[index];
             Button button = Instantiate(_choiceButtonPrefab, _uiParent.transform);
             
-            Vector2 offset = new Vector2(index * (button.GetComponent<RectTransform>().sizeDelta.x + 20), 0);
-        
-            button.GetComponent<RectTransform>().position = 
-                GameManager.Instance._buttonPos + offset;
-        
-            button.GetComponentInChildren<TextMeshProUGUI>().text = 
-                GameManager.Instance._story.currentChoices[index].text;
-                
+            // Button Position
+            float t = (float) (index + 1) / (GameManager.Instance._story.currentChoices.Count + 1);
+            float xPos = Mathf.Lerp(_minButtonPosX, _maxButtonPosX, t);
+            button.GetComponent<RectTransform>().anchoredPosition= new Vector2(xPos, _buttonPosY);
+            
+            // Button Text
+            button.GetComponentInChildren<TextMeshProUGUI>().text = choice.text;
+            
+            // Button Type
+            SetButtonType(button, choice.text);
+            
             button.onClick.AddListener (delegate {
                 OnClickChoiceButton (choice);
             });
@@ -301,6 +306,43 @@ namespace MonoBehavior.Managers
             _choicesButtonList.Add(button);
             //Debug.Log($"AM.Refresh() > button.GetComponentInChildren<TextMeshProUGUI>().text:{button.GetComponentInChildren<TextMeshProUGUI>().text}");
         }
+
+        void SetButtonType(Button button, string choiceText)
+        {
+            if (choiceText.Contains(Constants.TypeCharisma))
+            {
+                Debug.Log("AM.SetButtonType > This button is Charisma");
+                
+                return;
+            }
+            if (choiceText.Contains(Constants.TypeStrength))
+            {
+                Debug.Log("AM.SetButtonType > This button is Strength");
+                
+                return;
+            }
+            if (choiceText.Contains(Constants.TypeDexterity))
+            {
+                Debug.Log("AM.SetButtonType > This button is Dexterity");
+                
+                return;
+            }
+            if (choiceText.Contains(Constants.TypeComposition))
+            {
+                Debug.Log("AM.SetButtonType > This button is Composition");
+                
+                return;
+            }
+            if (choiceText.Contains(Constants.TypeLuck))
+            {
+                Debug.Log("AM.SetButtonType > This button is Luck");
+                
+                return;
+            }
+            
+            Debug.Log("AM.SetButtonType > This button is neutral");
+        }
+        
 
         bool CheckBeginOfFight(String path)
         {
