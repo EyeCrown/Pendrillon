@@ -1,4 +1,5 @@
 // TRIAL PROPERTIES
+VAR t_audience_judgement = 0.5 // Compris entre 0 et 1
 
 // SECRET MEETING
 VAR t_1_disrespect_the_crown = false
@@ -98,3 +99,14 @@ VAR t_4_church_is_burnt = false
         }
 }
 ~ return isAccused
+
+// Audience judgment system
+=== function audience_judgement(pScore) ===
+// À recoder en faisant un vrai algo, comme l'applaudimètre
+~ t_audience_judgement += pScore
+{
+    - t_audience_judgement < 0:
+        ~ t_audience_judgement = 0
+    - t_audience_judgement > 1:
+        ~ t_audience_judgement = 1
+}

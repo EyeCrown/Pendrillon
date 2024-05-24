@@ -30,7 +30,7 @@ VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord.
     * [Concentrons-nous sur la tempête.] PLAYER: Ce n'est pas le plus important. Une telle tempête requière toute notre attention, matelot !
         #audience:applause
         VIGIE: Bien compris, cap'taine !
-#sleep:3
+- #sleep:3
     * [Baisser les voiles.]
         ~ sails_down = true
         #anim:
@@ -38,24 +38,23 @@ VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord.
         ~ harpoon_loaded = true
     * [Charger de poudre le tonneau.]
         ~ first_explosive_barrel_loaded = true
-PLAYER: Cette tempête...
+- PLAYER: Cette tempête...
     * [N'annonce rien de bon...] PLAYER: ... Est le signe annonciateur d'une terrible catastrophe, foi de capitaine !
     * [Ne nous laissera pas pour morts !] PLAYER: ... Ne vaincra pas un équipage tel que le notre, promesse de capitaine ! 
     * [Signale la présence du Léviathan.] PLAYER: ... N'est pas une tempête ordinaire : elle indique peut-être la présence de la mythique créature ! Soyez sur vos gardes, moussaillons !
-#sleep:4
+- #sleep:4
     * {sails_down == false} [Baisser les voiles.]
     * {sails_down == true} [Charger le harpon.]
     * [Charger le canon.]
     * [Amener un deuxième tonneau.]
-VIGIE: Cap'taine ! Cap'taine ! Le mouvement se rapproche !
-PLAYER : Le mouvement... se rapproche ?
+- VIGIE: Cap'taine ! Cap'taine ! Le mouvement se rapproche !
+- PLAYER : Le mouvement... se rapproche ?
     * [Que veux-tu dire ?] PLAYER: Que veux-tu dire, matelot ?
         VIGIE: Le mouvement dont je parlais : il se rapproche à toute hâte, cap'taine !
     * [Qu'il vienne, nous l'attendons !] PLAYER: Un mouvement, tu dis ? Qu'il vienne nous chercher ! Nous l'attendons !
         VIGIE : Nous n'attendrons pas longtemps, cap'taine ! Il se rapproche à toute hâte !
     * [Le mouvement... des vagues ?] PLAYER: Moussaillon, as-tu jamais connu une tempête ? Le mouvement des vagues ne se rapproche pas, il est partout !
         VIGIE: Sauf votre respect, mon cap'taine... Ce ne sont pas des vagues qui se rapprochent à toute hâte !
-#audience:discussion
 #sleep:4
 #creature_apparition
 #audience:shock
