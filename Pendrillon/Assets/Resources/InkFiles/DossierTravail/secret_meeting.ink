@@ -12,6 +12,7 @@ VAR failed_breaking_jester_crate = false
 #actor:Arle:???:ARLE
 #actor:Prompter:SOUFFLEUR
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
+#playsound:Play_AMB_SC_SecretMeeting_Ambiance
 #anim:Arle:hide
 // Start the scene
 -> start
@@ -209,82 +210,82 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
     * [Une carte, pourquoi donc ?] PLAYER: Pourquoi aurais-je besoin d'une carte, je te prie ? #anim:Player:question1
         ARLE: Vous le saurez bien assez tôt... #anim:Arle:joie2
     * [Je sais déjà aller où je veux.] PLAYER: Je n'ai nul besoin de carte. Je puis déjà aller où je le désire... #anim:Player:neutre3
-        ARLE: Prenez-là tout de même, faites-moi confiance... //ME SUIS ARRETE ICI
+        ARLE: Prenez-là tout de même, faites-moi confiance... #anim:Arle:neutre2
 ~ add_to_inventory(i_map_leviathan)
-- ARLE: Puis-je vous raconter une petite histoire, messire ?
-    * [J'adore les histoires !] PLAYER: Je t'en prie.
-    * [Fais vite.] PLAYER: Je n'ai point ton temps, presse-toi.
-    * [Hors de question.] PLAYER: 
-        ARLE: Si je ne le fais pas pour vous, messire...
-        ARLE: Je le ferai pour eux. #anim:Arle:show_audience
-- ARLE: Il était une fois... une terrible tempête. #audience:shock
-ARLE: Pas n'importe quelle tempête : celle-ci dura près d'un siècle.
-ARLE: Les océans se déchaînèrent, l'eau avala tout sur son passage...
-ARLE: Et les humains durent survivre à bord d'un grand navire, cent années durant.
-- ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poisson...
-- #anim_event:arle_rope #anim:Arle:swimming // Arle, accroché à une corde, mime un poisson qui nage
-- ARLE: Ce poisson, voyez-vous, était si gros qu'il aurait pu avaler une ville entière. #audience:surprise
-    * [Le Léviathan !] PLAYER: Le léviathan ! #audience:shock
-        ARLE: Le Léviathan, messire.
-    * [Rester silencieux.]
-- ARLE: Plus d'une fois, il manqua d'engloutir le navire des Hommes... Fort heureusement, la Déesse était pleine de ressources ! #audience:applause
-- ARLE: C'est pourquoi nous jouissons d'être en vie aujourd'hui, n'est-ce pas ? Mais cette petite histoire ne se finit pas si bien...
-    * [Pourquoi donc ?] PLAYER: Et pourquoi donc ?
-        ARLE: Pour la simple raison que la créature nage toujours dans nos océans à l'heure où nous parlons, messire...
-    * [Je sais pourquoi.] PLAYER: J'ai une idée de ce que tu vas dire...
-        ARLE: Je vous en prie, messire, concluez.
-        ** [Le Léviathan est toujours vivant.] PLAYER: Le Léviathan est toujours en vie.
-            ARLE: Précisément. Or, je ne sais pas vous, mais je me sentirais plus en sécurité s'il n'était plus de ce monde...
-        ** [Le Léviathan nous menace.] PLAYER: Le Léviathan est toujours une menace.
-            ARLE: Son existence, messire, est une menace. Un affront à la Déesse elle-même. Une abomination...
+- ARLE: Puis-je vous raconter une petite histoire, messire ? #anim:Arle:question1
+    * [J'adore les histoires !] PLAYER: Je t'en prie. #anim:Player:neutre1
+    * [Fais vite.] PLAYER: Je n'ai point ton temps, presse-toi. #anim:Player:colere1
+    * [Hors de question.] PLAYER: Non. #anim:Player:non
+        ARLE: Si je ne le fais pas pour vous, messire... #anim:Arle:neutre2
+        ARLE: Je le ferai pour eux. #anim:Arle:point_audience #audience:applause
+- ARLE: Il était une fois... une terrible tempête. #anim:Arle:neutre2 #audience:shock
+ARLE: Pas n'importe quelle tempête : celle-ci dura près d'un siècle. #anim:Arle:neutre3
+ARLE: Les océans se déchaînèrent, l'eau avala tout sur son passage... #anim:Arle:neutre2
+ARLE: Et les humains durent survivre à bord d'un grand navire, cent années durant. #anim:Arle:neutre2
+- ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poisson... #anim:Arle:neutre2
+- #anim:Arle:swimming // Arle, accroché à une corde, mime un poisson qui nage
+- ARLE: Ce poisson, voyez-vous, était si gros qu'il aurait pu avaler une ville entière. #anim:Arle:neutre3 #audience:surprise
+    * [Le Léviathan !] PLAYER: Le léviathan ! #anim:Player:surprise2 #audience:shock
+        ARLE: Le Léviathan, messire. #anim:Arle:neutre2
+    * [Rester silencieux.] PLAYER: ...
+- ARLE: Plus d'une fois, il manqua d'engloutir le navire des Hommes... Fort heureusement, la Déesse était pleine de ressources ! #anim:Arle:neutre3 #audience:applause
+- ARLE: C'est pourquoi nous jouissons d'être en vie aujourd'hui, n'est-ce pas ? Mais cette petite histoire ne se finit pas si bien... #anim:Arle:neutre2
+    * [Pourquoi donc ?] PLAYER: Et pourquoi donc ? #anim:Player:question1
+        ARLE: Pour la simple raison que la créature nage toujours dans nos océans à l'heure où nous parlons, messire... #triste1
+    * [Je sais pourquoi.] PLAYER: J'ai une idée de ce que tu vas dire... #anim:Player:neutre2
+        ARLE: Je vous en prie, messire, concluez. #anim:Player:neutre2
+        ** [Le Léviathan est toujours vivant.] PLAYER: Le Léviathan est toujours en vie. #anim:Player:neutre3
+            ARLE: Précisément. Or, je ne sais pas vous, mais je me sentirais plus en sécurité s'il n'était plus de ce monde... #anim:Arle:stress1
+        ** [Le Léviathan nous menace.] PLAYER: Le Léviathan est toujours une menace. #anim:Player:neutre2
+            ARLE: Son existence, messire, est une menace. Un affront à la Déesse elle-même. Une abomination... #anim:Arle:neutre3
 - #audience:surprise
-    * [Moi, tuer le Léviathan ?] PLAYER: Suis-je en plein rêve, ou me demandes-tu vraiment d'aller tuer le Léviathan ? #audience:laugther
-        ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse.
-    * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. #audience:laugther
-        #anim:Arle:laugh
-        ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse.
-    * [Il va falloir me payer grassement.] PLAYER: Si ton maître veut me faire courir un tel risque... Il a interêt à me payer grassement !
-- ARLE: Souvenez-vous : celui - ou celle - qui m'envoie est d'une richesse dont vous n'avez pas idée.
-    * [Annoncez-moi la somme.] PLAYER: De quelle somme parle t-on ?
-    * [Il a interêt...] PLAYER: Au vu de la mission, il ne le sera plus autant après m'avoir payé.
+    * [Moi, tuer le Léviathan ?] PLAYER: Suis-je en plein rêve, ou me demandes-tu vraiment d'aller tuer le Léviathan ? #anim:Player:question1 #audience:laugther
+        ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse. #anim:Arle:neutre2
+    * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. #audience:laughter
+        #anim:Player:laugh
+        ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse. #anim:Arle:neutre2
+    * [Il va falloir me payer grassement.] PLAYER: Si ton maître veut me faire courir un tel risque... Il a interêt à me payer grassement ! #anim:Player:neutre2
+- ARLE: Souvenez-vous : celui - ou celle - qui m'envoie est d'une richesse dont vous n'avez pas idée. #anim:Arle:neutre2
+    * [Annoncez-moi la somme.] PLAYER: De quelle somme parle t-on ? #anim:Player:neutre2
+    * [Il a interêt...] PLAYER: Au vu de la mission, il ne le sera plus autant après m'avoir payé. #anim:Player:neutre2
 - ARLE: Si vous acceptez de ramener le cœur du terrible Léviathan, mon maître vous offrira le poids de votre navire en or.
-    * [Une sacré somme.] PLAYER: Une somme qui n'est pas à prendre à la légère...
+    * [Une sacré somme.] PLAYER: Une somme qui n'est pas à prendre à la légère... #anim:Player:joie2
     * [(Négocier) Mon navire est léger. {t(CHAR, -20)}]
         {sc(CHAR, -20): -> negociate_S | -> negociate_F} 
-            *** (negociate_S) PLAYER: Mon navire est fait d'un bois très léger, voyez-vous...
-                ARLE: Vous êtes dur en affaire, messire. Alors disons le double !
-            *** (negociate_F) PLAYER: Mon navire, voyez-vous... est au régime. Il pèse de moins en mois et...
-                ARLE: Messire, ces simagrées ne vous honorent pas. Notre position est ferme, j'en ai peur.
-- ARLE: Qu'en dites-vous, messire ? Ramenez-nous le cœur de l'immonde Léviathan, sinon pour la gloire ou le service rendu à la population, du moins pour la fortune. Affaire conclue ?
-- ARLE: Ramenez-nous le cœur de l'immonde Léviathan, sinon pour la gloire, pour l'interêt de la Couronne.
-    * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la Couronne qui t'envoie ?
-        -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ?
-            ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour Elle !
+            *** (negociate_S) PLAYER: Mon navire est fait d'un bois très léger, voyez-vous... #anim:Player:neutre3
+                ARLE: Vous êtes dur en affaire, messire. Alors disons le double ! #anim:Arle:colere2
+            *** (negociate_F) PLAYER: Mon navire, voyez-vous... est au régime. Il pèse de moins en mois et... #anim:Player:stress2
+                ARLE: Messire, ces simagrées ne vous honorent pas. Notre position est ferme, j'en ai peur. #anim:Arle:deception1
+- ARLE: Qu'en dites-vous, messire ? Ramenez-nous le cœur de l'immonde Léviathan, sinon pour la gloire ou le service rendu à la population, du moins pour la fortune. Affaire conclue ? #anim:Arle:question1
+- ARLE: Ramenez-nous le cœur de l'immonde Léviathan, sinon pour la gloire, pour l'interêt de la Couronne. #anim:Arle:neutre2
+    * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la Couronne qui t'envoie ? #anim:Player:question1
+        -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:joie1
+            ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour Elle ! #anim:Player:neutre3
                 ~ trial(t_1_respect_the_crown)
-            ** [La Reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence.
+            ** [La Reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence. #anim:Player:neutre3
                 ~ trial(t_1_disrespect_the_crown)
-                ARLE: Ces petites rimes, messire, pourraient vous coûter cher.
-    * [Pour la Reine Constance ?] PLAYER: Est-ce la Reine elle-même qui demande mon renfort ?
-        ARLE: Nulle demande ne saurait provenir de la bouche de la Reine, messire. Seulement des ordres...
+                ARLE: Ces petites rimes, messire, pourraient vous coûter cher. #anim:Arle:deception1
+    * [Pour la Reine Constance ?] PLAYER: Est-ce la Reine elle-même qui demande mon renfort ? #anim:Player:question1
+        ARLE: Nulle demande ne saurait provenir de la bouche de la Reine, messire. Seulement des ordres... #anim:Arle:neutre3
         -> to_the_crown
-    * [Crache le morceau.] PLAYER: Que veux-tu dire ? Sois franche, s'il t'est seulement possible de l'être.
-        ARLE: Aucun de nous deux n'ignore qu'une telle mission exige de grands efforts...
-        ARLE: Or, de grands efforts exigent une grande volonté. Une volonté d'aider, messire.
+    * [Crache le morceau.] PLAYER: Que veux-tu dire ? Sois franche, s'il t'est seulement possible de l'être. #anim:Player:neutre3
+        ARLE: Aucun de nous deux n'ignore qu'une telle mission exige de grands efforts... #anim:Arle:neutre2
+        ARLE: Or, de grands efforts exigent une grande volonté. Une volonté d'aider, messire. #anim:Arle:joie1
         -> to_the_crown
-- ARLE: Puis-je ajouter, messire, que vaincre le Léviathan constituerait une offrande de taille à la Déesse Elle-même.
-    * [J'en serais honoré !] PLAYER: Voilà qui éteint mes dernières hésitations.
+- ARLE: Puis-je ajouter, messire, que vaincre le Léviathan constituerait une offrande de taille à la Déesse Elle-même. #anim:Arle:neutre3
+    * [J'en serais honoré !] PLAYER: Voilà qui éteint mes dernières hésitations. #anim:Player:neutre3
         ~ trial(t_1_respect_irene)
-    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme de la dernière pluie.
-        ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix.
+    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme de la dernière pluie. #anim:Player:deception2
+        ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix. #anim:Arle:deception1
         ~ trial(t_1_disrespect_irene)
-    * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la Reine, ni pour la Déesse, mais pour mon seul profit.
+    * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la Reine, ni pour la Déesse, mais pour mon seul profit. #anim:Player:neutre2
         ~ trial(t_1_disrespect_the_crown)
         ~ trial(t_1_disrespect_irene)
         ~ trial(t_1_gold_digger)
-- ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ?
-    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur.
-    * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche...
-- #audience:ovation
+- ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question1 #playsound:VOX_Arle_lejourcommence
+    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur. #anim:Player:neutre3 #playsound:VOX_Player_celaseraitunhonneur
+    * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche... #anim:Player:neutre1 #playsound:VOX_Player_pointleloisirsoustraire
+- #audience:ovation Stop_AMB_SC_SecretMeeting_Ambiance
 - -> barge.scene_2
 
 // End the scene
