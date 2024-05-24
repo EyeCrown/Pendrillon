@@ -113,106 +113,103 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
     * [Tirer la caisse.]
         #anim:Player:pull_crate #anim:Arle:hide_surprise
         // Quand le joueur tire la caisse, le JESTER continue de la suivre pour se cacher derrière
-    * [Raisonner l'actrice.] PLAYER: Le public n'attend que ton apparition ! C'est maintenant ou jamais. #anim:Player:neutre2 #playsound:VOX_Player_lepublicnattend
-        ???: J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré.
-        ** [C'est de la paranoia.] PLAYER: À ce stade, c'est carrément de la paranoia.
-        ** [C'est de bonne guerre.] PLAYER: Peut-être bien, oui... Ça t'apprendra à me laisser seul sur scène !
+    * [Raisonner l'actrice.] PLAYER: Le public n'attend que ton apparition ! C'est maintenant ou jamais. #anim:Player:chuchote #playsound:VOX_Player_lepublicnattend
+        ???: J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré. #anim:Arle:neutre2 #playsound:VOX_Arle_jailimpressionpublic
+        ** [C'est de la paranoia.] PLAYER: À ce stade, c'est carrément de la paranoia. #anim:Player:chuchote #playsound:VOX_Player_cestparanoia
+        ** [C'est de bonne guerre.] PLAYER: Peut-être bien, oui... Ça t'apprendra à me laisser seul sur scène ! #anim:Player:chuchote #playsound:VOX_Arle_peutetreseulscene
 - // Le joueur compte
-    * [Je compte jusqu'à trois...] PLAYER: Je te préviens, je compte jusqu'à trois...
-    ** [Un...] Un...
-        *** [... deux...] ... deux...
+    * [Je compte jusqu'à trois...] PLAYER: Je te préviens, je compte jusqu'à trois... #anim:Player:chuchote #playsound:VOX_Player_jecompte0
+    ** [Un...] Un... #anim:Player:chuchote #playsound:VOX_Player_jecompte1
+        *** [... deux...] ... deux... #anim:Player:chuchote #playsound:VOX_Player_jecompte2
 - // Le joueur s'apprête à briser la caisse
     * [Briser la caisse. {t(STRE, -10)}]
-        PLAYER: ... trois !!
+        PLAYER: ... trois !! #playsound:VOX_Player_jecompte3
         {sc(CHAR, 0): -> breaking_crate_S | -> breaking_crate_F}
         ** (breaking_crate_S) #anim:Player:break_crate_success  #audience:ovation
             ~ failed_breaking_jester_crate = true
         ** (breaking_crate_F) #anim:Player:break_crate_failure  #audience:booing
-- ???: Mais qui voilà ? N'est-ce pas moi ?  #anim:Arle:charisma #audience:ovation
+- ???: Mais qui voilà ? N'est-ce pas moi ?  #anim:Arle:joie3 #playsound:VOX_Arle_maisquivoila #audience:ovation
 {
-    - failed_breaking_jester_crate == true: ???: Désirant briser cette malheureuse caisse, messire...
-        ???: ... vous n'avez abîmé que votre dignité.
+    - failed_breaking_jester_crate == true: ???: Désirant briser cette malheureuse caisse, messire... #anim:Arle:neutre3 #playsound:VOX_Arle_desirantbrisercaisse
+        ???: ... vous n'avez abîmé que votre dignité. #anim:Arle:neutre2 #playsound:VOX_Arle_abimedignite
         #sleep:2
-        ???: Sauf votre respect. #anim:Arle:bow #audience:laughter
+        ???: Sauf votre respect. #anim:Arle:bow #playsound:VOX_Arle_saufvotrerespect #audience:laughter
 }
-    * [Que faisais-tu caché ?] PLAYER: Que faisais-tu là, caché tel un rat ?
-        ???: On ne connait jamais mieux une personne qu’en l’observant quand celle-ci croit être seule.
-        ** [Me connaître ?] PLAYER: Me connaître, moi ?
-            ???: Parfaitement, messire.
-            *** [Échangeons nos noms.] PLAYER: Faisons un marché, bouffon. Je t'échange mon nom contre le tien. Qu'en dis-tu ? N'est-ce pas là une honnête transaction ?
-                ???: J'ai bien peur, messire, de posséder déjà ce que vous proposez de m'offrir...
-                ???: {p_name}, si je ne m'abuse ?
-                **** [Et à qui {p_name} a t-il l'honneur ?] PLAYER: Et avec qui ai-je le plaisir de m'entretenir ?
+    * [Que faisais-tu caché ?] PLAYER: Que faisais-tu là, caché tel un rat ? #anim:Player:question1
+        ???: On ne connait jamais mieux une personne qu’en l’observant quand celle-ci croit être seule. #anim:Arle:neutre3
+        ** [Me connaître ?] PLAYER: Me connaître, moi ? #anim:Player:surprise2
+            ???: Parfaitement, messire. #anim:Arle:neutre1
+            *** [Échangeons nos noms.] PLAYER: Faisons un marché, bouffon. Je t'échange mon nom contre le tien. Qu'en dis-tu ? N'est-ce pas là une honnête transaction ? #anim:Player:neutre3
+                ???: J'ai bien peur, messire, de posséder déjà ce que vous proposez de m'offrir... #anim:Arle:deception1
+                ???: {p_name}, si je ne m'abuse ? #anim:Arle:question1
+                **** [Et à qui {p_name} a t-il l'honneur ?] PLAYER: Et avec qui ai-je le plaisir de m'entretenir ? #anim:Player:question1
                     -> arle_presentation
-                **** [Refuses-tu d'annoncer qui tu es ?] PLAYER: Refuses-tu d'annoncer qui tu es...
-                    ***** [... vaurien ?] PLAYER: ... vaurien ?
-                        #anim:Arle:ashamed
+                **** [Refuses-tu d'annoncer qui tu es ?] PLAYER: Refuses-tu d'annoncer qui tu es... #anim:Player:neutre1
+                    ***** [... vaurien ?] PLAYER: ... vaurien ? #anim:Player:question1 #anim:Arle:triste1
+                        
                         -> arle_presentation
-                    ***** [... plaisantin ?] PLAYER: ... plaisantin ?
-                        #anim:Arle:ashamed
+                    ***** [... plaisantin ?] PLAYER: ... plaisantin ? #anim:Player:question1 #anim:Arle:triste1
+                        
                         -> arle_presentation
-                    ***** [... malandrin ?] PLAYER: ... malandrin ?
-                        #anim:Arle:ashamed
+                    ***** [... malandrin ?] PLAYER: ... malandrin ? #anim:Player:question1 #anim:Arle:triste1
+                        
                         -> arle_presentation
-        ** [C'est toi que je veux connaître.] PLAYER: La politesse exige qu'on se présente le premier.
-            ???: Me présenter ? Cela, je sais le faire, et fort bien !
-            #anim:Arle:charisma
-            --- (arle_presentation) ???: Je suis Arle, pour vous servir, messire.
-    * [Es-tu l'auteur de la lettre ?] PLAYER: Est-ce donc toi qui a écrit la lettre que j'ai reçue la veille ?
-        ???: Je sais faire bien des choses, messire...
-        ???: ... Faire la belle...
-        #anim:Arle:charisma
-        ???: ... Faire le show...
-        #anim:Arle:acrobatics
-        ???: ... Mais je ne sais point écrire !
-        ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ?
+        ** [C'est toi que je veux connaître.] PLAYER: La politesse exige qu'on se présente le premier. #anim:Player:neutre2
+            ???: Me présenter ? Cela, je sais le faire, et fort bien ! #anim:Arle:joie3
+            --- (arle_presentation) ???: Je suis Arle, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle
+    * [Es-tu l'auteur de la lettre ?] PLAYER: Est-ce donc toi qui a écrit la lettre que j'ai reçue la veille ? #anim:Player:question
+        ???: Je sais faire bien des choses, messire... #anim:Arle:joie2
+        ???: ... Faire la belle... #anim:Arle:prettypose
+        ???: ... Faire le show... #anim:Arle:acrobatics
+        ???: ... Mais je ne sais point écrire ! #anim:Arle:triste1
+        ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question
             -> arle_presentation
         ** [(Se moquer) Un plaisantin. {t(CHAR, 0)}]
             {sc(CHAR, 0): -> mock_jester_S | -> mock_jester_F} 
-            *** (mock_jester_S) Un authentique bouffon... #anim:Arle:ashamed #audience:laughter
-                ???: Bouffon est l'une de mes profession, mais ce n'est pas mon nom.
+            *** (mock_jester_S) Un authentique bouffon... #anim:Player:neutre3 #anim:Arle:triste2 #audience:laughter
+                ???: Bouffon est l'une de mes profession, mais ce n'est pas mon nom. #anim:Arle:stress1
                 -> arle_presentation
-            *** (mock_jester_F) Un authentique bouffon... #anim:Arle:charisma
-                ???: Je me plais à inspirer le rire, le bonheur... la fécilicité ! Vous plaisez-vous à inspirer la pitié ? #audience:laugther #anim:Player:ashamed
+            *** (mock_jester_F) Un authentique bouffon... #anim:Player:stress2 #anim:Arle:joie2
+                ???: Je me plais à inspirer le rire, le bonheur... la félicité ! Vous plaisez-vous à inspirer la pitié ? #anim:Arle:joie3 #audience:laugther #anim:Player:triste2
                 -> arle_presentation
 - #character_presentation:Arle
-    * [Qui t'envoie ?] PLAYER: Je présume que tu es au service de quelqu'un. Qui donc ?
-        ARLE: Je suis au service, en cuisine et à la plonge, messire. Là où on me somme d'être. Quant à qui me commande...
-            ** [J'attends.] PLAYER: Alors ?
-            ** [Qui ?] PLAYER: Qui ?
-            -- ARLE: Si je ne puis vous offrir son identité, je me doit tout de même de vous dire qu'il - ou elle - est très riche.
-                *** [C'est bon à savoir.] PLAYER: C'est là le principal.
-                *** [Mais encore ?] PLAYER: C'est un bon début, mais où cela va t-il nous mener ?
-    * [Pourquoi tant de mystère ?] PLAYER: La lettre non signée, le rendez-vous secret... Pourquoi tant de mystères ?
-    * [Que me veut-on ?] PLAYER: Ce rendez-vous commence sous de mauvais augures. Énonce-moi prestement ce qu'on attend de moi.
+    * [Qui t'envoie ?] PLAYER: Je présume que tu es au service de quelqu'un. Qui donc ? #anim:Player:question
+        ARLE: Je suis au service, en cuisine et à la plonge, messire. Là où on me somme d'être. Quant à qui me commande... #anim:Arle:Bow
+            ** [J'attends.] PLAYER: Alors ? #anim:Player:question1
+            ** [Qui ?] PLAYER: Qui ? #anim:Player:question1
+            -- ARLE: Si je ne puis vous offrir son identité, je me dois tout de même de vous dire qu'il - ou elle - est très riche. #anim:Arle:neutre2
+                *** [C'est bon à savoir.] PLAYER: C'est là le principal. #anim:Player:neutre2
+                *** [Mais encore ?] PLAYER: C'est un bon début, mais où cela va t-il nous mener ? #anim:Player:question1
+    * [Pourquoi tant de mystère ?] PLAYER: La lettre non signée, le rendez-vous secret... Pourquoi tant de mystères ? #anim:Player:question1
+    * [Que me veut-on ?] PLAYER: Ce rendez-vous commence sous de mauvais augures. Énonce-moi prestement ce qu'on attend de moi. #anim:Player:question1
 - -> the_mission
 
 = the_mission
-- ARLE: J'en viens à la raison de cette convocation. La personne qui m'envoie souhaiterais vous offrir un travail. Disons plutôt : une mission.
-    * [Une mission ?]
+- ARLE: J'en viens à la raison de cette convocation. La personne qui m'envoie souhaiterais vous offrir un travail. Disons plutôt : une mission. #anim:Arle:neutre2 #playsound:VOX_Arle_raisonconvocation
+    * [Une mission ?] 
     * [Continue, plaisantin.]
     * [Quelle mission ?]
-- PLAYER: Quelle est donc cette mission ?
-ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #audience:surprise
-    * [Hors de question.] PLAYER: Je t'arrête tout de suite, ôter une vie n'est pas dans mes pratiques. Je suis un marin. Tout juste suis-je bon à tuer un poisson...
-        ARLE: Il se trouve justement que c'est un poisson que l'on souhaiterait voir mort. Un gros poisson.
+- PLAYER: Quelle est donc cette mission ? #anim:Player:question1 #playsound:VOX_Player_quelleestcettemission
+ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #anim:Arle:question1 #playsound:VOX_Arle_quelrapporttuer #anim:Player:surprise2 #audience:surprise
+    * [Hors de question.] PLAYER: Je t'arrête tout de suite, ôter une vie n'est pas dans mes pratiques. Je suis un marin. Tout juste suis-je bon à tuer un poisson... #anim:Player:non
+        ARLE: Il se trouve justement que c'est un poisson que l'on souhaiterait voir mort. Un gros poisson. #anim:Arle:joie2
         -- (big_fish)
-        ** [Un gros poisson ?] PLAYER : Un gros poisson tu dis ? Gros comment ?
-            ARLE: Je n'ai pas les bras assez longs, messire. Gros comme le dédommagement que mon maître est prêt à vous offrir pour l'abattre.
-        ** [Assez de mystère !] PLAYER: Il suffit ! J'en ai assez de tout ce mystère : parle maintenant ou permet-moi d'aller me recoucher.
-            ARLE : Ce poisson est un très gros poisson, messire. Aussi gros que le dédommagement que mon maître est prêt à vous offrir pour l'abattre.
-    * [Sans soucis.] PLAYER : Je n'y vois aucun problème. Dis-m'en plus : qui voulez-vous voir périr ?
-            ARLE: Un poisson, messire. Un gros poisson.
+        ** [Un gros poisson ?] PLAYER : Un gros poisson tu dis ? Gros comment ? #anim:Player:question1
+            ARLE: Je n'ai pas les bras assez longs, messire. Gros comme le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
+        ** [Assez de mystère !] PLAYER: Il suffit ! J'en ai assez de tout ce mystère : parle maintenant ou permets-moi d'aller me recoucher. #anim:Player:colere2
+            ARLE : Ce poisson est un très gros poisson, messire. Aussi gros que le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
+    * [Sans soucis.] PLAYER : Je n'y vois aucun problème. Dis-m'en plus : qui voulez-vous voir périr ? #anim:Player:neutre3
+            ARLE: Un poisson, messire. Un gros poisson. #anim:Arle:neutre2
             -> big_fish
-- ARLE: Prenez ceci, voulez-vous ? #anim:Arle:give_map
-    * [Qu'est-ce que c'est ?] PLAYER: Qu'est-ce donc ?
-- ARLE: Un marin tel que vous ne reconnait-il pas une carte quand il en voit une, messire ?
-    * [Quel endroit indique t-elle ?] PLAYER: Quel est l'endroit qu'elle indique ?
-        ARLE: En voilà une question intéressante...
-    * [Une carte, pourquoi donc ?] PLAYER: Pourquoi aurais-je besoin d'une carte, je te prie ?
-        ARLE: Vous le saurez bien assez tôt...
-    * [Je sais déjà aller où je veux.] PLAYER: Je n'ai nul besoin de carte. Je puis déjà aller où je le désire...
-        ARLE: Prenez-là tout de même, faites-moi confiance...
+- ARLE: Prenez ceci, voulez-vous ? #anim:Arle:give_map #playsound:VOX_Arle_prenezceci
+    * [Qu'est-ce que c'est ?] PLAYER: Qu'est-ce donc ? #anim:Player:question1
+- ARLE: Un marin tel que vous ne reconnait-il pas une carte quand il en voit une, messire ? #anim:Arle:bow #audience:laughter
+    * [Quel endroit indique t-elle ?] PLAYER: Quel est l'endroit qu'elle indique ? #anim:Player:question1
+        ARLE: En voilà une question intéressante... #anim:Arle:joie2
+    * [Une carte, pourquoi donc ?] PLAYER: Pourquoi aurais-je besoin d'une carte, je te prie ? #anim:Player:question1
+        ARLE: Vous le saurez bien assez tôt... #anim:Arle:joie2
+    * [Je sais déjà aller où je veux.] PLAYER: Je n'ai nul besoin de carte. Je puis déjà aller où je le désire... #anim:Player:neutre3
+        ARLE: Prenez-là tout de même, faites-moi confiance... //ME SUIS ARRETE ICI
 ~ add_to_inventory(i_map_leviathan)
 - ARLE: Puis-je vous raconter une petite histoire, messire ?
     * [J'adore les histoires !] PLAYER: Je t'en prie.
