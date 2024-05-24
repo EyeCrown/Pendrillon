@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8025132340031262322}
   - component: {fileID: 5434057572315899867}
   m_Layer: 5
-  m_Name: Dexterite
+  m_Name: Dexterity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 7636455290932931235}
   - component: {fileID: 8125816680229737292}
   m_Layer: 5
-  m_Name: Charisme
+  m_Name: Charisma
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -162,7 +162,7 @@ GameObject:
   - component: {fileID: 9065428767675592814}
   - component: {fileID: 3783271272466792267}
   m_Layer: 5
-  m_Name: Constitution
+  m_Name: Composition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -237,12 +237,12 @@ GameObject:
   - component: {fileID: 2292722181959663736}
   - component: {fileID: 1845314969191256561}
   m_Layer: 5
-  m_Name: Force
+  m_Name: Strength
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5161359299866189388
 RectTransform:
   m_ObjectHideFlags: 0
@@ -329,8 +329,8 @@ RectTransform:
   m_GameObject: {fileID: 6482679349071614965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.75, y: 0.75, z: 0.75}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4742826851310102784}
   - {fileID: 5161359299866189388}
@@ -339,8 +339,8 @@ RectTransform:
   - {fileID: 2152590456312053770}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 313, y: 165}
   m_SizeDelta: {x: 626, y: 330}
   m_Pivot: {x: 0.5, y: 0.5}

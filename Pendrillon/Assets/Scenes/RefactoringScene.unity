@@ -746,9 +746,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _choiceButtonPrefab: {fileID: 839975030731081523, guid: cb5dd4f7c7d745d45b75a7510e19f50f,
     type: 3}
-  _choiceButtonLeftPrefab: {fileID: 0}
-  _choiceButtonMiddlePrefab: {fileID: 0}
-  _choiceButtonRightPrefab: {fileID: 0}
+  _choiceButtonLeftPrefab: {fileID: 839975030731081523, guid: 71fd27107186b4f42836abf52ef0c23e,
+    type: 3}
+  _choiceButtonMiddlePrefab: {fileID: 839975030731081523, guid: 83cccf6628e2e6b4aaa1558fdc7c563b,
+    type: 3}
+  _choiceButtonRightPrefab: {fileID: 839975030731081523, guid: 97e2d05a82921cb47af86390aaabffb2,
+    type: 3}
   _choicesButtonList: []
   _wwiseChoiceDialogueButton:
     idInternal: 0
@@ -6651,6 +6654,10 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: 2929f85e-8f96-49de-9c12-73131a3c6a92
     m_ActionName: Player/Interact[/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2ab8a8d6-3b24-4abc-a865-4090bc44ef74
+    m_ActionName: Player/History[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player

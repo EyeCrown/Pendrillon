@@ -190,8 +190,8 @@ namespace MonoBehavior.Managers
                 if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
                     return;
                 
-                // if (_currentDialogue == String.Empty)
-                //     Refresh();
+                if (_currentDialogue == String.Empty)
+                    Refresh();
                 //savedJsonStack.Push(GameManager.Instance._story.state.ToJson());
                 
                 HandleTags();
@@ -338,31 +338,35 @@ namespace MonoBehavior.Managers
             if (choiceText.Contains(Constants.TypeCharisma))
             {
                 Debug.Log("AM.SetButtonType > This button is Charisma");
-                
+                button.transform.Find(Constants.TypeCharisma).gameObject.SetActive(true);
                 return;
             }
             if (choiceText.Contains(Constants.TypeStrength))
             {
                 Debug.Log("AM.SetButtonType > This button is Strength");
-                
+                button.transform.Find(Constants.TypeStrength).gameObject.SetActive(true);
+
                 return;
             }
             if (choiceText.Contains(Constants.TypeDexterity))
             {
                 Debug.Log("AM.SetButtonType > This button is Dexterity");
-                
+                button.transform.Find(Constants.TypeDexterity).gameObject.SetActive(true);
+
                 return;
             }
             if (choiceText.Contains(Constants.TypeComposition))
             {
                 Debug.Log("AM.SetButtonType > This button is Composition");
-                
+                button.transform.Find(Constants.TypeComposition).gameObject.SetActive(true);
+
                 return;
             }
             if (choiceText.Contains(Constants.TypeLuck))
             {
                 Debug.Log("AM.SetButtonType > This button is Luck");
-                
+                //button.transform.Find(Constants.TypeLuck).gameObject.SetActive(true);
+
                 return;
             }
             

@@ -44,12 +44,12 @@ VAR player_is_hidden = false // Define if the player is hidden or not
             ???: (Se retient de rire) Ne le prenez pas mal, mais... vous n'êtes pas très convainquant.
     
 - ???: Et maintenant ? Qu'avez-vous en tête ?
-    * [Fouiller la caisse du fond. {t(LUCK, 0)}] #playsound:crate_search
+    * [Fouiller la caisse du fond. {t(LUCK, 0)}] 
     {sc(LUCK, 0): -> crate_back_search_S | -> crate_back_search_F}
-        ** (crate_back_search_S) PLAYER: Du poisson pourri... J'empeste ! Mais j'ai trouvé quelques pièces. #playsound:gold_coins
+        ** (crate_back_search_S) PLAYER: Du poisson pourri... J'empeste ! Mais j'ai trouvé quelques pièces. #playsound:crate_search #box #playsound:gold_coins
             ~ p_gold += 3
             ~ player_is_stinky = true
-        ** (crate_back_search_F) PLAYER: Du poisson pourri... J'empeste !
+        ** (crate_back_search_F) PLAYER: Du poisson pourri... J'empeste ! #playsound:crate_search #box 
             ~ player_is_stinky = true
     * [Fouiller le tonneau. {t(LUCK, 0)}]
     {sc(LUCK, 0): -> barrel_search_S | -> barrel_search_F}
