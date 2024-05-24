@@ -596,6 +596,20 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Stop_AMB_SC_SecretMeeting_Ambiance" ID="{9739BD0A-9C40-4F55-955F-3207A4D222F2}">
+									<ChildrenList>
+										<Action Name="" ID="{C32BB7D0-3919-42B9-9FA4-CAFE40325172}" ShortID="1057666910">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="AudienceReacts" ID="{E60B6003-B695-4D89-822D-2BBE5D00CE02}" ShortID="916491699">
@@ -784,6 +798,20 @@
 								<Event Name="Play_AMB_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}">
 									<ChildrenList>
 										<Action Name="" ID="{9F5B447C-BF1D-43B1-AC3A-C05D4CAC2010}" ShortID="620740651">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_AMB_SC_SecretMeeting_Ambiance" ID="{B658335D-9203-4B24-A2F3-C383A99F191C}">
+									<ChildrenList>
+										<Action Name="" ID="{D02380E3-5611-4F03-8EB4-F97F14D2A912}" ShortID="789780946">
 											<PropertyList>
 												<Property Name="FadeTime" Type="Real64" Value="1"/>
 											</PropertyList>
