@@ -21,5 +21,5 @@ INCLUDE epilogue.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
--> barge.scene_1
+-> barge
 //-> tribunal_1

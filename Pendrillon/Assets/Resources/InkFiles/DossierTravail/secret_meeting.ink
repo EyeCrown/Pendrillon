@@ -14,11 +14,14 @@ VAR failed_breaking_jester_crate = false
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
 #playsound:Play_AMB_SC_SecretMeeting_Ambiance
 #anim:Arle:hide
+
+#set:cale
 // Start the scene
 -> start
 
 // Start of the scene
 = start
+- ...
 // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
 - #sleep:6 #audience:applause
@@ -86,7 +89,7 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
             -> failure_entertaining_audience
     * [Faire des pompes. {t(STRE, -10)}]
         {sc(CHAR, 0): -> do_pushups_S | -> do_pushups_F}
-        ** (do_pushups_S) #anim:Player:pompe_success #audience:applause
+        ** (do_pushups_S)s #anim:Player:pompe_success #audience:applause
             {
                 - threat_jester == true: SOUFFLEUR: Bien joué ! J'ai l'impression que tu comptes pas mal sur tes muscles... Mais qui suis-je pour juger, hein ? Continue comme ça ! #anim:Souffleur:joie2
             }

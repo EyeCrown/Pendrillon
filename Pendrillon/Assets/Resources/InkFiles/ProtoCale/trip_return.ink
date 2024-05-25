@@ -15,10 +15,17 @@ VAR player_is_hidden = false // Define if the player is hidden or not
 // Scene
 === trip_return ===
 #actor:Player:PLAYER
-#actor:Sireine:???
+#actor:Naida:???
 #actor:Arle:ÉPIEUR
 #actor:Marcello:MARCELLO
 #actor:Rudolf:RUDOLF
+
+#position:Player:8:8
+#position:Naida:8:9
+#position:Arle:8:10
+#position:Marcello:5:8
+#position:Capucine:7:8
+
 -> start
 
 = start
