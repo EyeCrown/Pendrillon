@@ -7,7 +7,7 @@ public static class Constants
 
     public const string TagActor        = "actor";         // #actor:Character:Name1:Name2:...:NameN   Character: nom du personnage    Name1: 1er surnom     Name2: 2ème surnom  ...  NameN: Nième surnom   
     
-    public const string TagMove         = "move";           // #move:Character:X:Y          Character: nom du personnage    X: position en X    Y: position en Y
+    public const string TagMove         = "move";           // #move:Character:X:Y:Speed?    Character: nom du personnage    X: position en X    Y: position en Y   Speed: (Optionnel) vitesse de déplacement (voir MovementSpeed region)
     public const string TagPlaySound    = "playsound";      // #playsound:Sound             Sound: son à jouer
     public const string TagAnim         = "anim";           // #anim:Character:Animation    Character: nom du personnage    Animation: animation à jouer
     public const string TagWait         = "wait";           // #wait:Time           Time: temps d'attente en secondes
@@ -36,7 +36,7 @@ public static class Constants
 
     #region Characters
 
-    public const string PrompterName = "souffleur";
+    public const string PrompterName = "Souffleur";
 
     #endregion
 
@@ -53,6 +53,23 @@ public static class Constants
     public const string StageFront      = "front";
     public const string StageGarden     = "left";
     public const string StageCourtyard  = "right";
+
+    #endregion
+
+    #region Stage
+
+    public const string FirstSetOnStage = "barge";
+
+    #endregion
+
+    #region Button types
+
+    public const string TypeCharisma = "Charisma";
+    public const string TypeStrength = "Strength";
+    public const string TypeDexterity = "Dexterity";
+    public const string TypeComposition = "Composition";
+    public const string TypeLuck = "Luck";
+
 
     #endregion
 }

@@ -596,6 +596,20 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Stop_AMB_SC_SecretMeeting_Ambiance" ID="{9739BD0A-9C40-4F55-955F-3207A4D222F2}">
+									<ChildrenList>
+										<Action Name="" ID="{C32BB7D0-3919-42B9-9FA4-CAFE40325172}" ShortID="1057666910">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="AudienceReacts" ID="{E60B6003-B695-4D89-822D-2BBE5D00CE02}" ShortID="916491699">
@@ -784,6 +798,20 @@
 								<Event Name="Play_AMB_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}">
 									<ChildrenList>
 										<Action Name="" ID="{9F5B447C-BF1D-43B1-AC3A-C05D4CAC2010}" ShortID="620740651">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_AMB_SC_SecretMeeting_Ambiance" ID="{B658335D-9203-4B24-A2F3-C383A99F191C}">
+									<ChildrenList>
+										<Action Name="" ID="{D02380E3-5611-4F03-8EB4-F97F14D2A912}" ShortID="789780946">
 											<PropertyList>
 												<Property Name="FadeTime" Type="Real64" Value="1"/>
 											</PropertyList>
@@ -1150,6 +1178,1187 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="FullText" ID="{D379FA9D-1349-43E0-B1BB-12F867206AD1}" ShortID="474508692">
+							<ChildrenList>
+								<Event Name="VOX_Ferryman_voistuporte2" ID="{84FF04EF-6EAB-4C13-B276-98D432DF9525}">
+									<ChildrenList>
+										<Action Name="" ID="{740DCE55-5A3C-451F-B204-5B2EEF42CCDF}" ShortID="111157797">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_voistuporte2" ID="{2E40F452-717C-425E-AEB2-F6BD1E65DAF4}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_tudevais" ID="{EF9120A0-150A-44BC-9284-DBA6923630B7}">
+									<ChildrenList>
+										<Action Name="" ID="{FF801212-EAB0-44D0-8347-401D7525F52B}" ShortID="877916797">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_tudevais" ID="{28C9B423-BE7E-4ECF-8B57-C353BEA739F0}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_quoidonc" ID="{9604B13C-A717-4944-8150-EC4EF409E4A8}">
+									<ChildrenList>
+										<Action Name="" ID="{FC64C70D-AB9D-45AD-BB6D-277549542949}" ShortID="54268596">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_quoidonc" ID="{5321FA17-7224-4A3C-A8FA-66DAECD0CD3B}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_silesportes" ID="{9D7C7CAD-7C59-48B8-B301-404DF7103772}">
+									<ChildrenList>
+										<Action Name="" ID="{515120C5-3D23-480F-AA54-8629113A8C19}" ShortID="923783046">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_silesportes" ID="{E075E92F-5FD3-49BB-9498-B3588F30E6D4}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_tonregard" ID="{B3A23C3D-6FEF-4DA3-9A35-BB6C197F28ED}">
+									<ChildrenList>
+										<Action Name="" ID="{F4C1D53C-B849-4AF1-AA4B-B53D23033AAE}" ShortID="246364462">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_tonregard" ID="{32DE70EC-DD13-4C00-9A4E-2E0BA3871F1C}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_toutdememe" ID="{24853360-1F6F-428A-B30B-1B65AC0D4AA4}">
+									<ChildrenList>
+										<Action Name="" ID="{3DFAE16D-64E9-4970-8CE7-D400254A9342}" ShortID="127872480">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_toutdememe" ID="{B7285C1A-B633-4EF5-8894-984A15650CD9}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_pasbavard" ID="{B41625FF-F5D5-468D-B6EB-8CE3B684F294}">
+									<ChildrenList>
+										<Action Name="" ID="{6CDA7132-ABF6-40E6-BD9B-49FD0F9E9C33}" ShortID="652552934">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_pasbavard" ID="{943B0E83-4DB9-4B47-8FBE-E8DB3890D25D}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_touslesgardes" ID="{17A4AF73-BC32-493B-A1E5-0CA021FDEECB}">
+									<ChildrenList>
+										<Action Name="" ID="{E49F4485-71A7-477F-BB61-1509795EA7E2}" ShortID="132879085">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_touslesgardes" ID="{B905E29E-C850-49C5-8D4B-17B0FB391BDA}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_trouveunendroit" ID="{23B261C5-416C-40C8-9AE2-5FAC7F11F038}">
+									<ChildrenList>
+										<Action Name="" ID="{00A13A1C-D984-4915-A852-7E8B3418C2FA}" ShortID="731028992">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_trouveunendroit" ID="{C17EB90F-87B0-47F6-8E2E-EDF24FBAD373}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_pluscharges" ID="{88F5221D-0163-49C9-8FCC-C7D9BE528F8B}">
+									<ChildrenList>
+										<Action Name="" ID="{95CAAD82-D537-4D41-BE11-718C0183CA5C}" ShortID="405908399">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_pluscharges" ID="{86E23C85-001E-4AFA-ADED-BB75ADA4031F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_pourlafortune" ID="{E81B34C2-0DDC-499C-84E0-30647CE370B4}">
+									<ChildrenList>
+										<Action Name="" ID="{97888096-590C-4225-8DB4-8EEFAE72F17B}" ShortID="731618847">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_pourlafortune" ID="{7623D9FE-8A29-4C50-8E55-3D7CDF0A1F99}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_plusnombreux" ID="{7CBC6E16-3788-4294-AFA7-495D68F9B2CE}">
+									<ChildrenList>
+										<Action Name="" ID="{57AE0914-5FD5-4437-B52E-946C391F4D45}" ShortID="170591886">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_plusnombreux" ID="{F07D03FF-690D-4F72-BA57-3FDDC11A034C}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_unemauvaisesurprise" ID="{239ADEC7-637F-47D6-9E81-E1D84B5E9B6B}">
+									<ChildrenList>
+										<Action Name="" ID="{8CE49BA6-A0FB-4C6E-BDA9-479B5FE9DA55}" ShortID="404399117">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_unemauvaisesurprise" ID="{B4B949D9-AC67-422C-A3DC-FB8650A1EA3C}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_NPC_Souffleur_rafraichirmemoire" ID="{8608C61F-5A40-4982-B909-F39A06257576}">
+									<ChildrenList>
+										<Action Name="" ID="{FC87848C-DD26-40A4-9AE2-FC177CFB0B23}" ShortID="135469686">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Souffleur_rafraichirmemoire" ID="{D115E993-2484-49BF-80D5-F1714F2544A5}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_pourlagloire" ID="{58D86CE0-CD5D-4942-8C1B-85C2BF2B2265}">
+									<ChildrenList>
+										<Action Name="" ID="{565E86A3-A5F3-4BA7-9825-C764C0E32840}" ShortID="694138872">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_pourlagloire" ID="{8C44D7F8-179F-4F31-BE46-C07DA8343244}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_quinousycontraint" ID="{6D5CEC97-A601-4695-A17F-8D22600291EE}">
+									<ChildrenList>
+										<Action Name="" ID="{CF31CD90-4C29-4E4C-9EE2-91FD7DD8A20E}" ShortID="81047281">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_quinousycontraint" ID="{0C73B300-544A-4B0B-9726-1E2AB1A6F4CD}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_transitionsecretmeeting" ID="{81149F35-6EE4-48F1-B14C-F733718D9492}">
+									<ChildrenList>
+										<Action Name="" ID="{21EF00B8-C934-4F5F-8C20-51673AE63DD0}" ShortID="803428659">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_transitionsecretmeeting" ID="{1BE1A97C-541F-4D4E-A118-7B7E3428877B}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_pourlaventure" ID="{322DD2F9-1D01-46F6-AB31-8E6F46AD338C}">
+									<ChildrenList>
+										<Action Name="" ID="{5DA2F530-EE60-4CB7-9FD8-58EE94DF197C}" ShortID="716061872">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_pourlaventure" ID="{C75CF05F-F68C-45F5-9563-5EF9FB0D2B4B}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_pasmauvaisecompagnie" ID="{5F15BD18-65A1-4B5A-A076-A19C7D28CF61}">
+									<ChildrenList>
+										<Action Name="" ID="{4343E79D-3912-4683-8F6A-E77649A6911C}" ShortID="765608715">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_pasmauvaisecompagnie" ID="{15A12A45-D477-4182-9720-5EE302556295}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_oublietexeteQ" ID="{3F4CCE13-E112-48F5-9988-047D26A8C521}">
+									<ChildrenList>
+										<Action Name="" ID="{C83C325E-610C-4B95-80DB-7987F2202706}" ShortID="48002280">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_oublietexeteQ" ID="{1DFF7945-BDF5-4FE1-9707-98A10854087C}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_quevapassemenagepas" ID="{B7C82B8A-6F8D-4D6B-9A82-6674E0967C61}">
+									<ChildrenList>
+										<Action Name="" ID="{1FDD8571-5CCE-44D7-8DB5-92FEAFD240DF}" ShortID="903691249">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_quevapassemenagepas" ID="{AF77344E-E5E8-4264-80DD-55800E96FE60}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_unjour" ID="{18871698-5315-439B-BE8A-6BAFA407F963}">
+									<ChildrenList>
+										<Action Name="" ID="{C7FECB01-9142-45E8-8686-AB6D39B9CEB6}" ShortID="184918023">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_unjour" ID="{376C1619-6580-4100-9CAC-39C3B9C60A71}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_voyagedure1an" ID="{65AF4969-DFFD-4964-A264-FC25DF0FE6D0}">
+									<ChildrenList>
+										<Action Name="" ID="{926405DD-2206-48F3-8F73-E7F42C2B5570}" ShortID="815382538">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_voyagedure1an" ID="{B207BBBD-5259-489B-A851-50F43AB79B42}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_penseetraverseesprit" ID="{DEE334B6-CF60-4875-8608-CEC2BBFB1C6D}">
+									<ChildrenList>
+										<Action Name="" ID="{E0D9FB97-7733-477C-9DC2-AEEAF90ABB3D}" ShortID="586546923">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_penseetraverseesprit" ID="{0B2FFDB7-2B73-4069-93F8-B6C7D1F24B18}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_pardondevoirs" ID="{4B21BF9E-827B-47BE-BE22-B7C7F85AB098}">
+									<ChildrenList>
+										<Action Name="" ID="{FF59527D-D288-4336-B04C-9A11C8B03D80}" ShortID="587409625">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_pardondevoirs" ID="{0BB7E8AA-88C8-4E40-A8A4-981AF09EB58A}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_jaisipeur" ID="{E94C481F-74E5-4B69-916D-435FF86AA5A8}">
+									<ChildrenList>
+										<Action Name="" ID="{4299C680-307A-48EC-972A-77FE7BC5527A}" ShortID="132681536">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_jaisipeur" ID="{20AA214D-E102-4678-8C7B-277EAEC35D21}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_jamaisame" ID="{B5938C63-A080-4A21-BCEB-4148BC1E1C83}">
+									<ChildrenList>
+										<Action Name="" ID="{F51D00A4-1AB1-4E6B-803A-8BEA8EEF108A}" ShortID="785191069">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_jamaisame" ID="{8223EE84-EDA5-4CF1-AD2F-3B93D26111ED}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_lalettreecriture" ID="{1E904B9C-E072-4F76-8976-CC252C8D88CA}">
+									<ChildrenList>
+										<Action Name="" ID="{427C0629-C2DE-4B7D-B155-5488093B9035}" ShortID="1071294995">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_lalettreecriture" ID="{F3B420C5-4B5E-4A91-B447-67B4B0E261F8}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_meretoujoursdit" ID="{C2457D26-203B-4FA4-B2E9-254D43017988}">
+									<ChildrenList>
+										<Action Name="" ID="{74E32676-2864-4EEE-AC38-8F1AAA374487}" ShortID="173076036">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_meretoujoursdit" ID="{A4F7E72C-DDFA-4717-9859-B7BD75D78418}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_Merlin" ID="{0FB96714-525A-4512-9672-01014D9DF789}">
+									<ChildrenList>
+										<Action Name="" ID="{1434678D-4F0F-46CA-9F41-CD87527EF2DA}" ShortID="993596067">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_Merlin" ID="{CB94E8AF-97D5-427B-A099-FAD3FB598806}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_ilestvraitalent" ID="{DB761544-005B-4514-AAD4-2EA83539C1FD}">
+									<ChildrenList>
+										<Action Name="" ID="{9A78346A-9C99-4C20-99EF-36E62CBF03D5}" ShortID="259304029">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_ilestvraitalent" ID="{161EBA95-0B3B-4692-8B39-B0844D2BF41A}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_Octave" ID="{F0B5DE8D-456D-4EFC-AE45-911272827F96}">
+									<ChildrenList>
+										<Action Name="" ID="{D48A173C-D7C0-4AEE-9CBB-0A25F135508F}" ShortID="270177576">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_Octave" ID="{8ED16C62-ADF3-469C-9DB6-1D61F8409100}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_certainemaniere" ID="{CC6D8FF5-BA39-445B-AE82-B59269478751}">
+									<ChildrenList>
+										<Action Name="" ID="{0C7F9178-FE59-4FCA-B6CD-170A47A4797F}" ShortID="239976987">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_certainemaniere" ID="{F81C0BFC-8F92-40F8-AF15-93CE801A6603}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_amonreveil_2" ID="{6530A5B7-7175-4783-AA43-36AE38D41794}">
+									<ChildrenList>
+										<Action Name="" ID="{EE3DACF9-B5A2-4419-BB15-C502EC7B45DB}" ShortID="613949355">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_amonreveil_2" ID="{A444439C-1A0F-4D4A-AA9F-68CB1CADBC95}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_faisonsdemitour" ID="{14E82650-3B25-46E3-B012-12664C652E0B}">
+									<ChildrenList>
+										<Action Name="" ID="{692EE579-D911-4611-9439-5BFF18C033C7}" ShortID="221013096">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_faisonsdemitour" ID="{130D585F-0A03-4940-9F28-DC5FBEDC6CDB}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_lalettredestinataireMerlin" ID="{0C06BC53-9D6D-4739-AEA0-D4C4A7A61C1C}">
+									<ChildrenList>
+										<Action Name="" ID="{1D1C75F2-2D7B-49A5-88E0-67AD906078A4}" ShortID="884926011">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_lalettredestinataireMerlin" ID="{C7CCB306-BC0F-4683-93D5-DB0287741196}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_voyagecaptivant2" ID="{34E8FBE3-30D5-427D-B5B2-5BFB30DC6D8D}">
+									<ChildrenList>
+										<Action Name="" ID="{FB275725-CD1C-43AF-895A-FCBC419FA3B9}" ShortID="183415509">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_voyagecaptivant2" ID="{60A6CEB2-D65B-49E1-B5EF-DAAF736EF9AC}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_lalettreodeur" ID="{D5FE3E5E-2D61-4821-AEF8-3695618D397B}">
+									<ChildrenList>
+										<Action Name="" ID="{006720AD-DECB-4472-88C4-0E8C56EDA389}" ShortID="728204413">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_lalettreodeur" ID="{FDAEADAC-A1BB-4D80-B8BB-55649AFDF8F7}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_oumeneporte" ID="{DA82A247-8B44-47F8-875A-9883BFF0D308}">
+									<ChildrenList>
+										<Action Name="" ID="{DF37AF34-D2A8-4244-9F93-F40A9C6749D1}" ShortID="790974919">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_oumeneporte" ID="{2AB55142-DBF7-4CE5-89C2-DED1E9D3F308}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_Ambroise" ID="{0E67319D-B314-480E-8DB4-D807D842DC5C}">
+									<ChildrenList>
+										<Action Name="" ID="{A8F69E40-46C1-4B75-B732-C3C3EB1CA65E}" ShortID="1053673931">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_Ambroise" ID="{E71A0408-8F39-495B-BE7D-A3EDDED659CA}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_lalettredestinataireAmbroise" ID="{5250C0BE-BFAD-463A-8814-D6C619196CC6}">
+									<ChildrenList>
+										<Action Name="" ID="{3E86BDEE-875D-4B14-B541-FF72B3314A9E}" ShortID="438260841">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_lalettredestinataireAmbroise" ID="{28256678-A7C6-4B2C-949E-1AC494AD2325}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_voyagecaptivant" ID="{8B5598A4-1DD7-422C-B625-098FA38F5096}">
+									<ChildrenList>
+										<Action Name="" ID="{1C1AFFED-6CED-437D-AEA1-2032637BCE78}" ShortID="905136285">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_voyagecaptivant" ID="{CDD2BC58-C53F-437B-A091-E9A6BFB94BA2}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_lalettredestinataireOctave" ID="{93CBC9A9-9B13-4967-9211-A9BA33B35495}">
+									<ChildrenList>
+										<Action Name="" ID="{75D8021B-645A-4675-A9A1-D39DE21A9899}" ShortID="724745437">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_lalettredestinataireOctave" ID="{5E57BD81-648E-4737-B5E1-D28BF1E4781B}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_devoirlivrerbataille" ID="{0424F72D-C9DF-4625-BFF6-48F256353427}">
+									<ChildrenList>
+										<Action Name="" ID="{971421BB-4848-47D7-A670-F4B623DBF261}" ShortID="392423519">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_devoirlivrerbataille" ID="{76CD222A-CB5A-4841-806C-4602E96AA1CE}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_amonreveil_1" ID="{2BF567B4-B384-4224-AF38-588B40E5F1B6}">
+									<ChildrenList>
+										<Action Name="" ID="{07CA26A2-9A76-4117-A1EA-B5D6ECBDB40F}" ShortID="768644295">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_amonreveil_1" ID="{32FA4127-E912-46EB-A4F0-503F8277AFC4}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_tuesbiensilencieux" ID="{FFD9910A-82B8-4EDE-9861-29FB5FF5E0E8}">
+									<ChildrenList>
+										<Action Name="" ID="{AEDC1BC0-75D5-42BE-974D-ACF7A3E87462}" ShortID="908638199">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_tuesbiensilencieux" ID="{C13E07DE-9B92-4A6A-AF09-7AF12C8D7777}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_voistuporte" ID="{4725CB54-D4B8-44FD-979D-A7FB7F38BC79}">
+									<ChildrenList>
+										<Action Name="" ID="{4FC9B9EC-13C7-4FA9-A194-A6EA88FDE68F}" ShortID="290349061">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_voistuporte" ID="{724CCF5A-61E5-4F71-8637-A0625A7CAE7E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_devoiraffronterdestin" ID="{DDA225AD-594C-4D87-8076-02D596820181}">
+									<ChildrenList>
+										<Action Name="" ID="{328436FF-AD77-4ECA-90E1-D81E2CA2AFD6}" ShortID="510645915">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_devoiraffronterdestin" ID="{983D36E9-A757-4864-AAE5-982C9A4996C8}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_jecomprends" ID="{F9A9EF4C-9AD6-4448-B648-671D650A75D7}">
+									<ChildrenList>
+										<Action Name="" ID="{BC307DB3-7687-47BB-9E48-E09698EC15C9}" ShortID="642879571">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_jecomprends" ID="{C14D1AC0-3255-473B-AC92-EA584EB110DB}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_passagersloquaces" ID="{5834FDBB-01F8-48CB-947D-CE1802662804}">
+									<ChildrenList>
+										<Action Name="" ID="{E01246AF-EFB7-45AD-A162-AD757120CC8C}" ShortID="795750568">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_passagersloquaces" ID="{73350605-3F23-4059-BD12-06B0CEFA9685}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_pourquoidireverite" ID="{0812BE0E-24B8-48B2-9F1B-B92E7590D258}">
+									<ChildrenList>
+										<Action Name="" ID="{E5D952A5-B0EE-4490-9612-D98942B7D564}" ShortID="387757652">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_pourquoidireverite" ID="{0F86F2EC-1248-4CFE-A1CB-B00DDAD35A23}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_pourquoimission" ID="{41BC82EA-BD7F-4141-8A86-AC69BE3388B0}">
+									<ChildrenList>
+										<Action Name="" ID="{BF40B48E-F16C-4560-984A-D2B63614BC9F}" ShortID="116961790">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_pourquoimission" ID="{E0685CD6-2406-4A7D-A3AD-8633598ADA4D}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_commencepresenter" ID="{A19C8B49-2E01-4F8C-ACDC-183AD75B5DCC}">
+									<ChildrenList>
+										<Action Name="" ID="{9155CC8B-B1BE-42AE-BD80-058ECC985B9D}" ShortID="546654155">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_commencepresenter" ID="{99340519-1E28-462D-8EBB-B75E3A82122B}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_pretressehonneur" ID="{5FB7621C-32F2-4475-B6A9-1B1CF619939C}">
+									<ChildrenList>
+										<Action Name="" ID="{69D2C8E3-E83D-4CFE-ACC0-5F6189A8FEE9}" ShortID="41069807">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_pretressehonneur" ID="{E8AE98DF-483E-46C9-A60B-B7A4A70EDD60}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_parlejetenprie" ID="{61EB99BA-4DC4-4985-B48E-F24CEA22C42A}">
+									<ChildrenList>
+										<Action Name="" ID="{E2F8E55E-2984-4511-8864-FD3003939D1E}" ShortID="449723909">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_parlejetenprie" ID="{11A61E1C-785A-4C71-AD2F-903DEAEE5D79}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_ainsitonami" ID="{0188C8FE-4058-4D72-96B8-08D50E4A8ABD}">
+									<ChildrenList>
+										<Action Name="" ID="{16A09E83-F568-4D1E-9428-449DBACDCF0E}" ShortID="111856312">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_ainsitonami" ID="{93A0A892-DFC6-4257-B9D2-C243FFD95730}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_quiestu" ID="{BF4099AE-87B2-4778-A842-656BFEF8C3C2}">
+									<ChildrenList>
+										<Action Name="" ID="{BF4FAE28-86FC-407A-A19C-E44035952896}" ShortID="940958273">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_quiestu" ID="{6C8F83F9-C0B8-49BC-8814-075D110082BC}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_baratinpasdernier" ID="{4A92BA71-85F2-4986-9355-CF6F5275D8D5}">
+									<ChildrenList>
+										<Action Name="" ID="{E4B8C4D0-6872-4996-A9C0-9F850A599AEE}" ShortID="1002974518">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_baratinpasdernier" ID="{C0B19E18-6BE4-43B8-A1E5-70A53816A9B0}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_detoutefacon" ID="{01E00002-FCD8-40B2-A42B-1219A5887D21}">
+									<ChildrenList>
+										<Action Name="" ID="{4A3F3574-1DF3-47EA-A74C-CC98E3EE4BBB}" ShortID="43291373">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_detoutefacon" ID="{28B968A7-FB33-408B-9EF4-5BD109EDF225}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_hahajevois" ID="{805353A9-DE9B-4F14-B0D4-CD4563E4A954}">
+									<ChildrenList>
+										<Action Name="" ID="{4AB0EFB7-F5A5-4DA7-94F8-60FBFA882BB1}" ShortID="653573016">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_hahajevois" ID="{7D62D5D2-CCB7-4726-97A7-D27EAEBFC8A5}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_jenepuisteledire" ID="{C928ED1C-E9F2-4445-A5A9-DA17C13E8C08}">
+									<ChildrenList>
+										<Action Name="" ID="{E10011BC-5363-4B25-8A44-55AF2C0778D1}" ShortID="805518037">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_jenepuisteledire" ID="{D6084142-E06F-4582-B49E-316AF87A5399}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_jeregrettepasmadecision" ID="{DD59C0F0-22FF-4037-8805-A4B014A38F1D}">
+									<ChildrenList>
+										<Action Name="" ID="{51482A38-BB88-4D93-A324-EACD6451C965}" ShortID="447035888">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_jeregrettepasmadecision" ID="{00564FC8-B845-4652-AF29-7557D85A477E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_attendons" ID="{D74C4397-D2D0-470F-AFEC-46B60F5A3EC8}">
+									<ChildrenList>
+										<Action Name="" ID="{8FA1D224-4C07-46D6-ADEF-0B7974C6A4C7}" ShortID="337424382">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_attendons" ID="{387DFF8D-4152-4D3F-B144-510ECC5F9CF2}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Ferryman_laloi" ID="{9F07354F-8734-4817-9313-27C1158B0918}">
+									<ChildrenList>
+										<Action Name="" ID="{34D9B6C6-D0FD-4FEE-92DC-B35AF2DA83A5}" ShortID="320969021">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Ferryman_laloi" ID="{36FCD127-15FC-4FE1-B19D-75854F261B92}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_pardondevoirs" ID="{1088CFDB-F070-4EFC-A5D1-40E87B034B8B}">
+									<ChildrenList>
+										<Action Name="" ID="{8A2A050F-25E1-4D0A-BCAB-F105FD765FA0}" ShortID="724134203">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_pardondevoirs" ID="{82A2CACA-73AD-4769-8F16-2D61ECDF1CE9}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_pssthecolere" ID="{BBCBEF67-734F-4433-AEF8-8A9695B2AC46}">
+									<ChildrenList>
+										<Action Name="" ID="{FCA36F0F-A4AC-414B-A636-0526D72B5CA7}" ShortID="142300715">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_pssthecolere" ID="{1B0BF5AF-3E9F-4141-9500-0690B8800947}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_publicreagit" ID="{BFE1C27A-4A96-4B93-A04E-FA4B0287ED4E}">
+									<ChildrenList>
+										<Action Name="" ID="{BF356A23-81D4-4331-81CC-FD976C52FAFB}" ShortID="240555128">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_publicreagit" ID="{14EA1E3B-A1CD-4812-B9DB-4A0F896D7F66}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_pasbavard" ID="{7174351B-135E-470B-8143-8A497EDDE30C}">
+									<ChildrenList>
+										<Action Name="" ID="{8EA01530-95D8-4ABE-9C44-854AA66A8D9E}" ShortID="144927381">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_pasbavard" ID="{8DAEC23D-0CF5-4397-A489-61645643D501}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_pssthe" ID="{36A32564-66E8-40E8-8302-E2DCEA16B199}">
+									<ChildrenList>
+										<Action Name="" ID="{C8311A50-FA7F-46C4-9615-F70A1A92A5E2}" ShortID="590285435">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_pssthe" ID="{E1D2163F-E2B0-460B-9A29-D236F8B976C9}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_parici" ID="{879C8F69-2182-4AFA-BEC1-074D610C4531}">
+									<ChildrenList>
+										<Action Name="" ID="{3861420E-29E0-45F9-971E-17A89CBA0C0A}" ShortID="73887192">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_parici" ID="{16C8B938-C178-4199-AEA4-FAE6C823F92D}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_tracparalyse" ID="{2F103861-1A98-4E31-96D6-4DC8F485197E}">
+									<ChildrenList>
+										<Action Name="" ID="{0B284B0E-BD88-4438-8168-EE33433B0802}" ShortID="586706170">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_tracparalyse" ID="{4259F695-2892-4426-A08F-8173DE93DC52}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_laissonslesselanguir" ID="{F95E5887-5432-4F3D-AFEB-07BE3E815749}">
+									<ChildrenList>
+										<Action Name="" ID="{5C3CCBB1-4255-485C-9D37-FC693301CECC}" ShortID="278657611">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_laissonslesselanguir" ID="{2E22B647-5475-44BC-B6BB-B9B0EE2C1587}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_laissemoi" ID="{9BDADF25-FE09-4216-B8FA-F446DA477D70}">
+									<ChildrenList>
+										<Action Name="" ID="{A1C031ED-7C5D-491A-8E63-52DA1A9E7FED}" ShortID="344380713">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_laissemoi" ID="{D5B1FBC4-EEFB-48C6-8D80-9AAADD5B0637}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_panpanculcul" ID="{1D79B9ED-35C8-478E-916E-AD06F5F862F5}">
+									<ChildrenList>
+										<Action Name="" ID="{8FFF2FE2-EC5E-488C-95C1-7C7220E8B66C}" ShortID="738561927">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_panpanculcul" ID="{A2AC429B-666E-4EFC-AC2D-E270A8635ED5}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_jecompte0" ID="{945A86FC-7FC1-4AF9-9E18-525D7299B970}">
+									<ChildrenList>
+										<Action Name="" ID="{D5E8AD73-936C-4ECA-B706-FD0497CC9B60}" ShortID="799210258">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_jecompte0" ID="{B7CAF5DA-B96A-423C-9844-F2DB8561E0AD}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_quelquunmepie" ID="{7344E2D7-708A-45F4-B9B0-87421B827E68}">
+									<ChildrenList>
+										<Action Name="" ID="{CD7B87D7-00EA-42A2-8308-AEB6EA8F9563}" ShortID="43906730">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_quelquunmepie" ID="{A2701F19-13F9-4B9D-B09F-A27B5CAB44D0}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_raisonconvocation" ID="{4D25BCF7-E2DF-4766-B3A0-2848D04659D7}">
+									<ChildrenList>
+										<Action Name="" ID="{8FF02AD3-20F5-4B0B-BBE2-C6C1F2DDB6C8}" ShortID="542239596">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_raisonconvocation" ID="{BD59BA63-BD76-4338-823A-86627374D522}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_saufvotrerespect" ID="{F31CA163-5BB0-4143-B882-D5FD086E49ED}">
+									<ChildrenList>
+										<Action Name="" ID="{39F3E7A8-7820-45D4-9009-A38F991914A5}" ShortID="829169447">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_saufvotrerespect" ID="{6D446D39-EC4E-4306-A72C-A6D325CC237F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_heuressupp" ID="{FFD2F7CE-EF07-4444-B3A0-4525ACF48ACE}">
+									<ChildrenList>
+										<Action Name="" ID="{01B78D54-F07D-417E-A09C-8FB7CD3B3CA3}" ShortID="608824963">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_heuressupp" ID="{22AC01A9-7E8B-4D09-B0AD-37A3C452B6F3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_jecompte3" ID="{FCE84229-3730-4E13-A00B-96E0CFED439D}">
+									<ChildrenList>
+										<Action Name="" ID="{84C5D097-C131-4436-A4A0-17A8D16F9686}" ShortID="795432883">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_jecompte3" ID="{BD139C41-D79B-4533-96B6-D97DF5D14C6B}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_abimedignite" ID="{17276E83-99DB-40F8-B526-B9CE09E653B9}">
+									<ChildrenList>
+										<Action Name="" ID="{9EBA4AF1-DC84-4C99-B1F1-6D93C199BF92}" ShortID="1049108008">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_abimedignite" ID="{DE575D2F-F985-4E03-8D79-90A17F1F9B9D}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_pointleloisirsoustraire" ID="{4199DFA3-1978-4528-8519-0BB91EE347B5}">
+									<ChildrenList>
+										<Action Name="" ID="{7104FC24-1EBC-4359-ABF3-8FD390ABAB40}" ShortID="660132813">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_pointleloisirsoustraire" ID="{957C3991-3D32-4E2A-988F-59BDB9F7846E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_nevolepasvedette" ID="{5B4CAE04-8868-4C3D-B832-A9CE467CA987}">
+									<ChildrenList>
+										<Action Name="" ID="{6839704F-BB72-426F-AB2A-52B5CDDC48BC}" ShortID="212001256">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_nevolepasvedette" ID="{8CE17795-2CA7-4478-848E-656EB97E5F13}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_prenezceci" ID="{AC65470E-3E5E-4E5E-A1DF-AA7875328307}">
+									<ChildrenList>
+										<Action Name="" ID="{9009358E-9206-4DEA-B069-5AC016AA4641}" ShortID="167972898">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_prenezceci" ID="{1A442334-6C9B-4C3A-9893-73479082991C}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_maisquivoila" ID="{D3E6D754-96D5-45D2-A9A8-7F4ABDFCDC7D}">
+									<ChildrenList>
+										<Action Name="" ID="{8F66807E-3240-4AFD-9DDE-FC61FDB6C705}" ShortID="54470643">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_maisquivoila" ID="{EBCDFAEB-2AA5-4629-889F-EF253D7C19D2}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_celaseraitunhonneur" ID="{78B279B7-DBBC-4567-BC80-0750AC1546F9}">
+									<ChildrenList>
+										<Action Name="" ID="{2E906DE6-6A29-431B-A4DF-C7FEFDF1B860}" ShortID="841459535">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_celaseraitunhonneur" ID="{5F4486C8-0CB3-4C44-BDFB-DC2338F2B876}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_tuesengreve" ID="{29D33692-0B7E-4766-B78D-A78CC118281B}">
+									<ChildrenList>
+										<Action Name="" ID="{81B390E2-9B53-4DF4-A9B6-25AB47BC0A87}" ShortID="496186979">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_tuesengreve" ID="{31C3F396-D504-4674-8364-84CCFF37ED16}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_mercitoutloupe" ID="{A8F1B60D-FDC4-4976-BA6F-247CB39FB1FC}">
+									<ChildrenList>
+										<Action Name="" ID="{842C0845-245F-4F4D-869C-52A9876E9DBA}" ShortID="480857222">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_mercitoutloupe" ID="{9E08DD6A-FD97-4F2F-8F87-A3351EFEC802}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_desirantbrisercaisse" ID="{33A6DB9E-BD8B-4B5C-9FED-85F6E17621D0}">
+									<ChildrenList>
+										<Action Name="" ID="{AE543DFD-E341-449B-88BB-DA8D3AAA5979}" ShortID="708478803">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_desirantbrisercaisse" ID="{2A352371-30F0-46FE-9943-95D3DCB942D0}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_yadelidee" ID="{4741257C-45A1-4B8D-8BB3-2F2001604253}">
+									<ChildrenList>
+										<Action Name="" ID="{7F2B97EA-7663-4EB4-A5FD-262095F24D80}" ShortID="369382039">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_yadelidee" ID="{8794C057-2073-4D79-A48D-8688A97A5E32}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_lejourcommence" ID="{EBE88DD9-5E8D-4F6A-9851-99C2CF19F14D}">
+									<ChildrenList>
+										<Action Name="" ID="{B5FAA860-0CA1-4C57-8E5D-8D031A5BA2D0}" ShortID="445217639">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_lejourcommence" ID="{19A1299A-7F85-42B2-B75A-F39D5308015D}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_bienjouelamicontinue" ID="{A1E24CD5-D34C-46E5-A1DD-A40A9D38CAAF}">
+									<ChildrenList>
+										<Action Name="" ID="{987442C5-34AC-4856-BAD2-70ABE81F305C}" ShortID="636220079">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_bienjouelamicontinue" ID="{14092EBE-59F8-4947-8D63-DAC97134E292}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_certainessituations" ID="{53EB3EF0-FC28-4963-9632-F4378AF5ADAA}">
+									<ChildrenList>
+										<Action Name="" ID="{263BCF52-3A19-40B3-AAB5-155DA0DE14FD}" ShortID="912968547">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_certainessituations" ID="{580241DB-8D4A-47E9-BC93-D1A91E68C63C}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_cestparanoia" ID="{21DEBA06-1102-4E02-9A3F-CA1F327CCDCE}">
+									<ChildrenList>
+										<Action Name="" ID="{4C59F60F-D725-4C2A-907F-311D4ED1ED38}" ShortID="1018231015">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_cestparanoia" ID="{7F5C13B7-1A53-495D-ABCE-B88E603DFBC3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_partenairedescene" ID="{3AAD12EA-4A6F-46D9-85D8-6A8500E7AD73}">
+									<ChildrenList>
+										<Action Name="" ID="{1B9053C3-91DF-4ED5-884D-D141AB43D2AC}" ShortID="639413921">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_partenairedescene" ID="{5D72376B-FC44-4474-BEB0-8F5F2CDD5623}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_quelleestcettemission" ID="{F1B69694-E909-4A93-B0F1-F90A8A2648B3}">
+									<ChildrenList>
+										<Action Name="" ID="{5B08256F-59AB-4B96-B947-35F0FF011EBD}" ShortID="954486387">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_quelleestcettemission" ID="{854F0533-13A8-43EB-8E58-7AA1C928A3DF}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_jecompte2" ID="{1A40BBA2-5ED0-4B86-A52D-D941052B63DB}">
+									<ChildrenList>
+										<Action Name="" ID="{58C8AE05-7F96-43B6-8628-D2BC8BF3B6D4}" ShortID="829231199">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_jecompte2" ID="{476F8CAB-9169-4027-903D-34B7D61CF1F8}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_toutlemondepeuttevoir" ID="{C24B16CC-1CA6-4CBE-88EA-9D26E969B086}">
+									<ChildrenList>
+										<Action Name="" ID="{B6CEAB82-86E8-4F7D-A928-229C388E224B}" ShortID="44227918">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_toutlemondepeuttevoir" ID="{AB9461FC-9520-4EBA-B00F-E17C2EB0DD09}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_lepublicnattend" ID="{2E9D4893-F2A1-4AC3-B074-C51D57E4D086}">
+									<ChildrenList>
+										<Action Name="" ID="{19DF5758-C973-4BD3-95B8-BE8437492605}" ShortID="689000579">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_lepublicnattend" ID="{A93B60F1-6392-47C3-9A09-C0257C00BD9B}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_VRAIMENTtemps" ID="{AFF32EC6-6B5B-48D4-B94B-AD3B097809C8}">
+									<ChildrenList>
+										<Action Name="" ID="{5734D85A-E99F-4373-95AB-582FBFBD3684}" ShortID="578782749">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_VRAIMENTtemps" ID="{9ABD2FD5-D1A0-4660-88A6-FA35089E2593}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_jailimpressionpublic" ID="{597B2108-D79E-495F-AFA4-02BDB5ADFF26}">
+									<ChildrenList>
+										<Action Name="" ID="{FF5469D5-5996-4D56-9E5D-0BBFC9A85B6B}" ShortID="247116680">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_jailimpressionpublic" ID="{D7993C1E-346A-4E24-B5C2-90D02B6C7AAE}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_jesuisarle" ID="{A949E7BF-0CD7-4666-BAF6-BC0E390675CE}">
+									<ChildrenList>
+										<Action Name="" ID="{B300EE7C-6DFE-4620-992B-89064090DFD4}" ShortID="606135267">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_jesuisarle" ID="{C3C1D3D4-07A5-4989-9A22-CA52057255D6}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_jecompte1" ID="{48A7086E-0C2E-41F7-B0A3-0CE6505E1DCF}">
+									<ChildrenList>
+										<Action Name="" ID="{B352F6A4-6D31-409C-8D44-7218318DC6CA}" ShortID="791338982">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_jecompte1" ID="{C35A30D3-DE87-4847-90EE-7E874A0E7D99}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Souffleur_cestunfour" ID="{C78C4D22-CDDC-4146-84C5-1D25E3923A02}">
+									<ChildrenList>
+										<Action Name="" ID="{B533EF5F-9B0C-4BE5-9F86-83DE6535B43A}" ShortID="737303114">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Souffleur_cestunfour" ID="{F70ED20B-D0F5-4A52-AB09-D9EDC652F5F7}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_quelrapporttuer" ID="{3BC05F1F-F04B-442E-A82B-86A416978059}">
+									<ChildrenList>
+										<Action Name="" ID="{48F27871-CD49-4A10-8930-BCC65ACC1F7B}" ShortID="279508748">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_quelrapporttuer" ID="{BEC23EDF-DC93-4D6C-A8BA-9F97DB09D846}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Arle_peutetreseulscene" ID="{22A6C481-0FEB-424E-88AB-B3E3E5D0DECA}">
+									<ChildrenList>
+										<Action Name="" ID="{5F689D3E-6B22-463D-A7CD-ACDCD5C7082B}" ShortID="438696382">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Arle_peutetreseulscene" ID="{29C41B31-104C-4123-AD7E-34A0A53C52CE}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="VOX_Player_jevaismeubler" ID="{60CE2686-9D7E-4D0E-92CD-8FB19EC98771}">
+									<ChildrenList>
+										<Action Name="" ID="{D01A0972-B373-434A-91B6-C1928D84EA45}" ShortID="357391949">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_jevaismeubler" ID="{A8B6A7DE-AAB7-48AB-A2B8-6DE97EB5363C}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Event Name="GameStart" ID="{CA29A0BB-D5BE-4F96-B957-07CF6903C886}"/>
@@ -1278,8 +2487,199 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="SC_Barque" ID="{857D5D3A-F552-4BFB-970F-75625682CB7B}" ShortID="953368113">
+							<ChildrenList>
+								<Event Name="Play_MUS_Story_SC_Barque_AFairReward" ID="{B74C20E6-750B-4C24-8B7D-5D452570D6B3}">
+									<ChildrenList>
+										<Action Name="" ID="{1DF00022-0683-439C-9E8B-8722E2A98DCC}" ShortID="862440378">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_AFairReward" ID="{AC5D75A1-442C-425B-AE36-8CDDBA040A64}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_AGoodActor" ID="{0D6F77D4-8410-4AB0-B330-3A8A696D5C33}">
+									<ChildrenList>
+										<Action Name="" ID="{21BFC1B6-AEF6-401D-B91F-FF1D09285253}" ShortID="1285348">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_AGoodActor" ID="{68065707-9C39-4344-8EEF-9235DEC7788C}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_ANewFriend" ID="{4CC9C202-1E9B-48CA-B7C3-0A2DE1060DF0}">
+									<ChildrenList>
+										<Action Name="" ID="{5F9A7A16-3F5A-4255-BE12-A79AE2492E82}" ShortID="481125818">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_ANewFriend" ID="{1BCA6ED5-14DC-4A2E-AF0A-848AEE0EE255}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_ANewName" ID="{3F1260E5-55CD-4AA8-8C98-76ADDE27A5E6}">
+									<ChildrenList>
+										<Action Name="" ID="{91119427-7E40-48E0-891A-5942F5366FB0}" ShortID="250633947">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_ANewName" ID="{DB202672-87EB-441C-8D32-095918AECCD5}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_BadViolin1" ID="{997A0007-C9CF-40C5-888C-B2FA25320970}">
+									<ChildrenList>
+										<Action Name="" ID="{F6937A31-BCCE-40FF-AFF5-0B341EF5FA89}" ShortID="981165418">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_BadViolin1" ID="{588B2CBF-5BF8-4E78-8B5E-94E07998D916}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_BadViolin2" ID="{2B911535-CE26-4627-9F47-E422B385F8D7}">
+									<ChildrenList>
+										<Action Name="" ID="{837FE363-D1E1-4A71-9E5C-F1C330B72426}" ShortID="635107586">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_BadViolin2" ID="{37F25F39-4988-4BF0-8E97-E6EF13CE6D56}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_LostAFriend" ID="{F09CED54-810D-488B-A854-B3DDCC64C4BD}">
+									<ChildrenList>
+										<Action Name="" ID="{5853D69A-D57C-4F42-A8E2-7B54700A14B2}" ShortID="528040251">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_LostAFriend" ID="{06C15731-8899-496B-BB3A-5EAB98073518}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_MysteriousLetter1" ID="{0B5068AF-02AE-4839-A20E-B2A002FE0875}">
+									<ChildrenList>
+										<Action Name="" ID="{7CA647D1-3C02-4AA7-B319-B794E8627457}" ShortID="346020333">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_MysteriousLetter1" ID="{DD762D5F-D820-46FC-B328-42C5FE7FAEDE}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_MysteriousLetter2" ID="{3638CCC4-2568-47B9-A5A8-9C660FF51D6F}">
+									<ChildrenList>
+										<Action Name="" ID="{B1F03EDA-D0EA-4313-8220-9D7C7866E85F}" ShortID="373904778">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{2AF30552-A4FA-4447-A8CE-AF78EEB11F63}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_MysteriousLetter3" ID="{5D6EAEE0-8D62-4204-AE70-9172089A862F}">
+									<ChildrenList>
+										<Action Name="" ID="{7DE002C4-071B-42B8-9CE1-A7A5E02259F0}" ShortID="871962008">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_MysteriousLetter3" ID="{8DEFE151-CD46-4D3B-9556-5CE9113C10C2}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_ToChurch" ID="{208C13E8-4316-4A95-8FB1-54D05F0F3418}">
+									<ChildrenList>
+										<Action Name="" ID="{75D2BEA4-3688-4567-825A-A90AC5AC87A1}" ShortID="988332381">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_ToChurch" ID="{51942D8E-1199-4987-B78B-1C0B21128813}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_Treason" ID="{64BB1F0A-71C7-41A4-9681-3D75001654A6}">
+									<ChildrenList>
+										<Action Name="" ID="{F0616E02-9CED-4257-956F-BB716E6283C4}" ShortID="193592014">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_Treason" ID="{FBBC3EED-AF1B-46D6-AF5E-4B066E545111}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_TrialDoorsOpen" ID="{5D0CD771-8988-4DB6-BF39-E8F8C435B137}">
+									<ChildrenList>
+										<Action Name="" ID="{26999B78-FEA1-413D-9C84-BC70DFD3427C}" ShortID="607324370">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_TrialDoorsOpen" ID="{E88ECA58-439F-469C-BF16-382167B1A8A9}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_TrialInView" ID="{AD9B7AEB-49B7-4CF7-B1D2-0488EDB40B26}">
+									<ChildrenList>
+										<Action Name="" ID="{4CFA6E9B-800C-4F4C-A386-E25594B952BA}" ShortID="488317702">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_TrialInView" ID="{82FFC1D1-A0B6-48A4-9AEB-E1BB916AA8A5}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_Undeserved" ID="{3586A8DF-C91B-472B-8CA4-3E6AED7751B7}">
+									<ChildrenList>
+										<Action Name="" ID="{0CC97A86-F5CF-40A2-A209-894B541E3467}" ShortID="992504741">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_Undeserved" ID="{CDE845DB-A3CA-4CFA-975D-2E24C8FA7EBD}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_Intro" ID="{16C318DA-B037-42D9-8737-A16DEE4CFE92}">
+									<ChildrenList>
+										<Action Name="" ID="{C060EEDD-C8A5-43F4-AFA0-F90FA0375C80}" ShortID="380039438">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_Intro" ID="{644B6302-CE0D-43A0-A0DF-BA8F589C6382}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
+				<Event Name="Play_Clocks__Chime__Church_Tower__Bell_Ringing_01_SND102465" ID="{74C8E6F7-B4AE-43A2-8939-ED2E85303F09}">
+					<ChildrenList>
+						<Action Name="" ID="{CE13BDE7-B1FD-4010-BE2F-A537B2204760}" ShortID="860066458">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Clocks, Chime, Church Tower, Bell Ringing 01 SND102465" ID="{24B44EEF-CD7B-4696-9C27-2C60A54949B3}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

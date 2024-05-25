@@ -135,7 +135,8 @@ namespace MonoBehavior.Managers
             {
                 var character = Instantiate(_characterPrefab);
                 
-                character.transform.position = _gridScene.GetWorldPositon(_gridScene._enemyPosition + new Vector2Int(i*3, i*2)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
+                //character.transform.position = _gridScene.GetWorldPositon(_gridScene._enemyPosition + new Vector2Int(i*3, i*2)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
+                character.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
                 
                 //character.transform.rotation = _enemyPos.rotation;
                 character.transform.LookAt(Camera.main.transform);
