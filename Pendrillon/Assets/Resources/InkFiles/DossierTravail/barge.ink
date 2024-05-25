@@ -15,7 +15,7 @@
 #position:Passeur:9:10
 #position:Prompter:7:5
 
-#set:cale
+#set:barge
 // Start the scene
 -> scene_1
 
