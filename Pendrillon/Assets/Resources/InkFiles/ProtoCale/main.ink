@@ -10,6 +10,8 @@ INCLUDE trial.ink
 INCLUDE church_night.ink
 INCLUDE secret_meeting.ink
 INCLUDE trip_return.ink
+INCLUDE barge.ink
+
 
 // Seed of randomize events
 //~ SEED_RANDOM(666)

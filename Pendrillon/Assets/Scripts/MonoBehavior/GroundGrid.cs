@@ -1,15 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
+using Ink.Parsed;
 using UnityEngine;
 
 public class GroundGrid : MonoBehaviour
 {
     [SerializeField] public Grid _grid;
     
+    [Header("=== Visualizer ===")]
     [Range(1, 100)] public int width = 1;
     //[Range(1, 5)] public int height = 1;
     [Range(1, 100)] public int depth = 1;
 
+    [Header("=== Colors ===")] 
+    [SerializeField] Color _playerColor;
+    [SerializeField] Color _agatheColor;
+    [SerializeField] Color _arleColor;
+    [SerializeField] Color _capucineColor;
+    [SerializeField] Color _judgeColor;
+    [SerializeField] Color _marcelloColor;
+    [SerializeField] Color _naidaColor;
+    [SerializeField] Color _passeurColor;
+    [SerializeField] Color _prompterColor;
+
+    [Header("=== Barge scene 1 ===")] 
+    [SerializeField] private bool _visualizerBargeScene1;
+
+    [SerializeField] private Positions _scenePos;
+    
+    
     public Vector2Int _playerPosition;
     public Vector2Int _enemyPosition;
 
@@ -24,12 +43,55 @@ public class GroundGrid : MonoBehaviour
 
     #endregion
 
+    #region Methods
+
     public Vector3 GetWorldPositon(Vector2Int coords)
     {
         Vector3 worldPos = _grid.GetCellCenterWorld(new Vector3Int(coords.x, 0, coords.y));
         worldPos.y = transform.position.y;
         return worldPos;
     }
+
+    Color GetColor(string name)
+    {
+        var color = Color.white;
+
+        switch (name.ToLower())
+        {
+            case "player":
+                color = _playerColor;
+                break;
+            case "agathe":
+                color = _agatheColor;
+                break;
+            case "arle":
+                color = _arleColor;
+                break;
+            case "capucine":
+                color = _capucineColor;
+                break;
+            case "judge":
+                color = _judgeColor;
+                break;
+            case "marcello":
+                color = _marcelloColor;
+                break;
+            case "naïda":
+                color = _naidaColor;
+                break;
+            case "passeur":
+                color = _passeurColor;
+                break;
+            case "prompter":
+                color = _prompterColor;
+                break;
+        }
+
+        return color;
+    }
+    
+
+    #endregion
     
     #region Gizmos
     /*void OnDrawGizmosSelected()
@@ -59,6 +121,14 @@ public class GroundGrid : MonoBehaviour
             }
         }
     }*/
+
+    void DrawCharacterPosition(Vector2Int coords, Color color)
+    {
+        Gizmos.color = color;
+        Vector3 position = _grid.GetCellCenterWorld(new Vector3Int(coords.x, 0, coords.y));
+        position.y = transform.position.y;
+        Gizmos.DrawLine(position, position + new Vector3(0.0f, 2.0f, 0.0f));
+    }
     
     void OnDrawGizmosSelected()
     {
@@ -86,31 +156,28 @@ public class GroundGrid : MonoBehaviour
                     new Vector3(worldPos.x, worldPos.y, worldPos.z + 0.3f));
             }
         }
+
+        var playerColor = Color.red;
+        DrawCharacterPosition(_playerPosition, playerColor);
         
-        Gizmos.color = Color.red;
-        Vector3 playerOrigin = _grid.GetCellCenterWorld(new Vector3Int(_playerPosition.x, 0, _playerPosition.y));
-        playerOrigin.y = transform.position.y;
-        Gizmos.DrawLine(playerOrigin, playerOrigin + new Vector3(0.0f, 2.0f, 0.0f));
-        
-        Gizmos.color = Color.yellow;
-        Vector3 enemyOrigin = _grid.GetCellCenterWorld(new Vector3Int(_enemyPosition.x, 0, _enemyPosition.y));
-        enemyOrigin.y = transform.position.y;
-        Gizmos.DrawLine(enemyOrigin, enemyOrigin + new Vector3(0.0f, 2.0f, 0.0f));
+        var enemyColor = Color.yellow;
+        DrawCharacterPosition(_enemyPosition, enemyColor);
+
+        Debug.Log("Gizmos");
+
+        if (_visualizerBargeScene1 && _scenePos._characters.Count == _scenePos._positions.Count)
+        {
+            for (int i = 0; i < _scenePos._characters.Count; i++)
+            {
+                var color = GetColor(_scenePos._characters[i]);
+                DrawCharacterPosition(_scenePos._positions[i], color);
+                Debug.Log("Draw");
+            }
+        }
+
     }
     
 
     #endregion
     
-}
-
-public class GroundCell
-{
-    public bool isOccupied;
-    public Vector3 position { get; private set; }
-
-    public GroundCell(Vector3 position)
-    {
-        isOccupied = false;
-        this.position = position;
-    }
 }

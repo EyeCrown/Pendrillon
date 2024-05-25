@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Linq;
 using System.Reflection;
 using MonoBehavior.Managers;
 using UnityEngine;
@@ -49,7 +50,6 @@ public class CharacterHandler : MonoBehaviour
 
         ActingManager.Instance.ClearUI.AddListener(OnClearUI);
         DialogueUpdate.AddListener(OnDialogueUpdate);
-        
     }
 
     void Start()
@@ -141,7 +141,14 @@ public class CharacterHandler : MonoBehaviour
 
     public IEnumerator PlayAnimCoroutine(string triggerName, System.Action callbackOnFinish)
     {
-        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation {triggerName} start");
+        if (!HasParameter(triggerName, _anim))
+        {
+            Debug.LogError($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Error: Animation {triggerName} doesn't exists.");
+            callbackOnFinish();
+            yield break;
+        }
+        
+        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation {triggerName} start");
         
         _anim.SetTrigger(triggerName);
         
@@ -191,4 +198,14 @@ public class CharacterHandler : MonoBehaviour
     }
 
     #endregion
+    
+    public static bool HasParameter(string paramName, Animator animator)
+    {
+        foreach (AnimatorControllerParameter param in animator.parameters)
+        {
+            if (param.name == paramName)
+                return true;
+        }
+        return false;
+    }
 }

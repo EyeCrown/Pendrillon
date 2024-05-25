@@ -121,5 +121,6 @@ ARLE: Je voulais simplement signifier, au profit de la Vérité ainsi que la Jus
         ARLE: Le gredin ment, Votre Honneur !
     * [Arle doute t-elle de notre reine ?]
     * [Je n'ai rien à objecter.]
+-
 // Player va raconter la tempête (flashback)
 -> tempest

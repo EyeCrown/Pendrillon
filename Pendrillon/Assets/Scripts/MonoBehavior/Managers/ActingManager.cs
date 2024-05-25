@@ -29,12 +29,22 @@ namespace MonoBehavior.Managers
         
         // Scene
         // TODO: put the name of the first scene (in Constants)
-        string _stage = "UNDEFINED";      // Name of the actual set
+        public string _stage = "";//Constants.FirstSetOnStage;      // Name of the actual set
+        
+        [Header("=== Sets ===")]
+        public GameObject _setBarge;
+        public GameObject _setCale;
+        public GameObject _setPort;
+        public GameObject _setChurch;
+        public GameObject _setTrial;
+        public GameObject _setTempest;
+        public GameObject _setStomac;
     
         // UI
         [HideInInspector] public GameObject _uiParent { get; private set; }
         GameObject _dialogueBox;
         TextMeshProUGUI _dialogueText;      // Text box
+        TextMeshProUGUI _speakerText;      // Text box
         TextMeshProUGUI _tagsText;          // Tags box
         GameObject _historyBox;        // History box
         TextMeshProUGUI _historyText;
@@ -45,11 +55,11 @@ namespace MonoBehavior.Managers
         
     
         // Buttons
+        [Header("=== Buttons ===")]
         [SerializeField] Button _choiceButtonLeftPrefab;
         [SerializeField] Button _choiceButtonMiddlePrefab;
         [SerializeField] Button _choiceButtonRightPrefab;
         public List<Button> _choicesButtonList;
-        Button _backButton;
         
         // Dialogue
         string _currentDialogue;
@@ -102,8 +112,8 @@ namespace MonoBehavior.Managers
             _uiParent = GameObject.Find("Canvas/ACTING_PART").gameObject;
             _dialogueBox    = _uiParent.transform.Find("DialogueBox").gameObject;
             _dialogueText   = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
+            _speakerText   = _uiParent.transform.Find("DialogueBox/SpeakerText").GetComponent<TextMeshProUGUI>();
             _tagsText       = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
-            _backButton     = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
             _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<Image>();
             _historyBox     = _uiParent.transform.Find("History").gameObject;
             _historyText    = _historyBox.transform.Find("Scroll View/Viewport/Content").GetComponent<TextMeshProUGUI>();
@@ -130,7 +140,9 @@ namespace MonoBehavior.Managers
             PhaseEnded.AddListener(OnPhaseEnded);
             ClearUI.AddListener(OnClearUI);
         
-            
+            _setBarge   = Instantiate(_setBarge, GameObject.Find("Environment").transform);
+            _setCale    = Instantiate(_setCale, GameObject.Find("Environment").transform);
+            _setTempest = Instantiate(_setTempest, GameObject.Find("Environment").transform);
         }
 
         void Start()
@@ -158,8 +170,6 @@ namespace MonoBehavior.Managers
             _dialogueAlreadyHandle = false;
             _currentDialogue = String.Empty;
         
-            // if(savedJsonStack.Count != 0)
-            //     _backButton.gameObject.SetActive(true);
             
             if (GameManager.Instance._story.canContinue)
             {
@@ -176,27 +186,48 @@ namespace MonoBehavior.Managers
                 string[] words = path != null ? path.Split(".") : new []{_stage};
                 Debug.Log($"AM.Refresh > Location: {words[0]}");
 
-                if (words[0] != _stage)
+                /*if (words[0] != _stage)
                 {
                     Debug.Log($"AM.Refresh > Change from {_stage} to {words[0]}");
-                    // TODO: DoChangeOfSet()
                     _stage = words[0];
-                }
+
+                    // TODO: DoChangeOfSet()
+                    switch (_stage)
+                    {
+                        case "barge":
+                            _setBarque.SetActive(true);
+                            _setCale.SetActive(false);
+                            _setTempete.SetActive(false);
+                            break;
+                        case "tempest":
+                            _setBarque.SetActive(false);
+                            _setCale.SetActive(false);
+                            _setTempete.SetActive(true);
+                            break;
+                        case "trip_return":
+                            _setBarque.SetActive(false);
+                            _setCale.SetActive(true);
+                            _setTempete.SetActive(false);
+                            break;
+                    }
+                    
+                }*/
                 
                 if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
                     return;
+                
+                
+                HandleTags();
+                HandleDialogue();
+                //HandleChoices();
 
-                if (_currentDialogue == String.Empty)
+                if (_currentDialogue == String.Empty && !GameManager.Instance._story.currentChoices.Any())
                 {
                     Debug.Log($"AM.Refresh > RECURSIVE CALL");
                     Refresh();
                     return;
                 }
                 
-                HandleTags();
-                HandleDialogue();
-                //HandleChoices();
-
                 /*foreach (var method in _tagMethods)
                 {
                     Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Do method in list {method.Method.Name}");
@@ -217,11 +248,15 @@ namespace MonoBehavior.Managers
         {
             if (!_dialogueAlreadyHandle)
             {
+                if (_currentDialogue == String.Empty)
+                    return;
+                
                 // split dialogue in 2
                 String[] words = _currentDialogue.Split(":");
         
                 // get character speaking
                 String speaker = words[0].Replace(" ", "");
+                _speakerText.text = speaker;
                 String dialogue = String.Join(":", words.Skip(1));
 
                 _tagMethods.Add(() =>
@@ -233,6 +268,7 @@ namespace MonoBehavior.Managers
                         //GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
                         //Debug.Log("!!!! Can click next Action");
                         //StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
+                        TagActionOver();
                     }
                     else
                     {
@@ -244,7 +280,7 @@ namespace MonoBehavior.Managers
                         // play sound
                         PlaySoundDialogAppears();
         
-                        StartCoroutine(GenerateText());
+                        StartCoroutine(GenerateText(dialogue));
                     }
                     
                 });
@@ -415,9 +451,8 @@ namespace MonoBehavior.Managers
         public void OnClickNextDialogue(InputAction.CallbackContext context)
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Call next dialogue || Refresh call");
-            Refresh();
-            
             GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
+            Refresh();
         }
 
         public void OnClickContinueCurrentDialogue()
@@ -499,10 +534,7 @@ namespace MonoBehavior.Managers
         
             _dialogueBox.SetActive(false);
             
-            _backButton.gameObject.SetActive(false);
-            
-            if (_nextDialogueIndicator.color.a != 0)
-                StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 1, 0, 0.1f));
+            StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 1, 0, 0.1f));
 
             //_nextDialogueIndicator.gameObject.SetActive(false);
 
@@ -533,6 +565,12 @@ namespace MonoBehavior.Managers
             {
                 case Constants.TagMove:
                     HandleTagMove(words.Skip(1).ToArray());
+                    break;
+                case Constants.TagPosition:
+                    HandleTagPosition(words.Skip(1).ToArray());
+                    break;
+                case Constants.TagSet:
+                    HandleTagSet(words[1]);
                     break;
                 case Constants.TagPlaySound:
                     HandleTagPlaysound(words[1]);
@@ -599,12 +637,78 @@ namespace MonoBehavior.Managers
             characterHandler.transform.position = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(10, 10)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
 
         }
+
+        void HandleTagPosition(string[] data)
+        {
+            if (data.Length != 3)
+            {
+                string debugList = "";
+                foreach (var item in data)
+                    debugList += item + ", ";
+                Debug.LogError($"AM.HandleTagPosition > Error: Wrong number of arguments | {debugList}");
+                return;
+            }
+
+            var character = GameManager.Instance.GetCharacter(data[0]);
+            if (character == null)
+            {
+                Debug.LogError($"AM.HandleTagPosition > Error: Character unvalid | {data[0]}");
+                return;
+            }
+
+            Vector2Int position = new Vector2Int(int.Parse(data[1]), int.Parse(data[2]));
+
+            Debug.Log($"AM.HandleTagPosition > Set {data[0]} to position [{position.x}, {position.y}]");
+            character.SetPosition(position);
+        }
+
+        void HandleTagSet(string location)
+        {
+            Debug.Log($"AM.Refresh > Change from {_stage} to {location}");
+            _stage = location;
+            
+            _setBarge.SetActive(false);
+            _setCale.SetActive(false);
+            //_setPort.SetActive(false);
+            //_setChurch.SetActive(false);
+            //_setTrial.SetActive(false);
+            _setTempest.SetActive(false);
+            //_setStomac.SetActive(false);
+            
+            switch (_stage)
+            {
+                case Constants.SetBarge:
+                    _setBarge.SetActive(true);
+                    break;
+                case Constants.SetCale:
+                    _setCale.SetActive(true);
+                    break;
+                case Constants.SetPort:
+                    _setPort.SetActive(true);
+                    break;
+                case Constants.SetChuch:
+                    _setChurch.SetActive(true);
+                    break;
+                case Constants.SetTrial:
+                    _setTrial.SetActive(true);
+                    break;
+                case Constants.SetTempest:
+                    _setTempest.SetActive(true);
+                    break;
+                case Constants.SetStomac:
+                    _setStomac.SetActive(true);
+                    break;
+                default:
+                    Debug.LogError("SetTag > Unknown location");
+                    break;
+            }
+        }
         
         void HandleTagMove(string[] data)
         {
             if (data.Length < 3 || data.Length > 4) 
             {
-                Debug.LogError($"AM.HandleTagAnim > Error: Wrong size of parameters | {data}");
+                Debug.LogError($"AM.HandleTagAnim > Error: Wrong number of parameters | {data}");
                 return;
             }
             //[] words = coordonates.Split(",");
@@ -858,7 +962,7 @@ namespace MonoBehavior.Managers
             //GoChoose();
         }
 
-        IEnumerator GenerateText()
+        IEnumerator GenerateText(string textToDisplay)
         {
             _dialogueBox.SetActive(true);
             if (mustWait)
@@ -870,7 +974,7 @@ namespace MonoBehavior.Managers
                 yield return new WaitForSeconds(GameManager.Instance._timeTextToAppearInSec);
             }
             
-            _dialogueText.text = _currentDialogue;
+            _dialogueText.text = textToDisplay;
             
             mustWait = false;
             
