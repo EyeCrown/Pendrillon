@@ -15,7 +15,7 @@
 #position:Passeur:9:10
 #position:Prompter:7:5
 
-#set:barge
+#set:cale
 // Start the scene
 -> scene_1
 
@@ -26,8 +26,6 @@
 PASSEUR: ... #anim:Passeur:neutre1
 #sleep:5
 PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre2 #playsound:VOX_Ferryman_passagersloquaces
-- PLAYER: La lettre me donnait rendez-vous pour « une cause de la plus haute importance ». Piqué de curiosité, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous : la cale de mon propre navire. #anim:Player:neutre2 #playsound:VOX_Player_transitionsecretmeeting #playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
-- -> secret_meeting
 #sleep:5
 SOUFFLEUR: Psssst... Hé ! #anim:neutre2 #playsound:VOX_Souffleur_pssthe
 SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_parici

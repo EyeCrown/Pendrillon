@@ -71,6 +71,18 @@ public static class Constants
     public const string TypeDexterity = "Dexterity";
     public const string TypeComposition = "Composition";
     public const string TypeLuck = "Luck";
+    
+    #endregion
+
+    #region Sets
+
+    public const string SetBarge   = "barge";
+    public const string SetCale    = "cale";
+    public const string SetPort    = "port";
+    public const string SetChuch   = "church";
+    public const string SetTrial   = "trial";
+    public const string SetTempest = "tempest";
+    public const string SetStomac  = "stomac";
 
 
     #endregion

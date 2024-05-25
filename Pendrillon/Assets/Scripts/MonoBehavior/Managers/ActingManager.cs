@@ -30,15 +30,21 @@ namespace MonoBehavior.Managers
         // Scene
         // TODO: put the name of the first scene (in Constants)
         public string _stage = "";//Constants.FirstSetOnStage;      // Name of the actual set
-
+        
+        [Header("=== Sets ===")]
+        public GameObject _setBarge;
         public GameObject _setCale;
-        public GameObject _setBarque;
-        public GameObject _setTempete;
+        public GameObject _setPort;
+        public GameObject _setChurch;
+        public GameObject _setTrial;
+        public GameObject _setTempest;
+        public GameObject _setStomac;
     
         // UI
         [HideInInspector] public GameObject _uiParent { get; private set; }
         GameObject _dialogueBox;
         TextMeshProUGUI _dialogueText;      // Text box
+        TextMeshProUGUI _speakerText;      // Text box
         TextMeshProUGUI _tagsText;          // Tags box
         GameObject _historyBox;        // History box
         TextMeshProUGUI _historyText;
@@ -49,11 +55,11 @@ namespace MonoBehavior.Managers
         
     
         // Buttons
+        [Header("=== Buttons ===")]
         [SerializeField] Button _choiceButtonLeftPrefab;
         [SerializeField] Button _choiceButtonMiddlePrefab;
         [SerializeField] Button _choiceButtonRightPrefab;
         public List<Button> _choicesButtonList;
-        Button _backButton;
         
         // Dialogue
         string _currentDialogue;
@@ -106,8 +112,8 @@ namespace MonoBehavior.Managers
             _uiParent = GameObject.Find("Canvas/ACTING_PART").gameObject;
             _dialogueBox    = _uiParent.transform.Find("DialogueBox").gameObject;
             _dialogueText   = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
+            _speakerText   = _uiParent.transform.Find("DialogueBox/SpeakerText").GetComponent<TextMeshProUGUI>();
             _tagsText       = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
-            _backButton     = _uiParent.transform.Find("DialogueBox/BackButton").GetComponent<Button>();
             _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<Image>();
             _historyBox     = _uiParent.transform.Find("History").gameObject;
             _historyText    = _historyBox.transform.Find("Scroll View/Viewport/Content").GetComponent<TextMeshProUGUI>();
@@ -134,7 +140,9 @@ namespace MonoBehavior.Managers
             PhaseEnded.AddListener(OnPhaseEnded);
             ClearUI.AddListener(OnClearUI);
         
-            
+            _setBarge   = Instantiate(_setBarge, GameObject.Find("Environment").transform);
+            _setCale    = Instantiate(_setCale, GameObject.Find("Environment").transform);
+            _setTempest = Instantiate(_setTempest, GameObject.Find("Environment").transform);
         }
 
         void Start()
@@ -162,8 +170,6 @@ namespace MonoBehavior.Managers
             _dialogueAlreadyHandle = false;
             _currentDialogue = String.Empty;
         
-            // if(savedJsonStack.Count != 0)
-            //     _backButton.gameObject.SetActive(true);
             
             if (GameManager.Instance._story.canContinue)
             {
@@ -250,6 +256,7 @@ namespace MonoBehavior.Managers
         
                 // get character speaking
                 String speaker = words[0].Replace(" ", "");
+                _speakerText.text = speaker;
                 String dialogue = String.Join(":", words.Skip(1));
 
                 _tagMethods.Add(() =>
@@ -273,7 +280,7 @@ namespace MonoBehavior.Managers
                         // play sound
                         PlaySoundDialogAppears();
         
-                        StartCoroutine(GenerateText());
+                        StartCoroutine(GenerateText(dialogue));
                     }
                     
                 });
@@ -527,8 +534,6 @@ namespace MonoBehavior.Managers
         
             _dialogueBox.SetActive(false);
             
-            _backButton.gameObject.SetActive(false);
-            
             StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 1, 0, 0.1f));
 
             //_nextDialogueIndicator.gameObject.SetActive(false);
@@ -662,27 +667,36 @@ namespace MonoBehavior.Managers
             Debug.Log($"AM.Refresh > Change from {_stage} to {location}");
             _stage = location;
             
+            _setBarge.SetActive(false);
+            _setCale.SetActive(false);
+            //_setPort.SetActive(false);
+            //_setChurch.SetActive(false);
+            //_setTrial.SetActive(false);
+            _setTempest.SetActive(false);
+            //_setStomac.SetActive(false);
+            
             switch (_stage)
             {
-                case "barge":
-                    _setBarque.SetActive(true);
-                    _setCale.SetActive(false);
-                    _setTempete.SetActive(false);
+                case Constants.SetBarge:
+                    _setBarge.SetActive(true);
                     break;
-                case "cale":
-                    _setBarque.SetActive(false);
+                case Constants.SetCale:
                     _setCale.SetActive(true);
-                    _setTempete.SetActive(false);
                     break;
-                case "tempest":
-                    _setBarque.SetActive(false);
-                    _setCale.SetActive(false);
-                    _setTempete.SetActive(true);
+                case Constants.SetPort:
+                    _setPort.SetActive(true);
                     break;
-                case "trip_return":
-                    _setBarque.SetActive(false);
-                    _setCale.SetActive(true);
-                    _setTempete.SetActive(false);
+                case Constants.SetChuch:
+                    _setChurch.SetActive(true);
+                    break;
+                case Constants.SetTrial:
+                    _setTrial.SetActive(true);
+                    break;
+                case Constants.SetTempest:
+                    _setTempest.SetActive(true);
+                    break;
+                case Constants.SetStomac:
+                    _setStomac.SetActive(true);
                     break;
                 default:
                     Debug.LogError("SetTag > Unknown location");
@@ -948,7 +962,7 @@ namespace MonoBehavior.Managers
             //GoChoose();
         }
 
-        IEnumerator GenerateText()
+        IEnumerator GenerateText(string textToDisplay)
         {
             _dialogueBox.SetActive(true);
             if (mustWait)
@@ -960,7 +974,7 @@ namespace MonoBehavior.Managers
                 yield return new WaitForSeconds(GameManager.Instance._timeTextToAppearInSec);
             }
             
-            _dialogueText.text = _currentDialogue;
+            _dialogueText.text = textToDisplay;
             
             mustWait = false;
             
