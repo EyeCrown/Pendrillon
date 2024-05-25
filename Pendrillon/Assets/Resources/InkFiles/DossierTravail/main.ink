@@ -21,5 +21,9 @@ INCLUDE epilogue.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
+<<<<<<< Updated upstream
 -> barge.scene_1
+=======
+-> barge
+>>>>>>> Stashed changes
 //-> tribunal_1
