@@ -48,7 +48,7 @@ namespace MonoBehavior.Managers
         TextMeshProUGUI _tagsText;          // Tags box
         GameObject _historyBox;        // History box
         TextMeshProUGUI _historyText;
-        Image _nextDialogueIndicator;
+        RawImage _nextDialogueIndicator;
         readonly float _minButtonPosX = -960;
         readonly float _maxButtonPosX =  960;
         float _buttonPosY =  -260;
@@ -114,7 +114,7 @@ namespace MonoBehavior.Managers
             _dialogueText   = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
             _speakerText   = _uiParent.transform.Find("DialogueBox/SpeakerText").GetComponent<TextMeshProUGUI>();
             _tagsText       = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
-            _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<Image>();
+            _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<RawImage>();
             _historyBox     = _uiParent.transform.Find("History").gameObject;
             _historyText    = _historyBox.transform.Find("Scroll View/Viewport/Content").GetComponent<TextMeshProUGUI>();
             
@@ -660,6 +660,7 @@ namespace MonoBehavior.Managers
 
             Debug.Log($"AM.HandleTagPosition > Set {data[0]} to position [{position.x}, {position.y}]");
             character.SetPosition(position);
+            character.transform.LookAt(Camera.main.transform);
         }
 
         void HandleTagSet(string location)
@@ -991,10 +992,9 @@ namespace MonoBehavior.Managers
         }
 
 
-        IEnumerator FadeImageCoroutine(Image img, float begin, float end, float duration)
+        IEnumerator FadeImageCoroutine(RawImage img, float begin, float end, float duration)
         {
             var timeElapsed = 0.0f;
-
             Color color;
             while (timeElapsed < duration)
             {

@@ -117,11 +117,10 @@ namespace MonoBehavior.Managers
         {
             //GeneratePlayerStats();
             _player = Instantiate(_characterPrefab).GetComponent<CharacterHandler>();
-            _player.transform.position = _gridScene.GetWorldPositon(_gridScene._playerPosition);
+            _player.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100));
             
             Destroy(_player.GetComponent<Enemy>());
             
-            //_player.transform.rotation = _playerPos.rotation;
             _player.transform.LookAt(Camera.main.transform);
             
             _player._character._nicknames.Clear();
@@ -136,7 +135,7 @@ namespace MonoBehavior.Managers
                 var character = Instantiate(_characterPrefab);
                 
                 //character.transform.position = _gridScene.GetWorldPositon(_gridScene._enemyPosition + new Vector2Int(i*3, i*2)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
-                character.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
+                character.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100)); 
                 
                 //character.transform.rotation = _enemyPos.rotation;
                 character.transform.LookAt(Camera.main.transform);
@@ -193,10 +192,12 @@ namespace MonoBehavior.Managers
             //MoveCharactersOutsideScene();
             if (_goDirectToFight)
             {
-                var enemies = new List<CharacterHandler>();
-                enemies.Add(GetCharacter("Marcello"));
-                enemies.Add(GetCharacter("Rudolf"));
-                
+                var enemies = new List<CharacterHandler>
+                {
+                    GetCharacter("Marcello"),
+                    GetCharacter("Rudolf")
+                };
+
                 FightingManager.Instance.InitializeEnemies(enemies);
                 FightingManager.Instance.BeginFight.Invoke();
             }
@@ -241,22 +242,22 @@ namespace MonoBehavior.Managers
             Debug.Log($"Player data: {_player._character}");
         }
 
-        void GenerateCharacterStats(ref Character character, string inkId)
+        /*void GenerateCharacterStats(ref Character character, string inkId)
         {
             
-        }
+        }*/
         
         
         #region Coroutines
 
         public IEnumerator ScreenShakeCoroutine(Action callbackOnFinish, float intensity = Constants.ScreenShakeIntensity, float time = Constants.ScreenShakeTime)
         {
-            Debug.Log($"GM.{MethodBase.GetCurrentMethod().Name} > Begin screen shake with {intensity} intensity during {time} seconds");
+            Debug.Log($"GM.{MethodBase.GetCurrentMethod()?.Name} > Begin screen shake with {intensity} intensity during {time} seconds");
             _cameraPerlin.m_AmplitudeGain = intensity;
             yield return new WaitForSeconds(time);
             _cameraPerlin.m_AmplitudeGain = 0.0f;
             
-            Debug.Log($"GM.{MethodBase.GetCurrentMethod().Name} > End screen shake");
+            Debug.Log($"GM.{MethodBase.GetCurrentMethod()?.Name} > End screen shake");
 
             callbackOnFinish();
         }

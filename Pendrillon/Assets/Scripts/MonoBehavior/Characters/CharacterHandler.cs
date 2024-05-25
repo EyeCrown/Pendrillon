@@ -18,7 +18,7 @@ public class CharacterHandler : MonoBehaviour
     // UI
     Canvas _canvas;
     GameObject _uiActing;
-    TextMeshProUGUI _nameText;
+    //TextMeshProUGUI _nameText;
     TextMeshProUGUI _dialogueText;
 
     public Vector2Int _coordsOnStatge;
@@ -42,8 +42,8 @@ public class CharacterHandler : MonoBehaviour
         
         _canvas         = transform.Find("Canvas").GetComponent<Canvas>();
         _uiActing       = transform.Find("Canvas/ACTING_PART").gameObject;
-        _nameText       = _uiActing.transform.Find("NameBox/NameText").GetComponent<TextMeshProUGUI>();
-        _dialogueText   = _uiActing.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
+        //_nameText       = _uiActing.transform.Find("NameBox/NameText").GetComponent<TextMeshProUGUI>();
+        //_dialogueText   = _uiActing.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
 
         _canvas.worldCamera = Camera.main;
         _canvas.gameObject.SetActive(true);
@@ -52,14 +52,13 @@ public class CharacterHandler : MonoBehaviour
         DialogueUpdate.AddListener(OnDialogueUpdate);
     }
 
-    void Start()
+    /*void Start()
     {
-        _nameText.text = _character.name;
+        //_nameText.text = _character.name;
         //Debug.Log($"{_character.name} se réveille.");
 
         //SetPosition(coordsOnStatge);
-    }
-
+    }*/
     
 
     #endregion
@@ -89,7 +88,7 @@ public class CharacterHandler : MonoBehaviour
         return speed;
     }
     
-    public void Move(Vector2Int destination, string speedText, System.Action callbackOnFinish)
+    public void Move(Vector2Int destination, string speedText, Action callbackOnFinish)
     {
         Vector3 end = GameManager.Instance._gridScene.GetWorldPositon(destination);
         transform.LookAt(end);
@@ -122,13 +121,13 @@ public class CharacterHandler : MonoBehaviour
 
     private void OnClearUI()
     {
-        _dialogueText.text = String.Empty;
+        //_dialogueText.text = String.Empty;
         _uiActing.SetActive(false);
         
         //_anim.SetTrigger("Idle");
     }
 
-    public void OnDialogueUpdate(string text)
+    private void OnDialogueUpdate(string text)
     {
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > {_character.name}:{text}");
         _uiActing.SetActive(true);
@@ -139,7 +138,7 @@ public class CharacterHandler : MonoBehaviour
     
     #region Coroutine
 
-    public IEnumerator PlayAnimCoroutine(string triggerName, System.Action callbackOnFinish)
+    public IEnumerator PlayAnimCoroutine(string triggerName, Action callbackOnFinish)
     {
         if (!HasParameter(triggerName, _anim))
         {
@@ -169,7 +168,7 @@ public class CharacterHandler : MonoBehaviour
 
         }
         
-        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation ended");
+        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation ended");
 
         //Done playing. Do something below!
         callbackOnFinish();
@@ -180,14 +179,13 @@ public class CharacterHandler : MonoBehaviour
         // }
     }
     
-    IEnumerator MovePositionCoroutine(Vector3 targetPosition, float duration, System.Action callbackOnFinish)
+    IEnumerator MovePositionCoroutine(Vector3 targetPosition, float duration, Action callbackOnFinish)
     {
         float time = 0.0f;
         Vector3 startPosition = transform.position;
 
         while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
         {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
             transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
             time += Time.deltaTime;
             yield return null;
