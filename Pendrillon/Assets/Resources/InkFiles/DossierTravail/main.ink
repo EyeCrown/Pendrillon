@@ -16,6 +16,8 @@ INCLUDE tempest.ink
 INCLUDE tribunal_1.ink
 INCLUDE tribunal_2.ink
 INCLUDE epilogue.ink
+INCLUDE boss_battle.ink
+
 
 // Seed of randomize events
 //~ SEED_RANDOM(666)
