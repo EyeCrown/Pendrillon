@@ -119,11 +119,11 @@ VAR player_won_battle = false // Define if the player won the battle or not
     {sc(COMP, 0): -> listen_hidden_jester_S | -> listen_hidden_jester_F}
         ** (listen_hidden_jester_S) PLAYER: (Chuchotte) Quelqu'un nous épie.
             *** [Confronter l'épieur.] PLAYER: Sort de ta cachette, rat des campagnes !
-                ÉPIEUR: Vous avez l'ouïe fine, Monseigneur. #anim:Arle:stop_hiding
+                ÉPIEUR: Vous avez l'ouïe fine, messire. #anim:Arle:stop_hiding
                 **** [Qui êtes vous ?] PLAYER: Qui va là ?!
-                    ÉPIEUR: Un simple passant égaré.
+                    ÉPIEUR: Un simple passant égaré. #anim:Arle:bow 
                     ***** [Foutaises.] PLAYER: Balivernes ! Dis-moi qui tu es ou je te coupe en dés de jambon !
-                        ÉPIEUR: Je ne suis que moi-même, Monseigneur. Indigne d'être nommé. Je m'en vais déjà...
+                        ÉPIEUR: Je ne suis que moi-même, messire. Indigne d'être nommé. Je m'en vais déjà...
                         ****** [Attaquer. {t(STRE, -10)}]
                             {sc(STRE, -10): -> attack_jester_S | -> attack_jester_F}
                             ******* (attack_jester_S) ÉPIEUR: (Hurlant) À moi ! Au secours ! #anim:Player:attack
@@ -169,14 +169,14 @@ MARCELLO: Il n'y a personne, cheffe.
     ** (discretion_1_F) MARCELLO: Là ! Derrière cette caisse ! Il y a quelqu'un ! #anim:Player:stop_hiding
         -> player_is_found
 * [Sortir de sa cachette] #anim:Player:stop_hiding
-    -> player_not_hidden 
+    -> player_not_hidden
 - (player_not_found) CAPUCINE: Laisse-moi regarder de plus près...
-    * {has_bone} [Assommer le garde avec l'os.] #anim:Player:attack
-        {sc(STRE, 20): -> battle_capucine_with_marcello_hurt | -> battle_marcello_capucine_full_life}
-    * {has_coconut} [Envoyer la noix de coco.] #anim:Player:throw
-        {sc(DEXT, 10): -> battle_capucine_with_marcello_hurt | -> battle_marcello_capucine_full_life}
-    * [Attaquer le garde par surprise.]
-        {sc(DEXT, -20): -> battle_capucine_with_marcello_hurt | -> battle_marcello_capucine_full_life}
+    * {has_bone} [Assommer Marcello avec l'os. {t(STRE, 20)}]
+        -> attack_marcello_with_bone
+    * {has_coconut} [Envoyer la noix de coco. {t(DEXT, 20)}]
+        -> attack_marcello_with_coconut
+    * [Sortir de sa cachette] #anim:Player:stop_hiding
+        -> player_not_hidden
 - (player_is_found) CAPUCINE: Qui es-tu, maraud ? {player_is_stinky: Tu empestes le poisson pourri !}
     -> player_not_hidden
 
@@ -196,7 +196,8 @@ MARCELLO: Il n'y a personne, cheffe.
     * [Vous-mêmes.] PLAYER: C'est vous qui êtes louche, les morpions.
         MARCELLO: Répète ça pour voir, abruti !
         ** [Répéter.] PLAYER: Louches et sourdingues, en plus de ça.
-            MARCELLO: Nous allons t'apprendre à insulter des gardes de la Couronne ! -> battle_marcello_capucine_full_life
+            MARCELLO: Nous allons t'apprendre à insulter des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
+                -> battle
         ** [Calmer le jeu. {t(CHAR, 10)}]
             {sc(CHAR, 10): -> try_diplomacy_S | -> try_diplomacy_F}
             *** (try_diplomacy_S) -> calm_the_situation
@@ -218,28 +219,28 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
         ** (lie_about_fugitive_S) PLAYER: Cet individu ment. D'ailleurs, il m'a détroussé de cinq pièces d'or !
             MARCELLO: Il a l'air de dire vrai. T'en penses quoi, Marcello ?
             CAPUCINE: J'en pense que je vais fouiller le navire dans le doute. Garde un œil sur lui. #anim:Capucine:seek_intruder_near_sireine
-            PLAYER: Je vois que vos ne voulez pas lâcher l'affaire...
-                *** (knock_out_capucine) [Assommer Capucine. {t(STRE, -10)}]
-                    {sc(STRE, -10): -> battle_marcello_with_capucine_hurt | -> battle_marcello_capucine_full_life}
-                *** (knock_out_marcello) [Assommer Marcello. {t(STRE, -10)}]
-                    {sc(STRE, -10): -> battle_capucine_with_marcello_hurt | -> battle_marcello_capucine_full_life}
+                -> battle
         ** (lie_about_fugitive_F) PLAYER: Le type que vous avez vu sortir d'ici est atteint d'une maladie rare.
             CAPUCINE: Une maladie rare ?
             PLAYER: Absolument. Une maladie qui lui fait voir des fugitifs qui ne sont pas là.
             CAPUCINE: ...
             MARCELLO: ...
             CAPUCINE: Il nous prend pour des idiots ou je rêve ?
-            MARCELLO: On va t'apprendre à mentir à des gardes de la Couronne ! ->battle_marcello_capucine_full_life
+            MARCELLO: Je vais t'apprendre à mentir à des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
+                -> battle
     * [Intimider. {t(CHAR, -30)}]
         {sc(CHAR, -30): -> intimidate_guards_S | -> intimidate_guards_F}
         ** (intimidate_guards_S) PLAYER: Le marin d'eau douce va te noyer de coups, si tu continues de l'ouvrir.
             MARCELLO: Pardon, m'sieur.
-            CAPUCINE: Ne t'excuse pas, abruti. Et toi, je vais t'apprendre à menacer un garde de la Couronne ! -> battle_marcello_with_capucine_hurt
+            CAPUCINE: Ne t'excuse pas, abruti. Apprend-lui plutôt ce qu'on obtient en menaçant un garde de la Couronne !
+            MARCELLO: Compris, cheffe ! #anim:Marcello:attack #anim:Player:hurt
+                -> battle
         ** (intimidate_guards_F) PLAYER: T'as vu mes biscoteaux ? Tu veux les voir de plus près, peut-être ?
             CAPUCINE: ...
             MARCELLO: ...
             CAPUCINE: Il se croit intimidant, cet idiot ?
-            MARCELLO: On va t'apprendre à menacer des gardes de la Couronne ! -> battle_marcello_capucine_full_life
+            MARCELLO: Je vais t'apprendre à menacer des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
+                -> battle
     * {p_gold > 0} [Soudoyer. {t(CHAR, -10)}]
         ~ trial(t_2_bribe_guards)
         {sc(CHAR, -10): -> bribe_guards_S | -> bribe_guards_F}
@@ -248,23 +249,82 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             ~ trial(t_2_try_and_succeed_bribing_guards)
             *** [Donner les pièces.] PLAYER: Voilà pour toi, mon amie. #playsound:gold_coins
                 CAPUCINE: Nous allons maintenant t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde, quadruple forban.
-                MARCELLO: C'est là qu'on le frappe, cheffe ?
-                CAPUCINE: En effet, Marcello. C'est là qu'on le frappe. -> battle_capucine_with_marcello_hurt
-            *** [Assommer Marcello.] -> knock_out_marcello
+                MARCELLO: C'est là que je le frappe, cheffe ?
+                CAPUCINE: En effet, Marcello. C'est là que tu le frappe. 
+                MARCELLO: Compris, cheffe ! #anim:Marcello:attack #anim:Player:hurt
+                    -> battle
+            *** [Assommer Marcello.] -> attack_marcello_S
         ** (bribe_guards_F) CAPUCINE: À qui penses-tu avoir affaire, quadruple forban ? Nous allons t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde !
             ~ trial(t_2_try_but_fail_bribing_guards)
-            MARCELLO: C'est là qu'on le frappe, cheffe ?
-            CAPUCINE: En effet, Marcello. C'est là qu'on le frappe. -> battle_capucine_with_marcello_hurt
-
+            MARCELLO: C'est là que je le frappe, cheffe ?
+            CAPUCINE: En effet, Marcello. C'est là que je le frappe.
+            CAPUCINE: En effet, Marcello. C'est là que tu le frappe. 
+            MARCELLO: Compris, cheffe ! #anim:Marcello:attack #anim:Player:hurt
+                -> battle
 // The guards are called by the Jester
 = guards_are_called
 #playsound:guards_arrive
 MARCELLO: J'ai entendu quelqu'un hurler. #anim:Marcello:enter_scene
 ÉPIEUR: Mes braves ! Cet homme cache une fugitive ! Il est armé, méfiez-vous !
 MARCELLO: Il ne fera pas long feu !
-CAPUCINE : En garde !
-    -> battle_marcello_capucine_full_life
+MARCELLO: Prends ça ! #anim:Marcello:attack #anim:Player:hurt
+- -> battle
 
+// Attack Marcello with a bone
+= attack_marcello_with_bone
+{sc(DEXT, -10): -> attack_marcello_bone_S | -> attack_marcello_bone_F} #anim:Marcello:seek_intruder_near_player
+    ** (attack_marcello_bone_S) MARCELLO: Le navire est vide, cheffe. #anim:Player:attack #anim:Marcello:hurt #audience:choc
+        MARCELLO: Aie !
+        CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #audience:laugh
+        MARCELLO: Cet abruti m'a frappé !
+        CAPUCINE: Ça m'en a tout l'air, en effet.
+    ** (attack_marcello_bone_F) MARCELLO: Le navire est vide, cheffe. #anim:Player:attack #anim:Marcello:dodge
+        MARCELLO: Ai-je la berlue ou est-ce qu'un gougnafier vient d'essayer de m'assomer avec une entrecôte ? #audience:laugh
+- MARCELLO: Prends ça, pour la peine ! #anim:Marcello:attack #anim:Player:hurt audience:applause
+- -> battle
+
+// Attack Marcello with a coconut
+= attack_marcello_with_coconut
+{sc(DEXT, 20): -> attack_marcello_coconut_S | -> attack_marcello_coconut_F}
+    ** (attack_marcello_coconut_S) MARCELLO: Le navire est vide, cheffe. #anim:Player:throw_coconut #anim:Marcello:hurt
+    ** (attack_marcello_coconut_F) MARCELLO: Le navire est vide, cheffe. #anim:Player:throw_coconut_fail
+        MARCELLO: Aie !
+        CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #audience:laugh
+        MARCELLO: Cet abruti m'a envoyé une noix de coco en plein dans les narines !
+        CAPUCINE: Ça m'en a tout l'air, en effet.
+- MARCELLO: Prends ça, pour la peine ! #anim:Marcello:attack #anim:Player:hurt audience:applause
+- -> battle
+
+// Battle (acting phase)
+= battle
+    * [Attaquer Marcello. {t(STRE, -10)}]
+        {sc(STRE, -10): -> attack_marcello_S | -> attack_marcello_F}
+        ** (attack_marcello_S) PLAYER: Prends ça ! #anim:Player:attack #anim:Marcello:hurt
+            MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête !
+        ** (attack_marcello_F) PLAYER: Prends ça ! #anim:Player:attack #anim:Marcello:dodge
+            MARCELLO: Héhé... Trop lent, minable.
+    * [Attaquer par derrière. {t(DEXT, -10)}]
+        {sc(DEXT, -10): -> sneaky_attack_marcello_S | -> sneaky_attack_marcello_F}
+        ** (sneaky_attack_marcello_S) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine
+            PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:hurt
+            MARCELLO: M'attaquer alors que j'ai le dos tourné ? Tu es un lâche !
+            *** [Et toi un crétin.] PLAYER: C'est toi qui est stupide, à tourner le dos à quelqu'un que tu viens de frapper.
+            *** [C'est tout moi, en effet.] PLAYER: Je dirai plutôt que je sais saisir une opportunité quand je la vois...
+                PLAYER: Surtout quand cette opportunité consiste à cogner un rustre comme toi.
+        ** (sneaky_attack_marcello_F) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine
+            PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:dodge
+            MARCELLO: Tu te crois discret, abruti ?
+    * [Calmer le jeu. {t(CHAR, -10)}]
+        {sc(CHAR, -10): -> calm_marcello_S | -> calm_marcello_F}
+        ** (calm_marcello_S) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
+            CAPUCINE: En voilà une parole raisonnable.
+            MARCELLO: Dommage, je n'aurais pas détesté t'en claquer une dernière sur le museau...
+            CAPUCINE: Allons, allons, Marcello... Le monsieur est raisonnable, alors soyons-le à notre tour.
+        ** (calm_marcello_F) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
+            CAPUCINE: En voilà une parole raisonnable. Mon ami, en revanche, apprécierait de t'en claquer une dernière sur le museau. Pas vrai, Marcello ?
+            MARCELLO: Je confirme.
+            MARCELLO: Tiens, la voilà ! #anim:Marcello:attack #anim:Player:hurt
+- -> arrest_naida
 
 // Battle against two guards
 = battle_marcello_capucine_full_life
@@ -295,7 +355,11 @@ Combat contre Capucine et Marcello, où Marcello est blessé.
         MARCELLO: Bien dit, cheffe ! J'ajouterai une petite insulte afin de marquer le coup.
         CAPUCINE: Je viens précisément de le faire, triple baveux. #anim:Marcello:ashamed
 }
-#sleep:3
+- -> arrest_naida
+
+// Naida is arrested
+=arrest_naida
+#sleep:1
 #playsound:sounds_inside_the_crate
 CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans !
 MARCELLO : Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang.
@@ -316,11 +380,12 @@ CAPUCINE: Tiens-donc... Mais qui voilà ?
 #anim:Sireine:out_of_hideout
 PLAYER: Laissez-là, bande de gougnafiers !
 CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la.
-#anim:Player:try_attack
-#anim:Marcello:defend
-#anim:Marcello:attackt
+#anim:Player:attack
+#anim:Marcello:dodge
+#anim:Marcello:attack
 #anim:Player:hurt
-CAPUCINE: Allons-nous-en avec notre trouvaille. Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts, il finira sa triste vie au cachot.
+CAPUCINE: Allons-nous-en avec notre trouvaille. Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts...
+CAPUCINE: Il finira sa triste vie au cachot, comme son ami.
 #move(Capucine)
 #sleep:3
 // Marcello remet un coup gratuit au Player
