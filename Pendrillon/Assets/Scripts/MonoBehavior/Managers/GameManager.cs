@@ -27,16 +27,17 @@ namespace MonoBehavior.Managers
         public List<CharacterHandler> _characters = new List<CharacterHandler>();
 
         public CharacterHandler _player;
-        
-        [SerializeField] private GameObject _characterPrefab;
-        
         public Prompter _prompter;
+        
+        [Header("=== Prefabs ===")]
+        [SerializeField] private GameObject _characterPrefab;
+        [SerializeField] private GameObject _arlePrefab;
+        [SerializeField] private GameObject _passeurPrefab;
         [SerializeField] private GameObject _prompterPrefab;
 
         [Header("=== Locations ===")]
         public GroundGrid _gridScene;
 
-        public Transform _playerPos;
         public Transform _enemyPos;
         
         [Header("=== Ink File ===")]
@@ -132,7 +133,21 @@ namespace MonoBehavior.Managers
         {
             for (var i = 0; i < _charactersBase.Count; i++)
             {
-                var character = Instantiate(_characterPrefab);
+                GameObject character;
+
+                switch (_charactersBase[i].name)
+                {
+                    case "Arle":
+                        character = Instantiate(_arlePrefab);
+                        break;
+                    case "Passeur":
+                        character = Instantiate(_passeurPrefab);
+                        break;    
+                    default:
+                        character = Instantiate(_characterPrefab);
+                        break;
+                }
+                
                 
                 //character.transform.position = _gridScene.GetWorldPositon(_gridScene._enemyPosition + new Vector2Int(i*3, i*2)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
                 character.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100)); 

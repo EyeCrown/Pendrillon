@@ -39,6 +39,7 @@ namespace MonoBehavior.Managers
         public GameObject _setTrial;
         public GameObject _setTempest;
         public GameObject _setStomac;
+        private GameObject _currentSet;
     
         // UI
         [HideInInspector] public GameObject _uiParent { get; private set; }
@@ -668,21 +669,28 @@ namespace MonoBehavior.Managers
             Debug.Log($"AM.Refresh > Change from {_stage} to {location}");
             _stage = location;
             
-            _setBarge.SetActive(false);
-            _setCale.SetActive(false);
-            //_setPort.SetActive(false);
-            //_setChurch.SetActive(false);
-            //_setTrial.SetActive(false);
-            _setTempest.SetActive(false);
-            //_setStomac.SetActive(false);
+            if (_currentSet != null)
+                _currentSet.GetComponent<Animator>().SetBool("InOut",false);
+            
+            // _setBarge.SetActive(false);
+            // _setCale.SetActive(false);
+            // //_setPort.SetActive(false);
+            // //_setChurch.SetActive(false);
+            // //_setTrial.SetActive(false);
+            // _setTempest.SetActive(false);
+            // //_setStomac.SetActive(false);
             
             switch (_stage)
             {
                 case Constants.SetBarge:
                     _setBarge.SetActive(true);
+                    _setBarge.GetComponent<Animator>().SetBool("InOut",true);
+                    _currentSet = _setBarge;
                     break;
                 case Constants.SetCale:
                     _setCale.SetActive(true);
+                    //_setCale.GetComponent<Animator>().SetBool("InOut",true);
+                    _currentSet = _setCale;
                     break;
                 case Constants.SetPort:
                     _setPort.SetActive(true);
