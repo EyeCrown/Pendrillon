@@ -38,6 +38,9 @@ namespace MonoBehavior.Managers
         [Header("=== Locations ===")]
         public GroundGrid _gridScene;
 
+        public float _gridYBase = 0.65f;
+        public float _gridYBarge = 2.25f;
+
         public Transform _enemyPos;
         
         [Header("=== Ink File ===")]
@@ -78,6 +81,7 @@ namespace MonoBehavior.Managers
 
             // Connect Attributes
             _gridScene = GameObject.Find("Grid").GetComponent<GroundGrid>();
+            _gridScene.transform.position = new Vector3(-23.0f, _gridYBase, -6.5f);
             _cameraPerlin = GameObject.Find("Virtual Camera").GetComponent<CinemachineVirtualCamera>()
                 .GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
@@ -93,8 +97,7 @@ namespace MonoBehavior.Managers
             _story = new Story(_inkAsset.text);
 
             var path = _story.state.currentPointer;
-            Debug.Log($"GM.Awake > _story.state.currentPathString: {path}");   
-            
+            Debug.Log($"GM.Awake > _story.state.currentPathString: {path}");
         }
 
         private void Start()
@@ -182,7 +185,7 @@ namespace MonoBehavior.Managers
         {
             if (characterName.ToLower() == "player")
                 return GetPlayer();
-            
+                
             foreach (var character in _characters)
             {
                 foreach (var nickname in character._character._nicknames)
@@ -195,12 +198,36 @@ namespace MonoBehavior.Managers
             return null;
         }
 
+        public void ClearStageCharacters()
+        {
+            Vector2Int coords = new Vector2Int(-10, -10);
+            _player.SetPosition(coords);
+
+            foreach (var character in _characters)
+            {
+                character.SetPosition(coords);
+            }
+        }
+        
         
         public CharacterHandler GetPlayer()
         {
             return _player;
         }
-        
+
+
+        public void SetGridHeight(string stage = null)
+        {
+            var y = _gridYBase;
+            if (stage == Constants.SetBarge)
+            {
+                y = _gridYBarge;
+                Debug.Log($"GM.Grid > Changement {y}");
+            }
+            
+            _gridScene.transform.position = new Vector3(-23.0f, y, -6.5f);
+            Debug.Log($"GM.Grid > {y}");
+        }
         
         void BeginGame()
         {
