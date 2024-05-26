@@ -22,7 +22,7 @@
 - JUGE ERNEST: Silence ! Silence !
 #anim:Judge:bell
 #audience:silent
-JUGE ERNEST: Les Portes du Tribunal se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendants du peuple Sauvé. 
+JUGE ERNEST: Les Portes du Tribunal se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé.
 JUGE ERNEST: Ainsi est-il accusé, non par le règne des Hommes, mais par celui de la Déesse Irène.
 JUGE ERNEST: De celle-ci nous nous ferons les yeux, les oreilles et le cœur, comme la Loi l'exige.
 #audience:ovation
@@ -30,19 +30,31 @@ JUGE ERNEST: Silence ! J'exige le silence !
 #anim:Judge:bell
 #audience:silent
 - JUGE ERNEST: L'homme est accusé, par ordre croissant de gravité... #audience:booing
-- {is_accused_of("bribe guards") == true}JUGE ERNEST: ... De tentative de corruption à l'égard de représentants de l'autorité Royale... #audience:booing
-    ~ audience_judgement(-0.02)
-- {is_accused_of("blasphemy") == true}JUGE ERNEST: ... De blasphème... #audience:booing #screenshake
-    ~ audience_judgement(-0.02)
+{
+    - is_accused_of("bribe guards"): JUGE ERNEST: ... De tentative de corruption à l'égard de représentants de l'autorité Royale... #audience:booing
+        ~ audience_judgement(-0.02)
+}
+{
+    - is_accused_of("blasphemy"): JUGE ERNEST: ... De blasphème... #audience:booing #screenshake
+        ~ audience_judgement(-0.02)
+}
 - JUGE ERNEST: ... De violence à l'encontre de représentants de l'autorité Royale... #audience:laugh
     ~ audience_judgement(0.05)
-- {is_accused_of("sacred degradations") == true}JUGE ERNEST: ... De dégradations de biens sacrés... #audience:booing
+{
+    - is_accused_of("sacred degradations"): JUGE ERNEST: ... De dégradations de biens sacrés... #audience:booing
     ~ audience_judgement(-0.02)
+}
+{
+    - is_accused_of("crown outrage"): JUGE ERNEST: ... D'outrage à la Couronne... #audience:booing #screenshake
+        ~ audience_judgement(-0.02)
+}
+{
+    - is_accused_of("judge outrage"): JUGE ERNEST: ... D'outrage au Juge de droit divin, Ernest... #audience:silent #screenshake
+        ~ audience_judgement(-0.02)
+}
 - {is_accused_of("crown outrage") == true}JUGE ERNEST: ... D'outrage à la Couronne... #audience:booing #screenshake
     ~ audience_judgement(-0.02)
 - JUGE ERNEST: ... D'actes hérétiques... #audience:booing #screenshake
-    ~ audience_judgement(-0.02)
-- {is_accused_of("judge outrage") == true}JUGE ERNEST: ... D'outrage au Juge de droit divin, Ernest... #audience:silent #screenshake
     ~ audience_judgement(-0.02)
 - JUGE ERNEST: ... De Haute trahison... #audience:booing #screenshake
     ~ audience_judgement(-0.02)

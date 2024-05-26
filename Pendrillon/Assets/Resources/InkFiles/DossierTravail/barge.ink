@@ -73,7 +73,7 @@ PASSEUR: Commence par te présenter : qui es-tu ? #anim:Passeur:question #playso
 - SOUFFLEUR: ... #anim:Souffleur:neutre
 #sleep:2
 - SOUFFLEUR: C'est là qu'on va avoir un petit problème, l'ami. #anim:Souffleur:neutre
-SOUFFLEUR: Le metteur en scène de cette pièce, le célèbre Jean Ornicar... son nom te dit sans doute quelque chose. #anim:Souffleur:neutre
+SOUFFLEUR: Le metteur en scène de cette pièce, le célèbre Jean Ornicar... son nom te dit sans doute quelque chose... #anim:Souffleur:neutre
 SOUFFLEUR: Le respectable Ornicar a quitté la troupe. En assez mauvais termes, vois-tu. #anim:Souffleur:neutre
 #sleep:2
 SOUFFLEUR: Là où le bât blesse... c'est qu'il n'a jamais terminé d'écrire tes répliques. #anim:Souffleur:neutre
