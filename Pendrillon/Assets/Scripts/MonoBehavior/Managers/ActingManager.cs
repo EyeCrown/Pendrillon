@@ -167,6 +167,8 @@ namespace MonoBehavior.Managers
         {
             ClearUI.Invoke();
 
+            AkSoundEngine.PostEvent("Stop_VOX_ALL", gameObject); //Stoppe toutes les voix en cours de lecture
+
             _dialogueAlreadyHandle = false;
             _currentDialogue = String.Empty;
         
@@ -321,7 +323,7 @@ namespace MonoBehavior.Managers
                 GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
                 Debug.Log("!!!! Can click next Action");
 
-                
+
                 //_nextDialogueIndicator.gameObject.SetActive(true);
                 StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
@@ -452,6 +454,7 @@ namespace MonoBehavior.Managers
         {
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Call next dialogue || Refresh call");
             GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
+
             Refresh();
         }
 

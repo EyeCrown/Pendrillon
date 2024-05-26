@@ -71,7 +71,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{01325B44-C84E-FCE3-D50E-363D58D05464}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{625621F1-091C-89BB-2174-6AE25304364B}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -3239,6 +3239,9 @@
 						<MediaRef Id="273231204"/>
 						<MediaRef Id="462418729"/>
 					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="139643743" Name="Stop_VOX_ALL"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="2637491412" Name="Play_UI_HUD_SpeechBubbleSkip" DurationType="OneShot" DurationMin="0.15300752" DurationMax="0.16695228">
 					<MediaRefs>
@@ -3256,14 +3259,6 @@
 						<MediaRef Id="279408314"/>
 						<MediaRef Id="338660528"/>
 						<MediaRef Id="455376796"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1104546762" Name="Play_VOX_NPC_Priest_SC_Eglise_1rstEncounter" DurationType="OneShot" DurationMin="0.95780206" DurationMax="1.549427">
-					<MediaRefs>
-						<MediaRef Id="109491327"/>
-						<MediaRef Id="737385051"/>
-						<MediaRef Id="869604069"/>
-						<MediaRef Id="953067962"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1893591346" Name="Play_VOX_PlayerF_EmotionsPlaceholder_Agree" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -3421,6 +3416,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
+				<Event Id="139643743" Name="Stop_VOX_ALL" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1372909120" Name="VOX_Arle_abimedignite" DurationType="OneShot" DurationMin="2.5735" DurationMax="2.5735">
 					<MediaRefs>
 						<MediaRef Id="425271969"/>
@@ -3987,7 +3983,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{210B1626-CC90-0BFF-95CD-BEB956B5176D}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{20733904-FAD6-F14C-7428-E2AA86725E6B}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -7155,6 +7151,9 @@
 						<MediaRef Id="273231204"/>
 						<MediaRef Id="462418729"/>
 					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="139643743" Name="Stop_VOX_ALL"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="2637491412" Name="Play_UI_HUD_SpeechBubbleSkip" DurationType="OneShot" DurationMin="0.15300752" DurationMax="0.16695228">
 					<MediaRefs>
@@ -7172,14 +7171,6 @@
 						<MediaRef Id="279408314"/>
 						<MediaRef Id="338660528"/>
 						<MediaRef Id="455376796"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1104546762" Name="Play_VOX_NPC_Priest_SC_Eglise_1rstEncounter" DurationType="OneShot" DurationMin="0.95780206" DurationMax="1.549427">
-					<MediaRefs>
-						<MediaRef Id="109491327"/>
-						<MediaRef Id="737385051"/>
-						<MediaRef Id="869604069"/>
-						<MediaRef Id="953067962"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1893591346" Name="Play_VOX_PlayerF_EmotionsPlaceholder_Agree" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -7337,6 +7328,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
+				<Event Id="139643743" Name="Stop_VOX_ALL" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1372909120" Name="VOX_Arle_abimedignite" DurationType="OneShot" DurationMin="2.5735" DurationMax="2.5735">
 					<MediaRefs>
 						<MediaRef Id="425271969"/>
@@ -7904,5 +7896,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8236BDB7-03A7-98F6-26F6-655FF5E36957}</FileHash>
+	<FileHash>{F4B88EB1-2944-4E39-9746-9D4F5DD8BAF1}</FileHash>
 </SoundBanksInfo>
