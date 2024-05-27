@@ -130,16 +130,6 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
-										<Action Name="" ID="{3370994F-83EE-4E7C-8621-9D9F02D176DC}" ShortID="442047420">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="41"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Stop_VOX_ALL" ID="{3EEA9250-1C42-417A-9201-0BF59AB25D89}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_UI_HUD_SpeechBubbleSkip" ID="{1FC8680D-3559-4F51-A6D3-713809817F4A}">
@@ -148,6 +138,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="UI_HUD_SpeechBubbleSkip" ID="{9C6A3FE2-581C-4928-8C27-890AE9C2278D}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{3370994F-83EE-4E7C-8621-9D9F02D176DC}" ShortID="442047420">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_VOX_ALL" ID="{3EEA9250-1C42-417A-9201-0BF59AB25D89}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -835,6 +835,17 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="Play_SFX_SC_Theater_TransitionBasic" ID="{303600FC-B11D-404E-A0C9-EDE23B348338}">
+							<ChildrenList>
+								<Action Name="" ID="{669EAFFB-D051-418F-8EDB-01B5C069A1C4}" ShortID="738097516">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SC_Theater_TransitionBasic" ID="{807C26DE-D123-4C0E-8ADA-AEC791E8D4E0}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Dialogues" ID="{3BC109D9-01F1-41D8-ABDF-37C9FC14F251}" ShortID="1008342144">
