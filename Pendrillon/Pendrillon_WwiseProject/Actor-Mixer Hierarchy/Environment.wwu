@@ -38,6 +38,11 @@
 							<ChildrenList>
 								<ActorMixer Name="ENV_Theater_Crowd" ID="{58DF52CA-4486-42B3-B6AA-785B3741E491}" ShortID="333422208">
 									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>9</Value>
+											</ValueList>
+										</Property>
 										<Property Name="OverrideEffect" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
@@ -2250,48 +2255,6 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<Sound Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_8" ID="{2BF21EDD-B92D-4688-A1A9-E62C977E75E9}" ShortID="213815758">
-																			<PropertyList>
-																				<Property Name="MakeUpGain" Type="Real64">
-																					<ValueList>
-																						<Value>-8</Value>
-																					</ValueList>
-																				</Property>
-																				<Property Name="Pitch" Type="int32">
-																					<ModifierList>
-																						<ModifierInfo>
-																							<Modifier Name="" ID="{F9053A86-AE1E-42C2-AB4A-D267C72D3B16}">
-																								<PropertyList>
-																									<Property Name="Enabled" Type="bool" Value="True"/>
-																									<Property Name="Max" Type="Real64" Value="100"/>
-																									<Property Name="Min" Type="Real64" Value="-300"/>
-																								</PropertyList>
-																							</Modifier>
-																						</ModifierInfo>
-																					</ModifierList>
-																				</Property>
-																			</PropertyList>
-																			<ReferenceList>
-																				<Reference Name="Conversion">
-																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-																				</Reference>
-																				<Reference Name="OutputBus">
-																					<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-																				</Reference>
-																			</ReferenceList>
-																			<ChildrenList>
-																				<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_8" ID="{C4ABBA35-A287-4900-AE93-E346616894D1}">
-																					<Language>SFX</Language>
-																					<AudioFile>SFX_Theater_CrowdHype_CrowdUnhappyRND_8.wav</AudioFile>
-																					<MediaIDList>
-																						<MediaID ID="709022877"/>
-																					</MediaIDList>
-																				</AudioFileSource>
-																			</ChildrenList>
-																			<ActiveSourceList>
-																				<ActiveSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_8" ID="{C4ABBA35-A287-4900-AE93-E346616894D1}" Platform="Linked"/>
-																			</ActiveSourceList>
-																		</Sound>
 																		<Sound Name="Silence" ID="{73B528BD-672F-4FE9-A512-E429CA496A94}" ShortID="344933708">
 																			<PropertyList>
 																				<Property Name="Weight" Type="Real64">
@@ -2597,9 +2560,78 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_8" ID="{2BF21EDD-B92D-4688-A1A9-E62C977E75E9}" ShortID="213815758">
+													<PropertyList>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>6</Value>
+															</ValueList>
+														</Property>
+														<Property Name="Pitch" Type="int32">
+															<ModifierList>
+																<ModifierInfo>
+																	<Modifier Name="" ID="{F9053A86-AE1E-42C2-AB4A-D267C72D3B16}">
+																		<PropertyList>
+																			<Property Name="Enabled" Type="bool" Value="True"/>
+																			<Property Name="Max" Type="Real64" Value="100"/>
+																			<Property Name="Min" Type="Real64" Value="-300"/>
+																		</PropertyList>
+																	</Modifier>
+																</ModifierInfo>
+															</ModifierList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_8" ID="{C4ABBA35-A287-4900-AE93-E346616894D1}">
+															<Language>SFX</Language>
+															<AudioFile>SFX_Theater_CrowdHype_CrowdUnhappyRND_8.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="709022877"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_8" ID="{C4ABBA35-A287-4900-AE93-E346616894D1}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
 										</ActorMixer>
 									</ChildrenList>
 								</ActorMixer>
+								<Sound Name="SFX_SC_Theater_TransitionBasic" ID="{807C26DE-D123-4C0E-8ADA-AEC791E8D4E0}" ShortID="704203577">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_SC_Theater_TransitionBasic" ID="{445BE21B-0417-45BB-A3B5-7A72A1A73A65}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_SC_Theater_TransitionBasic.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="413400396"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_SC_Theater_TransitionBasic" ID="{445BE21B-0417-45BB-A3B5-7A72A1A73A65}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="AMB_Barque" ID="{6575CB74-7EC0-48A9-9845-F9335BE16980}" ShortID="745220091">
@@ -2613,6 +2645,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<BlendContainer Name="AMB_SC_Barque_Ambiance" ID="{41A0F2C9-5CC7-42C9-8C85-63629FB80BF6}" ShortID="843079122">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -2847,6 +2886,13 @@
 															</ChildrenList>
 														</RandomSequenceContainer>
 														<RandomSequenceContainer Name="AMB_SC_Barque_RND_Lantern" ID="{D55F1794-7DC1-4EB1-B9DE-054E1617BD17}" ShortID="151260471">
+															<PropertyList>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>-8</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
 															<ReferenceList>
 																<Reference Name="Conversion">
 																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -3070,6 +3116,11 @@
 										<Sound Name="AMB_SC_Barque_Bed_MechanismRolling" ID="{72FE446F-18D5-44E1-8654-8F8F7A02A29F}" ShortID="977165976">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
