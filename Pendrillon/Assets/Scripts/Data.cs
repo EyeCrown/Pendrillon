@@ -17,6 +17,7 @@ public static class Constants
     public const string TagBox          = "box";            // #box
     public const string TagScreenShake  = "screenshake";    // #screenshake:Intensity:Time  Intensity: Puissance du screenshake     Time: durée du screenshake en secondes
     public const string TagLook         = "look";           // #look:Character:Target       Character: nom du personnage    Target: cible vers laquelle se tourner
+    public const string TagAudience     = "audience";       // #audience:Reaction           Reaction: type de réaction
     
     
     // public const string TagCurtains     = "curtains";       // #curtains
@@ -38,7 +39,7 @@ public static class Constants
 
     #region Characters
 
-    public const string PrompterName = "Prompter";
+    public const string PrompterName = "Souffleur";
 
     #endregion
 
@@ -66,11 +67,11 @@ public static class Constants
 
     #region Button types
 
-    public const string TypeCharisma = "Charisma";
-    public const string TypeStrength = "Strength";
-    public const string TypeDexterity = "Dexterity";
+    public const string TypeCharisma    = "Charisma";
+    public const string TypeStrength    = "Strength";
+    public const string TypeDexterity   = "Dexterity";
     public const string TypeComposition = "Composition";
-    public const string TypeLuck = "Luck";
+    public const string TypeLuck        = "Luck";
     
     #endregion
 
@@ -83,7 +84,17 @@ public static class Constants
     public const string SetTrial   = "trial";
     public const string SetTempest = "tempest";
     public const string SetStomac  = "stomac";
+    
+    #endregion
 
+    #region AudienceReactions
+
+    public const string ReactBooing     = "booing";
+    public const string ReactOvation    = "ovation";
+    public const string ReactDebate     = "debate";
+    public const string ReactApplause   = "applause";
+    public const string ReactChoc       = "choc";
+    public const string ReactLaughter   = "laughter";
 
     #endregion
 }

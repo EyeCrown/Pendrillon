@@ -596,10 +596,13 @@ namespace MonoBehavior.Managers
                     HandleTagActor(words.Skip(1).ToArray());
                     break;
                 case Constants.TagScreenShake:
-                    HandleScreenShake(words);
+                    HandleTagScreenShake(words);
                     break;
                 case Constants.TagLook:
-                    HandleLook(words.Skip(1).ToArray());
+                    HandleTagLook(words.Skip(1).ToArray());
+                    break;
+                case Constants.TagAudience:
+                    HandleTagAudience(words[1]);
                     break;
                 default:
                     Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag.");
@@ -828,7 +831,7 @@ namespace MonoBehavior.Managers
 
         }
 
-        void HandleScreenShake(string[] data)
+        void HandleTagScreenShake(string[] data)
         {
             if (data.Length == 1)
             {
@@ -851,16 +854,15 @@ namespace MonoBehavior.Managers
             }
         }
 
-        void HandleLook(string[] data)
+        void HandleTagLook(string[] data)
         {
-            Debug.Log($"AM.HandleLook > {data[0]} must look to {data[1]}");
+            Debug.Log($"AM.HandleTagLook > {data[0]} must look to {data[1]}");
             var character = GameManager.Instance.GetCharacter(data[0]);
             if (character == null)
             {
-                Debug.LogError($"AM.HandleLook > Error: Character unvalid | {data[0]} |");
+                Debug.LogError($"AM.HandleTagLook > Error: Character unvalid | {data[0]} |");
                 return;
             }
-            
             
             Transform target = null;
             
@@ -879,7 +881,7 @@ namespace MonoBehavior.Managers
             
             if (target == null)
             {
-                Debug.LogError($"AM.HandleLook > Error: Target unvalid | {data[0]} |");
+                Debug.LogError($"AM.HandleTagLook > Error: Target unvalid | {data[0]} |");
                 return;
             }
 
@@ -892,6 +894,41 @@ namespace MonoBehavior.Managers
             _tagMethods.Add(LookAction);
 
         }
+
+
+        void HandleTagAudience(string reaction)
+        {
+            
+            switch (reaction)
+            {
+                case Constants.ReactBooing:
+                    break;
+                case Constants.ReactOvation:
+                    break;
+                case Constants.ReactDebate:
+                    break;
+                case Constants.ReactApplause:
+                    break;
+                case Constants.ReactChoc:
+                    break;
+                case Constants.ReactLaughter:
+                    break;
+                default:
+                    Debug.LogError($"AM.HandleTagAudience > Unkwonw reaction | {reaction} |");
+                    return;
+            }
+            
+            Debug.LogError($"AM.HandleTagAudience > Unkwonw reaction | {reaction} |");
+
+            var soundToPlay = "Play_CrowdReaction_" + reaction;
+            void AudienceAction()
+            {
+                AkSoundEngine.PostEvent(soundToPlay, gameObject);
+            }
+            
+            _tagMethods.Add(AudienceAction);
+        }
+        
         
         //TODO: Make curtains tag handlers
         /* void HandleCurtains()

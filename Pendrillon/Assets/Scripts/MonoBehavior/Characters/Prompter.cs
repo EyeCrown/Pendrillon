@@ -44,8 +44,9 @@ public class Prompter : MonoBehaviour
 
     void GoOnStage()
     {
-        transform.position = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(16, 6));
+        transform.position = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(12, 12));
         transform.LookAt(Camera.main.transform);
+        
         isOnStage = true;
         Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name}");
     }
