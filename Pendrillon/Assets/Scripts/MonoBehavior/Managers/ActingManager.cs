@@ -861,7 +861,6 @@ namespace MonoBehavior.Managers
                 return;
             }
             
-            
             Transform target = null;
             
             var other = GameManager.Instance.GetCharacter(data[1]);
