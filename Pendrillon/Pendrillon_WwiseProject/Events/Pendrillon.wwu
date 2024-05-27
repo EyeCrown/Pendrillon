@@ -130,16 +130,6 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
-										<Action Name="" ID="{3370994F-83EE-4E7C-8621-9D9F02D176DC}" ShortID="442047420">
-											<PropertyList>
-												<Property Name="ActionType" Type="int16" Value="41"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Stop_VOX_ALL" ID="{3EEA9250-1C42-417A-9201-0BF59AB25D89}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_UI_HUD_SpeechBubbleSkip" ID="{1FC8680D-3559-4F51-A6D3-713809817F4A}">
@@ -148,6 +138,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="UI_HUD_SpeechBubbleSkip" ID="{9C6A3FE2-581C-4928-8C27-890AE9C2278D}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{3370994F-83EE-4E7C-8621-9D9F02D176DC}" ShortID="442047420">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_VOX_ALL" ID="{3EEA9250-1C42-417A-9201-0BF59AB25D89}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -635,45 +635,19 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_CrowdReaction_Laughter" ID="{07908038-D771-41CB-B5DB-B7DE3302A5B4}">
+								<Event Name="Play_CrowdReaction_laughter" ID="{07908038-D771-41CB-B5DB-B7DE3302A5B4}">
 									<ChildrenList>
-										<Action Name="" ID="{92B9604F-5830-498F-9354-978978FAB24D}" ShortID="1061550054">
+										<Action Name="" ID="{822D7590-F0E2-4427-BC5F-246356273966}" ShortID="221258503">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="sine1kHz" ID="{350068A8-0B7E-4172-8DDB-B16E881F1408}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
+													<ObjectRef Name="SFX_Theater_CrowdGlobalHappy" ID="{32C6ABA8-C03A-48A1-9254-C544D754492C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_CrowdReaction_Horrified" ID="{BCD924EB-FC0B-46B4-87D4-7EED32261CA3}">
-									<ChildrenList>
-										<Action Name="" ID="{28430328-745E-4B34-91C7-A59BE5605271}" ShortID="416136692">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="sine1kHz" ID="{350068A8-0B7E-4172-8DDB-B16E881F1408}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_CrowdReaction_Surprised" ID="{34D116CE-0DAB-44BB-A59C-8886C70761B5}">
-									<ChildrenList>
-										<Action Name="" ID="{0D37D6FD-3B90-40FE-A894-39EA4E3D4EE7}" ShortID="730197226">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="sine1kHz" ID="{350068A8-0B7E-4172-8DDB-B16E881F1408}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_CrowdReaction_Booing" ID="{47EFA13E-9B6A-43C1-9540-EBBE82D03F4E}">
-									<ChildrenList>
-										<Action Name="" ID="{930AE165-9D06-49E8-A473-38454591DA84}" ShortID="662867714">
+										<Action Name="" ID="{C765F046-2259-40C5-BC44-3A8D25582414}" ShortID="811993348">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="38"/>
-												<Property Name="GameParameterValue" Type="Real64" Value="0.2"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -681,7 +655,21 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
-										<Action Name="" ID="{BA744CAD-4132-4820-8371-B6B35E5999A3}" ShortID="305396055">
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_CrowdReaction_booing" ID="{BCD924EB-FC0B-46B4-87D4-7EED32261CA3}">
+									<ChildrenList>
+										<Action Name="" ID="{0FD09663-CD8F-462D-9DCB-59984D014DA9}" ShortID="1050054147">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{BA056D7A-2FC8-424A-8FF8-5A5529E56C1A}" ShortID="319523909">
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="CrowdHype" ID="{ED62E440-2367-4F7D-8CCD-774FDC384A8C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
@@ -690,18 +678,51 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_CrowdReaction_Ovation" ID="{7DE3BEA2-DFF4-45B3-8BB1-9CED696ABB7F}">
+								<Event Name="Play_CrowdReaction_Surprised" ID="{34D116CE-0DAB-44BB-A59C-8886C70761B5}">
 									<ChildrenList>
-										<Action Name="" ID="{871FDB16-5C97-465A-AC6A-A88DA323EB14}" ShortID="887575530">
+										<Action Name="" ID="{913A605E-C16D-4790-BA58-47AF60002E9E}" ShortID="747609230">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="sine1kHz" ID="{350068A8-0B7E-4172-8DDB-B16E881F1408}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
+													<ObjectRef Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_8" ID="{2BF21EDD-B92D-4688-A1A9-E62C977E75E9}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_CrowdReaction_Applause" ID="{F45BEE56-65B2-4BB0-956C-B7898C5503A4}">
+								<Event Name="Play_CrowdReaction_choc" ID="{47EFA13E-9B6A-43C1-9540-EBBE82D03F4E}">
+									<ChildrenList>
+										<Action Name="" ID="{9F6D7FF3-5B7C-45D5-A21E-2B4567BAF42E}" ShortID="765964429">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_8" ID="{2BF21EDD-B92D-4688-A1A9-E62C977E75E9}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_CrowdReaction_ovation" ID="{7DE3BEA2-DFF4-45B3-8BB1-9CED696ABB7F}">
+									<ChildrenList>
+										<Action Name="" ID="{9A296F66-1F1E-4654-925E-58898EF5B04B}" ShortID="562409606">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{DA0ED2AC-B5BB-4751-88DC-CA103DE9691C}" ShortID="422788050">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Theater_CrowdGlobalHappy" ID="{32C6ABA8-C03A-48A1-9254-C544D754492C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_CrowdReaction_applause" ID="{F45BEE56-65B2-4BB0-956C-B7898C5503A4}">
 									<ChildrenList>
 										<Action Name="" ID="{2B3C991A-E348-4ABA-818E-76A911E348F5}" ShortID="160309109">
 											<PropertyList>
@@ -723,7 +744,7 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_CrowdReaction_Confused" ID="{A6FDDC92-DBEF-46A2-85A5-F400AA78DE1D}">
+								<Event Name="Play_CrowdReaction_debate" ID="{A6FDDC92-DBEF-46A2-85A5-F400AA78DE1D}">
 									<ChildrenList>
 										<Action Name="" ID="{86FDAF22-BDB8-4467-BF64-99FE46378F33}" ShortID="26556279">
 											<PropertyList>
@@ -835,6 +856,17 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="Play_SFX_SC_Theater_TransitionBasic" ID="{303600FC-B11D-404E-A0C9-EDE23B348338}">
+							<ChildrenList>
+								<Action Name="" ID="{669EAFFB-D051-418F-8EDB-01B5C069A1C4}" ShortID="738097516">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SFX_SC_Theater_TransitionBasic" ID="{807C26DE-D123-4C0E-8ADA-AEC791E8D4E0}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Dialogues" ID="{3BC109D9-01F1-41D8-ABDF-37C9FC14F251}" ShortID="1008342144">
@@ -3956,17 +3988,6 @@
 						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Event Name="Play_Clocks__Chime__Church_Tower__Bell_Ringing_01_SND102465" ID="{74C8E6F7-B4AE-43A2-8939-ED2E85303F09}">
-					<ChildrenList>
-						<Action Name="" ID="{CE13BDE7-B1FD-4010-BE2F-A537B2204760}" ShortID="860066458">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="Clocks, Chime, Church Tower, Bell Ringing 01 SND102465" ID="{24B44EEF-CD7B-4696-9C27-2C60A54949B3}" WorkUnitID="{B3AFB53E-0E37-4550-98B9-91052F46DDC5}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
