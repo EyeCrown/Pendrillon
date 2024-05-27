@@ -38,7 +38,7 @@ public static class Constants
 
     #region Characters
 
-    public const string PrompterName = "Souffleur";
+    public const string PrompterName = "Prompter";
 
     #endregion
 

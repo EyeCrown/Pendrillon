@@ -49,6 +49,8 @@ public class GroundGrid : MonoBehaviour
     {
         Vector3 worldPos = _grid.GetCellCenterWorld(new Vector3Int(coords.x, 0, coords.y));
         worldPos.y = transform.position.y;
+        
+        Debug.Log($"WorldPos : {worldPos}");
         return worldPos;
     }
 
@@ -163,15 +165,12 @@ public class GroundGrid : MonoBehaviour
         var enemyColor = Color.yellow;
         DrawCharacterPosition(_enemyPosition, enemyColor);
 
-        Debug.Log("Gizmos");
-
         if (_visualizerBargeScene1 && _scenePos._characters.Count == _scenePos._positions.Count)
         {
             for (int i = 0; i < _scenePos._characters.Count; i++)
             {
                 var color = GetColor(_scenePos._characters[i]);
                 DrawCharacterPosition(_scenePos._positions[i], color);
-                Debug.Log("Draw");
             }
         }
 
