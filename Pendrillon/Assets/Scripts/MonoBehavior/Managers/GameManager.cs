@@ -31,6 +31,7 @@ namespace MonoBehavior.Managers
         
         [Header("=== Prefabs ===")]
         [SerializeField] private GameObject _characterPrefab;
+        [SerializeField] private GameObject _playerPrefab;
         [SerializeField] private GameObject _arlePrefab;
         [SerializeField] private GameObject _passeurPrefab;
         [SerializeField] private GameObject _prompterPrefab;
@@ -121,7 +122,7 @@ namespace MonoBehavior.Managers
         public void SetupPlayer()
         {
             //GeneratePlayerStats();
-            _player = Instantiate(_characterPrefab).GetComponent<CharacterHandler>();
+            _player = Instantiate(_playerPrefab).GetComponent<CharacterHandler>();
             _player.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100));
             
             Destroy(_player.GetComponent<Enemy>());
