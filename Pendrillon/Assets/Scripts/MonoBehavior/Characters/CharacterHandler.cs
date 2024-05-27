@@ -158,20 +158,21 @@ public class CharacterHandler : MonoBehaviour
 
             yield return null;
         }
-        
+        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation Start");
+
+        callbackOnFinish();
         //Now, Wait until the current state is done playing
         while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
         {
             //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation running");
 
             yield return null;
-
         }
         
-        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation ended");
+        //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation ended");
 
         //Done playing. Do something below!
-        callbackOnFinish();
+        //callbackOnFinish();
         // if (!_anim.GetCurrentAnimatorStateInfo(0).loop)
         // {
         //     //Debug.Log("Animation is not a loop so go back to idle");
