@@ -150,6 +150,24 @@ namespace MonoBehavior.Managers
         {
             _uiParent.SetActive(false);
         }
+
+        void Update()
+        {
+            
+            _dialogueBox.GetComponent<Image>().color = new Color(
+                _dialogueBox.GetComponent<Image>().color.r,
+                _dialogueBox.GetComponent<Image>().color.g,
+                _dialogueBox.GetComponent<Image>().color.b,
+                GameManager.Instance._opacityUI
+            );
+            var speakerBox = _uiParent.transform.Find("PROMPTER_PART/DialogueBox");
+            speakerBox.GetComponent<RawImage>().color = new Color(
+                speakerBox.GetComponent<RawImage>().color.r,
+                speakerBox.GetComponent<RawImage>().color.g,
+                speakerBox.GetComponent<RawImage>().color.b,
+                GameManager.Instance._opacityUI
+            );
+        }
         
         #endregion
 

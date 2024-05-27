@@ -62,7 +62,9 @@ namespace MonoBehavior.Managers
         [Header("=== Timers ===")] 
         [Range(0, 5)] public float _timeButtonSpawnInSec;
         [Range(0, 5)] public float _timeTextToAppearInSec;
-        
+
+        [Header("=== UI ===")] 
+        [Range(0.025f, 1)] public float _opacityUI;
         
         [Header("=== Debug ===")]
         [SerializeField] private bool _goDirectToFight;
@@ -231,6 +233,8 @@ namespace MonoBehavior.Managers
             _gridScene.transform.position = new Vector3(-23.0f, y, -6.5f);
             Debug.Log($"GM.Grid > {y}");
         }
+        
+        
         
         void BeginGame()
         {
