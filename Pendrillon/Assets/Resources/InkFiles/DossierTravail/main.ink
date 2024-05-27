@@ -24,5 +24,7 @@ INCLUDE boss_battle.ink
 
 // Start the game
 //-> barge
+
+
 //-> tribunal_1
--> boss_battle
+-> trip_return
