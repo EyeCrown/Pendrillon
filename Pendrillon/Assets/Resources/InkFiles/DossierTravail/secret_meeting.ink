@@ -12,7 +12,7 @@ VAR failed_breaking_jester_crate = false
 #actor:Arle:???:ARLE
 #actor:Prompter:SOUFFLEUR
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
-#playsound:Play_AMB_SC_SecretMeeting_Ambiance
+#playsound:Play_AMB_SC_Cale_Ambiance
 #anim:Arle:hide
 
 #set:cale
@@ -24,12 +24,12 @@ VAR failed_breaking_jester_crate = false
 - ...
 // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
-- #sleep:6 #audience:applause
+- #audience:applause
     * [Attendre encore.]
-- #sleep:6 #audience:debate
+- #audience:debate
     * [Attendre plus fort.]
-- #sleep:6 #audience:booing
-SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se montrer... tu vas devoir meubler ! #anim:Souffleur:colere #playsound:VOX_Souffleur_partenairedescene
+- #audience:booing
+SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #anim:Souffleur:colere #playsound:VOX_Souffleur_partenairedescene
     * [(Ironique) Quelle ponctualité...] PLAYER: Espérons que mon mystérieux interlocuteur arrive avant... #anim:Player:joie
         ** [(Humour) Conclure avec légèreté. {t(CHAR, 10)}]
             {sc(CHAR, 0): -> joke_punctuality_S | -> joke_punctuality_F}
@@ -44,9 +44,9 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
             {sc(CHAR, 0): -> threat_ponctuality_S | -> threat_ponctuality_F}
             ~ threat_jester = true
             *** (threat_ponctuality_S) PLAYER: ...avant que je ne juge bon de punir un tel manque de manière. #anim:Player:swordattack
-                SOUFFLEUR: Certaines situations devraient être gérées avec diplomatie et tact... pas celle-ci ! Une quesion cependant : es-tu en train de menacer le personnage, ou l'actrice ? Quelle que soit la réponse, le public est avec toi, continue comme ça ! #anim:Souffleur:joie #audience:applause #playsound:VOX_Souffleur_certainessituations
-            *** (threat_ponctuality_F) PLAYER: ...avant que je me mette en colère !! #anim:Player:colere #audience:booing
-                SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convainquant. Ne te laisse pas abattre, tu auras d'autres occasions ! #anim:Souffleur:neutre #playsound:VOX_Souffleur_yadelidee
+                SOUFFLEUR: Certaines situations devraient être gérées avec diplomatie et tact... pas celle-ci ! Une question cependant : es-tu en train de menacer le personnage, ou l'actrice ? Quelle que soit la réponse, le public est avec toi, continue comme ça ! #anim:Souffleur:joie #audience:applause #playsound:VOX_Souffleur_certainessituations
+            *** (threat_ponctuality_F) PLAYER: ...avant que je ne me mette en colère !! #anim:Player:colere #audience:booing
+                SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convaincant. Ne te laisse pas abattre, tu auras d'autres occasions ! #anim:Souffleur:neutre #playsound:VOX_Souffleur_yadelidee
                 ~ has_fail = true
     * [(Soupirant) Je suis tout à fait seul.] PLAYER: Je me trouve bien seul. Aussi seul... #anim:Player:triste
         ** [(Humour) Conclure avec légèreté. {t(CHAR, 10)}]
@@ -64,20 +64,20 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
             *** (threat_waiting_S) PLAYER: ...que la dent qui restera dans le bec de qui me fait attendre aussi longtemps ! #anim:Player:swordattack
                 SOUFFLEUR: Certaines situations devraient être gérées avec diplomatie et tact... pas celle-ci ! Une quesion cependant : es-tu en train de menacer le personnage, ou l'actrice ? Quelle que soit la réponse, le public est avec toi, continue comme ça ! #anim:Souffleur:joie #audience:applause #playsound:VOX_Souffleur_certainessituations
             *** (threat_waiting_F) PLAYER: ...Euh... que mes dernières... onces de patience. #anim:Player:stress
-                SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convainquant. Ne te laisse pas abattre, tu auras d'autres occasions ! #anim:Souffleur:neutre #playsound:VOX_Souffleur_yadelidee
+                SOUFFLEUR: Il y avait de l'idée... Mais tu n'as pas été très convaincant. Ne te laisse pas abattre, tu auras d'autres occasions ! #anim:Souffleur:neutre #playsound:VOX_Souffleur_yadelidee
                 #audience:booing
                 ~ has_fail = true
 - // La scène continue
     * [(S'adresser à l'actrice) Il est temps.] PLAYER: Je crois VRAIMENT qu'il est temps, désormais. #anim:Player:neutre #playsound:VOX_Player_VRAIMENTtemps
-        ???: ... Laisse moi un peu de temps, veux-tu ? #playsound:VOX_Arle_laissemoi
-- #sleep:3 #audience:booing
+        ???: ... Laisse-moi un peu de temps, veux-tu ? #playsound:VOX_Arle_laissemoi
+- #audience:booing
     * [(À l'actrice, chuchotant) Qui payera mes heures supplémentaires ?] PLAYER: Psssst... Je suis trop mal payé pour que la pièce dure toute la nuit. Dépêche-toi ! #anim:Player:chuchote #playsound:VOX_Player_heuressupp
     * [(À l'actrice, chuchotant) Es-tu en grève ?] PLAYER: Psssst... Tu es en grève ? Qu'es-ce qu'il te prend, encore ? #anim:Player:chuchote #playsound:VOX_Player_tuesengreve
 - ???: Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable ! #playsound:VOX_Arle_laissonslesselanguir
     * [Se montrer conciliant.] PLAYER: Je n'en doute pas... Je vais faire ce que je peux pour meubler. Je t'en prie, ne tarde pas. #anim:Player:chuchote #playsound:VOX_Player_jevaismeubler
-    * [Hausser le ton.] PLAYER: Le public va t'acceuillir avec des applaudissements... et moi avec un coup de pied au derrière ! #anim:Player:chuchote #playsound:VOX_Player_panpanculcul
+    * [Hausser le ton.] PLAYER: Le public va t'accueillir  avec des applaudissements... et moi avec un coup de pied au derrière ! #anim:Player:chuchote #playsound:VOX_Player_panpanculcul
     * [Ignorer la voix.]
-- #sleep:3 #audience:booing
+- #audience:booing
 - SOUFFLEUR: Trouve autre chose pour les divertir... N'importe quoi qui te passe par la tête ! Surtout, ne reste pas planté là ! #anim:Souffleur:neutre
     * [Effectuer une danse. {t(DEXT, -10)}]
         {sc(CHAR, 0): -> dancing_S | -> dancing_F}
@@ -105,7 +105,7 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
             -> success_entertaining_audience
         ** (hypnotise_F) #anim:Player:hypnotise_failure #audience:debate
             SOUFFLEUR: ...
-            SOUFFLEUR: Je ne suis pas sûr que faire appel au... paranormal..? soit une bone idée, l'ami. Bien tenté tout de même ! #anim:Souffleur:neutre
+            SOUFFLEUR: Je ne suis pas sûr que faire appel au... paranormal... soit une bone idée, l'ami. Bien tenté tout de même ! #anim:Souffleur:neutre
             -> failure_entertaining_audience
             *** (success_entertaining_audience) ???: Hé ! Ne me vole pas la vedette, compris ? #playsound:VOX_Arle_nevolepasvedette
             *** (failure_entertaining_audience) ???: Merci d'avoir tout loupé, camarade ! Ça me permettra de briller encore plus ! #playsound:VOX_Arle_mercitoutloupe
@@ -136,7 +136,6 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
 {
     - failed_breaking_jester_crate == true: ???: Désirant briser cette malheureuse caisse, messire... #anim:Arle:neutre #playsound:VOX_Arle_desirantbrisercaisse
         ???: ... vous n'avez abîmé que votre dignité. #anim:Arle:neutre #playsound:VOX_Arle_abimedignite
-        #sleep:2
         ???: Sauf votre respect. #anim:Arle:bow #playsound:VOX_Arle_saufvotrerespect #audience:laughter
 }
     * [Que faisais-tu caché ?] PLAYER: Que faisais-tu là, caché tel un rat ? #anim:Player:question
@@ -288,7 +287,7 @@ ARLE: Et les humains durent survivre à bord d'un grand navire, cent années dur
 - ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence
     * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur. #anim:Player:neutre #playsound:VOX_Player_celaseraitunhonneur
     * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche... #anim:Player:neutre #playsound:VOX_Player_pointleloisirsoustraire
-- #audience:ovation Stop_AMB_SC_SecretMeeting_Ambiance
+- #audience:ovation Stop_AMB_SC_Cale_Ambiance
 - -> barge.scene_2
 
 // End the scene

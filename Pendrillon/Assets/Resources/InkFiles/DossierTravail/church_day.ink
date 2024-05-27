@@ -15,10 +15,8 @@ VAR MARCELLO = ""
 
 = start
 #anim:Player:sleep
-#sleep:4
 MARCELLO: Et si on le réveillait avec une tape sur le museau, cheffe ?
 CAPUCINE: Cet abruti dort comme un nourrisson...
-#sleep:4
 #anim:Player:wake_up
 PLAYER: Vous, ici ?
 CAPUCINE: Nous même...
@@ -48,12 +46,10 @@ PLAYER: J'ai bien peur... vous êtes...
 - PLAYER: Approchez-vous... Contemplez le visage de celui que vous avez condamné...
 #move(Agathe)
 AGATHE: Ce lieu saint a abrité davantage de sauvageons que vous n'en avez croisé dans toute votre vie, mon enfant...
-#sleep:2
 AGATHE: Cependant aucun d'entre eux ne s'était rendu coupable d'une telle ignominie...
 #anim:Agathe:contempt
 #anim:Player:ashamed
 #audience:shock
-#sleep:3
 AGATHE: Lorsque j’ai appris pourquoi vous étiez recherché, j’ai su qu’il était de mon devoir, non envers la Couronne mais envers la Déesse elle-même, de vous dénoncer.
 #anim:Player:disappointed
 #anim:Capucine:laugh
