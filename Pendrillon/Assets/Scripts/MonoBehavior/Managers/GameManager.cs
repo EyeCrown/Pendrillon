@@ -34,6 +34,7 @@ namespace MonoBehavior.Managers
         [SerializeField] private GameObject _arlePrefab;
         [SerializeField] private GameObject _passeurPrefab;
         [SerializeField] private GameObject _prompterPrefab;
+        [SerializeField] private GameObject _naidaPrefab;
 
         [Header("=== Locations ===")]
         public GroundGrid _gridScene;
@@ -137,7 +138,7 @@ namespace MonoBehavior.Managers
             for (var i = 0; i < _charactersBase.Count; i++)
             {
                 GameObject character;
-
+                Debug.Log($"Setup > {_charactersBase[i]}");
                 switch (_charactersBase[i].name)
                 {
                     case "Arle":
@@ -145,12 +146,14 @@ namespace MonoBehavior.Managers
                         break;
                     case "Passeur":
                         character = Instantiate(_passeurPrefab);
-                        break;    
+                        break;
+                    case "Naïda":
+                        character = Instantiate(_naidaPrefab);
+                        break;
                     default:
                         character = Instantiate(_characterPrefab);
                         break;
                 }
-                
                 
                 //character.transform.position = _gridScene.GetWorldPositon(_gridScene._enemyPosition + new Vector2Int(i*3, i*2)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
                 character.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100)); 
@@ -161,9 +164,8 @@ namespace MonoBehavior.Managers
                 character.GetComponent<CharacterHandler>()._character._nicknames.Clear();
                 character.GetComponent<CharacterHandler>()._character._nicknames.Add(character.GetComponent<CharacterHandler>()._character.name);
 
-                character.GetComponent<Enemy>()._character = _charactersBase[i];
-                character.GetComponent<Enemy>().enabled = false;
-                
+                // character.GetComponent<Enemy>()._character = _charactersBase[i];
+                // character.GetComponent<Enemy>().enabled = false;
                 
                 character.name = character.GetComponent<CharacterHandler>()._character.name;
                 

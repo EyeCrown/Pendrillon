@@ -50,7 +50,7 @@ public class GroundGrid : MonoBehaviour
         Vector3 worldPos = _grid.GetCellCenterWorld(new Vector3Int(coords.x, 0, coords.y));
         worldPos.y = transform.position.y;
         
-        Debug.Log($"WorldPos : {worldPos}");
+        //Debug.Log($"WorldPos : {worldPos}");
         return worldPos;
     }
 
