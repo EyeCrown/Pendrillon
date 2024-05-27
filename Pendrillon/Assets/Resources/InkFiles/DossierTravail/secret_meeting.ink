@@ -16,12 +16,16 @@ VAR failed_breaking_jester_crate = false
 #anim:Arle:hide
 
 #set:cale
+
+#position:Player:4:2
+#position:Arle:4:13
+#position:Prompter:7:9
 // Start the scene
 -> start
 
 // Start of the scene
 = start
-- ...
+- ... #wait:6
 // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
 - #audience:applause

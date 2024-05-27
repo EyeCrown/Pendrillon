@@ -18,13 +18,9 @@ INCLUDE tribunal_2.ink
 INCLUDE epilogue.ink
 INCLUDE boss_battle.ink
 
-
 // Seed of randomize events
 //~ SEED_RANDOM(666)
 
 // Start the game
 -> barge
-
-
-//-> tribunal_1
-//-> trip_return
+//-> secret_meeting

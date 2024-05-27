@@ -924,6 +924,7 @@ namespace MonoBehavior.Managers
             void AudienceAction()
             {
                 AkSoundEngine.PostEvent(soundToPlay, gameObject);
+                TagActionOver();
             }
             
             _tagMethods.Add(AudienceAction);

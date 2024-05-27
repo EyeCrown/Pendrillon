@@ -11,18 +11,21 @@
 #actor:Prompter:SOUFFLEUR
 #playsound:Play_AMB_SC_Barque_Ambiance
 
+#set:barge
+
 #position:Player:4:1
 #position:Passeur:4:3
 #position:Prompter:7:5
 
 
-#set:barge
+
+
 // Start the scene
 -> scene_1
 
 // Scène 1
 = scene_1
-#playsound:Play_MUS_Story_SC_Barque_Intro
+#playsound:Play_MUS_Story_SC_Barque_Intro #wait:7
 PASSEUR: ... #anim:Passeur:neutre
 PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces
 SOUFFLEUR: Psssst... Hé ! #anim:neutre #playsound:VOX_Souffleur_pssthe
