@@ -8,13 +8,6 @@
 			</PropertyList>
 			<ChildrenList>
 				<ActorMixer Name="VOX_Dialog" ID="{E95D1B69-F390-41C2-84AB-33254B095CA9}" ShortID="901597809">
-					<PropertyList>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-96</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -25,6 +18,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<ActorMixer Name="VOX_FullText" ID="{A046CE9D-BA78-4B41-8A31-50C844B3CEAF}" ShortID="711490431">
+							<PropertyList>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -43,383 +43,6 @@
 											<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 										</Reference>
 									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="VOX_Arle_abimedignite" ID="{DE575D2F-F985-4E03-8D79-90A17F1F9B9D}" ShortID="860261500">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_abimedignite" ID="{5A707B9B-1D3A-4BC0-8701-608EEDA2B8D7}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_abimedignite.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="425271969"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_abimedignite" ID="{5A707B9B-1D3A-4BC0-8701-608EEDA2B8D7}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_desirantbrisercaisse" ID="{2A352371-30F0-46FE-9943-95D3DCB942D0}" ShortID="285823911">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_desirantbrisercaisse" ID="{A91E9AE6-3B10-4803-B287-0F217F33EC94}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_desirantbrisercaisse.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="276663756"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_desirantbrisercaisse" ID="{A91E9AE6-3B10-4803-B287-0F217F33EC94}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_jailimpressionpublic" ID="{D7993C1E-346A-4E24-B5C2-90D02B6C7AAE}" ShortID="268062165">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_jailimpressionpublic" ID="{787F63BE-EDF4-49FD-A085-A8D5AB2890D1}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_jailimpressionpublic.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="343636388"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_jailimpressionpublic" ID="{787F63BE-EDF4-49FD-A085-A8D5AB2890D1}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_jesuisarle" ID="{C3C1D3D4-07A5-4989-9A22-CA52057255D6}" ShortID="265778886">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_jesuisarle" ID="{575EBAF5-56A4-46A9-BBC9-D461DB773090}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_jesuisarle.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="430006165"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_jesuisarle" ID="{575EBAF5-56A4-46A9-BBC9-D461DB773090}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_laissemoi" ID="{D5B1FBC4-EEFB-48C6-8D80-9AAADD5B0637}" ShortID="1006262441">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_laissemoi" ID="{75CEB16C-04FA-431D-8AFC-C4EB6B89FE59}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_laissemoi.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="227434960"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_laissemoi" ID="{75CEB16C-04FA-431D-8AFC-C4EB6B89FE59}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_laissonslesselanguir" ID="{2E22B647-5475-44BC-B6BB-B9B0EE2C1587}" ShortID="1006150962">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_laissonslesselanguir" ID="{BA926917-9C56-4507-A8C3-7363F0AD024E}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_laissonslesselanguir.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="285069470"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_laissonslesselanguir" ID="{BA926917-9C56-4507-A8C3-7363F0AD024E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_lejourcommence" ID="{19A1299A-7F85-42B2-B75A-F39D5308015D}" ShortID="636874876">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_lejourcommence" ID="{B06B6BE3-3F46-412A-8C2B-42EA7176F037}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_lejourcommence.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="330473848"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_lejourcommence" ID="{B06B6BE3-3F46-412A-8C2B-42EA7176F037}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_maisquivoila" ID="{EBCDFAEB-2AA5-4629-889F-EF253D7C19D2}" ShortID="461708142">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_maisquivoila" ID="{BA1E619C-80B9-495C-A7E7-87729AA33855}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_maisquivoila.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="605507083"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_maisquivoila" ID="{BA1E619C-80B9-495C-A7E7-87729AA33855}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_mercitoutloupe" ID="{9E08DD6A-FD97-4F2F-8F87-A3351EFEC802}" ShortID="8667664">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_mercitoutloupe" ID="{A16EC418-99C8-4D7E-BE40-B3DE77FAC040}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_mercitoutloupe.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="629358561"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_mercitoutloupe" ID="{A16EC418-99C8-4D7E-BE40-B3DE77FAC040}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_nevolepasvedette" ID="{8CE17795-2CA7-4478-848E-656EB97E5F13}" ShortID="572024268">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_nevolepasvedette" ID="{D2280109-41A8-47DC-AB97-5F28EC3F5646}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_nevolepasvedette.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="313787982"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_nevolepasvedette" ID="{D2280109-41A8-47DC-AB97-5F28EC3F5646}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_peutetreseulscene" ID="{29C41B31-104C-4123-AD7E-34A0A53C52CE}" ShortID="107698793">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_peutetreseulscene" ID="{1BCFEAF4-0D58-4E5A-9402-EC4F1FDFE880}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_peutetreseulscene.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="625556416"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_peutetreseulscene" ID="{1BCFEAF4-0D58-4E5A-9402-EC4F1FDFE880}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_prenezceci" ID="{1A442334-6C9B-4C3A-9893-73479082991C}" ShortID="531518077">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_prenezceci" ID="{E458029A-1DBC-478B-8869-2B99F0D07CBB}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_prenezceci.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="1003280404"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_prenezceci" ID="{E458029A-1DBC-478B-8869-2B99F0D07CBB}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_quelrapporttuer" ID="{BEC23EDF-DC93-4D6C-A8BA-9F97DB09D846}" ShortID="41080719">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_quelrapporttuer" ID="{9FEBABA6-90EC-4906-9AB1-3EFFA9C871FA}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_quelrapporttuer.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="788678407"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_quelrapporttuer" ID="{9FEBABA6-90EC-4906-9AB1-3EFFA9C871FA}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_raisonconvocation" ID="{BD59BA63-BD76-4338-823A-86627374D522}" ShortID="653512843">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_raisonconvocation" ID="{F71CC68D-E0AD-41CC-AF1A-0E87695D5A67}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_raisonconvocation.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="290228706"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_raisonconvocation" ID="{F71CC68D-E0AD-41CC-AF1A-0E87695D5A67}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Arle_saufvotrerespect" ID="{6D446D39-EC4E-4306-A72C-A6D325CC237F}" ShortID="613888925">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Arle_saufvotrerespect" ID="{CEC838AD-706F-4F91-99AA-2D142B4F0B07}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Arle_saufvotrerespect.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="797961581"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Arle_saufvotrerespect" ID="{CEC838AD-706F-4F91-99AA-2D142B4F0B07}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="Gardes" ID="{784000DE-0686-4C31-B69B-E3BE8D0D7BAD}" ShortID="78202432">
 									<ReferenceList>
@@ -461,7 +84,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="VOX_Ferryman_ainsitonami" ID="{93A0A892-DFC6-4257-B9D2-C243FFD95730}" ShortID="867930953">
+										<Sound Name="VOX_Ferryman_baratinpasdernier" ID="{F480CA34-9B12-4DB0-A407-9A86CD5FEFAC}" ShortID="447768641">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -474,57 +97,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_ainsitonami" ID="{083AB507-C1C9-45D3-A29E-D3F05EEB92AF}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_ainsitonami.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="883529456"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_ainsitonami" ID="{083AB507-C1C9-45D3-A29E-D3F05EEB92AF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_attendons" ID="{387DFF8D-4152-4D3F-B144-510ECC5F9CF2}" ShortID="460758464">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_attendons" ID="{D692729B-DA3F-4E9F-BEE3-20CA9350C154}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_attendons.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="437728665"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_attendons" ID="{D692729B-DA3F-4E9F-BEE3-20CA9350C154}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_baratinpasdernier" ID="{C0B19E18-6BE4-43B8-A1E5-70A53816A9B0}" ShortID="474840206">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_baratinpasdernier" ID="{112CA8FC-115E-488D-A2F3-F4EACC380912}">
+												<AudioFileSource Name="VOX_Ferryman_baratinpasdernier" ID="{B358DB00-1C1C-48F7-A353-0FCED045E1BF}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Ferryman_baratinpasdernier.wav</AudioFile>
 													<MediaIDList>
@@ -533,10 +106,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_baratinpasdernier" ID="{112CA8FC-115E-488D-A2F3-F4EACC380912}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Ferryman_baratinpasdernier" ID="{B358DB00-1C1C-48F7-A353-0FCED045E1BF}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Ferryman_commencepresenter" ID="{99340519-1E28-462D-8EBB-B75E3A82122B}" ShortID="176240186">
+										<Sound Name="VOX_Ferryman_commencepresenter" ID="{47DC8F1F-5A86-48A7-9AAA-EED931371302}" ShortID="791125145">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -549,7 +122,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_commencepresenter" ID="{9790FB15-1D0C-4FA2-8CEF-2A0D1F36509D}">
+												<AudioFileSource Name="VOX_Ferryman_commencepresenter" ID="{74F0F4DD-26E2-42F2-8C8B-DBD4FBB4B918}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Ferryman_commencepresenter.wav</AudioFile>
 													<MediaIDList>
@@ -558,10 +131,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_commencepresenter" ID="{9790FB15-1D0C-4FA2-8CEF-2A0D1F36509D}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Ferryman_commencepresenter" ID="{74F0F4DD-26E2-42F2-8C8B-DBD4FBB4B918}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Ferryman_detoutefacon" ID="{28B968A7-FB33-408B-9EF4-5BD109EDF225}" ShortID="540981597">
+										<Sound Name="VOX_Ferryman_detoutefacon" ID="{09BCFE72-293E-446C-91F5-53B2BF1FD199}" ShortID="650081773">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -574,7 +147,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_detoutefacon" ID="{E4142A92-C0BD-4386-A68A-7A7D5C5ACF20}">
+												<AudioFileSource Name="VOX_Ferryman_detoutefacon" ID="{5E359C78-19BB-4DEE-A6EE-12F0A7417FDF}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Ferryman_detoutefacon.wav</AudioFile>
 													<MediaIDList>
@@ -583,10 +156,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_detoutefacon" ID="{E4142A92-C0BD-4386-A68A-7A7D5C5ACF20}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Ferryman_detoutefacon" ID="{5E359C78-19BB-4DEE-A6EE-12F0A7417FDF}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Ferryman_devoiraffronterdestin" ID="{983D36E9-A757-4864-AAE5-982C9A4996C8}" ShortID="740977656">
+										<Sound Name="VOX_Ferryman_hahajevois" ID="{09157EF7-FE31-4CC3-8543-2E2D646EC39C}" ShortID="444842432">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -599,32 +172,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_devoiraffronterdestin" ID="{28CECA16-304A-4B05-B4C0-677E7868A6FA}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_devoiraffronterdestin.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="984969753"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_devoiraffronterdestin" ID="{28CECA16-304A-4B05-B4C0-677E7868A6FA}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_hahajevois" ID="{7D62D5D2-CCB7-4726-97A7-D27EAEBFC8A5}" ShortID="576611572">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_hahajevois" ID="{B4FCB363-18B2-4226-8359-518C9295A81A}">
+												<AudioFileSource Name="VOX_Ferryman_hahajevois" ID="{F300E6B0-D50F-413C-AB2C-DD8898F8A8C2}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Ferryman_hahajevois.wav</AudioFile>
 													<MediaIDList>
@@ -633,10 +181,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_hahajevois" ID="{B4FCB363-18B2-4226-8359-518C9295A81A}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Ferryman_hahajevois" ID="{F300E6B0-D50F-413C-AB2C-DD8898F8A8C2}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Ferryman_jecomprends" ID="{C14D1AC0-3255-473B-AC92-EA584EB110DB}" ShortID="974271863">
+										<Sound Name="VOX_Ferryman_passagersloquaces2" ID="{6F3A2F03-42E4-414E-9A17-B9EF2F1959F6}" ShortID="756039759">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -649,19 +197,19 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_jecomprends" ID="{1093CEA2-4AF9-4A7E-BD44-4775C3C536E7}">
+												<AudioFileSource Name="VOX_Ferryman_passagersloquaces2" ID="{B6968D95-09E9-402D-8941-3D90A83DCE36}">
 													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_jecomprends.wav</AudioFile>
+													<AudioFile>VOX_Ferryman_passagersloquaces2.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="936107147"/>
+														<MediaID ID="580828587"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_jecomprends" ID="{1093CEA2-4AF9-4A7E-BD44-4775C3C536E7}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Ferryman_passagersloquaces2" ID="{B6968D95-09E9-402D-8941-3D90A83DCE36}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Ferryman_jenepuisteledire" ID="{D6084142-E06F-4582-B49E-316AF87A5399}" ShortID="162132061">
+										<Sound Name="VOX_Ferryman_passagersloquaces" ID="{CF0B3102-12C2-4FE0-8E5E-6513F21F2031}" ShortID="721978565">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -674,107 +222,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_jenepuisteledire" ID="{8CE61234-3516-4E70-A8D6-15164E0CE9FD}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_jenepuisteledire.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="1012987686"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_jenepuisteledire" ID="{8CE61234-3516-4E70-A8D6-15164E0CE9FD}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_jeregrettepasmadecision" ID="{00564FC8-B845-4652-AF29-7557D85A477E}" ShortID="82883387">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_jeregrettepasmadecision" ID="{756C7E5F-E660-4532-83A7-29B9761AC7C3}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_jeregrettepasmadecision.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="940281541"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_jeregrettepasmadecision" ID="{756C7E5F-E660-4532-83A7-29B9761AC7C3}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_laloi" ID="{36FCD127-15FC-4FE1-B19D-75854F261B92}" ShortID="595096884">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_laloi" ID="{8FAE15D8-83B7-467C-B2C6-1CA8A8D02963}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_laloi.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="524632044"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_laloi" ID="{8FAE15D8-83B7-467C-B2C6-1CA8A8D02963}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_parlejetenprie" ID="{11A61E1C-785A-4C71-AD2F-903DEAEE5D79}" ShortID="168661283">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_parlejetenprie" ID="{0A6EE815-4DA9-4061-A480-34EA7E122AD4}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_parlejetenprie.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="632980212"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_parlejetenprie" ID="{0A6EE815-4DA9-4061-A480-34EA7E122AD4}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_passagersloquaces" ID="{73350605-3F23-4059-BD12-06B0CEFA9685}" ShortID="172142848">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_passagersloquaces" ID="{21F1FE02-C71D-4951-8166-4CDA0823F62C}">
+												<AudioFileSource Name="VOX_Ferryman_passagersloquaces" ID="{32ADF90A-2224-458E-B5CF-FACC2CFCDF31}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Ferryman_passagersloquaces.wav</AudioFile>
 													<MediaIDList>
@@ -783,10 +231,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_passagersloquaces" ID="{21F1FE02-C71D-4951-8166-4CDA0823F62C}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Ferryman_passagersloquaces" ID="{32ADF90A-2224-458E-B5CF-FACC2CFCDF31}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Ferryman_pourquoidireverite" ID="{0F86F2EC-1248-4CFE-A1CB-B00DDAD35A23}" ShortID="532402090">
+										<Sound Name="VOX_Ferryman_quiestu" ID="{64C5D655-3CB2-4B60-883A-613315C7D7FD}" ShortID="636575007">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -799,82 +247,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_pourquoidireverite" ID="{485FBAB6-4988-4BB8-B2D0-E49184E424FE}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_pourquoidireverite.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="506040631"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_pourquoidireverite" ID="{485FBAB6-4988-4BB8-B2D0-E49184E424FE}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_pourquoimission" ID="{E0685CD6-2406-4A7D-A3AD-8633598ADA4D}" ShortID="970905452">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_pourquoimission" ID="{BB11F6A2-9D51-4888-B97B-C5FB59DA2E10}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_pourquoimission.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="174009283"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_pourquoimission" ID="{BB11F6A2-9D51-4888-B97B-C5FB59DA2E10}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_pretressehonneur" ID="{E8AE98DF-483E-46C9-A60B-B7A4A70EDD60}" ShortID="175935682">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_pretressehonneur" ID="{DB3FF34D-AFCC-4DA7-9580-A081345CDC09}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_pretressehonneur.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="794078587"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_pretressehonneur" ID="{DB3FF34D-AFCC-4DA7-9580-A081345CDC09}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_quiestu" ID="{6C8F83F9-C0B8-49BC-8814-075D110082BC}" ShortID="634422039">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_quiestu" ID="{A612057F-A991-48AE-9686-254C0FEE26CE}">
+												<AudioFileSource Name="VOX_Ferryman_quiestu" ID="{9D967721-6F98-4480-BE3C-F339B085E626}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Ferryman_quiestu.wav</AudioFile>
 													<MediaIDList>
@@ -883,257 +256,7 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_quiestu" ID="{A612057F-A991-48AE-9686-254C0FEE26CE}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_quoidonc" ID="{5321FA17-7224-4A3C-A8FA-66DAECD0CD3B}" ShortID="342739653">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_quoidonc" ID="{6038B088-3C4F-4206-AE3E-B92B36566BD8}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_quoidonc.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="987454071"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_quoidonc" ID="{6038B088-3C4F-4206-AE3E-B92B36566BD8}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_silesportes" ID="{E075E92F-5FD3-49BB-9498-B3588F30E6D4}" ShortID="116353988">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_silesportes" ID="{50A9CC49-A482-42CB-82B8-DBCCB03F496F}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_silesportes.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="756667357"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_silesportes" ID="{50A9CC49-A482-42CB-82B8-DBCCB03F496F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_tonregard" ID="{32DE70EC-DD13-4C00-9A4E-2E0BA3871F1C}" ShortID="970501477">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_tonregard" ID="{0CCC74F6-8EF2-4C05-83B7-70A16CE74226}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_tonregard.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="1064457046"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_tonregard" ID="{0CCC74F6-8EF2-4C05-83B7-70A16CE74226}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_toutdememe" ID="{B7285C1A-B633-4EF5-8894-984A15650CD9}" ShortID="864132672">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_toutdememe" ID="{4C483A6E-C5AC-4A50-BE62-8E57294D39A7}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_toutdememe.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="116219053"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_toutdememe" ID="{4C483A6E-C5AC-4A50-BE62-8E57294D39A7}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_tudevais" ID="{28C9B423-BE7E-4ECF-8B57-C353BEA739F0}" ShortID="641683572">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_tudevais" ID="{7BB4ED0E-781B-415D-A810-A18A4014F791}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_tudevais.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="758005334"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_tudevais" ID="{7BB4ED0E-781B-415D-A810-A18A4014F791}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_tuesbiensilencieux" ID="{C13E07DE-9B92-4A6A-AF09-7AF12C8D7777}" ShortID="191627948">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_tuesbiensilencieux" ID="{B7C2A141-9B10-46C7-928E-9228616F3816}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_tuesbiensilencieux.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="337922632"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_tuesbiensilencieux" ID="{B7C2A141-9B10-46C7-928E-9228616F3816}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_voistuporte2" ID="{2E40F452-717C-425E-AEB2-F6BD1E65DAF4}" ShortID="1026592404">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_voistuporte2" ID="{490A779D-9A8B-413E-BFC5-8A96DF8BD708}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_voistuporte2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="775704169"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_voistuporte2" ID="{490A779D-9A8B-413E-BFC5-8A96DF8BD708}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_voistuporte" ID="{724CCF5A-61E5-4F71-8637-A0625A7CAE7E}" ShortID="315140459">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_voistuporte" ID="{2C90702D-73B8-4F2F-A28B-E7154A5E42D7}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_voistuporte.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="654524357"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_voistuporte" ID="{2C90702D-73B8-4F2F-A28B-E7154A5E42D7}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_voyagecaptivant2" ID="{60A6CEB2-D65B-49E1-B5EF-DAAF736EF9AC}" ShortID="674343093">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_voyagecaptivant2" ID="{81F417CA-3E08-43E9-ABD0-14D897B3DE4F}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_voyagecaptivant2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="336492068"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_voyagecaptivant2" ID="{81F417CA-3E08-43E9-ABD0-14D897B3DE4F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Ferryman_voyagecaptivant" ID="{CDD2BC58-C53F-437B-A091-E9A6BFB94BA2}" ShortID="924662880">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Ferryman_voyagecaptivant" ID="{9BDC2A30-3B3D-4EA1-A437-1C7D828249B8}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Ferryman_voyagecaptivant.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="943460872"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Ferryman_voyagecaptivant" ID="{9BDC2A30-3B3D-4EA1-A437-1C7D828249B8}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Ferryman_quiestu" ID="{9D967721-6F98-4480-BE3C-F339B085E626}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -1148,7 +271,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="VOX_Player_Ambroise" ID="{E71A0408-8F39-495B-BE7D-A3EDDED659CA}" ShortID="768118900">
+										<Sound Name="VOX_Player_Ambroise" ID="{572D9B47-B739-490A-90FB-A765CA4B6452}" ShortID="678499062">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -1161,7 +284,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_Ambroise" ID="{87F6AC0F-7DA5-4BD4-9855-AAD961661539}">
+												<AudioFileSource Name="VOX_Player_Ambroise" ID="{DD805902-76B6-4065-BD67-6E4021F172B9}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Player_Ambroise.wav</AudioFile>
 													<MediaIDList>
@@ -1170,10 +293,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_Ambroise" ID="{87F6AC0F-7DA5-4BD4-9855-AAD961661539}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Player_Ambroise" ID="{DD805902-76B6-4065-BD67-6E4021F172B9}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Player_amonreveil_1" ID="{32FA4127-E912-46EB-A4F0-503F8277AFC4}" ShortID="493090006">
+										<Sound Name="VOX_Player_ilestvraitalent" ID="{94802D9A-0A4E-4814-8217-A43C40528FA8}" ShortID="992845076">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -1186,132 +309,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_amonreveil_1" ID="{35DC4502-6464-4493-9148-0ED94DBE932A}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_amonreveil_1.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="573380160"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_amonreveil_1" ID="{35DC4502-6464-4493-9148-0ED94DBE932A}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_amonreveil_2" ID="{A444439C-1A0F-4D4A-AA9F-68CB1CADBC95}" ShortID="588624342">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_amonreveil_2" ID="{A23224ED-948B-4882-AFB8-B0A8ACF7747F}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_amonreveil_2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="107576673"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_amonreveil_2" ID="{A23224ED-948B-4882-AFB8-B0A8ACF7747F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_certainemaniere" ID="{F81C0BFC-8F92-40F8-AF15-93CE801A6603}" ShortID="637525465">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_certainemaniere" ID="{D7FB3363-FC20-428B-8539-996F93ED51B7}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_certainemaniere.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="166956135"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_certainemaniere" ID="{D7FB3363-FC20-428B-8539-996F93ED51B7}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_devoirlivrerbataille" ID="{76CD222A-CB5A-4841-806C-4602E96AA1CE}" ShortID="503626726">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_devoirlivrerbataille" ID="{47DF0B2E-5DF0-41A8-87EF-E014026DE6A9}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_devoirlivrerbataille.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="120797737"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_devoirlivrerbataille" ID="{47DF0B2E-5DF0-41A8-87EF-E014026DE6A9}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_faisonsdemitour" ID="{130D585F-0A03-4940-9F28-DC5FBEDC6CDB}" ShortID="369340494">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_faisonsdemitour" ID="{BA768F4B-2692-4C15-AFED-BAEFA89825CF}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_faisonsdemitour.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="468223"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_faisonsdemitour" ID="{BA768F4B-2692-4C15-AFED-BAEFA89825CF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_ilestvraitalent" ID="{161EBA95-0B3B-4692-8B39-B0844D2BF41A}" ShortID="493581100">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_ilestvraitalent" ID="{371ABEC4-6721-47BD-99C9-A88BDBCF94E2}">
+												<AudioFileSource Name="VOX_Player_ilestvraitalent" ID="{B58F7A9D-025F-4515-9E81-80BE36531266}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Player_ilestvraitalent.wav</AudioFile>
 													<MediaIDList>
@@ -1320,10 +318,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_ilestvraitalent" ID="{371ABEC4-6721-47BD-99C9-A88BDBCF94E2}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Player_ilestvraitalent" ID="{B58F7A9D-025F-4515-9E81-80BE36531266}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Player_jaisipeur" ID="{20AA214D-E102-4678-8C7B-277EAEC35D21}" ShortID="837418929">
+										<Sound Name="VOX_Player_meretoujoursdit" ID="{551E857F-B8C9-4A87-89F3-0649D9EBFB29}" ShortID="976975655">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -1336,182 +334,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_jaisipeur" ID="{BE6BAD0B-4965-4ABA-8AF3-2FFBB9DF885F}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_jaisipeur.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="148570256"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_jaisipeur" ID="{BE6BAD0B-4965-4ABA-8AF3-2FFBB9DF885F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_jamaisame" ID="{8223EE84-EDA5-4CF1-AD2F-3B93D26111ED}" ShortID="754553520">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_jamaisame" ID="{03DCA438-C729-4877-A4A0-0F6139A1140B}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_jamaisame.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="201130580"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_jamaisame" ID="{03DCA438-C729-4877-A4A0-0F6139A1140B}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_lalettredestinataireAmbroise" ID="{28256678-A7C6-4B2C-949E-1AC494AD2325}" ShortID="88423844">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_lalettredestinataireAmbroise" ID="{1120AFBC-B964-4A84-B6AB-3926EFE7EEC9}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_lalettredestinataireAmbroise.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="613498900"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_lalettredestinataireAmbroise" ID="{1120AFBC-B964-4A84-B6AB-3926EFE7EEC9}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_lalettredestinataireMerlin" ID="{C7CCB306-BC0F-4683-93D5-DB0287741196}" ShortID="386931554">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_lalettredestinataireMerlin" ID="{B0B2D209-0572-4A9E-9400-ED65DAD7D2E0}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_lalettredestinataireMerlin.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="32837346"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_lalettredestinataireMerlin" ID="{B0B2D209-0572-4A9E-9400-ED65DAD7D2E0}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_lalettredestinataireOctave" ID="{5E57BD81-648E-4737-B5E1-D28BF1E4781B}" ShortID="361646596">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_lalettredestinataireOctave" ID="{60C7ED67-9BB4-43DB-8762-684A8828DE8A}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_lalettredestinataireOctave.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="423389142"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_lalettredestinataireOctave" ID="{60C7ED67-9BB4-43DB-8762-684A8828DE8A}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_lalettreecriture" ID="{F3B420C5-4B5E-4A91-B447-67B4B0E261F8}" ShortID="1049597335">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_lalettreecriture" ID="{5887F653-5872-4671-927B-89A9A2020CCC}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_lalettreecriture.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="403264162"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_lalettreecriture" ID="{5887F653-5872-4671-927B-89A9A2020CCC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_lalettreodeur" ID="{FDAEADAC-A1BB-4D80-B8BB-55649AFDF8F7}" ShortID="61427288">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_lalettreodeur" ID="{EC5F7A21-ECCB-4233-A8AF-7C583F9737CC}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_lalettreodeur.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="888950113"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_lalettreodeur" ID="{EC5F7A21-ECCB-4233-A8AF-7C583F9737CC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_meretoujoursdit" ID="{A4F7E72C-DDFA-4717-9859-B7BD75D78418}" ShortID="845706117">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_meretoujoursdit" ID="{C6D5F252-CAA4-479D-93CF-84AA90FEC263}">
+												<AudioFileSource Name="VOX_Player_meretoujoursdit" ID="{52DFDCEB-F8FD-4DBB-8A35-5A4C837E4891}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Player_meretoujoursdit.wav</AudioFile>
 													<MediaIDList>
@@ -1520,10 +343,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_meretoujoursdit" ID="{C6D5F252-CAA4-479D-93CF-84AA90FEC263}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Player_meretoujoursdit" ID="{52DFDCEB-F8FD-4DBB-8A35-5A4C837E4891}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Player_Merlin" ID="{CB94E8AF-97D5-427B-A099-FAD3FB598806}" ShortID="269697220">
+										<Sound Name="VOX_Player_Merlin" ID="{A1670188-13D0-45F4-91C3-80A9BEC04C5A}" ShortID="1041330623">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -1536,7 +359,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_Merlin" ID="{7B2926BF-6675-4D5E-BAFC-5138C3F7417C}">
+												<AudioFileSource Name="VOX_Player_Merlin" ID="{E1019475-9990-42FA-B7B7-B9AA428E8AF5}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Player_Merlin.wav</AudioFile>
 													<MediaIDList>
@@ -1545,10 +368,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_Merlin" ID="{7B2926BF-6675-4D5E-BAFC-5138C3F7417C}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Player_Merlin" ID="{E1019475-9990-42FA-B7B7-B9AA428E8AF5}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Player_Octave" ID="{8ED16C62-ADF3-469C-9DB6-1D61F8409100}" ShortID="55622197">
+										<Sound Name="VOX_Player_Octave" ID="{AF6E2DC3-56D3-4F0D-924B-7C3B9CDC11C5}" ShortID="303390626">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -1561,7 +384,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_Octave" ID="{8D155532-CCD0-485E-9880-3FCCB6D5DE94}">
+												<AudioFileSource Name="VOX_Player_Octave" ID="{93768EE6-87D2-4B67-8AE9-F117D2EBB3D0}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Player_Octave.wav</AudioFile>
 													<MediaIDList>
@@ -1570,10 +393,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_Octave" ID="{8D155532-CCD0-485E-9880-3FCCB6D5DE94}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Player_Octave" ID="{93768EE6-87D2-4B67-8AE9-F117D2EBB3D0}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Player_oumeneporte" ID="{2AB55142-DBF7-4CE5-89C2-DED1E9D3F308}" ShortID="970564176">
+										<Sound Name="VOX_Player_pasbavard" ID="{BBB9645E-AA1E-4D96-8AF6-DBE2F688BBC0}" ShortID="630142244">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -1586,57 +409,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_oumeneporte" ID="{D49ABBCC-F418-4CC9-9436-325338CCDE8A}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_oumeneporte.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="134170486"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_oumeneporte" ID="{D49ABBCC-F418-4CC9-9436-325338CCDE8A}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_pardondevoirs" ID="{0BB7E8AA-88C8-4E40-A8A4-981AF09EB58A}" ShortID="282861621">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_pardondevoirs" ID="{48B4D97F-0403-4B19-9D74-D0FA4410790E}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_pardondevoirs.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="1026890735"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_pardondevoirs" ID="{48B4D97F-0403-4B19-9D74-D0FA4410790E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_pasbavard" ID="{943B0E83-4DB9-4B47-8FBE-E8DB3890D25D}" ShortID="615864258">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_pasbavard" ID="{6ACF01AD-1FC8-4514-923A-64C00D58D56F}">
+												<AudioFileSource Name="VOX_Player_pasbavard" ID="{214CD162-B270-4636-B325-0AE954EFC84C}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Player_pasbavard.wav</AudioFile>
 													<MediaIDList>
@@ -1645,10 +418,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_pasbavard" ID="{6ACF01AD-1FC8-4514-923A-64C00D58D56F}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Player_pasbavard" ID="{214CD162-B270-4636-B325-0AE954EFC84C}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Player_pasmauvaisecompagnie" ID="{15A12A45-D477-4182-9720-5EE302556295}" ShortID="549410409">
+										<Sound Name="VOX_Player_pasmauvaisecompagnie" ID="{03CB8D63-6C3F-44B7-AB59-BEDBC378E3B7}" ShortID="1051428582">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -1661,7 +434,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_pasmauvaisecompagnie" ID="{0995D433-23B9-4C79-8F66-C0ECE7C199B8}">
+												<AudioFileSource Name="VOX_Player_pasmauvaisecompagnie" ID="{D1F63B85-6526-4D8B-B9FB-B2F9A21832BA}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_Player_pasmauvaisecompagnie.wav</AudioFile>
 													<MediaIDList>
@@ -1670,10 +443,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_pasmauvaisecompagnie" ID="{0995D433-23B9-4C79-8F66-C0ECE7C199B8}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Player_pasmauvaisecompagnie" ID="{D1F63B85-6526-4D8B-B9FB-B2F9A21832BA}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Player_penseetraverseesprit" ID="{0B2FFDB7-2B73-4069-93F8-B6C7D1F24B18}" ShortID="651506820">
+										<Sound Name="VOX_Player_toutdispose" ID="{BC87B8BD-B92A-45C6-8BF1-88E4C29CA9B3}" ShortID="713599397">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -1686,741 +459,16 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_penseetraverseesprit" ID="{6215E8EC-4225-4420-B81E-084C7E864945}">
+												<AudioFileSource Name="VOX_Player_toutdispose" ID="{43B8AD2C-2020-4553-8DDD-7A6B83AC3517}">
 													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_penseetraverseesprit.wav</AudioFile>
+													<AudioFile>VOX_Player_toutdispose.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="726695141"/>
+														<MediaID ID="773353429"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_penseetraverseesprit" ID="{6215E8EC-4225-4420-B81E-084C7E864945}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_pluscharges" ID="{86E23C85-001E-4AFA-ADED-BB75ADA4031F}" ShortID="71414582">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_pluscharges" ID="{077A4B4E-DF76-4C20-B5A3-E90275FE4BE3}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_pluscharges.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="535899076"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_pluscharges" ID="{077A4B4E-DF76-4C20-B5A3-E90275FE4BE3}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_plusnombreux" ID="{F07D03FF-690D-4F72-BA57-3FDDC11A034C}" ShortID="755425814">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_plusnombreux" ID="{62D5B08B-2211-4CF8-8D13-CAFB067C93E9}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_plusnombreux.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="323572127"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_plusnombreux" ID="{62D5B08B-2211-4CF8-8D13-CAFB067C93E9}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_pourlafortune" ID="{7623D9FE-8A29-4C50-8E55-3D7CDF0A1F99}" ShortID="396710665">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_pourlafortune" ID="{D0B7770F-FF53-49D2-A279-7C119793871E}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_pourlafortune.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="252329165"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_pourlafortune" ID="{D0B7770F-FF53-49D2-A279-7C119793871E}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_pourlagloire" ID="{8C44D7F8-179F-4F31-BE46-C07DA8343244}" ShortID="749860299">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_pourlagloire" ID="{268AFA23-972C-4373-AB2B-A6663409DE61}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_pourlagloire.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="440772924"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_pourlagloire" ID="{268AFA23-972C-4373-AB2B-A6663409DE61}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_pourlaventure" ID="{C75CF05F-F68C-45F5-9563-5EF9FB0D2B4B}" ShortID="722324483">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_pourlaventure" ID="{57444325-FB13-49D7-848D-68F33347D179}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_pourlaventure.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="164768949"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_pourlaventure" ID="{57444325-FB13-49D7-848D-68F33347D179}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_quevapassemenagepas" ID="{AF77344E-E5E8-4264-80DD-55800E96FE60}" ShortID="802079335">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_quevapassemenagepas" ID="{B2548E92-B56C-4390-9712-8AC3E426F13A}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_quevapassemenagepas.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="825467353"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_quevapassemenagepas" ID="{B2548E92-B56C-4390-9712-8AC3E426F13A}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_quinousycontraint" ID="{0C73B300-544A-4B0B-9726-1E2AB1A6F4CD}" ShortID="373439715">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_quinousycontraint" ID="{6D7AD218-80F7-4653-B8A8-D586DA3E753C}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_quinousycontraint.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="1035408497"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_quinousycontraint" ID="{6D7AD218-80F7-4653-B8A8-D586DA3E753C}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_touslesgardes" ID="{B905E29E-C850-49C5-8D4B-17B0FB391BDA}" ShortID="978601011">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_touslesgardes" ID="{AE809363-9A48-42C7-9BC6-924C02AEE982}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_touslesgardes.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="689322993"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_touslesgardes" ID="{AE809363-9A48-42C7-9BC6-924C02AEE982}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_transitionsecretmeeting" ID="{1BE1A97C-541F-4D4E-A118-7B7E3428877B}" ShortID="821245533">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_transitionsecretmeeting" ID="{6C1808CB-A627-4D16-9E39-B309199B545C}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_transitionsecretmeeting.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="953281621"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_transitionsecretmeeting" ID="{6C1808CB-A627-4D16-9E39-B309199B545C}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_trouveunendroit" ID="{C17EB90F-87B0-47F6-8E2E-EDF24FBAD373}" ShortID="365415370">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_trouveunendroit" ID="{C7CD5D34-FE5B-40C1-AEB3-2DD5422DD6CC}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_trouveunendroit.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="798188653"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_trouveunendroit" ID="{C7CD5D34-FE5B-40C1-AEB3-2DD5422DD6CC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_unemauvaisesurprise" ID="{B4B949D9-AC67-422C-A3DC-FB8650A1EA3C}" ShortID="775028433">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_unemauvaisesurprise" ID="{17DC616D-C0D7-4122-8638-DF903792168D}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_unemauvaisesurprise.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="187392380"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_unemauvaisesurprise" ID="{17DC616D-C0D7-4122-8638-DF903792168D}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_unjour" ID="{376C1619-6580-4100-9CAC-39C3B9C60A71}" ShortID="334753810">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_unjour" ID="{40AEDB84-B377-4BD1-B9D8-83A0B0E41FF8}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_unjour.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="219127318"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_unjour" ID="{40AEDB84-B377-4BD1-B9D8-83A0B0E41FF8}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_voyagedure1an" ID="{B207BBBD-5259-489B-A851-50F43AB79B42}" ShortID="50297573">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_voyagedure1an" ID="{0E1F7F04-0C32-4037-BFDD-7FB7A0B8ADAC}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_voyagedure1an.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="433342095"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_voyagedure1an" ID="{0E1F7F04-0C32-4037-BFDD-7FB7A0B8ADAC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_jecompte1" ID="{C35A30D3-DE87-4847-90EE-7E874A0E7D99}" ShortID="671925898">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_jecompte1" ID="{2E47B17D-28ED-459C-95D0-0F993CF2A1EF}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_jecompte1.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="291414424"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_jecompte1" ID="{2E47B17D-28ED-459C-95D0-0F993CF2A1EF}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_heuressupp" ID="{22AC01A9-7E8B-4D09-B0AD-37A3C452B6F3}" ShortID="592363264">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_heuressupp" ID="{5103DC5C-47C4-4F3A-9C6F-30E59031B2E9}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_heuressupp.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="66879076"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_heuressupp" ID="{5103DC5C-47C4-4F3A-9C6F-30E59031B2E9}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_quelquunmepie" ID="{A2701F19-13F9-4B9D-B09F-A27B5CAB44D0}" ShortID="185773601">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_quelquunmepie" ID="{DB822A47-6B31-4B20-B2A6-E22D8CA91C9F}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_quelquunmepie.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="419293928"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_quelquunmepie" ID="{DB822A47-6B31-4B20-B2A6-E22D8CA91C9F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_celaseraitunhonneur" ID="{5F4486C8-0CB3-4C44-BDFB-DC2338F2B876}" ShortID="1069706085">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_celaseraitunhonneur" ID="{9D816D16-B049-4094-8E14-8B42B0D42F9A}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_celaseraitunhonneur.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="796285420"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_celaseraitunhonneur" ID="{9D816D16-B049-4094-8E14-8B42B0D42F9A}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_jecompte0" ID="{B7CAF5DA-B96A-423C-9844-F2DB8561E0AD}" ShortID="212701223">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_jecompte0" ID="{143C00D9-88C0-41E6-9D49-1DA0AA0BD678}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_jecompte0.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="34079765"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_jecompte0" ID="{143C00D9-88C0-41E6-9D49-1DA0AA0BD678}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_jecompte2" ID="{476F8CAB-9169-4027-903D-34B7D61CF1F8}" ShortID="677017899">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_jecompte2" ID="{D0953F91-1C5A-41B7-B81D-86476B83B19B}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_jecompte2.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="666157825"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_jecompte2" ID="{D0953F91-1C5A-41B7-B81D-86476B83B19B}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_lepublicnattend" ID="{A93B60F1-6392-47C3-9A09-C0257C00BD9B}" ShortID="898318983">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_lepublicnattend" ID="{4CE48A3B-A358-4D5C-9F80-355F9904AE54}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_lepublicnattend.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="794234642"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_lepublicnattend" ID="{4CE48A3B-A358-4D5C-9F80-355F9904AE54}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_tuesengreve" ID="{31C3F396-D504-4674-8364-84CCFF37ED16}" ShortID="743659396">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_tuesengreve" ID="{BDBF100D-5112-4023-8477-C767314B9380}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_tuesengreve.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="353246436"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_tuesengreve" ID="{BDBF100D-5112-4023-8477-C767314B9380}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_VRAIMENTtemps" ID="{9ABD2FD5-D1A0-4660-88A6-FA35089E2593}" ShortID="575097821">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_VRAIMENTtemps" ID="{07033465-65A7-48D4-84B2-C2C4CEB09E71}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_VRAIMENTtemps.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="308122739"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_VRAIMENTtemps" ID="{07033465-65A7-48D4-84B2-C2C4CEB09E71}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_cestparanoia" ID="{7F5C13B7-1A53-495D-ABCE-B88E603DFBC3}" ShortID="199655016">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_cestparanoia" ID="{FEF15EE0-5356-4E88-96C9-2818BFCB0BFE}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_cestparanoia.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="548433970"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_cestparanoia" ID="{FEF15EE0-5356-4E88-96C9-2818BFCB0BFE}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_jecompte3" ID="{BD139C41-D79B-4533-96B6-D97DF5D14C6B}" ShortID="1052354972">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_jecompte3" ID="{CBB11AA2-524E-4D67-87F2-535069323BD7}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_jecompte3.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="783127351"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_jecompte3" ID="{CBB11AA2-524E-4D67-87F2-535069323BD7}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_jevaismeubler" ID="{A8B6A7DE-AAB7-48AB-A2B8-6DE97EB5363C}" ShortID="232878021">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_jevaismeubler" ID="{9E707C44-DE69-49D2-BF03-CB3A5887D0E7}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_jevaismeubler.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="923445499"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_jevaismeubler" ID="{9E707C44-DE69-49D2-BF03-CB3A5887D0E7}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_panpanculcul" ID="{A2AC429B-666E-4EFC-AC2D-E270A8635ED5}" ShortID="450999026">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_panpanculcul" ID="{A96B4348-A19F-4359-82A6-D8387C2EF396}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_panpanculcul.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="898048091"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_panpanculcul" ID="{A96B4348-A19F-4359-82A6-D8387C2EF396}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_pointleloisirsoustraire" ID="{957C3991-3D32-4E2A-988F-59BDB9F7846E}" ShortID="440993790">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_pointleloisirsoustraire" ID="{1E2DCB14-2FF5-4629-BCC3-572CA0A16E03}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_pointleloisirsoustraire.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="410073266"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_pointleloisirsoustraire" ID="{1E2DCB14-2FF5-4629-BCC3-572CA0A16E03}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_quelleestcettemission" ID="{854F0533-13A8-43EB-8E58-7AA1C928A3DF}" ShortID="398218829">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_quelleestcettemission" ID="{C1F0CCF9-B6A8-4AD1-A199-FC165D15C757}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_quelleestcettemission.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="353831355"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_quelleestcettemission" ID="{C1F0CCF9-B6A8-4AD1-A199-FC165D15C757}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Player_toutlemondepeuttevoir" ID="{AB9461FC-9520-4EBA-B00F-E17C2EB0DD09}" ShortID="1071816538">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Player_toutlemondepeuttevoir" ID="{325CDB80-5F6B-4B41-9197-AD5B33568A96}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Player_toutlemondepeuttevoir.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="164242015"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Player_toutlemondepeuttevoir" ID="{325CDB80-5F6B-4B41-9197-AD5B33568A96}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Player_toutdispose" ID="{43B8AD2C-2020-4553-8DDD-7A6B83AC3517}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
@@ -2455,7 +503,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="VOX_Souffleur_oublietexeteQ" ID="{1DFF7945-BDF5-4FE1-9707-98A10854087C}" ShortID="775080192">
+										<Sound Name="VOX_NPC_Souffleur_rafraichirmemoire" ID="{EE499141-8EBE-4603-B867-2309BD786570}" ShortID="807164802">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -2468,207 +516,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_oublietexeteQ" ID="{BB63D7DB-99AE-4139-9619-031B0F66D04F}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_oublietexeteQ.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="147463948"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_oublietexeteQ" ID="{BB63D7DB-99AE-4139-9619-031B0F66D04F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Souffleur_pardondevoirs" ID="{82A2CACA-73AD-4769-8F16-2D61ECDF1CE9}" ShortID="933657905">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_pardondevoirs" ID="{FD820EB8-565E-439A-B0A7-F125AEA74305}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_pardondevoirs.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="450936632"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_pardondevoirs" ID="{FD820EB8-565E-439A-B0A7-F125AEA74305}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Souffleur_parici" ID="{16C8B938-C178-4199-AEA4-FAE6C823F92D}" ShortID="175690929">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_parici" ID="{D48CBFFA-0DD4-4FD5-A5C1-5ADFB7F4528F}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_parici.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="582082362"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_parici" ID="{D48CBFFA-0DD4-4FD5-A5C1-5ADFB7F4528F}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Souffleur_pasbavard" ID="{8DAEC23D-0CF5-4397-A489-61645643D501}" ShortID="1058959045">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_pasbavard" ID="{55D6F425-81BB-42C6-9FF5-8730D54945FE}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_pasbavard.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="70207364"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_pasbavard" ID="{55D6F425-81BB-42C6-9FF5-8730D54945FE}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Souffleur_pssthe" ID="{E1D2163F-E2B0-460B-9A29-D236F8B976C9}" ShortID="134344490">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_pssthe" ID="{02E5AEF3-A104-42EE-88E3-07A5A7AAF463}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_pssthe.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="425949015"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_pssthe" ID="{02E5AEF3-A104-42EE-88E3-07A5A7AAF463}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Souffleur_pssthecolere" ID="{1B0BF5AF-3E9F-4141-9500-0690B8800947}" ShortID="570458563">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_pssthecolere" ID="{A1A49E5D-1CBD-4C42-B5FA-C6BF7FA4577B}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_pssthecolere.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="811947792"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_pssthecolere" ID="{A1A49E5D-1CBD-4C42-B5FA-C6BF7FA4577B}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Souffleur_publicreagit" ID="{14EA1E3B-A1CD-4812-B9DB-4A0F896D7F66}" ShortID="775151789">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_publicreagit" ID="{014936B3-F7F0-42AA-B7A5-044E165B46D6}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_publicreagit.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="335545284"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_publicreagit" ID="{014936B3-F7F0-42AA-B7A5-044E165B46D6}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_Souffleur_tracparalyse" ID="{4259F695-2892-4426-A08F-8173DE93DC52}" ShortID="700373148">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_tracparalyse" ID="{5FDFE129-F010-426A-86C0-CCC8A5F357C9}">
-													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_tracparalyse.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="864598433"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_tracparalyse" ID="{5FDFE129-F010-426A-86C0-CCC8A5F357C9}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="VOX_NPC_Souffleur_rafraichirmemoire" ID="{D115E993-2484-49BF-80D5-F1714F2544A5}" ShortID="570621484">
-											<PropertyList>
-												<Property Name="IsVoice" Type="bool" Value="True"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="VOX_NPC_Souffleur_rafraichirmemoire" ID="{891B662C-2FD3-41EC-B8A7-7CB959BD50D7}">
+												<AudioFileSource Name="VOX_NPC_Souffleur_rafraichirmemoire" ID="{23983A93-B095-4C4D-8B85-2D9AC668126E}">
 													<Language>French(FR)</Language>
 													<AudioFile>VOX_NPC_Souffleur_rafraichirmemoire.wav</AudioFile>
 													<MediaIDList>
@@ -2677,10 +525,10 @@
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_NPC_Souffleur_rafraichirmemoire" ID="{891B662C-2FD3-41EC-B8A7-7CB959BD50D7}" Platform="Linked"/>
+												<ActiveSource Name="VOX_NPC_Souffleur_rafraichirmemoire" ID="{23983A93-B095-4C4D-8B85-2D9AC668126E}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Souffleur_bienjouelamicontinue" ID="{14092EBE-59F8-4947-8D63-DAC97134E292}" ShortID="390870812">
+										<Sound Name="VOX_Souffleur_alorsmetsyemotionlami" ID="{8E3D875C-94C7-4F14-B713-6E754DD9432E}" ShortID="563844150">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -2689,23 +537,23 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_bienjouelamicontinue" ID="{B467E133-C79C-4CBC-91CE-FD68B62CAF49}">
+												<AudioFileSource Name="VOX_Souffleur_alorsmetsyemotionlami" ID="{184FCC6E-8D96-4EB8-902C-8708E119D452}">
 													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_bienjouelamicontinue.wav</AudioFile>
+													<AudioFile>VOX_Souffleur_alorsmetsyemotionlami.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="417152520"/>
+														<MediaID ID="890563985"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_bienjouelamicontinue" ID="{B467E133-C79C-4CBC-91CE-FD68B62CAF49}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Souffleur_alorsmetsyemotionlami" ID="{184FCC6E-8D96-4EB8-902C-8708E119D452}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Souffleur_certainessituations" ID="{580241DB-8D4A-47E9-BC93-D1A91E68C63C}" ShortID="1056526229">
+										<Sound Name="VOX_Souffleur_exaltantpasvrai" ID="{B679C5C1-FD5E-4A00-90DA-30D18A92AE12}" ShortID="635240299">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -2714,23 +562,23 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_certainessituations" ID="{844B591D-8EE9-4090-8E28-E8F430E03E24}">
+												<AudioFileSource Name="VOX_Souffleur_exaltantpasvrai" ID="{8782EB30-8EA7-4364-82C9-49A21FFD0AAB}">
 													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_certainessituations.wav</AudioFile>
+													<AudioFile>VOX_Souffleur_exaltantpasvrai.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="809439973"/>
+														<MediaID ID="1071941660"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_certainessituations" ID="{844B591D-8EE9-4090-8E28-E8F430E03E24}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Souffleur_exaltantpasvrai" ID="{8782EB30-8EA7-4364-82C9-49A21FFD0AAB}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Souffleur_cestunfour" ID="{F70ED20B-D0F5-4A52-AB09-D9EDC652F5F7}" ShortID="11911016">
+										<Sound Name="VOX_Souffleur_ilestvraitalent" ID="{797B4E1B-BADD-4670-A3C9-75CF7CE25553}" ShortID="249849454">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -2739,23 +587,23 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_cestunfour" ID="{5E7F6FF2-8ADE-4415-8E9B-342DBBEE6F1B}">
+												<AudioFileSource Name="VOX_Souffleur_ilestvraitalent" ID="{4DCC8D9A-15A9-4ECE-B900-2521FE23DB28}">
 													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_cestunfour.wav</AudioFile>
+													<AudioFile>VOX_Souffleur_ilestvraitalent.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="158170224"/>
+														<MediaID ID="464851883"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_cestunfour" ID="{5E7F6FF2-8ADE-4415-8E9B-342DBBEE6F1B}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Souffleur_ilestvraitalent" ID="{4DCC8D9A-15A9-4ECE-B900-2521FE23DB28}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Souffleur_partenairedescene" ID="{5D72376B-FC44-4474-BEB0-8F5F2CDD5623}" ShortID="643931239">
+										<Sound Name="VOX_Souffleur_maistoiacteur" ID="{E45784FE-B29E-405C-A42C-0BA30E205160}" ShortID="584489628">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -2764,23 +612,23 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_partenairedescene" ID="{22592A45-7686-4F87-9F0F-6259C68DB452}">
+												<AudioFileSource Name="VOX_Souffleur_maistoiacteur" ID="{B139C367-B34B-4368-BCDA-BEF8C1F01C34}">
 													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_partenairedescene.wav</AudioFile>
+													<AudioFile>VOX_Souffleur_maistoiacteur.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="860071618"/>
+														<MediaID ID="1038204988"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_partenairedescene" ID="{22592A45-7686-4F87-9F0F-6259C68DB452}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Souffleur_maistoiacteur" ID="{B139C367-B34B-4368-BCDA-BEF8C1F01C34}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="VOX_Souffleur_yadelidee" ID="{8794C057-2073-4D79-A48D-8688A97A5E32}" ShortID="16141776">
+										<Sound Name="VOX_Souffleur_oublietexeteQ" ID="{0B08F7BA-4A94-4940-9A0A-660972708DA7}" ShortID="753566797">
 											<PropertyList>
 												<Property Name="IsVoice" Type="bool" Value="True"/>
 											</PropertyList>
@@ -2789,20 +637,195 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="VOX_Souffleur_yadelidee" ID="{A4A58BCF-86B8-4685-A80D-CC559F16347B}">
+												<AudioFileSource Name="VOX_Souffleur_oublietexeteQ" ID="{8ACE5595-E51F-4A3E-BA37-4EFC8F912772}">
 													<Language>French(FR)</Language>
-													<AudioFile>VOX_Souffleur_yadelidee.wav</AudioFile>
+													<AudioFile>VOX_Souffleur_oublietexeteQ.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="577757951"/>
+														<MediaID ID="147463948"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
 											<ActiveSourceList>
-												<ActiveSource Name="VOX_Souffleur_yadelidee" ID="{A4A58BCF-86B8-4685-A80D-CC559F16347B}" Platform="Linked"/>
+												<ActiveSource Name="VOX_Souffleur_oublietexeteQ" ID="{8ACE5595-E51F-4A3E-BA37-4EFC8F912772}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Souffleur_parici" ID="{BCCD7B5B-1905-41A8-942C-BEC450B44BEA}" ShortID="214940845">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Souffleur_parici" ID="{3F371B53-CFCD-4365-89C9-D75E9EA1B4D4}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Souffleur_parici.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="582082362"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Souffleur_parici" ID="{3F371B53-CFCD-4365-89C9-D75E9EA1B4D4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Souffleur_pasbavard" ID="{30AB840D-6144-43B9-BB01-C5146BCABEBC}" ShortID="854888818">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Souffleur_pasbavard" ID="{433504FD-A50D-48B6-99D2-DBB16FC2BDD0}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Souffleur_pasbavard.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="70207364"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Souffleur_pasbavard" ID="{433504FD-A50D-48B6-99D2-DBB16FC2BDD0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Souffleur_pasleton" ID="{B8E91FF6-B9FF-4D61-8CBC-BF6E40AC5681}" ShortID="142803788">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Souffleur_pasleton" ID="{E31715B1-3C54-4D8F-80C0-14F2670CA4EB}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Souffleur_pasleton.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="452371097"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Souffleur_pasleton" ID="{E31715B1-3C54-4D8F-80C0-14F2670CA4EB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Souffleur_pssthe" ID="{E60BE01D-8A24-4C70-9D7E-5C56C36BBF65}" ShortID="365641403">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Souffleur_pssthe" ID="{5F39D889-8044-4DB7-9E44-5EC9328BE055}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Souffleur_pssthe.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="425949015"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Souffleur_pssthe" ID="{5F39D889-8044-4DB7-9E44-5EC9328BE055}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Souffleur_pssthecolere" ID="{7035157C-B117-43F6-97DA-AB8475AAB2B1}" ShortID="930990158">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Souffleur_pssthecolere" ID="{EAF47F37-ECB4-494D-9F9D-D38705E69CC7}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Souffleur_pssthecolere.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="811947792"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Souffleur_pssthecolere" ID="{EAF47F37-ECB4-494D-9F9D-D38705E69CC7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Souffleur_publicreagit" ID="{8FB17CB0-43BA-4DEE-B125-951A3C204F9E}" ShortID="929207781">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Souffleur_publicreagit" ID="{3E18AFDC-22E0-4AC9-A65A-DA5125BF1604}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Souffleur_publicreagit.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="335545284"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Souffleur_publicreagit" ID="{3E18AFDC-22E0-4AC9-A65A-DA5125BF1604}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Souffleur_tracparalyse" ID="{1298F5FD-A580-435B-8AFF-00FEB0BD7F4C}" ShortID="263817964">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Souffleur_tracparalyse" ID="{CD0024A7-A7E4-43D1-BE36-A2F1774657C8}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Souffleur_tracparalyse.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="864598433"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Souffleur_tracparalyse" ID="{CD0024A7-A7E4-43D1-BE36-A2F1774657C8}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
