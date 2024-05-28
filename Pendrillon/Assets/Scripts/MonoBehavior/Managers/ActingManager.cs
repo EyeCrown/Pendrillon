@@ -302,7 +302,7 @@ namespace MonoBehavior.Managers
                         else
                             GameManager.Instance.GetCharacter(speaker).DialogueUpdate.Invoke(dialogue);
 
-                        _masks.transform.Find(speaker.ToLower()).gameObject.SetActive(true);
+                        //_masks.transform.Find(speaker.ToLower()).gameObject.SetActive(true);
                         
                         // play sound
                         PlaySoundDialogAppears();
@@ -563,10 +563,10 @@ namespace MonoBehavior.Managers
             _dialogueBox.SetActive(false);
             
             // Clear masks
-            foreach (Transform mask in _masks.transform)
-            {
-                mask.gameObject.SetActive(false);
-            }
+            //foreach (Transform mask in _masks.transform)
+            //{
+                //mask.gameObject.SetActive(false);
+            //}
             
             
             StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 1, 0, 0.1f));
