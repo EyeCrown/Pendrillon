@@ -43,6 +43,7 @@ namespace MonoBehavior.Managers
         public float _gridYBase = 0.65f;
         public float _gridYBarge = 2.25f;
 
+        public Transform _PrompterPosition;
         public Transform _enemyPos;
         
         [Header("=== Ink File ===")]
@@ -179,7 +180,8 @@ namespace MonoBehavior.Managers
         public void SetupPrompter()
         {
             _prompter = Instantiate(_prompterPrefab).GetComponent<Prompter>();
-            _prompter.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100));
+            _prompter.transform.position = _PrompterPosition.position;
+            _prompter.transform.rotation = _PrompterPosition.rotation;
             _prompter.name = Constants.PrompterName;
         }
 

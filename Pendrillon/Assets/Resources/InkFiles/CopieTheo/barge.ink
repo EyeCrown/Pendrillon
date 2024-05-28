@@ -22,7 +22,7 @@
 // Scène 1
 = scene_1
 #playsound:Play_MUS_Story_SC_Barque_Intro
-#sleep:10
+
 PASSEUR: ... #anim:Passeur:neutre
 #sleep:5
 PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces
@@ -32,7 +32,7 @@ SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_par
 SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #anim:Souffleur:neutre #playsound:VOX_Souffleur_tracparalyse
 #sleep:6
 #audience:booing
-#sleep:2
+
 SOUFFLEUR: Hé ! Qu'est-ce que tu fabriques ? Tu as oublier ton texte, c'est ça ? #anim:Souffleur:neutre #playsound:VOX_Souffleur_oublietexeteQ
 #sleep:4
 SOUFFLEUR: Permets-moi de te rafraîchir la mémoire, l'ami : « Ma mère m'a toujours dit... ». #anim:Souffleur:neutre #playsound:VOX_NPC_Souffleur_rafraichirmemoire
@@ -58,7 +58,7 @@ SOUFFLEUR: Reprenons : « Il est vrai que j'ai ce talent-là, mais... ». #anim:
     * [(Avec intensité) Un talent est une ressource précieuse...] PLAYER: Un talent est une ressource précieuse, aussi je l'utilise à bon escient. #anim:Player:neutre #audience:ovation #playsound:Play_MUS_Story_SC_Barque_AGoodActor
 - SOUFFLEUR: C'est exaltant, pas vrai ? #anim:Souffleur:joie
 SOUFFLEUR: Le public réagit à tes répliques, mais aussi à ton jeu de scène ! Tu brûles littéralement les planches, l'ami ! #anim:Souffleur:joie #playsound:VOX_Souffleur_publicreagit
-#sleep:2
+
 - PASSEUR: Hahaha, je vois, je vois... #anim:Passeur:laugh #playsound:VOX_Ferryman_hahajevois
 - PASSEUR: De toute façon, ce n'est pas auprès de moi qu'il faudra se montrer éloquent... #anim:Passeur:neutre #playsound:VOX_Ferryman_detoutefacon
 #sleep:3
@@ -71,11 +71,11 @@ PASSEUR: Commence par te présenter : qui es-tu ? #anim:Passeur:question #playso
 #sleep:6
 #audience:debate
 - SOUFFLEUR: ... #anim:Souffleur:neutre
-#sleep:2
+
 - SOUFFLEUR: C'est là qu'on va avoir un petit problème, l'ami. #anim:Souffleur:neutre
 SOUFFLEUR: Le metteur en scène de cette pièce, le célèbre Jean Ornicar... son nom te dit sans doute quelque chose... #anim:Souffleur:neutre
 SOUFFLEUR: Le respectable Ornicar a quitté la troupe. En assez mauvais termes, vois-tu. #anim:Souffleur:neutre
-#sleep:2
+
 SOUFFLEUR: Là où le bât blesse... c'est qu'il n'a jamais terminé d'écrire tes répliques. #anim:Souffleur:neutre
 SOUFFLEUR: On aurait dû te prévenir avant, navré l'ami... #anim:Souffleur:neutre
 SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance ! #anim:Player:stress
@@ -174,9 +174,9 @@ PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #anim:P
 // Scène 5
 = scene_5
 #playsound:Play_AMB_SC_Barque_Ambiance
-#sleep:10
+
 PASSEUR: Notre voyage s'avera des plus captivants, toutefois...  #anim:Passeur:neutre #playsound:VOX_Ferryman_voyagecaptivant
-#sleep:2
+
 PASSEUR: ... il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView
 #sleep:3
 PASSEUR: Vois-tu ces portes, devant nous ? Dans quelques instants, tu sauras si nous pouvons faire demi-tour, ensemble... #anim:Passeur:show_door #playsound:VOX_Ferryman_voistuporte
@@ -185,7 +185,7 @@ PASSEUR: ... ou si c'est ici que nos chemins se sépareront. #anim:Passeur:neutr
         PASSEUR: Cela, je ne puis te le dire, voyageur. Je connais ton passé, mais j'ignore tout de ton destin. #anim:Passeur:neutre #playsound:VOX_Ferryman_jenepuisteledire
     * [Où mènent ces portes ?] PLAYER: Où mènent ces portes, Passeur ? #anim:Player:stress #playsound:VOX_Player_oumeneporte
         PASSEUR: Tu le sauras bientôt, ou ne le saura jamais. Attendons un instant... #anim:Passeur:neutre #playsound:VOX_Ferryman_attendons
-    * [(Rester silencieux).] #sleep:2
+    * [(Rester silencieux).] 
 - PASSEUR: Si les portes s'ouvrent, alors nous seront tenus de passer...  #anim:Passeur:neutre #playsound:VOX_Ferryman_silesportes
     * [Qui nous y oblige ?] PLAYER: Qui nous y contraint, Passeur ? #anim:Player:question  #playsound:VOX_Player_quinousycontraint
         PASSEUR: La Loi. #anim:Passeur:neutre #playsound:VOX_Ferryman_laloi
