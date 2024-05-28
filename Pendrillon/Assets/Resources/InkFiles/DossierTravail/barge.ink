@@ -10,6 +10,7 @@
 #actor:Passeur:PASSEUR
 #actor:Prompter:SOUFFLEUR
 #playsound:Play_AMB_SC_Barque_Ambiance
+#playsound:Play_AMB_SC_Theater_CrowdChatter
 
 #set:barge
 

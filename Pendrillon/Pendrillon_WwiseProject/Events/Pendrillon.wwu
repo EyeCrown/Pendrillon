@@ -130,6 +130,29 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{2545D32A-1420-4720-B64C-5F52F4A3DEC4}" ShortID="492081168">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdBoredom" ID="{61A3171D-F115-49E4-AADA-025E1CEAD958}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{9A354DE7-7071-4EDC-A15C-89826E887239}" ShortID="853404981">
+											<PropertyList>
+												<Property Name="AbsoluteOrRelative" Type="int16" Value="1"/>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="FadeTime" Type="Real64" Value="20"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="74"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdBoredom" ID="{61A3171D-F115-49E4-AADA-025E1CEAD958}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_UI_HUD_SpeechBubbleSkip" ID="{1FC8680D-3559-4F51-A6D3-713809817F4A}">
@@ -638,9 +661,23 @@
 								<Event Name="Play_CrowdReaction_laughter" ID="{07908038-D771-41CB-B5DB-B7DE3302A5B4}">
 									<ChildrenList>
 										<Action Name="" ID="{822D7590-F0E2-4427-BC5F-246356273966}" ShortID="221258503">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="SFX_Theater_CrowdGlobalHappy" ID="{32C6ABA8-C03A-48A1-9254-C544D754492C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{897C918C-507D-4B24-A7D1-85D9811F26C3}" ShortID="390220094">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Theater_CrowdHype_Laughing" ID="{CEC1EE1F-797A-42F6-9D6C-0BCAC05D430A}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -648,6 +685,11 @@
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="38"/>
 												<Property Name="GameParameterValue" Type="Real64" Value="1"/>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -828,6 +870,18 @@
 								</Event>
 								<Event Name="Play_AMB_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}">
 									<ChildrenList>
+										<Action Name="" ID="{8FD59B00-7A3F-4012-915B-7C25B671C849}" ShortID="933035178">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="77"/>
+												<Property Name="Scope" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdBoredom" ID="{61A3171D-F115-49E4-AADA-025E1CEAD958}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{9F5B447C-BF1D-43B1-AC3A-C05D4CAC2010}" ShortID="620740651">
 											<PropertyList>
 												<Property Name="FadeTime" Type="Real64" Value="1"/>
