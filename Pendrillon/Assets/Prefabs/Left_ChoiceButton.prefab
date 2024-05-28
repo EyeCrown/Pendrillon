@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 8841259990102613653}
   - component: {fileID: 839975030731081523}
   - component: {fileID: 5715417665722156260}
+  - component: {fileID: 4512782447368411260}
   m_Layer: 5
   m_Name: Left_ChoiceButton
   m_TagString: Untagged
@@ -425,7 +426,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8841259990102613653}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4512782447368411260}
+        m_TargetAssemblyTypeName: wwisePlaySound, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!95 &5715417665722156260
 Animator:
   serializedVersion: 5
@@ -447,6 +460,23 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4512782447368411260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6482679349071614965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e292af709774e934498fa5254f857ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WwiseSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b15ea681e1da6454f92eaf58ebdcb910,
+      type: 2}
 --- !u!1 &7426166917758133557
 GameObject:
   m_ObjectHideFlags: 0
