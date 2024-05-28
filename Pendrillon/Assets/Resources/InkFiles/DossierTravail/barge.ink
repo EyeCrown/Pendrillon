@@ -25,14 +25,15 @@
 // Scène 1
 = scene_1
 #playsound:Play_MUS_Story_SC_Barque_Intro #wait:8
-PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces
+PASSEUR: ...
+PASSEUR: J'ai connu des passagers plus loquaces... #wait:2 #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces
 - #sleep:2
     * [...]
 - #audience:debate
 - PASSER: J'ai dit : « J'ai connu des passagers plus loquaces... » #audience:debate #wait:3 #anim:Passeur:neutre
-- #sleep:2
+- #sleep:1
     * [...]
-- SOUFFLEUR: Psssst... Hé ! #wait:1 #audience:booing #wait:4 #box #anim:neutre #playsound:VOX_Souffleur_pssthe #sleep:3
+- SOUFFLEUR: Psssst... Hé ! #wait:1 #audience:booing #wait:2 #box #anim:neutre #playsound:VOX_Souffleur_pssthe #sleep:3
 SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_parici
 SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #audience:booing #wait:2 #anim:Souffleur:neutre #playsound:VOX_Souffleur_tracparalyse
 SOUFFLEUR: Hé ! Qu'est-ce que tu fabriques ? Tu as oublié ton texte, c'est ça ? #anim:Souffleur:neutre #playsound:VOX_Souffleur_oublietexeteQ
