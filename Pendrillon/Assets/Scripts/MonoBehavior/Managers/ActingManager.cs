@@ -49,6 +49,7 @@ namespace MonoBehavior.Managers
         TextMeshProUGUI _tagsText;          // Tags box
         GameObject _historyBox;        // History box
         GameObject _masks;
+        private string _playerName;
         
         TextMeshProUGUI _historyText;
         RawImage _nextDialogueIndicator;
@@ -274,21 +275,23 @@ namespace MonoBehavior.Managers
                 }
                 else
                 {
-                    Debug.Log("AM.HandleDialogue > Lot of words");
                     speaker = words[0].Trim();
                     dialogue = String.Join(":", words.Skip(1));
                     
-                    if (speaker.Contains(']'))
+                    if (speaker.Contains("]"))
                     {
-                        Debug.Log("AM.HandleDialogue > Contains skillcheck");
+                        //Debug.Log("AM.HandleDialogue > Contains skillcheck");
                         // Remove [...] part in speaker
                         speaker = speaker.Remove(0, speaker.IndexOf(']')+1).Trim();
                     }
                 }
                 
                 //Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
-
-                _speakerText.text = speaker;
+                
+                if (speaker == "PLAYER")
+                    _speakerText.text = _playerName;
+                else
+                    _speakerText.text = speaker;
                 
                 _tagMethods.Add(() =>
                 {
@@ -443,7 +446,7 @@ namespace MonoBehavior.Managers
         }
         
 
-        bool CheckBeginOfFight(String path)
+        /*bool CheckBeginOfFight(String path)
         {
             if (path == null)
                 return false;
@@ -470,9 +473,13 @@ namespace MonoBehavior.Managers
             
             PhaseEnded.Invoke();
             return true;
+        }*/
+
+        void ChangePlayerName(string newName)
+        {
+            Debug.Log($"AM.ChangePleyrName > {newName}");
+            _playerName = newName;
         }
-        
-        
         
 
         #region ButtonHandlers
@@ -542,6 +549,11 @@ namespace MonoBehavior.Managers
             
             //GameManager.Instance._playerInput.Player.History.performed += OnClickHistory;
 
+            _playerName = (string) GameManager.Instance._story.variablesState["p_name"];
+            
+            GameManager.Instance._story.ObserveVariable("p_name", (variableName, value) => 
+                ChangePlayerName((string) value));
+            
             Debug.Log($"AM.OnPhaseStart > Start story | Refresh call ");
             Refresh();
         }
