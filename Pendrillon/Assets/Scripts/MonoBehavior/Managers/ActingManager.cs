@@ -48,6 +48,8 @@ namespace MonoBehavior.Managers
         TextMeshProUGUI _speakerText;      // Text box
         TextMeshProUGUI _tagsText;          // Tags box
         GameObject _historyBox;        // History box
+        GameObject _masks;
+        
         TextMeshProUGUI _historyText;
         RawImage _nextDialogueIndicator;
         readonly float _minButtonPosX = -960;
@@ -113,7 +115,8 @@ namespace MonoBehavior.Managers
             _uiParent = GameObject.Find("Canvas/ACTING_PART").gameObject;
             _dialogueBox    = _uiParent.transform.Find("DialogueBox").gameObject;
             _dialogueText   = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
-            _speakerText   = _uiParent.transform.Find("DialogueBox/SpeakerText").GetComponent<TextMeshProUGUI>();
+            _speakerText    = _uiParent.transform.Find("DialogueBox/SpeakerText").GetComponent<TextMeshProUGUI>();
+            _masks          = _uiParent.transform.Find("DialogueBox/Masks").gameObject;
             _tagsText       = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
             _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<RawImage>();
             _historyBox     = _uiParent.transform.Find("History").gameObject;
@@ -280,6 +283,7 @@ namespace MonoBehavior.Managers
                 _speakerText.text = speaker;
                 String dialogue = String.Join(":", words.Skip(1));
 
+                Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
                 _tagMethods.Add(() =>
                 {
                     // send to character the dialogue
@@ -297,7 +301,9 @@ namespace MonoBehavior.Managers
                             Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {speaker}");
                         else
                             GameManager.Instance.GetCharacter(speaker).DialogueUpdate.Invoke(dialogue);
-                            
+
+                        _masks.transform.Find(speaker.ToLower()).gameObject.SetActive(true);
+                        
                         // play sound
                         PlaySoundDialogAppears();
         
@@ -555,6 +561,13 @@ namespace MonoBehavior.Managers
             _choicesButtonList.Clear();
         
             _dialogueBox.SetActive(false);
+            
+            // Clear masks
+            foreach (Transform mask in _masks.transform)
+            {
+                mask.gameObject.SetActive(false);
+            }
+            
             
             StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 1, 0, 0.1f));
 
@@ -1096,7 +1109,7 @@ namespace MonoBehavior.Managers
                 if (!_tagMethods.Any())
                     break;                
                 _isActionDone = false;
-                Debug.Log($"{_tagMethods[i].Method.Name} > Start action");
+                Debug.Log($"{_tagMethods[i].Method.Name} > Start action {_tagMethods[i].Method.Name}");
 
                 _tagMethods[i]();
                 while (!_isActionDone)
