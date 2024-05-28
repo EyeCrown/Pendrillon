@@ -63,6 +63,7 @@ namespace MonoBehavior.Managers
         [Header("=== Timers ===")] 
         [Range(0, 5)] public float _timeButtonSpawnInSec;
         [Range(0, 5)] public float _timeTextToAppearInSec;
+        [Range(0, 0.1f)] public float _timeLetterToAppearInSec;
 
         [Header("=== UI ===")] 
         [Range(0.025f, 1)] public float _opacityUI;

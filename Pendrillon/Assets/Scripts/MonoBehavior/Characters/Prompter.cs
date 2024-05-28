@@ -18,6 +18,8 @@ public class Prompter : MonoBehaviour
     
     private Animator _anim;
 
+    private IEnumerator _dialogueCoroutine;
+    
     private bool isOnStage = false;
 
     #endregion
@@ -41,7 +43,7 @@ public class Prompter : MonoBehaviour
         _iconTalking.SetActive(false);
         
         _anim = GetComponentInChildren<Animator>();
-        
+        _dialogueCoroutine = GenerateText("");
         
         // Connect Events
         ActingManager.Instance.ClearUI.AddListener(OnClearUI);
@@ -81,6 +83,7 @@ public class Prompter : MonoBehaviour
             LeaveStage();
         
         _uiPart.SetActive(false);
+        StopCoroutine(_dialogueCoroutine);
         _dialogueText.text = string.Empty;
         _iconTalking.SetActive(false);
     }
@@ -91,10 +94,22 @@ public class Prompter : MonoBehaviour
             GoOnStage();
         
         _uiPart.SetActive(true);
-        _dialogueText.text = dialogue;
+        _dialogueCoroutine = GenerateText(dialogue);
+        StartCoroutine(_dialogueCoroutine);
+        //_dialogueText.text = dialogue;
         _iconTalking.SetActive(true);
         Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name} > Prompter is speaking");
 
+    }
+    
+    IEnumerator GenerateText(string textToDisplay)
+    {
+        Debug.Log($"Prompter text > {textToDisplay}");
+        foreach (var letter in textToDisplay)
+        {
+            _dialogueText.text += letter.ToString();
+            yield return new WaitForSeconds(GameManager.Instance._timeLetterToAppearInSec);
+        }
     }
 
     #endregion
