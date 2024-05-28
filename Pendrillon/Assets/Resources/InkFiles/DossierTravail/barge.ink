@@ -18,17 +18,15 @@
 #position:Prompter:7:5
 
 
-
-
 // Start the scene
 -> scene_1
 
 // Scène 1
 = scene_1
 #playsound:Play_MUS_Story_SC_Barque_Intro #wait:7
-PASSEUR: ... #anim:Passeur:neutre
-PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces
-SOUFFLEUR: Psssst... Hé ! #anim:neutre #playsound:VOX_Souffleur_pssthe
+PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces #adience:discussion
+PASSER: Euh... J'ai dit : « J'ai connu des passagers plus loquaces... » #anim:Passeur:neutre #sleep:4
+SOUFFLEUR: Psssst... Hé ! #anim:neutre #playsound:VOX_Souffleur_pssthe #sleep:4
 SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_parici
 SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #anim:Souffleur:neutre #playsound:VOX_Souffleur_tracparalyse
 #audience:booing
@@ -37,16 +35,12 @@ SOUFFLEUR: Permets-moi de te rafraîchir la mémoire, l'ami : « Ma mère m'a to
     * [Ma mère m'a toujours dit...] PLAYER: Ma mère m'a toujours dit... #anim:Player:neutre #playsound:VOX_Player_meretoujoursdit #playsound:Play_MUS_Story_SC_Barque_BadViolin1
 - SOUFFLEUR: « ...qu'enfant, déjà, je n'étais pas très bavard. ». #anim:Passeur:neutre #playsound:VOX_Souffleur_pasbavard
     * [...qu'enfant, déjà, je n'étais pas très bavard.] PLAYER: ...qu'enfant, déjà, je n'étais pas très bavard. #audience:debate #anim:Player:neutre #playsound:VOX_Player_pasbavard #playsound:Play_MUS_Story_SC_Barque_BadViolin2
-- SOUFFLEUR: Psssst... Hé, l'ami ! #anim:Souffleur:colere #playsound:VOX_Souffleur_pssthecolere
-SOUFFLEUR: Quand je te souffle le texte, je n'y mets pas le ton... #anim:Souffleur:neutre
-SOUFFLEUR: Ce n'est pas mon métier, tu piges ? Après tout, je ne suis pas acteur... #anim:Souffleur:neutre
-SOUFFLEUR: Alors que toi, si, pas vrai ? #anim:Souffleur:neutre
-SOUFFLEUR: Si l'on en croit ton CV... #anim:Souffleur:neutre
-SOUFFLEUR: Mets-y de l'émotion, l'ami ! #anim:Souffleur:neutre
 PASSEUR: Vraiment ? J'ai pourtant ouï dire qu'en matière de baratin, tu n'étais pas le dernier... #anim:Passeur:neutre #playsound:VOX_Ferryman_baratinpasdernier
-SOUFFLEUR : Ah, pardon, j'en oublie mes devoirs : « Il est vrai... ». #anim:Souffleur:neutre #playsound:VOX_Souffleur_pardondevoirs
-    * [Ah, pardon, j'en oublie mes devoirs...] PLAYER: Ah, pardon, j'en oublie mes devoirs... #anim:Player:neutre #playsound:VOX_Player_pardondevoirs #anim:Passeur:tristesse2 #audience:booing
-- SOUFFLEUR: Hé ! Ne répète pas bêtement tout ce que je dis, l'ami. Le public se rend bien compte que quelque chose cloche... #anim:Souffleur:deception
+SOUFFLEUR: Psssst... Hé, l'ami ! #anim:Souffleur:colere #playsound:VOX_Souffleur_pssthecolere
+SOUFFLEUR: Quand je te souffle le texte, je n'y mets pas le ton... #anim:Souffleur:neutre
+SOUFFLEUR: Ce n'est pas mon métier, tu piges ? #anim:Souffleur:neutre
+SOUFFLEUR: Mais toi tu es acteur, pas vrai ? #anim:Souffleur:neutre
+SOUFFLEUR: Alors mets-y de l'émotion, l'ami ! #anim:Souffleur:neutre
 SOUFFLEUR: Reprenons : « Il est vrai que j'ai ce talent-là, mais... ». #anim:Souffleur:deception
     * [Il est vrai que j'ai ce talent-là, mais...] PLAYER: Il est vrai que j'ai ce talent-là, mais... #anim:Player:neutre #playsound:VOX_Player_ilestvraitalent
 - SOUFFLEUR: N'oublie pas d'incarner ton personnage, l'ami ! Souviens-toi : l'é-mo-tion ! #anim:Souffleur:colere
