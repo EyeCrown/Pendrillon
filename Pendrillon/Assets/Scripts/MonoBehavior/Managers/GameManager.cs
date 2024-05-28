@@ -43,6 +43,7 @@ namespace MonoBehavior.Managers
         public float _gridYBase = 0.65f;
         public float _gridYBarge = 2.25f;
 
+        public Transform _PrompterPosition;
         public Transform _enemyPos;
         
         [Header("=== Ink File ===")]
@@ -62,7 +63,10 @@ namespace MonoBehavior.Managers
         [Header("=== Timers ===")] 
         [Range(0, 5)] public float _timeButtonSpawnInSec;
         [Range(0, 5)] public float _timeTextToAppearInSec;
-        
+        [Range(0, 0.1f)] public float _timeLetterToAppearInSec;
+
+        [Header("=== UI ===")] 
+        [Range(0.025f, 1)] public float _opacityUI;
         
         [Header("=== Debug ===")]
         [SerializeField] private bool _goDirectToFight;
@@ -177,7 +181,8 @@ namespace MonoBehavior.Managers
         public void SetupPrompter()
         {
             _prompter = Instantiate(_prompterPrefab).GetComponent<Prompter>();
-            _prompter.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100));
+            _prompter.transform.position = _PrompterPosition.position;
+            _prompter.transform.rotation = _PrompterPosition.rotation;
             _prompter.name = Constants.PrompterName;
         }
 
@@ -231,6 +236,8 @@ namespace MonoBehavior.Managers
             _gridScene.transform.position = new Vector3(-23.0f, y, -6.5f);
             Debug.Log($"GM.Grid > {y}");
         }
+        
+        
         
         void BeginGame()
         {

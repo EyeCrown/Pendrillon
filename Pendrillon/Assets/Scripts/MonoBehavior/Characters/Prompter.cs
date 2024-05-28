@@ -11,9 +11,15 @@ public class Prompter : MonoBehaviour
 
     #region Attributes
 
+    // UI
     private GameObject _uiPart;
     private TextMeshProUGUI _dialogueText;
+    private GameObject _iconTalking;
+    
+    private Animator _anim;
 
+    private IEnumerator _dialogueCoroutine;
+    
     private bool isOnStage = false;
 
     #endregion
@@ -32,6 +38,12 @@ public class Prompter : MonoBehaviour
         _uiPart = ActingManager.Instance._uiParent.transform.Find("PROMPTER_PART").gameObject;
         _dialogueText = _uiPart.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
         _uiPart.SetActive(false);
+
+        _iconTalking = transform.Find("Canvas").gameObject;
+        _iconTalking.SetActive(false);
+        
+        _anim = GetComponentInChildren<Animator>();
+        _dialogueCoroutine = GenerateText("");
         
         // Connect Events
         ActingManager.Instance.ClearUI.AddListener(OnClearUI);
@@ -44,8 +56,10 @@ public class Prompter : MonoBehaviour
 
     void GoOnStage()
     {
-        transform.position = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(12, 12));
-        transform.LookAt(Camera.main.transform);
+        //transform.position = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(12, 12));
+        //transform.LookAt(Camera.main.transform);
+        
+        _anim.SetBool("InOut", true);
         
         isOnStage = true;
         Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name}");
@@ -53,7 +67,8 @@ public class Prompter : MonoBehaviour
 
     void LeaveStage()
     {
-        transform.position = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(-100, -100));
+        _anim.SetBool("InOut", false);
+
         isOnStage = false;
         Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name}");
     }
@@ -68,7 +83,9 @@ public class Prompter : MonoBehaviour
             LeaveStage();
         
         _uiPart.SetActive(false);
+        StopCoroutine(_dialogueCoroutine);
         _dialogueText.text = string.Empty;
+        _iconTalking.SetActive(false);
     }
     
     void OnDialogueUpdate(string dialogue)
@@ -77,9 +94,22 @@ public class Prompter : MonoBehaviour
             GoOnStage();
         
         _uiPart.SetActive(true);
-        _dialogueText.text = dialogue;
+        _dialogueCoroutine = GenerateText(dialogue);
+        StartCoroutine(_dialogueCoroutine);
+        //_dialogueText.text = dialogue;
+        _iconTalking.SetActive(true);
         Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name} > Prompter is speaking");
 
+    }
+    
+    IEnumerator GenerateText(string textToDisplay)
+    {
+        Debug.Log($"Prompter text > {textToDisplay}");
+        foreach (var letter in textToDisplay)
+        {
+            _dialogueText.text += letter.ToString();
+            yield return new WaitForSeconds(GameManager.Instance._timeLetterToAppearInSec);
+        }
     }
 
     #endregion

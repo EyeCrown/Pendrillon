@@ -24,11 +24,11 @@ VAR failed_breaking_jester_crate = false
 - ...
 // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
-- #sleep:6 #audience:applause
+-  #audience:applause
     * [Attendre encore.]
-- #sleep:6 #audience:debate
+-  #audience:debate
     * [Attendre plus fort.]
-- #sleep:6 #audience:booing
+-  #audience:booing
 SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se montrer... tu vas devoir meubler ! #anim:Souffleur:colere #playsound:VOX_Souffleur_partenairedescene
     * [(Ironique) Quelle ponctualité...] PLAYER: Espérons que mon mystérieux interlocuteur arrive avant... #anim:Player:joie
         ** [(Humour) Conclure avec légèreté. {t(CHAR, 10)}]
@@ -70,14 +70,14 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
 - // La scène continue
     * [(S'adresser à l'actrice) Il est temps.] PLAYER: Je crois VRAIMENT qu'il est temps, désormais. #anim:Player:neutre #playsound:VOX_Player_VRAIMENTtemps
         ???: ... Laisse moi un peu de temps, veux-tu ? #playsound:VOX_Arle_laissemoi
-- #sleep:3 #audience:booing
+-  #audience:booing
     * [(À l'actrice, chuchotant) Qui payera mes heures supplémentaires ?] PLAYER: Psssst... Je suis trop mal payé pour que la pièce dure toute la nuit. Dépêche-toi ! #anim:Player:chuchote #playsound:VOX_Player_heuressupp
     * [(À l'actrice, chuchotant) Es-tu en grève ?] PLAYER: Psssst... Tu es en grève ? Qu'es-ce qu'il te prend, encore ? #anim:Player:chuchote #playsound:VOX_Player_tuesengreve
 - ???: Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable ! #playsound:VOX_Arle_laissonslesselanguir
     * [Se montrer conciliant.] PLAYER: Je n'en doute pas... Je vais faire ce que je peux pour meubler. Je t'en prie, ne tarde pas. #anim:Player:chuchote #playsound:VOX_Player_jevaismeubler
     * [Hausser le ton.] PLAYER: Le public va t'acceuillir avec des applaudissements... et moi avec un coup de pied au derrière ! #anim:Player:chuchote #playsound:VOX_Player_panpanculcul
     * [Ignorer la voix.]
-- #sleep:3 #audience:booing
+-  #audience:booing
 - SOUFFLEUR: Trouve autre chose pour les divertir... N'importe quoi qui te passe par la tête ! Surtout, ne reste pas planté là ! #anim:Souffleur:neutre
     * [Effectuer une danse. {t(DEXT, -10)}]
         {sc(CHAR, 0): -> dancing_S | -> dancing_F}
@@ -136,7 +136,7 @@ SOUFFLEUR: Le public s'impatiente ! Si ton partenaire de scène ne daigne pas se
 {
     - failed_breaking_jester_crate == true: ???: Désirant briser cette malheureuse caisse, messire... #anim:Arle:neutre #playsound:VOX_Arle_desirantbrisercaisse
         ???: ... vous n'avez abîmé que votre dignité. #anim:Arle:neutre #playsound:VOX_Arle_abimedignite
-        #sleep:2
+        
         ???: Sauf votre respect. #anim:Arle:bow #playsound:VOX_Arle_saufvotrerespect #audience:laughter
 }
     * [Que faisais-tu caché ?] PLAYER: Que faisais-tu là, caché tel un rat ? #anim:Player:question
