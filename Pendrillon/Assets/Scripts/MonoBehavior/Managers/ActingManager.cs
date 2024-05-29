@@ -836,9 +836,16 @@ namespace MonoBehavior.Managers
             var trigger = data[1];
             
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {character._character.name} must play {trigger} anim");
-            
-            void AnimAction() =>
+
+            void AnimAction()
+            {
                 StartCoroutine(character.PlayAnimCoroutine(trigger, TagActionOver));
+
+                // if trigger == emotion
+                    //Do stuff
+                
+                
+            }
             
             _tagMethods.Add(AnimAction);
             //StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAnimCoroutine(data[1]));

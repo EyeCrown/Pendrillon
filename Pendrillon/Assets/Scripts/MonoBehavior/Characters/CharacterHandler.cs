@@ -5,6 +5,7 @@ using System.Reflection;
 using MonoBehavior.Managers;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.Events;
 
 public class CharacterHandler : MonoBehaviour
@@ -102,6 +103,7 @@ public class CharacterHandler : MonoBehaviour
         StartCoroutine(MovePositionCoroutine(end, duration, callbackOnFinish));
     }
     
+    
     #endregion
 
     
@@ -131,6 +133,9 @@ public class CharacterHandler : MonoBehaviour
     {
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > {_character.name}:{text}");
         _uiActing.SetActive(true);
+        
+        // play neutral anim
+        StartCoroutine(PlayAnimCoroutine("neutre"));
     }
 
     #endregion
@@ -138,7 +143,7 @@ public class CharacterHandler : MonoBehaviour
     
     #region Coroutine
 
-    public IEnumerator PlayAnimCoroutine(string triggerName, Action callbackOnFinish)
+    public IEnumerator PlayAnimCoroutine(string triggerName, Action callbackOnFinish = null)
     {
         if (!HasParameter(triggerName, _anim))
         {
@@ -160,6 +165,9 @@ public class CharacterHandler : MonoBehaviour
         }
         Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation Start");
 
+        
+        ////
+        
         callbackOnFinish();
         //Now, Wait until the current state is done playing
         while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
@@ -207,4 +215,17 @@ public class CharacterHandler : MonoBehaviour
         }
         return false;
     }
+
+
+    void PlayEmotion(string emotionName)
+    {
+        switch (emotionName)
+        {
+            case "joie":
+                
+                break;
+        }
+    }
+    
+    
 }
