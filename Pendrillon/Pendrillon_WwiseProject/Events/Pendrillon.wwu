@@ -925,337 +925,91 @@
 				</Folder>
 				<Folder Name="Dialogues" ID="{3BC109D9-01F1-41D8-ABDF-37C9FC14F251}" ShortID="1008342144">
 					<ChildrenList>
-						<Folder Name="EmotionsPlayerF" ID="{A9E70D1A-88E9-4D9F-9304-0B90A707709F}" ShortID="380806814">
-							<ChildrenList>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Smug" ID="{67748EF6-F966-49BC-817E-F8F57B052A8D}">
-									<ChildrenList>
-										<Action Name="" ID="{D7A7EEE3-430F-4B33-BD2F-8AC256FCD90F}" ShortID="15845901">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Smug" ID="{C52DC74A-FC51-4D50-BB9D-2B7BF75E7DF4}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Puzzled" ID="{C53FF11A-AA11-4890-A90A-28E3E72AD523}">
-									<ChildrenList>
-										<Action Name="" ID="{C6A72FE4-9260-4C2B-9F96-02464D58CC3D}" ShortID="734202314">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Puzzled" ID="{8D41686D-29FA-4BAC-8971-B9BC74EC7767}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Defying" ID="{58D691FB-95FB-44EC-8951-C3EDE3D02C07}">
-									<ChildrenList>
-										<Action Name="" ID="{063896ED-2F2D-46A3-905F-6145F74F8090}" ShortID="445805351">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Defying" ID="{33891CD6-35E3-47BD-BD9E-5BB3E8E9AA23}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Disagree" ID="{6E3BF877-439A-4C31-8FFD-9E42DF189CF4}">
-									<ChildrenList>
-										<Action Name="" ID="{276454A3-DB3D-4187-BB82-CA515B524E7F}" ShortID="619092340">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Disagree" ID="{3F86670C-08A0-497C-B20E-9988229F7831}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Disgust" ID="{29B6A206-FF21-4A6E-83CF-71D221F9A958}">
-									<ChildrenList>
-										<Action Name="" ID="{FF4DB3F4-73F7-48E6-B1C2-E9A841C4E0B7}" ShortID="94557771">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Disgust" ID="{37E8C962-CF0E-4706-9237-424C0E3D25C8}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Agree" ID="{7CEED697-3594-4D39-A3D2-4256CCA0CB8C}">
-									<ChildrenList>
-										<Action Name="" ID="{EA1F506A-7C21-48BA-A052-771B5F06FAB0}" ShortID="53989535">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Agree" ID="{80ED5758-DBC5-4211-897F-A5B7EE691383}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Scared" ID="{F33549B3-4D66-4B95-8554-291A95F070FC}">
-									<ChildrenList>
-										<Action Name="" ID="{2B47A48A-8129-4660-B7A2-77254707C606}" ShortID="461842400">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Scared" ID="{67639B87-A242-4C28-A9E5-6125C6111CAE}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Confident" ID="{D2F676A0-E463-432A-9E9C-412F71277948}">
-									<ChildrenList>
-										<Action Name="" ID="{7229B229-273D-4DBD-B499-E84CBCC3FC47}" ShortID="169669621">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Confident" ID="{DA9641F7-4E36-49F0-8BB3-82C6404FE4FC}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Happy" ID="{FF1884FC-91A5-4B6C-81F0-E42E5CAD5FEE}">
-									<ChildrenList>
-										<Action Name="" ID="{366B1FF8-941C-440F-9FFE-063DC7BADE2E}" ShortID="67891383">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Happy" ID="{FD1C4899-FD45-4D70-93DB-8FDF7DD408BC}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Surprised" ID="{D765020A-3CFC-4729-9F6C-36F4C3C1E3F1}">
-									<ChildrenList>
-										<Action Name="" ID="{55934BF9-4614-475C-BA27-9A4629735F55}" ShortID="879042484">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Surprised" ID="{9912C6D3-E77A-4E2B-B0DE-7AA43AC29F32}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Laugh" ID="{727289C2-1462-479C-A46E-002CF0DC3F0B}">
-									<ChildrenList>
-										<Action Name="" ID="{B073FC11-96F5-4854-864D-EB5D821CA245}" ShortID="472866231">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Laugh" ID="{A4952C68-980B-446F-950C-6F29DECCBF75}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_NotConfident" ID="{0715A7E4-7BB1-49BF-9348-8E92F07F8FB3}">
-									<ChildrenList>
-										<Action Name="" ID="{3A354DC3-E9C9-46F4-B441-37196BAD95AD}" ShortID="833535531">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_NotConfident" ID="{37845A34-B8E4-4187-BDE5-5C5E70D2E5AB}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_IronicLaugh" ID="{22CD5629-5ABC-418B-B3FF-D50AEA58D2BF}">
-									<ChildrenList>
-										<Action Name="" ID="{DF989E8F-54FC-47C9-9F8E-2350BDD22618}" ShortID="959585369">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_IronicLaugh" ID="{DBBE72ED-1286-440F-94BC-A8CA9467646D}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Explain" ID="{EDB4C1FB-290B-4276-B134-9F484CA3A946}">
-									<ChildrenList>
-										<Action Name="" ID="{83C221B5-D618-4984-82A7-4D1991F0B1D7}" ShortID="750696753">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Explain" ID="{F55EAA9C-F636-4C09-956E-2282BE3AEE53}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerF_EmotionsPlaceholder_Sad" ID="{896B2722-8352-47D9-A2C9-0FEF88B8B38F}">
-									<ChildrenList>
-										<Action Name="" ID="{A2B8F112-9E59-49B3-A40D-5BE58DF8EC98}" ShortID="516250821">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerF_EmotionsPlaceholder_Sad" ID="{E74B2EAD-2572-4812-83BF-D719C7D1B71B}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-							</ChildrenList>
-						</Folder>
 						<Folder Name="EmotionsPlayerM" ID="{3D22BEC1-329A-4515-B250-9029B4DEA691}" ShortID="209494092">
 							<ChildrenList>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Laugh" ID="{CB2D816C-0F08-4A0C-8CBA-A646B71C7FD2}">
+								<Event Name="Play_Emotion_colere" ID="{583C608A-A95C-4817-8A1A-B23F5A877E30}">
 									<ChildrenList>
-										<Action Name="" ID="{1CD888D2-301B-45C8-BB10-DD5077D22340}" ShortID="728397572">
+										<Action Name="" ID="{B0C0A1C7-3B55-48B7-AC06-877505F3DB29}" ShortID="156078645">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Laugh" ID="{6C4F77D2-04D5-4F71-99DC-2DB99E12C61B}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+													<ObjectRef Name="colere" ID="{D7F4A0C6-11BF-4744-A7BE-BDC0F09DDF9F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_NotConfident" ID="{6089276C-2CA5-436F-AD3A-24980B33E636}">
+								<Event Name="Play_Emotion_stress" ID="{480DB35B-E400-4AF1-AF8C-91443FA4335C}">
 									<ChildrenList>
-										<Action Name="" ID="{DD2F24EB-9F85-48F8-8327-9EB27AAAE69B}" ShortID="280552763">
+										<Action Name="" ID="{552D5534-270E-4682-B576-5630260CF6D1}" ShortID="759478345">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_NotConfident" ID="{FA1A7940-B6AF-4A1A-84F9-B47C9871B2F4}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+													<ObjectRef Name="stress" ID="{B6E93FF3-DA38-4DCB-B4EB-C3A6C604C210}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_IronicLaugh" ID="{0B7BF730-7E16-4C52-8255-0DA50F9C3A28}">
+								<Event Name="Play_Emotion_question" ID="{15369615-8464-4701-8D2E-4BCD7D9A7AF9}">
 									<ChildrenList>
-										<Action Name="" ID="{2DECDF4F-AF9A-413B-AE8D-7774E908A701}" ShortID="678365956">
+										<Action Name="" ID="{A9A3C709-615D-4175-A2AA-B1EA323023A7}" ShortID="920196731">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_IronicLaugh" ID="{D343692D-2043-45BF-A4CE-24EAF15D44B3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+													<ObjectRef Name="question" ID="{D54CD3DD-1A6C-467B-BDAE-49DD7E0D5DB5}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Disgust" ID="{13ABA709-D05F-4857-A7F5-0617F72C586E}">
+								<Event Name="Play_Emotion_neutre" ID="{534BDC7C-EF7C-4C66-8B40-8858D21506A3}">
 									<ChildrenList>
-										<Action Name="" ID="{524411F7-6C93-4486-A1E5-9E04911BDE6C}" ShortID="999645686">
+										<Action Name="" ID="{F2D32F03-2370-4E4E-A2BF-BB0F5BBA169F}" ShortID="271371408">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Disgust" ID="{E527C6E8-0B09-411F-9FD1-745163C6582F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+													<ObjectRef Name="neutre" ID="{CA9942C1-E858-4830-9EBD-11EF75254271}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Sad" ID="{4EE1C32B-38E9-49FE-BDCA-05611B8CEA6D}">
+								<Event Name="Play_Emotion_souffleur" ID="{88BB87E9-FA17-4E24-B60F-8D1E853B3637}">
 									<ChildrenList>
-										<Action Name="" ID="{B46BF5D3-A791-410D-926F-414C7AB81773}" ShortID="616747743">
+										<Action Name="" ID="{EC7346EF-7BB7-44FB-8FC7-A93F49E48FFC}" ShortID="428615792">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Sad" ID="{F2EE5C8A-186B-4814-ABE1-1720A495F66C}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+													<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Happy" ID="{204DE0CC-4934-40CF-BED4-2009E56AA383}">
+								<Event Name="Play_Emotion_surprise" ID="{D1839D89-0A3C-4845-B887-0713D63FA9CA}">
 									<ChildrenList>
-										<Action Name="" ID="{9AE60CC6-2E8A-4FFC-9CE2-1507361AF733}" ShortID="597495781">
+										<Action Name="" ID="{EEABF7C1-3A33-434A-9922-739C3CA62B7E}" ShortID="992050554">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Happy" ID="{F330677D-152A-4CAD-A62A-85F265B02935}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+													<ObjectRef Name="surprise" ID="{93CC4001-442D-4F07-92D9-1A709377E0AB}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Scared" ID="{0A75E806-7C2D-4DD1-B01A-64DFA6150A88}">
+								<Event Name="Play_Emotion_deception" ID="{0464F4C0-8837-484B-BBEA-135C165BA876}">
 									<ChildrenList>
-										<Action Name="" ID="{C31B48A6-0B92-4AFF-9588-6D900507BD67}" ShortID="88162042">
+										<Action Name="" ID="{3D3CC4E4-10D0-4EC1-8A71-756ACFC18EFD}" ShortID="748293114">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Scared" ID="{6A1325CD-1F34-488C-AABD-F051B8057848}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+													<ObjectRef Name="deception" ID="{3078766F-F82E-46B0-8312-8B025F8E17D3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Surprised" ID="{1E56FADC-B69A-461D-998B-33B5BA752933}">
+								<Event Name="Play_Emotion_laugh" ID="{7BFBBCFC-89E6-48A7-9849-FEC142F8B8B0}">
 									<ChildrenList>
-										<Action Name="" ID="{CD27DA1D-566F-4CFF-9C57-83C94D5BE208}" ShortID="450544641">
+										<Action Name="" ID="{8D2A89CF-996F-4828-9BC0-2FBA66E33D9B}" ShortID="624694147">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Surprised" ID="{F8F211EA-BD5E-45CE-885C-7C9D9C886094}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Explain" ID="{2E9DA0BE-3B4F-43E3-8DE8-7404501AA894}">
-									<ChildrenList>
-										<Action Name="" ID="{CB8AA1B4-FAD7-48AB-92D4-CE4E7C262780}" ShortID="772792208">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Explain" ID="{544FEAE2-0AB5-49A2-89F5-90D58E2F17E2}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Disagree" ID="{8454F95F-7D03-40EA-9254-31D610CE3B3F}">
-									<ChildrenList>
-										<Action Name="" ID="{CCEA4842-3013-4FE9-859E-4B539B855E05}" ShortID="466748013">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Disagree" ID="{FB2A4A2A-DE72-40F5-B092-561F22DC8756}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Agree" ID="{D03094FA-272C-4610-934A-DCBE85C4DF45}">
-									<ChildrenList>
-										<Action Name="" ID="{78237D66-683F-45AA-A2D0-70BD990696F1}" ShortID="667872825">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Agree" ID="{6017A9A6-8987-4CDC-BEC0-DB07D6BD1BF8}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Defying" ID="{810B016B-E078-480D-83AF-48A254B074EE}">
-									<ChildrenList>
-										<Action Name="" ID="{6C874041-D353-4C32-B5E7-8566C5CD3157}" ShortID="729766836">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Defying" ID="{0BF59EDD-5436-431C-93F1-49AE2AB4B8D4}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Puzzled" ID="{96E103A9-F5EB-40B6-81BF-98F0FA982DB7}">
-									<ChildrenList>
-										<Action Name="" ID="{C1C899D9-6F45-4EF2-B8F9-6171C56E578A}" ShortID="362369126">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Puzzled" ID="{CD0B6C9D-0CEE-4E6A-9A65-91CA78D30E14}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Confident" ID="{E46907C0-00D3-4344-922A-696F1940AF34}">
-									<ChildrenList>
-										<Action Name="" ID="{549E18EA-5300-459A-9D64-1EFB87108754}" ShortID="860635615">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Confident" ID="{825CB2B1-7807-4C1B-ACCA-F94632BB057D}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_VOX_PlayerM_EmotionsPlaceholder_Smug" ID="{F2C3A1E5-452B-4095-A255-7873D41A9417}">
-									<ChildrenList>
-										<Action Name="" ID="{5BFBC59A-2C03-45EF-8A25-2FF3A30F759C}" ShortID="1016169709">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="VOX_PlayerM_EmotionsPlaceholder_Smug" ID="{60D04D15-2CDB-4565-8FBC-C937802C0485}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+													<ObjectRef Name="laugh" ID="{29554137-B7B4-479C-BA4F-D14FABA9A5E8}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
