@@ -199,7 +199,7 @@ namespace MonoBehavior.Managers
             if (GameManager.Instance._story.canContinue)
             {
                 _currentDialogue = GameManager.Instance._story.Continue();
-                //Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
+                Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
                 
                 // Add to history
                 //_historyText.text += _currentDialogue + "\n";
@@ -1084,13 +1084,20 @@ namespace MonoBehavior.Managers
                 yield return new WaitForSeconds(GameManager.Instance._timeTextToAppearInSec);
             }
 
-
-            foreach (var letter in textToDisplay)
+            var hasTypewriter = true;
+            if (hasTypewriter)
             {
-                _dialogueText.text += letter.ToString();
-                yield return new WaitForSeconds(GameManager.Instance._timeLetterToAppearInSec);
+                _dialogueText.text = textToDisplay;
+
             }
-            
+            else
+            {
+                foreach (var letter in textToDisplay)
+                {
+                    _dialogueText.text += letter.ToString();
+                    yield return new WaitForSeconds(GameManager.Instance._timeLetterToAppearInSec);
+                }
+            }
             
             mustWait = false;
             

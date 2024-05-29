@@ -1817,7 +1817,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &524331237
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3395,7 +3395,7 @@ MonoBehaviour:
   _gridYBarge: 2.25
   _PrompterPosition: {fileID: 1236734075}
   _enemyPos: {fileID: 1399118768}
-  _inkAsset: {fileID: 4900000, guid: daede2a868f56dd428021aab5e82497a, type: 3}
+  _inkAsset: {fileID: 4900000, guid: 9076e6f66725c854ebf5488c392e3618, type: 3}
   _buttonPos: {x: 250, y: 150}
   _wwiseEvent:
     idInternal: 0
@@ -9340,6 +9340,7 @@ GameObject:
   - component: {fileID: 1684796007}
   - component: {fileID: 1684796009}
   - component: {fileID: 1684796008}
+  - component: {fileID: 1684796010}
   m_Layer: 5
   m_Name: DialogueText
   m_TagString: Untagged
@@ -9386,7 +9387,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9463,6 +9464,38 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1684796006}
   m_CullTransparentMesh: 1
+--- !u!114 &1684796010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684796006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typewriterStartsAutomatically: 0
+  animationLoop: 0
+  timeScale: 0
+  _text: '
+
+'
+  useDynamicScaling: 1
+  referenceFontSize: 10
+  isResettingTimeOnNewText: 1
+  useDefaultDatabases: 1
+  databaseBehaviors: {fileID: 11400000, guid: a693b905c4238cb4e9205110b3c3affd, type: 2}
+  databaseAppearances: {fileID: 11400000, guid: eed48add41fdd3f419d0efd953b83bcd,
+    type: 2}
+  databaseActions: {fileID: 11400000, guid: a283db8f79b3c1e488153e95ba0eb1f3, type: 2}
+  defaultAppearancesTags:
+  - size
+  defaultDisappearancesTags:
+  - fade
+  defaultBehaviorsTags: []
+  defaultTagsMode: 0
 --- !u!1 &1771514828
 GameObject:
   m_ObjectHideFlags: 0
