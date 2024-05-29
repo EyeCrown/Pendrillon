@@ -809,7 +809,11 @@ namespace MonoBehavior.Managers
             void PlaysoundAction()
             {
                 AkSoundEngine.PostEvent(soundToPlay, gameObject);
-                AkSoundEngine.PostEvent("Stop_VOX_Emotions", gameObject);
+                if (soundToPlay.Contains("VOX"))
+                {
+                    Debug.Log("Stopped Emotion Sound FX");
+                    AkSoundEngine.PostEvent("Stop_VOX_Emotions", gameObject);
+                }
                 TagActionOver();
             }
             
