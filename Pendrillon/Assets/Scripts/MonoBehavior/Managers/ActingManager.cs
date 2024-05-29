@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using Febucci.UI.Core;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine;
@@ -50,6 +51,9 @@ namespace MonoBehavior.Managers
         GameObject _historyBox;        // History box
         GameObject _masks;
         private string _playerName;
+
+        private TypewriterCore _dialogueTypewriter;
+        private TypewriterCore _prompterTypewriter;
         
         TextMeshProUGUI _historyText;
         RawImage _nextDialogueIndicator;
@@ -123,6 +127,13 @@ namespace MonoBehavior.Managers
             _historyBox     = _uiParent.transform.Find("History").gameObject;
             _historyText    = _historyBox.transform.Find("Scroll View/Viewport/Content").GetComponent<TextMeshProUGUI>();
             
+            _dialogueTypewriter = _dialogueText.GetComponent<TypewriterCore>();
+            _prompterTypewriter = _uiParent.transform.Find("PROMPTER_PART/DialogueBox/DialogueText").GetComponent<TypewriterCore>();
+            
+            if (_dialogueTypewriter == null)
+                Debug.LogError("AHH");
+            if (_prompterTypewriter == null)
+                Debug.LogError("OHH");
             
             var dirTransform = GameObject.Find("Directions").transform;
             // Front
@@ -145,6 +156,12 @@ namespace MonoBehavior.Managers
             PhaseEnded.AddListener(OnPhaseEnded);
             ClearUI.AddListener(OnClearUI);
         
+            _dialogueTypewriter.onTextShowed.AddListener(DialogueTextFinished);
+            _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
+            
+            
+            
+            
             _setBarge   = Instantiate(_setBarge, GameObject.Find("Environment").transform);
             _setCale    = Instantiate(_setCale, GameObject.Find("Environment").transform);
             _setTempest = Instantiate(_setTempest, GameObject.Find("Environment").transform);
@@ -255,11 +272,8 @@ namespace MonoBehavior.Managers
                 if (false)
                 {
                     Debug.Log($"AM.HandleDialogue > Dialogue > {_currentDialogue}");
-
                     foreach (var word in words)
-                    {
                         Debug.Log($"AM.HandleDialogue > Part > {word}");
-                    }
                 }
         
                 
@@ -310,6 +324,8 @@ namespace MonoBehavior.Managers
 
                         _masks.transform.Find(speaker.ToLower())?.gameObject.SetActive(true);
                         
+
+                        
                         // play sound
                         PlaySoundDialogAppears();
         
@@ -342,20 +358,16 @@ namespace MonoBehavior.Managers
         {
             if (GameManager.Instance._story.currentChoices.Count > 0)
             {
+                GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
+
                 StartCoroutine(GenerateButtonCoroutine());
             }
             else 
             {
-                Debug.Log("Activate next button");
+                Debug.Log("No choices, so click can display text");
                 
-                // TODO: Make button subscribe correct action (=> next dialogue)
-
-                //GoNext();
-                GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
-                Debug.Log("!!!! Can click next Action");
-
-
-                //_nextDialogueIndicator.gameObject.SetActive(true);
+                GameManager.Instance._playerInput.Player.Interact.performed += OnClickDisplayText;
+                
                 StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
         }
@@ -480,8 +492,27 @@ namespace MonoBehavior.Managers
             Debug.Log($"AM.ChangePleyrName > {newName}");
             _playerName = newName;
         }
-        
 
+
+        #region TypeWriting
+
+        void DialogueTextFinished()
+        {
+            Debug.Log("Dialogue Text is finished > ADD NextDialgue");
+            GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+        }
+
+
+        void PrompterTextFinished()
+        {
+            Debug.Log("Prompter Text is finished");
+            GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+        }
+
+
+        #endregion
+        
+        
         #region ButtonHandlers
 
         #region NextButton
@@ -493,10 +524,26 @@ namespace MonoBehavior.Managers
             Refresh();
         }
 
-        public void OnClickContinueCurrentDialogue()
+        public void OnClickDisplayText(InputAction.CallbackContext context)
         {
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} ><");
+            Debug.Log($"DisplayText > End the typewriter");
+
+            if (_dialogueTypewriter.isShowingText)
+            {
+                Debug.Log($"DisplayText > Dialogue TW");
+                _dialogueTypewriter.SkipTypewriter();
+            }
+
+            if (_prompterTypewriter.isShowingText)
+            {
+                Debug.Log($"DisplayText > Prompter TW");
+                _prompterTypewriter.SkipTypewriter();
+            }
+            
+            GameManager.Instance._playerInput.Player.Interact.performed -= OnClickDisplayText;
         }
+        
+        
         #endregion
         
         public void OnClickChoiceButton (Choice choice)
@@ -531,9 +578,6 @@ namespace MonoBehavior.Managers
         #region EventHandlers
         void OnPhaseStart()
         {
-            Debug.Log($"AM.OnPhaseStart > _story.state.currentPathString: " +
-                      $"{GameManager.Instance._story.state.currentPointer}");
-            
             _uiParent.gameObject.SetActive(true);
 
             GameManager.Instance.GetPlayer()._character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
@@ -546,8 +590,6 @@ namespace MonoBehavior.Managers
         
             _historyText.text = String.Empty;
             _historyBox.SetActive(false);
-            
-            //GameManager.Instance._playerInput.Player.History.performed += OnClickHistory;
 
             _playerName = (string) GameManager.Instance._story.variablesState["p_name"];
             
@@ -566,7 +608,7 @@ namespace MonoBehavior.Managers
         }
         void OnClearUI()
         {
-            _dialogueText.text = String.Empty;
+            //_dialogueText.text = String.Empty;
             _tagsText.text = "Tags:\n";
 
             foreach (var button in _choicesButtonList)
@@ -589,6 +631,7 @@ namespace MonoBehavior.Managers
             //_nextDialogueIndicator.gameObject.SetActive(false);
 
         }
+        
         #endregion
         
         
@@ -596,7 +639,7 @@ namespace MonoBehavior.Managers
 
         void ParseTag(string tagName)
         {
-            Debug.Log($"AM.ParseTag > Tag to parse: {tagName}");
+            //Debug.Log($"AM.ParseTag > Tag to parse: {tagName}");
             string[] words = tagName.Split(Constants.Separator);
         
             // foreach (var word in words)
@@ -655,11 +698,10 @@ namespace MonoBehavior.Managers
                     break;
             }
         }
-
         
         void TagActionOver()
         {
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > TagAction is over =======");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > TagAction is over =======");
             _isActionDone = true;
         }
         
@@ -671,7 +713,7 @@ namespace MonoBehavior.Managers
             string debugList = "";
             foreach (var item in data)
                 debugList += item + ", ";
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {character}'s alias : {debugList}");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod().Name} > {character}'s alias : {debugList}");
         
             
             CharacterHandler characterHandler = GameManager.Instance.GetCharacter(character);
@@ -711,14 +753,14 @@ namespace MonoBehavior.Managers
 
             Vector2Int position = new Vector2Int(int.Parse(data[1]), int.Parse(data[2]));
 
-            Debug.Log($"AM.HandleTagPosition > Set {data[0]} to position [{position.x}, {position.y}]");
+            //Debug.Log($"AM.HandleTagPosition > Set {data[0]} to position [{position.x}, {position.y}]");
             character.SetPosition(position);
             character.transform.LookAt(Camera.main.transform);
         }
 
         void HandleTagSet(string location)
         {
-            Debug.Log($"AM.Refresh > Change from {_stage} to {location}");
+            //Debug.Log($"AM.Refresh > Change from {_stage} to {location}");
             _stage = location;
             
             if (_currentSet != null)
@@ -804,7 +846,7 @@ namespace MonoBehavior.Managers
 
         void HandleTagPlaysound(string soundToPlay)
         {
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Play sound {soundToPlay}");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Play sound {soundToPlay}");
             
             void PlaysoundAction()
             {
@@ -819,7 +861,6 @@ namespace MonoBehavior.Managers
             
             _tagMethods.Add(PlaysoundAction);
         }
-        
         
         void HandleTagAnim(string[] data)
         {
@@ -840,7 +881,7 @@ namespace MonoBehavior.Managers
             
             var trigger = data[1];
             
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {character._character.name} must play {trigger} anim");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {character._character.name} must play {trigger} anim");
             character._playAnim = true;
             
             void AnimAction()
@@ -850,7 +891,6 @@ namespace MonoBehavior.Managers
             
             _tagMethods.Add(AnimAction);
             //StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAnimCoroutine(data[1]));
-
         }
         
         void HandleTagWait(string timeToWaitString)
@@ -949,7 +989,6 @@ namespace MonoBehavior.Managers
 
         }
 
-
         void HandleTagAudience(string reaction)
         {
             
@@ -1028,30 +1067,6 @@ namespace MonoBehavior.Managers
 
         #endregion SoundHandler
 
-
-        #region Status
-
-        /*void GoChoose()
-        {
-            GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
-            status = ActState.Choose;
-        }
-
-        
-        void GoWait()
-        {
-            GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
-            status = ActState.Wait;
-        }
-
-        void GoNext()
-        {
-            GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
-            status = ActState.Next;
-        }*/
-        
-        #endregion
-
         #region Coroutines
 
         IEnumerator GenerateButtonCoroutine()
@@ -1075,6 +1090,8 @@ namespace MonoBehavior.Managers
         IEnumerator GenerateText(string textToDisplay)
         {
             _dialogueBox.SetActive(true);
+            GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;     // C'est très sale
+            
             if (mustWait)
             {
                 yield return new WaitForSeconds(_timeToWait);
@@ -1084,20 +1101,9 @@ namespace MonoBehavior.Managers
                 yield return new WaitForSeconds(GameManager.Instance._timeTextToAppearInSec);
             }
 
-            var hasTypewriter = true;
-            if (hasTypewriter)
-            {
-                _dialogueText.text = textToDisplay;
-
-            }
-            else
-            {
-                foreach (var letter in textToDisplay)
-                {
-                    _dialogueText.text += letter.ToString();
-                    yield return new WaitForSeconds(GameManager.Instance._timeLetterToAppearInSec);
-                }
-            }
+            Debug.Log($"Update _dialogueText > {textToDisplay}");
+            //_dialogueText.text = textToDisplay;
+            _dialogueTypewriter.ShowText(textToDisplay);
             
             mustWait = false;
             
@@ -1146,7 +1152,7 @@ namespace MonoBehavior.Managers
                 if (!_tagMethods.Any())
                     break;                
                 _isActionDone = false;
-                Debug.Log($"{_tagMethods[i].Method.Name} > Start action {_tagMethods[i].Method.Name}");
+                //Debug.Log($"{_tagMethods[i].Method.Name} > Start action {_tagMethods[i].Method.Name}");
 
                 _tagMethods[i]();
                 while (!_isActionDone)
@@ -1154,7 +1160,7 @@ namespace MonoBehavior.Managers
                     //Debug.Log($"{_tagMethods[i].Method.Name} > Wait to finish");
                     yield return null;
                 }
-                Debug.Log($"{_tagMethods[i].Method.Name} > Action is done");
+                //Debug.Log($"{_tagMethods[i].Method.Name} > Action is done");
                 ++i;
             }
             

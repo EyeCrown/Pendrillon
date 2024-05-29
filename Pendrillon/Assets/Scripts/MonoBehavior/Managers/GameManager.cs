@@ -102,8 +102,6 @@ namespace MonoBehavior.Managers
             
             _story = new Story(_inkAsset.text);
 
-            var path = _story.state.currentPointer;
-            Debug.Log($"GM.Awake > _story.state.currentPathString: {path}");
         }
 
         private void Start()
@@ -143,7 +141,7 @@ namespace MonoBehavior.Managers
             for (var i = 0; i < _charactersBase.Count; i++)
             {
                 GameObject character;
-                Debug.Log($"Setup > {_charactersBase[i]}");
+                //Debug.Log($"Setup > {_charactersBase[i]}");
                 switch (_charactersBase[i].name)
                 {
                     case "Arle":
@@ -228,13 +226,9 @@ namespace MonoBehavior.Managers
         {
             var y = _gridYBase;
             if (stage == Constants.SetBarge)
-            {
                 y = _gridYBarge;
-                Debug.Log($"GM.Grid > Changement {y}");
-            }
             
             _gridScene.transform.position = new Vector3(-23.0f, y, -6.5f);
-            Debug.Log($"GM.Grid > {y}");
         }
         
         
