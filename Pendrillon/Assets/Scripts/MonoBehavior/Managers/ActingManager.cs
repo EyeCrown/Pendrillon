@@ -48,6 +48,9 @@ namespace MonoBehavior.Managers
         TextMeshProUGUI _speakerText;      // Text box
         TextMeshProUGUI _tagsText;          // Tags box
         GameObject _historyBox;        // History box
+        GameObject _masks;
+        private string _playerName;
+        
         TextMeshProUGUI _historyText;
         RawImage _nextDialogueIndicator;
         readonly float _minButtonPosX = -960;
@@ -113,7 +116,8 @@ namespace MonoBehavior.Managers
             _uiParent = GameObject.Find("Canvas/ACTING_PART").gameObject;
             _dialogueBox    = _uiParent.transform.Find("DialogueBox").gameObject;
             _dialogueText   = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
-            _speakerText   = _uiParent.transform.Find("DialogueBox/SpeakerText").GetComponent<TextMeshProUGUI>();
+            _speakerText    = _uiParent.transform.Find("DialogueBox/SpeakerText").GetComponent<TextMeshProUGUI>();
+            _masks          = _uiParent.transform.Find("DialogueBox/Masks").gameObject;
             _tagsText       = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
             _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<RawImage>();
             _historyBox     = _uiParent.transform.Find("History").gameObject;
@@ -150,6 +154,24 @@ namespace MonoBehavior.Managers
         {
             _uiParent.SetActive(false);
         }
+
+        void Update()
+        {
+            
+            _dialogueBox.GetComponent<Image>().color = new Color(
+                _dialogueBox.GetComponent<Image>().color.r,
+                _dialogueBox.GetComponent<Image>().color.g,
+                _dialogueBox.GetComponent<Image>().color.b,
+                GameManager.Instance._opacityUI
+            );
+            var speakerBox = _uiParent.transform.Find("PROMPTER_PART/DialogueBox");
+            speakerBox.GetComponent<RawImage>().color = new Color(
+                speakerBox.GetComponent<RawImage>().color.r,
+                speakerBox.GetComponent<RawImage>().color.g,
+                speakerBox.GetComponent<RawImage>().color.b,
+                GameManager.Instance._opacityUI
+            );
+        }
         
         #endregion
 
@@ -180,44 +202,17 @@ namespace MonoBehavior.Managers
                 //Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
                 
                 // Add to history
-                _historyText.text += _currentDialogue + "\n";
+                //_historyText.text += _currentDialogue + "\n";
                 
                 
-                var path = GameManager.Instance._story.state.currentPathString;
-                Debug.Log($"AM.Refresh > _story.state.currentPathString: {path}");
+                // var path = GameManager.Instance._story.state.currentPathString;
+                // Debug.Log($"AM.Refresh > _story.state.currentPathString: {path}");
 
-                string[] words = path != null ? path.Split(".") : new []{_stage};
-                Debug.Log($"AM.Refresh > Location: {words[0]}");
-
-                /*if (words[0] != _stage)
-                {
-                    Debug.Log($"AM.Refresh > Change from {_stage} to {words[0]}");
-                    _stage = words[0];
-
-                    // TODO: DoChangeOfSet()
-                    switch (_stage)
-                    {
-                        case "barge":
-                            _setBarque.SetActive(true);
-                            _setCale.SetActive(false);
-                            _setTempete.SetActive(false);
-                            break;
-                        case "tempest":
-                            _setBarque.SetActive(false);
-                            _setCale.SetActive(false);
-                            _setTempete.SetActive(true);
-                            break;
-                        case "trip_return":
-                            _setBarque.SetActive(false);
-                            _setCale.SetActive(true);
-                            _setTempete.SetActive(false);
-                            break;
-                    }
-                    
-                }*/
+                // string[] words = path != null ? path.Split(".") : new []{_stage};
+                // Debug.Log($"AM.Refresh > Location: {words[0]}");
                 
-                if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
-                    return;
+                // if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
+                //     return;
                 
                 
                 HandleTags();
@@ -256,30 +251,65 @@ namespace MonoBehavior.Managers
                 
                 // split dialogue in 2
                 String[] words = _currentDialogue.Split(":");
-        
-                // get character speaking
-                String speaker = words[0].Replace(" ", "");
-                _speakerText.text = speaker;
-                String dialogue = String.Join(":", words.Skip(1));
+                
+                if (false)
+                {
+                    Debug.Log($"AM.HandleDialogue > Dialogue > {_currentDialogue}");
 
+                    foreach (var word in words)
+                    {
+                        Debug.Log($"AM.HandleDialogue > Part > {word}");
+                    }
+                }
+        
+                
+                // get character speaking
+                String speaker; 
+                String dialogue;
+
+                if (words.Length == 1)
+                {
+                    Debug.LogError("ONLY ONE WORD");
+                    speaker = "ERROR";
+                    dialogue = _currentDialogue;
+                }
+                else
+                {
+                    speaker = words[0].Trim();
+                    dialogue = String.Join(":", words.Skip(1));
+                    
+                    if (speaker.Contains("]"))
+                    {
+                        //Debug.Log("AM.HandleDialogue > Contains skillcheck");
+                        // Remove [...] part in speaker
+                        speaker = speaker.Remove(0, speaker.IndexOf(']')+1).Trim();
+                    }
+                }
+                
+                //Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
+                
+                if (speaker == "PLAYER")
+                    _speakerText.text = _playerName;
+                else
+                    _speakerText.text = speaker;
+                
                 _tagMethods.Add(() =>
                 {
                     // send to character the dialogue
                     if (speaker.ToLower() == Constants.PrompterName.ToLower())
                     {
                         GameManager.Instance._prompter.DialogueUpdate.Invoke(dialogue);
-                        //GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
-                        //Debug.Log("!!!! Can click next Action");
-                        //StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
                         TagActionOver();
                     }
                     else
                     {
                         if (GameManager.Instance.GetCharacter(speaker) == null)
-                            Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {speaker}");
+                            Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > Unknown speaker | {speaker} |");
                         else
                             GameManager.Instance.GetCharacter(speaker).DialogueUpdate.Invoke(dialogue);
-                            
+
+                        _masks.transform.Find(speaker.ToLower())?.gameObject.SetActive(true);
+                        
                         // play sound
                         PlaySoundDialogAppears();
         
@@ -416,7 +446,7 @@ namespace MonoBehavior.Managers
         }
         
 
-        bool CheckBeginOfFight(String path)
+        /*bool CheckBeginOfFight(String path)
         {
             if (path == null)
                 return false;
@@ -443,9 +473,13 @@ namespace MonoBehavior.Managers
             
             PhaseEnded.Invoke();
             return true;
+        }*/
+
+        void ChangePlayerName(string newName)
+        {
+            Debug.Log($"AM.ChangePleyrName > {newName}");
+            _playerName = newName;
         }
-        
-        
         
 
         #region ButtonHandlers
@@ -515,6 +549,11 @@ namespace MonoBehavior.Managers
             
             //GameManager.Instance._playerInput.Player.History.performed += OnClickHistory;
 
+            _playerName = (string) GameManager.Instance._story.variablesState["p_name"];
+            
+            GameManager.Instance._story.ObserveVariable("p_name", (variableName, value) => 
+                ChangePlayerName((string) value));
+            
             Debug.Log($"AM.OnPhaseStart > Start story | Refresh call ");
             Refresh();
         }
@@ -537,6 +576,13 @@ namespace MonoBehavior.Managers
             _choicesButtonList.Clear();
         
             _dialogueBox.SetActive(false);
+            
+            // Clear masks
+            foreach (Transform mask in _masks.transform)
+            {
+                mask.gameObject.SetActive(false);
+            }
+            
             
             StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 1, 0, 0.1f));
 
@@ -790,9 +836,16 @@ namespace MonoBehavior.Managers
             var trigger = data[1];
             
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {character._character.name} must play {trigger} anim");
-            
-            void AnimAction() =>
+
+            void AnimAction()
+            {
                 StartCoroutine(character.PlayAnimCoroutine(trigger, TagActionOver));
+
+                // if trigger == emotion
+                    //Do stuff
+                
+                
+            }
             
             _tagMethods.Add(AnimAction);
             //StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAnimCoroutine(data[1]));
@@ -1029,8 +1082,14 @@ namespace MonoBehavior.Managers
             {
                 yield return new WaitForSeconds(GameManager.Instance._timeTextToAppearInSec);
             }
+
+
+            foreach (var letter in textToDisplay)
+            {
+                _dialogueText.text += letter.ToString();
+                yield return new WaitForSeconds(GameManager.Instance._timeLetterToAppearInSec);
+            }
             
-            _dialogueText.text = textToDisplay;
             
             mustWait = false;
             
@@ -1079,7 +1138,7 @@ namespace MonoBehavior.Managers
                 if (!_tagMethods.Any())
                     break;                
                 _isActionDone = false;
-                Debug.Log($"{_tagMethods[i].Method.Name} > Start action");
+                Debug.Log($"{_tagMethods[i].Method.Name} > Start action {_tagMethods[i].Method.Name}");
 
                 _tagMethods[i]();
                 while (!_isActionDone)

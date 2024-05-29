@@ -4,7 +4,7 @@
 VAR p_gold = 0
 
 // State
-VAR p_name = "Merlin" // Player's name
+VAR p_name = "Player" // Player's name
 VAR p_hp = 10 // Player's HP
 VAR p_applause_points = 0 // Player's applausemeter points (-1 to 1)
 VAR p_applause_state = "neutral" // Player's applausemeter state (rotten_tomato, booings, neutral, cheerings, standing_ovation)

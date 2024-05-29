@@ -359,7 +359,7 @@ Combat contre Capucine et Marcello, où Marcello est blessé.
 
 // Naida is arrested
 =arrest_naida
-#sleep:1
+
 #playsound:sounds_inside_the_crate
 CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans !
 MARCELLO : Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang.
@@ -387,7 +387,7 @@ CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la.
 CAPUCINE: Allons-nous-en avec notre trouvaille. Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts...
 CAPUCINE: Il finira sa triste vie au cachot, comme son ami.
 #move(Capucine)
-#sleep:3
+
 // Marcello remet un coup gratuit au Player
 #anim:Marcello:attack
 #anim:Player:hurt

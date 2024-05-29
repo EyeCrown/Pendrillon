@@ -19,36 +19,35 @@
 #position:Prompter:7:5
 
 
-
-
 // Start the scene
 -> scene_1
 
 // Scène 1
 = scene_1
-#playsound:Play_MUS_Story_SC_Barque_Intro #wait:7
-PASSEUR: ... #anim:Passeur:neutre
-PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces
-SOUFFLEUR: Psssst... Hé ! #anim:neutre #playsound:VOX_Souffleur_pssthe
+#playsound:Play_MUS_Story_SC_Barque_Intro #wait:8
+PASSEUR: ...
+PASSEUR: J'ai connu des passagers plus loquaces... #wait:2 #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces
+- #sleep:2
+    * [...]
+- #audience:debate
+- PASSER: J'ai dit : « J'ai connu des passagers plus loquaces... » #audience:debate #wait:3 #anim:Passeur:neutre
+- #sleep:1
+    * [...]
+- SOUFFLEUR: Psssst... Hé ! #wait:1 #audience:booing #wait:2 #box #anim:neutre #playsound:VOX_Souffleur_pssthe #sleep:3
 SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_parici
-SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #anim:Souffleur:neutre #playsound:VOX_Souffleur_tracparalyse
-#audience:booing
+SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #audience:booing #wait:2 #anim:Souffleur:neutre #playsound:VOX_Souffleur_tracparalyse
 SOUFFLEUR: Hé ! Qu'est-ce que tu fabriques ? Tu as oublié ton texte, c'est ça ? #anim:Souffleur:neutre #playsound:VOX_Souffleur_oublietexeteQ
 SOUFFLEUR: Permets-moi de te rafraîchir la mémoire, l'ami : « Ma mère m'a toujours dit... ». #anim:Souffleur:neutre #playsound:VOX_NPC_Souffleur_rafraichirmemoire
     * [Ma mère m'a toujours dit...] PLAYER: Ma mère m'a toujours dit... #anim:Player:neutre #playsound:VOX_Player_meretoujoursdit #playsound:Play_MUS_Story_SC_Barque_BadViolin1
 - SOUFFLEUR: « ...qu'enfant, déjà, je n'étais pas très bavard. ». #anim:Passeur:neutre #playsound:VOX_Souffleur_pasbavard
     * [...qu'enfant, déjà, je n'étais pas très bavard.] PLAYER: ...qu'enfant, déjà, je n'étais pas très bavard. #audience:debate #anim:Player:neutre #playsound:VOX_Player_pasbavard #playsound:Play_MUS_Story_SC_Barque_BadViolin2
-- SOUFFLEUR: Psssst... Hé, l'ami ! #anim:Souffleur:colere #playsound:VOX_Souffleur_pssthecolere
-SOUFFLEUR: Quand je te souffle le texte, je n'y mets pas le ton... #anim:Souffleur:neutre
-SOUFFLEUR: Ce n'est pas mon métier, tu piges ? Après tout, je ne suis pas acteur... #anim:Souffleur:neutre
-SOUFFLEUR: Alors que toi, si, pas vrai ? #anim:Souffleur:neutre
-SOUFFLEUR: Si l'on en croit ton CV... #anim:Souffleur:neutre
-SOUFFLEUR: Mets-y de l'émotion, l'ami ! #anim:Souffleur:neutre
 PASSEUR: Vraiment ? J'ai pourtant ouï dire qu'en matière de baratin, tu n'étais pas le dernier... #anim:Passeur:neutre #playsound:VOX_Ferryman_baratinpasdernier
-SOUFFLEUR : Ah, pardon, j'en oublie mes devoirs : « Il est vrai... ». #anim:Souffleur:neutre #playsound:VOX_Souffleur_pardondevoirs
-    * [Ah, pardon, j'en oublie mes devoirs...] PLAYER: Ah, pardon, j'en oublie mes devoirs... #anim:Player:neutre #playsound:VOX_Player_pardondevoirs #anim:Passeur:tristesse2 #audience:booing
-- SOUFFLEUR: Hé ! Ne répète pas bêtement tout ce que je dis, l'ami. Le public se rend bien compte que quelque chose cloche... #anim:Souffleur:deception
-SOUFFLEUR: Reprenons : « Il est vrai que j'ai ce talent-là, mais... ». #anim:Souffleur:deception
+SOUFFLEUR: Psssst... Hé, l'ami ! #anim:Souffleur:colere #playsound:VOX_Souffleur_pssthecolere
+SOUFFLEUR: Quand je te souffle le texte, je n'y mets pas le ton... #anim:Souffleur:neutre
+SOUFFLEUR: Ce n'est pas mon métier, tu piges ? #anim:Souffleur:neutre
+SOUFFLEUR: Mais toi tu es acteur, pas vrai ? #anim:Souffleur:neutre
+SOUFFLEUR: Alors mets-y de l'émotion, l'ami ! #anim:Souffleur:neutre
+- SOUFFLEUR: Reprenons : « Il est vrai que j'ai ce talent-là, mais... ». #anim:Souffleur:deception
     * [Il est vrai que j'ai ce talent-là, mais...] PLAYER: Il est vrai que j'ai ce talent-là, mais... #anim:Player:neutre #playsound:VOX_Player_ilestvraitalent
 - SOUFFLEUR: N'oublie pas d'incarner ton personnage, l'ami ! Souviens-toi : l'é-mo-tion ! #anim:Souffleur:colere
 - SOUFFLEUR: « Un talent est une ressource précieuse, aussi, je l'utilise à bon escient. ». #anim:Souffleur:neutre
@@ -81,6 +80,10 @@ SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance ! 
         ~ p_name = "Octave"
 - #audience:ovation
 - PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question
+- PLAYER: Un jour où je me trouvais...
+    * [À l'auberge...]
+    * [Sur mon navire...]
+    * [???]
 - PLAYER: Un jour où je me trouvais à quai, je reçus la missive d'un expéditeur inconnu. Habituellement, une lettre de cette nature aurait fini au feu, mais un détail attira mon attention... #anim:Player:neutre #playsound:VOX_Player_unjour #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter1
     * [L'écriture.] PLAYER: La lettre était dotée d’une impeccable calligraphie. Ce détail, vois-tu, n’es pas à prendre à la légère. Une si belle écriture ne peut signifier qu’une chose : notre expéditeur est du genre fortuné. #anim:Player:neutre #playsound:VOX_Player_lalettreecriture #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
     * [Le destinataire.] PLAYER: La lettre était destinée à un certain {p_name} Jehovah Banes. Cette personne n’est autre que moi-même. Rien d’étonnant pourrait-on dire. Au contraire : la seule personne à m’appeler ainsi est ma mère. Or, ma mère est absolument et irrémédiablement illetrée... #anim:Player:neutre #playsound:VOX_Player_lalettredestinataire{p_name} #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
