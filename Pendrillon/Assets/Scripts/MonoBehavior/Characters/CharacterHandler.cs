@@ -169,6 +169,8 @@ public class CharacterHandler : MonoBehaviour
         Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation Start");
 
         
+        PlayEmotionSoundsVFX(triggerName, _character.name);
+        
         ////
         if (callbackOnFinish != null) 
             callbackOnFinish();
@@ -215,14 +217,10 @@ public class CharacterHandler : MonoBehaviour
     }
 
 
-    void PlayEmotion(string emotionName)
+    void PlayEmotionSoundsVFX(string emotionName, string characterName)
     {
-        switch (emotionName)
-        {
-            case "joie":
-                
-                break;
-        }
+        Debug.Log("playing sound Play_VOX_" + characterName + "_Emotion_" + emotionName);
+        AkSoundEngine.PostEvent("Play_VOX_" + characterName + "_Emotion_" + emotionName, gameObject);
     }
     
     

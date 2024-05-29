@@ -828,6 +828,13 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="SFX_Combat_Player_BasicAttack1" ID="{F3E92E78-80EE-4B5D-8838-3690584D13D4}" ShortID="606942813">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
