@@ -1509,7 +1509,7 @@
 															<PropertyList>
 																<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
 																<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
-																<Property Name="PlayMechanismLoopCount" Type="int32" Value="3">
+																<Property Name="PlayMechanismLoopCount" Type="int32" Value="1">
 																	<ModifierList>
 																		<ModifierInfo>
 																			<Modifier Name="" ID="{6C37AD74-C5E6-4887-B230-25E6F0B97C02}">
@@ -1563,64 +1563,6 @@
 																		</Reference>
 																	</ReferenceList>
 																	<ChildrenList>
-																		<Sound Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_5" ID="{74A52D2F-D73E-4E6D-86A4-B53E7357AE02}" ShortID="594116544">
-																			<PropertyList>
-																				<Property Name="MakeUpGain" Type="Real64">
-																					<ValueList>
-																						<Value>-12</Value>
-																					</ValueList>
-																				</Property>
-																			</PropertyList>
-																			<ReferenceList>
-																				<Reference Name="Conversion">
-																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-																				</Reference>
-																				<Reference Name="OutputBus">
-																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-																				</Reference>
-																			</ReferenceList>
-																			<ChildrenList>
-																				<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_5" ID="{0CEEE21E-211B-41D1-844E-5D2DFB41D37D}">
-																					<Language>SFX</Language>
-																					<AudioFile>SFX_Theater_CrowdHype_CrowdUnhappyRND_5.wav</AudioFile>
-																					<MediaIDList>
-																						<MediaID ID="118107867"/>
-																					</MediaIDList>
-																				</AudioFileSource>
-																			</ChildrenList>
-																			<ActiveSourceList>
-																				<ActiveSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_5" ID="{0CEEE21E-211B-41D1-844E-5D2DFB41D37D}" Platform="Linked"/>
-																			</ActiveSourceList>
-																		</Sound>
-																		<Sound Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_6" ID="{5F440B58-6A30-46F1-A1CA-DE78E12015E4}" ShortID="556682520">
-																			<PropertyList>
-																				<Property Name="MakeUpGain" Type="Real64">
-																					<ValueList>
-																						<Value>-13</Value>
-																					</ValueList>
-																				</Property>
-																			</PropertyList>
-																			<ReferenceList>
-																				<Reference Name="Conversion">
-																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-																				</Reference>
-																				<Reference Name="OutputBus">
-																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-																				</Reference>
-																			</ReferenceList>
-																			<ChildrenList>
-																				<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_6" ID="{5B87997D-BEF2-48BB-8DAF-59AD41B8D27C}">
-																					<Language>SFX</Language>
-																					<AudioFile>SFX_Theater_CrowdHype_CrowdUnhappyRND_6.wav</AudioFile>
-																					<MediaIDList>
-																						<MediaID ID="749104305"/>
-																					</MediaIDList>
-																				</AudioFileSource>
-																			</ChildrenList>
-																			<ActiveSourceList>
-																				<ActiveSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_6" ID="{5B87997D-BEF2-48BB-8DAF-59AD41B8D27C}" Platform="Linked"/>
-																			</ActiveSourceList>
-																		</Sound>
 																		<Sound Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_7" ID="{A370F5E1-A415-4092-AF7B-5583E2D1A019}" ShortID="573157678">
 																			<ReferenceList>
 																				<Reference Name="Conversion">
@@ -1748,64 +1690,6 @@
 																			</ChildrenList>
 																			<ActiveSourceList>
 																				<ActiveSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_7" ID="{90C6695F-C318-4BB6-9F5F-D4115CAE0E46}" Platform="Linked"/>
-																			</ActiveSourceList>
-																		</Sound>
-																		<Sound Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_5" ID="{3D1B1BE1-4144-4966-BEA8-A8153C026EFF}" ShortID="844983449">
-																			<PropertyList>
-																				<Property Name="MakeUpGain" Type="Real64">
-																					<ValueList>
-																						<Value>-12</Value>
-																					</ValueList>
-																				</Property>
-																			</PropertyList>
-																			<ReferenceList>
-																				<Reference Name="Conversion">
-																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-																				</Reference>
-																				<Reference Name="OutputBus">
-																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-																				</Reference>
-																			</ReferenceList>
-																			<ChildrenList>
-																				<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_5" ID="{1BB15F91-09E9-4B96-AE4E-7D62B7683BF5}">
-																					<Language>SFX</Language>
-																					<AudioFile>SFX_Theater_CrowdHype_CrowdUnhappyRND_5.wav</AudioFile>
-																					<MediaIDList>
-																						<MediaID ID="118107867"/>
-																					</MediaIDList>
-																				</AudioFileSource>
-																			</ChildrenList>
-																			<ActiveSourceList>
-																				<ActiveSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_5" ID="{1BB15F91-09E9-4B96-AE4E-7D62B7683BF5}" Platform="Linked"/>
-																			</ActiveSourceList>
-																		</Sound>
-																		<Sound Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_6" ID="{BBC69932-7D77-40E2-B1A0-11E62D411363}" ShortID="186487697">
-																			<PropertyList>
-																				<Property Name="MakeUpGain" Type="Real64">
-																					<ValueList>
-																						<Value>-13</Value>
-																					</ValueList>
-																				</Property>
-																			</PropertyList>
-																			<ReferenceList>
-																				<Reference Name="Conversion">
-																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-																				</Reference>
-																				<Reference Name="OutputBus">
-																					<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-																				</Reference>
-																			</ReferenceList>
-																			<ChildrenList>
-																				<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_6" ID="{8ADB995E-6B86-43B7-A4F8-15EA08F35B23}">
-																					<Language>SFX</Language>
-																					<AudioFile>SFX_Theater_CrowdHype_CrowdUnhappyRND_6.wav</AudioFile>
-																					<MediaIDList>
-																						<MediaID ID="749104305"/>
-																					</MediaIDList>
-																				</AudioFileSource>
-																			</ChildrenList>
-																			<ActiveSourceList>
-																				<ActiveSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_6" ID="{8ADB995E-6B86-43B7-A4F8-15EA08F35B23}" Platform="Linked"/>
 																			</ActiveSourceList>
 																		</Sound>
 																	</ChildrenList>

@@ -199,7 +199,7 @@ namespace MonoBehavior.Managers
             if (GameManager.Instance._story.canContinue)
             {
                 _currentDialogue = GameManager.Instance._story.Continue();
-                //Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
+                Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
                 
                 // Add to history
                 //_historyText.text += _currentDialogue + "\n";
@@ -809,6 +809,11 @@ namespace MonoBehavior.Managers
             void PlaysoundAction()
             {
                 AkSoundEngine.PostEvent(soundToPlay, gameObject);
+                if (soundToPlay.Contains("VOX"))
+                {
+                    Debug.Log("Stopped Emotion Sound FX");
+                    AkSoundEngine.PostEvent("Stop_VOX_Emotions", gameObject);
+                }
                 TagActionOver();
             }
             
@@ -836,9 +841,12 @@ namespace MonoBehavior.Managers
             var trigger = data[1];
             
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {character._character.name} must play {trigger} anim");
+            character._playAnim = true;
             
-            void AnimAction() =>
+            void AnimAction()
+            {
                 StartCoroutine(character.PlayAnimCoroutine(trigger, TagActionOver));
+            }
             
             _tagMethods.Add(AnimAction);
             //StartCoroutine(GameManager.Instance.GetCharacter(data[0]).PlayAnimCoroutine(data[1]));
@@ -1076,13 +1084,20 @@ namespace MonoBehavior.Managers
                 yield return new WaitForSeconds(GameManager.Instance._timeTextToAppearInSec);
             }
 
-
-            foreach (var letter in textToDisplay)
+            var hasTypewriter = true;
+            if (hasTypewriter)
             {
-                _dialogueText.text += letter.ToString();
-                yield return new WaitForSeconds(GameManager.Instance._timeLetterToAppearInSec);
+                _dialogueText.text = textToDisplay;
+
             }
-            
+            else
+            {
+                foreach (var letter in textToDisplay)
+                {
+                    _dialogueText.text += letter.ToString();
+                    yield return new WaitForSeconds(GameManager.Instance._timeLetterToAppearInSec);
+                }
+            }
             
             mustWait = false;
             

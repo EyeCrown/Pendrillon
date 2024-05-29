@@ -5,6 +5,7 @@ using System.Reflection;
 using MonoBehavior.Managers;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine.Events;
 
 public class CharacterHandler : MonoBehaviour
@@ -14,6 +15,8 @@ public class CharacterHandler : MonoBehaviour
     public Character _character;
 
     Animator _anim;
+
+    public bool _playAnim = false;
     
     // UI
     Canvas _canvas;
@@ -102,6 +105,7 @@ public class CharacterHandler : MonoBehaviour
         StartCoroutine(MovePositionCoroutine(end, duration, callbackOnFinish));
     }
     
+    
     #endregion
 
     
@@ -131,6 +135,10 @@ public class CharacterHandler : MonoBehaviour
     {
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > {_character.name}:{text}");
         _uiActing.SetActive(true);
+        
+        // play neutral anim
+        if (!_playAnim)
+            StartCoroutine(PlayAnimCoroutine("neutre"));
     }
 
     #endregion
@@ -138,7 +146,7 @@ public class CharacterHandler : MonoBehaviour
     
     #region Coroutine
 
-    public IEnumerator PlayAnimCoroutine(string triggerName, Action callbackOnFinish)
+    public IEnumerator PlayAnimCoroutine(string triggerName, Action callbackOnFinish = null)
     {
         if (!HasParameter(triggerName, _anim))
         {
@@ -160,7 +168,12 @@ public class CharacterHandler : MonoBehaviour
         }
         Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation Start");
 
-        callbackOnFinish();
+        
+        PlayEmotionSoundsVFX(triggerName, _character.name);
+        
+        ////
+        if (callbackOnFinish != null) 
+            callbackOnFinish();
         //Now, Wait until the current state is done playing
         while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
         {
@@ -172,12 +185,7 @@ public class CharacterHandler : MonoBehaviour
         //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation ended");
 
         //Done playing. Do something below!
-        //callbackOnFinish();
-        // if (!_anim.GetCurrentAnimatorStateInfo(0).loop)
-        // {
-        //     //Debug.Log("Animation is not a loop so go back to idle");
-        //     _anim.SetTrigger("Idle");
-        // }
+        _playAnim = false;
     }
     
     IEnumerator MovePositionCoroutine(Vector3 targetPosition, float duration, Action callbackOnFinish)
@@ -207,4 +215,13 @@ public class CharacterHandler : MonoBehaviour
         }
         return false;
     }
+
+
+    void PlayEmotionSoundsVFX(string emotionName, string characterName)
+    {
+        Debug.Log("playing sound Play_VOX_" + characterName + "_Emotion_" + emotionName);
+        AkSoundEngine.PostEvent("Play_VOX_" + characterName + "_Emotion_" + emotionName, gameObject);
+    }
+    
+    
 }

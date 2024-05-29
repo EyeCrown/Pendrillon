@@ -25,7 +25,7 @@
 
 PASSEUR: ... #anim:Passeur:neutre
 
-PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces
+PASSEUR: J'ai connu des passagers plus <shake>loquaces</shake>... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces
 
 SOUFFLEUR: Psssst... Hé ! #anim:neutre #playsound:VOX_Souffleur_pssthe
 SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_parici

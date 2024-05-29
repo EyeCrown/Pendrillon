@@ -139,6 +139,25 @@
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
+				<SoundcasterSession Name="Dialogs" ID="{9FBCDCC1-0918-4EE7-AA7B-F6AFDAE23F01}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Stop_VOX_ALL" ID="{EF3C2373-FA8A-48E1-8CB4-0FEDAC8399F8}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_VOX_Player_Emotion_colere" ID="{583C608A-A95C-4817-8A1A-B23F5A877E30}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_VOX_Emotions" ID="{6D5B7C41-DC61-488B-B249-FA629430EAAB}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>
