@@ -71,7 +71,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{8BE2889C-EF21-CBF0-BEB1-D19FBA683372}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{39809DF9-5E71-E5EB-95A6-8980959C2B9A}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -2579,68 +2579,6 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="1228849636" Name="Play_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
-					<MediaRefs>
-						<MediaRef Id="184496859"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="3037555217" Name="Play_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
-					<MediaRefs>
-						<MediaRef Id="725713458"/>
-						<MediaRef Id="939844663"/>
-						<MediaRef Id="1047055992"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2549233855" Name="Play_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
-					<MediaRefs>
-						<MediaRef Id="671022519"/>
-						<MediaRef Id="743528828"/>
-						<MediaRef Id="1069338701"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2321864347" Name="Play_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
-					<MediaRefs>
-						<MediaRef Id="205424553"/>
-						<MediaRef Id="373313578"/>
-						<MediaRef Id="525458759"/>
-						<MediaRef Id="766810973"/>
-						<MediaRef Id="989695392"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="273605384" Name="Play_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
-					<MediaRefs>
-						<MediaRef Id="316054915"/>
-						<MediaRef Id="367112495"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2634346691" Name="Play_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
-					<MediaRefs>
-						<MediaRef Id="151801143"/>
-						<MediaRef Id="162630644"/>
-						<MediaRef Id="281122808"/>
-						<MediaRef Id="295002665"/>
-						<MediaRef Id="408195026"/>
-						<MediaRef Id="676425834"/>
-						<MediaRef Id="708507237"/>
-						<MediaRef Id="775810034"/>
-						<MediaRef Id="869767145"/>
-						<MediaRef Id="996305661"/>
-						<MediaRef Id="1061137653"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1026894640" Name="Play_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
-					<MediaRefs>
-						<MediaRef Id="261048577"/>
-						<MediaRef Id="809406999"/>
-						<MediaRef Id="868161685"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="201428941" Name="Play_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
-					<MediaRefs>
-						<MediaRef Id="271659276"/>
-						<MediaRef Id="1015211357"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="786277887" Name="Play_FOL_Humanoid_Hurt" DurationType="OneShot" DurationMin="1.4865093" DurationMax="2.018936">
 					<MediaRefs>
 						<MediaRef Id="446176510"/>
@@ -3025,6 +2963,420 @@
 						<ActionPostEventEntry Id="139643743" Name="Stop_VOX_ALL"/>
 					</ActionPostEvent>
 				</Event>
+				<Event Id="4284485747" Name="Play_VOX_Agathe_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="582038020" Name="Play_VOX_Agathe_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2117824364" Name="Play_VOX_Agathe_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2068043198" Name="Play_VOX_Agathe_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1235192228" Name="Play_VOX_Agathe_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1509749363" Name="Play_VOX_Agathe_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="806242062" Name="Play_VOX_Agathe_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1796088427" Name="Play_VOX_Agathe_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3978634498" Name="Play_VOX_Agathe_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="66333313" Name="Play_VOX_Arle_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="963656654" Name="Play_VOX_Arle_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3294611734" Name="Play_VOX_Arle_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="864269984" Name="Play_VOX_Arle_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="699692718" Name="Play_VOX_Arle_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="385651617" Name="Play_VOX_Arle_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3750174224" Name="Play_VOX_Arle_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1792392613" Name="Play_VOX_Arle_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1573366748" Name="Play_VOX_Arle_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4053233507" Name="Play_VOX_Capucine_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3596662900" Name="Play_VOX_Capucine_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1931408252" Name="Play_VOX_Capucine_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3451652174" Name="Play_VOX_Capucine_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2274995668" Name="Play_VOX_Capucine_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2297073795" Name="Play_VOX_Capucine_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1152996478" Name="Play_VOX_Capucine_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="332731099" Name="Play_VOX_Capucine_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1862458898" Name="Play_VOX_Capucine_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3624788502" Name="Play_VOX_Judge_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1589948143" Name="Play_VOX_Judge_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="556338365" Name="Play_VOX_Judge_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1144095333" Name="Play_VOX_Judge_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2125631657" Name="Play_VOX_Judge_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3485696418" Name="Play_VOX_Judge_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="600578265" Name="Play_VOX_Judge_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3405834326" Name="Play_VOX_Judge_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3471754715" Name="Play_VOX_Judge_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="405850672" Name="Play_VOX_Marcello_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2937668469" Name="Play_VOX_Marcello_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="131002275" Name="Play_VOX_Marcello_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1252546619" Name="Play_VOX_Marcello_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3386820847" Name="Play_VOX_Marcello_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="834165116" Name="Play_VOX_Marcello_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2867252463" Name="Play_VOX_Marcello_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4282943772" Name="Play_VOX_Marcello_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1192296921" Name="Play_VOX_Marcello_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1404476062" Name="Play_VOX_Naida_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2181779799" Name="Play_VOX_Naida_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3400874005" Name="Play_VOX_Naida_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="932431517" Name="Play_VOX_Naida_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1281583969" Name="Play_VOX_Naida_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1743489210" Name="Play_VOX_Naida_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4107228529" Name="Play_VOX_Naida_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="602014302" Name="Play_VOX_Naida_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3050303955" Name="Play_VOX_Naida_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2437757803" Name="Play_VOX_NPC_Leviathan_Defeated" DurationType="OneShot" DurationMin="11.485886" DurationMax="11.485886">
 					<MediaRefs>
 						<MediaRef Id="692255836"/>
@@ -3036,6 +3388,279 @@
 						<MediaRef Id="279408314"/>
 						<MediaRef Id="338660528"/>
 						<MediaRef Id="455376796"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1904322434" Name="Play_VOX_Passeur_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="91142851" Name="Play_VOX_Passeur_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1174991113" Name="Play_VOX_Passeur_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2711185489" Name="Play_VOX_Passeur_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2671833277" Name="Play_VOX_Passeur_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2803575734" Name="Play_VOX_Passeur_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2615886501" Name="Play_VOX_Passeur_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2151014914" Name="Play_VOX_Passeur_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1649001559" Name="Play_VOX_Passeur_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="15566940" Name="Play_VOX_Player_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3960911337" Name="Play_VOX_Player_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1795181583" Name="Play_VOX_Player_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3062709895" Name="Play_VOX_Player_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="764723427" Name="Play_VOX_Player_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2741000048" Name="Play_VOX_Player_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3414216683" Name="Play_VOX_Player_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="790556264" Name="Play_VOX_Player_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2682038197" Name="Play_VOX_Player_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="912936940" Name="Play_VOX_Souffleur_Emotion_colere" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2483821369" Name="Play_VOX_Souffleur_Emotion_deception" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4279577983" Name="Play_VOX_Souffleur_Emotion_joie" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1040533815" Name="Play_VOX_Souffleur_Emotion_laugh" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="422168691" Name="Play_VOX_Souffleur_Emotion_neutre" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3232578720" Name="Play_VOX_Souffleur_Emotion_question" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4150050299" Name="Play_VOX_Souffleur_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1407041848" Name="Play_VOX_Souffleur_Emotion_stress" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4140729765" Name="Play_VOX_Souffleur_Emotion_surprise" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="902787362" Name="SetAllVolumesTo75" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -3164,6 +3789,7 @@
 					</PluginRefs>
 				</Event>
 				<Event Id="139643743" Name="Stop_VOX_ALL" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4268385224" Name="Stop_VOX_Emotions" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="174256388" Name="VOX_Ferryman_baratinpasdernier" DurationType="OneShot" DurationMin="4.4748855" DurationMax="4.4748855">
 					<MediaRefs>
 						<MediaRef Id="857548551"/>
@@ -3335,7 +3961,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{79148241-E3FB-7179-2B9A-BD55DA169564}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{09CE8695-23D9-D4CE-25B7-44BA4A99AD8F}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -5843,68 +6469,6 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="1228849636" Name="Play_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
-					<MediaRefs>
-						<MediaRef Id="184496859"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="3037555217" Name="Play_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
-					<MediaRefs>
-						<MediaRef Id="725713458"/>
-						<MediaRef Id="939844663"/>
-						<MediaRef Id="1047055992"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2549233855" Name="Play_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
-					<MediaRefs>
-						<MediaRef Id="671022519"/>
-						<MediaRef Id="743528828"/>
-						<MediaRef Id="1069338701"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2321864347" Name="Play_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
-					<MediaRefs>
-						<MediaRef Id="205424553"/>
-						<MediaRef Id="373313578"/>
-						<MediaRef Id="525458759"/>
-						<MediaRef Id="766810973"/>
-						<MediaRef Id="989695392"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="273605384" Name="Play_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
-					<MediaRefs>
-						<MediaRef Id="316054915"/>
-						<MediaRef Id="367112495"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2634346691" Name="Play_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
-					<MediaRefs>
-						<MediaRef Id="151801143"/>
-						<MediaRef Id="162630644"/>
-						<MediaRef Id="281122808"/>
-						<MediaRef Id="295002665"/>
-						<MediaRef Id="408195026"/>
-						<MediaRef Id="676425834"/>
-						<MediaRef Id="708507237"/>
-						<MediaRef Id="775810034"/>
-						<MediaRef Id="869767145"/>
-						<MediaRef Id="996305661"/>
-						<MediaRef Id="1061137653"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1026894640" Name="Play_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
-					<MediaRefs>
-						<MediaRef Id="261048577"/>
-						<MediaRef Id="809406999"/>
-						<MediaRef Id="868161685"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="201428941" Name="Play_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
-					<MediaRefs>
-						<MediaRef Id="271659276"/>
-						<MediaRef Id="1015211357"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="786277887" Name="Play_FOL_Humanoid_Hurt" DurationType="OneShot" DurationMin="1.4865093" DurationMax="2.018936">
 					<MediaRefs>
 						<MediaRef Id="446176510"/>
@@ -6289,6 +6853,420 @@
 						<ActionPostEventEntry Id="139643743" Name="Stop_VOX_ALL"/>
 					</ActionPostEvent>
 				</Event>
+				<Event Id="4284485747" Name="Play_VOX_Agathe_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="582038020" Name="Play_VOX_Agathe_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2117824364" Name="Play_VOX_Agathe_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2068043198" Name="Play_VOX_Agathe_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1235192228" Name="Play_VOX_Agathe_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1509749363" Name="Play_VOX_Agathe_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="806242062" Name="Play_VOX_Agathe_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1796088427" Name="Play_VOX_Agathe_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3978634498" Name="Play_VOX_Agathe_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="66333313" Name="Play_VOX_Arle_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="963656654" Name="Play_VOX_Arle_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3294611734" Name="Play_VOX_Arle_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="864269984" Name="Play_VOX_Arle_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="699692718" Name="Play_VOX_Arle_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="385651617" Name="Play_VOX_Arle_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3750174224" Name="Play_VOX_Arle_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1792392613" Name="Play_VOX_Arle_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1573366748" Name="Play_VOX_Arle_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4053233507" Name="Play_VOX_Capucine_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3596662900" Name="Play_VOX_Capucine_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1931408252" Name="Play_VOX_Capucine_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3451652174" Name="Play_VOX_Capucine_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2274995668" Name="Play_VOX_Capucine_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2297073795" Name="Play_VOX_Capucine_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1152996478" Name="Play_VOX_Capucine_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="332731099" Name="Play_VOX_Capucine_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1862458898" Name="Play_VOX_Capucine_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3624788502" Name="Play_VOX_Judge_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1589948143" Name="Play_VOX_Judge_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="556338365" Name="Play_VOX_Judge_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1144095333" Name="Play_VOX_Judge_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2125631657" Name="Play_VOX_Judge_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3485696418" Name="Play_VOX_Judge_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="600578265" Name="Play_VOX_Judge_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3405834326" Name="Play_VOX_Judge_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3471754715" Name="Play_VOX_Judge_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="405850672" Name="Play_VOX_Marcello_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2937668469" Name="Play_VOX_Marcello_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="131002275" Name="Play_VOX_Marcello_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1252546619" Name="Play_VOX_Marcello_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3386820847" Name="Play_VOX_Marcello_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="834165116" Name="Play_VOX_Marcello_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2867252463" Name="Play_VOX_Marcello_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4282943772" Name="Play_VOX_Marcello_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1192296921" Name="Play_VOX_Marcello_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1404476062" Name="Play_VOX_Naida_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2181779799" Name="Play_VOX_Naida_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3400874005" Name="Play_VOX_Naida_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="932431517" Name="Play_VOX_Naida_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1281583969" Name="Play_VOX_Naida_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1743489210" Name="Play_VOX_Naida_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4107228529" Name="Play_VOX_Naida_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="602014302" Name="Play_VOX_Naida_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3050303955" Name="Play_VOX_Naida_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2437757803" Name="Play_VOX_NPC_Leviathan_Defeated" DurationType="OneShot" DurationMin="11.485886" DurationMax="11.485886">
 					<MediaRefs>
 						<MediaRef Id="692255836"/>
@@ -6300,6 +7278,279 @@
 						<MediaRef Id="279408314"/>
 						<MediaRef Id="338660528"/>
 						<MediaRef Id="455376796"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1904322434" Name="Play_VOX_Passeur_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="91142851" Name="Play_VOX_Passeur_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1174991113" Name="Play_VOX_Passeur_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2711185489" Name="Play_VOX_Passeur_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2671833277" Name="Play_VOX_Passeur_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2803575734" Name="Play_VOX_Passeur_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2615886501" Name="Play_VOX_Passeur_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2151014914" Name="Play_VOX_Passeur_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1649001559" Name="Play_VOX_Passeur_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="15566940" Name="Play_VOX_Player_Emotion_colere" DurationType="OneShot" DurationMin="1.4020729" DurationMax="1.4020729">
+					<MediaRefs>
+						<MediaRef Id="184496859"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3960911337" Name="Play_VOX_Player_Emotion_deception" DurationType="OneShot" DurationMin="1.09375" DurationMax="1.3200834">
+					<MediaRefs>
+						<MediaRef Id="725713458"/>
+						<MediaRef Id="939844663"/>
+						<MediaRef Id="1047055992"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1795181583" Name="Play_VOX_Player_Emotion_joie" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3062709895" Name="Play_VOX_Player_Emotion_laugh" DurationType="OneShot" DurationMin="1.0961771" DurationMax="1.1974584">
+					<MediaRefs>
+						<MediaRef Id="671022519"/>
+						<MediaRef Id="743528828"/>
+						<MediaRef Id="1069338701"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="764723427" Name="Play_VOX_Player_Emotion_neutre" DurationType="OneShot" DurationMin="0.55385417" DurationMax="0.762125">
+					<MediaRefs>
+						<MediaRef Id="205424553"/>
+						<MediaRef Id="373313578"/>
+						<MediaRef Id="525458759"/>
+						<MediaRef Id="766810973"/>
+						<MediaRef Id="989695392"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2741000048" Name="Play_VOX_Player_Emotion_question" DurationType="OneShot" DurationMin="0.8877396" DurationMax="1.0525416">
+					<MediaRefs>
+						<MediaRef Id="316054915"/>
+						<MediaRef Id="367112495"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3414216683" Name="Play_VOX_Player_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="790556264" Name="Play_VOX_Player_Emotion_stress" DurationType="OneShot" DurationMin="0.87988544" DurationMax="1.167375">
+					<MediaRefs>
+						<MediaRef Id="261048577"/>
+						<MediaRef Id="809406999"/>
+						<MediaRef Id="868161685"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2682038197" Name="Play_VOX_Player_Emotion_surprise" DurationType="OneShot" DurationMin="0.8436146" DurationMax="0.925">
+					<MediaRefs>
+						<MediaRef Id="271659276"/>
+						<MediaRef Id="1015211357"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="912936940" Name="Play_VOX_Souffleur_Emotion_colere" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2483821369" Name="Play_VOX_Souffleur_Emotion_deception" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4279577983" Name="Play_VOX_Souffleur_Emotion_joie" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1040533815" Name="Play_VOX_Souffleur_Emotion_laugh" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="422168691" Name="Play_VOX_Souffleur_Emotion_neutre" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3232578720" Name="Play_VOX_Souffleur_Emotion_question" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4150050299" Name="Play_VOX_Souffleur_Emotion_souffleur" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1407041848" Name="Play_VOX_Souffleur_Emotion_stress" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="4140729765" Name="Play_VOX_Souffleur_Emotion_surprise" DurationType="OneShot" DurationMin="0.45320833" DurationMax="0.6859375">
+					<MediaRefs>
+						<MediaRef Id="151801143"/>
+						<MediaRef Id="162630644"/>
+						<MediaRef Id="281122808"/>
+						<MediaRef Id="295002665"/>
+						<MediaRef Id="408195026"/>
+						<MediaRef Id="676425834"/>
+						<MediaRef Id="708507237"/>
+						<MediaRef Id="775810034"/>
+						<MediaRef Id="869767145"/>
+						<MediaRef Id="996305661"/>
+						<MediaRef Id="1061137653"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="902787362" Name="SetAllVolumesTo75" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -6428,6 +7679,7 @@
 					</PluginRefs>
 				</Event>
 				<Event Id="139643743" Name="Stop_VOX_ALL" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="4268385224" Name="Stop_VOX_Emotions" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="174256388" Name="VOX_Ferryman_baratinpasdernier" DurationType="OneShot" DurationMin="4.4748855" DurationMax="4.4748855">
 					<MediaRefs>
 						<MediaRef Id="857548551"/>
@@ -6600,5 +7852,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E4B821E9-A039-9DA3-8886-E57B37F43873}</FileHash>
+	<FileHash>{3A59F48F-7DBC-B9B4-9CE5-42C39EC1CA8F}</FileHash>
 </SoundBanksInfo>
