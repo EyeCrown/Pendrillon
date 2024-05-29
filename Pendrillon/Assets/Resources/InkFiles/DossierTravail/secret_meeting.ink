@@ -25,7 +25,7 @@ VAR failed_breaking_jester_crate = false
 
 // Start of the scene
 = start
-- ... #wait:6
+ARLE: Laisse moi te dire un petit secret... #anim:Arle:telling_secret
 // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
 - #audience:applause
