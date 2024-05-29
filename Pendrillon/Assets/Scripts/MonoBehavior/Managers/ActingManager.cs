@@ -836,15 +836,11 @@ namespace MonoBehavior.Managers
             var trigger = data[1];
             
             Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > {character._character.name} must play {trigger} anim");
-
+            character._playAnim = true;
+            
             void AnimAction()
             {
                 StartCoroutine(character.PlayAnimCoroutine(trigger, TagActionOver));
-
-                // if trigger == emotion
-                    //Do stuff
-                
-                
             }
             
             _tagMethods.Add(AnimAction);

@@ -15,6 +15,8 @@ public class CharacterHandler : MonoBehaviour
     public Character _character;
 
     Animator _anim;
+
+    public bool _playAnim = false;
     
     // UI
     Canvas _canvas;
@@ -135,7 +137,8 @@ public class CharacterHandler : MonoBehaviour
         _uiActing.SetActive(true);
         
         // play neutral anim
-        StartCoroutine(PlayAnimCoroutine("neutre"));
+        if (!_playAnim)
+            StartCoroutine(PlayAnimCoroutine("neutre"));
     }
 
     #endregion
@@ -167,8 +170,8 @@ public class CharacterHandler : MonoBehaviour
 
         
         ////
-        
-        callbackOnFinish();
+        if (callbackOnFinish != null) 
+            callbackOnFinish();
         //Now, Wait until the current state is done playing
         while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
         {
@@ -180,12 +183,7 @@ public class CharacterHandler : MonoBehaviour
         //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation ended");
 
         //Done playing. Do something below!
-        //callbackOnFinish();
-        // if (!_anim.GetCurrentAnimatorStateInfo(0).loop)
-        // {
-        //     //Debug.Log("Animation is not a loop so go back to idle");
-        //     _anim.SetTrigger("Idle");
-        // }
+        _playAnim = false;
     }
     
     IEnumerator MovePositionCoroutine(Vector3 targetPosition, float duration, Action callbackOnFinish)
