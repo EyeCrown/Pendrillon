@@ -77,6 +77,7 @@ SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance ! 
     * [On m'appelle Octave...] PLAYER: Je réponds au doux nom de Octave... #anim:Player:bow #playsound:VOX_Player_Octave #playsound:Play_MUS_Story_SC_Barque_ANewName
         ~ p_name = "Octave"
 - #audience:ovation
+SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! Show must go on! #anim:Souffleur:neutre
 - PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question
 - PLAYER: Un jour où je me trouvais...
     * [À l'auberge...] PLAYER: Un jour où je me trouvais à l'auberge du Bois Joli, je reçus la missive d'un expéditeur inconnu.
