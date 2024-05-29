@@ -25,10 +25,11 @@
 // Scène 1
 = scene_1
 #playsound:Play_MUS_Story_SC_Barque_Intro #wait:3 #audience:applause #wait:5
-PASSEUR: Eh, bien...
-PASSEUR: J'ai connu des passagers plus loquaces... #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause
+PASSEUR: Eh, bien... #anim:Passeur:neutre
+PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause
     * [(Rester silencieux)]
-- PASSER: J'ai dit : « J'ai connu des passagers plus loquaces... » #bark:Passeur:clear_voice #anim:Passeur:neutre #box #audience:debate
+- PASSEUR: *Hum hum* #bark:Passeur:clear_voice
+- PASSEUR: J'ai dit : « J'ai connu des passagers plus loquaces... » #anim:Passeur:neutre #box #audience:debate
 - SOUFFLEUR: Psssst... Hé ! #anim:neutre #playsound:VOX_Souffleur_pssthe
 SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_parici
 SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #anim:Souffleur:neutre #playsound:VOX_Souffleur_tracparalyse
@@ -85,7 +86,8 @@ SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance ! 
     * [L'écriture.] PLAYER: La lettre était dotée d’une impeccable calligraphie. Ce détail ne pouvait signifier qu’une chose : notre expéditeur était du genre fortuné. #anim:Player:neutre #playsound:VOX_Player_lalettreecriture #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
     * [Le destinataire.] PLAYER: La lettre était destinée à un certain {p_name} Jehovah Banes. Or, la seule personne à m’appeler ainsi est ma mère, qui est absolument et irrémédiablement illetrée... #anim:Player:neutre #playsound:VOX_Player_lalettredestinataire{p_name} #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
     * [L'odeur.] PLAYER: J’ai reçu bien des lettres dans ma vie, certaines avaient l’odeur du sel marin ou des impôts impayés, mais jamais une odeur si... délicate. L'odeur d'un expéditeur fortuné. #anim:Player:neutre #playsound:VOX_Player_lalettreodeur #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
-- PLAYER: La lettre me donnait rendez-vous pour une cause « de la plus haute importance ». Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous : la cale de mon propre navire. #anim:Player:neutre #playsound:VOX_Player_transitionsecretmeeting #playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
+- PLAYER: La lettre me donnait rendez-vous pour une cause « de la plus haute importance ».
+PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous : la cale de mon propre navire. #anim:Player:neutre #playsound:VOX_Player_transitionsecretmeeting #playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
 - -> secret_meeting
 
 // Scène 2
