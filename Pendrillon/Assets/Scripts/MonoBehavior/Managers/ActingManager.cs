@@ -255,7 +255,7 @@ namespace MonoBehavior.Managers
             }
             else
             {
-                Debug.Log("Reach end of content.");
+                Debug.Log("Story cannot continue.");
             }
         }
 
@@ -324,19 +324,14 @@ namespace MonoBehavior.Managers
 
                         _masks.transform.Find(speaker.ToLower())?.gameObject.SetActive(true);
                         
-
-                        
                         // play sound
                         PlaySoundDialogAppears();
         
                         StartCoroutine(GenerateText(dialogue));
                     }
-                    
                 });
                 
-                
                 _dialogueAlreadyHandle = true;
-
             }
         }
         
@@ -356,6 +351,9 @@ namespace MonoBehavior.Managers
 
         void HandleChoices()
         {
+            Debug.Log("Click += DisplayText");
+            GameManager.Instance._playerInput.Player.Interact.performed += OnClickDisplayText;
+            
             if (GameManager.Instance._story.currentChoices.Count > 0)
             {
                 GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
@@ -366,7 +364,7 @@ namespace MonoBehavior.Managers
             {
                 Debug.Log("No choices, so click can display text");
                 
-                GameManager.Instance._playerInput.Player.Interact.performed += OnClickDisplayText;
+                //GameManager.Instance._playerInput.Player.Interact.performed += OnClickDisplayText;
                 
                 StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
@@ -454,7 +452,7 @@ namespace MonoBehavior.Managers
                 return;
             }
             
-            Debug.Log("AM.SetButtonType > This button is neutral");
+            //Debug.Log("AM.SetButtonType > This button is neutral");
         }
         
 
@@ -498,15 +496,25 @@ namespace MonoBehavior.Managers
 
         void DialogueTextFinished()
         {
-            Debug.Log("Dialogue Text is finished > ADD NextDialgue");
-            GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+            Debug.Log("Dialogue Text is finished");
+
+            if (GameManager.Instance._story.canContinue)
+            {
+                GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+                Debug.Log("Click += NextDialogue");
+            }
         }
 
 
         void PrompterTextFinished()
         {
             Debug.Log("Prompter Text is finished");
-            GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+            
+            if (GameManager.Instance._story.canContinue)
+            {
+                GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
+                Debug.Log("Click += NextDialogue");
+            }
         }
 
 
@@ -518,8 +526,9 @@ namespace MonoBehavior.Managers
         #region NextButton
         public void OnClickNextDialogue(InputAction.CallbackContext context)
         {
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Call next dialogue || Refresh call");
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Call next dialogue || Refresh call || Click -= NextDialogue");
             GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
+            
 
             Refresh();
         }
@@ -541,6 +550,8 @@ namespace MonoBehavior.Managers
             }
             
             GameManager.Instance._playerInput.Player.Interact.performed -= OnClickDisplayText;
+            Debug.Log("Click -= NextDialogue");
+            
         }
         
         
