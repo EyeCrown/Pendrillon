@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 11400000, guid: 10d671623fae4ce4ba233593588796aa, type: 2}
+  _playAnim: 0
   _coordsOnStatge: {x: 0, y: 0}
   DialogueUpdate:
     m_PersistentCalls:
@@ -732,6 +733,11 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 972a5bd69f12ff44894ebc854671fa89, type: 2}
+    - target: {fileID: 8195365398562787511, guid: 0611f9f23eafd8c43b2d1a97bac08dd6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: -6886004980891035212, guid: 0611f9f23eafd8c43b2d1a97bac08dd6, type: 3}
