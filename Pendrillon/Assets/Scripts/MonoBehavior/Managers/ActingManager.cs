@@ -720,7 +720,9 @@ namespace MonoBehavior.Managers
         {
             Debug.Log($"AM.Refresh > Change from {_stage} to {location}");
             _stage = location;
-            
+
+            AkSoundEngine.PostEvent("Play_SFX_SC_Theater_TransitionTo" + location, gameObject);
+
             if (_currentSet != null)
                 _currentSet.GetComponent<Animator>().SetBool("InOut",false);
 
@@ -740,6 +742,7 @@ namespace MonoBehavior.Managers
             switch (_stage)
             {
                 case Constants.SetBarge:
+                    
                     _setBarge.SetActive(true);
                     _setBarge.GetComponent<Animator>().SetBool("InOut",true);
                     GameManager.Instance.SetGridHeight(_stage);

@@ -71,7 +71,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{39809DF9-5E71-E5EB-95A6-8980959C2B9A}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{286D7FFC-A34D-6F53-7590-D1CD8C5BAE9B}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -286,6 +286,10 @@
 				<File Id="229672219" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_SelectAttack_4_v2.wav</ShortName>
 					<CachePath>SFX/UI_Combat_SelectAttack_4_v2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="232089343" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_SC_Theater_TransitionToCale.wav</ShortName>
+					<CachePath>SFX/SFX_SC_Theater_TransitionToCale_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="232733815" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_5.wav</ShortName>
@@ -886,6 +890,10 @@
 				<File Id="775810034" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>SouffleurBarks-007.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-007_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="778142643" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_SC_Theater_TransitionTobarge.wav</ShortName>
+					<CachePath>SFX/SFX_SC_Theater_TransitionTobarge_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="779901897" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_ClothRustle_06.wav</ShortName>
@@ -2832,6 +2840,16 @@
 						<MediaRef Id="413400396"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="4237981862" Name="Play_SFX_SC_Theater_TransitionTobarge" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="778142643"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2670356646" Name="Play_SFX_SC_Theater_TransitionTocale" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="232089343"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="750758881" Name="Play_SFX_Story_JudgeBellFar" DurationType="OneShot" DurationMin="8.710969" DurationMax="8.710969">
 					<MediaRefs>
 						<MediaRef Id="150367689"/>
@@ -3961,7 +3979,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{09CE8695-23D9-D4CE-25B7-44BA4A99AD8F}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{D92019AC-1A38-29C6-BE13-7A478CC186D6}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -4176,6 +4194,10 @@
 				<File Id="229672219" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_SelectAttack_4_v2.wav</ShortName>
 					<CachePath>SFX/UI_Combat_SelectAttack_4_v2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="232089343" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_SC_Theater_TransitionToCale.wav</ShortName>
+					<CachePath>SFX/SFX_SC_Theater_TransitionToCale_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="232733815" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_5.wav</ShortName>
@@ -4776,6 +4798,10 @@
 				<File Id="775810034" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>SouffleurBarks-007.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-007_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="778142643" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_SC_Theater_TransitionTobarge.wav</ShortName>
+					<CachePath>SFX/SFX_SC_Theater_TransitionTobarge_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="779901897" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_ClothRustle_06.wav</ShortName>
@@ -6722,6 +6748,16 @@
 						<MediaRef Id="413400396"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="4237981862" Name="Play_SFX_SC_Theater_TransitionTobarge" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="778142643"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2670356646" Name="Play_SFX_SC_Theater_TransitionTocale" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="232089343"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="750758881" Name="Play_SFX_Story_JudgeBellFar" DurationType="OneShot" DurationMin="8.710969" DurationMax="8.710969">
 					<MediaRefs>
 						<MediaRef Id="150367689"/>
@@ -7852,5 +7888,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3A59F48F-7DBC-B9B4-9CE5-42C39EC1CA8F}</FileHash>
+	<FileHash>{2287AFF5-8B7E-AE73-E079-D6FF712092E7}</FileHash>
 </SoundBanksInfo>

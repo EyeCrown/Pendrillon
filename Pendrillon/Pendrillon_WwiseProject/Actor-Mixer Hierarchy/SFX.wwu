@@ -1324,6 +1324,62 @@
 						</ActorMixer>
 					</ChildrenList>
 				</ActorMixer>
+				<ActorMixer Name="SFX_Transitions" ID="{0A5C62F4-F651-491C-8719-4CA0D33021A9}" ShortID="957481009">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="SFX_SC_Theater_TransitionTocale" ID="{B393944F-FEAD-44CC-8E5D-6FF20BA49237}" ShortID="122321692">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_SC_Theater_TransitionToCale" ID="{69D99152-74F7-49CA-A8EB-EDC96FDD2AD2}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_SC_Theater_TransitionToCale.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="232089343"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_SC_Theater_TransitionToCale" ID="{69D99152-74F7-49CA-A8EB-EDC96FDD2AD2}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="SFX_SC_Theater_TransitionTobarge" ID="{C8CA6034-4A09-476E-A559-7BA56FB51B7A}" ShortID="322275028">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="SFX_SC_Theater_TransitionTobarge" ID="{E875BD39-0AA8-4E12-9479-E0600A1CDD6A}">
+									<Language>SFX</Language>
+									<AudioFile>SFX_SC_Theater_TransitionTobarge.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="778142643"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="SFX_SC_Theater_TransitionTobarge" ID="{E875BD39-0AA8-4E12-9479-E0600A1CDD6A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
