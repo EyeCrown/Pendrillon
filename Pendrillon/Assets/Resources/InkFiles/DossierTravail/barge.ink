@@ -26,7 +26,7 @@ PASSEUR: Eh, bien... #anim:Passeur:neutre
 PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause
     * [(Rester silencieux)]
 - PASSEUR: *Hum hum* #bark:Passeur:clear_voice
-- PASSEUR: J'ai dit : « J'ai connu des passagers plus loquaces... » #anim:Passeur:neutre #box #audience:debate
+- PASSEUR: J'ai dit : « J'ai connu des passagers plus loquaces... ». #anim:Passeur:neutre #box #audience:debate
 - SOUFFLEUR: Psssst... Hé ! #anim:neutre #playsound:VOX_Souffleur_pssthe
 SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_parici
 SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #anim:Souffleur:neutre #playsound:VOX_Souffleur_tracparalyse
@@ -53,9 +53,11 @@ SOUFFLEUR: Alors mets-y de l'émotion, l'ami ! #anim:Souffleur:neutre
 - PASSEUR: Tu sais, voyageur, ce n'est pas auprès de moi qu'il faudra se montrer éloquent. #anim:Passeur:neutre #playsound:VOX_Ferryman_detoutefacon
 - SOUFFLEUR: C'est exaltant, pas vrai ? #anim:Souffleur:joie
 SOUFFLEUR: Le public réagit à tes répliques, mais aussi à ton jeu de scène ! Tu brûles littéralement les planches, l'ami ! #anim:Souffleur:joie #playsound:VOX_Souffleur_publicreagit
-SOUFFLEUR: Poursuivons : « Je ne suis pas un homme de mauvaise compagnie. Je suis tout disposé à faire de ce voyage un moment agréable.... ». #anim:Souffleur:neutre
-    * [Je ne suis pas un homme de mauvaise compagnie.] PLAYER: Je ne suis pas un homme de mauvaise compagnie. Je suis tout disposé à faire de ce voyage un moment agréable.... #anim:Player:neutre #playsound:VOX_Player_pasmauvaisecompagnie
-- SOUFFLEUR: « De quoi veux-tu que l'on parle, Passeur ? ». #anim:Souffleur:neutre
+SOUFFLEUR: Poursuivons : « Je ne suis pas un homme de mauvaise compagnie. ». #anim:Souffleur:neutre
+    * [Je ne suis pas un homme de mauvaise compagnie.] PLAYER: Je ne suis pas un homme de mauvaise compagnie. #anim:Player:neutre #playsound:VOX_Player_pasmauvaisecompagnie
+- SOUFFLEUR: « Je suis tout disposé à faire de ce voyage un moment agréable... ». #anim:Souffleur:neutre
+    * [Je suis tout disposé à faire de ce voyage un moment agréable...] PLAYER: Je suis tout disposé à faire de ce voyage un moment agréable... #anim:Player:neutre #playsound:VOX_Player_pasmauvaisecompagnie
+- SOUFFLEUR: « De quoi souhaites-tu que l'on parle, Passeur ? ». #anim:Souffleur:neutre
     * [De quoi souhaites-tu que l'on parle, Passeur ?] PLAYER: De quoi souhaites-tu que l'on parle, Passeur ? #anim:Player:question
 - PASSEUR: Commence par te présenter : qui es-tu ? #anim:Passeur:question #playsound:VOX_Ferryman_commencepresenter
 #audience:debate
@@ -64,7 +66,7 @@ SOUFFLEUR: Le metteur en scène de cette pièce, le célèbre Jean Ornicar... so
 SOUFFLEUR: Le respectable Ornicar a quitté la troupe. En assez mauvais terme, vois-tu. #anim:Souffleur:neutre
 SOUFFLEUR: Là où le bât blesse... c'est qu'il n'a jamais terminé d'écrire tes répliques. #anim:Souffleur:neutre
 SOUFFLEUR: On aurait dû te prévenir avant, navré l'ami... #anim:Souffleur:neutre
-SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance ! #anim:Player:stress
+SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance, l'ami ! #anim:Player:stress
 #audience:booing
 - PASSEUR: Peut-être ne m'as-tu pas entendu. Je disais : qui es-tu ? #playsound:VOX_Ferryman_quiestu
     * [Je suis Merlin...] PLAYER: Je réponds au doux nom de Merlin... #anim:Player:bow #playsound:VOX_Player_Merlin #playsound:Play_MUS_Story_SC_Barque_ANewName
