@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
+using Febucci.UI.Core;
 using MonoBehavior.Managers;
 using TMPro;
 using UnityEngine;
@@ -15,6 +16,7 @@ public class Prompter : MonoBehaviour
     private GameObject _uiPart;
     private TextMeshProUGUI _dialogueText;
     private GameObject _iconTalking;
+    private TypewriterCore _prompterTypewriter;
     
     private Animator _anim;
 
@@ -38,6 +40,7 @@ public class Prompter : MonoBehaviour
         _uiPart = ActingManager.Instance._uiParent.transform.Find("PROMPTER_PART").gameObject;
         _dialogueText = _uiPart.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
         _uiPart.SetActive(false);
+        _prompterTypewriter = _dialogueText.GetComponent<TypewriterCore>();
 
         _iconTalking = transform.Find("Canvas").gameObject;
         _iconTalking.SetActive(false);
@@ -62,7 +65,7 @@ public class Prompter : MonoBehaviour
         _anim.SetBool("InOut", true);
         
         isOnStage = true;
-        Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name}");
+        //Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name}");
     }
 
     void LeaveStage()
@@ -70,7 +73,7 @@ public class Prompter : MonoBehaviour
         _anim.SetBool("InOut", false);
 
         isOnStage = false;
-        Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name}");
+        //Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name}");
     }
     
     #endregion
@@ -84,7 +87,7 @@ public class Prompter : MonoBehaviour
         
         _uiPart.SetActive(false);
         StopCoroutine(_dialogueCoroutine);
-        _dialogueText.text = string.Empty;
+        //_dialogueText.text = string.Empty;
         _iconTalking.SetActive(false);
     }
     
@@ -94,11 +97,14 @@ public class Prompter : MonoBehaviour
             GoOnStage();
         
         _uiPart.SetActive(true);
-        _dialogueCoroutine = GenerateText(dialogue);
-        StartCoroutine(_dialogueCoroutine);
+        GameManager.Instance._playerInput.Player.Interact.performed -= ActingManager.Instance.OnClickNextDialogue;      // Toujous sale
+        
         //_dialogueText.text = dialogue;
+        _prompterTypewriter.ShowText(dialogue);
+        
+        
         _iconTalking.SetActive(true);
-        Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name} > Prompter is speaking");
+        //Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name} > Prompter is speaking");
 
     }
     

@@ -155,7 +155,7 @@ public class CharacterHandler : MonoBehaviour
             yield break;
         }
         
-        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation {triggerName} start");
+        //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation {triggerName} start");
         
         _anim.SetTrigger(triggerName);
         
@@ -166,7 +166,7 @@ public class CharacterHandler : MonoBehaviour
 
             yield return null;
         }
-        Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation Start");
+        //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation Start");
 
         
         PlayEmotionSoundsVFX(triggerName, _character.name);
