@@ -154,9 +154,16 @@
 							<Position X="1" Y="1"/>
 						</Module>
 					</ModuleList>
-					<RTPCValueList ShowAll="true"/>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="CrowdReaction" ID="{54CA8F1B-9365-4E97-9124-8C15561C77D5}"/>
+							<Value>0.649615384615385</Value>
+						</RTPCValue>
+					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
-					<CurrentSwitchList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true">
+						<CurrentSwitchRef Name="Hype_06" ID="{E9D40200-B585-4FE3-B917-5118A09DA24C}"/>
+					</CurrentSwitchList>
 				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
