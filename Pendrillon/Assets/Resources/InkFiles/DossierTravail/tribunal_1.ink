@@ -14,7 +14,7 @@
 #actor:Agathe:AGATHE
 #actor:Naïda:???:NAÏDA:L'AFFREUSE SIREINE:LA POISCAILLE
 // Set the location
-#set:tribunal
+#set:trial
 // Set the actor's positions
 #position:Player:4:2
 #position:Judge:0:0

@@ -20,7 +20,7 @@ VAR cannon_loaded = false
 #actor:Player:PLAYER
 #actor:Moussaillon:MOUSSAILLON
 // Set the location
-#set:church
+#set:tempest
 // Set the actor's positions
 #position:Player:4:2
 #position:Moussaillon:30:30
