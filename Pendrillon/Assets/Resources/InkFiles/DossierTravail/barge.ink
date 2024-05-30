@@ -5,25 +5,22 @@
 
 // Scene
 === barge ===
-// Define the actors of the scene
-#actor:Player:PLAYER
-#actor:Passeur:PASSEUR
-#actor:Prompter:SOUFFLEUR
-#playsound:Play_AMB_SC_Barque_Ambiance
-#playsound:Play_AMB_SC_Theater_CrowdChatter
-
-#set:barge
-
-#position:Player:4:1
-#position:Passeur:4:3
-#position:Prompter:7:5
-
-
-// Start the scene
 -> scene_1
 
 // Scène 1
 = scene_1
+// Define the actors of the scene
+#actor:Player:PLAYER
+#actor:Passeur:PASSEUR
+// Set the location
+#set:barge
+// Set the actor's positions
+#position:Player:4:1
+#position:Passeur:4:3
+
+// Start the scene
+#playsound:Play_AMB_SC_Barque_Ambiance
+#playsound:Play_AMB_SC_Theater_CrowdChatter
 #playsound:Play_MUS_Story_SC_Barque_Intro #wait:3 #audience:applause #wait:5
 PASSEUR: Eh, bien... #anim:Passeur:neutre
 PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause
@@ -93,6 +90,16 @@ PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rend
 
 // Scène 2
 = scene_2
+// Define the actors of the scene
+#actor:Player:PLAYER
+#actor:Passeur:PASSEUR
+// Set the location
+#set:barge
+// Set the actor's positions
+#position:Player:4:1
+#position:Passeur:4:3
+
+// Start the scene
 #playsound:Play_AMB_SC_Barque_Ambiance
 PASSEUR: ... #anim:Passeur:neutre
 PASSEUR: Pourquoi avoir accepté une mission si périlleuse ? #anim:Passeur:question #playsound:VOX_Ferryman_pourquoimission
@@ -125,6 +132,16 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, no
 
 // Scène 3
 = scene_3
+// Define the actors of the scene
+#actor:Player:PLAYER
+#actor:Passeur:PASSEUR
+// Set the location
+#set:barge
+// Set the actor's positions
+#position:Player:4:1
+#position:Passeur:4:3
+
+// Start the scene
 #playsound:Play_AMB_SC_Barque_Ambiance
 PASSEUR: Ainsi, ton amie s'est faite arrêter par les gardes... #anim:Passeur:neutre:1 #playsound:VOX_Ferryman_ainsitonami
 PASSEUR: Tu es bien silencieux... Que ressentais-tu, à cet instant ? #anim:Passeur:question #playsound:VOX_Ferryman_tuesbiensilencieux
@@ -139,6 +156,16 @@ PASSEUR: Tu es bien silencieux... Que ressentais-tu, à cet instant ? #anim:Pass
 
 // Scène 4
 = scene_4
+// Define the actors of the scene
+#actor:Player:PLAYER
+#actor:Passeur:PASSEUR
+// Set the location
+#set:barge
+// Set the actor's positions
+#position:Player:4:1
+#position:Passeur:4:3
+
+// Start the scene
 #playsound:Play_AMB_SC_Barque_Ambiance
 PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #anim:Passeur:neutre #playsound:VOX_Ferryman_pretressehonneur
     * [Tout à fait.] PLAYER: Jamais n'a t-on vu âme plus acceuillante. Cependant... #anim:Player:neutre #playsound:VOX_Player_jamaisame
@@ -158,6 +185,16 @@ PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #anim:P
 
 // Scène 5
 = scene_5
+// Define the actors of the scene
+#actor:Player:PLAYER
+#actor:Passeur:PASSEUR
+// Set the location
+#set:barge
+// Set the actor's positions
+#position:Player:4:1
+#position:Passeur:4:3
+
+// Start the scene
 #playsound:Play_AMB_SC_Barque_Ambiance
 PASSEUR: Notre voyage s'avera des plus captivants, toutefois...  #anim:Passeur:neutre #playsound:VOX_Ferryman_voyagecaptivant
 PASSEUR: ... il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView

@@ -16,6 +16,16 @@ VAR cannon_loaded = false
 -> start
 
 = start
+// Define the actors of the scene
+#actor:Player:PLAYER
+#actor:Moussaillon:MOUSSAILLON
+// Set the location
+#set:church
+// Set the actor's positions
+#position:Player:4:2
+#position:Moussaillon:30:30
+
+// Start the scene
 #audience:ovation
 #move(Player)
 VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord.
