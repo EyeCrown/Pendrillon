@@ -24,6 +24,12 @@
 
 // Scène 1
 = scene_1
+PASSEUR: Héhé, je vois, je vois... #anim:Passeur:colere
+
+PASSEUR: Héhé, je vois, je vois... #anim:Passeur:joie
+PASSEUR: Héhé, je vois, je vois... #anim:Passeur:deception
+
+
 SOUFFLEUR: Permets-moi de te rafraîchir la mémoire, l'ami : « Ma mère m'a toujours dit... ». #anim:Souffleur:neutre #playsound:VOX_NPC_Souffleur_rafraichirmemoire
     * [Ma mère m'a toujours dit...] PLAYER: Ma mère m'a toujours dit... #anim:Player:neutre #playsound:VOX_Player_meretoujoursdit #playsound:Play_MUS_Story_SC_Barque_BadViolin1
 - SOUFFLEUR: « ...qu'enfant, déjà, je n'étais pas très bavard. ». #anim:Passeur:neutre #playsound:VOX_Souffleur_pasbavard

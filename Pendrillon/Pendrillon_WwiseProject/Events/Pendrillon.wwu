@@ -536,6 +536,32 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Folder Name="Transitons" ID="{BCA387BD-11EF-43A8-9252-2A83FE8A3069}" ShortID="301902424">
+							<ChildrenList>
+								<Event Name="Play_SFX_SC_Theater_TransitionTobarge" ID="{3484F2B0-DB0A-4EC6-87E6-217C42A2466F}">
+									<ChildrenList>
+										<Action Name="" ID="{E15F6DB4-5050-4F54-AEF5-06DC7382E682}" ShortID="506246309">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_TransitionTobarge" ID="{C8CA6034-4A09-476E-A559-7BA56FB51B7A}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_SC_Theater_TransitionTocale" ID="{EF709824-D5D8-4080-89F7-D5434EE33ED1}">
+									<ChildrenList>
+										<Action Name="" ID="{D8E82D87-97F6-4A0E-B237-3A92EEA3AFD9}" ShortID="238011308">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_TransitionTocale" ID="{B393944F-FEAD-44CC-8E5D-6FF20BA49237}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Ambiances" ID="{E1349A6F-D7D5-4836-9241-1895A9830AEA}" ShortID="389265221">
@@ -701,7 +727,7 @@
 								</Event>
 								<Event Name="Play_CrowdReaction_booing" ID="{BCD924EB-FC0B-46B4-87D4-7EED32261CA3}">
 									<ChildrenList>
-										<Action Name="" ID="{0FD09663-CD8F-462D-9DCB-59984D014DA9}" ShortID="1050054147">
+										<Action Name="" ID="{228FCEDD-12A5-4CC4-A70B-471EC56346C7}" ShortID="1040696789">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="38"/>
 											</PropertyList>
@@ -766,6 +792,13 @@
 								</Event>
 								<Event Name="Play_CrowdReaction_applause" ID="{F45BEE56-65B2-4BB0-956C-B7898C5503A4}">
 									<ChildrenList>
+										<Action Name="" ID="{5692299C-482D-451E-B035-57D8534606EF}" ShortID="327194016">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Theater_Applause" ID="{79E59F7E-0AAF-47C0-B06D-576F20723D20}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 										<Action Name="" ID="{2B3C991A-E348-4ABA-818E-76A911E348F5}" ShortID="160309109">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="38"/>
@@ -781,6 +814,19 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="SFX_Theater_CrowdGlobalHappy" ID="{32C6ABA8-C03A-48A1-9254-C544D754492C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{2237D074-5215-423B-9802-9B0A04E593DD}" ShortID="821639872">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="Delay" Type="Real64" Value="5"/>
+												<Property Name="FadeOutCurve" Type="int16" Value="1"/>
+												<Property Name="FadeTime" Type="Real64" Value="3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Theater_Applause" ID="{79E59F7E-0AAF-47C0-B06D-576F20723D20}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
