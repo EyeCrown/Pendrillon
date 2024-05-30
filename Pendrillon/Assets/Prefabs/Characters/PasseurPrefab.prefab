@@ -612,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 11400000, guid: 2d5e07e30adf699428134ced91f23045, type: 2}
+  _playAnim: 0
   _coordsOnStatge: {x: 0, y: 0}
   DialogueUpdate:
     m_PersistentCalls:
@@ -756,7 +757,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 972a5bd69f12ff44894ebc854671fa89, type: 2}
+      objectReference: {fileID: 9100000, guid: d5de9c267ae786f45a1ae1f4bd8403a5, type: 2}
+    - target: {fileID: 6129513510847153651, guid: 0611f9f23eafd8c43b2d1a97bac08dd6,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e5a39a28557128e4e988fd317058ceab, type: 2}
     - target: {fileID: 8241041979012069692, guid: 0611f9f23eafd8c43b2d1a97bac08dd6,
         type: 3}
       propertyPath: m_LocalPosition.z
