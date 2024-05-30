@@ -6,14 +6,23 @@ VAR MARCELLO = ""
 
 // Scene
 === church_day ===
+-> start
+
+= start
 // Define the actors of the scene
 #actor:Player:PLAYER
 #actor:Agathe:AGATHE
 #actor:Capucine:CAPUCINE:CAPUCINE LA LARBINE:CAPUCINE LA MARCASSINE:CAPUCINE LA TARTINE
 #actor:Marcello:MARCELLO:MARCELLOGRE:MARCELLOTARIE:MARCELLOCROUPIE
--> start
+// Set the location
+#set:church
+// Set the actor's positions
+#position:Player:4:2
+#position:Agathe:4:13
+#position:Marcello:2:11
+#position:Capucine:3:6
 
-= start
+// Start the scene
 #anim:Player:sleep
 MARCELLO: Et si on le réveillait avec une tape sur le museau, cheffe ?
 CAPUCINE: Cet abruti dort comme un nourrisson...

@@ -12,12 +12,18 @@ VAR irene_was_a_sireine = true
 
 // Scene
 === church_night ===
-// Define the actors of the scene
-#actor:Player:PLAYER
-#actor:Agathe:???:PRÊTRESSE AGATHE:AGATHE
 -> start
 
 = start
+// Define the actors
+#actor:Player:PLAYER
+#actor:Agathe:???:PRÊTRESSE AGATHE:AGATHE
+// Set the location
+#set:church
+// Set the actor's positions
+#position:Player:4:1
+#position:Agathe:4:3
+
 #playsound:Play_MUS_Story_SC_Eglise_Intro
 // Player arrive dans l'Église puis avance jusqu'à la statue.
 // Après un moment.

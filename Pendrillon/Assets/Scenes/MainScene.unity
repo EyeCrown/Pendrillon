@@ -2178,7 +2178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &673535451
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3395,7 +3395,7 @@ MonoBehaviour:
   _gridYBarge: 2.25
   _PrompterPosition: {fileID: 1236734075}
   _enemyPos: {fileID: 1399118768}
-  _inkAsset: {fileID: 4900000, guid: 9076e6f66725c854ebf5488c392e3618, type: 3}
+  _inkAsset: {fileID: 4900000, guid: daede2a868f56dd428021aab5e82497a, type: 3}
   _buttonPos: {x: 250, y: 150}
   _wwiseEvent:
     idInternal: 0
@@ -9477,7 +9477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ace8ced0e81c847968cdca0aeda757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typewriterStartsAutomatically: 0
+  typewriterStartsAutomatically: 1
   animationLoop: 0
   timeScale: 0
   _text: 
@@ -9489,8 +9489,7 @@ MonoBehaviour:
   databaseAppearances: {fileID: 11400000, guid: eed48add41fdd3f419d0efd953b83bcd,
     type: 2}
   databaseActions: {fileID: 11400000, guid: a283db8f79b3c1e488153e95ba0eb1f3, type: 2}
-  defaultAppearancesTags:
-  - size
+  defaultAppearancesTags: []
   defaultDisappearancesTags:
   - fade
   defaultBehaviorsTags: []
@@ -9528,7 +9527,7 @@ MonoBehaviour:
   onMessage:
     m_PersistentCalls:
       m_Calls: []
-  waitForNormalChars: 0.03
+  waitForNormalChars: 0.01
   waitLong: 0.6
   waitMiddle: 0.2
   avoidMultiplePunctuactionWait: 0

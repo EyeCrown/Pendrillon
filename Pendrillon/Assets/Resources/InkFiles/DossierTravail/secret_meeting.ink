@@ -7,25 +7,25 @@ VAR failed_breaking_jester_crate = false
 
 // Scene
 === secret_meeting ===
-// Define the actors of the scene
-#actor:Player:PLAYER
-#actor:Arle:???:ARLE
-#actor:Prompter:SOUFFLEUR
-#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
-#playsound:Play_AMB_SC_Cale_Ambiance
-#anim:Arle:hide
-
-#set:cale
-
-#position:Player:4:2
-#position:Arle:4:13
-#position:Prompter:7:9
-// Start the scene
 -> start
 
 // Start of the scene
 = start
-- ... #wait:6
+// Define the actors of the scene
+#actor:Player:PLAYER
+#actor:Arle:???:ARLE
+// Set the location
+#set:cale
+// Set the actor's positions
+#position:Player:4:2
+#position:Arle:4:13
+
+// Start the scene
+#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
+#playsound:Play_AMB_SC_Cale_Ambiance
+#anim:Arle:hide
+
+ARLE: Laisse moi te dire un petit secret... #anim:Arle:telling_secret
 // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
 - #audience:applause
