@@ -1016,40 +1016,34 @@ namespace MonoBehavior.Managers
         void HandleTagAudience(string reaction)
         {
             List<ParticleSystem> particleSystemEmiters = new();
-            
+
+            void AddToEmiter(ParticleSystem ps, float rate)
+            {
+                var emission = ps.emission;
+                emission.rateOverTime = rate;
+                particleSystemEmiters.Add(ps);
+            }
             
             switch (reaction)
             {
                 case Constants.ReactBooing:
 
-                    var emissionBoo = _particleSystemBoo.emission;
-                    emissionBoo.rateOverTime = 25.0f;
-                    particleSystemEmiters.Add(_particleSystemBoo);
-                    
-                    var emissionCry = _particleSystemCry.emission;
-                    emissionCry.rateOverTime = 100.0f;
-                    particleSystemEmiters.Add(_particleSystemCry);
+                    AddToEmiter(_particleSystemBoo, 25.0f);
+                    AddToEmiter(_particleSystemCry, 100.0f);
                     
                     break;
                 case Constants.ReactOvation:
                     break;
                 case Constants.ReactDebate:
-                    emissionBoo = _particleSystemBoo.emission;
-                    emissionBoo.rateOverTime = 1.0f;
-                    particleSystemEmiters.Add(_particleSystemBoo);
                     
-                    emissionCry = _particleSystemCry.emission;
-                    emissionCry.rateOverTime = 500.0f;
-                    particleSystemEmiters.Add(_particleSystemCry);
+                    AddToEmiter(_particleSystemBoo, 1.0f);
+                    AddToEmiter(_particleSystemCry, 500.0f);
+                    
                     break;
                 case Constants.ReactApplause:
-                    emissionBoo = _particleSystemBoo.emission;
-                    emissionBoo.rateOverTime = 100.0f;
-                    particleSystemEmiters.Add(_particleSystemBoo);
                     
-                    emissionCry = _particleSystemCry.emission;
-                    emissionCry.rateOverTime = 10.0f;
-                    particleSystemEmiters.Add(_particleSystemCry);
+                    AddToEmiter(_particleSystemCry, 10.0f);
+                    
                     break;
                 case Constants.ReactChoc:
                     break;
@@ -1069,7 +1063,7 @@ namespace MonoBehavior.Managers
 
                 foreach (var particleSystem in particleSystemEmiters)
                 {
-                    Debug.Log($"AudienceAction > Emit particles from {particleSystem.name}");
+                    Debug.Log($"AudienceAction > Emit particles from {particleSystem.transform.parent.name}");
                     particleSystem.Play();
                 }
                 
