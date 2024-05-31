@@ -165,6 +165,21 @@
 						<CurrentSwitchRef Name="Hype_06" ID="{E9D40200-B585-4FE3-B917-5118A09DA24C}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
+				<SoundcasterSession Name="SecretMeeting" ID="{E6CDE3AD-5B5D-4EEF-AEC8-3DA224D2B29B}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_AMB_SC_Forest_Ambiance" ID="{B658335D-9203-4B24-A2F3-C383A99F191C}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Stop_AMB_SC_Forest_Ambiance" ID="{9739BD0A-9C40-4F55-955F-3207A4D222F2}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
 			</ChildrenList>
 		</WorkUnit>
 	</SoundcasterSessions>

@@ -2,23 +2,37 @@
 
 // Scene
 === tribunal_1 ===
-// Define the actors of the scene
-#actor:Player:PLAYER
-#actor:Judge:JUGE ERNEST
 -> start
 
 = start
+// Define the actors of the scene
+#actor:Player:PLAYER
+#actor:Judge:JUGE ERNEST
+#actor:Arle:ARLE
+#actor:Capucine:CAPUCINE:CAPUCINE LA LARBINE:CAPUCINE LA MARCASSINE:CAPUCINE LA TARTINE
+#actor:Marcello:MARCELLO:MARCELLOGRE:MARCELLOTARIE:MARCELLOCROUPIE
+#actor:Agathe:AGATHE
+#actor:Naïda:???:NAÏDA:L'AFFREUSE SIREINE:LA POISCAILLE
+// Set the location
+#set:trial
+// Set the actor's positions
+#position:Player:4:2
+#position:Judge:0:0
+#position:Arle:0:0
+#position:Capucine:0:0
+#position:JudMarcelloge:0:0
+#position:Agathe:0:0
+#position:Naïda:0:0
+
+// Start the scene
 #open_curtains
 #audience:shock
 #judge_bell
-
 #audience:debate
 #audience:silent
 // Le juge est encore seul sur scène
 #scene_open_to_judge
-
 #audience:ovation
-
 - JUGE ERNEST: Silence ! Silence !
 #anim:Judge:bell
 #audience:silent
@@ -61,11 +75,9 @@ JUGE ERNEST: Silence ! J'exige le silence !
 - JUGE ERNEST: ... ainsi que, pour conclure...
 - JUGE ERNEST: ... D'amour impie. #audience:shock #screenshake
     ~ audience_judgement(-0.1)
-
 - JUGE ERNEST: Le Juge demande désormais à l'accusé de faire son entrée.
 #move(Player)
 #audience:booings
-
 - JUGE ERNEST: Silence ! Silence !
 #anim:Judge:bell
 - JUGE ERNEST: Au nom de la Déesse, le Juge demande le silence !
@@ -105,7 +117,6 @@ JUGE ERNEST: Silence ! J'exige le silence !
 ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège d'occuper, au sein de la Couronne, un rôle de tout premier plan...
 JUGE ERNEST: Poursuivez, je vous prie. #anim:Arle:bow
 ARLE: J'aime à penser que je suis, pour ce rôle, une actrice à la hauteur.
-
 JUGE ERNEST: Veuillez ne pas vous répandre en détails inutiles. #audience:laugh #anim:Arle:sad1
 ARLE: ...
 ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à messire le scélérat 
@@ -120,7 +131,6 @@ une mission de la plus haute importance.
     * [Rester silencieux.]
 JUGE ERNEST: Précisez quelle était la nature de cette mision, je vous prie. #anim:Arle:bow
 ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme accusé, était de tuer le Léviathan, et d'en ramener l'organe vital.
-
 ARLE: Je veux bien entendu parler de son cœur, Votre Honneur. #audience:laugh #anim:Judge:bell
 JUGE ERNEST: Bien, bien... Est-ce tout ?
 ARLE: Puis-ajouter une dernière chose, Votre Honneur ?

@@ -263,21 +263,6 @@
 										</Event>
 									</ChildrenList>
 								</Folder>
-								<Folder Name="Foley" ID="{A0AAC921-8138-4F09-8CA6-922845035195}" ShortID="441379274">
-									<ChildrenList>
-										<Event Name="Play_FOL_Player_Walk_StepPlank" ID="{0F09D264-F41E-48D2-BF6F-77753D0D16E1}">
-											<ChildrenList>
-												<Action Name="" ID="{51E8ACDA-ED2B-4A86-A214-6F3C73FE88C5}" ShortID="1031546907">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="FOL_Player_Walk_Step" ID="{2E5B3906-A08E-4B24-9A70-F572152C16D7}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-									</ChildrenList>
-								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="NPC" ID="{B86A02B6-3B66-4C70-A5D1-A0A82B080DCD}" ShortID="965421228">
@@ -539,6 +524,10 @@
 						<Folder Name="Transitons" ID="{BCA387BD-11EF-43A8-9252-2A83FE8A3069}" ShortID="301902424">
 							<ChildrenList>
 								<Event Name="Play_SFX_SC_Theater_TransitionTobarge" ID="{3484F2B0-DB0A-4EC6-87E6-217C42A2466F}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="4"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{E15F6DB4-5050-4F54-AEF5-06DC7382E682}" ShortID="506246309">
 											<ReferenceList>
@@ -550,8 +539,56 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_SC_Theater_TransitionTocale" ID="{EF709824-D5D8-4080-89F7-D5434EE33ED1}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="4"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{D8E82D87-97F6-4A0E-B237-3A92EEA3AFD9}" ShortID="238011308">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_TransitionTocale" ID="{B393944F-FEAD-44CC-8E5D-6FF20BA49237}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_SC_Theater_TransitionTosecretmeeting" ID="{71378AAE-DE24-426A-A30B-B13A3BE7BE56}">
+									<ChildrenList>
+										<Action Name="" ID="{371D11DC-35D0-4C73-BC46-63F04159CC65}" ShortID="702678516">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_TransitionTobarge" ID="{C8CA6034-4A09-476E-A559-7BA56FB51B7A}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_SC_Theater_TransitionTopont" ID="{0A79F1BD-9172-4EB7-A033-748A6E73D07F}">
+									<ChildrenList>
+										<Action Name="" ID="{EFCB4715-083A-48F0-B3A7-A15C48F6DEB9}" ShortID="112269010">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_TransitionTocale" ID="{B393944F-FEAD-44CC-8E5D-6FF20BA49237}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_SC_Theater_TransitionToeglise" ID="{34E2245A-2BC9-4937-AC09-53C4C435596F}">
+									<ChildrenList>
+										<Action Name="" ID="{3BB2B0A1-AD56-4042-A434-5ECF2127257A}" ShortID="446033924">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_SC_Theater_TransitionTobarge" ID="{C8CA6034-4A09-476E-A559-7BA56FB51B7A}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_SC_Theater_TransitionTotribunal" ID="{AA615318-46FA-4AFA-B1DC-E6D5058168B6}">
+									<ChildrenList>
+										<Action Name="" ID="{AE8E5356-217E-404A-802D-50B684906CC0}" ShortID="1066972207">
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="SFX_SC_Theater_TransitionTocale" ID="{B393944F-FEAD-44CC-8E5D-6FF20BA49237}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
@@ -655,15 +692,16 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Stop_AMB_SC_SecretMeeting_Ambiance" ID="{9739BD0A-9C40-4F55-955F-3207A4D222F2}">
+								<Event Name="Stop_AMB_SC_Forest_Ambiance" ID="{9739BD0A-9C40-4F55-955F-3207A4D222F2}">
 									<ChildrenList>
-										<Action Name="" ID="{C32BB7D0-3919-42B9-9FA4-CAFE40325172}" ShortID="1057666910">
+										<Action Name="" ID="{64BBB8F4-EFAA-42FB-AA60-29F1E025382A}" ShortID="928283532">
 											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
 												<Property Name="FadeTime" Type="Real64" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+													<ObjectRef Name="AMB_SC_Forest" ID="{91A6A4FB-036E-40CF-8526-7B20E40BD4B6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -919,6 +957,7 @@
 										<Action Name="" ID="{8FD59B00-7A3F-4012-915B-7C25B671C849}" ShortID="933035178">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
 												<Property Name="GameParameterValue" Type="Real64" Value="77"/>
 												<Property Name="Scope" Type="int16" Value="1"/>
 											</PropertyList>
@@ -940,15 +979,15 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_AMB_SC_SecretMeeting_Ambiance" ID="{B658335D-9203-4B24-A2F3-C383A99F191C}">
+								<Event Name="Play_AMB_SC_Forest_Ambiance" ID="{B658335D-9203-4B24-A2F3-C383A99F191C}">
 									<ChildrenList>
-										<Action Name="" ID="{D02380E3-5611-4F03-8EB4-F97F14D2A912}" ShortID="789780946">
+										<Action Name="" ID="{4CF75794-D6C2-4818-B375-F69907A8AD03}" ShortID="386035783">
 											<PropertyList>
 												<Property Name="FadeTime" Type="Real64" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+													<ObjectRef Name="AMB_SC_Forest" ID="{91A6A4FB-036E-40CF-8526-7B20E40BD4B6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -2955,6 +2994,21 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Foley" ID="{A0AAC921-8138-4F09-8CA6-922845035195}" ShortID="441379274">
+					<ChildrenList>
+						<Event Name="Play_FOL_Player_Walk_StepPlank" ID="{0F09D264-F41E-48D2-BF6F-77753D0D16E1}">
+							<ChildrenList>
+								<Action Name="" ID="{51E8ACDA-ED2B-4A86-A214-6F3C73FE88C5}" ShortID="1031546907">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="FOL_Player_Walk_Step" ID="{2E5B3906-A08E-4B24-9A70-F572152C16D7}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
