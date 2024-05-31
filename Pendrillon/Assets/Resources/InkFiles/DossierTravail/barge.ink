@@ -10,7 +10,7 @@
 // Scène 1
 = scene_1
 // Define the actors of the scene
-#actor:Player:PLAYER
+#actor:Player:PLAYER:VOYAGEUR
 #actor:Passeur:PASSEUR
 // Set the location
 #set:barge

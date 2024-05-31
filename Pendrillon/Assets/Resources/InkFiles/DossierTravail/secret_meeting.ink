@@ -24,6 +24,7 @@ VAR failed_breaking_jester_crate = false
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
 #playsound:Play_AMB_SC_Cale_Ambiance
 #anim:Arle:hide
+#wait:3 #audience:applause #wait:5
 
 ARLE: Laisse moi te dire un petit secret... #anim:Arle:telling_secret
 // On se trouve sur scène, seul.
