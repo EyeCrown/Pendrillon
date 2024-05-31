@@ -1,9 +1,8 @@
 // SECRET MEETING SCENE
 
-// VAriables
-VAR threat_jester = false
+// Variables
+VAR threat_arle = false
 VAR has_fail = false
-VAR failed_breaking_jester_crate = false
 
 // Scene
 === secret_meeting ===
@@ -18,7 +17,7 @@ VAR failed_breaking_jester_crate = false
 #set:forest
 // Set the actor's positions
 #position:Player:10:6
-#position:Arle:4:13
+#position:Arle:10:11
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
@@ -79,34 +78,22 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * [(À l'actrice, chuchotant) Me payeras-tu mes heures supplémentaires ?] PLAYER: *Psssst... Je suis trop mal payé pour que la pièce dure toute la nuit. Dépêche-toi !* #anim:Player:chuchote #playsound:VOX_Player_heuressupp
     * [(À l'actrice, chuchotant) Qu'attends-tu ? Es-tu en grève ?] PLAYER: *Psssst... Tu es en grève ? Qu'est-ce qu'il te prend ?* #anim:Player:chuchote #playsound:VOX_Player_tuesengreve
 - ???: *Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable !* #playsound:VOX_Arle_laissonslesselanguir
-- // On voit un bout du JESTER qui dépasse d'une caisses
-    * [(À L'ACTRICE) Tout le monde peut te voir !] PLAYER: *Psssst... Hé ! Tout le monde peut te voir, caché derrière la caisse !* #anim:Player:chuchote #playsound:VOX_Player_toutlemondepeuttevoir
+- // On voit un bout de ARLE qui dépasse d'un buisson
+    * [(À L'ACTRICE) Tout le monde peut te voir !] PLAYER: *Psssst... Hé ! Tout le monde peut te voir, caché derrière le buisson !* #anim:Player:chuchote #playsound:VOX_Player_toutlemondepeuttevoir
     * [(AU PUBLIC) On dirait que je suis épié !] PLAYER: J'ai la sensation que je ne suis pas aussi seul que je le croyais... Quelqu'un m'épie ! Quelqu'un de pas très discret... #anim:Player:neutre #audience:laugh #playsound:VOX_Player_quelquunmepie
         #audience:applause
-- // Le JESTER ne bouge pas, caché derrière sa caisse
-    * [Tirer la caisse.]
-        #anim:Player:pull_crate #anim:Arle:hide_surprise
-        // Quand le joueur tire la caisse, le JESTER continue de la suivre pour se cacher derrière
+- // ARLE ne bouge pas, caché derrière n buisson
+    * [Tirer le buisson.] PLAYER: Ce buisson me semble... suspect... #anim:Player:pull_bush #wait:1 #anim:Arle:follow_bush #audience:laugh
+        // Quand le joueur tire le buisson, ARLE continue de la suivre pour se cacher derrière
     * [Raisonner l'actrice.] PLAYER: Le public n'attend que ton apparition ! C'est maintenant ou jamais. #anim:Player:chuchote #playsound:VOX_Player_lepublicnattend
         ???: J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré. #anim:Arle:neutre #playsound:VOX_Arle_jailimpressionpublic
         ** [C'est de la paranoia.] PLAYER: À ce stade, c'est carrément de la paranoia. #anim:Player:chuchote #playsound:VOX_Player_cestparanoia
         ** [C'est de bonne guerre.] PLAYER: Peut-être bien, oui... Ça t'apprendra à me laisser seul sur scène ! #anim:Player:chuchote #playsound:VOX_Arle_peutetreseulscene
 - // Le joueur compte
     * [Je compte jusqu'à trois...] PLAYER: Je te préviens, je compte jusqu'à trois... #anim:Player:chuchote #playsound:VOX_Player_jecompte0
-    ** [Un...] PLAYER: Un... #anim:Player:chuchote #playsound:VOX_Player_jecompte1
-        *** [... deux...] PLAYER: ... deux... #anim:Player:chuchote #playsound:VOX_Player_jecompte2
-- // Le joueur s'apprête à briser la caisse
-    * [Briser la caisse. {t(STRE, -10)}] PLAYER: ... trois !! #playsound:VOX_Player_jecompte3
-        {sc(CHAR, 0): -> breaking_crate_S | -> breaking_crate_F}
-        ** (breaking_crate_S) #anim:Player:break_crate_success  #audience:ovation
-            ~ failed_breaking_jester_crate = true
-        ** (breaking_crate_F) #anim:Player:break_crate_failure  #audience:booing
-- ???: Mais qui voilà ? N'est-ce pas moi ?  #anim:Arle:joie #playsound:VOX_Arle_maisquivoila #audience:ovation
-{
-    - failed_breaking_jester_crate == true: ???: Désirant briser cette malheureuse caisse, messire... #anim:Arle:neutre #playsound:VOX_Arle_desirantbrisercaisse
-        ???: ... vous n'avez abîmé que votre dignité ! Héhé ! #anim:Arle:neutre #playsound:VOX_Arle_abimedignite
-        ???: Sauf votre respect. #anim:Arle:bow #playsound:VOX_Arle_saufvotrerespect #audience:laughter
-}
+    ** [Un...] PLAYER: Un... #anim:Player:chuchote #audience:surprise #playsound:VOX_Player_jecompte1
+        *** [... deux...] PLAYER: ... deux... #anim:Player:chuchote #audience:surprise #playsound:VOX_Player_jecompte2
+            **** [... trois !] ARLE: Mais qui voilà ? N'est-ce pas moi ?  #anim:Arle:joie #playsound:VOX_Arle_maisquivoila #audience:ovation
     * [Que faisais-tu caché ?] PLAYER: Que faisais-tu là, caché tel un rat ? #anim:Player:question
         ???: On ne connait jamais mieux une personne qu’en l’observant quand celle-ci croit être seule. #anim:Arle:neutre
         ** [Me connaître ?] PLAYER: Me connaître, moi ? #anim:Player:surprise
@@ -132,11 +119,11 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question
             -> arle_presentation
         ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 0)}]
-            {sc(CHAR, 0): -> mock_jester_S | -> mock_jester_F} 
-            *** (mock_jester_S) Tu es une authentique bouffonne... #anim:Player:neutre #anim:Arle:triste #audience:laughter
+            {sc(CHAR, 0): -> mock_arle_S | -> mock_arle_F} 
+            *** (mock_arle_S) Tu es une authentique bouffonne... #anim:Player:neutre #anim:Arle:triste #audience:laughter
                 ???: Bouffonne est l'une de mes professions, mais ce n'est pas mon nom. #anim:Arle:stress
                 -> arle_presentation
-            *** (mock_jester_F) Un authentique bouffon... #anim:Player:stress #anim:Arle:joie
+            *** (mock_arle_F) Un authentique bouffon... #anim:Player:stress #anim:Arle:joie
                 ???: Je me plais à inspirer le rire, le bonheur... la félicité ! Vous plaisez-vous à inspirer la pitié ? #anim:Arle:joie #audience:laugther #anim:Player:triste
                 -> arle_presentation
 - #character_presentation:Arle
