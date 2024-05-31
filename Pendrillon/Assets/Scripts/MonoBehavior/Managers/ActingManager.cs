@@ -333,7 +333,7 @@ namespace MonoBehavior.Managers
                     {
                         // /!\ TMP
 
-                        StartCoroutine(GameManager.Instance.GetCharacter(speaker).LeaveStage());
+                        // StartCoroutine(GameManager.Instance.GetCharacter(speaker).LeaveStage());
                         
                         
                         if (GameManager.Instance.GetCharacter(speaker) == null)
