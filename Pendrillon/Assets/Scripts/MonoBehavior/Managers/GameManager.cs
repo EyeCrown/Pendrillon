@@ -101,14 +101,15 @@ namespace MonoBehavior.Managers
             Resources.Load<TextAsset>("InkFiles/");*/
             
             _story = new Story(_inkAsset.text);
-
+            
+            SetupPlayer();
+            SetupCharacters();
+            SetupPrompter();
         }
 
         private void Start()
         {
-            SetupPlayer();
-            SetupCharacters();
-            SetupPrompter();
+            
             
             //FightingManager.Instance._player = GetPlayer();
             
@@ -130,6 +131,7 @@ namespace MonoBehavior.Managers
             Destroy(_player.GetComponent<Enemy>());
             
             _player.transform.LookAt(Camera.main.transform);
+            _player.transform.rotation = Quaternion.Euler(0, 90, 0);
             
             _player._character._nicknames.Clear();
             _player._character._nicknames.Add(_player._character.name);
@@ -162,7 +164,11 @@ namespace MonoBehavior.Managers
                 character.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100)); 
                 
                 //character.transform.rotation = _enemyPos.rotation;
-                character.transform.LookAt(Camera.main.transform);
+                //character.transform.LookAt(Camera.main.transform);
+                character.transform.rotation = Quaternion.Euler(0, 90, 0);
+;
+                
+                
                 character.GetComponent<CharacterHandler>()._character = _charactersBase[i];
                 character.GetComponent<CharacterHandler>()._character._nicknames.Clear();
                 character.GetComponent<CharacterHandler>()._character._nicknames.Add(character.GetComponent<CharacterHandler>()._character.name);
