@@ -24,9 +24,9 @@
 
 // Scène 1
 = scene_1
-PASSEUR: Héhé, je vois, je vois... #anim:Passeur:colere
+PASSEUR: Héhé, je vois, je vois... #anim:Passeur:colere #move:Player:9:9
 
-PASSEUR: Héhé, je vois, je vois... #anim:Passeur:joie
+PASSEUR: Héhé, je vois, je vois... #anim:Passeur:joie #move:Player:1:1
 PASSEUR: Héhé, je vois, je vois... #anim:Passeur:deception
 
 

@@ -2834,7 +2834,7 @@
 									<PropertyList>
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
-												<Value>-4</Value>
+												<Value>-1</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -3930,6 +3930,11 @@
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="AMB_SC_Cale_RND_WoodCreakingBoat" ID="{6E0154A3-08FE-4D0B-86AF-534F36032C8D}" ShortID="182596969">
 											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-8</Value>
+													</ValueList>
+												</Property>
 												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
@@ -4099,7 +4104,7 @@
 								</BlendContainer>
 							</ChildrenList>
 						</ActorMixer>
-						<ActorMixer Name="AMB_SecretMeeting" ID="{84FEFA11-1489-444A-9FAB-D229836A0680}" ShortID="257397641">
+						<ActorMixer Name="AMB_Forest" ID="{84FEFA11-1489-444A-9FAB-D229836A0680}" ShortID="257397641">
 							<PropertyList>
 								<Property Name="Color" Type="int16" Value="5"/>
 								<Property Name="OverrideColor" Type="bool" Value="True"/>
@@ -4113,7 +4118,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<BlendContainer Name="AMB_SC_SecretMeeting" ID="{91A6A4FB-036E-40CF-8526-7B20E40BD4B6}" ShortID="1053581877">
+								<BlendContainer Name="AMB_SC_Forest" ID="{91A6A4FB-036E-40CF-8526-7B20E40BD4B6}" ShortID="1053581877">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -4123,7 +4128,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<Sound Name="AMB_SC_SecretMeeting_Bed" ID="{F8481DC1-B6A2-4ECD-973D-B4067C733B3B}" ShortID="210998716">
+										<Sound Name="AMB_SC_Forest_Bed" ID="{F8481DC1-B6A2-4ECD-973D-B4067C733B3B}" ShortID="210998716">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 											</PropertyList>
@@ -4156,7 +4161,7 @@
 												<ActiveSource Name="AMB_SC_SecretMeeting_Bed" ID="{A3EDAF9E-CFC6-456A-A8B1-39CBE59BF11F}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<RandomSequenceContainer Name="AMB_SC_SecretMeeting_RND_Owl_Sequence" ID="{07952419-63A5-4CB9-A5F4-7459C94A9335}" ShortID="293508673">
+										<RandomSequenceContainer Name="AMB_SC_Forest_RND_Owl_Sequence" ID="{07952419-63A5-4CB9-A5F4-7459C94A9335}" ShortID="293508673">
 											<PropertyList>
 												<Property Name="InitialDelay" Type="Real64">
 													<ValueList>
@@ -4191,7 +4196,7 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<RandomSequenceContainer Name="AMB_SC_SecretMeeting_RND_Owl" ID="{C0F0FC90-FF54-4FF1-B52F-A55A37740538}" ShortID="365395200">
+												<RandomSequenceContainer Name="AMB_SC_Forest_RND_Owl" ID="{C0F0FC90-FF54-4FF1-B52F-A55A37740538}" ShortID="365395200">
 													<ReferenceList>
 														<Reference Name="Conversion">
 															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -4415,7 +4420,7 @@
 												</Sound>
 											</ChildrenList>
 											<Playlist>
-												<ItemRef Name="AMB_SC_SecretMeeting_RND_Owl" ID="{C0F0FC90-FF54-4FF1-B52F-A55A37740538}"/>
+												<ItemRef Name="AMB_SC_Forest_RND_Owl" ID="{C0F0FC90-FF54-4FF1-B52F-A55A37740538}"/>
 												<ItemRef Name="Silence" ID="{589C25A4-44D0-4AC0-8DD7-B3224D3C7187}"/>
 											</Playlist>
 										</RandomSequenceContainer>

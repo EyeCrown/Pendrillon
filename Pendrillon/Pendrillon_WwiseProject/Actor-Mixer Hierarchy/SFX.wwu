@@ -28,6 +28,13 @@
 							</ReferenceList>
 							<ChildrenList>
 								<BlendContainer Name="FOL_Player_Walk_Step" ID="{2E5B3906-A08E-4B24-9A70-F572152C16D7}" ShortID="796302217">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -340,11 +347,6 @@
 												<Property Name="InitialDelay" Type="Real64">
 													<ValueList>
 														<Value>0.1</Value>
-													</ValueList>
-												</Property>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>

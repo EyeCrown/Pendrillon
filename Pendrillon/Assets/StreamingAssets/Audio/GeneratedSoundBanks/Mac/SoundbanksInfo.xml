@@ -71,7 +71,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{27AAFDC9-BED4-8BF8-F9AD-E244B64B54FF}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{175CE3A4-905D-C993-CE19-1BC55D197000}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -1389,6 +1389,24 @@
 						<MediaRef Id="852967546"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1473420672" Name="Play_AMB_SC_Forest_Ambiance" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="163125790"/>
+						<MediaRef Id="204587455"/>
+						<MediaRef Id="221172938"/>
+						<MediaRef Id="304612567"/>
+						<MediaRef Id="453893297"/>
+						<MediaRef Id="457556400"/>
+						<MediaRef Id="511830181"/>
+						<MediaRef Id="671177936"/>
+						<MediaRef Id="704493112"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="455678034"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
 				<Event Id="1799027646" Name="Play_AMB_SC_Pont_Ambiance" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="52455275"/>
@@ -1421,24 +1439,6 @@
 						<MediaRef Id="947545656"/>
 						<MediaRef Id="1005052698"/>
 					</MediaRefs>
-				</Event>
-				<Event Id="1230282908" Name="Play_AMB_SC_SecretMeeting_Ambiance" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="163125790"/>
-						<MediaRef Id="204587455"/>
-						<MediaRef Id="221172938"/>
-						<MediaRef Id="304612567"/>
-						<MediaRef Id="453893297"/>
-						<MediaRef Id="457556400"/>
-						<MediaRef Id="511830181"/>
-						<MediaRef Id="671177936"/>
-						<MediaRef Id="704493112"/>
-					</MediaRefs>
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="455678034"/>
-						</Custom>
-					</PluginRefs>
 				</Event>
 				<Event Id="23769754" Name="Play_AMB_SC_Theater_CrowdChatter" DurationType="Infinite">
 					<MediaRefs>
@@ -2944,6 +2944,26 @@
 						<MediaRef Id="232089343"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1938743558" Name="Play_SFX_SC_Theater_TransitionToeglise" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="778142643"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1157752146" Name="Play_SFX_SC_Theater_TransitionTopont" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="232089343"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2013723974" Name="Play_SFX_SC_Theater_TransitionTosecretmeeting" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="778142643"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1370210010" Name="Play_SFX_SC_Theater_TransitionTotribunal" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="232089343"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="750758881" Name="Play_SFX_Story_JudgeBellFar" DurationType="OneShot" DurationMin="8.710969" DurationMax="8.710969">
 					<MediaRefs>
 						<MediaRef Id="150367689"/>
@@ -3847,6 +3867,24 @@
 						<MediaRef Id="852967546"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2289107154" Name="Stop_AMB_SC_Forest_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="163125790"/>
+						<MediaRef Id="204587455"/>
+						<MediaRef Id="221172938"/>
+						<MediaRef Id="304612567"/>
+						<MediaRef Id="453893297"/>
+						<MediaRef Id="457556400"/>
+						<MediaRef Id="511830181"/>
+						<MediaRef Id="671177936"/>
+						<MediaRef Id="704493112"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="455678034"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
 				<Event Id="581511488" Name="Stop_AMB_SC_Pont_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="52455275"/>
@@ -3879,24 +3917,6 @@
 						<MediaRef Id="947545656"/>
 						<MediaRef Id="1005052698"/>
 					</MediaRefs>
-				</Event>
-				<Event Id="253848382" Name="Stop_AMB_SC_SecretMeeting_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
-					<MediaRefs>
-						<MediaRef Id="163125790"/>
-						<MediaRef Id="204587455"/>
-						<MediaRef Id="221172938"/>
-						<MediaRef Id="304612567"/>
-						<MediaRef Id="453893297"/>
-						<MediaRef Id="457556400"/>
-						<MediaRef Id="511830181"/>
-						<MediaRef Id="671177936"/>
-						<MediaRef Id="704493112"/>
-					</MediaRefs>
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="455678034"/>
-						</Custom>
-					</PluginRefs>
 				</Event>
 				<Event Id="2638164736" Name="Stop_AMB_SC_Theater_CrowdChatter" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
@@ -4081,7 +4101,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{37266EC7-D188-C574-6487-2D80595C3495}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{FDC7E132-30DF-41B9-D0B3-A084838E7F74}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -5399,6 +5419,24 @@
 						<MediaRef Id="852967546"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1473420672" Name="Play_AMB_SC_Forest_Ambiance" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="163125790"/>
+						<MediaRef Id="204587455"/>
+						<MediaRef Id="221172938"/>
+						<MediaRef Id="304612567"/>
+						<MediaRef Id="453893297"/>
+						<MediaRef Id="457556400"/>
+						<MediaRef Id="511830181"/>
+						<MediaRef Id="671177936"/>
+						<MediaRef Id="704493112"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="455678034"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
 				<Event Id="1799027646" Name="Play_AMB_SC_Pont_Ambiance" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="52455275"/>
@@ -5431,24 +5469,6 @@
 						<MediaRef Id="947545656"/>
 						<MediaRef Id="1005052698"/>
 					</MediaRefs>
-				</Event>
-				<Event Id="1230282908" Name="Play_AMB_SC_SecretMeeting_Ambiance" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="163125790"/>
-						<MediaRef Id="204587455"/>
-						<MediaRef Id="221172938"/>
-						<MediaRef Id="304612567"/>
-						<MediaRef Id="453893297"/>
-						<MediaRef Id="457556400"/>
-						<MediaRef Id="511830181"/>
-						<MediaRef Id="671177936"/>
-						<MediaRef Id="704493112"/>
-					</MediaRefs>
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="455678034"/>
-						</Custom>
-					</PluginRefs>
 				</Event>
 				<Event Id="23769754" Name="Play_AMB_SC_Theater_CrowdChatter" DurationType="Infinite">
 					<MediaRefs>
@@ -6954,6 +6974,26 @@
 						<MediaRef Id="232089343"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1938743558" Name="Play_SFX_SC_Theater_TransitionToeglise" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="778142643"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1157752146" Name="Play_SFX_SC_Theater_TransitionTopont" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="232089343"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2013723974" Name="Play_SFX_SC_Theater_TransitionTosecretmeeting" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="778142643"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1370210010" Name="Play_SFX_SC_Theater_TransitionTotribunal" DurationType="OneShot" DurationMin="7.1239376" DurationMax="7.1239376">
+					<MediaRefs>
+						<MediaRef Id="232089343"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="750758881" Name="Play_SFX_Story_JudgeBellFar" DurationType="OneShot" DurationMin="8.710969" DurationMax="8.710969">
 					<MediaRefs>
 						<MediaRef Id="150367689"/>
@@ -7857,6 +7897,24 @@
 						<MediaRef Id="852967546"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2289107154" Name="Stop_AMB_SC_Forest_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="163125790"/>
+						<MediaRef Id="204587455"/>
+						<MediaRef Id="221172938"/>
+						<MediaRef Id="304612567"/>
+						<MediaRef Id="453893297"/>
+						<MediaRef Id="457556400"/>
+						<MediaRef Id="511830181"/>
+						<MediaRef Id="671177936"/>
+						<MediaRef Id="704493112"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="455678034"/>
+						</Custom>
+					</PluginRefs>
+				</Event>
 				<Event Id="581511488" Name="Stop_AMB_SC_Pont_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="52455275"/>
@@ -7889,24 +7947,6 @@
 						<MediaRef Id="947545656"/>
 						<MediaRef Id="1005052698"/>
 					</MediaRefs>
-				</Event>
-				<Event Id="253848382" Name="Stop_AMB_SC_SecretMeeting_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
-					<MediaRefs>
-						<MediaRef Id="163125790"/>
-						<MediaRef Id="204587455"/>
-						<MediaRef Id="221172938"/>
-						<MediaRef Id="304612567"/>
-						<MediaRef Id="453893297"/>
-						<MediaRef Id="457556400"/>
-						<MediaRef Id="511830181"/>
-						<MediaRef Id="671177936"/>
-						<MediaRef Id="704493112"/>
-					</MediaRefs>
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="455678034"/>
-						</Custom>
-					</PluginRefs>
 				</Event>
 				<Event Id="2638164736" Name="Stop_AMB_SC_Theater_CrowdChatter" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
@@ -8092,5 +8132,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{8FE73728-DB7C-79E5-8197-A751E1D52E12}</FileHash>
+	<FileHash>{B9FE52F1-C704-9812-72A3-F9AEF67C48EC}</FileHash>
 </SoundBanksInfo>
