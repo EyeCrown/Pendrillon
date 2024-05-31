@@ -22,5 +22,5 @@ INCLUDE boss_battle.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
--> barge
-//-> secret_meeting
+//-> barge
+-> secret_meeting
