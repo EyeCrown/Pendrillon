@@ -23,7 +23,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	411103699	Play_MUS_Story_SC_Barque_AGoodActor			\Pendrillon\Music\SC_Barque\Play_MUS_Story_SC_Barque_AGoodActor	
 	422168691	Play_VOX_Souffleur_Emotion_neutre			\Pendrillon\Dialogues\Emotions\Souffleur\Play_VOX_Souffleur_Emotion_neutre	
 	556338365	Play_VOX_Judge_Emotion_joie			\Pendrillon\Dialogues\Emotions\Judge\Play_VOX_Judge_Emotion_joie	
-	581511488	Stop_AMB_SC_Pont_Ambiance			\Pendrillon\Ambiances\StopAmbiances\Stop_AMB_SC_Pont_Ambiance	
 	582038020	Play_VOX_Agathe_Emotion_deception			\Pendrillon\Dialogues\Emotions\Agathe\Play_VOX_Agathe_Emotion_deception	
 	600578265	Play_VOX_Judge_Emotion_souffleur			\Pendrillon\Dialogues\Emotions\Judge\Play_VOX_Judge_Emotion_souffleur	
 	602014302	Play_VOX_Naida_Emotion_stress			\Pendrillon\Dialogues\Emotions\Naida\Play_VOX_Naida_Emotion_stress	
@@ -51,11 +50,13 @@ Event	ID	Name			Wwise Object Path	Notes
 	932431517	Play_VOX_Naida_Emotion_laugh			\Pendrillon\Dialogues\Emotions\Naida\Play_VOX_Naida_Emotion_laugh	
 	963656654	Play_VOX_Arle_Emotion_deception			\Pendrillon\Dialogues\Emotions\Arle\Play_VOX_Arle_Emotion_deception	
 	1040533815	Play_VOX_Souffleur_Emotion_laugh			\Pendrillon\Dialogues\Emotions\Souffleur\Play_VOX_Souffleur_Emotion_laugh	
+	1051898308	Stop_AMB_ALL			\Pendrillon\Ambiances\StopAmbiances\Stop_AMB_ALL	
+	1063148917	Stop_AMB_SC_Tempest_Ambiance			\Pendrillon\Ambiances\StopAmbiances\Stop_AMB_SC_Tempest_Ambiance	
+	1105680401	Play_AMB_SC_Trial_Ambiance			\Pendrillon\Ambiances\PlayAmbiances\Play_AMB_SC_Trial_Ambiance	
 	1112235236	Play_MUS_Story_SC_Barque_ToChurch			\Pendrillon\Music\SC_Barque\Play_MUS_Story_SC_Barque_ToChurch	
 	1130510859	Play_MUS_Story_SC_Eglise_StainedGlassHim			\Pendrillon\Music\Play_MUS_Story_SC_Eglise_StainedGlassHim	
 	1144095333	Play_VOX_Judge_Emotion_laugh			\Pendrillon\Dialogues\Emotions\Judge\Play_VOX_Judge_Emotion_laugh	
 	1152996478	Play_VOX_Capucine_Emotion_souffleur			\Pendrillon\Dialogues\Emotions\Capucine\Play_VOX_Capucine_Emotion_souffleur	
-	1157752146	Play_SFX_SC_Theater_TransitionTopont			\Pendrillon\SFX\Transitons\Play_SFX_SC_Theater_TransitionTopont	
 	1174991113	Play_VOX_Passeur_Emotion_joie			\Pendrillon\Dialogues\Emotions\Passeur\Play_VOX_Passeur_Emotion_joie	
 	1181182787	Play_CrowdReaction_laughter			\Pendrillon\Ambiances\AudienceReacts\Play_CrowdReaction_laughter	
 	1192296921	Play_VOX_Marcello_Emotion_surprise			\Pendrillon\Dialogues\Emotions\Marcello\Play_VOX_Marcello_Emotion_surprise	
@@ -66,7 +67,6 @@ Event	ID	Name			Wwise Object Path	Notes
 	1268519836	Stop_AMB_SC_Cale_Ambiance			\Pendrillon\Ambiances\StopAmbiances\Stop_AMB_SC_Cale_Ambiance	
 	1281583969	Play_VOX_Naida_Emotion_neutre			\Pendrillon\Dialogues\Emotions\Naida\Play_VOX_Naida_Emotion_neutre	
 	1368162950	VOX_Souffleur_pssthecolere			\Pendrillon\Dialogues\FullText\VOX_Souffleur_pssthecolere	
-	1370210010	Play_SFX_SC_Theater_TransitionTotribunal			\Pendrillon\SFX\Transitons\Play_SFX_SC_Theater_TransitionTotribunal	
 	1402891586	VOX_Ferryman_passagersloquaces			\Pendrillon\Dialogues\FullText\VOX_Ferryman_passagersloquaces	
 	1404048347	Play_MUS_Story_SC_Eglise_Intro			\Pendrillon\Music\Play_MUS_Story_SC_Eglise_Intro	
 	1404476062	Play_VOX_Naida_Emotion_colere			\Pendrillon\Dialogues\Emotions\Naida\Play_VOX_Naida_Emotion_colere	
@@ -87,20 +87,18 @@ Event	ID	Name			Wwise Object Path	Notes
 	1681429952	Play_CrowdReaction_choc			\Pendrillon\Ambiances\AudienceReacts\Play_CrowdReaction_choc	
 	1691553817	VOX_Souffleur_pasleton			\Pendrillon\Dialogues\FullText\VOX_Souffleur_pasleton	
 	1743489210	Play_VOX_Naida_Emotion_question			\Pendrillon\Dialogues\Emotions\Naida\Play_VOX_Naida_Emotion_question	
+	1771154060	Play_SFX_SC_Theater_TransitionToforest			\Pendrillon\SFX\Transitons\Play_SFX_SC_Theater_TransitionToforest	
 	1777087877	Play_MUS_Story_SC_Barque_BadViolin1			\Pendrillon\Music\SC_Barque\Play_MUS_Story_SC_Barque_BadViolin1	
 	1777087878	Play_MUS_Story_SC_Barque_BadViolin2			\Pendrillon\Music\SC_Barque\Play_MUS_Story_SC_Barque_BadViolin2	
 	1792392613	Play_VOX_Arle_Emotion_stress			\Pendrillon\Dialogues\Emotions\Arle\Play_VOX_Arle_Emotion_stress	
 	1795181583	Play_VOX_Player_Emotion_joie			\Pendrillon\Dialogues\Emotions\Player\Play_VOX_Player_Emotion_joie	
 	1796088427	Play_VOX_Agathe_Emotion_stress			\Pendrillon\Dialogues\Emotions\Agathe\Play_VOX_Agathe_Emotion_stress	
-	1799027646	Play_AMB_SC_Pont_Ambiance			\Pendrillon\Ambiances\PlayAmbiances\Play_AMB_SC_Pont_Ambiance	
 	1862458898	Play_VOX_Capucine_Emotion_surprise			\Pendrillon\Dialogues\Emotions\Capucine\Play_VOX_Capucine_Emotion_surprise	
 	1900933419	Play_SFX_Combat_NPC_RoyalGuard_Hurt			\Pendrillon\SFX\NPC\Bouffon\Play_SFX_Combat_NPC_RoyalGuard_Hurt	
 	1904322434	Play_VOX_Passeur_Emotion_colere			\Pendrillon\Dialogues\Emotions\Passeur\Play_VOX_Passeur_Emotion_colere	
 	1931408252	Play_VOX_Capucine_Emotion_joie			\Pendrillon\Dialogues\Emotions\Capucine\Play_VOX_Capucine_Emotion_joie	
-	1938743558	Play_SFX_SC_Theater_TransitionToeglise			\Pendrillon\SFX\Transitons\Play_SFX_SC_Theater_TransitionToeglise	
 	1947657850	VOX_Souffleur_ilestvraitalent			\Pendrillon\Dialogues\FullText\VOX_Souffleur_ilestvraitalent	
 	1992368636	Play_UI_Combat_Hover			\Pendrillon\UI\Combat\Play_UI_Combat_Hover	
-	2013723974	Play_SFX_SC_Theater_TransitionTosecretmeeting			\Pendrillon\SFX\Transitons\Play_SFX_SC_Theater_TransitionTosecretmeeting	
 	2018964231	Play_AMB_SC_Barque_Ambiance			\Pendrillon\Ambiances\PlayAmbiances\Play_AMB_SC_Barque_Ambiance	
 	2040197143	VOX_Souffleur_parici			\Pendrillon\Dialogues\FullText\VOX_Souffleur_parici	
 	2068043198	Play_VOX_Agathe_Emotion_laugh			\Pendrillon\Dialogues\Emotions\Agathe\Play_VOX_Agathe_Emotion_laugh	
@@ -115,6 +113,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2297073795	Play_VOX_Capucine_Emotion_question			\Pendrillon\Dialogues\Emotions\Capucine\Play_VOX_Capucine_Emotion_question	
 	2356948891	Play_MUS_Story_SC_Eglise_GuardsSearching			\Pendrillon\Music\Play_MUS_Story_SC_Eglise_GuardsSearching	
 	2367604071	VOX_Player_pasmauvaisecompagnie			\Pendrillon\Dialogues\FullText\VOX_Player_pasmauvaisecompagnie	
+	2391403843	Stop_AMB_SC_Trial_Ambiance			\Pendrillon\Ambiances\StopAmbiances\Stop_AMB_SC_Trial_Ambiance	
 	2401267240	VOX_Player_meretoujoursdit			\Pendrillon\Dialogues\FullText\VOX_Player_meretoujoursdit	
 	2437757803	Play_VOX_NPC_Leviathan_Defeated			\Pendrillon\SFX\NPC\Leviathan\Play_VOX_NPC_Leviathan_Defeated	
 	2454595623	Play_MUS_Story_SC_Eglise_StainedGlassBaby			\Pendrillon\Music\Play_MUS_Story_SC_Eglise_StainedGlassBaby	
@@ -134,6 +133,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2733785922	VOX_Souffleur_pssthe			\Pendrillon\Dialogues\FullText\VOX_Souffleur_pssthe	
 	2741000048	Play_VOX_Player_Emotion_question			\Pendrillon\Dialogues\Emotions\Player\Play_VOX_Player_Emotion_question	
 	2803575734	Play_VOX_Passeur_Emotion_question			\Pendrillon\Dialogues\Emotions\Passeur\Play_VOX_Passeur_Emotion_question	
+	2846389973	Play_SFX_SC_Theater_TransitionTotrial			\Pendrillon\SFX\Transitons\Play_SFX_SC_Theater_TransitionTotrial	
 	2867252463	Play_VOX_Marcello_Emotion_souffleur			\Pendrillon\Dialogues\Emotions\Marcello\Play_VOX_Marcello_Emotion_souffleur	
 	2937668469	Play_VOX_Marcello_Emotion_deception			\Pendrillon\Dialogues\Emotions\Marcello\Play_VOX_Marcello_Emotion_deception	
 	2982149132	VOX_Ferryman_hahajevois			\Pendrillon\Dialogues\FullText\VOX_Ferryman_hahajevois	
@@ -176,6 +176,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3831889620	VOX_Ferryman_passagersloquaces2			\Pendrillon\Dialogues\FullText\VOX_Ferryman_passagersloquaces2	
 	3834997573	Play_UI_Combat_ConfirmAttacks			\Pendrillon\UI\Combat\Play_UI_Combat_ConfirmAttacks	
 	3845829926	Play_SFX_Combat_Player_BasicAttack1			\Pendrillon\SFX\Player\Combat\Play_SFX_Combat_Player_BasicAttack1	
+	3851492263	Play_SFX_SC_Theater_TransitionTotempest			\Pendrillon\SFX\Transitons\Play_SFX_SC_Theater_TransitionTotempest	
 	3853215953	VOX_Souffleur_pasbavard			\Pendrillon\Dialogues\FullText\VOX_Souffleur_pasbavard	
 	3899960099	Play_SFX_NPC_Leviathan_AttackJaw			\Pendrillon\SFX\NPC\Leviathan\Play_SFX_NPC_Leviathan_AttackJaw	
 	3912902577	Play_SFX_NPC_Leviathan_AttackTail			\Pendrillon\SFX\NPC\Leviathan\Play_SFX_NPC_Leviathan_AttackTail	
@@ -188,6 +189,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	4058101365	GameStart			\Pendrillon\GameStart	
 	4096572270	Play_MUS_Story_SC_Barque_ANewName			\Pendrillon\Music\SC_Barque\Play_MUS_Story_SC_Barque_ANewName	
 	4107228529	Play_VOX_Naida_Emotion_souffleur			\Pendrillon\Dialogues\Emotions\Naida\Play_VOX_Naida_Emotion_souffleur	
+	4112260106	Play_SFX_SC_Theater_TransitionTochurch			\Pendrillon\SFX\Transitons\Play_SFX_SC_Theater_TransitionTochurch	
 	4140729765	Play_VOX_Souffleur_Emotion_surprise			\Pendrillon\Dialogues\Emotions\Souffleur\Play_VOX_Souffleur_Emotion_surprise	
 	4150050299	Play_VOX_Souffleur_Emotion_souffleur			\Pendrillon\Dialogues\Emotions\Souffleur\Play_VOX_Souffleur_Emotion_souffleur	
 	4168969102	Play_AMB_SC_Cale_Ambiance			\Pendrillon\Ambiances\PlayAmbiances\Play_AMB_SC_Cale_Ambiance	
@@ -197,6 +199,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	4268385224	Stop_VOX_Emotions			\Pendrillon\Dialogues\Stop_VOX_Emotions	
 	4279577983	Play_VOX_Souffleur_Emotion_joie			\Pendrillon\Dialogues\Emotions\Souffleur\Play_VOX_Souffleur_Emotion_joie	
 	4282943772	Play_VOX_Marcello_Emotion_stress			\Pendrillon\Dialogues\Emotions\Marcello\Play_VOX_Marcello_Emotion_stress	
+	4283293371	Play_AMB_SC_Tempest_Ambiance			\Pendrillon\Ambiances\PlayAmbiances\Play_AMB_SC_Tempest_Ambiance	
 	4284017573	Play_MUS_Story_SC_Barque_MysteriousLetter1			\Pendrillon\Music\SC_Barque\Play_MUS_Story_SC_Barque_MysteriousLetter1	
 	4284017574	Play_MUS_Story_SC_Barque_MysteriousLetter2			\Pendrillon\Music\SC_Barque\Play_MUS_Story_SC_Barque_MysteriousLetter2	
 	4284017575	Play_MUS_Story_SC_Barque_MysteriousLetter3			\Pendrillon\Music\SC_Barque\Play_MUS_Story_SC_Barque_MysteriousLetter3	
@@ -276,7 +279,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	184496859	colere	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\Voices\French(FR)\colere_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Voices\VOX_Dialog\VOX_Emotions\VOX_Emotions_PlaceholderRomain\colere		14678
 	184603848	SFX_Theater_CrowdHype_CrowdQuietRND_7	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Theater_CrowdHype_CrowdQuietRND_7_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyLow\SFX_Theater_Crowd_BooRNDLow\SFX_Theater_CrowdHype_CrowdQuietRND_7		62124
 	188904695	FOL_Player_Walk_PlankStep_10	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\FOL_Player_Walk_PlankStep_10_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\SFX\SFX_Foley\SFX_Foley_Player\FOL_Player_Walk_Step\FOL_Player_Walk_PlankStep\FOL_Player_Walk_PlankStep_10		6513
+	189742003	AMC_SC_Eglise_Bed_RainOutside	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMC_SC_Eglise_Bed_RainOutside_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Eglise\AMC_SC_Eglise_Ambiance\AMC_SC_Eglise_Bed_RainOutside		336071
 	192352510	AMB_SC_PontTempete_RND_HugeWave_4	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_PontTempete_RND_HugeWave_4_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Pont\AMB_SC_Pont\AMB_SC_Pont-SeaBoat\ENV_SC_PontTempete_RND_Waves\ENV_SC_PontTempete_RND_Waves\AMB_SC_PontTempete_RND_HugeWave_4		60759
+	192591405	AMC_SC_Eglise_RND_Thunder_Close_6	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMC_SC_Eglise_RND_Thunder_Close_6_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Eglise\AMC_SC_Eglise_Ambiance\ENV_SC_PontTempete_RND_Thunder\AMB_SC_PontTempete_RND_ThunderClose\AMC_SC_Eglise_RND_Thunder_Close_6		72872
 	197874328	SFX_Theater_CrowdHype_CrowdNeutral_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Theater_CrowdHype_CrowdNeutral_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalNeutral\SFX_Theater_CrowdNeutral\SFX_Theater_CrowdHype_CrowdNeutral_3		65607
 	198347337	VOX_NPC_Leviathan_Scream_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\VOX_NPC_Leviathan_Scream_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Voices\VOX_Combat\Leviathan\VOX_NPC_Leviathan_Scream\VOX_NPC_Leviathan_Scream_3		82833
 	204587455	AMB_SC_SecretMeeting_RND_Owl_7	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_SecretMeeting_RND_Owl_7_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Forest\AMB_SC_Forest\AMB_SC_Forest_RND_Owl_Sequence\AMB_SC_Forest_RND_Owl\AMB_SC_SecretMeeting_RND_Owl_7		28264
@@ -365,6 +370,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	464851883	VOX_Souffleur_ilestvraitalent	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\Voices\French(FR)\VOX_Souffleur_ilestvraitalent_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Voices\VOX_Dialog\VOX_FullText\Souffleur\VOX_Souffleur_ilestvraitalent		40562
 	469446100	SFX_Theater_CrowdHype_Laughing	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Theater_CrowdHype_Laughing_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Theater\ENV_Theater_Crowd\ENV_Theater_Crowd_SpecialReactions\SFX_Theater_CrowdHype_Laughing		56612
 	470264213	FOL_Humanoid_Hurt_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\FOL_Humanoid_Hurt_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\SFX\SFX_Foley\SFX_Foley_NPC\FOL_Humanoid_Hurt\FOL_Humanoid_Hurt_3		8782
+	479016596	AMC_SC_Eglise_RND_Thunder_Far_4	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMC_SC_Eglise_RND_Thunder_Far_4_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Eglise\AMC_SC_Eglise_Ambiance\ENV_SC_PontTempete_RND_Thunder\AMB_SC_PontTempete_RND_ThunderFar\AMC_SC_Eglise_RND_Thunder_Far_4		89269
 	482176403	FOL_Player_Walk_PlankStep_06	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\FOL_Player_Walk_PlankStep_06_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\SFX\SFX_Foley\SFX_Foley_Player\FOL_Player_Walk_Step\FOL_Player_Walk_PlankStep\FOL_Player_Walk_PlankStep_06		8118
 	485237145	UI_HUD_SkillCheck_Success	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_SC_Theater_SkillCheck_Success_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_HUD\UI_HUD_SkillCheck_Success\UI_HUD_SkillCheck_Success		46060
 	488703637	AMB_SC_Cale_RND_WoodCreakingBoat_06	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_Cale_RND_WoodCreakingBoat_06_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Cale\AMB_SC_Cale_Ambiance\AMB_SC_Cale_RND_WoodCreakingBoat\AMB_SC_Cale_RND_WoodCreakingBoat\AMB_SC_Cale_RND_WoodCreakingBoat_06		104079
@@ -388,6 +394,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	558614219	VOX_NPC_Leviathan_Underwater_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\VOX_NPC_Leviathan_Underwater_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Voices\VOX_Combat\Leviathan\VOX_NPC_Leviathan_Underwater\VOX_NPC_Leviathan_Underwater_3		71802
 	560360515	AMB_SC_Cale_RND_Water_02	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_Mockup_CaleBateau_RND_Water_02_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Cale\AMB_SC_Cale_Ambiance\AMB_SC_Cale_RND_WaterWaves\RND_WaterWaves\AMB_SC_Cale_RND_Water_02		77199
 	560679518	SFX_Theater_CrowdHype_CrowdQuietRND_1	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Theater_CrowdHype_CrowdQuietRND_1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalUnhappy\SFX_Theater_CrowdUnhappyLow\SFX_Theater_Crowd_BooRNDLow\SFX_Theater_CrowdHype_CrowdQuietRND_1		57264
+	561017278	AMC_SC_Eglise_RND_Thunder_Far_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMC_SC_Eglise_RND_Thunder_Far_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Eglise\AMC_SC_Eglise_Ambiance\ENV_SC_PontTempete_RND_Thunder\AMB_SC_PontTempete_RND_ThunderFar\AMC_SC_Eglise_RND_Thunder_Far_3		88873
 	565196038	SFX_Story_SC_Eglise_GuardsSearchingFar_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Story_SC_Eglise_GuardsSearchingFar_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\SFX\SFX_Story\SC_Eglise\SFX_Story_SC_Eglise_GuardsSearchingFar\SFX_Story_SC_Eglise_GuardsSearchingFar_3		104732
 	580828587	VOX_Ferryman_passagersloquaces2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\Voices\French(FR)\VOX_Ferryman_passagersloquaces2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Voices\VOX_Dialog\VOX_FullText\Passeur\VOX_Ferryman_passagersloquaces2		52128
 	580975801	AMB_SC_Cale_RND_Water_01	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_Mockup_CaleBateau_RND_Water_01_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Cale\AMB_SC_Cale_Ambiance\AMB_SC_Cale_RND_WaterWaves\RND_WaterWaves\AMB_SC_Cale_RND_Water_01		127455
@@ -398,6 +405,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	590653695	AMB_SC_Cale_RND_WoodCreakingMechanism_01	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_Cale_RND_WoodCreakingMechanism_01_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Cale\AMB_SC_Cale_Ambiance\AMB_SC_Cale_RND_WoodCreakingMechanism\AMB_SC_Cale_RND_WoodCreakingMechanism\AMB_SC_Cale_RND_WoodCreakingMechanism_01		64960
 	594127183	SFX_Story_SC_Eglise_GuardsSearchingFar_2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Story_SC_Eglise_GuardsSearchingFar_2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\SFX\SFX_Story\SC_Eglise\SFX_Story_SC_Eglise_GuardsSearchingFar\SFX_Story_SC_Eglise_GuardsSearchingFar_2		120544
 	595979347	UI_Combat_SelectAttack_3_v2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\UI_Combat_SelectAttack_3_v2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_Combat\UI_Combat_Select_Attack\UI_Combat_SelectAttack_3_v2		12333
+	601057064	AMC_SC_Eglise_RND_Thunder_Close_5	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMC_SC_Eglise_RND_Thunder_Close_5_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Eglise\AMC_SC_Eglise_Ambiance\ENV_SC_PontTempete_RND_Thunder\AMB_SC_PontTempete_RND_ThunderClose\AMC_SC_Eglise_RND_Thunder_Close_5		95600
 	602069125	UI_HUD_ChoiceBubble_Appears_6_v3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\UI_HUD_ChoiceBubble_Appears_6_v3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_HUD\UI_HUD_ChoiceBubble_BurstAppears\UI_HUD_ChoiceBubble_Appears\UI_HUD_ChoiceBubble_Appears_6_v3		5925
 	603713248	FOL_Humanoid_Hurt_4	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\FOL_Humanoid_Hurt_4_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\SFX\SFX_Foley\SFX_Foley_NPC\FOL_Humanoid_Hurt\FOL_Humanoid_Hurt_4		8189
 	603865033	FOL_Player_Walk_ClothRustle_02	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\FOL_Player_Walk_ClothRustle_02_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\SFX\SFX_Foley\SFX_Foley_Player\FOL_Player_Walk_Step\FOL_Player_Walk_ClothRustle\FOL_Player_Walk_ClothRustle_02		3834
@@ -405,6 +413,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	615805347	SFX_Theater_CrowdHype_ClapsOnly_01	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Theater_CrowdHype_ClapsOnly_01_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Theater\ENV_Theater_Crowd\ENV_Theater_Crowd_SpecialReactions\SFX_Theater_Applause\SFX_Theater_CrowdHype_ClapsOnly\SFX_Theater_CrowdHype_ClapsOnly_01		86573
 	621796348	MUS_Story_SC_Barque_TrialInView	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\MUS_Story_SC_Barque_TrialInView_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Music\Music\MUS_Barque\MUS_Story_SC_Barque_TrialInView		44511
 	626361040	SFX_Story_SC_Eglise_LightIreneLamp	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Story_SC_Eglise_LightIreneLamp_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\SFX\SFX_Story\SC_Eglise\SFX_Story_SC_Eglise_Bed_Story_LampOn\SFX_Story_SC_Eglise_LightIreneLamp		22411
+	627020398	AMC_SC_Eglise_RND_Thunder_MidDistance_7	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMC_SC_Eglise_RND_Thunder_MidDistance_7_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Eglise\AMC_SC_Eglise_Ambiance\ENV_SC_PontTempete_RND_Thunder\AMB_SC_PontTempete_RND_ThunderMidDistance\AMC_SC_Eglise_RND_Thunder_MidDistance_7		107132
 	635065215	SFX_Theater_CrowdHype_ClapsOnly_05	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Theater_CrowdHype_ClapsOnly_05_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Theater\ENV_Theater_Crowd\ENV_Theater_Crowd_SpecialReactions\SFX_Theater_Applause\SFX_Theater_CrowdHype_ClapsOnly\SFX_Theater_CrowdHype_ClapsOnly_05		77708
 	636157940	AMB_SC_PontTempete_RND_BoatCreaking_01	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_PontTempete_BoatCreaking_01_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Pont\AMB_SC_Pont\AMB_SC_Pont-SeaBoat\AMB_SC_PontTempete_RND_BoatCreakingSequenceGenerator\AMB_SC_PontTempete_RND_BoatCreaking\AMB_SC_PontTempete_RND_BoatCreaking\AMB_SC_PontTempete_RND_BoatCreaking_01		83069
 	657140677	AMB_SC_PontTempete_RND_HugeWave_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_PontTempete_RND_HugeWave_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Pont\AMB_SC_Pont\AMB_SC_Pont-SeaBoat\ENV_SC_PontTempete_RND_Waves\ENV_SC_PontTempete_RND_Waves\AMB_SC_PontTempete_RND_HugeWave_3		51968
@@ -416,6 +425,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	683766544	AMB_SC_PontTempete_RND_Thunder_Close_3	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_PontTempete_Thunder_Close_3_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Pont\AMB_SC_Pont\ENV_SC_Pont-Weather\AMB_SC_Pont-Weather_OS_Thunder\ENV_SC_PontTempete_RND_Thunder\AMB_SC_PontTempete_RND_ThunderClose\AMB_SC_PontTempete_RND_Thunder_Close_3		69919
 	687613328	SFX_Theater_CrowdHype_CrowdHappy_2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Theater_CrowdHype_CrowdHappy_2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Theater\ENV_Theater_Crowd\CrowdHype\SFX_Theater_CrowdGlobalHappy\SFX_Theater_Crowd_CrowdHappyHigh\SFX_Theater_Crowd_CrowdHappy\SFX_Theater_CrowdHype_CrowdHappy_2		111307
 	692255836	VOX_NPC_Leviathan_Defeated	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\VOX_NPC_Leviathan_Defeated_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Voices\VOX_Combat\Leviathan\VOX_NPC_Leviathan_Defeated		170323
+	692405616	AMC_SC_Eglise_RND_Thunder_Close_8	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMC_SC_Eglise_RND_Thunder_Close_8_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Eglise\AMC_SC_Eglise_Ambiance\ENV_SC_PontTempete_RND_Thunder\AMB_SC_PontTempete_RND_ThunderClose\AMC_SC_Eglise_RND_Thunder_Close_8		65869
 	694302993	AMB_SC_Barque_Bed_WaterWaves	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_Barque_Bed_WaterWaves_015A5435.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Barque\AMB_SC_Barque_Ambiance\AMB_SC_Barque_Bed_WaterWaves		1253349
 	694751466	MUS_Story_SC_Eglise_StainedGlassLookingOcean	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\MUS_Story_SC_Eglise_StainedGlassLookingOcean_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Music\Music\MUS_Eglise\MUS_Story_SC_Eglise_StainedGlassLookingOcean		47498
 	696326227	SFX_Combat_Player_BasicAttack1	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_Combat_Player_BasicAttack1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\SFX\SFX_Combat\SFX_Combat_PC\SFX_Combat_Player_BasicAttack1		20598
@@ -496,6 +506,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	918670542	UI_HUD_SkillCheck_Roll_01	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\SFX_SC_Theater_SkillCheck_Roll_01_F7CC2C07.wem		\Actor-Mixer Hierarchy\Pendrillon\UI\All_UI\UI_HUD\UI_HUD_SkillCheck_Success\UI_HUD_SkillCheck_Roll\UI_HUD_SkillCheck_Roll_01		54277
 	924900935	AMB_SC_Barque_RND_Lantern_02	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_Barque_RND_Lantern_02_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Barque\AMB_SC_Barque_Ambiance\AMB_SC_Barque_RND\AMB_SC_Barque_RNDSequence\AMB_SC_Barque_RND_Lantern\AMB_SC_Barque_RND_Lantern_02		30587
 	928569971	AMB_SC_Cale_RND_WoodCreakingMechanism_10	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_Cale_RND_WoodCreakingMechanism_10_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Cale\AMB_SC_Cale_Ambiance\AMB_SC_Cale_RND_WoodCreakingMechanism\AMB_SC_Cale_RND_WoodCreakingMechanism\AMB_SC_Cale_RND_WoodCreakingMechanism_10		15340
+	933823783	AMC_SC_Eglise_RND_Thunder_MidDistance_2	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMC_SC_Eglise_RND_Thunder_MidDistance_2_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Eglise\AMC_SC_Eglise_Ambiance\ENV_SC_PontTempete_RND_Thunder\AMB_SC_PontTempete_RND_ThunderMidDistance\AMC_SC_Eglise_RND_Thunder_MidDistance_2		43388
 	937678568	VOX_Ferryman_commencepresenter	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\Voices\French(FR)\VOX_Ferryman_commencepresenter_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Voices\VOX_Dialog\VOX_FullText\Passeur\VOX_Ferryman_commencepresenter		33077
 	939844663	deception-003	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\Voices\French(FR)\deception-003_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Voices\VOX_Dialog\VOX_Emotions\VOX_Emotions_PlaceholderRomain\deception\deception-003		14888
 	947545656	AMB_SC_PontTempete_RND_HugeWave_1	C:\AAA\_PENDRILLON\Pendrillon\Pendrillon\Pendrillon_WwiseProject\.cache\Mac\SFX\AMB_SC_PontTempete_RND_HugeWave_1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Pendrillon\Environment\Environment\AMB_Pont\AMB_SC_Pont\AMB_SC_Pont-SeaBoat\ENV_SC_PontTempete_RND_Waves\ENV_SC_PontTempete_RND_Waves\AMB_SC_PontTempete_RND_HugeWave_1		54815

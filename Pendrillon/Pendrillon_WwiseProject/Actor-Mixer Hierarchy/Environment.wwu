@@ -4131,6 +4131,11 @@
 										<Sound Name="AMB_SC_Forest_Bed" ID="{F8481DC1-B6A2-4ECD-973D-B4067C733B3B}" ShortID="210998716">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -4683,6 +4688,282 @@
 											</ChildrenList>
 											<Playlist>
 												<ItemRef Name="AMB_SC_Eglise_RND_ChoirChord" ID="{680BE413-3BDA-4AD3-9C37-1AC5187AB8E9}"/>
+											</Playlist>
+										</RandomSequenceContainer>
+										<Sound Name="AMC_SC_Eglise_Bed_RainOutside" ID="{EE0A7A93-86F1-4CD5-A9E1-C00C011023FE}" ShortID="122104402">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMC_SC_Eglise_Bed_RainOutside" ID="{1F001E47-C48B-4FA4-98D7-E8E851B5360F}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="1522.905"/>
+														<Property Name="LoopBegin" Type="Real64" Value="1.41402070147679"/>
+														<Property Name="LoopEnd" Type="Real64" Value="21.9256619989451"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Pendrillon_5kMax" ID="{FB2D17E1-2529-42D3-AA1F-9ACE9CC586C5}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+													</ReferenceList>
+													<Language>SFX</Language>
+													<AudioFile>AMC_SC_Eglise_Bed_RainOutside.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="189742003"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMC_SC_Eglise_Bed_RainOutside" ID="{1F001E47-C48B-4FA4-98D7-E8E851B5360F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="ENV_SC_PontTempete_RND_Thunder" ID="{9476816B-587E-4960-AD23-5A9A9060789E}" ShortID="164728183">
+											<PropertyList>
+												<Property Name="InitialDelay" Type="Real64">
+													<ValueList>
+														<Value>7.5</Value>
+													</ValueList>
+												</Property>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="8">
+													<ModifierList>
+														<ModifierInfo>
+															<Modifier Name="" ID="{6D0C7A75-D78B-4102-97A3-E7E0E11AEFE2}">
+																<PropertyList>
+																	<Property Name="Enabled" Type="bool" Value="True"/>
+																	<Property Name="Max" Type="Real64" Value="2"/>
+																	<Property Name="Min" Type="Real64" Value="-3"/>
+																</PropertyList>
+															</Modifier>
+														</ModifierInfo>
+													</ModifierList>
+												</Property>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="AMB_SC_PontTempete_RND_ThunderClose" ID="{F508862E-9759-43E2-BA19-CCC1AF752AE6}" ShortID="1017854302">
+													<PropertyList>
+														<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="2"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="AMC_SC_Eglise_RND_Thunder_Close_5" ID="{071965F3-DB13-4318-AEAD-BCB973360E37}" ShortID="603554538">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_Thunder_Close_5" ID="{2A4ACA71-2E3F-4A76-B005-17EDC24F76ED}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_Thunder_Close_5.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="601057064"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_Thunder_Close_5" ID="{2A4ACA71-2E3F-4A76-B005-17EDC24F76ED}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMC_SC_Eglise_RND_Thunder_Close_6" ID="{4D9FB627-274D-4FC8-BAE9-6DCA305B74AE}" ShortID="629340698">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_Thunder_Close_6" ID="{E49318DA-C5DF-4239-8089-189D38F2F3A7}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_Thunder_Close_6.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="192591405"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_Thunder_Close_6" ID="{E49318DA-C5DF-4239-8089-189D38F2F3A7}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMC_SC_Eglise_RND_Thunder_Close_8" ID="{F0CE561E-F5E6-49A9-8B44-FB017662CFE8}" ShortID="877217256">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_Thunder_Close_8" ID="{ED63954C-F426-4EB4-A025-BB312ACE6C80}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_Thunder_Close_8.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="692405616"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_Thunder_Close_8" ID="{ED63954C-F426-4EB4-A025-BB312ACE6C80}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="AMB_SC_PontTempete_RND_ThunderFar" ID="{7B958B51-A7B5-4AD3-BEE8-C103EE31745E}" ShortID="561698551">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="AMC_SC_Eglise_RND_Thunder_Far_3" ID="{2305FD55-771A-4DEB-89B6-37AE6FE5C969}" ShortID="151652694">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_Thunder_Far_3" ID="{814F45D9-D97D-4432-8F2B-BAF89EA2FDD8}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_Thunder_Far_3.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="561017278"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_Thunder_Far_3" ID="{814F45D9-D97D-4432-8F2B-BAF89EA2FDD8}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMC_SC_Eglise_RND_Thunder_Far_4" ID="{8407A8A2-D35C-4F46-A359-3309F0E869D6}" ShortID="1004850034">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_Thunder_Far_4" ID="{BBEF3430-CD8A-452C-AC63-BC1FF083CEF1}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_Thunder_Far_4.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="479016596"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_Thunder_Far_4" ID="{BBEF3430-CD8A-452C-AC63-BC1FF083CEF1}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<RandomSequenceContainer Name="AMB_SC_PontTempete_RND_ThunderMidDistance" ID="{46DD88AE-0A23-4292-8D4C-BF66CF082340}" ShortID="702295312">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="AMC_SC_Eglise_RND_Thunder_MidDistance_2" ID="{0033EA7C-6A1D-4911-9397-136B1F0F24AF}" ShortID="13750541">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_Thunder_MidDistance_2" ID="{28F30755-56E3-4190-B159-B8B8578AA9DB}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_Thunder_MidDistance_2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="933823783"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_Thunder_MidDistance_2" ID="{28F30755-56E3-4190-B159-B8B8578AA9DB}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="AMC_SC_Eglise_RND_Thunder_MidDistance_7" ID="{B80F367E-FCAD-495A-B636-9EAB9D13FEFF}" ShortID="149689879">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="AMC_SC_Eglise_RND_Thunder_MidDistance_7" ID="{FD1CC446-F40D-49E8-A351-D7EAC755EEF2}">
+																	<Language>SFX</Language>
+																	<AudioFile>AMC_SC_Eglise_RND_Thunder_MidDistance_7.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="627020398"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="AMC_SC_Eglise_RND_Thunder_MidDistance_7" ID="{FD1CC446-F40D-49E8-A351-D7EAC755EEF2}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="AMB_SC_PontTempete_RND_ThunderClose" ID="{F508862E-9759-43E2-BA19-CCC1AF752AE6}"/>
+												<ItemRef Name="AMB_SC_PontTempete_RND_ThunderFar" ID="{7B958B51-A7B5-4AD3-BEE8-C103EE31745E}"/>
+												<ItemRef Name="AMB_SC_PontTempete_RND_ThunderClose" ID="{F508862E-9759-43E2-BA19-CCC1AF752AE6}"/>
+												<ItemRef Name="AMB_SC_PontTempete_RND_ThunderMidDistance" ID="{46DD88AE-0A23-4292-8D4C-BF66CF082340}"/>
 											</Playlist>
 										</RandomSequenceContainer>
 									</ChildrenList>
