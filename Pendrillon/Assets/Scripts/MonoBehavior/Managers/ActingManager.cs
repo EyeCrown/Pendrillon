@@ -589,7 +589,7 @@ namespace MonoBehavior.Managers
         #region EventHandlers
         void OnPhaseStart()
         {
-            _uiParent.gameObject.SetActive(true);
+            _uiParent.SetActive(true);
 
             GameManager.Instance.GetPlayer()._character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
             GameManager.Instance.GetPlayer()._character.strength.SetupBase((int)GameManager.Instance._story.variablesState["p_stre"]);
@@ -614,12 +614,12 @@ namespace MonoBehavior.Managers
         {
             Debug.Log("AM.OnPhaseEnded()");
             // Clear UI
-            _uiParent.gameObject.SetActive(false);
+            _uiParent.SetActive(false);
             ClearUI.Invoke();
         }
         void OnClearUI()
         {
-            //_dialogueText.text = String.Empty;
+            _dialogueText.text = String.Empty;
             _tagsText.text = "Tags:\n";
 
             foreach (var button in _choicesButtonList)
@@ -1025,7 +1025,7 @@ namespace MonoBehavior.Managers
                     return;
             }
             
-            Debug.LogError($"AM.HandleTagAudience > Unkwonw reaction | {reaction} |");
+            Debug.Log($"AM.HandleTagAudience > Reaction: {reaction}");
 
             var soundToPlay = "Play_CrowdReaction_" + reaction;
             void AudienceAction()
