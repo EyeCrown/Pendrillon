@@ -15,6 +15,8 @@ public class CharacterHandler : MonoBehaviour
     public Character _character;
 
     Animator _anim;
+    private GameObject _rope;
+    private Vector3 _ropeOffset = new Vector3(0, 10.0f, -0.35f);
 
     public bool _playAnim = false;
     
@@ -43,14 +45,13 @@ public class CharacterHandler : MonoBehaviour
         _anim = GetComponentInChildren<Animator>();
         ResetAllAnimTriggers();
         
-        _canvas         = transform.Find("Canvas").GetComponent<Canvas>();
-        _uiActing       = transform.Find("Canvas/ACTING_PART").gameObject;
-        //_nameText       = _uiActing.transform.Find("NameBox/NameText").GetComponent<TextMeshProUGUI>();
-        //_dialogueText   = _uiActing.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
-
+        _canvas     = transform.Find("Canvas").GetComponent<Canvas>();
+        _uiActing   = transform.Find("Canvas/ACTING_PART").gameObject;
+        _rope       = transform.Find("Rope").gameObject;
+        
         _canvas.worldCamera = Camera.main;
         _canvas.gameObject.SetActive(true);
-
+        
         ActingManager.Instance.ClearUI.AddListener(OnClearUI);
         DialogueUpdate.AddListener(OnDialogueUpdate);
     }
@@ -72,6 +73,8 @@ public class CharacterHandler : MonoBehaviour
     public void SetPosition(Vector2Int positionOnStage)
     {
         transform.position = GameManager.Instance._gridScene.GetWorldPositon(positionOnStage);
+
+        //StartCoroutine(ArriveOnStage(GameManager.Instance._gridScene.GetWorldPositon(positionOnStage)));
     }
 
     private static float GetSpeed(string speedText)
@@ -129,6 +132,8 @@ public class CharacterHandler : MonoBehaviour
         _uiActing.SetActive(false);
         
         //_anim.SetTrigger("Idle");
+        foreach (AnimatorControllerParameter param in _anim.parameters)
+            _anim.ResetTrigger(param.name);
     }
 
     private void OnDialogueUpdate(string text)
@@ -138,7 +143,7 @@ public class CharacterHandler : MonoBehaviour
         
         // play neutral anim
         if (!_playAnim)
-            StartCoroutine(PlayAnimCoroutine("neutre"));
+            StartCoroutine(PlayAnimCoroutine(Constants.AnimTalk));
     }
 
     #endregion
@@ -202,6 +207,79 @@ public class CharacterHandler : MonoBehaviour
         transform.position = targetPosition;
         transform.LookAt(Camera.main.transform);
         callbackOnFinish();
+    }
+
+
+    public IEnumerator ArriveOnStage(Vector3 targetPosition, float duration = 6.0f)
+    {
+        float time = 0.0f;
+        Vector3 startPosition = targetPosition + new Vector3(0, 10.0f,0);
+
+        _rope.SetActive(true);
+        _rope.transform.localPosition = _ropeOffset;
+        
+        transform.position = startPosition;
+        _anim.SetTrigger("falling");
+        
+        // Character start arriving
+        while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
+            time += Time.deltaTime;
+            yield return null;
+        }
+        Debug.Log($"{gameObject.name} is done");
+        _anim.SetTrigger("idle");
+
+        // Character is on stage -> Rope goes up
+        var ropeStart = _ropeOffset;
+        var ropeDestination = ropeStart + new Vector3(0, 20.0f, 0);
+        time = 0.0f;
+        while (Vector3.Distance(_rope.transform.localPosition, ropeDestination) > 0.001f)
+        {
+            _rope.transform.localPosition = Vector3.Lerp(ropeStart, ropeDestination, 
+                _character.movementCurve.Evaluate(time/ (duration/4)));
+            time += Time.deltaTime;
+            yield return null;
+        }
+        _rope.SetActive(false);
+        Debug.Log($"{gameObject.name}.Rope is done");
+        
+
+    }
+    
+    
+    public IEnumerator LeaveStage(float duration = 6.0f)
+    {
+        float time = 0.0f;
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = transform.position + new Vector3(0, 10.0f,0);
+        
+        
+        _rope.SetActive(true);
+        var ropeStart = targetPosition + _ropeOffset;
+        var ropeDestination = _ropeOffset;
+        _rope.transform.localPosition = ropeStart;
+        // Rope is arriving
+        while (Vector3.Distance(_rope.transform.localPosition, ropeDestination) > 0.001f)
+        {
+            _rope.transform.localPosition = Vector3.Lerp(ropeStart, ropeDestination, 
+                _character.movementCurve.Evaluate(time/ (duration/4)));
+            time += Time.deltaTime;
+            yield return null;
+        }
+        
+        // Rope is here -> Character goes up
+        _anim.SetTrigger("falling");
+        while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, 
+                _character.movementCurve.Evaluate(time/duration));
+            time += Time.deltaTime;
+            yield return null;
+        }
+        // Character is up
+        Debug.Log($"{gameObject.name} has leave the stage");
     }
 
     #endregion

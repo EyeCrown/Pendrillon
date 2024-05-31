@@ -83,7 +83,7 @@ public static class Constants
     public const string SetChuch   = "church";
     public const string SetTrial   = "trial";
     public const string SetTempest = "tempest";
-    public const string SetStomac  = "stomac";
+    public const string SetForest  = "forest";
     
     #endregion
 
@@ -95,6 +95,12 @@ public static class Constants
     public const string ReactApplause   = "applause";
     public const string ReactChoc       = "choc";
     public const string ReactLaughter   = "laughter";
+
+    #endregion
+
+    #region Animations
+
+    public const string AnimTalk = "talk";
 
     #endregion
 }
