@@ -15,16 +15,28 @@ VAR player_won_battle = false // Define if the player won the battle or not
 
 // Scene
 === trip_return ===
+-> start
+
+= start
 // Define the actors of the scene
 #actor:Player:PLAYER
 #actor:Naïda:???
 #actor:Arle:ÉPIEUR
 #actor:Marcello:MARCELLO
 #actor:Capucine:CAPUCINE
-// Start the scene
--> start
+// Set the location
+#set:cale
+// Set the actor's positions
+#position:Player:4:2
+#position:Naïda:4:13
+#position:Arle:2:11
+#position:Marcello:3:6
+#position:Capucine:5:5
 
-= start
+// Start the scene
+#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
+#playsound:Play_AMB_SC_Cale_Ambiance
+#anim:Arle:hide
 - ???: (Écœurée) Ça sent mauvais là-dedans...
     * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...
         ** [Désolé pour l'odeur...] PLAYER: Les marins ne sont pas dérangés par ce genre d'odeur. Mais ce n'est pas du goût de tout le monde...
@@ -359,7 +371,6 @@ Combat contre Capucine et Marcello, où Marcello est blessé.
 
 // Naida is arrested
 =arrest_naida
-
 #playsound:sounds_inside_the_crate
 CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans !
 MARCELLO : Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang.
@@ -387,7 +398,6 @@ CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la.
 CAPUCINE: Allons-nous-en avec notre trouvaille. Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts...
 CAPUCINE: Il finira sa triste vie au cachot, comme son ami.
 #move(Capucine)
-
 // Marcello remet un coup gratuit au Player
 #anim:Marcello:attack
 #anim:Player:hurt

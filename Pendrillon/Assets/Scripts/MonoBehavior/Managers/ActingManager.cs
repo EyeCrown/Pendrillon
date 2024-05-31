@@ -39,7 +39,7 @@ namespace MonoBehavior.Managers
         public GameObject _setChurch;
         public GameObject _setTrial;
         public GameObject _setTempest;
-        public GameObject _setStomac;
+        public GameObject _setForest;
         private GameObject _currentSet;
     
         // UI
@@ -51,7 +51,14 @@ namespace MonoBehavior.Managers
         GameObject _historyBox;        // History box
         GameObject _masks;
         private string _playerName;
-
+        
+        // UI - ParticuleSystems
+        private ParticleSystem _particleSystemBoo;
+        private ParticleSystem _particleSystemThumbUp;
+        private ParticleSystem _particleSystemCry;
+        private ParticleSystem _particleSystemLaugh;
+        
+        // UI - TypeWriters
         private TypewriterCore _dialogueTypewriter;
         private TypewriterCore _prompterTypewriter;
         
@@ -126,6 +133,9 @@ namespace MonoBehavior.Managers
             _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<RawImage>();
             _historyBox     = _uiParent.transform.Find("History").gameObject;
             _historyText    = _historyBox.transform.Find("Scroll View/Viewport/Content").GetComponent<TextMeshProUGUI>();
+
+            _particleSystemBoo = _uiParent.transform.Find("UIParticleBoo").GetComponentInChildren<ParticleSystem>();
+            _particleSystemCry = _uiParent.transform.Find("UIParticleCry").GetComponentInChildren<ParticleSystem>();
             
             _dialogueTypewriter = _dialogueText.GetComponent<TypewriterCore>();
             _prompterTypewriter = _uiParent.transform.Find("PROMPTER_PART/DialogueBox/DialogueText").GetComponent<TypewriterCore>();
@@ -162,9 +172,13 @@ namespace MonoBehavior.Managers
             
             
             
-            _setBarge   = Instantiate(_setBarge, GameObject.Find("Environment").transform);
-            _setCale    = Instantiate(_setCale, GameObject.Find("Environment").transform);
+            _setBarge   = Instantiate(_setBarge,  GameObject.Find("Environment").transform);
+            _setCale    = Instantiate(_setCale,   GameObject.Find("Environment").transform);
+            //_setPort    = Instantiate(_setPort,   GameObject.Find("Environment").transform);
+            _setChurch  = Instantiate(_setChurch, GameObject.Find("Environment").transform);
+            //_setTrial   = Instantiate(_setTrial,   GameObject.Find("Environment").transform);
             _setTempest = Instantiate(_setTempest, GameObject.Find("Environment").transform);
+            _setForest  = Instantiate(_setForest,  GameObject.Find("Environment").transform);
         }
 
         void Start()
@@ -317,6 +331,11 @@ namespace MonoBehavior.Managers
                     }
                     else
                     {
+                        // /!\ TMP
+
+                        StartCoroutine(GameManager.Instance.GetCharacter(speaker).LeaveStage());
+                        
+                        
                         if (GameManager.Instance.GetCharacter(speaker) == null)
                             Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > Unknown speaker | {speaker} |");
                         else
@@ -765,13 +784,14 @@ namespace MonoBehavior.Managers
             Vector2Int position = new Vector2Int(int.Parse(data[1]), int.Parse(data[2]));
 
             //Debug.Log($"AM.HandleTagPosition > Set {data[0]} to position [{position.x}, {position.y}]");
-            character.SetPosition(position);
-            character.transform.LookAt(Camera.main.transform);
+            
+            //character.SetPosition(position);
+            StartCoroutine(character.ArriveOnStage(GameManager.Instance._gridScene.GetWorldPositon(position)));
         }
 
         void HandleTagSet(string location)
         {
-            //Debug.Log($"AM.Refresh > Change from {_stage} to {location}");
+            Debug.Log($"AM.Refresh > Change from {_stage} to {location}");
             _stage = location;
 
             AkSoundEngine.PostEvent("Play_SFX_SC_Theater_TransitionTo" + location, gameObject);
@@ -781,16 +801,15 @@ namespace MonoBehavior.Managers
 
             GameManager.Instance.ClearStageCharacters();
             
-            // _setBarge.SetActive(false);
+            _setBarge.SetActive(false);
             _setCale.SetActive(false);
             //_setPort.SetActive(false);
-            //_setChurch.SetActive(false);
+            _setChurch.SetActive(false);
             //_setTrial.SetActive(false);
             _setTempest.SetActive(false);
-            //_setStomac.SetActive(false);
+            _setForest.SetActive(false);
             
             GameManager.Instance.SetGridHeight();
-
             
             switch (_stage)
             {
@@ -798,33 +817,54 @@ namespace MonoBehavior.Managers
                     
                     _setBarge.SetActive(true);
                     _setBarge.GetComponent<Animator>().SetBool("InOut",true);
-                    GameManager.Instance.SetGridHeight(_stage);
                     _currentSet = _setBarge;
                     break;
                 case Constants.SetCale:
                     _setCale.SetActive(true);
+                    
                     //_setCale.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    
                     _currentSet = _setCale;
                     break;
                 case Constants.SetPort:
                     _setPort.SetActive(true);
+                    //_setPort.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    
+                    _currentSet = _setPort;
                     break;
                 case Constants.SetChuch:
                     _setChurch.SetActive(true);
+                    //_setChurch.GetComponent<Animator>().SetBool("InOut",true);
+                    _currentSet = _setChurch;
                     break;
                 case Constants.SetTrial:
                     _setTrial.SetActive(true);
+                    //_setTrial.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    
+                    _currentSet = _setTrial;
                     break;
                 case Constants.SetTempest:
                     _setTempest.SetActive(true);
+                    //_setTempest.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    
+                    _currentSet = _setTempest;
                     break;
-                case Constants.SetStomac:
-                    _setStomac.SetActive(true);
+                case Constants.SetForest:
+                    _setForest.SetActive(true);
+                    //_setForest.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    
+                    _currentSet = _setForest;
                     break;
                 default:
                     Debug.LogError("SetTag > Unknown location");
                     break;
             }
+            GameManager.Instance.SetGridHeight(_stage);
         }
         
         void HandleTagMove(string[] data)
@@ -1005,16 +1045,35 @@ namespace MonoBehavior.Managers
 
         void HandleTagAudience(string reaction)
         {
+            List<ParticleSystem> particleSystemEmiters = new();
+
+            void AddToEmiter(ParticleSystem ps, float rate)
+            {
+                var emission = ps.emission;
+                emission.rateOverTime = rate;
+                particleSystemEmiters.Add(ps);
+            }
             
             switch (reaction)
             {
                 case Constants.ReactBooing:
+
+                    AddToEmiter(_particleSystemBoo, 25.0f);
+                    AddToEmiter(_particleSystemCry, 100.0f);
+                    
                     break;
                 case Constants.ReactOvation:
                     break;
                 case Constants.ReactDebate:
+                    
+                    AddToEmiter(_particleSystemBoo, 1.0f);
+                    AddToEmiter(_particleSystemCry, 500.0f);
+                    
                     break;
                 case Constants.ReactApplause:
+                    
+                    AddToEmiter(_particleSystemCry, 10.0f);
+                    
                     break;
                 case Constants.ReactChoc:
                     break;
@@ -1031,6 +1090,13 @@ namespace MonoBehavior.Managers
             void AudienceAction()
             {
                 AkSoundEngine.PostEvent(soundToPlay, gameObject);
+
+                foreach (var particleSystem in particleSystemEmiters)
+                {
+                    Debug.Log($"AudienceAction > Emit particles from {particleSystem.transform.parent.name}");
+                    particleSystem.Play();
+                }
+                
                 TagActionOver();
             }
             

@@ -72,9 +72,9 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
     }
     {
         - export_mode == false && result == true:
-            [{D100} / {threshold}> SUCCES]
+            [{D100} / {threshold} SUCCES]
         - export_mode == false && result == false:
-            [{D100} / {threshold}> FAILURE]
+            [{D100} / {threshold} FAILURE]
     }
     //{export_mode == false && result == false: [{D100} / {threshold}: FAILURE]}
     ~ return result
