@@ -51,7 +51,14 @@ namespace MonoBehavior.Managers
         GameObject _historyBox;        // History box
         GameObject _masks;
         private string _playerName;
-
+        
+        // UI - ParticuleSystems
+        private ParticleSystem _particleSystemBoo;
+        private ParticleSystem _particleSystemThumbUp;
+        private ParticleSystem _particleSystemCry;
+        private ParticleSystem _particleSystemLaugh;
+        
+        // UI - TypeWriters
         private TypewriterCore _dialogueTypewriter;
         private TypewriterCore _prompterTypewriter;
         
@@ -126,6 +133,9 @@ namespace MonoBehavior.Managers
             _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<RawImage>();
             _historyBox     = _uiParent.transform.Find("History").gameObject;
             _historyText    = _historyBox.transform.Find("Scroll View/Viewport/Content").GetComponent<TextMeshProUGUI>();
+
+            _particleSystemBoo = _uiParent.transform.Find("UIParticleBoo").GetComponentInChildren<ParticleSystem>();
+            _particleSystemCry = _uiParent.transform.Find("UIParticleCry").GetComponentInChildren<ParticleSystem>();
             
             _dialogueTypewriter = _dialogueText.GetComponent<TypewriterCore>();
             _prompterTypewriter = _uiParent.transform.Find("PROMPTER_PART/DialogueBox/DialogueText").GetComponent<TypewriterCore>();
@@ -1005,16 +1015,41 @@ namespace MonoBehavior.Managers
 
         void HandleTagAudience(string reaction)
         {
+            List<ParticleSystem> particleSystemEmiters = new();
+            
             
             switch (reaction)
             {
                 case Constants.ReactBooing:
+
+                    var emissionBoo = _particleSystemBoo.emission;
+                    emissionBoo.rateOverTime = 25.0f;
+                    particleSystemEmiters.Add(_particleSystemBoo);
+                    
+                    var emissionCry = _particleSystemCry.emission;
+                    emissionCry.rateOverTime = 100.0f;
+                    particleSystemEmiters.Add(_particleSystemCry);
+                    
                     break;
                 case Constants.ReactOvation:
                     break;
                 case Constants.ReactDebate:
+                    emissionBoo = _particleSystemBoo.emission;
+                    emissionBoo.rateOverTime = 1.0f;
+                    particleSystemEmiters.Add(_particleSystemBoo);
+                    
+                    emissionCry = _particleSystemCry.emission;
+                    emissionCry.rateOverTime = 500.0f;
+                    particleSystemEmiters.Add(_particleSystemCry);
                     break;
                 case Constants.ReactApplause:
+                    emissionBoo = _particleSystemBoo.emission;
+                    emissionBoo.rateOverTime = 100.0f;
+                    particleSystemEmiters.Add(_particleSystemBoo);
+                    
+                    emissionCry = _particleSystemCry.emission;
+                    emissionCry.rateOverTime = 10.0f;
+                    particleSystemEmiters.Add(_particleSystemCry);
                     break;
                 case Constants.ReactChoc:
                     break;
@@ -1031,6 +1066,13 @@ namespace MonoBehavior.Managers
             void AudienceAction()
             {
                 AkSoundEngine.PostEvent(soundToPlay, gameObject);
+
+                foreach (var particleSystem in particleSystemEmiters)
+                {
+                    Debug.Log($"AudienceAction > Emit particles from {particleSystem.name}");
+                    particleSystem.Play();
+                }
+                
                 TagActionOver();
             }
             
