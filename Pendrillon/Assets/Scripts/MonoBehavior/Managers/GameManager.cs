@@ -110,7 +110,7 @@ namespace MonoBehavior.Managers
             SetupCharacters();
             SetupPrompter();
             
-            FightingManager.Instance._player = GetPlayer();
+            //FightingManager.Instance._player = GetPlayer();
             
             _cameraPerlin.m_AmplitudeGain = 0.0f;
 
@@ -244,8 +244,8 @@ namespace MonoBehavior.Managers
                     GetCharacter("Rudolf")
                 };
 
-                FightingManager.Instance.InitializeEnemies(enemies);
-                FightingManager.Instance.BeginFight.Invoke();
+                //FightingManager.Instance.InitializeEnemies(enemies);
+                //FightingManager.Instance.BeginFight.Invoke();
             }
             else
             {  
@@ -260,8 +260,8 @@ namespace MonoBehavior.Managers
             MoveCharactersOutsideScene();
             
             // TODO: Maybe put event call into Initialize function ?
-            FightingManager.Instance.InitializeEnemies(ActingManager.Instance.GetEnemiesToFight());
-            FightingManager.Instance.BeginFight.Invoke();
+            //FightingManager.Instance.InitializeEnemies(ActingManager.Instance.GetEnemiesToFight());
+            //FightingManager.Instance.BeginFight.Invoke();
         }
 
         void MoveCharactersOutsideScene()
