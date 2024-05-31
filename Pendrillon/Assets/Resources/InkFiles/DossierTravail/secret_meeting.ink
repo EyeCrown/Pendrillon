@@ -15,7 +15,7 @@ VAR failed_breaking_jester_crate = false
 #actor:Player:PLAYER
 #actor:Arle:???:ARLE
 // Set the location
-#set:cale
+#set:forest
 // Set the actor's positions
 #position:Player:10:6
 #position:Arle:4:13
