@@ -35,7 +35,6 @@ VAR player_won_battle = false // Define if the player won the battle or not
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
-#playsound:Play_AMB_SC_Cale_Ambiance
 #anim:Arle:hide
 - ???: (Écœurée) Ça sent mauvais là-dedans...
     * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...

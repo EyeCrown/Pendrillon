@@ -19,7 +19,7 @@
 #position:Passeur:4:3
 
 // Start the scene
-#playsound:Play_AMB_SC_Barque_Ambiance
+
 #playsound:Play_AMB_SC_Theater_CrowdChatter
 #playsound:Play_MUS_Story_SC_Barque_Intro #wait:3 #audience:applause #wait:5
 PASSEUR: Eh, bien... #anim:Passeur:neutre
@@ -87,7 +87,7 @@ SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! Show 
     * [Le destinataire.] PLAYER: La lettre était destinée à un certain {p_name} Jehovah Banes. Or, la seule personne à m’appeler ainsi est ma mère, qui est absolument et irrémédiablement illetrée... #anim:Player:neutre #playsound:VOX_Player_lalettredestinataire{p_name} #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
     * [L'odeur.] PLAYER: J’ai reçu bien des lettres dans ma vie, certaines avaient l’odeur du sel marin ou des impôts impayés, mais jamais une odeur si... délicate. L'odeur d'un expéditeur fortuné. #anim:Player:neutre #playsound:VOX_Player_lalettreodeur #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
 - PLAYER: La lettre me donnait rendez-vous pour une cause « de la plus haute importance ».
-PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous : la cale de mon propre navire. #anim:Player:neutre #playsound:VOX_Player_transitionsecretmeeting #playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
+PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous : la cale de mon propre navire. #anim:Player:neutre #playsound:VOX_Player_transitionsecretmeeting  #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
 - -> secret_meeting
 
 // Scène 2
@@ -102,7 +102,7 @@ PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rend
 #position:Passeur:4:3
 
 // Start the scene
-#playsound:Play_AMB_SC_Barque_Ambiance
+
 PASSEUR: ... #anim:Passeur:neutre
 PASSEUR: Pourquoi avoir accepté une mission si périlleuse ? #anim:Passeur:question #playsound:VOX_Ferryman_pourquoimission
     * [Pour la fortune !] PLAYER: Pour la fortune, évidemment ! #anim:Player:gloire #playsound:VOX_Player_pourlafortune #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
@@ -144,7 +144,7 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, no
 #position:Passeur:4:3
 
 // Start the scene
-#playsound:Play_AMB_SC_Barque_Ambiance
+
 PASSEUR: Ainsi, ton amie s'est faite arrêter par les gardes... #anim:Passeur:neutre:1 #playsound:VOX_Ferryman_ainsitonami
 PASSEUR: Tu es bien silencieux... Que ressentais-tu, à cet instant ? #anim:Passeur:question #playsound:VOX_Ferryman_tuesbiensilencieux
     * [(Furieux)] #anim:Player:colere #playsound:Play_MUS_Story_SC_Barque_LostAFriend
@@ -153,7 +153,7 @@ PASSEUR: Tu es bien silencieux... Que ressentais-tu, à cet instant ? #anim:Pass
 - PASSEUR: Ton regard suffit à m'apporter une réponse... #anim:Passeur:neutre #playsound:VOX_Ferryman_tonregard
 - PASSEUR: Tu devais te sentir bien seul... Dis-moi plutôt : où t'es-tu rendu, après cela ? #anim:Passeur:question #playsound:VOX_Ferryman_tudevais
     * [Tous les gardes en avaient après moi...] PLAYER: Tous les gardes de la ville étaient à mes trousses... #anim:Player:neutre #playsound:VOX_Player_touslesgardes #playsound:Play_MUS_Story_SC_Barque_ToChurch
-    * [J'ai trouvé un refuge...] PLAYER: J'ai trouvé un endroit pour passer la nuit... #anim:Player:neutre #playsound:VOX_Player_trouveunendroit #playsound:Play_MUS_Story_SC_Barque_ToChurch #playsound:Stop_AMB_SC_Barque_Ambiance
+    * [J'ai trouvé un refuge...] PLAYER: J'ai trouvé un endroit pour passer la nuit... #anim:Player:neutre #playsound:VOX_Player_trouveunendroit #playsound:Play_MUS_Story_SC_Barque_ToChurch 
 - -> church_night
 
 // Scène 4
@@ -168,7 +168,7 @@ PASSEUR: Tu es bien silencieux... Que ressentais-tu, à cet instant ? #anim:Pass
 #position:Passeur:4:3
 
 // Start the scene
-#playsound:Play_AMB_SC_Barque_Ambiance
+
 PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #anim:Passeur:neutre #playsound:VOX_Ferryman_pretressehonneur
     * [Tout à fait.] PLAYER: Jamais n'a t-on vu âme plus acceuillante. Cependant... #anim:Player:neutre #playsound:VOX_Player_jamaisame
     * [En un sens...] PLAYER: D'une certaine manière, j'en conviens... Mais... #anim:Player:neutre #playsound:VOX_Player_certainemaniere
@@ -182,7 +182,7 @@ PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #anim:P
 - PLAYER: À mon réveil... #anim:Player:neutre #playsound:VOX_Player_amonreveil
     * [Une mauvaise surprise m'attendait.] PLAYER: ... une surprise des plus désagréables m'attendait... #anim:Player:neutre #playsound:VOX_Player_unemauvaisesurprise
     * [Je m'apprêtais à en découdre.] PLAYER: ... j'allais devoir livrer bataille... #anim:Player:neutre #playsound:VOX_Player_devoirlivrerbataille
-    * [Je fus trahi.] PLAYER: ... je fus malheureux de constater qu'on m'avait trahi... #anim:Player:neutre #playsound:VOX_Player_amonreveil #playsound:Stop_AMB_SC_Barque_Ambiance
+    * [Je fus trahi.] PLAYER: ... je fus malheureux de constater qu'on m'avait trahi... #anim:Player:neutre #playsound:VOX_Player_amonreveil 
 - -> church_day
 
 // Scène 5
@@ -197,7 +197,7 @@ PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #anim:P
 #position:Passeur:4:3
 
 // Start the scene
-#playsound:Play_AMB_SC_Barque_Ambiance
+
 PASSEUR: Notre voyage s'avera des plus captivants, toutefois...  #anim:Passeur:neutre #playsound:VOX_Ferryman_voyagecaptivant
 PASSEUR: ... il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView
 PASSEUR: Vois-tu ces portes, devant nous ? Dans quelques instants, tu sauras si nous pouvons faire demi-tour, ensemble... #anim:Passeur:show_door #playsound:VOX_Ferryman_voistuporte
@@ -215,7 +215,7 @@ PASSEUR: ... ou si c'est ici que nos chemins se sépareront. #anim:Passeur:neutr
     * [J'ai peur...] PLAYER: j'ai si peur... #anim:Player:stress #playsound:VOX_Player_jaisipeur
         PASSEUR: ... Je comprends. #anim:Passeur:neutre #playsound:VOX_Ferryman_jecomprends
 - #anim:open_trial_doors #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
-- PASSEUR: Tu vas devoir affronter ton destin. Ainsi en-ont décidé les portes, voyageur... #playsound:Stop_AMB_SC_Barque_Ambiance #playsound:VOX_Ferryman_devoiraffronterdestin #playsound:Stop_AMB_SC_Barque_Ambiance
+- PASSEUR: Tu vas devoir affronter ton destin. Ainsi en-ont décidé les portes, voyageur...  #playsound:VOX_Ferryman_devoiraffronterdestin 
 - -> tribunal_1
 
 = end_scene
