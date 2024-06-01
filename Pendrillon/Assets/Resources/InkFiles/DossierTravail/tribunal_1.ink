@@ -326,6 +326,3 @@ JUGE ERNEST: Je... J'appelle à la barre notre second témoin. Nos second et tro
 
 
 
-
-
-function 
