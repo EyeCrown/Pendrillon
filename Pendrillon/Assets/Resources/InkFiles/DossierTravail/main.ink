@@ -23,4 +23,5 @@ INCLUDE boss_battle.ink
 
 // Start the game
 //-> barge
--> secret_meeting
+//-> secret_meeting
+-> tribunal_1

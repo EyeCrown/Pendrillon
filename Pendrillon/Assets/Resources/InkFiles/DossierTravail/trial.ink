@@ -7,6 +7,8 @@ VAR t_1_respect_the_crown = false
 VAR t_1_disrespect_irene = false
 VAR t_1_respect_irene = false
 VAR t_1_gold_digger = false
+VAR t_1_accept_mission_with_positivity = false
+VAR t_1_accept_mission_with_negativity = false
 
 // TRIP RETURN SCENE
 VAR t_2_lawfull = false

@@ -214,7 +214,7 @@ ARLE: Et les humains durent survivre à bord d'un grand navire, cent années dur
 - ARLE: Ramenez-nous le cœur de l'immonde Léviathan, sinon pour la gloire, pour l'interêt de la Couronne. #anim:Arle:neutre
     * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la Couronne qui t'envoie ? #anim:Player:question
         -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:joie
-            ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour Elle ! #anim:Player:neutre
+            ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour notre bonne reine ! #anim:Player:neutre
                 ~ trial(t_1_respect_the_crown)
             ** [La Reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence. #anim:Player:neutre
                 ~ trial(t_1_disrespect_the_crown)
@@ -237,8 +237,10 @@ ARLE: Et les humains durent survivre à bord d'un grand navire, cent années dur
         ~ trial(t_1_disrespect_irene)
         ~ trial(t_1_gold_digger)
 - ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence
-    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur. #anim:Player:neutre #playsound:VOX_Player_celaseraitunhonneur
-    * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche... #anim:Player:neutre #playsound:VOX_Player_pointleloisirsoustraire
+    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur. J'accepte de ramener le cœur du Léviathan. #anim:Player:neutre #playsound:VOX_Player_celaseraitunhonneur
+        ~ t_1_accept_mission_with_positivity = true
+    * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du Léviathan. #anim:Player:neutre #playsound:VOX_Player_pointleloisirsoustraire
+        ~ t_1_accept_mission_with_negativity = true
 - #audience:ovation Stop_AMB_SC_Cale_Ambiance
 - -> barge.scene_2
 
