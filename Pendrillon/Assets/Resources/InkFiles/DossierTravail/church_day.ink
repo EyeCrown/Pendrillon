@@ -3,6 +3,8 @@
 // Variables
 VAR CAPUCINE = ""
 VAR MARCELLO = ""
+VAR capucine_surname = ""
+VAR marcello_surname = ""
 
 // Scene
 === church_day ===
@@ -34,18 +36,24 @@ CAPUCINE: Remets-tu des noms sur nos visages, vermisseau ?
 PLAYER: J'ai bien peur... vous êtes...
     * [Capucine la larbine...] PLAYER: Capucine la larbine...
         ~ CAPUCINE = "CAPUCINE LA LARBINE"
+        ~ capucine_surname = "la larbine"
     * [Capucine la marcassine...] PLAYER: Capucine la marcassine...
         ~ CAPUCINE = "CAPUCINE LA MARCASSINE"
+        ~ capucine_surname = "la marcassine"
     * [Capucine la tartine...] PLAYER: Capucine la tartine...
         ~ CAPUCINE = "CAPUCINE LA TARTINE"
+        ~ capucine_surname = "la tartine"
 - #anim:Capucine:shameful
 - PLAYER: ... accompagnée de son affreux sbire...
     * [Marcellogre...] ... Marcellogre.
         ~ MARCELLO = "MARCELLOGRE"
+        ~ marcello_surname = "Marcellogre"
     * [Marcellotarie...] ... Marcellotarie.
         ~ MARCELLO = "MARCELLOTARIE"
+        ~ marcello_surname = "Marcellotarie"
     * [Marcellocroupie...] ... Marcellocroupie.
         ~ MARCELLO = "MARCELLOCROUPIE"
+        ~ marcello_surname = "Marcellocroupie"
 - #anim:Marcello:shameful
 - {CAPUCINE}: Tu... Tu te crois malin, abruti ?
 - {MARCELLO}: Il se prend pour notre mère, à nous donner de pareils sobriquets ?

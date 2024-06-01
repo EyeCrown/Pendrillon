@@ -227,9 +227,9 @@ ARLE: Et les humains durent survivre à bord d'un grand navire, cent années dur
         ARLE: Or, de grands efforts exigent une grande volonté. Une volonté d'aider, messire. #anim:Arle:joie
         -> to_the_crown
 - ARLE: Puis-je ajouter, messire, que vaincre le Léviathan constituerait une offrande de taille à la Déesse Elle-même. #anim:Arle:neutre
-    * [J'en serais honoré !] PLAYER: Voilà qui éteint mes dernières hésitations. #anim:Player:neutre
+    * [J'en serais honoré !] PLAYER: J'honorerai la Déesse, j'en fais le serment ! #anim:Player:neutre #audience:ovation
         ~ trial(t_1_respect_irene)
-    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme de la dernière pluie. #anim:Player:deception
+    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme du dernier crachin ! #anim:Player:deception #audience:booing
         ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix. #anim:Arle:deception
         ~ trial(t_1_disrespect_irene)
     * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la Reine, ni pour la Déesse, mais pour mon seul profit. #anim:Player:neutre
