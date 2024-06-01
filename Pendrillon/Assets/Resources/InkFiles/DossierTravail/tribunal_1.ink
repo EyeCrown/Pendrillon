@@ -89,7 +89,7 @@ JUGE ERNEST: Silence ! J'exige le silence ! #anim:Judge:bell #audience:silent
                 ~ audience_judgement(-0.02)
                 JUGE ERNEST: Accusé, je ne le répèterai pas deux fois : ceci est un lieu saint. Sachez rester à votre place.
                 *** [Entendu.] PLAYER: C'est entendu. #anim:Judge:bell
-                    --- (agree_with_judge) JUGE ERNEST: Vous ai-je donné la parole ? Taisez-vous donc. Le Juge n'a nul besoin de votre assentiment.
+                    ---- (agree_with_judge) JUGE ERNEST: Vous ai-je donné la parole ? Taisez-vous donc. Le Juge n'a nul besoin de votre assentiment.
                     ~ audience_judgement(-0.01)
                     **** [Prendre place en silence.] #move(Player)
                 *** [Prendre place en silence.] #move(Player)
@@ -141,16 +141,16 @@ ARLE: Je voulais simplement signifier, au profit de la Vérité ainsi que la Jus
             - t_1_accept_mission_with_negativity: JUGE ERNEST: « Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du Léviathan. ».
                 ~ audience_judgement(-0.1)
         }
-    * [Arle doute t-elle de notre reine ?] PLAYER: Je crois, Votre Honneur, et mesdames et messieurs les jurés, qu'Arle a trahit son manque de respect pour la reine Constance. #audience:debate
+    * [Arle vient d'insulter notre reine.] PLAYER: Je crois, Votre Honneur, et mesdames et messieurs les jurés, qu'Arle a trahit son manque de respect pour la reine Constance. #audience:debate
         ~ accuse_alre_to_disrespect_queen = true
         ARLE: Objection ! L'immonde messire raconte des balivernes !
-        JUGE ERNEST: Silence, témoin ! Jee ne vous ai pas donné la parole ! #anim:Juge:bell #anim:Arle:sad
+        JUGE ERNEST: Silence, témoin ! Je ne vous ai pas donné la parole ! #anim:Juge:bell #anim:Arle:sad
         JUGE ERNEST: Pouvez-vous en avancer la preuve, Accusé ?
-            * [En me désavouant, elle désavoue la reine.] PLAYER: Certainement. En prétextant savoir que je n'étais pas à la hauteur de la tâche...
+            ** [En me désavouant, elle désavoue la reine.] PLAYER: Certainement. En prétextant savoir que je n'étais pas à la hauteur de la tâche...
                 PLAYER: ... Arle a sous-entendu que la reine avait fait preuve de bêtise en me désignant. #audience:choc #audience:debate
                 JUGE ERNEST: L'accusé a raison sur ce point. #anim:Juge:bell #audience:applause #anim:Arle:angry
                 ~ audience_judgement(0.05)
-            * [Je retire mon accusation.] PLAYER: J'en suis malheuresement incapable, Votre Honneur. Je retire mon accusation. #audience:booing #anim:Arle:laugh
+            ** [Je retire mon accusation.] PLAYER: J'en suis malheuresement incapable, Votre Honneur. Je retire mon accusation. #audience:booing #anim:Arle:laugh
                 ~ audience_judgement(-0.02)
     * [Je n'ai rien à objecter.] PLAYER: Je n'ai rien à objecter, Votre Honneur. #audience:booing #anim:Judge:bell
         ~ audience_judgement(-0.01)
@@ -167,29 +167,33 @@ ARLE: Le terrible Messire a cru bon de se moquer de la reine en faisant un bon m
         ~ audience_judgement(-0.02)
         ~ admit_disrespect_queen = true
     * [Ne rien dire.]
+-
 {
-    - admit_disrespect_queen: JUGE ERNEST: Puisque l'Accusé a admit avoir prononcé ces terribles paroles... Je demande au témoin de poursuivre. -> arle_accuse_player_to_disrespect_irene
+    - admit_disrespect_queen: JUGE ERNEST: Puisque l'Accusé a admit avoir prononcé ces terribles paroles...
+        -> arle_accuse_player_to_disrespect_irene
     - else: JUGE ERNEST: Quelles paroles exactes témoignez-vous avoir entendu l'Accusé prononcer ?
         ARLE: L'abjecte Messire a dit, je cite : « Constance et son inconstance m'inspirent l'indifférence. ». #audience:choc
         JUGE ERNEST: Accusé, qu'avez-vous à dire pour votre défense ?
-            * [J'admets avoir dit cela.] PLAYER: J'ai le regret d'admettre avoir fait ce jeu de mot, Votre Honneur... #audience:booing #anim:Judge:bell
-                JUGE ERNEST: Ainsi avouez-vous avoir manqué de respect à la reine. #anim:Judge:bell
-                ~ audience_judgement(-0.05)
-                -> arle_accuse_player_to_disrespect_irene
-            * [Je n'ai rien dit de tel.] PLAYER: Votre Honneur, mesdames et messieurs les jurés, je jure n'avoir rien dit de tel. #audience:debate
-                ARLE: Menteur ! Menteur !
-                JUGE ERNEST: Silence ! Par Irène, je demande le silence !
-                JUGE ERNEST: La vérité sort de la bouche du Juge.
-                {
-                    - t_1_respect_the_crown: JUGE ERNEST: « Je braverai tous les dangers pour notre bonne reine ! ». #audience:ovation #anim:Arle:angry #anim:Player:bow
-                        JUGE ERNEST: Témoin, que le Juge ne vous reprenne plus à mentir lors d'un procès divin. #anim:Arle:stressed #audience:booing
-                        ~ audience_judgement(0.1)
-                        ~ arle_lied = true
-                    - t_1_disrespect_the_crown: JUGE ERNEST: « Constance et son inconstance m'inspirent l'indifférence. ». #audience:booing #anim:Player:stressed #anim:Arle:bow
-                        ~ audience_judgement(-0.1)
-                }
-                -> arle_accuse_player_to_disrespect_irene
+            -> asked_about_disrespect_queen
 }
+- (asked_about_disrespect_queen)
+        * [J'admets avoir dit cela.] PLAYER: J'ai le regret d'admettre avoir fait ce jeu de mot, Votre Honneur... #audience:booing #anim:Judge:bell
+            JUGE ERNEST: Ainsi avouez-vous avoir manqué de respect à la reine. #anim:Judge:bell
+            ~ audience_judgement(-0.05)
+            -> arle_accuse_player_to_disrespect_irene
+        * [Je n'ai rien dit de tel.] PLAYER: Votre Honneur, mesdames et messieurs les jurés, je jure n'avoir rien dit de tel. #audience:debate
+            ARLE: Menteur ! Menteur !
+            JUGE ERNEST: Silence ! Par Irène, je demande le silence !
+            JUGE ERNEST: La vérité sort de la bouche du Juge.
+            {
+                - t_1_respect_the_crown: JUGE ERNEST: « Je braverai tous les dangers pour notre bonne reine ! ». #audience:ovation #anim:Arle:angry #anim:Player:bow
+                    JUGE ERNEST: Témoin, que le Juge ne vous reprenne plus à mentir lors d'un procès divin. #anim:Arle:stressed #audience:booing
+                    ~ audience_judgement(0.1)
+                    ~ arle_lied = true
+                - t_1_disrespect_the_crown: JUGE ERNEST: « Constance et son inconstance m'inspirent l'indifférence. ». #audience:booing #anim:Player:stressed #anim:Arle:bow
+                    ~ audience_judgement(-0.1)
+            }
+            -> arle_accuse_player_to_disrespect_irene
 - (arle_accuse_player_to_disrespect_irene) JUGE ERNEST: Passons à la suite, voulez-vous ? #anim:Judge:bell
 JUGE ERNEST: Témoin, avez-vous d'autres accusations à faire ? {arle_lied: Tâchez de ne plus inventer des faits.}
 ARLE: J'en ai peur...
