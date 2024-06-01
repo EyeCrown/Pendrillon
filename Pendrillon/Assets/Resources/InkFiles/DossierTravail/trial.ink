@@ -1,14 +1,23 @@
 // TRIAL PROPERTIES
 VAR t_audience_judgement = 0.5 // Compris entre 0 et 1
+VAR t_arle_patience = 5 // Patience de Arle (0 = Arle pète un câble)
 
 // SECRET MEETING
-VAR t_1_disrespect_the_crown = false
+// VAR t_1_disrespect_the_crown = false
+// VAR t_1_respect_the_crown = false
+// VAR t_1_disrespect_irene = false
+// VAR t_1_respect_irene = false
+// VAR t_1_gold_digger = false
+// VAR t_1_accept_mission_with_positivity = false
+// VAR t_1_accept_mission_with_negativity = false
+// DEBUG TRIAL
+VAR t_1_disrespect_the_crown = true
 VAR t_1_respect_the_crown = false
-VAR t_1_disrespect_irene = false
+VAR t_1_disrespect_irene = true
 VAR t_1_respect_irene = false
-VAR t_1_gold_digger = false
+VAR t_1_gold_digger = true
 VAR t_1_accept_mission_with_positivity = false
-VAR t_1_accept_mission_with_negativity = false
+VAR t_1_accept_mission_with_negativity = true
 
 // TRIP RETURN SCENE
 VAR t_2_lawfull = false
@@ -112,3 +121,33 @@ VAR t_4_church_is_burnt = false
     - t_audience_judgement > 1:
         ~ t_audience_judgement = 1
 }
+
+// Makes Arle angry until she leaves stage
+=== function make_arle_angry() ===
+~ temp arle_leaves_stage = false
+~ t_arle_patience -= 1
+{
+    - t_arle_patience == 4:
+        SOUFFLEUR: Psssst... Hé, l'ami !
+        SOUFFLEUR: Je ne devrais pas te dire ça, mais... Notre amie n'aime pas trop qu'on se moque d'elle sur scène.
+        SOUFFLEUR: Elle dit que ça « l'empêche d'atteindre les sommets », tu piges ?
+        SOUFFLEUR: Si tu continues, je ne serai pas étonné qu'elle sorte de son personnage.
+        SOUFFLEUR: À bon entendeur, l'ami !
+    - t_arle_patience == 2:
+        SOUFFLEUR: Psssst... Hé, l'ami ! C'est encore moi !
+        SOUFFLEUR: Je crois que tu es sur le point de la mettre hors d'elle, avec toutes tes moqueries...
+        SOUFLLEUR: Cela dit, le public semble apprécier...
+        SOUFFLEUR: Peut-être que le spectacle n'en serait que plus amusant ? À toi de voir, l'ami !
+    - t_arle_patience <= 0:
+        ARLE: Il suffit ! Assez de moqueries ! Ferme-la !! #audience:silent
+        ARLE: Et vous, public « adoré », vous ne me méritez pas ! Cessez de rire ! #audience:debate
+        ARLE: Auriez-vous le millième de mon talent, vous seriez sur scène plutôt que de l'autre coté ! #audience:choc
+        ARLE: Bande de ploucs ! Voyons si la pièce est aussi passionnant si Arle quitte la scène ! #audience:booing
+        ARLE: À la revoyure, bande de de pignoufs ! #audience:booing #anim:Player:bow #move(Arle)
+        SOUFFLEUR: Oula, oula oula... 
+        SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'elle quitte la scène en trombe !
+        SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs !
+        SOUFFLEUR: Quoi qu'il en soit: « Show must go on! », l'ami.
+        ~ arle_leaves_stage = true
+}
+~ return arle_leaves_stage
