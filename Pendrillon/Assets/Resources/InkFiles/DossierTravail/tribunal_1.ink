@@ -110,7 +110,11 @@ JUGE ERNEST: Silence ! J'exige le silence ! #anim:Judge:bell #audience:silent
 SOUFFLEUR: Il semblerait que tes choix durant toute la pièce vont te retomber dessus les uns après les autres !
 SOUFFLEUR: Mais tu as peut-être encore une chance de t’en sortir, si tu parviens à obtenir l’approbation du public !
 SOUFFLEUR: N'oublie pas : dans ce procès, c'est le public que tu dois convaincre, pas le Juge ! Bonne chance, l’ami !
-- (arle_witness) JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle, la trublionne de la reine  Constance. #anim:Judge:bell #move(Arle) #anim:Arle:bow #audience:applause
+    -> witness_arle
+
+// Witness Arle
+= witness_arle
+- JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle, la trublionne de la reine  Constance. #anim:Judge:bell #move(Arle) #anim:Arle:bow #audience:applause
 JUGE ERNEST: Décrivez au jury votre rencontre avec l'accusé, je vous prie.
 ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège d'occuper, au sein de la Couronne, un rôle de tout premier plan...
     * [(Se moquer) Contrairement à cette pièce.] PLAYER: Ce qui n'est pas le cas de ton rôle dans cette pièce... #audience:laughter #anim:Arle:angry
@@ -261,7 +265,11 @@ JUGE ERNEST: Est-ce vrai ? La déesse elle-même ? Notre Sauveuse, Irène ? Rép
         }
 - JUGE ERNEST: {arle_lied_again == false: Accusé, ces paroles sont insoutenables, et par la Loi ainsi que la Foi, elle seront punies. | Accusé, je remercie la Déesse que vous n'ayez pas profané son nom comme le témoin le prétendait.}
 - JUGE ERNEST: {arle_lied_again == false: Témoin, la Déesse vous remercie pour votre témoignage. Vous pouvez quitter ce tribunal, désormais... | Témoin, profaner de tels mensonges à l'égard de l'Accusé est un acte grave ! La Déesse vous couvre de honte ! Hors de ma vue !} #audience:booing
-- (witnesses_capucine_and_marcello) JUGE ERNEST: Capucine dite « {capucine_surname} », accompagnée de Marcello, alias « {marcello_surname} ». #audience:ovation
+    -> witnesses_capucine_and_marcello
+
+// Witnesses Capucine and marcello
+= witnesses_capucine_and_marcello
+- JUGE ERNEST: Capucine dite « {capucine_surname} », accompagnée de Marcello, alias « {marcello_surname} ». #audience:ovation
 CAPUCINE: Votre Honneur, avec tout mon respect... J'apprécierais d'être nommée simplement Capucine. #anim:Capucine:angry #audience:laughter
 JUGE ERNEST: Bon, bon... Je tâcherais d'y penser. #anim:Capucine:bow
 MARCELLO: Votre Horreur, moi aussi je voudrais être nommé Capucine... Euh... je veux dire Marcello, Vot' Horreur. #audience:laughter
@@ -316,7 +324,10 @@ JUGE ERNEST: Lequel des deux témoins voulez-vous défier ?
         MARCELLO: J'accepte, vot' Horreur ! #audience:ovation #anim:Marcello:happy #anim:Capucine:laugh
         JUGE ERNEST: Ainsi l'issue de cette confrontation entre le témoin et l'Accusé sera décidée par le droit de la Lame ! #audience:ovation #anim:Judge:bell #anim:Capucine:applause
         -> duel_against_marcello
-- (witness_agathe) JUGE ERNEST: Témoins, veuillez regagner l'assistance. #audience:applause
+
+// Witness Agathe
+= witness_agathe
+- JUGE ERNEST: Témoins, veuillez regagner l'assistance. #audience:applause
 JUGE ERNEST: J'en appelle désormais à notre dernier témoin.
 JUGE ERNEST: La respectable prêtresse Agathe ! #audience:ovation #move(Agathe)
 // Player va raconter la tempête (flashback)
@@ -414,12 +425,5 @@ JUGE ERNEST: ... partez ! #anim:Judge:bell #screenshake #audience:ovation
     CAPUCINE : Pas du tout, abruti. #audience:laughter
     CAPUCINE: Tu viens de te faire ridiculiser par l'autre minable ! #audience:laughter
     -> witness_agathe
-
-
-
-
-
-
-
 
 
