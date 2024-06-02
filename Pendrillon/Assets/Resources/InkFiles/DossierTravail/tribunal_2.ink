@@ -267,7 +267,7 @@ NAÏDA: Combien il est étrange de constater que vous autres, humains, ayez donn
 - NAÏDA: Je remercie {p_name} de s'être battu pour qu'on me nomma bien, par mon nom.
 NAÏDA: Car les noms, voyez-vous, sont le cœur battant de toute chose. Les noms sont importants.
 NAÏDA: Ainsi il m'apparaît, pour conclure notre histoire, qu'en donnant à un système partial et imparfait, le nom même d'une vertue... #audience:silent
-NAÏDA: Vous ayez commis une erreur... irréparable. #anim:Naida:bow #audience:ovation
+NAÏDA: Vous ayez commis une erreur... cruelle. #anim:Naida:bow #audience:ovation
 - -> epilogue
 
 
