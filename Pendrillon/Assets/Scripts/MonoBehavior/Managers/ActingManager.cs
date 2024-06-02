@@ -283,13 +283,8 @@ namespace MonoBehavior.Managers
                 // split dialogue in 2
                 String[] words = _currentDialogue.Split(":");
                 
-                if (false)
-                {
-                    Debug.Log($"AM.HandleDialogue > Dialogue > {_currentDialogue}");
-                    foreach (var word in words)
-                        Debug.Log($"AM.HandleDialogue > Part > {word}");
-                }
-        
+                // Debug.Log($"AM.HandleDialogue > Dialogue > {_currentDialogue}");
+                // foreach (var word in words)     Debug.Log($"AM.HandleDialogue > Part > {word}");
                 
                 // get character speaking
                 String speaker; 
@@ -331,11 +326,6 @@ namespace MonoBehavior.Managers
                     }
                     else
                     {
-                        // /!\ TMP
-
-                        StartCoroutine(GameManager.Instance.GetCharacter(speaker).LeaveStage());
-                        
-                        
                         if (GameManager.Instance.GetCharacter(speaker) == null)
                             Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > Unknown speaker | {speaker} |");
                         else
@@ -723,6 +713,9 @@ namespace MonoBehavior.Managers
                 case Constants.TagAudience:
                     HandleTagAudience(words[1]);
                     break;
+                case Constants.TagRope:
+                    HandleTagRope(words[1]);
+                    break;
                 default:
                     Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag.");
                     break;
@@ -762,7 +755,85 @@ namespace MonoBehavior.Managers
             characterHandler.transform.position = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(10, 10)); // (new Vector3Int(4 + i * 2, 0, 10 + i * 2));
 
         }
+        
+        void HandleTagSet(string location)
+        {
+            Debug.Log($"AM.Refresh > Change from {_stage} to {location}");
+            _stage = location;
+            
+            // reset character._onStage 
+            foreach (var character in GameManager.Instance._characters)
+            {
+                if (character._onStage)
+                    StartCoroutine(character.LeaveStage(2.0f));
+            }
 
+            AkSoundEngine.PostEvent("Play_SFX_SC_Theater_TransitionTo" + location, gameObject);
+
+            if (_currentSet != null)
+                _currentSet.GetComponent<Animator>().SetBool("InOut",false);
+
+            GameManager.Instance.ClearStageCharacters();
+            
+            //_setBarge.SetActive(false);
+            _setCale.SetActive(false);
+            //_setPort.SetActive(false);
+            _setChurch.SetActive(false);
+            //_setTrial.SetActive(false);
+            _setTempest.SetActive(false);
+            _setForest.SetActive(false);
+            
+            GameManager.Instance.SetGridHeight();
+            
+            switch (_stage)
+            {
+                case Constants.SetBarge:
+                    _setBarge.SetActive(true);
+                    _setBarge.GetComponent<Animator>().SetBool("InOut",true);
+                    _currentSet = _setBarge;
+                    break;
+                case Constants.SetCale:
+                    _setCale.SetActive(true);
+                    //_setCale.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    _currentSet = _setCale;
+                    break;
+                case Constants.SetPort:
+                    _setPort.SetActive(true);
+                    //_setPort.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    _currentSet = _setPort;
+                    break;
+                case Constants.SetChuch:
+                    _setChurch.SetActive(true);
+                    //_setChurch.GetComponent<Animator>().SetBool("InOut",true);
+                    _currentSet = _setChurch;
+                    break;
+                case Constants.SetTrial:
+                    _setTrial.SetActive(true);
+                    //_setTrial.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    _currentSet = _setTrial;
+                    break;
+                case Constants.SetTempest:
+                    _setTempest.SetActive(true);
+                    //_setTempest.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    _currentSet = _setTempest;
+                    break;
+                case Constants.SetForest:
+                    _setForest.SetActive(true);
+                    //_setForest.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    _currentSet = _setForest;
+                    break;
+                default:
+                    Debug.LogError("SetTag > Unknown location");
+                    break;
+            }
+            GameManager.Instance.SetGridHeight(_stage);
+        }
+        
         void HandleTagPosition(string[] data)
         {
             if (data.Length != 3)
@@ -781,91 +852,13 @@ namespace MonoBehavior.Managers
                 return;
             }
 
-            Vector2Int position = new Vector2Int(int.Parse(data[1]), int.Parse(data[2]));
-
             //Debug.Log($"AM.HandleTagPosition > Set {data[0]} to position [{position.x}, {position.y}]");
+
+            Vector2Int position = new Vector2Int(int.Parse(data[1]), int.Parse(data[2]));
             
-            //character.SetPosition(position);
-            StartCoroutine(character.ArriveOnStage(GameManager.Instance._gridScene.GetWorldPositon(position)));
+            StartCoroutine(character.ArriveOnStage(position));
         }
 
-        void HandleTagSet(string location)
-        {
-            Debug.Log($"AM.Refresh > Change from {_stage} to {location}");
-            _stage = location;
-
-            AkSoundEngine.PostEvent("Play_SFX_SC_Theater_TransitionTo" + location, gameObject);
-
-            if (_currentSet != null)
-                _currentSet.GetComponent<Animator>().SetBool("InOut",false);
-
-            GameManager.Instance.ClearStageCharacters();
-            
-            _setBarge.SetActive(false);
-            _setCale.SetActive(false);
-            //_setPort.SetActive(false);
-            _setChurch.SetActive(false);
-            //_setTrial.SetActive(false);
-            _setTempest.SetActive(false);
-            _setForest.SetActive(false);
-            
-            GameManager.Instance.SetGridHeight();
-            
-            switch (_stage)
-            {
-                case Constants.SetBarge:
-                    
-                    _setBarge.SetActive(true);
-                    _setBarge.GetComponent<Animator>().SetBool("InOut",true);
-                    _currentSet = _setBarge;
-                    break;
-                case Constants.SetCale:
-                    _setCale.SetActive(true);
-                    
-                    //_setCale.GetComponent<Animator>().SetBool("InOut",true);
-                    
-                    
-                    _currentSet = _setCale;
-                    break;
-                case Constants.SetPort:
-                    _setPort.SetActive(true);
-                    //_setPort.GetComponent<Animator>().SetBool("InOut",true);
-                    
-                    
-                    _currentSet = _setPort;
-                    break;
-                case Constants.SetChuch:
-                    _setChurch.SetActive(true);
-                    //_setChurch.GetComponent<Animator>().SetBool("InOut",true);
-                    _currentSet = _setChurch;
-                    break;
-                case Constants.SetTrial:
-                    _setTrial.SetActive(true);
-                    //_setTrial.GetComponent<Animator>().SetBool("InOut",true);
-                    
-                    
-                    _currentSet = _setTrial;
-                    break;
-                case Constants.SetTempest:
-                    _setTempest.SetActive(true);
-                    //_setTempest.GetComponent<Animator>().SetBool("InOut",true);
-                    
-                    
-                    _currentSet = _setTempest;
-                    break;
-                case Constants.SetForest:
-                    _setForest.SetActive(true);
-                    //_setForest.GetComponent<Animator>().SetBool("InOut",true);
-                    
-                    
-                    _currentSet = _setForest;
-                    break;
-                default:
-                    Debug.LogError("SetTag > Unknown location");
-                    break;
-            }
-            GameManager.Instance.SetGridHeight(_stage);
-        }
         
         void HandleTagMove(string[] data)
         {
@@ -1101,6 +1094,33 @@ namespace MonoBehavior.Managers
             }
             
             _tagMethods.Add(AudienceAction);
+        }
+
+        void HandleTagRope(string characterName)
+        {
+            CharacterHandler character = GameManager.Instance.GetCharacter(characterName);
+            if (character == null)
+            {
+                Debug.LogError($"AM.HandleTagRope > Error: Unknown character name | {characterName} |");
+                return;
+            }
+
+            void RopeAction()
+            {
+                if (character._onStage)
+                {
+                    Debug.Log($"AM.HandleTagRope > {characterName} leaves stage");
+                    StartCoroutine(character.LeaveStage());
+                }
+                else
+                {
+                    Debug.Log($"AM.HandleTagRope > {characterName} arrives on stage");
+                    StartCoroutine(character.ArriveOnStage(character._coordsOnStatge));
+                }
+                TagActionOver();
+            }
+
+            _tagMethods.Add(RopeAction);
         }
         
         

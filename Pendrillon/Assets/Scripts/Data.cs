@@ -18,8 +18,9 @@ public static class Constants
     public const string TagScreenShake  = "screenshake";    // #screenshake:Intensity:Time  Intensity: Puissance du screenshake     Time: durée du screenshake en secondes
     public const string TagLook         = "look";           // #look:Character:Target       Character: nom du personnage    Target: cible vers laquelle se tourner
     public const string TagAudience     = "audience";       // #audience:Reaction           Reaction: type de réaction
+    public const string TagRope         = "rope";           // #rope:Character              Character: nom du personnage
     
-    
+            
     // public const string TagCurtains     = "curtains";       // #curtains
     // public const string TagOpenCurtains = "open";           // #curtains
     // public const string TagCloseCurtains = "close";         // #curtains
@@ -104,4 +105,3 @@ public static class Constants
 
     #endregion
 }
-

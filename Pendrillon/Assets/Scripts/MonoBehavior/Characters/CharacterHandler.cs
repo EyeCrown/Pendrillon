@@ -14,6 +14,9 @@ public class CharacterHandler : MonoBehaviour
 
     public Character _character;
 
+    public Vector2Int _coordsOnStatge;
+    public bool _onStage = false;
+    
     Animator _anim;
     private GameObject _rope;
     private Vector3 _ropeOffset = new Vector3(0, 10.0f, -0.35f);
@@ -26,7 +29,6 @@ public class CharacterHandler : MonoBehaviour
     //TextMeshProUGUI _nameText;
     TextMeshProUGUI _dialogueText;
 
-    public Vector2Int _coordsOnStatge;
     
     //[Range(1, 200)] [SerializeField] private int maxLengthDialogue;
     
@@ -210,8 +212,11 @@ public class CharacterHandler : MonoBehaviour
     }
 
 
-    public IEnumerator ArriveOnStage(Vector3 targetPosition, float duration = 6.0f)
+    public IEnumerator ArriveOnStage(Vector2Int targetCoordPosition, float duration = 6.0f)
     {
+        _coordsOnStatge = targetCoordPosition;
+        Vector3 targetPosition = GameManager.Instance._gridScene.GetWorldPositon(targetCoordPosition);
+        
         float time = 0.0f;
         Vector3 startPosition = targetPosition + new Vector3(0, 10.0f,0);
 
@@ -219,7 +224,7 @@ public class CharacterHandler : MonoBehaviour
         _rope.transform.localPosition = _ropeOffset;
         
         transform.position = startPosition;
-        _anim.SetTrigger("falling");
+        _anim.SetBool("falling", true);
         
         // Character start arriving
         while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
@@ -229,7 +234,9 @@ public class CharacterHandler : MonoBehaviour
             yield return null;
         }
         Debug.Log($"{gameObject.name} is done");
-        _anim.SetTrigger("idle");
+        
+        _anim.SetBool("falling", false);
+
 
         // Character is on stage -> Rope goes up
         var ropeStart = _ropeOffset;
@@ -244,8 +251,8 @@ public class CharacterHandler : MonoBehaviour
         }
         _rope.SetActive(false);
         Debug.Log($"{gameObject.name}.Rope is done");
-        
 
+        _onStage = true;
     }
     
     
@@ -270,7 +277,8 @@ public class CharacterHandler : MonoBehaviour
         }
         
         // Rope is here -> Character goes up
-        _anim.SetTrigger("falling");
+        _anim.SetBool("falling", true);
+        
         while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
         {
             transform.position = Vector3.Lerp(startPosition, targetPosition, 
@@ -280,6 +288,9 @@ public class CharacterHandler : MonoBehaviour
         }
         // Character is up
         Debug.Log($"{gameObject.name} has leave the stage");
+        _onStage = false;
+        _anim.SetBool("falling", false);
+
     }
 
     #endregion
