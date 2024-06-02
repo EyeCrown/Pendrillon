@@ -87,7 +87,7 @@ SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! Show 
     * [Le destinataire.] PLAYER: La lettre était destinée à un certain {p_name} Jehovah Banes. Or, la seule personne à m’appeler ainsi est ma mère, qui est absolument et irrémédiablement illetrée... #anim:Player:neutre #playsound:VOX_Player_lalettredestinataire{p_name} #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
     * [L'odeur.] PLAYER: J’ai reçu bien des lettres dans ma vie, certaines avaient l’odeur du sel marin ou des impôts impayés, mais jamais une odeur si... délicate. L'odeur d'un expéditeur fortuné. #anim:Player:neutre #playsound:VOX_Player_lalettreodeur #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
 - PLAYER: La lettre me donnait rendez-vous pour une cause « de la plus haute importance ».
-PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous : la cale de mon propre navire. #anim:Player:neutre #playsound:VOX_Player_transitionsecretmeeting  #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
+PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous : le Bois des Noyés. #anim:Player:neutre #playsound:VOX_Player_transitionsecretmeeting  #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
 - -> secret_meeting
 
 // Scène 2
@@ -109,7 +109,7 @@ PASSEUR: Pourquoi avoir accepté une mission si périlleuse ? #anim:Passeur:ques
     * [Pour la gloire !] PLAYER: Pour la gloire, cela va sans dire ! #anim:Player:gloire #playsound:VOX_Player_pourlagloire #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
     * [Pour l'aventure !] PLAYER: Pour l'aventure bien entendu ! #anim:Player:gloire #playsound:VOX_Player_pourlaventure #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
 - #audience:applause
-- PASSEUR: Tout de même... De là à te confronter à une créature mythique telle que le Léviathan... #anim:Passeur:surprise #playsound:VOX_Ferryman_toutdememe
+- PASSEUR: Tout de même... De là à te confronter à une créature mythique telle que le Léviathan... #playsound:VOX_Ferryman_toutdememe
 PLAYER: À dire vrai... #anim:Player:neutre
     * [Je ne crois pas au Léviathan.] PLAYER: Je ne crois pas à ces histoires à dormir debout... Je prévoyais de faire le voyage, prétendre avoir terassé le monstre et retourner à bon port, l'esprit léger. #anim:Player:neutre
         PASSEUR: Dans ton histoire, tu racontes pourtant avoir promis de ramener le cœur de la bête. #anim:Passeur:surprise

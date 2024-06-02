@@ -146,9 +146,9 @@ VAR irene_was_a_sireine = true
 * {stained_glass_3_talk == false} [L'homme écartelé sur la roue.] L'homme attaché à la roue... c'est Lui n'est-ce pas ?
     ~ stained_glass_3_talk = true
     -> man_tied_to_a_wheel
-* {stained_glass_4_talk == false} [Le vitrail brisé.] Le dernier vitrail est brisé...
-    ~ stained_glass_4_talk = true
-    -> ship_reaching_land
+// * {stained_glass_4_talk == false} [Le vitrail brisé.] Le dernier vitrail est brisé...
+//     ~ stained_glass_4_talk = true
+//     -> ship_reaching_land
 + {stained_glass_1_talk or stained_glass_2_talk or stained_glass_3_talk or stained_glass_4_talk} [(Conclure) Passer la nuit.]
     {
         - stained_glass_1_talk == true && stained_glass_2_talk == true && stained_glass_3_talk == true && stained_glass_4_talk == true:
