@@ -21,7 +21,6 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #actor:Capucine:CAPUCINE:CAPUCINE LA LARBINE:CAPUCINE LA MARCASSINE:CAPUCINE LA TARTINE
 #actor:Marcello:MARCELLO:MARCELLOGRE:MARCELLOTARIE:MARCELLOCROUPIE
 #actor:Agathe:AGATHE
-#actor:Naïda:???:NAÏDA:L'AFFREUSE SIREINE:LA POISCAILLE
 // Set the location
 #set:forest // En attendant d'avoir le décors trial
 // Set the actor's positions
@@ -31,7 +30,6 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #position:Capucine:4:20
 #position:JudMarcelloge:4:20
 #position:Agathe:4:20
-#position:Naïda:4:20
 
 // Start the scene
 #open_curtains
@@ -514,11 +512,11 @@ JUGE ERNEST: Une histoire des plus émouvantes... Qu'a t-il eu à dire à ce suj
 - JUGE ERNEST: Ensuite, prêtresse ?
 {
     - t_3_rant_about_edgar_the_traquenard: AGATHE: Ensuite, il ne cessa de mentionner un certain Edgard le Traquenard, Votre Honneur... #audience:laughter
-        JUGE ERNEST: Comment dites-vous ? Edgar le Traquenard ? #audience:laughter
+        JUGE ERNEST: Comment dites-vous ? Edgar... le Traquenard ? #audience:laughter
         AGATHE: Il semblerait, oui... Il en parlait avec des yeux fous, Votre Honneur. #audience:laughter
         JUGE ERNEST: Passons, passons...
 }
-- JUGE ERNEST: Avez-vous évoqué la fin de cette histoire, prêtresse ? Celle-ci est des plus attendrissantes... #audience:applause
+- JUGE ERNEST: Avez-vous évoqué avec l'Accusé la fin de l'histoire, prêtresse ? Celle-ci est des plus attendrissantes... #audience:applause
 AGATHE: Je n'ai pas manqué de le faire, Votre Honneur.
 JUGE ERNEST: Bien, bien. Et quelle fut sa réaction, quand il apprit que la lumière d'un phare, au loin, sauva les marins et l'enfant ?
 {
@@ -548,7 +546,7 @@ JUGE ERNEST: Bien, bien... Mais encore, prêtresse ?
 
 // The player talked about stained glass 3
 = talk_about_stained_glass_3
-AGATHE: Le sujet que nous abordâmes après cela, Votre Honneur...
+AGATHE: L'ultime sujet que nous abordâmes, Votre Honneur...
 AGATHE: ... Ce fut vous. #audience:choc
 JUGE ERNEST: Je vois... #audience:debate
 JUGE ERNEST: Et qu'a eu à dire l'Accusé au sujet du Juge ? #audience:silent
@@ -558,7 +556,8 @@ JUGE ERNEST: Et qu'a eu à dire l'Accusé au sujet du Juge ? #audience:silent
         JUGE ERNEST: Grand bien lui fasse.
     - t_3_question_judge_position: AGATHE: L'Accusé a remis en question votre position de Juge, Votre Honneur. #audience:choc
         JUGE ERNEST: Je vois, je vois...
-        JUGE ERNEST: Le Juge laissera les jurés décider de son sort... Puisse t-il finir au fond des eaux. #audience:ovation
+        JUGE ERNEST: Le Juge laissera les jurés décider de son sort... Puisse t-il finir au fond des Eaux ! #audience:ovation
+        ~ audience_judgement(-0.02)
 }
 - JUGE ERNEST: Ainsi se clôt votre témoignage, prêtresse. #audience:applause
 JUGE ERNEST: Chacun vous remercie pour votre dévouement. #audience:ovation
@@ -583,12 +582,6 @@ JUGE ERNEST: Veillez raconter au jurés ainsi qu'eu Juge ce qu'il s'est passé l
 // Player va raconter la tempête (flashback)
 - (tempest_flashback)
     -> tempest
-
-// The judge proceed to mention the sireine
-= judge_proceed_to_mention_the_sireine
-JUGE ERNEST: Accusé, il est un sujet que nous n'avons pas encore évoqué lors de ce procès. #audience:debate
-JUGE ERNEST: Ce sujet constitue pourtant le cœur de ce qu'il vous est repproché. #audience:debate
-JUGE ERNEST: Je veux bien entendu parler... de l'amour impie. #audience:choc
 
 
 

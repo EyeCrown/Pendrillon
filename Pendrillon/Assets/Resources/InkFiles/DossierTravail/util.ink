@@ -5,6 +5,7 @@
 
 // Debug
 CONST print_debug = false // Set if the debug logs are printed or not
+CONST print_debug_trial = true // Set if the debug logs of the trial are printed or not
 CONST export_mode = false // Set if the game is in export mode or not
 
 // Stats names
