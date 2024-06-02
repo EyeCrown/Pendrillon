@@ -23,9 +23,7 @@
 #playsound:Play_AMB_SC_Theater_CrowdChatter
 #playsound:Play_MUS_Story_SC_Barque_Intro #wait:3 #audience:applause #wait:5
 PASSEUR: Eh, bien...
-PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous : la cale de mon propre navire. #anim:Player:neutre #playsound:VOX_Player_transitionsecretmeeting #playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
-- -> secret_meeting
-PASSEUR: J'ai connu des passagers plus loquaces...  #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause
+PASSEUR: J'ai connu des passagers plus loquaces...  #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause #rope:Player
     * [(Rester silencieux)]
 - PASSEUR: *Hum hum* #bark:Passeur:clear_voice
 - PASSEUR: J'ai dit : « J'ai connu des passagers plus loquaces... ». #box #audience:debate

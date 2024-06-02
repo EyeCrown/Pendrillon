@@ -29,8 +29,9 @@ public class CharacterHandler : MonoBehaviour
     //TextMeshProUGUI _nameText;
     TextMeshProUGUI _dialogueText;
 
-    
-    //[Range(1, 200)] [SerializeField] private int maxLengthDialogue;
+    // Coroutines booleans
+    private bool _leaveCoroutine = false;
+    private bool _arriveCoroutine = false;
     
     #endregion
 
@@ -214,6 +215,15 @@ public class CharacterHandler : MonoBehaviour
 
     public IEnumerator ArriveOnStage(Vector2Int targetCoordPosition, float duration = 6.0f)
     {
+        _arriveCoroutine = true;
+        Debug.Log($"{name} start arriving on stage");
+
+        while (_leaveCoroutine)
+        {
+            Debug.Log("Waiting leaving coroutine to finish");
+            yield return null;
+        }
+        
         _coordsOnStatge = targetCoordPosition;
         Vector3 targetPosition = GameManager.Instance._gridScene.GetWorldPositon(targetCoordPosition);
         
@@ -245,7 +255,7 @@ public class CharacterHandler : MonoBehaviour
         while (Vector3.Distance(_rope.transform.localPosition, ropeDestination) > 0.001f)
         {
             _rope.transform.localPosition = Vector3.Lerp(ropeStart, ropeDestination, 
-                _character.movementCurve.Evaluate(time/ (duration/4)));
+                _character.movementCurve.Evaluate(time/ (duration/2)));
             time += Time.deltaTime;
             yield return null;
         }
@@ -253,25 +263,29 @@ public class CharacterHandler : MonoBehaviour
         Debug.Log($"{gameObject.name}.Rope is done");
 
         _onStage = true;
+        _arriveCoroutine = false;
     }
     
     
-    public IEnumerator LeaveStage(float duration = 6.0f)
+    public IEnumerator LeaveStage(float duration = 3.0f)
     {
+        _leaveCoroutine = true;
+        Debug.Log($"{name} start leaving stage");
+        
         float time = 0.0f;
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = transform.position + new Vector3(0, 10.0f,0);
         
         
         _rope.SetActive(true);
-        var ropeStart = targetPosition + _ropeOffset;
+        var ropeStart = _ropeOffset + new Vector3(0, 10f, 0);
         var ropeDestination = _ropeOffset;
         _rope.transform.localPosition = ropeStart;
         // Rope is arriving
         while (Vector3.Distance(_rope.transform.localPosition, ropeDestination) > 0.001f)
         {
             _rope.transform.localPosition = Vector3.Lerp(ropeStart, ropeDestination, 
-                _character.movementCurve.Evaluate(time/ (duration/4)));
+                _character.movementCurve.Evaluate(time/duration));
             time += Time.deltaTime;
             yield return null;
         }
@@ -290,7 +304,7 @@ public class CharacterHandler : MonoBehaviour
         Debug.Log($"{gameObject.name} has leave the stage");
         _onStage = false;
         _anim.SetBool("falling", false);
-
+        _leaveCoroutine = false;
     }
 
     #endregion
