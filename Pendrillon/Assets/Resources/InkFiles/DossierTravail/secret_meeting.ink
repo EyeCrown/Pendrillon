@@ -119,7 +119,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question
             -> arle_presentation
         ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 0)}]
-            {sc(CHAR, 0): -> mock_arle_S | -> mock_arle_F} 
+            {sc(CHAR, 0): -> mock_arle_S | -> mock_arle_F}
             *** (mock_arle_S) Tu es une authentique bouffonne... #anim:Player:neutre #anim:Arle:triste #audience:laughter
                 ???: Bouffonne est l'une de mes professions, mais ce n'est pas mon nom. #anim:Arle:stress
                 -> arle_presentation

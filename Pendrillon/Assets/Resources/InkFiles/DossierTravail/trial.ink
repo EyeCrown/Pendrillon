@@ -137,7 +137,7 @@ VAR t_4_church_is_burnt = false
         SOUFFLEUR: Psssst... Hé, l'ami ! C'est encore moi !
         SOUFFLEUR: Je crois que tu es sur le point de la mettre hors d'elle, avec toutes tes moqueries...
         SOUFFLEUR: Cela dit, le public semble apprécier...
-        SOUFFLEUR: Peut-être que le spectacle n'en serait que plus amusant ? À toi de voir, l'ami !
+        SOUFFLEUR: Peut-être que le spectacle n'en serait que plus amusant ? À toi d'en juger, l'ami !
     - t_arle_patience <= 0:
         ARLE: Il suffit ! Assez de moqueries ! Ferme-la !! #audience:silent
         ARLE: Et vous, public « adoré », vous ne me méritez pas ! Cessez de rire ! #audience:debate
@@ -146,9 +146,9 @@ VAR t_4_church_is_burnt = false
         // Une corde emmène Arle
         ARLE: Hé ! Laisse-moi ! Laisse-moi j'ai dit ! #audience:laughter
         SOUFFLEUR: Oula, oula oula...
-        SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'elle pète une durite !
+        SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer !
         SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs !
-        SOUFFLEUR: Quoi qu'il en soit: « Show must go on! », l'ami. #audience:ovation
+        SOUFFLEUR: Quoi qu'il en soit: « Show must go on! », l'ami #audience:ovation // Il manque un point mais c'est fait exprès : permet d'aller à la ligne de manière invisible
         
         ~ arle_leaves_stage = true
         ~ arle_left_the_play = true

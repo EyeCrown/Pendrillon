@@ -3,8 +3,8 @@
 // Variables
 VAR CAPUCINE = ""
 VAR MARCELLO = ""
-VAR capucine_surname = ""
-VAR marcello_surname = ""
+VAR capucine_surname = "la tartine"
+VAR marcello_surname = "Marcellogre"
 
 // Scene
 === church_day ===

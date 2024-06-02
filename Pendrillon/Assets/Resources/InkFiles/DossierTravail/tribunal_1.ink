@@ -129,7 +129,7 @@ ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège
         ARLE: Où en étais-je ? Ah oui : un rôle de tout premier plan.
     * [Ne rien dire.]
 - ARLE: J'aime à penser que je suis, pour ce rôle, une actrice à la hauteur.
-    * [(Se moquer) Toi, une bonne actrice ?] PLAYER: Toi, une bonne actrice ? En voilà une nouvelle à ressuciter les noyés ! #audience:laughter anim:Arle:angry
+    * [(Se moquer) Toi, une bonne actrice ?] PLAYER: Toi, une bonne actrice ? En voilà une nouvelle à ressuciter les noyés ! #audience:laughter #anim:Arle:angry
         ~ audience_judgement(0.05)
         ARLE: Tu vas te taire, oui ?! #anim:Arle:angry
         {make_arle_angry(): -> arle_leaves_stage}
@@ -139,7 +139,7 @@ ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège
 - JUGE ERNEST: Veuillez ne pas vous répandre en détails inutiles. #audience:laughter #anim:Arle:sad1
 ARLE: ... Hmfrr...
 ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à messire le scélérat une mission de la plus haute importance.
-    * [Jouer correctement la comédie ?] PLAYER: Si la mission était de jouer correctement, permets-moi de te dire que c'est un échec... #audience:laughter anim:Arle:angry
+    * [Jouer correctement la comédie ?] PLAYER: Si la mission était de jouer correctement, permets-moi de te dire que c'est un échec cuisant... #audience:laughter anim:Arle:angry
         ~ audience_judgement(0.05)
         {make_arle_angry(): -> arle_leaves_stage}
         JUGE ERNEST: Silence ! Le Juge exige le silence ! #anim:Judge:bell #audience:silent
@@ -149,10 +149,10 @@ ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à 
     * [Rester silencieux.]
 - JUGE ERNEST: Précisez quelle était la nature de cette mision, je vous prie. #anim:Arle:bow
 ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme accusé, était de tuer le Léviathan, et d'en ramener l'organe vital.
-ARLE: Je veux bien entendu parler de son cœur, Votre Honneur. #audience:laughter #anim:Judge:bell
+ARLE: Je veux bien entendu parler de son cœur, Votre Honneur. #audience:laughter #anim:Judge:bell #anim:Arle:bow
 JUGE ERNEST: Bien, bien... Est-ce tout ?
 ARLE: Puis-ajouter une dernière chose, Votre Honneur ?
-    * [(En priant) Irène, pitié, faites-la taire.] PLAYER: Ô Irène, ayez pitié de nous, pauvres humains ! Ô, je vous en conjure : faites la taire ! #audience:laughter anim:Arle:angry
+    * [(En priant) Irène, pitié, faites-la taire.] PLAYER: Ô Irène, ayez pitié de nous, pauvres humains ! Ô, je vous en conjure : faites-la taire ! #audience:laughter anim:Arle:angry
         ~ audience_judgement(0.05)
         ARLE: Cesse de m'interrompre, morveux ! #anim:Arle:angry
         {make_arle_angry(): -> arle_leaves_stage}
@@ -261,21 +261,21 @@ JUGE ERNEST: Est-ce vrai ? La déesse elle-même ? Notre Sauveuse, Irène ? Rép
         }
 - JUGE ERNEST: {arle_lied_again == false: Accusé, ces paroles sont insoutenables, et par la Loi ainsi que la Foi, elle seront punies. | Accusé, je remercie la Déesse que vous n'ayez pas profané son nom comme le témoin le prétendait.}
 - JUGE ERNEST: {arle_lied_again == false: Témoin, la Déesse vous remercie pour votre témoignage. Vous pouvez quitter ce tribunal, désormais... | Témoin, profaner de tels mensonges à l'égard de l'Accusé est un acte grave ! La Déesse vous couvre de honte ! Hors de ma vue !} #audience:booing
-- (witnesses_capucine_and_marcello) JUGE ERNEST: Capucine dite « {capucine_surname} », accompagnée de Marcello, alias « {marcello_surname} ».
-CAPUCINE: Votre Honneur, avec tout mon respect... J'apprécierais d'être nommée simplement Capucine. #anim:Capucine:angry
-JUGE ERNEST: Bon, non... Je tâcherais d'y penser. #anim:Capucine:bow
+- (witnesses_capucine_and_marcello) JUGE ERNEST: Capucine dite « {capucine_surname} », accompagnée de Marcello, alias « {marcello_surname} ». #audience:ovation
+CAPUCINE: Votre Honneur, avec tout mon respect... J'apprécierais d'être nommée simplement Capucine. #anim:Capucine:angry #audience:laughter
+JUGE ERNEST: Bon, bon... Je tâcherais d'y penser. #anim:Capucine:bow
 MARCELLO: Votre Horreur, moi aussi je voudrais être nommé Capucine... Euh... je veux dire Marcello, Vot' Horreur. #audience:laughter
 CAPUCINE: Ferme-la, tu veux ? N'en demande pas trop à Son Honneur.
 CAPUCINE: Votre Honneur, veuillez excuser cet fieffé personnage. Sa place est dans une taverne... ou même une étable. #audience:laughter
-CAPUCINE: ... Pas dans un tel lieu. #anim:Capucine:bow #audience:applause
+CAPUCINE: ... Pas dans un tel lieu. #anim:Capucine:bow #audience:ovation
 JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent
 JUGE ERNEST: Veuillez raconter aux jurés votre rencontre avec l'accusé. Et soyez brefs, voulez-vous ?
 CAPUCINE: Je vous remercie, Votre Honneur. #anim:Capucine:bow
 CAPUCINE: Vous n'êtes pas sans savoir, Votre Honneur, que tout navire qui arrive à Miraterre doit être fouillé par des gardes de la Couronne.
 CAPUCINE: Aussi mon camarade et moi avons-nous pénétré sur le rafiot du vil personnage pour y faire notre inspection.
-MARCELLO: J'avais entendu du bruit dans la cale, vot' Horreur. #audience:laughter
-CAPUCINE: Ferme-là, tu veux ? C'est à moi de raconter.
-CAPUCINE: Mon camarade a effectivement entendu du bruit, et j'ai eu l'idée d'aller voir de plus près.
+MARCELLO: J'avais entendu du bruit dans la cale, vot' Horreur.
+CAPUCINE: Ferme-là, tu veux ? C'est à moi de raconter. #audience:laughter
+CAPUCINE: Mon camarade a effectivement entendu du bruit, et moi j'ai eu l'idée d'aller voir de plus près.
 MARCELLO: Parle-lui de l'odeur, cheffe ! #audience:laughter
 CAPUCINE: La ferme, j'ai dit ! #audience:laughter
 CAPUCINE: Mon camarade n'a pas tort, cependant : l'odeur du rafiot était épouvantable... À l'image du fiéffé gredin à ma gauche.
@@ -295,28 +295,125 @@ JUGE ERNEST: Accusé, est-ce la vérité ? Cachiez-vous illégallement quelqu'un
     * [J'en appelle à la Loi !] PLAYER: Votre Honneur, je souhaiterais invoquer le.. euh..
         ** [Le droit de la Larme.] PLAYER: ... le droit de la Larme, Votre Honneur. #audience:laughter
             JUGE ERNEST: Sans doute l'Accusé fait-il référence au droit de la Lame ? #audience:debate
+            ~ audience_judgement(0.1)
         ** [Le droit de la Lame.] PLAYER: ... le droit de la Lame, Votre Honneur. #audience:choc
+            ~ audience_judgement(0.1)
         ** [Le droit de la Larve.] PLAYER: ... le droit de la Larve, Votre Honneur. #audience:laughter
             JUGE ERNEST: Sans doute l'Accusé fait-il référence au droit de la Lame ? #audience:debate
-- JUGE ERNEST: Bien, bien... Le Juge rappelle aux jurés que le droit de la Lame consiste à défier, en duel, son opposant lors d'un procès.
-JUGE ERNEST: C'est une vieille loi, qui n'a plus été invoquée depuis des décénnies, mais soit...
+            ~ audience_judgement(0.1)
+- JUGE ERNEST: Bien, bien... Le Juge rappelle aux jurés que le droit de la Lame consiste à défier en duel son opposant lors d'un procès. #audience:debate
+JUGE ERNEST: C'est une vieille loi, qui n'a plus été invoquée depuis des décénnies, mais soit... #audience:ovation
 JUGE ERNEST: Lequel des deux témoins voulez-vous défier ?
-    * [Défier Capucine.]
-    * [Défier Marcello.]
-    
+    * [Défier Capucine à un duel de poirier.] PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation
+        JUGE ERNEST: Un duel... de poirier ? #audience:laughter
+        JUGE ERNEST: Ab... absolument ! Comme l'exige la coutume, en effet... Témoin, acceptez-vous les conditions du duel ? #audience:debate
+        CAPUCINE: Volontier, Votre Honneur. #audience:ovation #anim:Capucine:happy #anim:Marcello:laugh
+        JUGE ERNEST: Ainsi l'issue de cette confrontation entre le témoin et l'Accusé sera décidée par le droit de la Lame ! #audience:ovation #anim:Judge:bell #anim:Marcello:applause
+        -> duel_against_capucine
+    * [Défier Marcello à un concours de pompes.] PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation
+        JUGE ERNEST: Un concours... de pompes ? #audience:laughter
+        JUGE ERNEST: Ab... absolument ! Comme l'exige la coutume, en effet... Témoin, acceptez-vous les conditions du duel ? #audience:debate
+        MARCELLO: J'accepte, vot' Horreur ! #audience:ovation #anim:Marcello:happy #anim:Capucine:laugh
+        JUGE ERNEST: Ainsi l'issue de cette confrontation entre le témoin et l'Accusé sera décidée par le droit de la Lame ! #audience:ovation #anim:Judge:bell #anim:Capucine:applause
+        -> duel_against_marcello
+- (witness_agathe) JUGE ERNEST: Témoins, veuillez regagner l'assistance. #audience:applause
+JUGE ERNEST: J'en appelle désormais à notre dernier témoin.
+JUGE ERNEST: La respectable prêtresse Agathe ! #audience:ovation #move(Agathe)
 // Player va raconter la tempête (flashback)
 -> tempest
 
 // Arle leaves stage
 = arle_leaves_stage
-JUGE ERNEST: ... #audience:laughter
-JUGE ERNEST: Euh... Silence ?
-JUGE ERNEST: Je... J'appelle à la barre notre second témoin. Nos second et troisième témoins, pour être exact.
+~ audience_judgement(0.4)
+. #audience:laughter // Laisser ça là : permet d'aller à la ligne de manière invisible
+JUGE ERNEST: Euh... Si... Silence ! #anim:Judge:bell #audience:ovation
+JUGE ERNEST: Je... J'appelle à la barre nos deux prochains témoins.
     -> witnesses_capucine_and_marcello
 
-
-
-
+// Duel against Capucine
+= duel_against_capucine
+~ temp dext_difficulty = 40
+~ temp capucine_sc = 100
+~ temp nb_turn_against_capucine = 1
+// Les deux présentoirs sont soulevés par des câbles pour faire de la place
+JUGE ERNEST: Le Juge demande aux deux duellistes de s'approcher des jurés. #anim:Judge:bell
+JUGE ERNEST: Lorsque la cloche sonnera, vous devrez faire le.. euh.. le poirier ! #audience:laughter
+JUGE ERNEST: Celui ou celle qui tiendra le plus longtemps remportera le défi. Tenez-vous prêts... #audience:ovation #screenshake
+JUGE ERNEST: À vos marques...
+JUGE ERNEST: ... prêts... #screenshake #audience:ovation
+JUGE ERNEST: ... partez ! #anim:Judge:bell #screenshake #audience:ovation
+- (start_duel)
+    * [Faire le poirier. {t(DEXT, dext_difficulty)}]
+        {sc(DEXT, dext_difficulty): -> round_against_capucine_S | -> defeat_against_capucine}
+- (next_round_against_capucine)
+    ~ nb_turn_against_capucine += 1
+    JUGE ERNEST: Le témoin Capucine {tient bon elle aussi | parvient à tenir le bon bout | continue d'impressionner les jurés | tient encore le coup | réussit une nouvelle fois | parvient à tenir malgré la douleur } ! #audience:ovation
+    JUGE ERNEST: C'est désormais à l'Accusé de {ne pas s'effondrer | ne pas échouer lamentablement | ne pas décevoir les jurés | faire une nouvelle fois preuve de talent | tenir encore un peu | tenir toujours un peu plus }! #audience:ovation
+    + [Tenir le coup. {t(DEXT, dext_difficulty)}]
+        {sc(DEXT, dext_difficulty): -> round_against_capucine_S | -> defeat_against_capucine}
+- (round_against_capucine_S)
+    ~ dext_difficulty -= 5
+    ~ capucine_sc -= 5
+    JUGE ERNEST: L'Accusé {a tenu bon | a une nouvelle fois réussi | impresionne par ses talents au poirier | nous délivre une novelle fois une performance impressionnante |  semble désormais inarrêtable | réussit à nouveau }: qu'en sera t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #audience:ovation
+    {roll_ai_sc(capucine_sc): -> next_round_against_capucine | -> victory_against_capucine}
+    #audience:ovation
+- (defeat_against_capucine) JUGE ERNEST: Nous avons un vainqueur !
+    JUGE ERNEST: Après {nb_turn_against_capucine < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_capucine} tour{nb_turn_against_capucine > 1:s}, c'est le témoin Capucine qui remporte le duel !
+    ~ audience_judgement(-0.1)
+    MARCELLO: Impressionnant, cheffe ! Vous n'avez la tête qui tourne ? #audience:laughter
+    CAPUCINE: S.. si, un peu... Mets-la en veilleuse, tu veux ? #audience:laughter
+    JUGE ERNEST: Ainsi en a jugé... euh la Déesse ! L'Accusé perd le duel ! #audience:booing #screenshake
+    -> witness_agathe
+- (victory_against_capucine) JUGE ERNEST: Nous avons un vainqueur !
+    JUGE ERNEST: Après {nb_turn_against_capucine < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_capucine} tour{nb_turn_against_capucine > 1:s}, c'est l'Accusé qui remporte le duel !
+    JUGE ERNEST: Ainsi en a jugé... euh la Déesse ! L'Accusé remporte le duel ! #audience:ovation #screenshake
+    ~ audience_judgement(0.4)
+    MARCELLO : L'important, c'est de participer, cheffe ! #anim:Marcello:applause
+    CAPUCINE: La ferme, tu veux ? #audience:laughter
+    -> witness_agathe
+    
+// Duel against Marcello
+= duel_against_marcello
+~ temp stre_difficulty = 40
+~ temp marcello_sc = 100
+~ temp nb_turn_against_marcello = 1
+// Les deux présentoirs sont soulevés par des câbles pour faire de la place
+JUGE ERNEST: Le Juge demande aux deux duellistes de s'approcher des jurés. #anim:Judge:bell
+JUGE ERNEST: Lorsque la cloche sonnera, vous devrez faire le.. euh.. des pompes ! #audience:laughter
+JUGE ERNEST: Celui qui en fera le plus grand nombre remportera le défi. Tenez-vous prêts... #audience:ovation #screenshake
+JUGE ERNEST: À vos marques...
+JUGE ERNEST: ... prêts... #screenshake #audience:ovation
+JUGE ERNEST: ... partez ! #anim:Judge:bell #screenshake #audience:ovation
+- (start_duel)
+    * [Faire une pompe. {t(STRE, stre_difficulty)}]
+        {sc(STRE, stre_difficulty): -> round_against_marcello_S | -> defeat_against_marcello}
+- (next_round_against_marcello)
+    ~ nb_turn_against_marcello += 1
+    JUGE ERNEST: Le témoin Marcello {tient bon lui aussi | parvient à tenir le bon bout | continue d'impressionner les jurés | tient encore le coup | réussit une nouvelle fois | parvient à tenir malgré la douleur } ! #audience:ovation
+    JUGE ERNEST: C'est désormais à l'Accusé de {ne pas s'effondrer | ne pas échouer lamentablement | ne pas décevoir les jurés | faire une nouvelle fois preuve de talent | tenir encore un peu | tenir toujours un peu plus }! #audience:ovation
+    + [Faire une nouvelle pompe. {t(STRE, stre_difficulty)}]
+        {sc(STRE, stre_difficulty): -> round_against_marcello_S | -> defeat_against_marcello}
+- (round_against_marcello_S)
+    ~ stre_difficulty -= 5
+    ~ marcello_sc -= 5
+    JUGE ERNEST: L'Accusé {a tenu bon | a une nouvelle fois réussi | impresionne par ses talents | nous délivre une novelle fois une performance impressionnante |  semble désormais inarrêtable | réussit à nouveau }: qu'en sera t-il de notre témoin ? ({marcello_sc}% que Marcello réussisse) #audience:ovation
+    {roll_ai_sc(marcello_sc): -> next_round_against_marcello | -> victory_against_marcello}
+    #audience:ovation
+- (defeat_against_marcello) JUGE ERNEST: Nous avons un vainqueur !
+    JUGE ERNEST: Après {nb_turn_against_marcello < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_marcello} pompe{nb_turn_against_marcello > 1:s}, c'est le témoin Marcello qui remporte le duel !
+    MARCELLO: Vous avez vu ça, cheffe ? #anim:Marcello:happy
+    CAPUCINE: J'ai vu, j'ai vu... Mets-la en, veilleuse, tu veux ? #audience:laughter
+    JUGE ERNEST: Ainsi en a jugé... euh la Déesse ! L'Accusé perd le duel ! #audience:booing #screenshake
+    ~ audience_judgement(-0.1)
+    -> witness_agathe
+- (victory_against_marcello) JUGE ERNEST: Nous avons un vainqueur !
+    JUGE ERNEST: Après {nb_turn_against_marcello < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_marcello} pompe{nb_turn_against_marcello > 1:s}, c'est l'Accusé qui remporte le duel !
+    JUGE ERNEST: Ainsi en a jugé... euh la Déesse ! L'Accusé remporte le duel ! #audience:ovation #screenshake
+    ~ audience_judgement(0.4)
+    MARCELLO: L'important c'est de participer pas vrai cheffe ? #anim:Marcello:applause
+    CAPUCINE : Pas du tout, abruti. #audience:laughter
+    CAPUCINE: Tu viens de te faire ridiculiser par l'autre minable ! #audience:laughter
+    -> witness_agathe
 
 
 

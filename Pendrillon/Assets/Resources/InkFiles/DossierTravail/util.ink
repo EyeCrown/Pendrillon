@@ -83,8 +83,8 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
 
 // Calculate the percentage of success of an action tied with a skill check
 === function t(pStat, pDifficulty) ===
-~ temp stat = p_char
-~ temp full_stat = ""
+    ~ temp stat = p_char
+    ~ temp full_stat = ""
     ~ temp modifier = p_char_mod
     {
         - pStat == "char":
@@ -189,9 +189,22 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
 
 // Add the item to the inventory
 === function add_to_inventory(pItem) ===
-{
-    - print_debug:
-        {pItem} ajouté à l'inventaire.
-        (DEBUG: Inventaire non codé.)
-        _______________
-}
+    {
+        - print_debug:
+            {pItem} ajouté à l'inventaire.
+            (DEBUG: Inventaire non codé.)
+            _______________
+    }
+
+// Roll an AI skill check and return the result
+=== function roll_ai_sc(pTreshold)
+    ~ temp D100 = 0
+    ~ temp result = true
+    ~ D100 = roll_D100()
+    {
+        - D100 < pTreshold:
+            ~ result = true
+        - else:
+            ~ result = false
+    }
+    ~ return result
