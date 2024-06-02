@@ -22,7 +22,7 @@
 
 #playsound:Play_AMB_SC_Theater_CrowdChatter
 #playsound:Play_MUS_Story_SC_Barque_Intro #wait:3 #audience:applause #wait:5
-PASSEUR: Eh, bien... #anim:Passeur:neutre
+- PASSEUR: Eh, bien... #anim:Passeur:neutre
 PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause
     * [(Rester silencieux)]
 - PASSEUR: *Hum hum* #bark:Passeur:clear_voice
@@ -102,8 +102,7 @@ PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rend
 #position:Passeur:4:3
 
 // Start the scene
-
-PASSEUR: ... #anim:Passeur:neutre
+- PASSEUR: ... #anim:Passeur:neutre
 PASSEUR: Pourquoi avoir accepté une mission si périlleuse ? #anim:Passeur:question #playsound:VOX_Ferryman_pourquoimission
     * [Pour la fortune !] PLAYER: Pour la fortune, évidemment ! #anim:Player:gloire #playsound:VOX_Player_pourlafortune #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
     * [Pour la gloire !] PLAYER: Pour la gloire, cela va sans dire ! #anim:Player:gloire #playsound:VOX_Player_pourlagloire #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
@@ -144,8 +143,7 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, no
 #position:Passeur:4:3
 
 // Start the scene
-
-PASSEUR: Ainsi, ton amie s'est faite arrêter par les gardes... #anim:Passeur:neutre:1 #playsound:VOX_Ferryman_ainsitonami
+- PASSEUR: Ainsi, ton amie s'est faite arrêter par les gardes... #anim:Passeur:neutre:1 #playsound:VOX_Ferryman_ainsitonami
 PASSEUR: Tu es bien silencieux... Que ressentais-tu, à cet instant ? #anim:Passeur:question #playsound:VOX_Ferryman_tuesbiensilencieux
     * [(Furieux)] #anim:Player:colere #playsound:Play_MUS_Story_SC_Barque_LostAFriend
     * [(Impuissant)] #anim:Player:triste #playsound:Play_MUS_Story_SC_Barque_LostAFriend
@@ -168,8 +166,7 @@ PASSEUR: Tu es bien silencieux... Que ressentais-tu, à cet instant ? #anim:Pass
 #position:Passeur:4:3
 
 // Start the scene
-
-PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #anim:Passeur:neutre #playsound:VOX_Ferryman_pretressehonneur
+- PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #anim:Passeur:neutre #playsound:VOX_Ferryman_pretressehonneur
     * [Tout à fait.] PLAYER: Jamais n'a t-on vu âme plus acceuillante. Cependant... #anim:Player:neutre #playsound:VOX_Player_jamaisame
     * [En un sens...] PLAYER: D'une certaine manière, j'en conviens... Mais... #anim:Player:neutre #playsound:VOX_Player_certainemaniere
     * [C'est ce que je pensais.] PLAYER: La même pensée me traversai l'esprit, alors que je m'endormais... Toutefois... #anim:Player:neutre #playsound:VOX_Player_penseetraverseesprit

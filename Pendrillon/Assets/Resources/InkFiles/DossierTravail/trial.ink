@@ -70,7 +70,6 @@ VAR t_2_try_and_succeed_bribing_guards = false
 // VAR t_3_stained_glass_1_talk = false
 // VAR t_3_stained_glass_2_talk = false
 // VAR t_3_stained_glass_3_talk = false
-// VAR t_3_stained_glass_4_talk = false
 // DEBUG TRIAL
 VAR t_3_lie_abot_being_innocent = true
 VAR t_3_did_not_lie_abot_being_innocent = false
@@ -109,7 +108,6 @@ VAR t_3_law_can_be_lax = false
 VAR t_3_stained_glass_1_talk = false
 VAR t_3_stained_glass_2_talk = false
 VAR t_3_stained_glass_3_talk = false
-VAR t_3_stained_glass_4_talk = false
 
 
 // CHURCH DAY

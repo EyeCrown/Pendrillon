@@ -541,21 +541,34 @@ JUGE ERNEST: Bien, bien. Et quelle fut sa réaction, quand il apprit que la lumi
 
 // The player talked about stained glass 2
 = talk_about_stained_glass_2
-AGATHE: L'Accusé et moi avons discuté des prédiction d'Irène, et de la manière dont elle sauva nos ancêtres...
-
+AGATHE: L'Accusé et moi avons discuté des prédictions d'Irène, et de la manière dont elle sauva nos ancêtres...
+AGATHE: Nous avons récité la comptine des Noyés.
+JUGE ERNEST: Bien, bien... Mais encore, prêtresse ?
+    -> talk_about_stained_glass_3
 
 // The player talked about stained glass 3
 = talk_about_stained_glass_3
-AGATHE: Le sujet que nous avons abordé après cela, Votre Honneur...
-AGATHE: ... C'est vous. #audience:choc
+AGATHE: Le sujet que nous abordâmes après cela, Votre Honneur...
+AGATHE: ... Ce fut vous. #audience:choc
 JUGE ERNEST: Je vois... #audience:debate
-JUGE ERNEST: Et qu'a eu à dire l'Accusé, au sujet du Juge ?
+JUGE ERNEST: Et qu'a eu à dire l'Accusé au sujet du Juge ? #audience:silent
+{
+    - t_3_show_judge_respect: AGATHE: L'Accusé a fait montre de respect à votre égard, Votre Honneur. #audience:applause
+        ~ audience_judgement(0.2)
+        JUGE ERNEST: Grand bien lui fasse.
+    - t_3_question_judge_position: AGATHE: L'Accusé a remis en question votre position de Juge, Votre Honneur. #audience:choc
+        JUGE ERNEST: Je vois, je vois...
+        JUGE ERNEST: Le Juge laissera les jurés décider de son sort... Puisse t-il finir au fond des eaux. #audience:ovation
+}
+- JUGE ERNEST: Ainsi se clôt votre témoignage, prêtresse. #audience:applause
+JUGE ERNEST: Chacun vous remercie pour votre dévouement. #audience:ovation
+    -> judge_proceed_to_mention_the_leviathan
 
 // The judge proceed to mention the Leviathan
 = judge_proceed_to_mention_the_leviathan
 JUGE ERNEST: Accusé, nous nous devons désormais d'aborder le sujet du Léviathan. #audience:debate
-JUGE ERNEST: En effet, vous fûtes missioné, par la Couronne rappelons-le, de vous rendre en mer...
-JUGE ERNEST: ... afin d'y terrasser le terrible Léviathan. #audience:choc
+JUGE ERNEST: En effet, vous fûtes missioné par la Couronne, afin de vous rendre en mer...
+JUGE ERNEST: ... et d'y terrasser le terrible Léviathan. #audience:choc
 JUGE ERNEST: Avez-vous tenu parole, Accusé ? Avez-vous, oui ou non, ramené le cœur de la créature ? #audience:ovation
     * [Je l'ai fait !] PLAYER: Bien entendu, Votre Honneur ! #audience:applause
         JUGE ERNEST: Allons, allons... Nous savons que cela est faux.

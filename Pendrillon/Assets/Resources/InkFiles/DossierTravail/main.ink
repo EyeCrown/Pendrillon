@@ -24,4 +24,5 @@ INCLUDE boss_battle.ink
 // Start the game
 //-> barge
 //-> secret_meeting
--> tribunal_1.witness_agathe
+//-> tribunal_1.witness_agathe
+-> church_night
