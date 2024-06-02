@@ -7,6 +7,7 @@ VAR admit_disrespect_queen = false
 VAR arle_lied = false
 VAR arle_lied_again = false
 VAR arle_left_the_play = false
+VAR souffleur_speech_about_not_mocking_agath_done = false
 
 // Scene
 === tribunal_1 ===
@@ -330,8 +331,77 @@ JUGE ERNEST: Lequel des deux témoins voulez-vous défier ?
 - JUGE ERNEST: Témoins, veuillez regagner l'assistance. #audience:applause
 JUGE ERNEST: J'en appelle désormais à notre dernier témoin.
 JUGE ERNEST: La respectable prêtresse Agathe ! #audience:ovation #move(Agathe)
+JUGE ERNEST: Prêtresse Agathe, nous vous remercions de quitter la demeure d'Irène afin de vous joindre à nous lors de ce procès. #audience:applause #anim:Agathe:bow
+JUGE ERNEST: Je vous en prie, prêtresse, veillez nous raconter votre rencontre avec l'Accusé.
+AGATHE: J'ai acceuilli l'Accusé au sein de ma chapelle, par une nuit d'averse.
+JUGE ERNEST: Avez-vous pour habitude de laisser des manants entrer en ce lieu saint ?
+    * [Sans ça, elle se sentirait bien seule...] PLAYER: Sans cela, elle se sentirait bien seule, la pauvre... #audience:booing
+        ~ audience_judgement(-0.02)
+        {souffleur_speech_about_mocking_agath()}
+        JUGE ERNEST: Prêtresse, veuillez faire fi de l'Accusé, je vous prie. Poursuivez...
+    * [Ne rien dire.]
+- AGATHE: La Déesse ne fait pas d'exception lorsqu'il s'agit d'aider l'un de ses enfants. #audience:ovation
+JUGE ERNEST: Bien, bien. Continuez, je vous prie...
+AGATHE: L'Accusé et moi avons discuté une partie de la nuit.
+JUGE ERNEST: Sur quel sujet portait votre entretien, prêtresse ?
+AGATHE: Notre discussion concernait la Déesse, Votre Honneur.
+    * [Pour changer...] PLAYER: Ce n'est pas comme si la prêtresse avait cet unique sujet en tête... #audience:booing
+        JUGE ERNEST: Accusé, cessez d'interrompre une personne dont la parole compte bien davantage que la votre ! #audience:applause
+        ~ audience_judgement(-0.02)
+        {souffleur_speech_about_mocking_agath()}
+        JUGE ERNEST: Prêtresse, veuillez excuser l'Accusé. Pouvez-vous nous résumer la teneur de ces échanges ?
+    * [Ne pas l'interrompre.] JUGE ERNEST: Bien entendu. Pouvez-vous nous en résumer la teneur, je vous prie ?
+- AGATHE: Je voudrais d'abord préciser qu'à ce moment-là, je n'avais pas idée de l'ignominie dont l'Accusé s'était rendu coupable... #audience:debate
+AGATHE: Je pensais avoir affaire à un simple vagabond ayant volé une miche de pain pour calmer sa faim...
+AGATHE: Lorsque j'évoquais l'acte délictueux auquel l'Accusé avait semble t-il procédé...
+{
+    - t_3_lie_abot_being_innocent: AGATHE: L'Accusé a menti en prétextant qu'il était innocent. #audience:booing
+        ~ audience_judgement(-0.01)
+        JUGE ERNEST: L'Accusé est un fieffé menteur, comme ce procès nous l'a maintes fois démontré.
+    - t_3_did_not_lie_abot_being_innocent: AGATHE: L'Accusé, je dois l'avouer, n'a pas cherché à me mentir. #audience:applause
+        ~ audience_judgement(0.1)
+        JUGE ERNEST: Mentir sous le toit d'Irène aurait été un pêché... #audience:applause
+}
+- JUGE ERNEST: Poursuivez, je vous en prie.
+{
+    - t_3_show_no_regrets: AGATHE: L'Accusé a évoqué, au sujet de son crime, n'avoir aucun regret. #audience:booing
+        ~ audience_judgement(-0.02)
+        JUGE ERNEST: Cela n'étonne ni le Juge, ni les jurés, prêtresse. Poursuivez...
+    - t_3_show_some_regrets: AGATHE: À sa décharge, l'Accusé a évoqué, au sujet de son crime, avoir quelques regrets. #audience:applause
+        ~ audience_judgement(0.1)
+        JUGE ERNEST: Je vous remercie de faire preuve d'équité en le précisant, prêtresse Agathe. #audience:applause #anim:Agathe:bow
+    - t_3_show_plenty_regrets: AGATHE: À sa décharge, l'Accusé a évoqué, au sujet de son crime, éprouver d'immenses regrets. #audience:applause
+        ~ audience_judgement(0.2)
+        JUGE ERNEST: Je vous remercie de faire preuve d'équité en le précisant, prêtresse Agathe. #audience:applause #anim:Agath:bow
+}
+- AGATHE: Lorsque je lui proposai d'implorer la Déesse...
+{
+    - t_3_implore_irene: AGATHE: Celui-ci le fit, non sans émotions. #audience:applause
+        ~ audience_judgement(0.1)
+    - t_3_blame_irene: AGATHE: L'Accusé, à la place, accusa la vénérable Irène ! #audience:choc
+        ~ audience_judgement(-0.03)
+        JUGE ERNEST: Quelle lâcheté ! #audience:booing
+}
+- AGATHE: Je lui conseillai ensuite d'éclairer la lampe de la Déesse, afin qu'elle éclaire ses soucis d'une lumière nouvelle.
+JUGE ERNEST: L'a t-il fait, prêtresse ?
+{
+    - t_3_light_on_irene_torch: AGATHE: Il alluma la torche, en effet. #audience:applause
+        ~ audience_judgement(0.05)
+    - t_3_no_light_on_irene_torch: AGATHE: La torche resta éteinte, j'en ai peur... #audience:booing
+        ~ audience_judgement(-0.01)
+        JUGE ERNEST: La lumière divine n'aurrait pu effacer l'ombre de son âme... #audience:applause
+}
+- ERNEST: Ensuite, prêtresse, quel sujet avez-vous évoqué avec l'Accusé ?
+{
+    - t_3_stained_glass_1_talk:
+        -> talk_about_stained_glass_1
+    - t_3_stained_glass_2_talk:
+        -> talk_about_stained_glass_2
+    - t_3_stained_glass_3_talk:
+        -> talk_about_stained_glass_3
+}
 // Player va raconter la tempête (flashback)
--> tempest
+- -> judge_proceed_to_mention_the_leviathan
 
 // Arle leaves stage
 = arle_leaves_stage
@@ -425,5 +495,103 @@ JUGE ERNEST: ... partez ! #anim:Judge:bell #screenshake #audience:ovation
     CAPUCINE : Pas du tout, abruti. #audience:laughter
     CAPUCINE: Tu viens de te faire ridiculiser par l'autre minable ! #audience:laughter
     -> witness_agathe
+
+// The player talked about stained glass 1
+= talk_about_stained_glass_1
+AGATHE: J'ai évoqué avec l'Accusé l'histoire de la Déesse et des marins qui la sauvèrent de la tempête.
+JUGE ERNEST: Une histoire des plus émouvantes... Qu'a t-il eu à dire à ce sujet, prêtresse ?
+{
+    - t_3_is_with_irene_saviors:
+        AGATHE: Il fit preuve de la plus grande des xxx à l'égard des marins et du bébé, Votre Honneur. #audience:applause
+            ~ audience_judgement(0.2)
+    - t_3_is_against_irene_saviors:
+        AGATHE: Il s'en prit aux marins, prétextant qu'ils étaient ignares d'aller sauver le bébé, en proie à la tempête. #audience:boing
+        ~ audience_judgement(-0.3)
+    - else:
+        AGATHE: Il est resté silencieux, et m'a écouté avec respect, Votre Honneur. #audience:applause
+        ~ audience_judgement(0.1)
+}
+- JUGE ERNEST: Ensuite, prêtresse ?
+{
+    - t_3_rant_about_edgar_the_traquenard: AGATHE: Ensuite, il ne cessa de mentionner un certain Edgard le Traquenard, Votre Honneur... #audience:laughter
+        JUGE ERNEST: Comment dites-vous ? Edgar le Traquenard ? #audience:laughter
+        AGATHE: Il semblerait, oui... Il en parlait avec des yeux fous, Votre Honneur. #audience:laughter
+        JUGE ERNEST: Passons, passons...
+}
+- JUGE ERNEST: Avez-vous évoqué la fin de cette histoire, prêtresse ? Celle-ci est des plus attendrissantes... #audience:applause
+AGATHE: Je n'ai pas manqué de le faire, Votre Honneur.
+JUGE ERNEST: Bien, bien. Et quelle fut sa réaction, quand il apprit que la lumière d'un phare, au loin, sauva les marins et l'enfant ?
+{
+    - t_3_believe_in_lighthouse_sacred_light: AGATHE: Il en fut profondémment ému, Votre Honneur. #audience:ovation
+        JUGE ERNEST: Voilà qui est tout à son honneur. #audience:applause
+        ~ audience_judgement(0.2)
+    - t_3_does_not_believe_in_lighthouse_sacred_light: AGATHE: Il... Il évoqua que cette histoire tenait davantage du mythe que de la réalité. #audience:choc
+        JUGE ERNEST: Vraiment ? Irène en soit témoin : l'Accusé n'a aucun cœur. #audience:booing
+}
+- JUGE ERNEST: Votre discussion s'est-elle arrêtée là, prêtresse ?
+{
+    - t_3_stained_glass_2_talk:
+        -> talk_about_stained_glass_2
+    - t_3_stained_glass_3_talk:
+        -> talk_about_stained_glass_3
+    - else:
+        AGATHE: Rien de plus, Votre Honneur. L'Accusé alla dormir un peu, puis fut arrêté le lendemain, à son réveil.
+        -> judge_proceed_to_mention_the_leviathan
+}
+
+// The player talked about stained glass 2
+= talk_about_stained_glass_2
+AGATHE: L'Accusé et moi avons discuté des prédiction d'Irène, et de la manière dont elle sauva nos ancêtres...
+
+
+// The player talked about stained glass 3
+= talk_about_stained_glass_3
+AGATHE: Le sujet que nous avons abordé après cela, Votre Honneur...
+AGATHE: ... C'est vous. #audience:choc
+JUGE ERNEST: Je vois... #audience:debate
+JUGE ERNEST: Et qu'a eu à dire l'Accusé, au sujet du Juge ?
+
+// The judge proceed to mention the Leviathan
+= judge_proceed_to_mention_the_leviathan
+JUGE ERNEST: Accusé, nous nous devons désormais d'aborder le sujet du Léviathan. #audience:debate
+JUGE ERNEST: En effet, vous fûtes missioné, par la Couronne rappelons-le, de vous rendre en mer...
+JUGE ERNEST: ... afin d'y terrasser le terrible Léviathan. #audience:choc
+JUGE ERNEST: Avez-vous tenu parole, Accusé ? Avez-vous, oui ou non, ramené le cœur de la créature ? #audience:ovation
+    * [Je l'ai fait !] PLAYER: Bien entendu, Votre Honneur ! #audience:applause
+        JUGE ERNEST: Allons, allons... Nous savons que cela est faux.
+    * [Bien sûr que non.] PLAYER: Non, comme vous le savez sans doute déjà. Je n'ai pu accomplir cette mission, Votre Honneur.
+    * [J'ai eu un léger contretemps...] PLAYER: Votre Honneur, c'était mon souhait le plus cher, mais nous avons subi un contretemps.
+        JUGE ERNEST: Un contretemps, vous dites ?
+- JUGE ERNEST: Un tel sujet ne doit pas être abordé avec légèreté, Accusé...
+JUGE ERNEST: Veillez raconter au jurés ainsi qu'eu Juge ce qu'il s'est passé lorsque vous avez trouvé l'emplacement indiqué par la carte.
+    * [Une tempête déchirait les eaux...] PLAYER: Une terrible tempête déchirait l'océan...
+    * [Je livrai une bataille contre l'océan...] PLAYER: Je livrai une véritable bataille contre l'océan...
+    * [Je me démenai pour sauver mon équipage...] PLAYER: Je faisais tout ce qui était en mon pouvoir pour sauver mon équipage d'une mort certaine...
+// Player va raconter la tempête (flashback)
+- (tempest_flashback)
+    -> tempest
+
+// The judge proceed to mention the sireine
+= judge_proceed_to_mention_the_sireine
+JUGE ERNEST: Accusé, il est un sujet que nous n'avons pas encore évoqué lors de ce procès. #audience:debate
+JUGE ERNEST: Ce sujet constitue pourtant le cœur de ce qu'il vous est repproché. #audience:debate
+JUGE ERNEST: Je veux bien entendu parler... de l'amour impie. #audience:choc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

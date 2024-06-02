@@ -3,10 +3,6 @@
 
 // Variables
 VAR claim_to_be_free = false
-VAR stained_glass_1_talk = false
-VAR stained_glass_2_talk = false
-VAR stained_glass_3_talk = false
-VAR stained_glass_4_talk = false
 VAR irene_torch_is_on = false
 VAR irene_was_a_sireine = true
 
@@ -71,18 +67,20 @@ VAR irene_was_a_sireine = true
 - AGATHE: ... #playsound:Play_SFX_Story_SC_Eglise_GuardsSearchingFar #playsound:Play_MUS_Story_SC_Eglise_GuardsSearching
 - AGATHE: Rassurez-vous, vous êtes au seul endroit que les gardes de la Couronne ne viendront pas fouiller...
     * [(Mentir) Personne ne me recherche. {t(CHAR, -40)}]
+        ~ trial(t_3_lie_abot_being_innocent)
         {sc(CHAR, -30): -> lie_about_being_chased_S | -> lie_about_being_chased_F}
         ** (lie_about_being_chased_S) PLAYER: Nul n'est à mes trousses... Les gardes sont peut-être simplement en train de courir un marathon ?
             AGATHE: Peut-être en ont-ils après quelqu'un d'autre que vous.
         ** (lie_about_being_chased_F) PLAYER: Je... Je ne vois pas de quoi vous parlez.
     * [Allez-vous me dénoncer ?] PLAYER: Ne répondez-vous pas à la Loi ? N'êtes-vous pas supposée prévenir les gardes ?
+        ~ trial(t_3_did_not_lie_abot_being_innocent)
         AGATHE: Si je devais prévenir les gardes à chaque fois qu'un malendrin ayant volé une miche de pain entrait ici...
         AGATHE: ... plus personne ne me rendrait visite.
 - AGATHE: Quoique vous ayez fait... En éprouvez-vous des remords ?
     * [Rien à me reprocher.] PLAYER: Je n'ai rien fait qui mérite que j'implore le pardon de qui que ce soit.
-            ~ trial(t_2_show_no_regrets)
+            ~ trial(t_3_show_no_regrets)
         AGATHE: En êtes-vous certain ? Il est davantage de mortels trop cléments avec eux-mêmes, que vierge de tout péché.
-    * [Quelque fois...] PLAYER: Parfois... Lorsque la nuit vient et que la lune éclaire mes actes d'une lumière nouvelle...
+    * [Quelque fois...] PLAYER: Parfois, je regrette... Lorsque la nuit vient et que la lune éclaire mes actes d'une lumière nouvelle...
         AGATHE: On dit parfois que la nuit porte conseil. Elle porte davantage encore le poids de nos fautes...
             ~ trial(t_3_show_some_regrets)
     * [Chaque jour.] PLAYER: Pas un seul jour ne passe sans que j'implore la Déesse pour son pardon.
@@ -137,21 +135,21 @@ VAR irene_was_a_sireine = true
 // Ask about the different stained glass illustrations
 = stained_glass
 #light:stained_glass #playsound:Play_MUS_Story_SC_Eglise_StainedGlassMentionned
-* {stained_glass_1_talk == false} [Le bébé au milieu de la tempête.] PLAYER: Ce bébé, au milieu de la tempête... c'est Elle ?
-    ~ stained_glass_1_talk = true
+* {t_3_stained_glass_1_talk == false} [Le bébé au milieu de la tempête.] PLAYER: Ce bébé, au milieu de la tempête... c'est Elle ?
+    ~ t_3_stained_glass_1_talk = true
     -> baby_in_the_middle_of_a_tempest
-* {stained_glass_2_talk == false} [Irène regardant l'océan.] PLAYER: Irène, près du phare, contemplant l'océan. Je me demande quelles pensées la traversaient.
-    ~ stained_glass_2_talk = true
+* {t_3_stained_glass_2_talk == false} [Irène regardant l'océan.] PLAYER: Irène, près du phare, contemplant l'océan. Je me demande quelles pensées la traversaient.
+    ~ t_3_stained_glass_2_talk = true
     -> irene_next_to_the_lighthouse
-* {stained_glass_3_talk == false} [L'homme écartelé sur la roue.] L'homme attaché à la roue... c'est Lui n'est-ce pas ?
-    ~ stained_glass_3_talk = true
+* {t_3_stained_glass_3_talk == false} [L'homme écartelé sur la roue.] L'homme attaché à la roue... c'est Lui n'est-ce pas ?
+    ~ t_3_stained_glass_3_talk = true
     -> man_tied_to_a_wheel
-// * {stained_glass_4_talk == false} [Le vitrail brisé.] Le dernier vitrail est brisé...
-//     ~ stained_glass_4_talk = true
+// * {t_3_stained_glass_4_talk == false} [Le vitrail brisé.] Le dernier vitrail est brisé...
+//     ~ t_3_stained_glass_4_talk = true
 //     -> ship_reaching_land
-+ {stained_glass_1_talk or stained_glass_2_talk or stained_glass_3_talk or stained_glass_4_talk} [(Conclure) Passer la nuit.]
++ {t_3_stained_glass_1_talk or t_3_stained_glass_2_talk or t_3_stained_glass_3_talk or t_3_stained_glass_4_talk} [(Conclure) Passer la nuit.]
     {
-        - stained_glass_1_talk == true && stained_glass_2_talk == true && stained_glass_3_talk == true && stained_glass_4_talk == true:
+        - t_3_stained_glass_1_talk == true && t_3_stained_glass_2_talk == true && t_3_stained_glass_3_talk == true && t_3_stained_glass_4_talk == true:
             #anim:Player:go_to_sleep_on_bench
             -> barge.scene_4
         - else:
@@ -194,9 +192,11 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
                 AGATHE: En cela, vous avez raison. -> should_i_proceed
 - (continue_about_the_crying) AGATHE: Tout occupés qu'ils étaient à affronter l'écume, ils hésitèrent à envoyer un canot chercher la source des pleurs...
     * [Cela les honorerait.] PLAYER: Des pleurs ? Au milieu de la houle ? Ma curiosité - sinon mon honneur - l'aurait emporté sur ma prudence.
+        ~ trial(t_3_is_with_irene_saviors)
         AGATHE: Bénit soyez-vous, mon enfant.
     * [Un signe de leur inconscience.] PLAYER: Par ce temps ? Mieux vaut une âme en pleurs que dix épouses en deuil. J'aurai écouté ma prudence et fait taire ma curiosité.
         AGATHE: Fort heuresement, ces marin furent mieux conseillés par leur conscience...
+        ~ trial(t_3_is_against_irene_saviors)
     * [Écouter en silence.]
 - AGATHE: L'un d'eux, n'écoutant que son courage...
     * [... ou sa bêtise.] PLAYER: ...ou sa stupidité...
@@ -242,13 +242,13 @@ AGATHE: Une nuit où l'océan déchaînait ses passions... Un bateau de pêcheur
         ** (player_knows_ernest_F) PLAYER: Vous parlez sans l'ombre d'un doute du célèbre Edgar.
             AGATHE: Edgar, vous dites ?
             *** [Edgar le Traquenard.] PLAYER: Edgar le Traquenard, bien sûr ! On raconte qu'il est capable de détrousser mille hommes en une seule nuit de travail.
+                ~ trial(t_3_rant_about_edgar_the_traquenard)
             --- AGATHE: (Consternée) Je vous demande pardon ?
                 PLAYER: Nul ne devrait tourner au croisement d'une ruelle sans retenir un frisson de terreur pour Edgar le Traquenard.
                 AGATHE: ...
                 PLAYER: (Les yeux fous) Il vous attend peut-être de l'autre coté, prêt à vous suriner.
                 AGATHE: ...
                 AGATHE: L'homme auquel je faisais en réalité allusion est Ernest, la Déesse le bénisse.
-                ~ trial(t_3_rant_about_edgar_the_traquenard)
                 ~ trial(t_3_does_not_know_ernest)
 - AGATHE: Ernest, le gardien du phare.
     * [Qu'a t-il donc fait ?] PLAYER: Qu'a t-il fait pour les aider ?
