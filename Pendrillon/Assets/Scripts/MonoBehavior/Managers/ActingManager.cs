@@ -26,15 +26,11 @@ namespace MonoBehavior.Managers
         
         #region Attributes
         public static ActingManager Instance { get; private set; }
-
-        //private ActState status;
         
         // Scene
-        // TODO: put the name of the first scene (in Constants)
-        public string _stage = "";//Constants.FirstSetOnStage;      // Name of the actual set
+        public string _stage = "";//Constants.FirstSetOnStage;
 
         #region Set Attributes
-
         [Header("=== Sets ===")]
         public GameObject _setBarge;
         public GameObject _setCale;
@@ -48,13 +44,12 @@ namespace MonoBehavior.Managers
         #endregion
 
         #region UI Attributes
-
         [HideInInspector] public GameObject _uiParent { get; private set; }
         GameObject _dialogueBox;
-        TextMeshProUGUI _dialogueText;      // Text box
-        TextMeshProUGUI _speakerText;      // Text box
-        TextMeshProUGUI _tagsText;          // Tags box
-        GameObject _historyBox;        // History box
+        TextMeshProUGUI _dialogueText;  // Text box
+        TextMeshProUGUI _speakerText;   // Text box
+        TextMeshProUGUI _tagsText;  // Tags box
+        GameObject _historyBox;     // History box
         GameObject _masks;
         private string _playerName;
         
@@ -99,9 +94,9 @@ namespace MonoBehavior.Managers
 
         readonly Dictionary<string, Transform> _directions = new Dictionary<string, Transform>();
         
-        //Sound
-
+        
         #region Wwise Attributes
+
         [Header("=== Wwise attributes ===")]
         [SerializeField] private Event _wwiseChoiceDialogueButton;
 
@@ -421,7 +416,7 @@ namespace MonoBehavior.Managers
             {
                 if (choiceText.Contains(typeName))
                 {
-                    Debug.Log($"AM.SetButtonType > This button is {typeName}");
+                    Debug.Log($"AM.SetButtonType > This button is {typeName} > Wheel must appear");
                     button.transform.Find(typeName).gameObject.SetActive(true);
                     return;
                 }

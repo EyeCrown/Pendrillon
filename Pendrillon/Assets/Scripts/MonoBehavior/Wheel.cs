@@ -1,16 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Wheel : MonoBehaviour
 {
     #region Attributes
 
+    #region Components
     private Animator _anim;
+    #endregion
+    
 
     [Range(0, 100)] public int _score;
 
+    [Header("=== Positions ===")] 
+    [SerializeField] private Vector3 _positionOutsideStage;
+    [SerializeField] private Vector3 _positionOnStage;
+    
     #endregion
 
     #region Unity API
@@ -39,6 +47,21 @@ public class Wheel : MonoBehaviour
 
     #region Coroutines
 
+    IEnumerator ArriveOnStage()
+    {
+        //TODO
+        yield return null;
+    }
+    
+    IEnumerator LeaveStage()
+    {
+        //TODO
+        yield return null;
+    }
+    
+    
+    
+    
     IEnumerator SpinningCoroutine()
     {
         _anim.Play("Spin");
@@ -48,6 +71,15 @@ public class Wheel : MonoBehaviour
             yield return null;
         Debug.Log("End anim");
         // Anim is over
+    }
+
+    #endregion
+
+    #region Gizmos
+
+    private void OnDrawGizmosSelected()
+    {
+        
     }
 
     #endregion
