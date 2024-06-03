@@ -191,7 +191,6 @@ namespace MonoBehavior.Managers
 
         void Update()
         {
-            
             _dialogueBox.GetComponent<Image>().color = new Color(
                 _dialogueBox.GetComponent<Image>().color.r,
                 _dialogueBox.GetComponent<Image>().color.g,
@@ -206,7 +205,7 @@ namespace MonoBehavior.Managers
                 GameManager.Instance._opacityUI
             );
 
-            /*foreach (Transform mask in _masks.transform)
+            foreach (Transform mask in _masks.transform)
             {
                 mask.GetComponent<Image>().color = new Color(
                     mask.GetComponent<Image>().color.r,
@@ -214,7 +213,7 @@ namespace MonoBehavior.Managers
                     mask.GetComponent<Image>().color.b,
                     GameManager.Instance._opacityUI
                 );
-            }*/
+            }
         }
         
         #endregion
@@ -400,6 +399,13 @@ namespace MonoBehavior.Managers
             
             // Button Type
             SetButtonType(button, choice.text);
+            
+            button.GetComponent<Image>().color = new Color(
+                button.GetComponent<Image>().color.r,
+                button.GetComponent<Image>().color.g,
+                button.GetComponent<Image>().color.b,
+                GameManager.Instance._opacityUI
+            );
             
             button.onClick.AddListener (delegate {
                 OnClickChoiceButton (choice);
