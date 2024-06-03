@@ -3,21 +3,21 @@ VAR t_audience_judgement = 0.5 // Compris entre 0 et 1
 VAR t_arle_patience = 5 // Patience de Arle (0 = Arle pète un câble)
 
 // SECRET MEETING
-VAR t_1_disrespect_the_crown = false
-VAR t_1_respect_the_crown = false
-VAR t_1_disrespect_irene = false
-VAR t_1_respect_irene = false
-VAR t_1_gold_digger = false
-VAR t_1_accept_mission_with_positivity = false
-VAR t_1_accept_mission_with_negativity = false
-// DEBUG TRIAL
-// VAR t_1_disrespect_the_crown = true
+// VAR t_1_disrespect_the_crown = false
 // VAR t_1_respect_the_crown = false
-// VAR t_1_disrespect_irene = true
+// VAR t_1_disrespect_irene = false
 // VAR t_1_respect_irene = false
-// VAR t_1_gold_digger = true
+// VAR t_1_gold_digger = false
 // VAR t_1_accept_mission_with_positivity = false
-// VAR t_1_accept_mission_with_negativity = true
+// VAR t_1_accept_mission_with_negativity = false
+// DEBUG TRIAL
+VAR t_1_disrespect_the_crown = true
+VAR t_1_respect_the_crown = false
+VAR t_1_disrespect_irene = true
+VAR t_1_respect_irene = false
+VAR t_1_gold_digger = true
+VAR t_1_accept_mission_with_positivity = false
+VAR t_1_accept_mission_with_negativity = true
 
 // TRIP RETURN SCENE
 VAR t_2_lawfull = false
@@ -93,21 +93,21 @@ VAR t_3_does_not_know_ernest = false
 VAR t_3_know_ernest = true
 VAR t_3_rant_about_edgar_the_traquenard = true
 VAR t_3_does_not_believe_in_lighthouse_sacred_light = true
-VAR t_3_believe_in_lighthouse_sacred_light = false
+VAR t_3_believe_in_lighthouse_sacred_light = true
 VAR t_3_know_fishermen_holy_gift = false
 VAR t_3_does_not_know_fishermen_holy_gift = false
-VAR t_3_does_not_believe_the_sacred_writings = false
+VAR t_3_does_not_believe_the_sacred_writings = true
 VAR t_3_question_if_irene_is_a_sireine = true
 VAR t_3_question_judge_position = true
-VAR t_3_show_judge_respect = false
+VAR t_3_show_judge_respect = true
 VAR t_3_validate_judge_position = false
 VAR t_3_defend_sireine = true
 VAR t_3_criticise_irene_coldness = true
 VAR t_3_law_should_not_be_lax = true
 VAR t_3_law_can_be_lax = false
-VAR t_3_stained_glass_1_talk = false
-VAR t_3_stained_glass_2_talk = false
-VAR t_3_stained_glass_3_talk = false
+VAR t_3_stained_glass_1_talk = true
+VAR t_3_stained_glass_2_talk = true
+VAR t_3_stained_glass_3_talk = true
 
 
 // CHURCH DAY
@@ -197,23 +197,36 @@ VAR t_4_church_is_burnt = false
             SOUFFLEUR: Oula, oula oula...
             SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer !
             SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs !
-            SOUFFLEUR: Quoi qu'il en soit: « Show must go on! », l'ami #audience:ovation // Il manque un point mais c'est fait exprès : permet d'aller à la ligne de manière invisible
-            
+            SOUFFLEUR: Quoi qu'il en soit: « Show must go on! », l'ami !
             ~ arle_leaves_stage = true
             ~ arle_left_the_play = true
     }
     ~ return arle_leaves_stage
 
-// Souffleur speech about not mocking agath
+// Souffleur speech about not mocking Agath
 === function souffleur_speech_about_mocking_agath()
     {
         - souffleur_speech_about_not_mocking_agath_done == false:
         SOUFFLEUR: Psssst... Hé, l'ami !
         SOUFFLEUR: Je connais bien le public, et ton approche risque de faire des étincelles !
-        SOUFFLEUR: Si tu veux avoir une chance de gagner ce procès, il va falloir la jouer fine...
-        SOUFFLEUR: Se moquer d'Agathe ne fonctionnera pas, car le public l'apprécie beaucoup...
+        SOUFFLEUR: Si tu veux avoir une chance de gagner ce procès, il va falloir tenir sa langue...
+        SOUFFLEUR: Se moquer d'Agathe ne fonctionnera pas, car le public l'apprécie énormément...
         SOUFFLEUR: On ne dirait pas comme ça, mais l'actrice qui l'incarne est un véritable monument !
         SOUFFLEUR: Pour ne rien arranger, une bonne partie d'entre eux sont favorables aux enseignements d'Irène...
-        SOUFFLEUR: Convaincre le public de prendre ton parti va être un véritable casse-tête, l'ami ! Bonne chance !
+        SOUFFLEUR: Prends ton mal en patience et laisse Agathe témoigner, elle se contentera de dire la stricte vérité.
+        SOUFFLEUR: Éspérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ?
     }
     ~ souffleur_speech_about_not_mocking_agath_done = true
+
+// Souffleur speech about Agath testimonial 
+== function souffleur_speech_about_agath_testimonial()
+{
+        - souffleur_speech_about_not_mocking_agath_done == false:
+        SOUFFLEUR: Psssst... Hé, l'ami !
+        SOUFFLEUR: Je vois que jusqu'à présent, tu as laissé Agathe parler : c'est exactement ce qu'il faut faire !
+        SOUFFLEUR: Si tu veux avoir une chance de gagner ce procès, il va falloir tenir sa langue...
+        SOUFFLEUR: Tu vas devoir laisser Agathe parler, car le public l'apprécie énormément...
+        SOUFFLEUR: On ne dirait pas comme ça, mais l'actrice qui l'incarne est un véritable monument !
+        SOUFFLEUR: Prends ton mal en patience et laisse Agathe témoigner, elle se contentera de dire la stricte vérité.
+        SOUFFLEUR: Éspérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ?
+    }

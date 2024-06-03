@@ -24,4 +24,5 @@ INCLUDE boss_battle.ink
 // Start the game
 //-> barge
 //-> secret_meeting
--> tribunal_2.trial_verdict
+//-> tribunal_1.witness_agathe
+-> barge.scene_5
