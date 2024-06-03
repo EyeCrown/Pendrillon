@@ -11,13 +11,15 @@ public class Wheel : MonoBehaviour
     #region Components
     private Animator _anim;
     #endregion
-    
+
+    public AnimationCurve _movementCurve;
 
     [Range(0, 100)] public int _score;
 
     [Header("=== Positions ===")] 
-    [SerializeField] private Vector3 _positionOutsideStage;
-    [SerializeField] private Vector3 _positionOnStage;
+    [SerializeField] [Range(0, -10)] private float _yOffset;
+    private Vector3 _positionOutsideStage;
+    private Vector3 _positionOnStage;
     
     #endregion
 
@@ -25,21 +27,28 @@ public class Wheel : MonoBehaviour
 
     void Awake()
     {
+        _positionOutsideStage = transform.position;
+        _positionOnStage = new Vector3(transform.position.x, transform.position.y + _yOffset, transform.position.z);
+    }
+    
+    void Start()
+    {
+        StartCoroutine(LerpPositionCoroutine(_positionOnStage, Spin));
     }
 
     private void OnEnable()
     {
         _anim = GetComponentInChildren<Animator>();
-        Spin(_score);
+        //Spin(_score);
     }
 
     #endregion
 
     #region Methods
 
-    public void Spin(int score)
+    public void Spin()
     {
-        transform.rotation = Quaternion.Euler(score * 3.6f, 0, 0);
+        transform.rotation = Quaternion.Euler(_score * 3.6f, 0, 0);
         StartCoroutine(SpinningCoroutine());
     }
 
@@ -47,20 +56,21 @@ public class Wheel : MonoBehaviour
 
     #region Coroutines
 
-    IEnumerator ArriveOnStage()
+    IEnumerator LerpPositionCoroutine(Vector3 destination, Action callbackOnFinish = null, float duration = 4.0f)
     {
-        //TODO
-        yield return null;
+        float time = 0.0f;
+
+        Vector3 start = transform.position;
+        
+        while (time < duration)
+        {
+            transform.position = Vector3.Lerp(start, destination, _movementCurve.Evaluate(time / duration));
+            time += Time.deltaTime;
+            yield return null;
+        }
+
+        callbackOnFinish();
     }
-    
-    IEnumerator LeaveStage()
-    {
-        //TODO
-        yield return null;
-    }
-    
-    
-    
     
     IEnumerator SpinningCoroutine()
     {
@@ -70,7 +80,10 @@ public class Wheel : MonoBehaviour
         while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
             yield return null;
         Debug.Log("End anim");
-        // Anim is over
+
+        yield return new WaitForSeconds(2.0f);
+
+        StartCoroutine(LerpPositionCoroutine(_positionOutsideStage));
     }
 
     #endregion
@@ -79,8 +92,36 @@ public class Wheel : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        
+        var position = new Vector3(transform.position.x, transform.position.y + _yOffset, transform.position.z);
+        DrawWireCapsule(position, Quaternion.Euler(0, 0, 90), 1,1);
     }
 
+    public static void DrawWireCapsule(Vector3 _pos, Quaternion _rot, float _radius, float _height, Color _color = default(Color))
+    {
+        if (_color != default(Color))
+            Handles.color = _color;
+        Matrix4x4 angleMatrix = Matrix4x4.TRS(_pos, _rot, Handles.matrix.lossyScale);
+        using (new Handles.DrawingScope(angleMatrix))
+        {
+            var pointOffset = (_height - (_radius * 2)) / 2;
+ 
+            //draw sideways
+            Handles.DrawWireArc(Vector3.up * pointOffset, Vector3.left, Vector3.back, -180, _radius);
+            Handles.DrawLine(new Vector3(0, pointOffset, -_radius), new Vector3(0, -pointOffset, -_radius));
+            Handles.DrawLine(new Vector3(0, pointOffset, _radius), new Vector3(0, -pointOffset, _radius));
+            Handles.DrawWireArc(Vector3.down * pointOffset, Vector3.left, Vector3.back, 180, _radius);
+            //draw frontways
+            Handles.DrawWireArc(Vector3.up * pointOffset, Vector3.back, Vector3.left, 180, _radius);
+            Handles.DrawLine(new Vector3(-_radius, pointOffset, 0), new Vector3(-_radius, -pointOffset, 0));
+            Handles.DrawLine(new Vector3(_radius, pointOffset, 0), new Vector3(_radius, -pointOffset, 0));
+            Handles.DrawWireArc(Vector3.down * pointOffset, Vector3.back, Vector3.left, -180, _radius);
+            //draw center
+            Handles.DrawWireDisc(Vector3.up * pointOffset, Vector3.up, _radius);
+            Handles.DrawWireDisc(Vector3.down * pointOffset, Vector3.up, _radius);
+ 
+        }
+    }
+
+    
     #endregion
 }
