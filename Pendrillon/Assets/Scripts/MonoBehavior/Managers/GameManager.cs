@@ -84,6 +84,7 @@ namespace MonoBehavior.Managers
             }
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
+            Application.targetFrameRate = 60;
 
             // Connect Attributes
             _gridScene = GameObject.Find("Grid").GetComponent<GroundGrid>();
@@ -126,6 +127,7 @@ namespace MonoBehavior.Managers
         {
             //GeneratePlayerStats();
             _player = Instantiate(_playerPrefab).GetComponent<CharacterHandler>();
+            _player.SetPosition(new Vector2Int(-10, -10));
             _player.transform.position = _gridScene.GetWorldPositon(new Vector2Int(-100, -100));
             
             Destroy(_player.GetComponent<Enemy>());
@@ -213,12 +215,12 @@ namespace MonoBehavior.Managers
         public void ClearStageCharacters()
         {
             Vector2Int coords = new Vector2Int(-10, -10);
-            _player.SetPosition(coords);
+            //_player.SetPosition(coords);
 
-            foreach (var character in _characters)
-            {
-                character.SetPosition(coords);
-            }
+            // foreach (var character in _characters)
+            // {
+            //     character.SetPosition(coords);
+            // }
         }
         
         

@@ -14,6 +14,9 @@ public class CharacterHandler : MonoBehaviour
 
     public Character _character;
 
+    public Vector2Int _coordsOnStatge;
+    public bool _onStage = false;
+    
     Animator _anim;
     private GameObject _rope;
     private Vector3 _ropeOffset = new Vector3(0, 10.0f, -0.35f);
@@ -26,9 +29,9 @@ public class CharacterHandler : MonoBehaviour
     //TextMeshProUGUI _nameText;
     TextMeshProUGUI _dialogueText;
 
-    public Vector2Int _coordsOnStatge;
-    
-    //[Range(1, 200)] [SerializeField] private int maxLengthDialogue;
+    // Coroutines booleans
+    private bool _leaveCoroutine = false;
+    private bool _arriveCoroutine = false;
     
     #endregion
 
@@ -66,6 +69,11 @@ public class CharacterHandler : MonoBehaviour
     
 
     #endregion
+
+    public bool IsRopeRunning()
+    {
+        return _leaveCoroutine || _arriveCoroutine;
+    }
     
 
     #region Movements
@@ -166,29 +174,18 @@ public class CharacterHandler : MonoBehaviour
         
         //Wait until we enter the current state
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(triggerName))
-        {
-            //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation on the way");
-
             yield return null;
-        }
-        //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation Start");
-
         
+        //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation Start");
         PlayEmotionSoundsVFX(triggerName, _character.name);
         
-        ////
         if (callbackOnFinish != null) 
             callbackOnFinish();
         //Now, Wait until the current state is done playing
         while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
-        {
-            //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod().Name} > Animation running");
-
             yield return null;
-        }
         
         //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation ended");
-
         //Done playing. Do something below!
         _playAnim = false;
     }
@@ -210,8 +207,20 @@ public class CharacterHandler : MonoBehaviour
     }
 
 
-    public IEnumerator ArriveOnStage(Vector3 targetPosition, float duration = 6.0f)
+    public IEnumerator ArriveOnStage(Vector2Int targetCoordPosition, float duration = 8.0f)
     {
+        _arriveCoroutine = true;
+        Debug.Log($"{name} start arriving on stage");
+
+        while (_leaveCoroutine)
+        {
+            Debug.Log("Waiting leaving coroutine to finish");
+            yield return null;
+        }
+        
+        _coordsOnStatge = targetCoordPosition;
+        Vector3 targetPosition = GameManager.Instance._gridScene.GetWorldPositon(targetCoordPosition);
+        
         float time = 0.0f;
         Vector3 startPosition = targetPosition + new Vector3(0, 10.0f,0);
 
@@ -219,20 +228,23 @@ public class CharacterHandler : MonoBehaviour
         _rope.transform.localPosition = _ropeOffset;
         
         transform.position = startPosition;
-        _anim.SetTrigger("falling");
+        _anim.SetBool("falling", true);
         
         // Character start arriving
+        Debug.Log($"{gameObject.name} start moving");
         while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
         {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
+            transform.position = Vector3.Lerp(startPosition, targetPosition, 
+                _character.movementCurve.Evaluate(time/ (duration / 2)));
             time += Time.deltaTime;
             yield return null;
         }
-        Debug.Log($"{gameObject.name} is done");
-        _anim.SetTrigger("idle");
+        Debug.Log($"{gameObject.name} is now on stage");
+        
+        _anim.SetBool("falling", false);
 
         // Character is on stage -> Rope goes up
-        var ropeStart = _ropeOffset;
+        var ropeStart = _rope.transform.localPosition;
         var ropeDestination = ropeStart + new Vector3(0, 20.0f, 0);
         time = 0.0f;
         while (Vector3.Distance(_rope.transform.localPosition, ropeDestination) > 0.001f)
@@ -244,35 +256,43 @@ public class CharacterHandler : MonoBehaviour
         }
         _rope.SetActive(false);
         Debug.Log($"{gameObject.name}.Rope is done");
-        
 
+        _onStage = true;
+        _arriveCoroutine = false;
     }
     
     
-    public IEnumerator LeaveStage(float duration = 6.0f)
+    public IEnumerator LeaveStage(float duration = 2.0f)
     {
+        _leaveCoroutine = true;
+        Debug.Log($"{name} start leaving stage");
+        
         float time = 0.0f;
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = transform.position + new Vector3(0, 10.0f,0);
         
         
         _rope.SetActive(true);
-        var ropeStart = targetPosition + _ropeOffset;
+        var ropeStart = _ropeOffset + new Vector3(0, 10f, 0);
         var ropeDestination = _ropeOffset;
         _rope.transform.localPosition = ropeStart;
         // Rope is arriving
         while (Vector3.Distance(_rope.transform.localPosition, ropeDestination) > 0.001f)
         {
             _rope.transform.localPosition = Vector3.Lerp(ropeStart, ropeDestination, 
-                _character.movementCurve.Evaluate(time/ (duration/4)));
+                _character.movementCurve.Evaluate(time/duration));
             time += Time.deltaTime;
             yield return null;
         }
         
         // Rope is here -> Character goes up
-        _anim.SetTrigger("falling");
+        _anim.SetBool("falling", true);
+
+        time = 0.0f;
+        
         while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
         {
+            //Debug.Log($"LeaveStage: {time}/{duration}");
             transform.position = Vector3.Lerp(startPosition, targetPosition, 
                 _character.movementCurve.Evaluate(time/duration));
             time += Time.deltaTime;
@@ -280,6 +300,9 @@ public class CharacterHandler : MonoBehaviour
         }
         // Character is up
         Debug.Log($"{gameObject.name} has leave the stage");
+        _onStage = false;
+        _anim.SetBool("falling", false);
+        _leaveCoroutine = false;
     }
 
     #endregion
