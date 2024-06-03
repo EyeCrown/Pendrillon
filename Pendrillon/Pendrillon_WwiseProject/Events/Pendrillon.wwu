@@ -525,7 +525,7 @@
 							<ChildrenList>
 								<Event Name="Play_SFX_SC_Theater_TransitionTobarge" ID="{3484F2B0-DB0A-4EC6-87E6-217C42A2466F}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="4"/>
+										<Property Name="Color" Type="int16" Value="19"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -536,11 +536,31 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{CB886583-A6AC-40A5-AECB-48BF6B44E7CB}" ShortID="888636084">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_ALL" ID="{664C3AAD-F06F-448B-9938-7ACBE834B219}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{4EBB57D7-6B6E-4206-B998-1028B042BF6D}" ShortID="108228758">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Play_AMB_SC_Barque_Ambiance" ID="{A4F67341-F783-426C-8CD2-FB5F40ECA153}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_SC_Theater_TransitionTocale" ID="{EF709824-D5D8-4080-89F7-D5434EE33ED1}">
 									<PropertyList>
-										<Property Name="Color" Type="int16" Value="4"/>
+										<Property Name="Color" Type="int16" Value="9"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
 									<ChildrenList>
@@ -551,9 +571,33 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{65E7B5AD-47FD-46C8-8CB3-2732FD358502}" ShortID="82743255">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_ALL" ID="{664C3AAD-F06F-448B-9938-7ACBE834B219}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{BAF26AE5-4F1F-4D9A-B29B-70917C1D6B7F}" ShortID="438569404">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Play_AMB_SC_Cale_Ambiance" ID="{CFC7C4F3-9D40-4D56-8C70-9761B6C51F84}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_SFX_SC_Theater_TransitionTosecretmeeting" ID="{71378AAE-DE24-426A-A30B-B13A3BE7BE56}">
+								<Event Name="Play_SFX_SC_Theater_TransitionToforest" ID="{71378AAE-DE24-426A-A30B-B13A3BE7BE56}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="4"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{371D11DC-35D0-4C73-BC46-63F04159CC65}" ShortID="702678516">
 											<ReferenceList>
@@ -562,9 +606,33 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{33465D99-1375-4639-A659-35CAE36CCAA6}" ShortID="501878943">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_ALL" ID="{664C3AAD-F06F-448B-9938-7ACBE834B219}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{044C76FE-813C-4139-AAC4-8DC78B9E7181}" ShortID="528946524">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Play_AMB_SC_Forest_Ambiance" ID="{B658335D-9203-4B24-A2F3-C383A99F191C}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_SFX_SC_Theater_TransitionTopont" ID="{0A79F1BD-9172-4EB7-A033-748A6E73D07F}">
+								<Event Name="Play_SFX_SC_Theater_TransitionTotempest" ID="{0A79F1BD-9172-4EB7-A033-748A6E73D07F}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="2"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{EFCB4715-083A-48F0-B3A7-A15C48F6DEB9}" ShortID="112269010">
 											<ReferenceList>
@@ -573,9 +641,35 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{BB66E6A4-4606-4966-83B5-1439BB68883E}" ShortID="906954313">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_ALL" ID="{664C3AAD-F06F-448B-9938-7ACBE834B219}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{773E8AB0-76F2-4858-B65D-7808B4F5E09A}" ShortID="176283905">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+												<Property Name="Delay" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Play_AMB_SC_Tempest_Ambiance" ID="{04DEBB85-E569-4C98-90A1-616560225229}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_SFX_SC_Theater_TransitionToeglise" ID="{34E2245A-2BC9-4937-AC09-53C4C435596F}">
+								<Event Name="Play_SFX_SC_Theater_TransitionTochurch" ID="{34E2245A-2BC9-4937-AC09-53C4C435596F}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="14"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{3BB2B0A1-AD56-4042-A434-5ECF2127257A}" ShortID="446033924">
 											<ReferenceList>
@@ -584,14 +678,57 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{803F3515-A2EA-4EF2-8A2A-690B5F3013EB}" ShortID="384372010">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_ALL" ID="{664C3AAD-F06F-448B-9938-7ACBE834B219}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{3C073ED0-D756-4278-9D97-F3ACB5420253}" ShortID="1072384166">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Play_AMB_SC_Eglise_Ambiance" ID="{320BA2C2-4602-48AB-9A88-3CABF3F58C1C}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_SFX_SC_Theater_TransitionTotribunal" ID="{AA615318-46FA-4AFA-B1DC-E6D5058168B6}">
+								<Event Name="Play_SFX_SC_Theater_TransitionTotrial" ID="{AA615318-46FA-4AFA-B1DC-E6D5058168B6}">
+									<PropertyList>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{AE8E5356-217E-404A-802D-50B684906CC0}" ShortID="1066972207">
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="SFX_SC_Theater_TransitionTocale" ID="{B393944F-FEAD-44CC-8E5D-6FF20BA49237}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{D44CB9EC-1EB5-45FB-AD60-A38C1F9F5D45}" ShortID="1064411549">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_ALL" ID="{664C3AAD-F06F-448B-9938-7ACBE834B219}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{E3D8A141-737C-46E8-83CF-B9AED8EEAECD}" ShortID="434894626">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Play_AMB_SC_Trial_Ambiance" ID="{5C0F714F-FC3A-4DF7-B195-15F8C9AC041F}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -605,7 +742,7 @@
 					<ChildrenList>
 						<Folder Name="StopAmbiances" ID="{0819E4AB-EEAB-40B4-BB83-31CBBC48810C}" ShortID="361750159">
 							<ChildrenList>
-								<Event Name="Stop_AMB_SC_Pont_Ambiance" ID="{966B7322-683E-4522-80F2-CEB3ECB31B5E}">
+								<Event Name="Stop_AMB_SC_Tempest_Ambiance" ID="{966B7322-683E-4522-80F2-CEB3ECB31B5E}">
 									<ChildrenList>
 										<Action Name="" ID="{3E3A2BF8-A3DA-4834-9B45-2E2F3E93AB6D}" ShortID="586565612">
 											<PropertyList>
@@ -702,6 +839,95 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="AMB_SC_Forest" ID="{91A6A4FB-036E-40CF-8526-7B20E40BD4B6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_AMB_ALL" ID="{664C3AAD-F06F-448B-9938-7ACBE834B219}">
+									<ChildrenList>
+										<Action Name="" ID="{39401174-2845-4484-845D-B23F8350BF1A}" ShortID="2246392">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_SC_Barque_Ambiance" ID="{C6D281E1-F333-4A01-89DF-19B443EFA4D6}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{A703D4B0-54AE-4B97-B921-37F15660F54F}" ShortID="745192977">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_SC_Cale_Ambiance" ID="{2676E719-BEDB-44DB-A59C-88A8B74FA143}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{4E131D3F-D0D6-4114-98CF-C836FB7E801E}" ShortID="991205783">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_SC_Eglise_Ambiance" ID="{8EAD1DB9-CDF5-450F-A640-D9A6C0731612}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{A85337FA-80D1-4024-BD24-8A34DB47CDBB}" ShortID="987143123">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_SC_Forest_Ambiance" ID="{9739BD0A-9C40-4F55-955F-3207A4D222F2}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{6CD248A4-8AF9-4D7B-8CB0-B8AE29500A73}" ShortID="40195735">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_SC_Tempest_Ambiance" ID="{966B7322-683E-4522-80F2-CEB3ECB31B5E}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{AA84EEBD-3991-433C-807A-982E76B3D67E}" ShortID="920932714">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_SC_Theater_CrowdChatter" ID="{1654922F-DE03-41CA-B0F5-C962E501E93C}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{E3C081CA-C23D-45AC-86BD-8C8E8179D563}" ShortID="867882837">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_AMB_SC_Trial_Ambiance" ID="{829A39F1-DFC5-41EA-A049-9071C4349B9E}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Stop_AMB_SC_Trial_Ambiance" ID="{829A39F1-DFC5-41EA-A049-9071C4349B9E}">
+									<ChildrenList>
+										<Action Name="" ID="{D3420EEB-13DE-4A48-A94E-420EF2642746}" ShortID="253865872">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AMB_SC_Pont" ID="{90386080-2AA8-4D81-B8F1-639920457433}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -938,11 +1164,12 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_AMB_SC_Pont_Ambiance" ID="{04DEBB85-E569-4C98-90A1-616560225229}">
+								<Event Name="Play_AMB_SC_Tempest_Ambiance" ID="{04DEBB85-E569-4C98-90A1-616560225229}">
 									<ChildrenList>
 										<Action Name="" ID="{F8450574-D038-4E8F-A5C4-17C24AC093F3}" ShortID="863308079">
 											<PropertyList>
-												<Property Name="FadeTime" Type="Real64" Value="1"/>
+												<Property Name="FadeInCurve" Type="int16" Value="7"/>
+												<Property Name="FadeTime" Type="Real64" Value="2"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -988,6 +1215,20 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="AMB_SC_Forest" ID="{91A6A4FB-036E-40CF-8526-7B20E40BD4B6}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_AMB_SC_Trial_Ambiance" ID="{5C0F714F-FC3A-4DF7-B195-15F8C9AC041F}">
+									<ChildrenList>
+										<Action Name="" ID="{B585ADAC-6DC6-4F30-B4CE-D0C119DDE684}" ShortID="896324246">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AMB_SC_Pont" ID="{90386080-2AA8-4D81-B8F1-639920457433}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
