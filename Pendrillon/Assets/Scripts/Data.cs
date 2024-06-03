@@ -73,6 +73,15 @@ public static class Constants
     public const string TypeDexterity   = "Dexterity";
     public const string TypeComposition = "Composition";
     public const string TypeLuck        = "Luck";
+
+    public static readonly string[] ButtonTypesArray = new[]
+    {
+        TypeCharisma,
+        TypeStrength,
+        TypeDexterity,
+        TypeComposition,
+        TypeLuck
+    };
     
     #endregion
 
@@ -96,6 +105,16 @@ public static class Constants
     public const string ReactApplause   = "applause";
     public const string ReactChoc       = "choc";
     public const string ReactLaughter   = "laughter";
+
+    public static readonly string[] ReactArray = new string[]
+    {
+        ReactBooing,
+        ReactOvation,
+        ReactDebate,
+        ReactApplause,
+        ReactChoc,
+        ReactLaughter
+    };
 
     #endregion
 

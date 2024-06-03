@@ -180,9 +180,6 @@ namespace MonoBehavior.Managers
             // _dialogueTypewriter.onTextShowed.AddListener(DialogueTextFinished);
             // _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
             
-            
-            
-            
             _setBarge   = Instantiate(_setBarge,  GameObject.Find("Environment").transform);
             _setCale    = Instantiate(_setCale,   GameObject.Find("Environment").transform);
             //_setPort    = Instantiate(_setPort,   GameObject.Find("Environment").transform);
@@ -213,6 +210,16 @@ namespace MonoBehavior.Managers
                 speakerBox.GetComponent<RawImage>().color.b,
                 GameManager.Instance._opacityUI
             );
+
+            /*foreach (Transform mask in _masks.transform)
+            {
+                mask.GetComponent<Image>().color = new Color(
+                    mask.GetComponent<Image>().color.r,
+                    mask.GetComponent<Image>().color.g,
+                    mask.GetComponent<Image>().color.b,
+                    GameManager.Instance._opacityUI
+                );
+            }*/
         }
         
         #endregion
@@ -235,16 +242,11 @@ namespace MonoBehavior.Managers
                 // Add to history
                 //_historyText.text += _currentDialogue + "\n";
                 
-                
                 // var path = GameManager.Instance._story.state.currentPathString;
                 // Debug.Log($"AM.Refresh > _story.state.currentPathString: {path}");
 
                 // string[] words = path != null ? path.Split(".") : new []{_stage};
                 // Debug.Log($"AM.Refresh > Location: {words[0]}");
-                
-                // if (CheckBeginOfFight(GameManager.Instance._story.state.currentPathString))
-                //     return;
-                
                 
                 HandleTags();
                 HandleDialogue();
@@ -257,15 +259,7 @@ namespace MonoBehavior.Managers
                     return;
                 }
                 
-                /*foreach (var method in _tagMethods)
-                {
-                    Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Do method in list {method.Method.Name}");
-                    method();
-                }*/
-                
                 StartCoroutine(ExecuteTagMethods());
-                //HandleChoices();
-
             }
             else
             {
@@ -321,6 +315,7 @@ namespace MonoBehavior.Managers
                     // send to character the dialogue
                     if (speaker.ToLower() == Constants.PrompterName.ToLower())
                     {
+                        _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
                         GameManager.Instance._prompter.DialogueUpdate.Invoke(dialogue);
                         TagActionOver();
                     }
@@ -422,37 +417,17 @@ namespace MonoBehavior.Managers
 
         void SetButtonType(Button button, string choiceText)
         {
-            if (choiceText.Contains(Constants.TypeCharisma))
+            foreach (var typeName in Constants.ButtonTypesArray)
             {
-                Debug.Log("AM.SetButtonType > This button is Charisma");
-                button.transform.Find(Constants.TypeCharisma).gameObject.SetActive(true);
-                return;
+                if (choiceText.Contains(typeName))
+                {
+                    Debug.Log($"AM.SetButtonType > This button is {typeName}");
+                    button.transform.Find(typeName).gameObject.SetActive(true);
+                    return;
+                }
             }
-            if (choiceText.Contains(Constants.TypeStrength))
-            {
-                Debug.Log("AM.SetButtonType > This button is Strength");
-                button.transform.Find(Constants.TypeStrength).gameObject.SetActive(true);
-                return;
-            }
-            if (choiceText.Contains(Constants.TypeDexterity))
-            {
-                Debug.Log("AM.SetButtonType > This button is Dexterity");
-                button.transform.Find(Constants.TypeDexterity).gameObject.SetActive(true);
-                return;
-            }
-            if (choiceText.Contains(Constants.TypeComposition))
-            {
-                Debug.Log("AM.SetButtonType > This button is Composition");
-                button.transform.Find(Constants.TypeComposition).gameObject.SetActive(true);
-                return;
-            }
-            if (choiceText.Contains(Constants.TypeLuck))
-            {
-                Debug.Log("AM.SetButtonType > This button is Luck");
-                button.transform.Find(Constants.TypeLuck).gameObject.SetActive(true);
-                return;
-            }
-            //Debug.Log("AM.SetButtonType > This button is neutral");
+            Debug.Log("AM.SetButtonType > This button is neutral");
+            
         }
         
 
@@ -1041,7 +1016,6 @@ namespace MonoBehavior.Managers
                     Debug.LogError($"AM.HandleTagAudience > Unkwonw reaction | {reaction} |");
                     return;
             }
-            
             Debug.Log($"AM.HandleTagAudience > Reaction: {reaction}");
 
             var soundToPlay = "Play_CrowdReaction_" + reaction;

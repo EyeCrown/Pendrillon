@@ -292,7 +292,7 @@ public class CharacterHandler : MonoBehaviour
         
         while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
         {
-            Debug.Log($"LeaveStage: {time}/{duration}");
+            //Debug.Log($"LeaveStage: {time}/{duration}");
             transform.position = Vector3.Lerp(startPosition, targetPosition, 
                 _character.movementCurve.Evaluate(time/duration));
             time += Time.deltaTime;
