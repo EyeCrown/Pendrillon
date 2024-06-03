@@ -11,6 +11,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Event = AK.Wwise.Event;
 
 namespace MonoBehavior.Managers
 {
@@ -31,7 +32,9 @@ namespace MonoBehavior.Managers
         // Scene
         // TODO: put the name of the first scene (in Constants)
         public string _stage = "";//Constants.FirstSetOnStage;      // Name of the actual set
-        
+
+        #region Set Attributes
+
         [Header("=== Sets ===")]
         public GameObject _setBarge;
         public GameObject _setCale;
@@ -41,8 +44,11 @@ namespace MonoBehavior.Managers
         public GameObject _setTempest;
         public GameObject _setForest;
         private GameObject _currentSet;
-    
-        // UI
+
+        #endregion
+
+        #region UI Attributes
+
         [HideInInspector] public GameObject _uiParent { get; private set; }
         GameObject _dialogueBox;
         TextMeshProUGUI _dialogueText;      // Text box
@@ -67,22 +73,24 @@ namespace MonoBehavior.Managers
         readonly float _minButtonPosX = -960;
         readonly float _maxButtonPosX =  960;
         float _buttonPosY =  -260;
-        
-    
-        // Buttons
+
+        #endregion
+
+        #region Button Attributes
+
         [Header("=== Buttons ===")]
         [SerializeField] Button _choiceButtonLeftPrefab;
         [SerializeField] Button _choiceButtonMiddlePrefab;
         [SerializeField] Button _choiceButtonRightPrefab;
         public List<Button> _choicesButtonList;
+
+        #endregion
         
         // Dialogue
         string _currentDialogue;
         //Stack<string> savedJsonStack;
         bool mustWait = false;
         readonly float _timeToWait = 0.0f;
-        
-        List<CharacterHandler> _enemiesToFight = new();
 
         // Tag list ordering
         List<Action> _tagMethods = new();
@@ -92,14 +100,19 @@ namespace MonoBehavior.Managers
         readonly Dictionary<string, Transform> _directions = new Dictionary<string, Transform>();
         
         //Sound
+
+        #region Wwise Attributes
+
         [Header("=== Wwise attributes ===")]
-        [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButton;
+        [SerializeField] private Event _wwiseChoiceDialogueButton;
 
         /* Cet event est lancé depuis le bouton vert d'UI
          [SerializeField] private AK.Wwise.Event _wwiseNextDialogueButton; */
-        [SerializeField] private AK.Wwise.Event _wwiseBackButton;
-        [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButtonAppears;
-        [SerializeField] private AK.Wwise.Event _wwiseDialogAppears;
+        [SerializeField] private Event _wwiseBackButton;
+        [SerializeField] private Event _wwiseChoiceDialogueButtonAppears;
+        [SerializeField] private Event _wwiseDialogAppears;
+
+        #endregion
         
         #endregion
 
@@ -205,17 +218,6 @@ namespace MonoBehavior.Managers
         }
         
         #endregion
-
-        #region Getters
-
-        public List<CharacterHandler> GetEnemiesToFight()
-        {
-            return _enemiesToFight;
-        }
-
-        #endregion
-    
-        
 
         public void Refresh()
         {

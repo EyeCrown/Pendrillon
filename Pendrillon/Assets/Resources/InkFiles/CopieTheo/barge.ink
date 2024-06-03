@@ -26,7 +26,7 @@ PASSEUR: Eh, bien...
 PASSEUR: J'ai connu des passagers plus loquaces...  #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause #rope:Player
     * [(Rester silencieux)]
 - PASSEUR: *Hum hum* #bark:Passeur:clear_voice
-- PASSEUR: J'ai dit : « J'ai connu des passagers plus loquaces... ». #box #audience:debate
+- PASSEUR: J'ai dit : « J'ai connu des passagers plus loquaces... ». #box #audience:debate #rope:Player
 - SOUFFLEUR: Psssst... Hé !  #playsound:VOX_Souffleur_pssthe
 SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_parici
 SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #anim:Souffleur:neutre #playsound:VOX_Souffleur_tracparalyse
