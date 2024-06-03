@@ -102,7 +102,6 @@ namespace MonoBehavior.Managers
         //Sound
 
         #region Wwise Attributes
-
         [Header("=== Wwise attributes ===")]
         [SerializeField] private Event _wwiseChoiceDialogueButton;
 
@@ -111,7 +110,6 @@ namespace MonoBehavior.Managers
         [SerializeField] private Event _wwiseBackButton;
         [SerializeField] private Event _wwiseChoiceDialogueButtonAppears;
         [SerializeField] private Event _wwiseDialogAppears;
-
         #endregion
         
         #endregion
@@ -179,8 +177,8 @@ namespace MonoBehavior.Managers
             PhaseEnded.AddListener(OnPhaseEnded);
             ClearUI.AddListener(OnClearUI);
         
-            _dialogueTypewriter.onTextShowed.AddListener(DialogueTextFinished);
-            _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
+            // _dialogueTypewriter.onTextShowed.AddListener(DialogueTextFinished);
+            // _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
             
             
             
@@ -264,7 +262,7 @@ namespace MonoBehavior.Managers
                     Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Do method in list {method.Method.Name}");
                     method();
                 }*/
-
+                
                 StartCoroutine(ExecuteTagMethods());
                 //HandleChoices();
 
@@ -374,7 +372,6 @@ namespace MonoBehavior.Managers
             else 
             {
                 //Debug.Log("No choices, so click can display text");
-                StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
         }
 
@@ -494,17 +491,28 @@ namespace MonoBehavior.Managers
             _playerName = newName;
         }
 
+        bool IsRopeActionRunning()
+        {
+            bool running = GameManager.Instance._player.IsRopeRunning();
+            foreach (var character in GameManager.Instance._characters)
+                running |= character.IsRopeRunning();
+
+            return running;
+        }
+        
 
         #region TypeWriting
 
         void DialogueTextFinished()
         {
-            //Debug.Log("Dialogue Text is finished");
+            Debug.Log("Dialogue Text is finished");
 
             if (GameManager.Instance._story.canContinue)
             {
                 GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
                 //Debug.Log("Click += NextDialogue");
+                if (!GameManager.Instance._story.currentChoices.Any())
+                    StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
         }
 
@@ -516,7 +524,9 @@ namespace MonoBehavior.Managers
             if (GameManager.Instance._story.canContinue)
             {
                 GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
-                Debug.Log("Click += NextDialogue");
+                //Debug.Log("Click += NextDialogue");
+                if (!GameManager.Instance._story.currentChoices.Any())
+                    StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
         }
 
@@ -629,6 +639,8 @@ namespace MonoBehavior.Managers
             }
             _choicesButtonList.Clear();
         
+            _dialogueTypewriter.onTextShowed.RemoveListener(DialogueTextFinished);
+            _prompterTypewriter.onTextShowed.RemoveListener(PrompterTextFinished);
             _dialogueBox.SetActive(false);
             
             // Clear masks
@@ -638,7 +650,7 @@ namespace MonoBehavior.Managers
             }
             
             
-            StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 1, 0, 0.1f));
+            StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, _nextDialogueIndicator.color.a, 0, 0.05f));
 
             //_nextDialogueIndicator.gameObject.SetActive(false);
 
@@ -1143,6 +1155,10 @@ namespace MonoBehavior.Managers
         IEnumerator GenerateText(string textToDisplay)
         {
             _dialogueBox.SetActive(true);
+            
+            _dialogueTypewriter.onTextShowed.AddListener(DialogueTextFinished);
+            _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
+            
             GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;     // C'est très sale
             
             if (mustWait)
@@ -1175,6 +1191,7 @@ namespace MonoBehavior.Managers
 
         IEnumerator FadeImageCoroutine(RawImage img, float begin, float end, float duration)
         {
+            //Debug.Log($"FadeImageCoroutine > Begin: {begin} to {end}");
             var timeElapsed = 0.0f;
             Color color;
             while (timeElapsed < duration)
@@ -1182,14 +1199,13 @@ namespace MonoBehavior.Managers
                 color = img.color;
                 color.a = Mathf.Lerp(begin, end, timeElapsed/duration);
                 img.color = color;
-
                 timeElapsed += Time.deltaTime;
-                
                 yield return null;
             }
             color = img.color;
             color.a = end;
             img.color = color;
+            //Debug.Log($"FadeImageCoroutine > It's done");
         }
         
 
@@ -1199,22 +1215,16 @@ namespace MonoBehavior.Managers
         /// <returns></returns>
         IEnumerator ExecuteTagMethods()
         {
-            var i = 0;
-            while (i < _tagMethods.Count)
+            // Waiting if someone is still using a rope
+            while (IsRopeActionRunning())
+                yield return null;
+            
+            foreach (var tagAction in _tagMethods)
             {
-                if (!_tagMethods.Any())
-                    break;                
                 _isActionDone = false;
-                //Debug.Log($"{_tagMethods[i].Method.Name} > Start action {_tagMethods[i].Method.Name}");
-
-                _tagMethods[i]();
+                tagAction();
                 while (!_isActionDone)
-                {
-                    //Debug.Log($"{_tagMethods[i].Method.Name} > Wait to finish");
                     yield return null;
-                }
-                //Debug.Log($"{_tagMethods[i].Method.Name} > Action is done");
-                ++i;
             }
             
             HandleChoices();

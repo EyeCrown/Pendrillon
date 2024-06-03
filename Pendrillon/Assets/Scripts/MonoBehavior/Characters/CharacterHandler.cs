@@ -69,6 +69,11 @@ public class CharacterHandler : MonoBehaviour
     
 
     #endregion
+
+    public bool IsRopeRunning()
+    {
+        return _leaveCoroutine || _arriveCoroutine;
+    }
     
 
     #region Movements
@@ -202,7 +207,7 @@ public class CharacterHandler : MonoBehaviour
     }
 
 
-    public IEnumerator ArriveOnStage(Vector2Int targetCoordPosition, float duration = 10.0f)
+    public IEnumerator ArriveOnStage(Vector2Int targetCoordPosition, float duration = 8.0f)
     {
         _arriveCoroutine = true;
         Debug.Log($"{name} start arriving on stage");
@@ -257,7 +262,7 @@ public class CharacterHandler : MonoBehaviour
     }
     
     
-    public IEnumerator LeaveStage(float duration = 4.0f)
+    public IEnumerator LeaveStage(float duration = 2.0f)
     {
         _leaveCoroutine = true;
         Debug.Log($"{name} start leaving stage");
