@@ -11,7 +11,6 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using Event = AK.Wwise.Event;
 
 namespace MonoBehavior.Managers
 {
@@ -98,13 +97,13 @@ namespace MonoBehavior.Managers
         #region Wwise Attributes
 
         [Header("=== Wwise attributes ===")]
-        [SerializeField] private Event _wwiseChoiceDialogueButton;
+        [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButton;
 
         /* Cet event est lancé depuis le bouton vert d'UI
          [SerializeField] private AK.Wwise.Event _wwiseNextDialogueButton; */
-        [SerializeField] private Event _wwiseBackButton;
-        [SerializeField] private Event _wwiseChoiceDialogueButtonAppears;
-        [SerializeField] private Event _wwiseDialogAppears;
+        [SerializeField] private AK.Wwise.Event _wwiseBackButton;
+        [SerializeField] private AK.Wwise.Event _wwiseChoiceDialogueButtonAppears;
+        [SerializeField] private AK.Wwise.Event _wwiseDialogAppears;
         #endregion
         
         #endregion
@@ -712,7 +711,6 @@ namespace MonoBehavior.Managers
             }
             if (GameManager.Instance._player._onStage)
                 StartCoroutine(GameManager.Instance._player.LeaveStage());
-
             
             AkSoundEngine.PostEvent("Play_SFX_SC_Theater_TransitionTo" + location, gameObject);
 

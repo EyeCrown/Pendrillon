@@ -163,7 +163,7 @@ Open mouth state : ouvre la gueule et hurle.
 // Boss attack
 ~ boss_attack()
 // Next turn
- -> next_turn
+- -> next_turn
 
 // Kill the boss
 = kill_boss
