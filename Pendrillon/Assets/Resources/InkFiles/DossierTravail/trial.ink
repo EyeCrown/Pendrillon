@@ -1,8 +1,11 @@
 // TRIAL PROPERTIES
 VAR t_audience_judgement = 0.5 // Compris entre 0 et 1
 VAR t_arle_patience = 5 // Patience de Arle (0 = Arle pète un câble)
+VAR t_souffleur_explanations_bell = false
 
 // SECRET MEETING
+// VAR t_1_accept_to_kill = false
+// VAR t_1_refuse_to_kill = false
 // VAR t_1_disrespect_the_crown = false
 // VAR t_1_respect_the_crown = false
 // VAR t_1_disrespect_irene = false
@@ -11,6 +14,8 @@ VAR t_arle_patience = 5 // Patience de Arle (0 = Arle pète un câble)
 // VAR t_1_accept_mission_with_positivity = false
 // VAR t_1_accept_mission_with_negativity = false
 // DEBUG TRIAL
+VAR t_1_accept_to_kill = false
+VAR t_1_refuse_to_kill = false
 VAR t_1_disrespect_the_crown = true
 VAR t_1_respect_the_crown = false
 VAR t_1_disrespect_irene = true
@@ -31,83 +36,84 @@ VAR t_2_jester_attacked = false
 VAR t_2_bribe_guards = false
 VAR t_2_try_but_fail_bribing_guards = false
 VAR t_2_try_and_succeed_bribing_guards = false
+VAR t_2_attack_guards = false
 
 // CHURCH NIGHT SCENE
-// VAR t_3_lie_abot_being_innocent = false
-// VAR t_3_did_not_lie_abot_being_innocent = false
-// VAR t_3_implore_irene = false
-// VAR t_3_blame_irene = false
-// VAR t_3_show_no_regrets = false
-// VAR t_3_show_some_regrets = false
-// VAR t_3_show_plenty_regrets = false
-// VAR t_3_no_light_on_irene_torch = false
-// VAR t_3_light_on_irene_torch = false
-// VAR t_3_doubt_about_irene_cryings = false
-// VAR t_3_is_with_irene_saviors = false
-// VAR t_3_is_against_irene_saviors = false
-// VAR t_3_insult_interest_about_irene = false
-// VAR t_3_not_believing_irene_predictions = false
-// VAR t_3_insult_irene_savior = false
-// VAR t_3_moved_by_baby_irene = false
-// VAR t_3_fake_about_feeling_for_the_baby = false
-// VAR t_3_religion_is_to_make_naive_cry = false
-// VAR t_3_does_not_know_ernest = false
-// VAR t_3_know_ernest = true
-// VAR t_3_rant_about_edgar_the_traquenard = false
-// VAR t_3_does_not_believe_in_lighthouse_sacred_light = false
-// VAR t_3_believe_in_lighthouse_sacred_light = false
-// VAR t_3_know_fishermen_holy_gift = false
-// VAR t_3_does_not_know_fishermen_holy_gift = false
-// VAR t_3_does_not_believe_the_sacred_writings = false
-// VAR t_3_question_if_irene_is_a_sireine = false
-// VAR t_3_question_judge_position = false
-// VAR t_3_show_judge_respect = false
-// VAR t_3_validate_judge_position = false
-// VAR t_3_defend_sireine = false
-// VAR t_3_criticise_irene_coldness = false
-// VAR t_3_law_should_not_be_lax = false
-// VAR t_3_law_can_be_lax = false
-// VAR t_3_stained_glass_1_talk = false
-// VAR t_3_stained_glass_2_talk = false
-// VAR t_3_stained_glass_3_talk = false
-// DEBUG TRIAL
-VAR t_3_lie_abot_being_innocent = true
+VAR t_3_lie_abot_being_innocent = false
 VAR t_3_did_not_lie_abot_being_innocent = false
 VAR t_3_implore_irene = false
-VAR t_3_blame_irene = true
+VAR t_3_blame_irene = false
 VAR t_3_show_no_regrets = false
 VAR t_3_show_some_regrets = false
-VAR t_3_show_plenty_regrets = true
+VAR t_3_show_plenty_regrets = false
 VAR t_3_no_light_on_irene_torch = false
-VAR t_3_light_on_irene_torch = true
-VAR t_3_doubt_about_irene_cryings = true
+VAR t_3_light_on_irene_torch = false
+VAR t_3_doubt_about_irene_cryings = false
 VAR t_3_is_with_irene_saviors = false
 VAR t_3_is_against_irene_saviors = false
-VAR t_3_insult_interest_about_irene = true
-VAR t_3_not_believing_irene_predictions = true
-VAR t_3_insult_irene_savior = true
-VAR t_3_moved_by_baby_irene = true
+VAR t_3_insult_interest_about_irene = false
+VAR t_3_not_believing_irene_predictions = false
+VAR t_3_insult_irene_savior = false
+VAR t_3_moved_by_baby_irene = false
 VAR t_3_fake_about_feeling_for_the_baby = false
-VAR t_3_religion_is_to_make_naive_cry = true
+VAR t_3_religion_is_to_make_naive_cry = false
 VAR t_3_does_not_know_ernest = false
 VAR t_3_know_ernest = true
-VAR t_3_rant_about_edgar_the_traquenard = true
-VAR t_3_does_not_believe_in_lighthouse_sacred_light = true
-VAR t_3_believe_in_lighthouse_sacred_light = true
+VAR t_3_rant_about_edgar_the_traquenard = false
+VAR t_3_does_not_believe_in_lighthouse_sacred_light = false
+VAR t_3_believe_in_lighthouse_sacred_light = false
 VAR t_3_know_fishermen_holy_gift = false
 VAR t_3_does_not_know_fishermen_holy_gift = false
-VAR t_3_does_not_believe_the_sacred_writings = true
-VAR t_3_question_if_irene_is_a_sireine = true
-VAR t_3_question_judge_position = true
-VAR t_3_show_judge_respect = true
+VAR t_3_does_not_believe_the_sacred_writings = false
+VAR t_3_question_if_irene_is_a_sireine = false
+VAR t_3_question_judge_position = false
+VAR t_3_show_judge_respect = false
 VAR t_3_validate_judge_position = false
-VAR t_3_defend_sireine = true
-VAR t_3_criticise_irene_coldness = true
-VAR t_3_law_should_not_be_lax = true
+VAR t_3_defend_sireine = false
+VAR t_3_criticise_irene_coldness = false
+VAR t_3_law_should_not_be_lax = false
 VAR t_3_law_can_be_lax = false
-VAR t_3_stained_glass_1_talk = true
-VAR t_3_stained_glass_2_talk = true
-VAR t_3_stained_glass_3_talk = true
+VAR t_3_stained_glass_1_talk = false
+VAR t_3_stained_glass_2_talk = false
+VAR t_3_stained_glass_3_talk = false
+// DEBUG TRIAL
+//VAR t_3_lie_abot_being_innocent = true
+//VAR t_3_did_not_lie_abot_being_innocent = false
+//VAR t_3_implore_irene = false
+//VAR t_3_blame_irene = true
+//VAR t_3_show_no_regrets = false
+//VAR t_3_show_some_regrets = false
+//VAR t_3_show_plenty_regrets = true
+// VAR t_3_no_light_on_irene_torch = false
+// VAR t_3_light_on_irene_torch = true
+// VAR t_3_doubt_about_irene_cryings = true
+// VAR t_3_is_with_irene_saviors = false
+// VAR t_3_is_against_irene_saviors = false
+// VAR t_3_insult_interest_about_irene = true
+// VAR t_3_not_believing_irene_predictions = true
+// VAR t_3_insult_irene_savior = true
+// VAR t_3_moved_by_baby_irene = true
+// VAR t_3_fake_about_feeling_for_the_baby = false
+// VAR t_3_religion_is_to_make_naive_cry = true
+// VAR t_3_does_not_know_ernest = false
+// VAR t_3_know_ernest = true
+// VAR t_3_rant_about_edgar_the_traquenard = true
+// VAR t_3_does_not_believe_in_lighthouse_sacred_light = true
+// VAR t_3_believe_in_lighthouse_sacred_light = true
+// VAR t_3_know_fishermen_holy_gift = false
+// VAR t_3_does_not_know_fishermen_holy_gift = false
+// VAR t_3_does_not_believe_the_sacred_writings = true
+// VAR t_3_question_if_irene_is_a_sireine = true
+// VAR t_3_question_judge_position = true
+// VAR t_3_show_judge_respect = true
+// VAR t_3_validate_judge_position = false
+// VAR t_3_defend_sireine = true
+// VAR t_3_criticise_irene_coldness = true
+// VAR t_3_law_should_not_be_lax = true
+// VAR t_3_law_can_be_lax = false
+// VAR t_3_stained_glass_1_talk = true
+// VAR t_3_stained_glass_2_talk = true
+// VAR t_3_stained_glass_3_talk = true
 
 
 // CHURCH DAY
@@ -116,9 +122,20 @@ VAR t_4_church_is_burnt = false
 
 // Let the trial register a player choice by changing the given variable to true
 === function trial(pVariable) ===
-    ~ pVariable = true 
+    ~ pVariable = true
     #trial
     #playsound:Play_SFX_Story_JudgeBellFar
+    #wait:0.5 #audience:choc
+    {
+        - t_souffleur_explanations_bell == false:
+            SOUFFLEUR: Psssst... Hé, l'ami ! Tu as entendu ?
+            SOUFFLEUR: C'est la <shake>Cloche du Destin</shake> !
+            SOUFFLEUR: Enfin, c'est comme ça que <i>moi</i> je l'appelle.
+            SOUFFLEUR: Tu l'entendras sonner lorsque tu feras un choix qui modifie le scénario de la pièce.
+            SOUFFLEUR: Cela signifie que ton choix aura des conséquences <b>majeures</b> sur la suite de l’histoire !
+            SOUFFLEUR: Ne t’en fais pas, même si c'est imprévu, les autres acteurs aussi savent improviser !
+            ~ t_souffleur_explanations_bell = true
+    }
 
 // Return if player is accused of the given felony
 === function is_accused_of(pFelony) ===

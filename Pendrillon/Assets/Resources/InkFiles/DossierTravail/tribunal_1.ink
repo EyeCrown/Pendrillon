@@ -57,8 +57,10 @@ JUGE ERNEST: Silence ! J'exige le silence ! #anim:Judge:bell #audience:silent
     - is_accused_of("blasphemy"): JUGE ERNEST: ... De blasphème... #box #audience:booing #screenshake
         ~ audience_judgement(-0.02)
 }
-- JUGE ERNEST: ... De violence à l'encontre de représentants de l'autorité Royale... #box #audience:laughter
-    ~ audience_judgement(0.05)
+{
+    - is_accused_of("t_2_attack_guards"): JUGE ERNEST: ... De violence à l'encontre de représentants de l'autorité Royale... #audience:laughter
+    ~ audience_judgement(-0.02)
+}
 {
     - is_accused_of("sacred degradations"): JUGE ERNEST: ... De dégradations de biens sacrés... #box #audience:booing #screenshake
     ~ audience_judgement(-0.02)
