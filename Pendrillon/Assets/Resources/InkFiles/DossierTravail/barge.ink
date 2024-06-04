@@ -21,7 +21,8 @@
 // Audience reaction
 #playsound:Play_AMB_SC_Theater_CrowdChatter
 #playsound:Play_MUS_Story_SC_Barque_Intro
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
+//#anim:Player:kneeling
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3 #look:Player:Passeur
 
 // Start the scene
 - PASSEUR: Eh, bien... #anim:Passeur:neutre
