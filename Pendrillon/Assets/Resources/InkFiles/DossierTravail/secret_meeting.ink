@@ -46,7 +46,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
     * [Faire des pompes. {t(STRE, 0)}]
-        {sc(CHAR, 0): -> do_pushups_S | -> do_pushups_F}
+        {sc(CHAR, -30): -> do_pushups_S | -> do_pushups_F}
         ** (do_pushups_S) #anim:Player:pushup_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami !
             -> success_entertaining_audience
@@ -56,11 +56,11 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             -> failure_entertaining_audience
     * [Hypnotiser le public. {t(CHAR, 0)}]
         {sc(CHAR, 0): -> hypnotise_S | -> hypnotise_F}
-        ** (hypnotise_S) #anim:Player:hypnotise_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (hypnotise_S) #anim:Player:hypnose #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: ...
             SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal... Bien joué, l'ami !
             -> success_entertaining_audience
-        ** (hypnotise_F) #anim:Player:hypnotise_failure #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (hypnotise_F) #anim:Player:hypnose #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: ...
             SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal...
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
@@ -74,11 +74,13 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - // La scène continue
     * [(À l'actrice) Il est temps que tu me rejoignes.] PLAYER: <i>(Il serait <b>VRAIMENT</b> temps que tu me rejoignes sur scène.)</i> #anim:Player:neutre #audience:booing #playsound:VOX_Player_VRAIMENTtemps
     * [(Au public) Il est temps que l'on me rejoigne.] PLAYER: Je crois <b>VRAIMENT</b> qu'il est temps que mon interlocuteur secret daigne se montrer. #anim:Player:neutre #audience:laughter #playsound:VOX_Player_VRAIMENTtemps
-- VOIX CHUCHOTÉE: <i>(Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable !)</i> #playsound:VOX_Arle_laissonslesselanguir
+- VOIX CHUCHOTÉE: <i>(Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable !)</i> #playsound:VOX_Arle_laissonslesselanguir #anim:Arle:get_up_a_bit
     * [Attendre davantage.] #audience:booing
-- #anim:Arle:get_up_a_bit // On voit un bout de ARLE qui dépasse d'un buisson
-    * [(À l'actrice) Tout le monde peut te voir...] PLAYER: <i>(Psssst... Hé ! Tout le monde peut te voir, caché derrière le buisson !)</i> #anim:Player:chuchote #playsound:VOX_Player_toutlemondepeuttevoir
+- // On voit un bout de ARLE qui dépasse d'un buisson
+    * [(À l'actrice) Tout le monde t'as vu...] PLAYER: <i>(Psssst... Hé ! Tout le monde t'as repéré, caché derrière le buisson !)</i> #anim:Player:chuchote #playsound:VOX_Player_toutlemondepeuttevoir
+        VOIX CHUCHOTÉE: <i>(Hé ! Ne me donne pas de leçon sur mon jeu de scène, compris ?)</i>
     * [(Au public) On dirait que je suis épié !] PLAYER: J'ai la sensation que je ne suis pas aussi seul que je le croyais... Quelqu'un m'épie ! Quelqu'un qui n'est pas très discret... #anim:Player:neutre #audience:laughter #playsound:VOX_Player_quelquunmepie
+        VOIX CHUCHOTÉE: <i>(Hé ! Arrête de me ridiculiser auprès du public, tu veux ?)</i>
 - #anim:Arle:get_down
     * [Raisonner l'actrice.] PLAYER: <i>(Le public n'attend que ton apparition ! C'est maintenant ou jamais !)</i> #anim:Player:chuchote #playsound:VOX_Player_lepublicnattend
         VOIX CHUCHOTÉE: <i>(J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré.)</i> #anim:Arle:neutre #playsound:VOX_Arle_jailimpressionpublic
