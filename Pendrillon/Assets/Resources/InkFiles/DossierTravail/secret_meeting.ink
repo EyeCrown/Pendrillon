@@ -28,39 +28,39 @@ VAR has_fail = false
 
 - // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
-- #anim:Player:waiting_1 #audience:applause
+- #audience:applause
     * [Attendre encore.]
-- #anim:Player:waiting_2 #audience:debate #playsound:Play_MUS_Story_SC_SecretMeeting_Encore
+- #audience:debate #playsound:Play_MUS_Story_SC_SecretMeeting_Encore
     * [Attendre plus fort.]
-- #anim:Player:waiting_3 #audience:booing
+- #audience:booing
 - SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #playsound:VOX_Souffleur_partenairedescene 
 SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes talents !
 SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance !
     * [Effectuer une danse. {t(DEXT, 0)}]
         {sc(CHAR, 0): -> dancing_S | -> dancing_F}
-        ** (dancing_S) #anim:Player:dancing_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (dancing_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami !
             -> success_entertaining_audience
-        ** (dancing_F) #anim:Player:dancing_failure #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (dancing_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami.
             SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
     * [Faire des pompes. {t(STRE, 0)}]
         {sc(CHAR, 90): -> do_pushups_S | -> do_pushups_F}
-        ** (do_pushups_S) #anim:Player:pushup_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (do_pushups_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami !
             -> success_entertaining_audience
-        ** (do_pushups_F) #anim:Player:pushup_failure #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (do_pushups_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, l'ami.
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
     * [Hypnotiser le public. {t(CHAR, 0)}]
         {sc(CHAR, 0): -> hypnotise_S | -> hypnotise_F}
-        ** (hypnotise_S) #anim:Player:hypnose #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (hypnotise_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: ...
             SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal... Bien joué, l'ami !
             -> success_entertaining_audience
-        ** (hypnotise_F) #anim:Player:hypnose #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (hypnotise_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: ...
             SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal...
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
@@ -77,7 +77,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - VOIX CHUCHOTÉE: <i>(Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable !)</i> #playsound:VOX_Arle_laissonslesselanguir //#anim:Arle:get_up_a_bit
     * [Attendre davantage.] #audience:booing
 - // On voit un bout de ARLE qui dépasse d'un buisson
-    * [(À l'actrice) Tout le monde t'as vu...] PLAYER: <i>(Psssst... Hé ! Tout le monde t'as repéré, caché derrière le buisson !)</i> #anim:Player:chuchote #playsound:VOX_Player_toutlemondepeuttevoir
+    * [(À l'actrice) Tout le monde t'as vu...] PLAYER: <i>(Psssst... Hé ! Tout le monde t'as repéré, caché derrière le buisson !)</i> #playsound:VOX_Player_toutlemondepeuttevoir
         VOIX CHUCHOTÉE: <i>(Hé ! Ne me donne pas de leçon sur mon jeu de scène, compris ?)</i>
     * [(Au public) On dirait que je suis épié !] PLAYER: J'ai la sensation que je ne suis pas aussi seul que je le croyais... Quelqu'un m'épie ! Quelqu'un qui n'est pas très discret... #audience:laughter #playsound:VOX_Player_quelquunmepie
         VOIX CHUCHOTÉE: <i>(Hé ! Arrête de me ridiculiser auprès du public, tu veux ?)</i>
