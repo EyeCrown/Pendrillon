@@ -844,16 +844,27 @@ namespace MonoBehavior.Managers
 
         void HandleTagPlaysound(string soundToPlay)
         {
-            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Play sound {soundToPlay}");
-            
+            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Play sound {soundToPlay}");
+
+            //Même probleme que dans le Audience tag pour le son, j'ai fix sale déso
+
+            AkSoundEngine.PostEvent(soundToPlay, gameObject);
+            if (soundToPlay.Contains("VOX"))
+            {
+                Debug.Log("Stopped Emotion Sound FX");
+                AkSoundEngine.PostEvent("Stop_VOX_Emotions", gameObject);
+            }
+
             void PlaysoundAction()
             {
+                /*
                 AkSoundEngine.PostEvent(soundToPlay, gameObject);
                 if (soundToPlay.Contains("VOX"))
                 {
                     Debug.Log("Stopped Emotion Sound FX");
                     AkSoundEngine.PostEvent("Stop_VOX_Emotions", gameObject);
                 }
+                */
                 TagActionOver();
             }
             
@@ -1030,9 +1041,13 @@ namespace MonoBehavior.Managers
             Debug.Log($"AM.HandleTagAudience > Reaction: {reaction}");
 
             var soundToPlay = "Play_CrowdReaction_" + reaction;
+
+            AkSoundEngine.PostEvent(soundToPlay, gameObject); //le son de réaction marche pas dans AudienceAction(), je le déclenche ici et je l'ai commenté la bas
+
             void AudienceAction()
             {
-                AkSoundEngine.PostEvent(soundToPlay, gameObject);
+
+                // AkSoundEngine.PostEvent(soundToPlay, gameObject);
 
                 foreach (var particleSystem in particleSystemEmiters)
                 {

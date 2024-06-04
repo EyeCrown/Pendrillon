@@ -472,7 +472,7 @@
 						</Event>
 						<Folder Name="Story" ID="{DA9DD13B-37E9-442F-9697-2C4191A3F530}" ShortID="1048747360">
 							<ChildrenList>
-								<Event Name="Play_SFX_Story_JudgeBellFar" ID="{094103A7-F46F-473E-B8AC-C0E8303B6209}">
+								<Event Name="Play_SFX_Story_JudgeBellFarTrial" ID="{094103A7-F46F-473E-B8AC-C0E8303B6209}">
 									<ChildrenList>
 										<Action Name="" ID="{EACED7B5-63BC-4DA2-9D29-00773838CFCC}" ShortID="970579542">
 											<ReferenceList>
@@ -1255,7 +1255,7 @@
 							<ChildrenList>
 								<Folder Name="Player" ID="{7354C73A-78F6-4E97-8CFB-355A66C70ED0}" ShortID="402034447">
 									<ChildrenList>
-										<Event Name="Play_VOX_Player_Emotion_colere" ID="{583C608A-A95C-4817-8A1A-B23F5A877E30}">
+										<Event Name="Play_VOX_Player_Emotion_angry" ID="{583C608A-A95C-4817-8A1A-B23F5A877E30}">
 											<ChildrenList>
 												<Action Name="" ID="{B0C0A1C7-3B55-48B7-AC06-877505F3DB29}" ShortID="156078645">
 													<ReferenceList>
@@ -1266,7 +1266,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Player_Emotion_deception" ID="{0464F4C0-8837-484B-BBEA-135C165BA876}">
+										<Event Name="Play_VOX_Player_Emotion_disappointed" ID="{0464F4C0-8837-484B-BBEA-135C165BA876}">
 											<ChildrenList>
 												<Action Name="" ID="{3D3CC4E4-10D0-4EC1-8A71-756ACFC18EFD}" ShortID="748293114">
 													<ReferenceList>
@@ -1288,7 +1288,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Player_Emotion_neutre" ID="{534BDC7C-EF7C-4C66-8B40-8858D21506A3}">
+										<Event Name="Play_VOX_Player_Emotion_neutral" ID="{534BDC7C-EF7C-4C66-8B40-8858D21506A3}">
 											<ChildrenList>
 												<Action Name="" ID="{F2D32F03-2370-4E4E-A2BF-BB0F5BBA169F}" ShortID="271371408">
 													<ReferenceList>
@@ -1310,18 +1310,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Player_Emotion_souffleur" ID="{88BB87E9-FA17-4E24-B60F-8D1E853B3637}">
-											<ChildrenList>
-												<Action Name="" ID="{EC7346EF-7BB7-44FB-8FC7-A93F49E48FFC}" ShortID="428615792">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_VOX_Player_Emotion_stress" ID="{480DB35B-E400-4AF1-AF8C-91443FA4335C}">
+										<Event Name="Play_VOX_Player_Emotion_stressed" ID="{480DB35B-E400-4AF1-AF8C-91443FA4335C}">
 											<ChildrenList>
 												<Action Name="" ID="{552D5534-270E-4682-B576-5630260CF6D1}" ShortID="759478345">
 													<ReferenceList>
@@ -1332,7 +1321,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Player_Emotion_surprise" ID="{D1839D89-0A3C-4845-B887-0713D63FA9CA}">
+										<Event Name="Play_VOX_Player_Emotion_surprised" ID="{D1839D89-0A3C-4845-B887-0713D63FA9CA}">
 											<ChildrenList>
 												<Action Name="" ID="{EEABF7C1-3A33-434A-9922-739C3CA62B7E}" ShortID="992050554">
 													<ReferenceList>
@@ -1343,7 +1332,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Player_Emotion_joie" ID="{488E152A-BA1E-4A23-A64A-EF65B80A6DB7}">
+										<Event Name="Play_VOX_Player_Emotion_happy" ID="{488E152A-BA1E-4A23-A64A-EF65B80A6DB7}">
 											<ChildrenList>
 												<Action Name="" ID="{96FDF3B9-E6E4-46B6-B16F-612EE3264179}" ShortID="862245592">
 													<ReferenceList>
@@ -1354,11 +1343,33 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Play_VOX_Player_Emotion_sad" ID="{3D23669E-28C5-424D-9793-0717E29D9B58}">
+											<ChildrenList>
+												<Action Name="" ID="{F1B11E83-4322-46A7-8B27-1BAD4FA2A27D}" ShortID="889992564">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="deception" ID="{3078766F-F82E-46B0-8312-8B025F8E17D3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_Player_Emotion_talk" ID="{0A901037-3485-4ECB-9BB8-DCC3DD8D322D}">
+											<ChildrenList>
+												<Action Name="" ID="{66491E09-2BFE-4F2F-86DC-D5761C0CF2F6}" ShortID="437636935">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="neutre" ID="{CA9942C1-E858-4830-9EBD-11EF75254271}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Agathe" ID="{9EC76625-A509-4CDB-B68A-B7B19292100D}" ShortID="195401996">
 									<ChildrenList>
-										<Event Name="Play_VOX_Agathe_Emotion_colere" ID="{B7B73939-D249-4008-89E9-03D10B6DEF52}">
+										<Event Name="Play_VOX_Agathe_Emotion_angry" ID="{B7B73939-D249-4008-89E9-03D10B6DEF52}">
 											<ChildrenList>
 												<Action Name="" ID="{3F51DFC4-F33E-427D-931B-86F0F6489B73}" ShortID="598086975">
 													<ReferenceList>
@@ -1369,7 +1380,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Agathe_Emotion_deception" ID="{ACD2E97B-E5BF-40BA-AFE1-EA57D73D95B2}">
+										<Event Name="Play_VOX_Agathe_Emotion_disappointed" ID="{ACD2E97B-E5BF-40BA-AFE1-EA57D73D95B2}">
 											<ChildrenList>
 												<Action Name="" ID="{1170E5E5-A962-440D-BAC9-7727F71EFEC7}" ShortID="166481909">
 													<ReferenceList>
@@ -1391,7 +1402,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Agathe_Emotion_neutre" ID="{7830D759-DC84-4788-9949-DD0A99D95165}">
+										<Event Name="Play_VOX_Agathe_Emotion_neutral" ID="{7830D759-DC84-4788-9949-DD0A99D95165}">
 											<ChildrenList>
 												<Action Name="" ID="{5464560C-7D0C-470A-96F1-487F1DBE53FB}" ShortID="139541696">
 													<ReferenceList>
@@ -1413,18 +1424,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Agathe_Emotion_souffleur" ID="{AC18B60E-6E03-45A4-B438-E2A5F2DF274D}">
-											<ChildrenList>
-												<Action Name="" ID="{E1B7EF19-604B-4C1C-8E8A-C387F59DC7CD}" ShortID="83760760">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_VOX_Agathe_Emotion_stress" ID="{2FC433FD-7228-4BBD-A71C-4C0DF881111E}">
+										<Event Name="Play_VOX_Agathe_Emotion_stressed" ID="{2FC433FD-7228-4BBD-A71C-4C0DF881111E}">
 											<ChildrenList>
 												<Action Name="" ID="{EB5D3E5A-B014-4BC6-99DD-8FD4D65FCF43}" ShortID="58955960">
 													<ReferenceList>
@@ -1435,7 +1435,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Agathe_Emotion_surprise" ID="{F6822E15-B651-4C85-962F-91E29D657EF4}">
+										<Event Name="Play_VOX_Agathe_Emotion_surprised" ID="{F6822E15-B651-4C85-962F-91E29D657EF4}">
 											<ChildrenList>
 												<Action Name="" ID="{C1463038-5DA9-45AE-9DE6-B189C3632A89}" ShortID="263597774">
 													<ReferenceList>
@@ -1446,7 +1446,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Agathe_Emotion_joie" ID="{FAC77CEC-4655-4EC5-A4AD-1A01BB52CC7D}">
+										<Event Name="Play_VOX_Agathe_Emotion_happy" ID="{FAC77CEC-4655-4EC5-A4AD-1A01BB52CC7D}">
 											<ChildrenList>
 												<Action Name="" ID="{17E51945-7D48-49EF-93B0-ABC9680F7879}" ShortID="975031916">
 													<ReferenceList>
@@ -1457,11 +1457,33 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Play_VOX_Agathe_Emotion_sad" ID="{2BFA3319-730A-4B00-82DF-4C21EFBA9EF9}">
+											<ChildrenList>
+												<Action Name="" ID="{217B93AE-9E80-47BB-BC3B-F87F593732EA}" ShortID="822596245">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="deception" ID="{3078766F-F82E-46B0-8312-8B025F8E17D3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_Agathe_Emotion_talk" ID="{63DF5571-E3AE-4E7D-9DE4-6EE30EBEDB37}">
+											<ChildrenList>
+												<Action Name="" ID="{8218332A-B91A-4A39-8435-F739EC1A6AE9}" ShortID="1039375535">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="neutre" ID="{CA9942C1-E858-4830-9EBD-11EF75254271}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Arle" ID="{A4468D9A-E618-486D-995D-1F513DEB9498}" ShortID="882023290">
 									<ChildrenList>
-										<Event Name="Play_VOX_Arle_Emotion_colere" ID="{8C56F8F4-0E11-4FB4-A79F-7155427CF2B8}">
+										<Event Name="Play_VOX_Arle_Emotion_angry" ID="{8C56F8F4-0E11-4FB4-A79F-7155427CF2B8}">
 											<ChildrenList>
 												<Action Name="" ID="{F9C20CD9-BC58-4DF7-AD72-459CE58232A9}" ShortID="723839021">
 													<ReferenceList>
@@ -1472,7 +1494,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Arle_Emotion_deception" ID="{BD7E2EA7-B8C2-4E1E-B871-0B73A7725F7E}">
+										<Event Name="Play_VOX_Arle_Emotion_disappointed" ID="{BD7E2EA7-B8C2-4E1E-B871-0B73A7725F7E}">
 											<ChildrenList>
 												<Action Name="" ID="{43726E64-71A4-4304-94E5-6947E59A37A7}" ShortID="362491206">
 													<ReferenceList>
@@ -1494,7 +1516,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Arle_Emotion_neutre" ID="{69CDC2A0-5416-4D2D-8AF8-C0865934A098}">
+										<Event Name="Play_VOX_Arle_Emotion_neutral" ID="{69CDC2A0-5416-4D2D-8AF8-C0865934A098}">
 											<ChildrenList>
 												<Action Name="" ID="{769A6163-DCAD-4322-A788-A4C8A7189313}" ShortID="1023843714">
 													<ReferenceList>
@@ -1516,18 +1538,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Arle_Emotion_souffleur" ID="{A89E7E96-0464-4A20-94D9-63DBFE5A7982}">
-											<ChildrenList>
-												<Action Name="" ID="{7F0946F9-55BE-48A1-A220-2D7C2C4A0782}" ShortID="8581552">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_VOX_Arle_Emotion_stress" ID="{279A460F-1AA3-4D61-A4FD-4EF3DD89C523}">
+										<Event Name="Play_VOX_Arle_Emotion_stressed" ID="{279A460F-1AA3-4D61-A4FD-4EF3DD89C523}">
 											<ChildrenList>
 												<Action Name="" ID="{5D183EE2-6889-46E9-B20E-4A6323EB7EA8}" ShortID="335352662">
 													<ReferenceList>
@@ -1538,7 +1549,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Arle_Emotion_surprise" ID="{9AFF8AF3-87A6-4C71-8A10-5A801445ABD0}">
+										<Event Name="Play_VOX_Arle_Emotion_surprised" ID="{9AFF8AF3-87A6-4C71-8A10-5A801445ABD0}">
 											<ChildrenList>
 												<Action Name="" ID="{82F415BF-023F-4751-BD66-4F312C6AC09C}" ShortID="463715504">
 													<ReferenceList>
@@ -1549,7 +1560,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Arle_Emotion_joie" ID="{3DE560AF-CDBC-4EE1-B7D1-AC5264F2AE07}">
+										<Event Name="Play_VOX_Arle_Emotion_happy" ID="{3DE560AF-CDBC-4EE1-B7D1-AC5264F2AE07}">
 											<ChildrenList>
 												<Action Name="" ID="{71C791F0-4FEC-4580-BA36-1B060A966B2D}" ShortID="620911732">
 													<ReferenceList>
@@ -1560,11 +1571,33 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Play_VOX_Arle_Emotion_sad" ID="{2715C2AA-6827-47C9-8394-6719D14E1258}">
+											<ChildrenList>
+												<Action Name="" ID="{64340212-66CF-4243-883B-089D8F8ED47F}" ShortID="248403864">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="deception" ID="{3078766F-F82E-46B0-8312-8B025F8E17D3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_Arle_Emotion_talk" ID="{DC3774DC-745D-42BF-8149-7AF1C9D307E5}">
+											<ChildrenList>
+												<Action Name="" ID="{3CB64C80-086D-4691-B47A-694410D31F7C}" ShortID="929749573">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="neutre" ID="{CA9942C1-E858-4830-9EBD-11EF75254271}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Passeur" ID="{BE0677F0-68C7-4FF8-9699-174379519941}" ShortID="735479798">
 									<ChildrenList>
-										<Event Name="Play_VOX_Passeur_Emotion_colere" ID="{27F27E1C-D4C8-42D6-9568-77BDD159289E}">
+										<Event Name="Play_VOX_Passeur_Emotion_angry" ID="{27F27E1C-D4C8-42D6-9568-77BDD159289E}">
 											<ChildrenList>
 												<Action Name="" ID="{12C8C285-5296-46B0-B082-99DCF73C22FD}" ShortID="384217042">
 													<ReferenceList>
@@ -1575,7 +1608,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Passeur_Emotion_deception" ID="{3C99C374-8FFC-4976-98E8-C6AAA91F2AF9}">
+										<Event Name="Play_VOX_Passeur_Emotion_disappointed" ID="{3C99C374-8FFC-4976-98E8-C6AAA91F2AF9}">
 											<ChildrenList>
 												<Action Name="" ID="{DAC3A4CD-57A4-4740-BD3B-D29BD4C3383C}" ShortID="989529626">
 													<ReferenceList>
@@ -1597,7 +1630,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Passeur_Emotion_neutre" ID="{4CBE2803-B5C7-4CCD-9C29-2DF0A23723EE}">
+										<Event Name="Play_VOX_Passeur_Emotion_neutral" ID="{4CBE2803-B5C7-4CCD-9C29-2DF0A23723EE}">
 											<ChildrenList>
 												<Action Name="" ID="{44217B40-00F3-4616-9CFD-3605028977F0}" ShortID="544724200">
 													<ReferenceList>
@@ -1619,18 +1652,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Passeur_Emotion_souffleur" ID="{FB293E9D-6831-4680-A658-4EEA580DDCC2}">
-											<ChildrenList>
-												<Action Name="" ID="{A479A6D4-5928-4AC7-878A-BBBE9AABC8D9}" ShortID="312196839">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_VOX_Passeur_Emotion_stress" ID="{C3D4BFA8-561D-44A2-9707-A831E8E06DA1}">
+										<Event Name="Play_VOX_Passeur_Emotion_stressed" ID="{C3D4BFA8-561D-44A2-9707-A831E8E06DA1}">
 											<ChildrenList>
 												<Action Name="" ID="{18D1012A-D455-49CF-AF3C-1975106A3C4B}" ShortID="894318184">
 													<ReferenceList>
@@ -1641,7 +1663,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Passeur_Emotion_surprise" ID="{877AEEC4-9B52-4D95-8B24-135B99457ED3}">
+										<Event Name="Play_VOX_Passeur_Emotion_surprised" ID="{877AEEC4-9B52-4D95-8B24-135B99457ED3}">
 											<ChildrenList>
 												<Action Name="" ID="{E804006A-F33E-4F14-9A09-D7463815DBA9}" ShortID="662223837">
 													<ReferenceList>
@@ -1652,7 +1674,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Passeur_Emotion_joie" ID="{B03BEE6F-DC92-4DCA-8A6C-FFEED6D76759}">
+										<Event Name="Play_VOX_Passeur_Emotion_happy" ID="{B03BEE6F-DC92-4DCA-8A6C-FFEED6D76759}">
 											<ChildrenList>
 												<Action Name="" ID="{69631C24-A7D8-4A93-9E22-8D70FF9707AA}" ShortID="56899722">
 													<ReferenceList>
@@ -1663,11 +1685,33 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Play_VOX_Passeur_Emotion_sad" ID="{32AB283A-9C86-4D89-A3E2-422EFB5AB470}">
+											<ChildrenList>
+												<Action Name="" ID="{F18063CA-2AD6-4B65-A0BB-08519ADF708D}" ShortID="775303459">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="deception" ID="{3078766F-F82E-46B0-8312-8B025F8E17D3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_Passeur_Emotion_talk" ID="{EE12232C-9BD0-4407-91BA-51411832048D}">
+											<ChildrenList>
+												<Action Name="" ID="{5133CB23-B96A-4AD0-9AE6-97CDF849B800}" ShortID="343958524">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="neutre" ID="{CA9942C1-E858-4830-9EBD-11EF75254271}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Souffleur" ID="{9C071A51-A1DA-4BC5-BF95-D2A30BF32713}" ShortID="422666595">
 									<ChildrenList>
-										<Event Name="Play_VOX_Souffleur_Emotion_colere" ID="{21DA529E-D14A-4109-A814-1056772A6BCF}">
+										<Event Name="Play_VOX_Souffleur_Emotion_angry" ID="{21DA529E-D14A-4109-A814-1056772A6BCF}">
 											<ChildrenList>
 												<Action Name="" ID="{58DBE27C-8621-4EC8-B6D7-735572B3FB3F}" ShortID="803288668">
 													<ReferenceList>
@@ -1678,7 +1722,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Souffleur_Emotion_deception" ID="{72ED4C00-A796-4E7D-9F5E-79F389183346}">
+										<Event Name="Play_VOX_Souffleur_Emotion_disappointed" ID="{72ED4C00-A796-4E7D-9F5E-79F389183346}">
 											<ChildrenList>
 												<Action Name="" ID="{220CF6CD-F358-4AD4-BC67-F8930BBEDE03}" ShortID="522773312">
 													<ReferenceList>
@@ -1700,7 +1744,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Souffleur_Emotion_neutre" ID="{76AA4A2A-40E1-4B57-BE67-B02E70044127}">
+										<Event Name="Play_VOX_Souffleur_Emotion_neutral" ID="{76AA4A2A-40E1-4B57-BE67-B02E70044127}">
 											<ChildrenList>
 												<Action Name="" ID="{EBB1A9AE-E1FE-4995-8AAC-01A34E3EA123}" ShortID="847032048">
 													<ReferenceList>
@@ -1733,7 +1777,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Souffleur_Emotion_stress" ID="{3AE85E4E-B665-4013-8B6A-FC059B23ECE8}">
+										<Event Name="Play_VOX_Souffleur_Emotion_stressed" ID="{3AE85E4E-B665-4013-8B6A-FC059B23ECE8}">
 											<ChildrenList>
 												<Action Name="" ID="{95C2E62C-9870-49DA-899E-AFC58227ED5A}" ShortID="43168273">
 													<ReferenceList>
@@ -1744,7 +1788,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Souffleur_Emotion_surprise" ID="{89BFA5DC-7037-4B3A-83B4-B0E687C5BFA5}">
+										<Event Name="Play_VOX_Souffleur_Emotion_surprised" ID="{89BFA5DC-7037-4B3A-83B4-B0E687C5BFA5}">
 											<ChildrenList>
 												<Action Name="" ID="{BA7B2C23-AD44-4EA9-AC12-28177C4D7A52}" ShortID="415763418">
 													<ReferenceList>
@@ -1755,9 +1799,20 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Souffleur_Emotion_joie" ID="{3F0A941F-7A92-4339-B144-07335AE9617A}">
+										<Event Name="Play_VOX_Souffleur_Emotion_happy" ID="{3F0A941F-7A92-4339-B144-07335AE9617A}">
 											<ChildrenList>
 												<Action Name="" ID="{54C5E7BF-7CE6-4AE9-A36E-43422CCCCB49}" ShortID="293980400">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_Souffleur_Emotion_talk" ID="{30D25B99-246F-4E2B-A245-51877F040024}">
+											<ChildrenList>
+												<Action Name="" ID="{F44CAEB5-3534-4E33-9F69-7377AC033C08}" ShortID="447774556">
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
@@ -1770,7 +1825,7 @@
 								</Folder>
 								<Folder Name="Marcello" ID="{3FAEBE96-2FE3-4382-BD85-36A01AE7A582}" ShortID="664534991">
 									<ChildrenList>
-										<Event Name="Play_VOX_Marcello_Emotion_colere" ID="{EDC63E33-2CBD-4A1B-9341-4521DC0E1ED2}">
+										<Event Name="Play_VOX_Marcello_Emotion_angry" ID="{EDC63E33-2CBD-4A1B-9341-4521DC0E1ED2}">
 											<ChildrenList>
 												<Action Name="" ID="{567F4A95-900F-40E1-B8B5-B494A9C3352C}" ShortID="812325359">
 													<ReferenceList>
@@ -1781,7 +1836,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Marcello_Emotion_deception" ID="{C357921D-AD2C-4FE0-BBDD-BA47D1BED603}">
+										<Event Name="Play_VOX_Marcello_Emotion_disappointed" ID="{C357921D-AD2C-4FE0-BBDD-BA47D1BED603}">
 											<ChildrenList>
 												<Action Name="" ID="{1188BF27-6F97-4BC1-8CA5-46B4144E0FE4}" ShortID="809651928">
 													<ReferenceList>
@@ -1803,7 +1858,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Marcello_Emotion_neutre" ID="{E251E688-7F55-4EC3-919F-2294D17D2A7C}">
+										<Event Name="Play_VOX_Marcello_Emotion_neutral" ID="{E251E688-7F55-4EC3-919F-2294D17D2A7C}">
 											<ChildrenList>
 												<Action Name="" ID="{3C1725D1-7F76-4248-BEA7-895B4BB21913}" ShortID="559597182">
 													<ReferenceList>
@@ -1825,18 +1880,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Marcello_Emotion_souffleur" ID="{71A0614A-C6E8-435A-856E-075EFC3561BD}">
-											<ChildrenList>
-												<Action Name="" ID="{0A4A725B-FD27-4F68-9356-25301FE5F6ED}" ShortID="480116135">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_VOX_Marcello_Emotion_stress" ID="{23854B1E-9E1E-49A6-B201-5B25443CE366}">
+										<Event Name="Play_VOX_Marcello_Emotion_stressed" ID="{23854B1E-9E1E-49A6-B201-5B25443CE366}">
 											<ChildrenList>
 												<Action Name="" ID="{D0ADE417-2CEB-4D82-ADEC-C1CBA0F60DBE}" ShortID="349259423">
 													<ReferenceList>
@@ -1847,7 +1891,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Marcello_Emotion_surprise" ID="{BEF26439-9128-4379-8D75-04FA84026DFE}">
+										<Event Name="Play_VOX_Marcello_Emotion_surprised" ID="{BEF26439-9128-4379-8D75-04FA84026DFE}">
 											<ChildrenList>
 												<Action Name="" ID="{498EF4BE-062F-4B67-848E-68DB6EEDEFED}" ShortID="835316883">
 													<ReferenceList>
@@ -1858,7 +1902,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Marcello_Emotion_joie" ID="{5169C685-3A17-4399-A5A8-3324EF2C6546}">
+										<Event Name="Play_VOX_Marcello_Emotion_happy" ID="{5169C685-3A17-4399-A5A8-3324EF2C6546}">
 											<ChildrenList>
 												<Action Name="" ID="{D20112FA-52C4-49DA-9616-BCD23CAA4F86}" ShortID="624307322">
 													<ReferenceList>
@@ -1869,11 +1913,33 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Play_VOX_Marcello_Emotion_sad" ID="{31AF6429-86C7-4297-A75F-154103AD0166}">
+											<ChildrenList>
+												<Action Name="" ID="{CAD949D2-C495-4445-ABC4-95F5AB5FCFC5}" ShortID="615620087">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="deception" ID="{3078766F-F82E-46B0-8312-8B025F8E17D3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_Marcello_Emotion_talk" ID="{090B0051-8962-4D8C-84CE-58CF203138F8}">
+											<ChildrenList>
+												<Action Name="" ID="{C4D3056D-FB6B-418B-BAC7-FFDBD8B712CA}" ShortID="928932379">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="neutre" ID="{CA9942C1-E858-4830-9EBD-11EF75254271}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Judge" ID="{8F60BC03-F547-4525-889A-87CCF7A50D20}" ShortID="996524064">
 									<ChildrenList>
-										<Event Name="Play_VOX_Judge_Emotion_colere" ID="{BC3CEA9A-9716-4731-BD91-70AFB798F2C9}">
+										<Event Name="Play_VOX_Judge_Emotion_angry" ID="{BC3CEA9A-9716-4731-BD91-70AFB798F2C9}">
 											<ChildrenList>
 												<Action Name="" ID="{6CF60D02-3E23-4A85-BF71-FEE79C8C074B}" ShortID="1035287769">
 													<ReferenceList>
@@ -1884,7 +1950,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Judge_Emotion_deception" ID="{61CA7B2D-E0CC-4623-85E0-7436063973E8}">
+										<Event Name="Play_VOX_Judge_Emotion_disappointed" ID="{61CA7B2D-E0CC-4623-85E0-7436063973E8}">
 											<ChildrenList>
 												<Action Name="" ID="{054A4567-D136-4F56-A525-7C9568F11D48}" ShortID="680151499">
 													<ReferenceList>
@@ -1906,7 +1972,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Judge_Emotion_neutre" ID="{DE282229-EF84-4E22-8DCD-AFE8298DB145}">
+										<Event Name="Play_VOX_Judge_Emotion_neutral" ID="{DE282229-EF84-4E22-8DCD-AFE8298DB145}">
 											<ChildrenList>
 												<Action Name="" ID="{088FA05A-6759-43FD-8DC2-2EF6A16200F2}" ShortID="217384823">
 													<ReferenceList>
@@ -1928,18 +1994,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Judge_Emotion_souffleur" ID="{B4442711-4274-4AC7-8E01-1230A2959AEC}">
-											<ChildrenList>
-												<Action Name="" ID="{05E00CD6-4C5D-4954-AD1A-76FF2DCFF861}" ShortID="772115444">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_VOX_Judge_Emotion_stress" ID="{B88D69AE-1E5C-4887-BD5A-97AD8A4C3CB5}">
+										<Event Name="Play_VOX_Judge_Emotion_stressed" ID="{B88D69AE-1E5C-4887-BD5A-97AD8A4C3CB5}">
 											<ChildrenList>
 												<Action Name="" ID="{C176FB55-E61E-42F3-9E26-A510E2F52C4C}" ShortID="798073320">
 													<ReferenceList>
@@ -1950,7 +2005,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Judge_Emotion_surprise" ID="{C4C0E7CF-64BD-4AF4-98D1-EC272973ABCB}">
+										<Event Name="Play_VOX_Judge_Emotion_surprised" ID="{C4C0E7CF-64BD-4AF4-98D1-EC272973ABCB}">
 											<ChildrenList>
 												<Action Name="" ID="{55186D57-0547-435A-82A2-9BE362C36F84}" ShortID="704652483">
 													<ReferenceList>
@@ -1961,7 +2016,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Judge_Emotion_joie" ID="{6DFB63FA-7445-4CC5-832B-8D4EFF1A6FD1}">
+										<Event Name="Play_VOX_Judge_Emotion_happy" ID="{6DFB63FA-7445-4CC5-832B-8D4EFF1A6FD1}">
 											<ChildrenList>
 												<Action Name="" ID="{00FD18C6-7A22-45C9-818A-A525776F1D80}" ShortID="984793308">
 													<ReferenceList>
@@ -1972,11 +2027,33 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Play_VOX_Judge_Emotion_sad" ID="{5BDF34B1-9FDE-492C-9CEC-200B34913F9E}">
+											<ChildrenList>
+												<Action Name="" ID="{6BD344B8-C868-447C-9E78-5BE09D8D50DE}" ShortID="45668843">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="deception" ID="{3078766F-F82E-46B0-8312-8B025F8E17D3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_Judge_Emotion_talk" ID="{4FA111B7-23B0-416D-A003-07B301EC1132}">
+											<ChildrenList>
+												<Action Name="" ID="{1D99FD57-5640-4592-B7FA-59385C4D2439}" ShortID="1030734805">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="neutre" ID="{CA9942C1-E858-4830-9EBD-11EF75254271}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Capucine" ID="{C91B8741-67BE-496F-B520-C7A74BA594DC}" ShortID="69735956">
 									<ChildrenList>
-										<Event Name="Play_VOX_Capucine_Emotion_colere" ID="{4F443A73-31E7-4AB2-88E7-DBD88DB1C1B7}">
+										<Event Name="Play_VOX_Capucine_Emotion_angry" ID="{4F443A73-31E7-4AB2-88E7-DBD88DB1C1B7}">
 											<ChildrenList>
 												<Action Name="" ID="{CB949758-CD66-42A8-8F6B-056E003DC482}" ShortID="250881477">
 													<ReferenceList>
@@ -1987,7 +2064,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Capucine_Emotion_deception" ID="{20950A55-6392-4BD7-82DD-F79482B3E4A1}">
+										<Event Name="Play_VOX_Capucine_Emotion_disappointed" ID="{20950A55-6392-4BD7-82DD-F79482B3E4A1}">
 											<ChildrenList>
 												<Action Name="" ID="{68EFB8A3-1C83-4BD9-B794-0561D3A461F1}" ShortID="360556898">
 													<ReferenceList>
@@ -2009,7 +2086,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Capucine_Emotion_neutre" ID="{71FBEE83-6EB0-4910-8552-EE28BA9B56DB}">
+										<Event Name="Play_VOX_Capucine_Emotion_neutral" ID="{71FBEE83-6EB0-4910-8552-EE28BA9B56DB}">
 											<ChildrenList>
 												<Action Name="" ID="{DD8E1173-3DC4-41AC-9FE5-2681CAE0F9B5}" ShortID="421943154">
 													<ReferenceList>
@@ -2031,18 +2108,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Capucine_Emotion_souffleur" ID="{0980AF9E-E1CA-4AA4-BC06-A805C79D8FAC}">
-											<ChildrenList>
-												<Action Name="" ID="{0B75B659-98C0-4559-A7AD-382630E3B5E9}" ShortID="828019458">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_VOX_Capucine_Emotion_stress" ID="{61CCDC9D-90CF-44F9-8D8C-A25405E65ACB}">
+										<Event Name="Play_VOX_Capucine_Emotion_stressed" ID="{61CCDC9D-90CF-44F9-8D8C-A25405E65ACB}">
 											<ChildrenList>
 												<Action Name="" ID="{F96F59FF-D93C-4D94-93D1-F2F962CD2BCB}" ShortID="100434968">
 													<ReferenceList>
@@ -2053,7 +2119,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Capucine_Emotion_surprise" ID="{7E1A9D3F-38C0-4540-AE51-A01D9FCB4D67}">
+										<Event Name="Play_VOX_Capucine_Emotion_surprised" ID="{7E1A9D3F-38C0-4540-AE51-A01D9FCB4D67}">
 											<ChildrenList>
 												<Action Name="" ID="{D3B8BD66-245E-4C26-A668-54EB447F2D11}" ShortID="73074555">
 													<ReferenceList>
@@ -2064,7 +2130,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Capucine_Emotion_joie" ID="{E0953424-361B-4398-BD8D-E7E919F3EA68}">
+										<Event Name="Play_VOX_Capucine_Emotion_happy" ID="{E0953424-361B-4398-BD8D-E7E919F3EA68}">
 											<ChildrenList>
 												<Action Name="" ID="{5551D917-6C19-4593-97B4-D1477D1A6E68}" ShortID="799181586">
 													<ReferenceList>
@@ -2075,11 +2141,33 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Play_VOX_Capucine_Emotion_sad" ID="{12888A54-FCC3-4708-A96F-D71D61CEE94E}">
+											<ChildrenList>
+												<Action Name="" ID="{0B3E31F9-88C4-4914-A563-7D5567A16B2D}" ShortID="684553163">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="deception" ID="{3078766F-F82E-46B0-8312-8B025F8E17D3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_Capucine_Emotion_talk" ID="{AB77D713-8B39-41DB-94F4-23C0167B498E}">
+											<ChildrenList>
+												<Action Name="" ID="{1B1B187A-9D9E-4D73-87C8-99AAEC743029}" ShortID="538679466">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="neutre" ID="{CA9942C1-E858-4830-9EBD-11EF75254271}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Folder Name="Naida" ID="{AAE8C46A-6520-4E46-BA22-A773A8D8A662}" ShortID="232563778">
 									<ChildrenList>
-										<Event Name="Play_VOX_Naida_Emotion_colere" ID="{C17E4D59-CA5B-47E8-BD9F-CF12C8C274B4}">
+										<Event Name="Play_VOX_Naida_Emotion_angry" ID="{C17E4D59-CA5B-47E8-BD9F-CF12C8C274B4}">
 											<ChildrenList>
 												<Action Name="" ID="{1E6989C9-D06A-4B5C-BBCE-95E256529CA3}" ShortID="827741290">
 													<ReferenceList>
@@ -2090,7 +2178,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Naida_Emotion_deception" ID="{E257672D-DF02-4520-88B1-A61F258C9F76}">
+										<Event Name="Play_VOX_Naida_Emotion_disappointed" ID="{E257672D-DF02-4520-88B1-A61F258C9F76}">
 											<ChildrenList>
 												<Action Name="" ID="{F4E34491-45DF-4B88-BB85-68F1266FA7CA}" ShortID="407066139">
 													<ReferenceList>
@@ -2112,7 +2200,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Naida_Emotion_neutre" ID="{46EF7822-4079-4333-BBD5-451457EF4B43}">
+										<Event Name="Play_VOX_Naida_Emotion_neutral" ID="{46EF7822-4079-4333-BBD5-451457EF4B43}">
 											<ChildrenList>
 												<Action Name="" ID="{4B62DC10-787E-454B-A538-561420C757F7}" ShortID="148986543">
 													<ReferenceList>
@@ -2134,18 +2222,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Naida_Emotion_souffleur" ID="{558D26C5-92E8-4EB8-906A-70C6D1B81CCA}">
-											<ChildrenList>
-												<Action Name="" ID="{F2C74A23-DB5A-44C4-92BE-5833122F30E8}" ShortID="275998754">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="souffleur" ID="{F2726CC9-EAA6-4CAA-917B-608A5CCDB154}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_VOX_Naida_Emotion_stress" ID="{A741965D-5198-4E6A-94D4-39BC50D40766}">
+										<Event Name="Play_VOX_Naida_Emotion_stressed" ID="{A741965D-5198-4E6A-94D4-39BC50D40766}">
 											<ChildrenList>
 												<Action Name="" ID="{96983B39-DBC0-45BB-8B74-F69341F94A25}" ShortID="307771275">
 													<ReferenceList>
@@ -2156,7 +2233,7 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Naida_Emotion_surprise" ID="{A8D9D34B-B966-4484-BD9E-AF2E2DD9A61D}">
+										<Event Name="Play_VOX_Naida_Emotion_surprised" ID="{A8D9D34B-B966-4484-BD9E-AF2E2DD9A61D}">
 											<ChildrenList>
 												<Action Name="" ID="{C73912AE-70F7-4D30-B62D-0C04EB6B33CE}" ShortID="880154219">
 													<ReferenceList>
@@ -2167,12 +2244,34 @@
 												</Action>
 											</ChildrenList>
 										</Event>
-										<Event Name="Play_VOX_Naida_Emotion_joie" ID="{6DFEECA2-9BB0-4A6A-A800-2C3F9FDED12E}">
+										<Event Name="Play_VOX_Naida_Emotion_happy" ID="{6DFEECA2-9BB0-4A6A-A800-2C3F9FDED12E}">
 											<ChildrenList>
 												<Action Name="" ID="{E6DF7648-C453-472F-8602-53B2743C11FA}" ShortID="779776106">
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="joie" ID="{27AD90B9-02FB-41E6-A623-E752F475833C}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_Naida_Emotion_sad" ID="{E3388A59-04E5-4344-B1B7-1B6F8F4F2F2E}">
+											<ChildrenList>
+												<Action Name="" ID="{2280442C-778A-4800-A2FE-0107517D8E08}" ShortID="636188123">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="deception" ID="{3078766F-F82E-46B0-8312-8B025F8E17D3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_VOX_Naida_Emotion_talk" ID="{A7B9A1AE-43B2-4959-AA4F-17D25260B412}">
+											<ChildrenList>
+												<Action Name="" ID="{9DA80638-5358-4FDC-A4E3-726AB117D821}" ShortID="12640489">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="neutre" ID="{CA9942C1-E858-4830-9EBD-11EF75254271}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>

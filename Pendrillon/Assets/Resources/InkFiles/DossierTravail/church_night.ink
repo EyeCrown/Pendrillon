@@ -89,7 +89,7 @@ VAR irene_was_a_sireine = true
     * [Parlez-moi d'elle.] PLAYER: Parlez-moi d'Irène. Qu'aurait-elle fait à ma place ?
         AGATHE: Plutôt que de me demander à moi... Peut-être pourriez-vous vous adresser à Elle ?
 - AGATHE: Voyez-vous la lampe qui se tient dans sa main ? Faites-en briller la flamme, si vous souhaitez prier la Déesse.
-    * [Allumer la lampe d'Irène.] #anim_event:light_on_irene_lamp #playsound:Play_SFX_Story_SC_Eglise_LightIreneLamp #playsound:Play_MUS_Story_SC_Eglise_LightOn
+    * [Allumer la lampe d'Irène.] #playsound:Play_SFX_Story_SC_Eglise_LightIreneLamp #playsound:Play_MUS_Story_SC_Eglise_LightOn #anim_event:light_on_irene_lamp
         AGATHE: Désormais que sa flamme berce ces lieux, n'hésitez plus : parlez-lui.
         ** [Se confesser.] PLAYER: J'ai ramené de mon voyage...
             ~ irene_torch_is_on = true
@@ -132,7 +132,7 @@ VAR irene_was_a_sireine = true
                 + [J'ai changé d'avis.] PLAYER: Sans doute ne souffrirais-je pas d'entendre encore un peu parler votre sagesse...
                     -> stained_glass
                 + [Je souhaite me reposer...] PLAYER: Veuillez me pardonnez, prêtresse. Le sommeil m'emporte déjà...
-                    #anim:Player:go_to_sleep_on_bench
+                    #anim:Player:go_to_sleep_on_bench #playsound:Play_MUS_Story_SC_Eglise_Goodnight
                     -> barge.scene_4
     }
 

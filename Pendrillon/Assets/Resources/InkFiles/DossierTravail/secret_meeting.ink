@@ -84,7 +84,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * [Examiner le buisson.] PLAYER: Ce buisson me semble... suspect... #anim:Player:examine_bush #audience:laughter
 - // Le joueur compte
     * [Tirer le buisson.] #anim:Player:pull_bush #playsound:VOX_Player_jecompte0 #audience:choc
-        ARLE: Mais qui voilà ?! N'est-ce pas moi ?  #anim:Arle:bow #playsound:VOX_Arle_maisquivoila #audience:ovation
+        ARLE: Mais qui voilà ?! N'est-ce pas moi ?  #anim:Arle:bow #playsound:VOX_Arle_maisquivoila #audience:ovation #playsound:Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter
 - // Arle fait son apparition
     * [Que faisais-tu caché ?] PLAYER: Que faisais-tu là, caché tel un rat ? #anim:Player:question
         BOUFFONNE: J'apprenais à vous connaître, messire. Je vous observais... #anim:Arle:neutre
@@ -102,12 +102,12 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
                         -> arle_presentation
         ** [C'est toi que je veux connaître.] PLAYER: La politesse exige qu'on se présente le premier. #anim:Player:neutre
             BOUFFONNE: Me présenter ? Cela, je sais le faire, et fort bien ! #anim:Arle:joie
-            --- (arle_presentation) BOUFFONNE: Je suis Arle, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle #audience:ovation
+            --- (arle_presentation) BOUFFONNE: Je suis Arle, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle #audience:ovation #playsound:Play_MUS_Story_SC_SecretMeeting_ArleGivesName
     * [Es-tu l'autrice de la lettre ?] PLAYER: Est-ce donc toi qui a écrit la lettre que j'ai reçue la veille ? #anim:Player:question
         BOUFFONNE: Je sais faire bien des choses, messire... #anim:Arle:joie
         BOUFFONNE: Faire la belle... #anim:Arle:prettypose
         BOUFFONNE: Faire le show... #anim:Arle:acrobatics
-        BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:triste #audience:laughter
+        BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:triste #audience:laughter #playsound:Play_MUS_Story_SC_SecretMeeting_ArleJoke
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question
             -> arle_presentation
         ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 0)}]
@@ -131,12 +131,12 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - -> the_mission
 
 = the_mission
-- ARLE: La personne qui m'envoie souhaiterais vous offrir un travail. Disons plutôt : une mission. #anim:Arle:neutre #playsound:VOX_Arle_raisonconvocation
+- ARLE: La personne qui m'envoie souhaiterais vous offrir un travail. Disons plutôt : une mission. #anim:Arle:neutre #playsound:VOX_Arle_raisonconvocation #playsound:Play_MUS_Story_SC_SecretMeeting_TheMission
     * [Continue.] -> what_is_the_mission
     * [Je t'écoute.]  -> what_is_the_mission
     * [Depêche-toi !]  -> what_is_the_mission
 - (what_is_the_mission) PLAYER: Quelle est donc cette mission ? #anim:Player:question #playsound:VOX_Player_quelleestcettemission
-ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #anim:Arle:question #playsound:VOX_Arle_quelrapporttuer #anim:Player:surprise #audience:choc
+ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #anim:Arle:question #playsound:VOX_Arle_quelrapporttuer #anim:Player:surprise #audience:choc #playsound:Play_MUS_Story_SC_SecretMeeting_Kill
     * [Hors de question.] PLAYER: Je t'arrête tout de suite, ôter une vie n'est pas dans mes pratiques. Je suis un marin. Tout juste suis-je bon à tuer un poisson... #anim:Player:non
         ARLE: Il se trouve justement que c'est un poisson que l'on souhaiterait voir mort. Un gros poisson. #anim:Arle:joie
         ~ trial(t_1_refuse_to_kill)
@@ -149,7 +149,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
             ARLE: Un poisson, messire. Un gros poisson. #anim:Arle:neutre
             ~ trial(t_1_accept_to_kill)
             -> big_fish
-- ARLE: Prenez ceci, voulez-vous ? #anim:Arle:give_map #playsound:VOX_Arle_prenezceci
+- ARLE: Prenez ceci, voulez-vous ? #anim:Arle:give_map #playsound:VOX_Arle_prenezceci #playsound:Play_MUS_Story_SC_SecretMeeting_MapGiven
     * [Qu'est-ce que c'est ?] PLAYER: Qu'est-ce donc ? #anim:Player:question
 - ARLE: Un marin tel que vous ne reconnait-il pas une carte quand il en voit une, messire ? #anim:Arle:bow #audience:laughter
     * [Quel endroit indique t-elle ?] PLAYER: Quel endroit indique t-elle ? #anim:Player:question
@@ -165,7 +165,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
     * [Hors de question.] PLAYER: Non. #anim:Player:non
         ARLE: Si je ne le fais pas pour vous, messire... #anim:Arle:neutre
         ARLE: Je le ferai pour eux. #anim:Arle:point_audience #audience:applause
-- ARLE: Il était une fois... une terrible tempête. #anim:Arle:neutre #audience:choc
+- ARLE: Il était une fois... une terrible tempête. #anim:Arle:neutre #audience:choc #playsound:Play_MUS_Story_SC_SecretMeeting_OnceUponATime
 ARLE: Pas n'importe quelle tempête : celle-ci dura près d'un siècle. #anim:Arle:neutre #audience:debate
 ARLE: Pour survivre, les Hommes durent bâtir un immense navire... #audsience:ovation
 ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poisson... #anim:Arle:neutre
@@ -182,7 +182,7 @@ ARLE: Malheuresement, il n'y a pas que les Homme qui survécurent au Déluge... 
     * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. #audience:laughter #anim:Player:laugh
         ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse. #anim:Arle:neutre #audience:choc
     * [Il va falloir me payer grassement.] PLAYER: Si ton maître veut me faire courir un tel risque... Il a interêt à me payer grassement ! #anim:Player:neutre #audience:laughter
-- ARLE: Si vous acceptez de ramener le cœur du terrible Léviathan, mon maître vous offrira le poids de votre navire en or.
+- ARLE: Si vous acceptez de ramener le cœur du terrible Léviathan, mon maître vous offrira le poids de votre navire en or. #playsound:Play_MUS_Story_SC_SecretMeeting_GoldForTheBraves
     * [Une sacré somme.] PLAYER: Une somme qui n'est pas à prendre à la légère... #anim:Player:joie
     * [(Négocier) Mon navire est léger. {t(CHAR, -20)}]
         {sc(CHAR, -20): -> negociate_S | -> negociate_F} 
@@ -211,10 +211,10 @@ ARLE: Malheuresement, il n'y a pas que les Homme qui survécurent au Déluge... 
         ~ trial(t_1_disrespect_the_crown)
         ~ trial(t_1_disrespect_irene)
         ~ trial(t_1_gold_digger)
-- ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence
-    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur. J'accepte de ramener le cœur du Léviathan. #anim:Player:neutre #playsound:VOX_Player_celaseraitunhonneur
+- ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence #playsound:Play_MUS_Story_SC_SecretMeeting_ArleWaitingForAnAnswer
+    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur. J'accepte de ramener le cœur du Léviathan. #anim:Player:neutre #playsound:VOX_Player_celaseraitunhonneur #playsound:Play_MUS_Story_SC_SecretMeeting_PlayerAccepts
         ~ t_1_accept_mission_with_positivity = true
-    * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du Léviathan. #anim:Player:neutre #playsound:VOX_Player_pointleloisirsoustraire
+    * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du Léviathan. #anim:Player:neutre #playsound:VOX_Player_pointleloisirsoustraire #playsound:Play_MUS_Story_SC_SecretMeeting_PlayerAccepts
         ~ t_1_accept_mission_with_negativity = true
-- #audience:ovation Stop_AMB_SC_Cale_Ambiance
+- #audience:ovation
 - -> barge.scene_2
