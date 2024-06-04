@@ -42,6 +42,7 @@ namespace MonoBehavior.Managers
 
         public float _gridYBase = 0.65f;
         public float _gridYBarge = 2.25f;
+        public float _gridYTempest = 2.25f;
 
         public Transform _PrompterPosition;
         public Transform _enemyPos;
@@ -235,6 +236,9 @@ namespace MonoBehavior.Managers
             var y = _gridYBase;
             if (stage == Constants.SetBarge)
                 y = _gridYBarge;
+
+            if (stage == Constants.SetTempest)
+                y = _gridYTempest;
             
             _gridScene.transform.position = new Vector3(-23.0f, y, -6.5f);
         }
