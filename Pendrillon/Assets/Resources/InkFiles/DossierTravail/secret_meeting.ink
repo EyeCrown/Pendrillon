@@ -19,7 +19,7 @@ VAR has_fail = false
 #position:Player:8:2
 //#position:Arle:10:11
 //#position:Arle:3:17
-#position:Arle:3:10
+#position:Arle:2:10
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
@@ -46,7 +46,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
     * [Faire des pompes. {t(STRE, 0)}]
-        {sc(CHAR, -30): -> do_pushups_S | -> do_pushups_F}
+        {sc(CHAR, 90): -> do_pushups_S | -> do_pushups_F}
         ** (do_pushups_S) #anim:Player:pushup_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami !
             -> success_entertaining_audience
