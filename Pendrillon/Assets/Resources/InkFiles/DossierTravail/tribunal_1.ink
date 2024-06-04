@@ -272,27 +272,27 @@ JUGE ERNEST: Est-ce vrai ? La déesse elle-même ? Notre Sauveuse, Irène ? Rép
 // Witnesses Capucine and marcello
 = witnesses_capucine_and_marcello
 - JUGE ERNEST: Capucine dite « {capucine_surname} », accompagnée de Marcello, alias « {marcello_surname} ». #audience:ovation
-CAPUCINE: Votre Honneur, avec tout mon respect... J'apprécierais d'être nommée simplement Capucine. #anim:Capucine:angry #audience:laughter
+CAPUCINE: Votre Honneur, avec tout mon respect... J'apprécierais d'être nommée simplement Capucine. #playsound:VOX_Capucine_avectoutmonrespect #anim:Capucine:angry #audience:laughter
 JUGE ERNEST: Bon, bon... Je tâcherais d'y penser. #anim:Capucine:bow
 MARCELLO: Votre Horreur, moi aussi je voudrais être nommé Capucine... Euh... je veux dire Marcello, Vot' Horreur. #audience:laughter
-CAPUCINE: Ferme-la, tu veux ? N'en demande pas trop à Son Honneur.
-CAPUCINE: Votre Honneur, veuillez excuser cet fieffé personnage. Sa place est dans une taverne... ou même une étable. #audience:laughter
-CAPUCINE: ... Pas dans un tel lieu. #anim:Capucine:bow #audience:ovation
+CAPUCINE: Ferme-la, tu veux ? N'en demande pas trop à Son Honneur. #playsound:VOX_Capucine_fermelaveuxtu
+CAPUCINE: Votre Honneur, veuillez excuser cet fieffé personnage. Sa place est dans une taverne... ou même une étable. #playsound:VOX_Capucine_veuillezexcuser #audience:laughter
+CAPUCINE: ... Pas dans un tel lieu. #playsound:VOX_Capucine_pasdansuntellieu #anim:Capucine:bow #audience:ovation
 JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent
 JUGE ERNEST: Veuillez raconter aux jurés votre rencontre avec l'accusé. Et soyez brefs, voulez-vous ?
-CAPUCINE: Je vous remercie, Votre Honneur. #anim:Capucine:bow
-CAPUCINE: Vous n'êtes pas sans savoir, Votre Honneur, que tout navire qui arrive à Miraterre doit être fouillé par des gardes de la Couronne.
-CAPUCINE: Aussi mon camarade et moi avons-nous pénétré sur le rafiot du vil personnage pour y faire notre inspection.
+CAPUCINE: Je vous remercie, Votre Honneur. #playsound:VOX_Capucine_jevousremercie #anim:Capucine:bow
+CAPUCINE: Vous n'êtes pas sans savoir, Votre Honneur, que tout navire qui arrive à Miraterre doit être fouillé par des gardes de la Couronne. #playsound:VOX_Capucine_vousnetespassanssavoir
+CAPUCINE: Aussi mon camarade et moi avons-nous pénétré sur le rafiot du vil personnage pour y faire notre inspection. #playsound:VOX_Capucine_aussimoncamarade
 MARCELLO: J'avais entendu du bruit dans la cale, vot' Horreur.
-CAPUCINE: Ferme-là, tu veux ? C'est à moi de raconter. #audience:laughter
-CAPUCINE: Mon camarade a effectivement entendu du bruit, et moi j'ai eu l'idée d'aller voir de plus près.
+CAPUCINE: Ferme-là, tu veux ? C'est à moi de raconter. #playsound:VOX_Capucine_fermelatuveux #audience:laughter
+CAPUCINE: Mon camarade a effectivement entendu du bruit, et moi j'ai eu l'idée d'aller voir de plus près. #playsound:VOX_Capucine_moncamarade
 MARCELLO: Parle-lui de l'odeur, cheffe ! #audience:laughter
-CAPUCINE: La ferme, j'ai dit ! #audience:laughter
-CAPUCINE: Mon camarade n'a pas tort, cependant : l'odeur du rafiot était épouvantable... À l'image du fiéffé gredin à ma gauche.
+CAPUCINE: La ferme, j'ai dit ! #playsound:VOX_Capucine_lafermejaidit #audience:laughter
+CAPUCINE: Mon camarade n'a pas tort, cependant : l'odeur du rafiot était épouvantable... À l'image du fiéffé gredin à ma gauche. #playsound:VOX_Capucine_lodeurepouvantable
     * [À ta gauche, pas ta droite.] PLAYER: À ta gauche, pas ta droite. Quoique, à bien y réfléchir... #audience:laughter #anim:Capucine:bow
     * [Elle confond les hommes...] PLAYER: Je crois, Votre Honneur, que Madame la témoin confond les hommes... #audience:laughter #anim:Capucine:bow
 - JUGE ERNEST: Silence ! Poursuivez, je vous prie. #anim:Judge:bell #audience:silent
-CAPUCINE: Permettez-moi de vous épargner les détails, Votre Honneur : le malendrin cachait quelqu'un dans sa cale puante. #audience:choc
+CAPUCINE: Permettez-moi de vous épargner les détails, Votre Honneur : le malendrin cachait quelqu'un dans sa cale puante. #playsound:VOX_Capucine_permettezepargnerdetails #audience:choc
     ~ audience_judgement(-0.1)
     * [C'est toi qui pue.] PLAYER: Votre Honneur, si j'admets que ma cale sent parfois la morue... Ce n'est rien en comparaison de l'odeur de Madame la témoin. #audience:laughter
     * [C'est toi qui devrait te cacher.] PLAYER: Votre Honneur, je n'ai caché personne, en revanche...
@@ -317,7 +317,7 @@ JUGE ERNEST: Lequel des deux témoins voulez-vous défier ?
     * [Défier Capucine à un duel de poirier.] PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation
         JUGE ERNEST: Un duel... de poirier ? #audience:laughter
         JUGE ERNEST: Ab... absolument ! Comme l'exige la coutume, en effet... Témoin, acceptez-vous les conditions du duel ? #audience:debate
-        CAPUCINE: Volontier, Votre Honneur. #audience:ovation #anim:Capucine:happy #anim:Marcello:laugh
+        CAPUCINE: Volontiers, Votre Honneur. #playsound:VOX_Capucine_volontiersvotrehonneur #audience:ovation #anim:Capucine:happy #anim:Marcello:laugh
         JUGE ERNEST: Ainsi l'issue de cette confrontation entre le témoin et l'Accusé sera décidée par le droit de la Lame ! #audience:ovation #anim:Judge:bell #anim:Marcello:applause
         -> duel_against_capucine
     * [Défier Marcello à un concours de pompes.] PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation
@@ -438,7 +438,7 @@ JUGE ERNEST: ... partez ! #anim:Judge:bell #screenshake #audience:ovation
 - (defeat_against_capucine) JUGE ERNEST: Nous avons un vainqueur !
     JUGE ERNEST: Après {nb_turn_against_capucine < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_capucine} tour{nb_turn_against_capucine > 1:s}, c'est le témoin Capucine qui remporte le duel !
     ~ audience_judgement(-0.1)
-    MARCELLO: Impressionnant, cheffe ! Vous n'avez la tête qui tourne ? #audience:laughter
+    MARCELLO: Impressionnant, cheffe ! Vous n'avez la tête qui tourne ? #playsound:VOX_Capucine_tetequitourne #audience:laughter
     CAPUCINE: S.. si, un peu... Mets-la en veilleuse, tu veux ? #audience:laughter
     JUGE ERNEST: Ainsi en a jugé... euh la Déesse ! L'Accusé perd le duel ! #audience:booing #screenshake
     -> witness_agathe
