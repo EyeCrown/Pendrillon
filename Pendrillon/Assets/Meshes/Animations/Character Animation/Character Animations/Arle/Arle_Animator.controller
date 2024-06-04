@@ -36,42 +36,45 @@ AnimatorStateMachine:
     m_Position: {x: 380, y: 470, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6730721864750322526}
-    m_Position: {x: 840, y: 200, z: 0}
+    m_Position: {x: 760, y: 390, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 3278612811229719152}
-    m_Position: {x: 840, y: 360, z: 0}
+    m_Position: {x: 760, y: 440, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5107760224931256933}
-    m_Position: {x: 840, y: 40, z: 0}
+    m_Position: {x: 760, y: 340, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5365459393633225420}
-    m_Position: {x: 840, y: 840, z: 0}
+    m_Position: {x: 760, y: 590, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2027153606116750878}
-    m_Position: {x: 840, y: 1000, z: 0}
+    m_Position: {x: 760, y: 640, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6005378557173012135}
-    m_Position: {x: 840, y: 520, z: 0}
+    m_Position: {x: 760, y: 490, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 6143149969949231666}
-    m_Position: {x: 840, y: 680, z: 0}
+    m_Position: {x: 760, y: 540, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3763765623006027864}
-    m_Position: {x: -130, y: 740, z: 0}
+    m_Position: {x: 380, y: 690, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -3510174472334994966}
-    m_Position: {x: -120, y: 670, z: 0}
+    m_Position: {x: 150, y: 690, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -5616226550861383553}
-    m_Position: {x: -170, y: 490, z: 0}
+    m_Position: {x: 100, y: 470, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 3690881935837638906}
+    m_Position: {x: 380, y: 290, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 30, y: 170, z: 0}
-  m_ExitPosition: {x: 30, y: -160, z: 0}
+  m_AnyStatePosition: {x: 130, y: 310, z: 0}
+  m_EntryPosition: {x: 130, y: 350, z: 0}
+  m_ExitPosition: {x: 130, y: 270, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 2358797131466483995}
 --- !u!1101 &-7249709444953112118
@@ -105,7 +108,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: stress
+    m_ConditionEvent: stressed
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6143149969949231666}
@@ -172,7 +175,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: triste
+  m_Name: sad
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -252,7 +255,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: deception
+  m_Name: disappointed
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -382,7 +385,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: surprise
+  m_Name: surprised
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -433,7 +436,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: deception
+    m_ConditionEvent: disappointed
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -5365459393633225420}
@@ -511,37 +514,37 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: joie
+  - m_Name: happy
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: colere
+  - m_Name: anngry
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: triste
+  - m_Name: sad
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: stress
+  - m_Name: stressed
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: deception
+  - m_Name: disappointed
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 0}
-  - m_Name: surprise
+  - m_Name: surprised
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -609,7 +612,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: triste
+    m_ConditionEvent: sad
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6005378557173012135}
@@ -739,7 +742,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: joie
+    m_ConditionEvent: happy
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 6730721864750322526}
@@ -806,7 +809,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: colere
+  m_Name: angry
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -821,6 +824,32 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: a98bc87791e067d418dc43dfae245902, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &3690881935837638906
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: ARLE
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 0}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -884,7 +913,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: surprise
+    m_ConditionEvent: surprised
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -2027153606116750878}
@@ -909,7 +938,7 @@ AnimatorStateTransition:
   m_Name: 
   m_Conditions:
   - m_ConditionMode: 1
-    m_ConditionEvent: colere
+    m_ConditionEvent: anngry
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 3278612811229719152}
@@ -932,7 +961,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: stress
+  m_Name: stressed
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -981,7 +1010,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: joie
+  m_Name: happy
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
