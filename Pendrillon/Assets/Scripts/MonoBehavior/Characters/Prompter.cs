@@ -56,11 +56,7 @@ public class Prompter : MonoBehaviour
 
     void GoOnStage()
     {
-        //transform.position = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(12, 12));
-        //transform.LookAt(Camera.main.transform);
-        
         _anim.SetBool("InOut", true);
-        
         isOnStage = true;
         //Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name}");
     }
@@ -68,7 +64,6 @@ public class Prompter : MonoBehaviour
     void LeaveStage()
     {
         _anim.SetBool("InOut", false);
-
         isOnStage = false;
         //Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name}");
     }
@@ -98,10 +93,8 @@ public class Prompter : MonoBehaviour
         //_dialogueText.text = dialogue;
         _prompterTypewriter.ShowText(dialogue);
         
-        
         _iconTalking.SetActive(true);
         //Debug.Log($"Prompter.{MethodBase.GetCurrentMethod().Name} > Prompter is speaking");
-
     }
 
     #endregion
