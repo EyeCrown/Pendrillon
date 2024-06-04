@@ -93,7 +93,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
         BOUFFONNE: J'apprenais à vous connaître, messire. Je vous observais...
         ** [Me connaître ?] PLAYER: Me connaître, moi ? #anim:Player:surprise
             BOUFFONNE: Parfaitement, messire.
-            *** [Échangeons nos noms.] PLAYER: Faisons un marché, bouffon. Je t'échange mon nom contre le tien. Qu'en dis-tu ? N'est-ce pas là une honnête transaction ?
+            *** [Échangeons nos noms.] PLAYER: Faisons un marché. Je t'échange mon nom contre le tien. Qu'en dis-tu ? N'est-ce pas là une honnête transaction ?
                 BOUFFONNE: J'ai bien peur, messire, de posséder déjà ce que vous proposez de m'offrir... #anim:Arle:deception
                 BOUFFONNE: {p_name}, si je ne m'abuse ? #anim:Arle:question
                 **** [Et à qui {p_name} a t-il l'honneur ?] PLAYER: Et avec qui ai-je le plaisir de m'entretenir ? #anim:Player:question
