@@ -165,6 +165,8 @@ namespace MonoBehavior.Managers
             dirPos.position += dirTransform.transform.position + new Vector3(0, 0, 30);
             _directions.Add(Constants.StageCourtyard, dirPos);
 
+            _nextDialogueIndicator.gameObject.SetActive(false);
+            
             
             // Connect Events
             PhaseStart.AddListener(OnPhaseStart);
