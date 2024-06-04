@@ -2932,302 +2932,132 @@
 				<Event Name="GameStart" ID="{CA29A0BB-D5BE-4F96-B957-07CF6903C886}"/>
 				<Folder Name="Music" ID="{C2B19DC5-819E-4188-97CB-AF0E75B43385}" ShortID="575277910">
 					<ChildrenList>
-						<Event Name="Play_MUS_Story_SC_Eglise_Intro" ID="{7D520AE5-2E0B-4589-8A68-0298D45DF23D}">
-							<ChildrenList>
-								<Action Name="" ID="{F716090E-29DB-4E7B-B81A-2D7FE7F9ED9F}" ShortID="891817994">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MUS_Story_SC_Eglise_Intro" ID="{CB9952DC-2346-4BFB-B8C3-F0AF98581E87}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{B60EF51E-24BA-485E-8309-9FD12D5121A6}" ShortID="993196154">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="12"/>
-										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
-										<Property Name="Volume" Type="Real64" Value="-96"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_SC_Eglise_RND" ID="{3F194D5B-870E-4933-AE4A-F9D33F4AFA8C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{1474A949-7D41-4F12-8B5D-67F870ACC684}" ShortID="430942655">
-									<PropertyList>
-										<Property Name="ActionType" Type="int16" Value="12"/>
-										<Property Name="Delay" Type="Real64" Value="10"/>
-										<Property Name="FadeTime" Type="Real64" Value="5"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="AMB_SC_Eglise_RND" ID="{3F194D5B-870E-4933-AE4A-F9D33F4AFA8C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_MUS_Story_SC_Eglise_StainedGlassHim" ID="{648D5158-72D9-4C66-8344-350719A25B07}">
-							<ChildrenList>
-								<Action Name="" ID="{CFE5A6FD-1D86-415C-9668-5570C0E35FF6}" ShortID="35197941">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MUS_Story_SC_Eglise_StainedGlassHim" ID="{6D5F5D80-C3B0-4D82-A20B-82574614CE1B}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_MUS_Story_SC_Eglise_StainedGlassLookingOcean" ID="{0B8AA5E3-8A47-4374-A27D-0E96F48A81AB}">
-							<ChildrenList>
-								<Action Name="" ID="{759A89F4-97B3-4B0A-831A-80A690B2DB4B}" ShortID="194880760">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MUS_Story_SC_Eglise_StainedGlassLookingOcean" ID="{1FC664B8-73D4-4938-8753-05EFE19295C8}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_MUS_Story_SC_Eglise_StainedGlassBroken" ID="{C709949D-ABB6-44CF-9612-FB483307AF89}">
-							<ChildrenList>
-								<Action Name="" ID="{AA9EAA00-1FF9-4672-BC5F-2F409B04C7B7}" ShortID="482258707">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MUS_Story_SC_Eglise_StainedGlassBroken" ID="{68C96F61-299E-4BAD-ABEC-F5AF439147AF}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_MUS_Story_SC_Eglise_GuardsSearching" ID="{FF8C0C49-72E4-4E1C-A4A2-193BACF7C922}">
-							<ChildrenList>
-								<Action Name="" ID="{2DEB6A76-96CD-4618-9C81-51ADB1E660E0}" ShortID="297244572">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MUS_Story_SC_Eglise_GuardsSearching" ID="{793BFF25-99F1-4793-83F6-215C3F28C36C}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_MUS_Story_SC_Eglise_ImploreStatue" ID="{8BBCBB8D-E67E-40E2-B540-A3DF50EFB65C}">
-							<ChildrenList>
-								<Action Name="" ID="{F6A8ACE6-8A04-4540-9165-94160D15394F}" ShortID="411530186">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MUS_Story_SC_Eglise_ImploreStatue" ID="{340496EC-77FC-4C4C-9CC8-95023E84E8F3}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_MUS_Story_SC_Eglise_LightOn" ID="{D4911D3B-E607-4D95-AC18-C804C340D370}">
-							<ChildrenList>
-								<Action Name="" ID="{C2020410-9AB7-4A4F-8B48-BBA2F022B74B}" ShortID="128293673">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MUS_Story_SC_Eglise_LightOn" ID="{DD19A12A-3451-4950-9DF0-E239CA7DECBF}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_MUS_Story_SC_Eglise_StainedGlassBaby" ID="{6D18527B-9C9E-4EE5-A7DE-969198680211}">
-							<ChildrenList>
-								<Action Name="" ID="{BA528BB4-E4F7-4B4F-8622-E2C4897A54E7}" ShortID="425524746">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MUS_Story_SC_Eglise_StainedGlassBaby" ID="{E4A45FC7-9763-46E0-833F-CE55CA3F6E2E}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="Play_MUS_Story_SC_Eglise_StainedGlassMentionned" ID="{7C49051D-DD8D-4E30-A45B-F3ECE6FFEF29}">
-							<ChildrenList>
-								<Action Name="" ID="{2FD74CE3-9B43-4A1F-AE8E-5A23CB6C04DC}" ShortID="638104929">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="MUS_Story_SC_Eglise_StainedGlassMentionned" ID="{E5F3DAC9-AE87-4D7A-AF9C-7DF5F4A97BC2}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
 						<Folder Name="SC_Barque" ID="{857D5D3A-F552-4BFB-970F-75625682CB7B}" ShortID="953368113">
 							<ChildrenList>
-								<Event Name="Play_MUS_Story_SC_Barque_AFairReward" ID="{B74C20E6-750B-4C24-8B7D-5D452570D6B3}">
+								<Event Name="Play_MUS_Story_SC_Barque_MysteriousLetter2" ID="{56C2EFA9-BE61-4425-BA15-8D374B57E7FC}">
 									<ChildrenList>
-										<Action Name="" ID="{1DF00022-0683-439C-9E8B-8722E2A98DCC}" ShortID="862440378">
+										<Action Name="" ID="{B40D7958-9261-4AAB-A6D2-DC5AFE7FABD8}" ShortID="934621581">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_AFairReward" ID="{AC5D75A1-442C-425B-AE36-8CDDBA040A64}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{585989E7-4D94-4C1D-A160-8E86859010B1}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_AGoodActor" ID="{0D6F77D4-8410-4AB0-B330-3A8A696D5C33}">
+								<Event Name="Play_MUS_Story_SC_Barque_MysteriousLetter1" ID="{0B9F7A00-9B64-453F-9FB8-F887884CD839}">
 									<ChildrenList>
-										<Action Name="" ID="{21BFC1B6-AEF6-401D-B91F-FF1D09285253}" ShortID="1285348">
+										<Action Name="" ID="{81683EAC-0D4F-4BE3-8B18-5D6AF79AE64A}" ShortID="763809780">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_AGoodActor" ID="{68065707-9C39-4344-8EEF-9235DEC7788C}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_Barque_MysteriousLetter1" ID="{469C5006-0028-4778-A723-CF8DD2093BF3}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_ANewFriend" ID="{4CC9C202-1E9B-48CA-B7C3-0A2DE1060DF0}">
+								<Event Name="Play_MUS_Story_SC_Barque_BadViolin1" ID="{3483F47F-8BAA-4A3A-BF96-4B170958A8D7}">
 									<ChildrenList>
-										<Action Name="" ID="{5F9A7A16-3F5A-4255-BE12-A79AE2492E82}" ShortID="481125818">
+										<Action Name="" ID="{60E7A036-59DE-4D3F-9CB5-5B6B6A7AE868}" ShortID="744508308">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_ANewFriend" ID="{1BCA6ED5-14DC-4A2E-AF0A-848AEE0EE255}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_Barque_BadViolin1" ID="{C4E9D132-BAC2-4E43-9BC3-CD839A1B7877}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_ANewName" ID="{3F1260E5-55CD-4AA8-8C98-76ADDE27A5E6}">
+								<Event Name="Play_MUS_Story_SC_Barque_Intro" ID="{0CA30471-A316-4F1D-9824-7C736EC8E331}">
 									<ChildrenList>
-										<Action Name="" ID="{91119427-7E40-48E0-891A-5942F5366FB0}" ShortID="250633947">
+										<Action Name="" ID="{EF075615-5F5E-4042-9ED5-B14C250F0661}" ShortID="96651822">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_ANewName" ID="{DB202672-87EB-441C-8D32-095918AECCD5}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_Barque_Intro" ID="{789B6367-1D8E-4381-9187-413AFC064DE2}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_BadViolin1" ID="{997A0007-C9CF-40C5-888C-B2FA25320970}">
+								<Event Name="Play_MUS_Story_SC_Barque_AGoodActor" ID="{C173622F-FE37-4FAD-BECB-93E30E095169}">
 									<ChildrenList>
-										<Action Name="" ID="{F6937A31-BCCE-40FF-AFF5-0B341EF5FA89}" ShortID="981165418">
+										<Action Name="" ID="{982F88B1-B0A4-4858-87F2-A7408DF6E400}" ShortID="617472954">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_BadViolin1" ID="{588B2CBF-5BF8-4E78-8B5E-94E07998D916}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_Barque_AGoodActor" ID="{94DC16D0-0620-4339-9292-7DCE3AAA56B4}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_BadViolin2" ID="{2B911535-CE26-4627-9F47-E422B385F8D7}">
+								<Event Name="Play_MUS_Story_SC_Barque_ANewName" ID="{B72CC87C-41D7-4426-84B6-3E67A2ADB03C}">
 									<ChildrenList>
-										<Action Name="" ID="{837FE363-D1E1-4A71-9E5C-F1C330B72426}" ShortID="635107586">
+										<Action Name="" ID="{9A8DDABD-EBEB-4D37-BADF-5E2B2943959A}" ShortID="995060574">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_BadViolin2" ID="{37F25F39-4988-4BF0-8E97-E6EF13CE6D56}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_Barque_ANewName" ID="{1A75CCEB-0E0C-4CD3-9DA2-D8F7A0DFB3E2}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_LostAFriend" ID="{F09CED54-810D-488B-A854-B3DDCC64C4BD}">
+								<Event Name="Play_MUS_Story_SC_Barque_BadViolin2" ID="{63DA2CFD-7A4B-4471-85C8-96A86D92705A}">
 									<ChildrenList>
-										<Action Name="" ID="{5853D69A-D57C-4F42-A8E2-7B54700A14B2}" ShortID="528040251">
+										<Action Name="" ID="{B1124C8A-FD99-4EF8-B607-1D0682D1A505}" ShortID="851323236">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_LostAFriend" ID="{06C15731-8899-496B-BB3A-5EAB98073518}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_Barque_BadViolin2" ID="{036634E1-1C0E-4F56-8FF5-C9B9094505B5}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_MysteriousLetter1" ID="{0B5068AF-02AE-4839-A20E-B2A002FE0875}">
+							</ChildrenList>
+						</Folder>
+						<Folder Name="SC_Eglise" ID="{27D3A6A8-36DE-43D1-AFB4-636A2D719ABC}" ShortID="815332630">
+							<ChildrenList>
+								<Event Name="Play_MUS_Story_SC_Eglise_Intro" ID="{8E146ADB-58AA-49A5-997D-AC52ACA740F8}">
 									<ChildrenList>
-										<Action Name="" ID="{7CA647D1-3C02-4AA7-B319-B794E8627457}" ShortID="346020333">
+										<Action Name="" ID="{80FCA427-35C4-4E1A-8C54-A34D1FF917F1}" ShortID="462543489">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_MysteriousLetter1" ID="{DD762D5F-D820-46FC-B328-42C5FE7FAEDE}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_Eglise_Intro" ID="{CB9952DC-2346-4BFB-B8C3-F0AF98581E87}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_MysteriousLetter2" ID="{3638CCC4-2568-47B9-A5A8-9C660FF51D6F}">
+							</ChildrenList>
+						</Folder>
+						<Folder Name="SC_SecretMeeting" ID="{BD9C2E5D-85EF-49E8-9653-1C7F53588F71}" ShortID="71344311">
+							<ChildrenList>
+								<Event Name="Play_MUS_Story_SC_SecretMeeting_Meubler" ID="{940AA98C-DFFD-417C-A9D7-7F48F91325E2}">
 									<ChildrenList>
-										<Action Name="" ID="{B1F03EDA-D0EA-4313-8220-9D7C7866E85F}" ShortID="373904778">
+										<Action Name="" ID="{DD2BA7F9-1650-4440-BEB1-C54FC26240BB}" ShortID="770652849">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{2AF30552-A4FA-4447-A8CE-AF78EEB11F63}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_SecretMeeting_Meubler" ID="{7F616B84-4637-4F9A-AB5C-990DF399783C}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_MysteriousLetter3" ID="{5D6EAEE0-8D62-4204-AE70-9172089A862F}">
+								<Event Name="Play_MUS_Story_SC_SecretMeeting_Encore" ID="{5CC74F18-DCEE-41F4-8054-DFA36E0B772E}">
 									<ChildrenList>
-										<Action Name="" ID="{7DE002C4-071B-42B8-9CE1-A7A5E02259F0}" ShortID="871962008">
+										<Action Name="" ID="{1833C517-827A-4E35-9EBA-93C9981841F3}" ShortID="90144897">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_MysteriousLetter3" ID="{8DEFE151-CD46-4D3B-9556-5CE9113C10C2}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_SecretMeeting_Encore" ID="{5B45C1FE-1E67-4C48-B847-06C67ADB0BF5}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_ToChurch" ID="{208C13E8-4316-4A95-8FB1-54D05F0F3418}">
+								<Event Name="Play_MUS_Story_SC_SecretMeeting_Intro" ID="{7718E0A9-C9F8-4CB9-AA86-8D59CF3BC591}">
 									<ChildrenList>
-										<Action Name="" ID="{75D2BEA4-3688-4567-825A-A90AC5AC87A1}" ShortID="988332381">
+										<Action Name="" ID="{5FDE261E-3ACC-486B-A9A4-4AE38A4F8027}" ShortID="17321669">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_ToChurch" ID="{51942D8E-1199-4987-B78B-1C0B21128813}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_Treason" ID="{64BB1F0A-71C7-41A4-9681-3D75001654A6}">
-									<ChildrenList>
-										<Action Name="" ID="{F0616E02-9CED-4257-956F-BB716E6283C4}" ShortID="193592014">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_Treason" ID="{FBBC3EED-AF1B-46D6-AF5E-4B066E545111}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_TrialDoorsOpen" ID="{5D0CD771-8988-4DB6-BF39-E8F8C435B137}">
-									<ChildrenList>
-										<Action Name="" ID="{26999B78-FEA1-413D-9C84-BC70DFD3427C}" ShortID="607324370">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_TrialDoorsOpen" ID="{E88ECA58-439F-469C-BF16-382167B1A8A9}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_TrialInView" ID="{AD9B7AEB-49B7-4CF7-B1D2-0488EDB40B26}">
-									<ChildrenList>
-										<Action Name="" ID="{4CFA6E9B-800C-4F4C-A386-E25594B952BA}" ShortID="488317702">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_TrialInView" ID="{82FFC1D1-A0B6-48A4-9AEB-E1BB916AA8A5}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_Undeserved" ID="{3586A8DF-C91B-472B-8CA4-3E6AED7751B7}">
-									<ChildrenList>
-										<Action Name="" ID="{0CC97A86-F5CF-40A2-A209-894B541E3467}" ShortID="992504741">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_Undeserved" ID="{CDE845DB-A3CA-4CFA-975D-2E24C8FA7EBD}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-									</ChildrenList>
-								</Event>
-								<Event Name="Play_MUS_Story_SC_Barque_Intro" ID="{16C318DA-B037-42D9-8737-A16DEE4CFE92}">
-									<ChildrenList>
-										<Action Name="" ID="{C060EEDD-C8A5-43F4-AFA0-F90FA0375C80}" ShortID="380039438">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Barque_Intro" ID="{644B6302-CE0D-43A0-A0DF-BA8F589C6382}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_SecretMeeting_Intro" ID="{D0D49321-0E91-4817-8912-E732DF429D3A}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
