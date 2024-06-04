@@ -245,7 +245,7 @@ namespace MonoBehavior.Managers
                 HandleDialogue();
                 //HandleChoices();
 
-                if (_currentDialogue == String.Empty && !GameManager.Instance._story.currentChoices.Any())
+                if (IsCurrentDialogueNotValid() && !GameManager.Instance._story.currentChoices.Any())
                 {
                     Debug.Log($"AM.Refresh > RECURSIVE CALL");
                     Refresh();
@@ -264,13 +264,14 @@ namespace MonoBehavior.Managers
         {
             if (!_dialogueAlreadyHandle)
             {
-                if (_currentDialogue == String.Empty)
+                if (IsCurrentDialogueNotValid())
                     return;
+                
+                //Debug.Log($"AM.HandleDialogue > Dialogue > {_currentDialogue} | Length: {_currentDialogue.Length}");
                 
                 // split dialogue in 2
                 String[] words = _currentDialogue.Split(":");
                 
-                // Debug.Log($"AM.HandleDialogue > Dialogue > {_currentDialogue}");
                 // foreach (var word in words)     Debug.Log($"AM.HandleDialogue > Part > {word}");
                 
                 // get character speaking
@@ -473,6 +474,11 @@ namespace MonoBehavior.Managers
                 running |= character.IsRopeRunning();
 
             return running;
+        }
+
+        bool IsCurrentDialogueNotValid()
+        {
+            return _currentDialogue == String.Empty || _currentDialogue.Length <= 1;
         }
         
 
@@ -715,17 +721,21 @@ namespace MonoBehavior.Managers
             AkSoundEngine.PostEvent("Play_SFX_SC_Theater_TransitionTo" + location, gameObject);
 
             if (_currentSet != null)
-                _currentSet.GetComponent<Animator>().SetBool("InOut",false);
+            {
+                var animator = _currentSet.GetComponent<Animator>();
+                if (animator != null)
+                    animator.SetBool("InOut",false);
+            }
 
             GameManager.Instance.ClearStageCharacters();
             
             //_setBarge.SetActive(false);
-            _setCale.SetActive(false);
+            //_setCale.SetActive(false);
             //_setPort.SetActive(false);
             _setChurch.SetActive(false);
             //_setTrial.SetActive(false);
             _setTempest.SetActive(false);
-            _setForest.SetActive(false);
+            //_setForest.SetActive(false);
             
             GameManager.Instance.SetGridHeight();
             
@@ -738,7 +748,7 @@ namespace MonoBehavior.Managers
                     break;
                 case Constants.SetCale:
                     _setCale.SetActive(true);
-                    //_setCale.GetComponent<Animator>().SetBool("InOut",true);
+                    _setCale.GetComponent<Animator>().SetBool("InOut",true);
                     _currentSet = _setCale;
                     break;
                 case Constants.SetPort:
@@ -763,7 +773,7 @@ namespace MonoBehavior.Managers
                     break;
                 case Constants.SetForest:
                     _setForest.SetActive(true);
-                    //_setForest.GetComponent<Animator>().SetBool("InOut",true);
+                    _setForest.GetComponent<Animator>().SetBool("InOut",true);
                     _currentSet = _setForest;
                     break;
                 default:
@@ -1190,7 +1200,7 @@ namespace MonoBehavior.Managers
         {
             // Waiting if someone is still using a rope
             // while (IsRopeActionRunning())
-            //    yield return null;
+            //     yield return null;
             
             foreach (var tagAction in _tagMethods)
             {

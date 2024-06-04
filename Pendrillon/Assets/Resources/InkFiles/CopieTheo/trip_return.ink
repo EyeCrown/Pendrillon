@@ -9,7 +9,6 @@ VAR has_bone = false // Can be found in the back crate
 VAR has_coconut = false // Can be found in the front crate
 VAR player_is_stinky = false // Player is stinky if he searches through the back crate
 VAR sireine_is_stinky = false // Sireine is stinky if she hides in the back crate
-VAR jester_fled = false // Define if the jester fled or not
 VAR player_is_hidden = false // Define if the player is hidden or not
 VAR player_won_battle = false // Define if the player won the battle or not
 
@@ -20,8 +19,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
 = start
 // Define the actors of the scene
 #actor:Player:PLAYER
-#actor:Naïda:???
-#actor:Arle:ÉPIEUR
+#actor:Naïda:PERSONNAGE MASQUÉ
 #actor:Marcello:MARCELLO
 #actor:Capucine:CAPUCINE
 // Set the location
@@ -29,77 +27,70 @@ VAR player_won_battle = false // Define if the player won the battle or not
 // Set the actor's positions
 #position:Player:4:2
 #position:Naïda:4:13
-#position:Arle:2:11
-#position:Marcello:3:6
-#position:Capucine:5:5
+#position:Marcello:3:20
+#position:Capucine:5:20
+// Audience reaction
+#wait:1 #audience:applause #wait:5 #audience:ovation #wait:3
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
-#playsound:Play_AMB_SC_Cale_Ambiance
-#anim:Arle:hide
-- ???: (Écœurée) Ça sent mauvais là-dedans...
-    * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...
-        ** [Désolé pour l'odeur...] PLAYER: Les marins ne sont pas dérangés par ce genre d'odeur. Mais ce n'est pas du goût de tout le monde...
-        ** [Ça peut nous être profitable !] PLAYER: Avec un peu de chance, l'odeur fera passer aux gardes l'envie de trop s'attarder.
-        ** [Impossible d'aérer.] PLAYER: C'est le problème d'une cale de bâteau : difficile d'aérer un navire plongé dans l'eau.
-    * [Ça sent les ennuis...] PLAYER: Ça sent les emmerdes.
+- PERSONNAGE MASQUÉ: (Écœurée) Ça sent mauvais là-dedans... #audience:laughter
+    * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille... #audience:laughter
+        ** [Désolé pour l'odeur...] PLAYER: Les marins ne sont pas dérangés par ce genre d'odeur. Mais ce n'est pas du goût de tout le monde... #audience:laughter
+        ** [Ça peut nous être profitable !] PLAYER: Avec un peu de chance, l'odeur fera passer aux gardes l'envie de trop s'attarder. #audience:laughter
+        ** [Impossible d'aérer ici.] PLAYER: C'est le problème d'une cale de bâteau : difficile d'aérer un navire plongé dans l'eau. #audience:laughter
+    * [Ça sent les ennuis...] PLAYER: Ça sent les ennuis ! #audience:laughter
     * [L'odeur de la liberté !] PLAYER: Le poisson pas frais et le sel marin : l'odeur de la liberté !
-- ???: ...
-- ???: Que fera t-on s'ils me trouvent ?
+- PERSONNAGE MASQUÉ: Que fera t-on s'ils me trouvent ?
     * [Je vous protégerai. {t(CHAR, 0)}]
         {sc(CHAR, 0): -> protect_S | -> protect_F}
         ** (protect_S) PLAYER: Je braverai les dangers pour vous protéger !
-            ???: (Inquiète) Espérons qu'on n'en arrive pas là.
+            PERSONNAGE MASQUÉ: (Inquiète) Espérons qu'on n'en arrive pas là.
         ** (protect_F) PLAYER: Euh.. Je.. Je vous défendrai ?
-            ???: (Se retient de rire) Ne le prenez pas mal, mais... vous n'êtes pas très convainquant.
+            PERSONNAGE MASQUÉ: Ne le prenez pas mal, mais... vous n'êtes pas très convainquant.
     * [On improvisera.] PLAYER: On improvisera, comme j'en ai l'habitude.
-        ???: Ce n'est pas la première fois que vous avez des ennuis avec la Couronne, n'est-ce pas ?
+        PERSONNAGE MASQUÉ: Ce n'est pas la première fois que vous avez des ennuis avec la Couronne, n'est-ce pas ?
         ** [(Mentir) C'est une première. {t(CHAR, -20)}]
             {sc(CHAR, -20): -> lie_S | -> lie_F}
             *** (lie_S) PLAYER: Je suis ce qu'on appelle un honnête homme.
-                ???: Vous semblez sincère.
+                PERSONNAGE MASQUÉ: Vous semblez sincère.
             *** (lie_F) PLAYER: Je suis blanc comme neige au soleil.
                 ~ trial(t_2_lawless)
-                ???: Vous mentez très mal, mon ami.
+                PERSONNAGE MASQUÉ: Vous mentez très mal, mon ami.
         ** [Certes.] C'est vrai, je l'admet. Mais ne dit-on pas que nul homme n'a à rougir d'une faute avouée ?
-            ???: Je n'ai jamais entendu cela, non.
+            PERSONNAGE MASQUÉ: Je n'ai jamais entendu cela, non.
             *** [...] PLAYER: J'ai dû l'inventer, alors.
-- ???: Et maintenant ? Qu'avez-vous en tête ?
-    * [Fouiller la caisse du fond. {t(LUCK, 0)}] #playsound:crate_search
-        {sc(LUCK, 0): -> crate_back_search_S | -> crate_back_search_F}
+- PERSONNAGE MASQUÉ: Et maintenant ? Qu'avez-vous en tête ?
+    * [Forcer la caisse du fond. {t(STRE, 0)}] #playsound:crate_search
+        {sc(STRE, 0): -> crate_back_search_S | -> crate_back_search_F}
         ** (crate_back_search_S) PLAYER: Du poisson pourri... J'empeste ! Mais j'ai trouvé quelques pièces. #playsound:gold_coins
             ~ p_gold += 3
             ~ player_is_stinky = true
         ** (crate_back_search_F) PLAYER: Du poisson pourri... J'empeste !
             ~ player_is_stinky = true
-    * [Fouiller le tonneau. {t(LUCK, 0)}]
-        {sc(LUCK, 0): -> barrel_search_S | -> barrel_search_F}
+    * [Fouiller le tonneau. {t(DEXT, 0)}]
+        {sc(DEXT, 0): -> barrel_search_S | -> barrel_search_F}
         ** (barrel_search_S) PLAYER: J'ai trouvé un gros os. Ça pourrait servir. #playsound:inventory
         ~ has_bone = true
-            ???: Qu'avez-vous en tête ?
-            *** [Plaisanter.] PLAYER: Peut-être qu'en l'envoyant, les gardes iront chercher ?
-                ???: Comment pouvez-vous avoir le cœur à rire ?
+            PERSONNAGE MASQUÉ: Qu'avez-vous en tête ?
+            *** [Plaisanter.] PLAYER: Peut-être qu'en l'envoyant, les gardes iront chercher ? #audience:laughter
+                PERSONNAGE MASQUÉ: Comment pouvez-vous avoir le cœur à rire ?
             *** [Dire la vérité.] PLAYER: Si je n'ai pas d'autres choix, j'assommerai les gardes.
-                ???: J'ai si peur...
+                PERSONNAGE MASQUÉ: J'ai si peur...
         ** (barrel_search_F) PLAYER: Je n'ai rien trouvé.
-    * [Fouiller la caisse de devant. {t(LUCK, 0)}] #playsound:crate_search
-        {sc(LUCK, 0): -> crate_front_search_S | -> crate_front_search_F}
+    * [Fouiller la caisse de devant. {t(DEXT, 0)}] #playsound:crate_search
+        {sc(DEXT, 0): -> crate_front_search_S | -> crate_front_search_F}
         ** (crate_front_search_S) PLAYER: Une noix de coco. Ça pourrait être utile, qui sait. #playsound:inventory
             ~ has_coconut = true
         ** (crate_front_search_F) PLAYER: Je n'ai rien trouvé.
-- ???: Ne peut-on pas éviter que des gardes ne viennent fourrer leur nez ici ?
-    * [Je connais certains gardes...] PLAYER: Il est certains gardes que je... connais bien, disons. D'autres sont étrangers.
+- PERSONNAGE MASQUÉ: Ne peut-on pas éviter que des gardes ne viennent fourrer leur nez ici ?
+    * [Je connais certains gardes...] PLAYER: Il est certains gardes que je... connais bien, disons. Pas ceux-là.
         ~ trial(t_2_have_bribed_guards)
-        ???: Quoi donc ?
-        PLAYER: Il est plus difficile de convaincre des gardes de fermes les yeux par ici.
-        ???: Pourquoi est-ce différent à Miraterre ?
-        PLAYER: Disons que, dans cette ville, la Loi a des yeux partout. #playsound:judge_bell
     * [C'est la Loi.] PLAYER: Certaines lois sont sujettes à interpretations, mais...
-        ???: ...mais ?
-        PLAYER: ...mais pas celle que nous avons bravée, j'en ai peur. #playsound:judge_bell
+        PERSONNAGE MASQUÉ: ... mais ?
+        PLAYER: ... mais pas celle que nous avons bravée, j'en ai peur. #playsound:judge_bell #audience:choc
             ~ trial(t_2_lawfull)
-- ???: ...
-- ???: N'éprouvez-vous jamais aucun regret ? Si la Loi et la Foi l'interdisent...
+- PERSONNAGE MASQUÉ: N'éprouvez-vous jamais aucun regret ? Si la Loi et la Foi l'interdisent...
     * [Sans foi ni loi.] PLAYER: Je me fiche de la Loi comme de la Foi. #trial
         ~ trial(t_2_against_law)
         ~ trial(t_2_against_crown)
@@ -107,10 +98,9 @@ VAR player_won_battle = false // Define if the player won the battle or not
         ~ trial(t_2_show_no_regrets)
     * [(Tiraillé) Parfois...] PLAYER: Il est des jours où je crois être le plus vil des hommes... #trial
         ~ trial(t_2_show_regrets)
-- ???: J'entends des bruits. Quelqu'un vient. #playsound:activity_far
+- PERSONNAGE MASQUÉ: J'entends des bruits. Quelqu'un vient. #playsound:activity_far
 * [Cachez-vous.] PLAYER: Il va falloir vous trouver une cachette, et en vitesse.
-    -- (hide_sireine) ???: Les bruits se rapprochent ! #playsound:activity_close
-        #anim:Arle:enter_scene #anim:Arle:hide
+    -- (hide_sireine) PERSONNAGE MASQUÉ: Les bruits se rapprochent ! #playsound:activity_close
         *** [Dans la caisse du fond.] Cette caisse, au fond ! Vite ! #anim:Sireine:hide
             ~ sireine_hideout = "crate_back"
             ~ sireine_is_hidden = true
@@ -122,41 +112,17 @@ VAR player_won_battle = false // Define if the player won the battle or not
             ~ sireine_hideout = "crate_front"
             ~ sireine_is_hidden = true
 * [Attendons.] PLAYER: Pas le temps de se cacher !
-    ???: En êtes-vous certain ? Les pas sont bientôt là... #playsound:activity_close
-    ** [Ne faites rien.] PLAYER: Faites-moi confiance... Restez-ici !
-    ** [Cachez-vous.] PLAYER: Il va falloir vous trouver une cachette, et en vitesse.
+    PERSONNAGE MASQUÉ: Il le faut pourtant !
         -> hide_sireine
-- #playsound:jester_hiding_make_noise // Le bouffon fait un peu de bruit, caché sur le coté de la scène
-* [Tendre l'oreille. {t(COMP, -10)}] PLAYER: J'ai cru entendre quelque chose. Mais les bruits de pas se rapprochent... ##playsound:activity_close
-    {sc(COMP, 0): -> listen_hidden_jester_S | -> listen_hidden_jester_F}
-        ** (listen_hidden_jester_S) PLAYER: (Chuchotte) Quelqu'un nous épie.
-            *** [Confronter l'épieur.] PLAYER: Sort de ta cachette, rat des campagnes !
-                ÉPIEUR: Vous avez l'ouïe fine, messire. #anim:Arle:stop_hiding
-                **** [Qui êtes vous ?] PLAYER: Qui va là ?!
-                    ÉPIEUR: Un simple passant égaré. #anim:Arle:bow 
-                    ***** [Foutaises.] PLAYER: Balivernes ! Dis-moi qui tu es ou je te coupe en dés de jambon !
-                        ÉPIEUR: Je ne suis que moi-même, messire. Indigne d'être nommé. Je m'en vais déjà...
-                        ****** [Attaquer. {t(STRE, -10)}]
-                            {sc(STRE, -10): -> attack_jester_S | -> attack_jester_F}
-                            ******* (attack_jester_S) ÉPIEUR: (Hurlant) À moi ! Au secours ! #anim:Player:attack
-                                ~ trial(t_2_jester_attacked)
-                                -> guards_are_called
-                            ******* (attack_jester_F) ÉPIEUR: Trop lent !
-                                -> jester_flee
-                        ****** [Faire fuire.] PLAYER: Va t-en, avant que je te tranche le lard !
-                            -> jester_flee
-                    ***** (jester_flee) [Déguerpissez.] ÉPIEUR: À la revoyure ! #anim:Arle:flee
-                            ~ jester_fled = true 
-            *** [Se cacher. {t(DEXT, 15)}] PLAYER: Pas le temps d'investiguer.
-                -> hide_player
-        ** (listen_hidden_jester_F) PLAYER: Ce doit être mon imagination... J'entends les gardes qui arrivent.
-* (hide_player) [Se cacher. {t(DEXT, 15)}] PLAYER: Je devrai me cacher moi aussi ! #anim:Player:hide
-    {sc(DEXT, 0): -> player_hide_S | -> player_hide_F}
-    ** (player_hide_S) PLAYER: Ici, vite !
-        ~ player_is_hidden = true
-        -> guards_arrive
-    ** (player_hide_F) PLAYER: Loupé ! La discretion n'est pas mon fort ! #playsound:player_hide_and_make_noise
-        -> guards_arrive
+- PLAYER: Quant à moi...
+    * [Se cacher. {t(DEXT, 10)}]
+        {sc(DEXT, 10): -> player_hide_S | -> player_hide_F}
+        ** (player_hide_S) #anim:Player:hide
+            ~ player_is_hidden = true
+            -> guards_arrive
+        ** (player_hide_F) PLAYER: Loupé ! La discretion n'est pas mon fort !
+            -> guards_arrive
+    * [Acceuillir les gardes.]
 - -> guards_arrive
 
 
@@ -164,9 +130,9 @@ VAR player_won_battle = false // Define if the player won the battle or not
 = guards_arrive
 #playsound:guards_arrive
 MARCELLO: J'ai entendu du bruit dans la cale. #anim:Marcello:enter_scene
-CAPUCINE: (Ironique) Tu entends des voix, maintenant ? Peut-être la Déesse en personne qui te cause... #anim:Capucine:enter_scene
-MARCELLO: Vous me croyez fou, cheffe ?
-CAPUCINE: Que tu sois cinglé ou non... Nous devons fouiller tous les navires qui arrivent au port.
+CAPUCINE: Tu entends des voix, maintenant ? Peut-être la Déesse en personne qui te cause... #anim:Capucine:enter_scene #audience:laughter
+MARCELLO: Vous me croyez fou, cheffe ? #audience:laughter
+CAPUCINE: Que tu sois cinglé ou non... Nous devons fouiller tous les navires qui arrivent au port. #audience:applause
 - {player_is_hidden: -> player_hidden | -> player_not_hidden}
 
 
@@ -196,7 +162,7 @@ MARCELLO: Il n'y a personne, cheffe.
 // The guards arrive while the player is not hidden
 = player_not_hidden
 #playsound:guards_arrive
-* [S'annoncer.] PLAYER: Bien le bonjour.
+* [S'annoncer.] PLAYER: Bien le bonjour, mes braves.
 - CAPUCINE: Décline ton identité, et vite !
     * [Je suis le capitaine.] PLAYER: Vous vous trouvez sur mon humble navire.
         CAPUCINE: C'est toi le capitaine ?
@@ -205,7 +171,7 @@ MARCELLO: Il n'y a personne, cheffe.
             ** (lie_about_not_being_capitaine_S) MARCELLO: Il a l'air de dire vrai, cheffe.
             ** (lie_about_not_being_capitaine_F) MARCELLO: Tu mens comme tu respires, pas vrai ?
 - CAPUCINE: Le fripon a l'air louche...
-    * [Vous-mêmes.] PLAYER: C'est vous qui êtes louche, les morpions.
+    * [Vous-mêmes.] PLAYER: C'est vous qui êtes louche, les baveux.
         MARCELLO: Répète ça pour voir, abruti !
         ** [Répéter.] PLAYER: Louches et sourdingues, en plus de ça.
             MARCELLO: Nous allons t'apprendre à insulter des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
@@ -217,7 +183,6 @@ MARCELLO: Il n'y a personne, cheffe.
     * (calm_the_situation) [Amadouer.] PLAYER: Et si nous remontions sur le pont, pour discuter entre amis ?
         CAPUCINE: Un garde de la Couronne n'a d'ordre à recevoir de personne.
         ** [Faire de l'esprit.] PLAYER: Pas même de la Reine ?
-            CAPUCINE: Que baragouines-tu encore ?
             MARCELLO: Il a pas tort, cheffe.
             CAPUCINE: Cet abruti se fiche de nous. Mais il ne va pas rire longtemps...
                 -> confronted_about_fugitive
@@ -229,7 +194,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
     * [Baratiner. {t(CHAR, -20)}]
         {sc(CHAR, -20): -> lie_about_fugitive_S | -> lie_about_fugitive_F}
         ** (lie_about_fugitive_S) PLAYER: Cet individu ment. D'ailleurs, il m'a détroussé de cinq pièces d'or !
-            MARCELLO: Il a l'air de dire vrai. T'en penses quoi, Marcello ?
+            MARCELLO: Il a l'air de dire vrai. T'en penses quoi, cheffe ?
             CAPUCINE: J'en pense que je vais fouiller le navire dans le doute. Garde un œil sur lui. #anim:Capucine:seek_intruder_near_sireine
                 -> battle
         ** (lie_about_fugitive_F) PLAYER: Le type que vous avez vu sortir d'ici est atteint d'une maladie rare.
@@ -240,22 +205,22 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             CAPUCINE: Il nous prend pour des idiots ou je rêve ?
             MARCELLO: Je vais t'apprendre à mentir à des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
                 -> battle
-    * [Intimider. {t(CHAR, -30)}]
-        {sc(CHAR, -30): -> intimidate_guards_S | -> intimidate_guards_F}
+    * [Intimider. {t(STRE, -30)}]
+        {sc(STRE, -30): -> intimidate_guards_S | -> intimidate_guards_F}
         ** (intimidate_guards_S) PLAYER: Le marin d'eau douce va te noyer de coups, si tu continues de l'ouvrir.
             MARCELLO: Pardon, m'sieur.
             CAPUCINE: Ne t'excuse pas, abruti. Apprend-lui plutôt ce qu'on obtient en menaçant un garde de la Couronne !
             MARCELLO: Compris, cheffe ! #anim:Marcello:attack #anim:Player:hurt
                 -> battle
         ** (intimidate_guards_F) PLAYER: T'as vu mes biscoteaux ? Tu veux les voir de plus près, peut-être ?
-            CAPUCINE: ...
+            CAPUCINE: ... 
             MARCELLO: ...
             CAPUCINE: Il se croit intimidant, cet idiot ?
             MARCELLO: Je vais t'apprendre à menacer des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
                 -> battle
-    * {p_gold > 0} [Soudoyer. {t(CHAR, -10)}]
+    * {p_gold > 0} [Soudoyer. {t(DEXT, -10)}]
         ~ trial(t_2_bribe_guards)
-        {sc(CHAR, -10): -> bribe_guards_S | -> bribe_guards_F}
+        {sc(DEXT, -10): -> bribe_guards_S | -> bribe_guards_F}
     PLAYER: Est-ce que {p_gold} pièces d'or pourraient vous faire quitter mon navire sans faire de vagues ? Si vous me permettez l'expression...
         ** (bribe_guards_S) CAPUCINE: Laisse-moi te débarasser de ces pièces...
             ~ trial(t_2_try_and_succeed_bribing_guards)
@@ -269,18 +234,9 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
         ** (bribe_guards_F) CAPUCINE: À qui penses-tu avoir affaire, quadruple forban ? Nous allons t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde !
             ~ trial(t_2_try_but_fail_bribing_guards)
             MARCELLO: C'est là que je le frappe, cheffe ?
-            CAPUCINE: En effet, Marcello. C'est là que je le frappe.
             CAPUCINE: En effet, Marcello. C'est là que tu le frappe. 
             MARCELLO: Compris, cheffe ! #anim:Marcello:attack #anim:Player:hurt
                 -> battle
-// The guards are called by the Jester
-= guards_are_called
-#playsound:guards_arrive
-MARCELLO: J'ai entendu quelqu'un hurler. #anim:Marcello:enter_scene
-ÉPIEUR: Mes braves ! Cet homme cache une fugitive ! Il est armé, méfiez-vous !
-MARCELLO: Il ne fera pas long feu !
-MARCELLO: Prends ça ! #anim:Marcello:attack #anim:Player:hurt
-- -> battle
 
 // Attack Marcello with a bone
 = attack_marcello_with_bone
@@ -298,12 +254,12 @@ MARCELLO: Prends ça ! #anim:Marcello:attack #anim:Player:hurt
 // Attack Marcello with a coconut
 = attack_marcello_with_coconut
 {sc(DEXT, 20): -> attack_marcello_coconut_S | -> attack_marcello_coconut_F}
-    ** (attack_marcello_coconut_S) MARCELLO: Le navire est vide, cheffe. #anim:Player:throw_coconut #anim:Marcello:hurt
-    ** (attack_marcello_coconut_F) MARCELLO: Le navire est vide, cheffe. #anim:Player:throw_coconut_fail
-        MARCELLO: Aie !
+    ** (attack_marcello_coconut_S)MARCELLO: Aie !
         CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #audience:laugh
         MARCELLO: Cet abruti m'a envoyé une noix de coco en plein dans les narines !
         CAPUCINE: Ça m'en a tout l'air, en effet.
+    ** (attack_marcello_coconut_F) MARCELLO: Le navire est vide, cheffe. #anim:Player:throw_coconut_fail
+        MARCELLO: Ai-je la berlue ou est-ce qu'un gougnafier vient d'essayer de m'envoyer une noix de coco dans la poire ? #audience:laugh
 - MARCELLO: Prends ça, pour la peine ! #anim:Marcello:attack #anim:Player:hurt audience:applause
 - -> battle
 
@@ -313,19 +269,23 @@ MARCELLO: Prends ça ! #anim:Marcello:attack #anim:Player:hurt
         {sc(STRE, -10): -> attack_marcello_S | -> attack_marcello_F}
         ** (attack_marcello_S) PLAYER: Prends ça ! #anim:Player:attack #anim:Marcello:hurt
             MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête !
+            ~ trial(t_2_attack_guards)
         ** (attack_marcello_F) PLAYER: Prends ça ! #anim:Player:attack #anim:Marcello:dodge
             MARCELLO: Héhé... Trop lent, minable.
+            ~ trial(t_2_attack_guards)
     * [Attaquer par derrière. {t(DEXT, -10)}]
         {sc(DEXT, -10): -> sneaky_attack_marcello_S | -> sneaky_attack_marcello_F}
         ** (sneaky_attack_marcello_S) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine
             PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:hurt
             MARCELLO: M'attaquer alors que j'ai le dos tourné ? Tu es un lâche !
+            ~ trial(t_2_attack_guards)
             *** [Et toi un crétin.] PLAYER: C'est toi qui est stupide, à tourner le dos à quelqu'un que tu viens de frapper.
             *** [C'est tout moi, en effet.] PLAYER: Je dirai plutôt que je sais saisir une opportunité quand je la vois...
                 PLAYER: Surtout quand cette opportunité consiste à cogner un rustre comme toi.
         ** (sneaky_attack_marcello_F) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine
             PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:dodge
             MARCELLO: Tu te crois discret, abruti ?
+            ~ trial(t_2_attack_guards)
     * [Calmer le jeu. {t(CHAR, -10)}]
         {sc(CHAR, -10): -> calm_marcello_S | -> calm_marcello_F}
         ** (calm_marcello_S) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
@@ -389,14 +349,14 @@ CAPUCINE: Bloque-lui la route tandis que j'y jette un œil.
 }
 CAPUCINE: Tiens-donc... Mais qui voilà ?
 #anim:Sireine:out_of_hideout
-PLAYER: Laissez-là, bande de gougnafiers !
+PERSONNAGE MASQUÉ: Laissez-moi ! Je vous ai dit de me laisser !
 CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la.
 #anim:Player:attack
 #anim:Marcello:dodge
 #anim:Marcello:attack
 #anim:Player:hurt
 CAPUCINE: Allons-nous-en avec notre trouvaille. Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts...
-CAPUCINE: Il finira sa triste vie au cachot, comme son ami.
+CAPUCINE: Il finira sa triste vie au cachot, comme son amie.
 #move(Capucine)
 // Marcello remet un coup gratuit au Player
 #anim:Marcello:attack

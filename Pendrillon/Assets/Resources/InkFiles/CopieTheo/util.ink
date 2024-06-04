@@ -5,6 +5,7 @@
 
 // Debug
 CONST print_debug = false // Set if the debug logs are printed or not
+CONST print_debug_trial = true // Set if the debug logs of the trial are printed or not
 CONST export_mode = false // Set if the game is in export mode or not
 
 // Stats names
@@ -59,10 +60,12 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
             ~ result = true
             // Modify the applausemeter
             ~ add_applausemeter(threshold_to_applausemeter_points(threshold, result))
+            #audience:ovation
         - else:
             ~ result = false
             // Modify the applausemeter
             ~ add_applausemeter(threshold_to_applausemeter_points(threshold, result))
+            #audience:booing
     }
     {
         - print_debug:
@@ -81,8 +84,8 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
 
 // Calculate the percentage of success of an action tied with a skill check
 === function t(pStat, pDifficulty) ===
-~ temp stat = p_char
-~ temp full_stat = ""
+    ~ temp stat = p_char
+    ~ temp full_stat = ""
     ~ temp modifier = p_char_mod
     {
         - pStat == "char":
@@ -187,9 +190,22 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
 
 // Add the item to the inventory
 === function add_to_inventory(pItem) ===
-{
-    - print_debug:
-        {pItem} ajouté à l'inventaire.
-        (DEBUG: Inventaire non codé.)
-        _______________
-}
+    {
+        - print_debug:
+            {pItem} ajouté à l'inventaire.
+            (DEBUG: Inventaire non codé.)
+            _______________
+    }
+
+// Roll an AI skill check and return the result
+=== function roll_ai_sc(pTreshold)
+    ~ temp D100 = 0
+    ~ temp result = true
+    ~ D100 = roll_D100()
+    {
+        - D100 < pTreshold:
+            ~ result = true
+        - else:
+            ~ result = false
+    }
+    ~ return result

@@ -299,6 +299,7 @@ public class CharacterHandler : MonoBehaviour
             yield return null;
         }
         // Character is up
+        transform.position = new Vector3(-100, -100, -100);
         Debug.Log($"{gameObject.name} has leave the stage");
         _onStage = false;
         _anim.SetBool("falling", false);
