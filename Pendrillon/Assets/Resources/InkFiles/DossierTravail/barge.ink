@@ -22,7 +22,8 @@
 #playsound:Play_AMB_SC_Theater_CrowdChatter
 #playsound:Play_MUS_Story_SC_Barque_Intro
 //#anim:Player:kneeling
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3 #look:Player:Passeur
+//#look:Player:Passeur
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
 - PASSEUR: Eh, bien... #anim:Passeur:neutre
@@ -38,7 +39,7 @@ SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton
 - SOUFFLEUR: Hé, qu'est-ce que tu fabriques ? Tu as oublié ton texte, c'est ça ? #wait:2 #anim:Souffleur:neutre #playsound:VOX_Souffleur_oublietexeteQ
 SOUFFLEUR: Permets-moi de te rafraîchir la mémoire, l'ami. #anim:Souffleur:neutre #playsound:VOX_NPC_Souffleur_rafraichirmemoire
 SOUFFLEUR: « Ma mère m'a toujours dit... ».
-    * [Ma mère m'a toujours dit...] PLAYER: Ma mère m'a toujours dit... #anim:Player:neutre #playsound:VOX_Player_meretoujoursdit #playsound:Play_MUS_Story_SC_Barque_BadViolin1 #audience:applause
+    * [Ma mère m'a toujours dit...] PLAYER: Ma mère m'a toujours dit... #anim:Player:talk #playsound:VOX_Player_meretoujoursdit #playsound:Play_MUS_Story_SC_Barque_BadViolin1 #audience:applause
 - SOUFFLEUR: « ...qu'enfant, déjà, je n'étais pas très bavard. ». #playsound:VOX_Souffleur_pasbavard
     * [...qu'enfant, déjà, je n'étais pas très bavard.] PLAYER: ...qu'enfant, déjà, je n'étais pas très bavard. #anim:Player:neutre #playsound:VOX_Player_pasbavard #playsound:Play_MUS_Story_SC_Barque_BadViolin2 #audience:applause
 PASSEUR: Vraiment ? J'ai pourtant ouï dire qu'en matière de baratin, tu n'étais pas le dernier... #anim:Passeur:neutre #playsound:VOX_Ferryman_baratinpasdernier #audience:applause

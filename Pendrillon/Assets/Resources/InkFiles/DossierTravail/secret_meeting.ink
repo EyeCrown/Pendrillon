@@ -16,26 +16,27 @@ VAR has_fail = false
 // Set the location
 #set:forest
 // Set the actor's positions
-#position:Player:10:6
-#position:Arle:10:11
+#position:Player:8:2
+//#position:Arle:10:11
+//#position:Arle:3:17
+#position:Arle:3:10
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
-#anim:Arle:hide
 // Audience reaction
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #anim:Arle:crawling #wait:3
 
-// On se trouve sur scène, seul.
+- // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
-- #audience:applause
+- #anim:Player:waiting_1 #audience:applause
     * [Attendre encore.]
-- #audience:debate #playsound:Play_MUS_Story_SC_SecretMeeting_Encore
+- #anim:Player:waiting_2 #audience:debate #playsound:Play_MUS_Story_SC_SecretMeeting_Encore
     * [Attendre plus fort.]
-- #audience:booing
-- SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #playsound:VOX_Souffleur_partenairedescene
+- #anim:Player:waiting_3 #audience:booing
+- SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #playsound:VOX_Souffleur_partenairedescene 
 SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes talents !
 SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance !
-    * [Effectuer une danse. {t(DEXT, -10)}]
+    * [Effectuer une danse. {t(DEXT, 0)}]
         {sc(CHAR, 0): -> dancing_S | -> dancing_F}
         ** (dancing_S) #anim:Player:dancing_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami !
@@ -44,16 +45,16 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami.
             SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
-    * [Faire des pompes. {t(STRE, -10)}]
+    * [Faire des pompes. {t(STRE, 0)}]
         {sc(CHAR, 0): -> do_pushups_S | -> do_pushups_F}
-        ** (do_pushups_S) #anim:Player:pompe_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (do_pushups_S) #anim:Player:pushup_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami !
             -> success_entertaining_audience
-        ** (do_pushups_F) #anim:Player:pompe_failure #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (do_pushups_F) #anim:Player:pushup_failure #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, l'ami.
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
-    * [Hypnotiser le public. {t(CHAR, -20)}]
+    * [Hypnotiser le public. {t(CHAR, 0)}]
         {sc(CHAR, 0): -> hypnotise_S | -> hypnotise_F}
         ** (hypnotise_S) #anim:Player:hypnotise_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: ...
@@ -84,7 +85,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * [Examiner le buisson.] PLAYER: Ce buisson me semble... suspect... #anim:Player:examine_bush #audience:laughter
 - // Le joueur compte
     * [Tirer le buisson.] #anim:Player:pull_bush #playsound:VOX_Player_jecompte0 #audience:choc
-        ARLE: Mais qui voilà ?! N'est-ce pas moi ?  #anim:Arle:bow #playsound:VOX_Arle_maisquivoila #audience:ovation
+        ARLE: Mais qui voilà ?! N'est-ce pas moi ?  #anim:Arle:get_up #anim:Arle:bow #playsound:VOX_Arle_maisquivoila #audience:ovation
 - // Arle fait son apparition
     * [Que faisais-tu caché ?] PLAYER: Que faisais-tu là, caché tel un rat ? #anim:Player:question
         BOUFFONNE: J'apprenais à vous connaître, messire. Je vous observais... #anim:Arle:neutre
