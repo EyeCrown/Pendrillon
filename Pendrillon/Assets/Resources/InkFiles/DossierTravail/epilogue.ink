@@ -7,5 +7,5 @@
 -> start
 
 = start
-Épilogue du jeu.
+Épilogue du jeu. Salut des acteurs.
 -> END

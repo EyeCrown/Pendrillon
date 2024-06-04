@@ -1189,8 +1189,8 @@ namespace MonoBehavior.Managers
         IEnumerator ExecuteTagMethods()
         {
             // Waiting if someone is still using a rope
-            while (IsRopeActionRunning())
-                yield return null;
+            // while (IsRopeActionRunning())
+            //    yield return null;
             
             foreach (var tagAction in _tagMethods)
             {

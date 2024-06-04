@@ -18,10 +18,12 @@
 #position:Player:4:1
 #position:Passeur:4:3
 
-// Start the scene
-#playsound:Play_AMB_SC_Theater_CrowdChatter
 // Audience reaction
-#playsound:Play_MUS_Story_SC_Barque_Intro #wait:3 #audience:applause #wait:6
+#playsound:Play_AMB_SC_Theater_CrowdChatter
+#playsound:Play_MUS_Story_SC_Barque_Intro
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
+
+// Start the scene
 - PASSEUR: Eh, bien... #anim:Passeur:neutre
 PASSEUR: J'ai connu des passagers plus loquaces... #anim:Passeur:neutre #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause
     * [(Rester silencieux)]
@@ -100,7 +102,7 @@ PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rend
 #position:Player:4:1
 #position:Passeur:4:3
 // Audience reaction
-#wait:1 #audience:applause #wait:5 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
 - PASSEUR: ... #anim:Passeur:neutre
@@ -139,7 +141,7 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, no
 #position:Player:4:1
 #position:Passeur:4:3
 // Audience reaction
-#wait:1 #audience:applause #wait:5 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
 - PASSEUR: Ainsi, ton ami s'est fait arrêter par les gardes... #anim:Passeur:neutre:1 #playsound:VOX_Ferryman_ainsitonami
@@ -162,7 +164,7 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, no
 #position:Player:4:1
 #position:Passeur:4:3
 // Audience reaction
-#wait:1 #audience:applause #wait:5 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
 - PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #anim:Passeur:neutre #playsound:VOX_Ferryman_pretressehonneur
@@ -192,7 +194,7 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, no
 #position:Player:4:1
 #position:Passeur:4:3
 // Audience reaction
-#wait:1 #audience:applause #wait:5 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
 - PASSEUR: Notre voyage fut en fin de compte des plus captivants, toutefois...  #anim:Passeur:neutre #playsound:VOX_Ferryman_voyagecaptivant
@@ -215,6 +217,3 @@ PASSEUR: ... ou si c'est ici que nos chemins se sépareront. #anim:Passeur:neutr
 - PASSEUR: Tu vas devoir affronter ton destin. 
 PASSEUR: Ainsi en-ont décidé les portes, voyageur...  #playsound:VOX_Ferryman_devoiraffronterdestin 
 - -> tribunal_1
-
-= end_scene
--> END
