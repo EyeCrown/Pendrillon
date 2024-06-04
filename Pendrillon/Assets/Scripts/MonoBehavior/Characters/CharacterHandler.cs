@@ -194,15 +194,40 @@ public class CharacterHandler : MonoBehaviour
     {
         float time = 0.0f;
         Vector3 startPosition = transform.position;
+        _anim.SetBool("walking", true);
 
         while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
         {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
+            //transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
+            transform.position = Vector3.Lerp(startPosition, targetPosition, time/duration);
             time += Time.deltaTime;
             yield return null;
         }
         transform.position = targetPosition;
         transform.LookAt(Camera.main.transform);
+        _anim.SetBool("walking", false);
+        callbackOnFinish();
+    }
+
+    public IEnumerator RotationCoroutine(Vector3 targetPosition, Action callbackOnFinish)
+    {
+        float time = 0.0f, duration = 0.2f;
+        var startRotation = transform.rotation;
+        
+        transform.LookAt(targetPosition, Vector3.up);
+        var targetRotation = transform.rotation; //Quaternion.LookRotation((targetPosition - transform.position), Vector3.up);
+        //transform.rotation = startRotation;
+        
+        Debug.Log($"{name} > Start rotation: {startRotation}");
+        while (time < duration)
+        {
+            transform.rotation = Quaternion.Slerp(startRotation, targetRotation, time/duration);
+            time += Time.deltaTime;
+            
+            Debug.Log($"{name} > {transform.rotation.eulerAngles}");
+            yield return null;
+        }
+        Debug.Log($"{name} > Rotation done");
         callbackOnFinish();
     }
 

@@ -91,7 +91,7 @@ namespace MonoBehavior.Managers
         bool _isActionDone = false;
         bool _dialogueAlreadyHandle = false;
 
-        readonly Dictionary<string, Transform> _directions = new Dictionary<string, Transform>();
+        readonly Dictionary<string, Vector3> _directions = new Dictionary<string, Vector3>();
         
         
         #region Wwise Attributes
@@ -150,21 +150,22 @@ namespace MonoBehavior.Managers
             if (_prompterTypewriter == null)
                 Debug.LogError("OHH");
             
-            var dirTransform = GameObject.Find("Directions").transform;
+            var dirPos = GameObject.Find("Directions").transform.position;
             // Front
-            var dirPos = dirTransform;
-            dirPos.position +=   new Vector3(30, 0, 0);
-            _directions.Add(Constants.StageFront, dirPos);
+            _directions.Add(Constants.StageFront, dirPos + new Vector3(30, 0, 0));
             // Back
-            dirPos.position += dirTransform.transform.position + new Vector3(-30, 0, 0);
-            _directions.Add(Constants.StageBack, dirPos);
+            _directions.Add(Constants.StageBack, dirPos + new Vector3(-30, 0, 0));
             // Garden
-            dirPos.position += dirTransform.transform.position + new Vector3(0, 0, -30);
-            _directions.Add(Constants.StageGarden, dirPos);
+            _directions.Add(Constants.StageGarden, dirPos + new Vector3(0, 0, -30));
             // Courtyard
-            dirPos.position += dirTransform.transform.position + new Vector3(0, 0, 30);
-            _directions.Add(Constants.StageCourtyard, dirPos);
+            _directions.Add(Constants.StageCourtyard, dirPos + new Vector3(0, 0, 30));
 
+            foreach (var pair in _directions)
+            {
+                Debug.Log($"Awake > {pair.Key}: {pair.Value}");
+            }
+            
+            
             _nextDialogueIndicator.gameObject.SetActive(false);
             
             
@@ -956,12 +957,12 @@ namespace MonoBehavior.Managers
                 return;
             }
             
-            Transform target = null;
+            Vector3 target = Vector3.zero;
             
             var other = GameManager.Instance.GetCharacter(data[1]);
             if (other != null)
             {
-                target = other.transform;
+                target = other.transform.position;
             }
             else
             {
@@ -971,7 +972,7 @@ namespace MonoBehavior.Managers
                     Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > {data[2]} is unvalid");
             }
             
-            if (target == null)
+            if (target == Vector3.zero)
             {
                 Debug.LogError($"AM.HandleTagLook > Error: Target unvalid | {data[0]} |");
                 return;
@@ -979,8 +980,9 @@ namespace MonoBehavior.Managers
 
             void LookAction()
             {
-                character.transform.LookAt(target);
-                TagActionOver();
+                //character.transform.LookAt(target, Vector3.forward);
+                //TagActionOver();
+                StartCoroutine(character.RotationCoroutine(target, TagActionOver));
             }
 
             _tagMethods.Add(LookAction);
