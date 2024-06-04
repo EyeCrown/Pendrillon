@@ -23,7 +23,7 @@ VAR has_fail = false
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
 #anim:Arle:hide
 // Audience reaction
-#wait:1 #audience:applause #wait:5 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
@@ -218,7 +218,3 @@ ARLE: Malheuresement, il n'y a pas que les Homme qui survécurent au Déluge... 
         ~ t_1_accept_mission_with_negativity = true
 - #audience:ovation Stop_AMB_SC_Cale_Ambiance
 - -> barge.scene_2
-
-// End the scene
-= end_scene
--> END

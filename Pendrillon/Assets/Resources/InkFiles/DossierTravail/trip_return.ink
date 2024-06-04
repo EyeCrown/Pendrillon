@@ -30,7 +30,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
 #position:Marcello:3:20
 #position:Capucine:5:20
 // Audience reaction
-#wait:1 #audience:applause #wait:5 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
@@ -363,8 +363,3 @@ CAPUCINE: Il finira sa triste vie au cachot, comme son amie.
 #anim:Player:hurt
 #move(Marcello)
 -> barge.scene_3
-
-// End the scene
-= end_scene
-Fin de la scène.
-    -> END

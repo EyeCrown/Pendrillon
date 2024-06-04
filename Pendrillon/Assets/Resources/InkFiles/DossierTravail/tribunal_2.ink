@@ -88,7 +88,10 @@ SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
 - (player_and_naida_met)
     * [À l'intérieur du Léviathan.] PLAYER: Lorsque le Léviathan nous a avalé, mon équipage et moi-même... Nous nous sommes retrouvés à l'intérieur de son estomac. #audience:choc
         PLAYER: C'est là que j'ai fait la rencontre du peuple des sireines. #audience:debate
-    * [Cela ne vous regarde pas.] PLAYER: Notre histoire ne vous regarde pas, Votre Honneur.
+        PLAYER: Durant près d'une année, j'ai appris à les connaître.
+        PLAYER: À apprécier vivre à leurs cotés... #audience:debate
+        PLAYER: ... À les aimer. #audience:choc
+    * [Cela ne vous regarde pas.] PLAYER: Notre histoire ne vous regarde en rien, Votre Honneur.
         JUGE ERNEST: Allons, allons... Que dirais-tu d'un marché ?
         JUGE ERNEST: Toi, tu témoignes de votre histoire, et moi je concens à appeler ton amie par son nom. 
         ** [Pas question.] PLAYER: Vous avez perdu ma confiance, Votre Honneur. Il n'en est pas question.
@@ -242,30 +245,31 @@ JUGE ERNEST: Je demande désormais solennellement aux jurés de bien vouloir ren
 // Player is innocent
 = player_is_innocent
 JUGE ERNEST: Mesdames et messieur les jurés...
-JUGE ERNEST: Qui vote « coupable » ? #audience:applause
+JUGE ERNEST: Qui vote... <shake>coupable</shake> ? #box #wait:1 #audience:applause
 JUGE ERNEST: Et maintenant... #audience:debate
-JUGE ERNEST: Qui vote... « innocent » ? #audience:ovation #anim:Player:bow
-JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé...
-JUGE ERNEST: INNOCENT !!! #audience:ovation
+JUGE ERNEST: Qui vote... <shake>innocent</shake> ? #box #wait:1.4 #audience:ovation #anim:Player:bow
+JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé.
+JUGE ERNEST: Le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé...
+JUGE ERNEST: <b>INNOCENT</b> !!! #audience:ovation
 JUGE ERNEST: Emmenez-le, ainsi que la sireine, retrouver leur liberté. #audience:ovation
 - -> naida_speech
 
 // Player is guilty
 = player_is_guilty
 JUGE ERNEST: Mesdames et messieur les jurés...
-JUGE ERNEST: Qui vote « innocent » ? #audience:applause
+JUGE ERNEST: Qui vote... <shake>innocent</shake> ? #box #wait:1 #audience:applause
 JUGE ERNEST: Et maintenant... #audience:debate
-JUGE ERNEST: Qui vote... « coupable » ? #audience:ovation
+JUGE ERNEST: Qui vote... <shake>coupable</shake> ? #box #wait:1.4 #audience:ovation #anim:Player:bow
 JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé...
-JUGE ERNEST: COUPABLE !!! #audience:ovation
+JUGE ERNEST: <b>COUPABLE</b> !!! #audience:ovation
 JUGE ERNEST: Emmenez-le, ainsi que la sireine, au fond des océans. #audience:ovation
 - -> naida_speech
 
 = naida_speech
-NAÏDA: Avant cela, si vous le permettez... #audience:silent
+NAÏDA: Avant cela, si vous le permettez... #audience:debate
 NAÏDA: Je voudrais dire quelques mots. #audience:debate
-NAÏDA: Je resterai digne, et ferai montre de respect, car j'ai souffert de ne pas l'avoir obtenu de votre part à tous...
-NAÏDA: Que nos ancêtres aient été ou non des semblables, des frères... cela, pour moi, ne change rien.
+NAÏDA: Je resterai digne, et ferai montre de respect, car j'ai souffert de ne pas l'avoir obtenu de votre part à tous... #audience:silent
+NAÏDA: Que nos ancêtres aient été ou non des semblables, des frères... cela, pour moi, ne change rien. #audience:applause
 NAÏDA: Je voudrais simplement dire à quel point il est étrange, pour une créature telle que moi...
 NAÏDA: Une pauvre sireine... Une poiscaille...
 NAÏDA: Combien il est étrange de constater que vous autres, humains, ayez donné à ce système, le nom de « Justice ». #audience:debate
@@ -274,8 +278,8 @@ NAÏDA: Combien il est étrange de constater que vous autres, humains, ayez donn
     - verdict_is_guilty: NAÏDA: Aujourd'hui, elle nous est défavorable... L'aurait-elle été demain ? #audience:debate
 }
 - NAÏDA: Je remercie {p_name} de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause
-NAÏDA: Car les noms, voyez-vous, sont le cœur battant de toute chose. Les noms sont importants.
+NAÏDA: Car les noms, voyez-vous, sont le cœur battant de toute chose. Les noms sont importants. #audience:applause
 NAÏDA: Ainsi il m'apparaît, pour conclure notre histoire, qu'en donnant à un système partial et imparfait, le nom même d'une vertue... #audience:silent
-NAÏDA: En lui donnant le nom de « Justice »...
-NAÏDA: Vous ayez commis une erreur... cruelle. #anim:Naida:bow #audience:ovation
+NAÏDA: En lui donnant le nom de « Justice »... #audience:debate
+NAÏDA: Vous autres humains ayez commis une erreur... cruelle. #anim:Naida:bow #audience:ovation
 - -> epilogue

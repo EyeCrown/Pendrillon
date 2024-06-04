@@ -20,7 +20,7 @@ VAR irene_was_a_sireine = true
 #position:Player:4:1
 #position:Agathe:4:3
 // Audience reaction
-#wait:1 #audience:applause #wait:5 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 #playsound:Play_MUS_Story_SC_Eglise_Intro
 // Player arrive dans l'Église puis avance jusqu'à la statue.
@@ -339,7 +339,7 @@ AGATHE: Quand les gardes de la Couronne vinrent arrêter le Messie, c'est lui qu
         AGATHE: Elle l'apprit le soir même, mais il était trop tard. Les gardes s'en étaient allé depuis longtemps déjà.
     * [Devrions-nous le craindre ?] PLAYER: Serait-on avisé de le craindre, désormais ? Ou bien pensez-vous que la cloche ne sonne pas pour le juste ? #audience:debate
         AGATHE: À tort ou à raison, tous les habitants de Miraterre le craignent...
-AGATHE: Lorsque nos ancêtres revinrent à Miraterre, ils le trouvèrent enchaîné à sa roue. Vivant. Intact.
+- AGATHE: Lorsque nos ancêtres revinrent à Miraterre, ils le trouvèrent enchaîné à sa roue. Vivant. Intact.
 AGATHE: Durant un siècle entier, il avait souffert sans jamais mourir. 
 AGATHE: Pourquoi donc, d'après vous ?
     * [Le savez-vous vous-même ?] PLAYER: Le savez-vous vous-même, prêtresse ?
@@ -372,7 +372,3 @@ AGATHE: Pourquoi donc, d'après vous ?
         
 // Return to the stained glass conversation
 - -> stained_glass
-
-// End of scene
-= end_scene
--> END

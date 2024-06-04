@@ -25,7 +25,7 @@ VAR cannon_loaded = false
 #position:Player:4:2
 #position:Moussaillon:30:30
 // Audience reaction
-#wait:1 #audience:applause #wait:5 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
 #audience:ovation

@@ -24,7 +24,7 @@ VAR marcello_surname = "Marcellogre"
 #position:Marcello:2:11
 #position:Capucine:3:6
 // Audience reaction
-#wait:1 #audience:applause #wait:5 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
 #anim:Player:sleep
@@ -71,8 +71,5 @@ AGATHE: Cependant aucun d'entre eux ne s'était rendu coupable d'un acte aussi g
 AGATHE: Lorsque j’ai appris pourquoi vous étiez recherché, j’ai su qu’il était de mon devoir, non envers la Couronne mais la Déesse elle-même, de vous dénoncer.#audience:ovation #anim:Player:disappointed #anim:Capucine:laugh
 {CAPUCINE}: Tout le monde t'abandonne à ton triste sort, marmot.
 {CAPUCINE}: Mais tu ne seras bientôt plus seul... Tu vas aller rejoindre ton affreuse amie, vermine !
-{CAPUCINE}: Marcello, attrappe-le !! #anim:Marcello:hit
+{CAPUCINE}: Marcello, attrappe-le !!
 - -> barge.scene_5
-
-= end_scene
--> END

@@ -4,25 +4,25 @@ VAR t_arle_patience = 5 // Patience de Arle (0 = Arle pète un câble)
 VAR t_souffleur_explanations_bell = false
 
 // SECRET MEETING
-// VAR t_1_accept_to_kill = false
-// VAR t_1_refuse_to_kill = false
-// VAR t_1_disrespect_the_crown = false
-// VAR t_1_respect_the_crown = false
-// VAR t_1_disrespect_irene = false
-// VAR t_1_respect_irene = false
-// VAR t_1_gold_digger = false
-// VAR t_1_accept_mission_with_positivity = false
-// VAR t_1_accept_mission_with_negativity = false
-// DEBUG TRIAL
 VAR t_1_accept_to_kill = false
 VAR t_1_refuse_to_kill = false
-VAR t_1_disrespect_the_crown = true
+VAR t_1_disrespect_the_crown = false
 VAR t_1_respect_the_crown = false
-VAR t_1_disrespect_irene = true
+VAR t_1_disrespect_irene = false
 VAR t_1_respect_irene = false
-VAR t_1_gold_digger = true
+VAR t_1_gold_digger = false
 VAR t_1_accept_mission_with_positivity = false
-VAR t_1_accept_mission_with_negativity = true
+VAR t_1_accept_mission_with_negativity = false
+// DEBUG TRIAL
+// VAR t_1_accept_to_kill = false
+// VAR t_1_refuse_to_kill = false
+// VAR t_1_disrespect_the_crown = true
+// VAR t_1_respect_the_crown = false
+// VAR t_1_disrespect_irene = true
+// VAR t_1_respect_irene = false
+// VAR t_1_gold_digger = true
+// VAR t_1_accept_mission_with_positivity = false
+// VAR t_1_accept_mission_with_negativity = true
 
 // TRIP RETURN SCENE
 VAR t_2_lawfull = false
@@ -77,13 +77,13 @@ VAR t_3_stained_glass_1_talk = false
 VAR t_3_stained_glass_2_talk = false
 VAR t_3_stained_glass_3_talk = false
 // DEBUG TRIAL
-//VAR t_3_lie_abot_being_innocent = true
-//VAR t_3_did_not_lie_abot_being_innocent = false
-//VAR t_3_implore_irene = false
-//VAR t_3_blame_irene = true
-//VAR t_3_show_no_regrets = false
-//VAR t_3_show_some_regrets = false
-//VAR t_3_show_plenty_regrets = true
+// VAR t_3_lie_abot_being_innocent = true
+// VAR t_3_did_not_lie_abot_being_innocent = false
+// VAR t_3_implore_irene = false
+// VAR t_3_blame_irene = true
+// VAR t_3_show_no_regrets = false
+// VAR t_3_show_some_regrets = false
+// VAR t_3_show_plenty_regrets = true
 // VAR t_3_no_light_on_irene_torch = false
 // VAR t_3_light_on_irene_torch = true
 // VAR t_3_doubt_about_irene_cryings = true
