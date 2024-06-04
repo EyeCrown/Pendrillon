@@ -730,12 +730,12 @@ namespace MonoBehavior.Managers
             GameManager.Instance.ClearStageCharacters();
             
             //_setBarge.SetActive(false);
-            _setCale.SetActive(false);
+            //_setCale.SetActive(false);
             //_setPort.SetActive(false);
             _setChurch.SetActive(false);
             //_setTrial.SetActive(false);
             _setTempest.SetActive(false);
-            _setForest.SetActive(false);
+            //_setForest.SetActive(false);
             
             GameManager.Instance.SetGridHeight();
             
@@ -748,7 +748,7 @@ namespace MonoBehavior.Managers
                     break;
                 case Constants.SetCale:
                     _setCale.SetActive(true);
-                    //_setCale.GetComponent<Animator>().SetBool("InOut",true);
+                    _setCale.GetComponent<Animator>().SetBool("InOut",true);
                     _currentSet = _setCale;
                     break;
                 case Constants.SetPort:
@@ -773,7 +773,7 @@ namespace MonoBehavior.Managers
                     break;
                 case Constants.SetForest:
                     _setForest.SetActive(true);
-                    //_setForest.GetComponent<Animator>().SetBool("InOut",true);
+                    _setForest.GetComponent<Animator>().SetBool("InOut",true);
                     _currentSet = _setForest;
                     break;
                 default:
