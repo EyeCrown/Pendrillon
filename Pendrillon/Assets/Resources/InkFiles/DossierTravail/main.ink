@@ -23,8 +23,3 @@ INCLUDE boss_battle.ink
 
 // Start the game
 -> barge
-//-> trip_return
-//-> barge.scene_5
-//-> church_night.man_tied_to_a_wheel
-//-> church_day
-//-> tribunal_2.player_is_innocent
