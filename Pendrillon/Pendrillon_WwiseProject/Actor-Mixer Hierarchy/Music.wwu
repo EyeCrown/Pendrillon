@@ -8,13 +8,6 @@
 			</PropertyList>
 			<ChildrenList>
 				<ActorMixer Name="Music" ID="{AC481D5A-2BAB-4F7F-8EE0-677801D759FD}" ShortID="939148517">
-					<PropertyList>
-						<Property Name="Volume" Type="Real64">
-							<ValueList>
-								<Value>-96</Value>
-							</ValueList>
-						</Property>
-					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -34,7 +27,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="MUS_Story_SC_Barque_AFairReward" ID="{AC5D75A1-442C-425B-AE36-8CDDBA040A64}" ShortID="80933685">
+								<Sound Name="MUS_Story_SC_Barque_AGoodActor" ID="{94DC16D0-0620-4339-9292-7DCE3AAA56B4}" ShortID="833839286">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -44,29 +37,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_AFairReward" ID="{60581240-7319-472F-92AB-7554D28DAA9D}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_AFairReward.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="897422230"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_AFairReward" ID="{60581240-7319-472F-92AB-7554D28DAA9D}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_AGoodActor" ID="{68065707-9C39-4344-8EEF-9235DEC7788C}" ShortID="850749513">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_AGoodActor" ID="{FB614922-1FDC-4768-A152-32AFFF25FC9A}">
+										<AudioFileSource Name="MUS_Story_SC_Barque_AGoodActor" ID="{71795A88-1703-4586-9596-BC4B716FF188}">
 											<Language>SFX</Language>
 											<AudioFile>MUS_Story_SC_Barque_AGoodActor.wav</AudioFile>
 											<MediaIDList>
@@ -75,10 +46,10 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_AGoodActor" ID="{FB614922-1FDC-4768-A152-32AFFF25FC9A}" Platform="Linked"/>
+										<ActiveSource Name="MUS_Story_SC_Barque_AGoodActor" ID="{71795A88-1703-4586-9596-BC4B716FF188}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_ANewFriend" ID="{1BCA6ED5-14DC-4A2E-AF0A-848AEE0EE255}" ShortID="464788397">
+								<Sound Name="MUS_Story_SC_Barque_ANewName" ID="{1A75CCEB-0E0C-4CD3-9DA2-D8F7A0DFB3E2}" ShortID="857261433">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -88,29 +59,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_ANewFriend" ID="{C281B92D-270A-480A-869E-A738F2A76D37}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_ANewFriend.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="343636199"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_ANewFriend" ID="{C281B92D-270A-480A-869E-A738F2A76D37}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_ANewName" ID="{DB202672-87EB-441C-8D32-095918AECCD5}" ShortID="672886638">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_ANewName" ID="{DAF2EBB7-E64B-4206-972F-9C2AA6F8D410}">
+										<AudioFileSource Name="MUS_Story_SC_Barque_ANewName" ID="{742F7D65-0D27-4DF2-9C76-C2839E083057}">
 											<Language>SFX</Language>
 											<AudioFile>MUS_Story_SC_Barque_ANewName.wav</AudioFile>
 											<MediaIDList>
@@ -119,10 +68,17 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_ANewName" ID="{DAF2EBB7-E64B-4206-972F-9C2AA6F8D410}" Platform="Linked"/>
+										<ActiveSource Name="MUS_Story_SC_Barque_ANewName" ID="{742F7D65-0D27-4DF2-9C76-C2839E083057}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_BadViolin1" ID="{588B2CBF-5BF8-4E78-8B5E-94E07998D916}" ShortID="298079140">
+								<Sound Name="MUS_Story_SC_Barque_BadViolin1" ID="{C4E9D132-BAC2-4E43-9BC3-CD839A1B7877}" ShortID="56059825">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -132,7 +88,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_BadViolin1" ID="{16F6E9A8-B7E6-4AEB-A45E-0A3A3541E0C4}">
+										<AudioFileSource Name="MUS_Story_SC_Barque_BadViolin1" ID="{70B13657-8569-425C-80EF-1790C8B00688}">
 											<Language>SFX</Language>
 											<AudioFile>MUS_Story_SC_Barque_BadViolin1.wav</AudioFile>
 											<MediaIDList>
@@ -141,10 +97,17 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_BadViolin1" ID="{16F6E9A8-B7E6-4AEB-A45E-0A3A3541E0C4}" Platform="Linked"/>
+										<ActiveSource Name="MUS_Story_SC_Barque_BadViolin1" ID="{70B13657-8569-425C-80EF-1790C8B00688}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_BadViolin2" ID="{37F25F39-4988-4BF0-8E97-E6EF13CE6D56}" ShortID="529172681">
+								<Sound Name="MUS_Story_SC_Barque_BadViolin2" ID="{036634E1-1C0E-4F56-8FF5-C9B9094505B5}" ShortID="503221388">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-5</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -154,7 +117,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_BadViolin2" ID="{DF79AFA4-7710-43BB-AC3A-27ECF99FF992}">
+										<AudioFileSource Name="MUS_Story_SC_Barque_BadViolin2" ID="{ABA73CDE-A190-4253-AC93-BC8D363721CE}">
 											<Language>SFX</Language>
 											<AudioFile>MUS_Story_SC_Barque_BadViolin2.wav</AudioFile>
 											<MediaIDList>
@@ -163,10 +126,17 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_BadViolin2" ID="{DF79AFA4-7710-43BB-AC3A-27ECF99FF992}" Platform="Linked"/>
+										<ActiveSource Name="MUS_Story_SC_Barque_BadViolin2" ID="{ABA73CDE-A190-4253-AC93-BC8D363721CE}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_LostAFriend" ID="{06C15731-8899-496B-BB3A-5EAB98073518}" ShortID="187955474">
+								<Sound Name="MUS_Story_SC_Barque_Intro" ID="{789B6367-1D8E-4381-9187-413AFC064DE2}" ShortID="21088865">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -176,124 +146,26 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_LostAFriend" ID="{D8D8100F-9FCE-414D-A195-DAE24D39D2AB}">
+										<AudioFileSource Name="MUS_Story_SC_Barque_Intro" ID="{91A24415-F784-4BD3-BFB3-C04558A699E4}">
 											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_LostAFriend.wav</AudioFile>
+											<AudioFile>MUS_Story_SC_Barque_Intro.wav</AudioFile>
 											<MediaIDList>
-												<MediaID ID="244340315"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_AFairReward" ID="{6E3DF3E9-B033-49D7-997D-25B7EB61A148}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_AFairReward.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="897422230"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_AGoodActor" ID="{1B379F75-52F5-4F8D-A049-730E576B3819}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_AGoodActor.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="106650222"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_ANewFriend" ID="{AB73FD6D-F107-4995-BEEF-927747F191B4}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_ANewFriend.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="343636199"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_ANewName" ID="{07A90B2C-DBA3-4A3F-A9B5-52DACBC20A71}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_ANewName.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="842031347"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_BadViolin1" ID="{9CA1F5E5-2784-4C50-9A4F-2CADC950837A}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_BadViolin1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="336051288"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_BadViolin2" ID="{D9AB0E46-39DB-461D-A5F4-3511E20D5D32}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_BadViolin2.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="699052000"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_Intro" ID="{A0405476-25EE-4E06-AB4E-A3552BA21987}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_Intro .wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="540212977"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_MysteriousLetter1" ID="{2C0C0895-24BD-4EDA-B674-319C6D58552D}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_MysteriousLetter1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="171597142"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{FD4A5CD9-554A-466E-8B50-E34B92086984}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_MysteriousLetter2.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="731746254"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_MysteriousLetter3" ID="{57288D38-C466-4E84-B5BD-FF00436E8C9D}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_MysteriousLetter3.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="846796907"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_ToChurch" ID="{4B741CBC-8CF4-4C09-A15E-140DB5228EAC}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_ToChurch.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="375764385"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_Treason" ID="{96E954B3-B8DA-490C-B4E2-899D0FAD02C1}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_Treason.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="411661787"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_TrialDoorsOpen" ID="{75E01DC9-525F-4C2A-BAF3-EBDAA70465E9}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_TrialDoorsOpen.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="797829289"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_TrialInView" ID="{37E9AE40-3415-4076-83D3-CE84E2F21758}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_TrialInView.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="621796348"/>
-											</MediaIDList>
-										</AudioFileSource>
-										<AudioFileSource Name="MUS_Story_SC_Barque_Undeserved" ID="{FA253CC3-D2FD-425F-9F00-5ACBA8D1C6AF}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_Undeserved.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="745951783"/>
+												<MediaID ID="800240790"/>
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_Undeserved" ID="{FA253CC3-D2FD-425F-9F00-5ACBA8D1C6AF}" Platform="Linked"/>
+										<ActiveSource Name="MUS_Story_SC_Barque_Intro" ID="{91A24415-F784-4BD3-BFB3-C04558A699E4}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_MysteriousLetter1" ID="{DD762D5F-D820-46FC-B328-42C5FE7FAEDE}" ShortID="53782292">
+								<Sound Name="MUS_Story_SC_Barque_MysteriousLetter1" ID="{469C5006-0028-4778-A723-CF8DD2093BF3}" ShortID="192095486">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -303,7 +175,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_MysteriousLetter1" ID="{2A873FA4-9DC8-40E6-BAE4-8274E41033F7}">
+										<AudioFileSource Name="MUS_Story_SC_Barque_MysteriousLetter1" ID="{3E056CFD-3765-4E22-B2FB-83FE509B5927}">
 											<Language>SFX</Language>
 											<AudioFile>MUS_Story_SC_Barque_MysteriousLetter1.wav</AudioFile>
 											<MediaIDList>
@@ -312,10 +184,17 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_MysteriousLetter1" ID="{2A873FA4-9DC8-40E6-BAE4-8274E41033F7}" Platform="Linked"/>
+										<ActiveSource Name="MUS_Story_SC_Barque_MysteriousLetter1" ID="{3E056CFD-3765-4E22-B2FB-83FE509B5927}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{2AF30552-A4FA-4447-A8CE-AF78EEB11F63}" ShortID="520496683">
+								<Sound Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{585989E7-4D94-4C1D-A160-8E86859010B1}" ShortID="267585594">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -325,7 +204,7 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{D3D22F80-FA78-431F-A197-23BC72D134AB}">
+										<AudioFileSource Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{78BFE421-B70B-4A34-96DC-0A50845AA96B}">
 											<Language>SFX</Language>
 											<AudioFile>MUS_Story_SC_Barque_MysteriousLetter2.wav</AudioFile>
 											<MediaIDList>
@@ -334,161 +213,7 @@
 										</AudioFileSource>
 									</ChildrenList>
 									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{D3D22F80-FA78-431F-A197-23BC72D134AB}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_MysteriousLetter3" ID="{8DEFE151-CD46-4D3B-9556-5CE9113C10C2}" ShortID="543266210">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_MysteriousLetter3" ID="{F300774A-2906-407C-984E-B084E29AACC8}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_MysteriousLetter3.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="846796907"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_MysteriousLetter3" ID="{F300774A-2906-407C-984E-B084E29AACC8}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_ToChurch" ID="{51942D8E-1199-4987-B78B-1C0B21128813}" ShortID="649828590">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_ToChurch" ID="{718D2009-A169-4E66-853E-C81DD292C0A0}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_ToChurch.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="375764385"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_ToChurch" ID="{718D2009-A169-4E66-853E-C81DD292C0A0}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_Treason" ID="{FBBC3EED-AF1B-46D6-AF5E-4B066E545111}" ShortID="625756629">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_Treason" ID="{0D968235-1EAE-448B-B789-A658CF815B56}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_Treason.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="411661787"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_Treason" ID="{0D968235-1EAE-448B-B789-A658CF815B56}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_TrialDoorsOpen" ID="{E88ECA58-439F-469C-BF16-382167B1A8A9}" ShortID="39757196">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_TrialDoorsOpen" ID="{E468BAD1-CE69-4F05-A309-76E71BBFDB67}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_TrialDoorsOpen.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="797829289"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_TrialDoorsOpen" ID="{E468BAD1-CE69-4F05-A309-76E71BBFDB67}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_TrialInView" ID="{82FFC1D1-A0B6-48A4-9AEB-E1BB916AA8A5}" ShortID="989385246">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_TrialInView" ID="{A24D151C-FD24-427F-8085-A02AAD7A7E2F}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_TrialInView.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="621796348"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_TrialInView" ID="{A24D151C-FD24-427F-8085-A02AAD7A7E2F}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_Undeserved" ID="{CDE845DB-A3CA-4CFA-975D-2E24C8FA7EBD}" ShortID="704112154">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_Undeserved" ID="{198C4978-D032-447B-BB8B-D75B36C0C39D}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_Undeserved.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="745951783"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_Undeserved" ID="{198C4978-D032-447B-BB8B-D75B36C0C39D}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Barque_Intro" ID="{644B6302-CE0D-43A0-A0DF-BA8F589C6382}" ShortID="154221741">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Barque_Intro" ID="{175A73BF-A51C-4721-B8D9-85348DC48C46}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Barque_Intro .wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="540212977"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Barque_Intro" ID="{175A73BF-A51C-4721-B8D9-85348DC48C46}" Platform="Linked"/>
+										<ActiveSource Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{78BFE421-B70B-4A34-96DC-0A50845AA96B}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -535,182 +260,6 @@
 										<ActiveSource Name="MUS_Story_SC_Eglise_Intro" ID="{6A2B0865-7785-44E1-BBC9-73165CE4B5DA}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name="MUS_Story_SC_Eglise_GuardsSearching" ID="{793BFF25-99F1-4793-83F6-215C3F28C36C}" ShortID="261411385">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Eglise_GuardsSearching" ID="{16799F2B-6A2D-4055-8351-08947F04FEE3}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Eglise_GuardsSearching.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="520178762"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Eglise_GuardsSearching" ID="{16799F2B-6A2D-4055-8351-08947F04FEE3}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Eglise_ImploreStatue" ID="{340496EC-77FC-4C4C-9CC8-95023E84E8F3}" ShortID="364666860">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Eglise_ImploreStatue" ID="{CFCB83A8-E474-42C7-A689-6821A4B8E21D}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Eglise_ImploreStatue.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="117888004"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Eglise_ImploreStatue" ID="{CFCB83A8-E474-42C7-A689-6821A4B8E21D}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Eglise_LightOn" ID="{DD19A12A-3451-4950-9DF0-E239CA7DECBF}" ShortID="684061552">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Eglise_LightOn" ID="{AF584968-359C-4128-B9B7-2399066A067E}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Eglise_LightOn.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="539971268"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Eglise_LightOn" ID="{AF584968-359C-4128-B9B7-2399066A067E}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Eglise_StainedGlassBaby" ID="{E4A45FC7-9763-46E0-833F-CE55CA3F6E2E}" ShortID="615869688">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Eglise_StainedGlassBaby" ID="{25AF1815-62F5-45EC-9D3F-FD629D8EF519}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Eglise_StainedGlassBaby.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="295096479"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Eglise_StainedGlassBaby" ID="{25AF1815-62F5-45EC-9D3F-FD629D8EF519}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Eglise_StainedGlassBroken" ID="{68C96F61-299E-4BAD-ABEC-F5AF439147AF}" ShortID="639901420">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Eglise_StainedGlassBroken" ID="{82222948-B0B6-464A-B4E8-A23A3EF0A9F8}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Eglise_StainedGlassBroken.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="705999339"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Eglise_StainedGlassBroken" ID="{82222948-B0B6-464A-B4E8-A23A3EF0A9F8}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Eglise_StainedGlassHim" ID="{6D5F5D80-C3B0-4D82-A20B-82574614CE1B}" ShortID="599876627">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Eglise_StainedGlassHim" ID="{B4DCCFB3-C2E3-424D-836D-91C3E156AE00}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Eglise_StainedGlassHim.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="736691730"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Eglise_StainedGlassHim" ID="{B4DCCFB3-C2E3-424D-836D-91C3E156AE00}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Eglise_StainedGlassLookingOcean" ID="{1FC664B8-73D4-4938-8753-05EFE19295C8}" ShortID="1003166380">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Eglise_StainedGlassLookingOcean" ID="{D282EC7F-28EA-4CEA-959F-9EADF74C6370}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Eglise_StainedGlassLookingOcean.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="694751466"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Eglise_StainedGlassLookingOcean" ID="{D282EC7F-28EA-4CEA-959F-9EADF74C6370}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MUS_Story_SC_Eglise_StainedGlassMentionned" ID="{E5F3DAC9-AE87-4D7A-AF9C-7DF5F4A97BC2}" ShortID="772055199">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="MUS_Story_SC_Eglise_StainedGlassMentionned" ID="{E67EAA66-9C7A-45B6-BACB-E4F200D60C26}">
-											<Language>SFX</Language>
-											<AudioFile>MUS_Story_SC_Eglise_StainedGlassMentionned.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="127521474"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="MUS_Story_SC_Eglise_StainedGlassMentionned" ID="{E67EAA66-9C7A-45B6-BACB-E4F200D60C26}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="MUS_Pont" ID="{F75BE034-53BC-4BED-8FE6-39D4E547DC64}" ShortID="662143979">
@@ -723,7 +272,7 @@
 								</Reference>
 							</ReferenceList>
 						</ActorMixer>
-						<ActorMixer Name="MUS_Port" ID="{913210B9-48F1-4340-A67E-B957457ED3E3}" ShortID="592314373">
+						<ActorMixer Name="MUS_SecretMeeting" ID="{913210B9-48F1-4340-A67E-B957457ED3E3}" ShortID="592314373">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -732,6 +281,88 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="MUS_Story_SC_SecretMeeting_Encore" ID="{5B45C1FE-1E67-4C48-B847-06C67ADB0BF5}" ShortID="680672254">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_Encore" ID="{B6BFAC86-45B4-4107-91C2-AEF37F2F228A}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_Encore.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="277727882"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_Encore" ID="{B6BFAC86-45B4-4107-91C2-AEF37F2F228A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_Intro" ID="{D0D49321-0E91-4817-8912-E732DF429D3A}" ShortID="946597622">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_Intro" ID="{8191AE83-6189-445D-8E4D-68D17B4A12B0}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_Intro.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="193431738"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_Intro" ID="{8191AE83-6189-445D-8E4D-68D17B4A12B0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_Meubler" ID="{7F616B84-4637-4F9A-AB5C-990DF399783C}" ShortID="205812196">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_Meubler" ID="{32F72CF1-0A45-46D8-9F57-19D96D6ABD22}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_Meubler.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1054106289"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_Meubler" ID="{32F72CF1-0A45-46D8-9F57-19D96D6ABD22}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="MUS_Tribunal" ID="{A774FE64-F9C1-4034-8286-72901F60DD69}" ShortID="847664634">
 							<ReferenceList>

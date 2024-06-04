@@ -29,7 +29,7 @@ VAR has_fail = false
     * [Attendre son interlocuteur.]
 - #audience:applause
     * [Attendre encore.]
-- #audience:debate
+- #audience:debate #playsound:Play_MUS_Story_SC_SecretMeeting_Encore
     * [Attendre plus fort.]
 - #audience:booing
 - SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #playsound:VOX_Souffleur_partenairedescene
@@ -37,29 +37,29 @@ SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes talents !
 SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance !
     * [Effectuer une danse. {t(DEXT, -10)}]
         {sc(CHAR, 0): -> dancing_S | -> dancing_F}
-        ** (dancing_S) #anim:Player:dancing_success
+        ** (dancing_S) #anim:Player:dancing_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami !
             -> success_entertaining_audience
-        ** (dancing_F) #anim:Player:dancing_failure
+        ** (dancing_F) #anim:Player:dancing_failure #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami.
             SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
     * [Faire des pompes. {t(STRE, -10)}]
         {sc(CHAR, 0): -> do_pushups_S | -> do_pushups_F}
-        ** (do_pushups_S) #anim:Player:pompe_success
+        ** (do_pushups_S) #anim:Player:pompe_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami !
             -> success_entertaining_audience
-        ** (do_pushups_F) #anim:Player:pompe_failure
+        ** (do_pushups_F) #anim:Player:pompe_failure #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, l'ami.
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
     * [Hypnotiser le public. {t(CHAR, -20)}]
         {sc(CHAR, 0): -> hypnotise_S | -> hypnotise_F}
-        ** (hypnotise_S) #anim:Player:hypnotise_success
+        ** (hypnotise_S) #anim:Player:hypnotise_success #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: ...
             SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal... Bien joué, l'ami !
             -> success_entertaining_audience
-        ** (hypnotise_F) #anim:Player:hypnotise_failure
+        ** (hypnotise_F) #anim:Player:hypnotise_failure #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: ...
             SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal...
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
