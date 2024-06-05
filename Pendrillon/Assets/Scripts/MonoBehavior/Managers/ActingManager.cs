@@ -962,7 +962,9 @@ namespace MonoBehavior.Managers
             var other = GameManager.Instance.GetCharacter(data[1]);
             if (other != null)
             {
-                target = other.transform.position;
+                //target = other.transform.position;
+                target = GameManager.Instance._gridScene.GetWorldPositon(other._coordsOnStatge);
+                Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Target: {target}");
             }
             else
             {

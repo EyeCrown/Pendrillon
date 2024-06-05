@@ -32,6 +32,8 @@ public class CharacterHandler : MonoBehaviour
     // Coroutines booleans
     private bool _leaveCoroutine = false;
     private bool _arriveCoroutine = false;
+
+    private Vector3 _lookAt = Vector3.zero;
     
     #endregion
 
@@ -213,12 +215,12 @@ public class CharacterHandler : MonoBehaviour
     {
         float time = 0.0f, duration = 0.2f;
         var startRotation = transform.rotation;
-        
-        transform.LookAt(targetPosition, Vector3.up);
-        var targetRotation = transform.rotation; //Quaternion.LookRotation((targetPosition - transform.position), Vector3.up);
+        //targetPosition += (targetPosition - transform.position);
+        _lookAt = targetPosition;
+        var targetRotation = Quaternion.LookRotation((targetPosition - transform.position), Vector3.up);
         //transform.rotation = startRotation;
         
-        Debug.Log($"{name} > Start rotation: {startRotation}");
+        Debug.Log($"{name} > Start rotation: {startRotation} to {targetPosition}");
         while (time < duration)
         {
             transform.rotation = Quaternion.Slerp(startRotation, targetRotation, time/duration);
@@ -349,6 +351,20 @@ public class CharacterHandler : MonoBehaviour
         Debug.Log("playing sound Play_VOX_" + characterName + "_Emotion_" + emotionName);
         AkSoundEngine.PostEvent("Play_VOX_" + characterName + "_Emotion_" + emotionName, gameObject);
     }
-    
-    
+
+    #region Gizmos
+
+    void OnDrawGizmosSelected()
+    {
+        if (_lookAt != Vector3.zero)
+        {
+            //Debug.Log($"Gizmos: {transform.position} to {_lookAt}");
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(transform.position, _lookAt + 5.0f * (_lookAt - transform.position));
+        }
+        
+        
+    }
+
+    #endregion
 }
