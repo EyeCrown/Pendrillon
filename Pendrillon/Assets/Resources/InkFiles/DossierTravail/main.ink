@@ -23,4 +23,3 @@ INCLUDE boss_battle.ink
 
 // Start the game
 -> barge
-//-> secret_meeting

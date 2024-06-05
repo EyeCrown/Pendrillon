@@ -17,8 +17,8 @@ VAR p_comp = 5 // Player's composition stat
 VAR p_luck = 5 // Player's luck stat
 
 // Modifiers
-VAR p_char_mod = 8 // Player's charisma modifier stat
-VAR p_stre_mod = 1 // Player's strength modifier stat
-VAR p_dext_mod = 1 // Player's dexterity modifier stat
-VAR p_comp_mod = 1 // Player's composition modifier stat
-VAR p_luck_mod = 1 // Player's luck modifier stat
+VAR p_char_mod = 0 // Player's charisma modifier stat
+VAR p_stre_mod = 0 // Player's strength modifier stat
+VAR p_dext_mod = 0 // Player's dexterity modifier stat
+VAR p_comp_mod = 0 // Player's composition modifier stat
+VAR p_luck_mod = 0 // Player's luck modifier stat
