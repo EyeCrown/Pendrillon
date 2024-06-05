@@ -88,7 +88,7 @@ public class Wheel : MonoBehaviour
 
     #endregion
 
-    #region Gizmos
+    /*#region Gizmos
 
     private void OnDrawGizmosSelected()
     {
@@ -123,5 +123,5 @@ public class Wheel : MonoBehaviour
     }
 
     
-    #endregion
+    #endregion*/
 }
