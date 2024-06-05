@@ -127,10 +127,24 @@ PLAYER: À dire vrai...
     * [(Mentir) J'ai tué le monstre.] PLAYER: J'ai trouvé le monstre à l'endroit indiqué par la carte, et je l'ai tué, avec l'aide de mon équipage. Quelle bataille avons-nous livrée ! #anim:Player:happy
     * [(Éluder la question) Rien...] PLAYER: Je me suis rendu sur place, je n'ai trouvé aucune créature, bien entendu... et je suis rentré. Fin de l'histoire.
 - PASSEUR: Pourquoi ne pas me dire ce qu'il s'est réellement passé ? Ton âme s'en verra peut-être allégée... #playsound:VOX_Ferryman_pourquoidireverite
-PLAYER: Bien, bien... Si tu insistes.
-PLAYER: Le voyage a duré près d'une année. Puis, après moult péripéties, nous sommes revenus... #playsound:VOX_Player_voyagedure1an
+PLAYER: Bien, bien... Si tu insistes, Passeur.
+PLAYER: Notre voyage dura...
+    * [Près d'une année.] PLAYER: ... près d'une année, en tout.
+    * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté.
+- PLAYER: Je garderai secret ce qu'il se passa lorsque nous atteignîmes le répère du Léviathan.
+PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX_Player_voyagedure1an
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreux playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
+- PASSEUR: Ainsi, c'est à votre retour à Miraterre que les problèmes ont commencé ?
+- PLAYER: En effet. Un dénouement...
+    * [Ironique.] PLAYER: ... des plus <i>ironiques</i>.
+        PASSEUR: Ironique, tu dis ?
+    * [Tragi-comique.] PLAYER: ... qu'on pourrait qualifier de <i>tragi-comique</i>.
+        PASSEUR: Tragi-comique, tu dis ?
+    * [Inattendu.] PLAYER: ... des plus <i>inattendus</i>.
+        PASSEUR: Inattendu, tu dis ?
+- PLAYER: Constatez par vous-même : nous avons bravé une tempête, affronté un monstre marin...
+PLAYER ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna...
 - -> trip_return
 
 // Scène 3

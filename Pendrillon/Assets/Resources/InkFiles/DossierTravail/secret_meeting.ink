@@ -179,7 +179,7 @@ ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poiss
     * [Rester silencieux.]
 - ARLE: Plus d'une fois, il manqua d'engloutir les Hommes... Fort heureusement, la Déesse nous sauva tous ! #audience:applause
 - ARLE: C'est pourquoi nous jouissons d'être en vie aujourd'hui, n'est-ce pas ?
-ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge... #audience:debate
+ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge... La créature, elle aussi, est en vie aujourd'hui. #audience:debate
     * [Moi, tuer le Léviathan ?] PLAYER: Suis-je en plein rêve, ou me demandes-tu vraiment d'aller tuer le Léviathan ? #anim:Player:question #audience:laugther
         ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse. #audience:choc
     * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. #audience:laughter #anim:Player:laugh

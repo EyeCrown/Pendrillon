@@ -124,7 +124,7 @@ VAR t_4_church_is_burnt = false
 === function trial(pVariable) ===
     ~ pVariable = true
     #trial
-    #playsound:Play_SFX_Story_JudgeBellFarTrial
+    #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake
     #wait:0.5 #audience:choc
     {
         - t_souffleur_explanations_bell == false:
