@@ -318,12 +318,16 @@ namespace MonoBehavior.Managers
                     }
                     else
                     {
-                        if (GameManager.Instance.GetCharacter(speaker) == null)
+                        var character = GameManager.Instance.GetCharacter(speaker);
+                        
+                        if (character == null)
                             Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > Unknown speaker | {speaker} |");
                         else
-                            GameManager.Instance.GetCharacter(speaker).DialogueUpdate.Invoke(dialogue);
+                        {
+                            character.DialogueUpdate.Invoke(dialogue);
+                            _masks.transform.Find(character.name.ToLower())?.gameObject.SetActive(true);
+                        }
 
-                        _masks.transform.Find(speaker.ToLower())?.gameObject.SetActive(true);
                         
                         // play sound
                         PlaySoundDialogAppears();

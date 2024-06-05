@@ -198,11 +198,11 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
         -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:happy
             ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour notre bonne reine !
                 ~ trial(t_1_respect_the_crown)
-            ** [La Reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence. #audience:laughter
+            ** [La reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence. #audience:laughter
                 ~ trial(t_1_disrespect_the_crown)
                 ARLE: Ces petites rimes, messire, pourraient vous coûter cher. #anim:Arle:deception
-    * [Pour la Reine Constance ?] PLAYER: Est-ce la Reine elle-même qui demande mon renfort ? #anim:Player:question
-        ARLE: Nulle demande ne saurait provenir de la bouche de la Reine, messire. Seulement des ordres...
+    * [Pour la reine Constance ?] PLAYER: Est-ce la reine elle-même qui demande mon renfort ? #anim:Player:question
+        ARLE: Nulle demande ne saurait provenir de la bouche de la reine, messire. Seulement des ordres...
         -> to_the_crown
 - ARLE: Puis-je ajouter, messire, que vaincre le Léviathan constituerait une offrande de taille à la Déesse Elle-même.
     * [J'en serais honoré !] PLAYER: J'honorerai la Déesse, j'en fais le serment ! #audience:ovation
@@ -210,7 +210,7 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
     * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme du dernier crachin ! #anim:Player:disappointed#audience:booing
         ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix. #anim:Arle:deception
         ~ trial(t_1_disrespect_irene)
-    * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la Reine, ni pour la Déesse, mais pour mon seul profit.
+    * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la reine, ni pour la Déesse, mais pour mon seul profit.
         ~ trial(t_1_disrespect_the_crown)
         ~ trial(t_1_disrespect_irene)
         ~ trial(t_1_gold_digger)

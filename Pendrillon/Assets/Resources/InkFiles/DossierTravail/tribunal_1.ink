@@ -92,7 +92,7 @@ JUGE ERNEST: Silence ! J'exige le silence ! #anim:Judge:bell #audience:silent
         JUGE ERNEST: Ne prenez la parole que lorsque le Juge vous la donne.
             ** [Hors de question !] PLAYER: Je suis un homme libre, citoyen de plein droit de Miraterre. Je puis parler librement ! #audience:booing #anim:Judge:bell
                 ~ audience_judgement(-0.02)
-                JUGE ERNEST: Accusé, je ne le répèterai pas deux fois : ceci est un lieu saint. Sachez rester à votre place.
+                JUGE ERNEST: Accusé, je ne le répéterai pas deux fois : ceci est un lieu saint. Sachez rester à votre place.
                 *** [Entendu.] PLAYER: C'est entendu. #anim:Judge:bell
                     ---- (agree_with_judge) JUGE ERNEST: Vous ai-je donné la parole ? Taisez-vous donc. Le Juge n'a nul besoin de votre assentiment.
                     ~ audience_judgement(-0.01)
@@ -113,7 +113,7 @@ SOUFFLEUR: N'oublie pas : dans ce procès, c'est le public que tu dois convaincr
 
 // Witness Arle
 = witness_arle
-- JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle, la trublionne de la reine  Constance. #anim:Judge:bell #move(Arle) #anim:Arle:bow #audience:applause
+- JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle, la trublionne de la reine Constance. #anim:Judge:bell #move(Arle) #anim:Arle:bow #audience:applause
 JUGE ERNEST: Décrivez au jury votre rencontre avec l'accusé, je vous prie.
 ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège d'occuper, au sein de la Couronne, un rôle de tout premier plan...
     * [(Se moquer) Contrairement à cette pièce.] PLAYER: Ce qui n'est pas le cas de ton rôle dans cette pièce... #audience:laughter #anim:Arle:angry
@@ -123,16 +123,16 @@ ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège
         JUGE ERNEST: Silence, vous deux ! Silence ! #anim:Judge:bell #audience:silent
     * [Ne pas l'interrompre.]
 - JUGE ERNEST: Poursuivez, je vous prie. #anim:Arle:bow
-    * [(Se moquer) Même Son Honneur s'ennuie.] PLAYER: Son Honneur en personne s'ennuie de ton discours ! Si ça continue, le public va déceder d'ennui. #audience:laughter #anim:Arle:angry
-        ARLE: C'est toi qui va mourir si tu continues à m'interrompre, minable !
+    * [(Se moquer) Même Son Honneur s'ennuie.] PLAYER: Son Honneur en personne baille en t'écoutant ! Si ça continue, le public va décéder d'ennui. #audience:laughter #anim:Arle:angry
+        ARLE: C'est toi qui vas mourir si tu continues à m'interrompre, minable !
         ~ audience_judgement(0.05)
         {make_arle_angry(): -> arle_leaves_stage}
-        JUGE ERNEST: Silence ! Je ne le répèterai pas : faites le silence ! #anim:Judge:bell #audience:silent
+        JUGE ERNEST: Silence ! Je ne le répéterai pas : faites le silence ! #anim:Judge:bell #audience:silent
         JUGE ERNEST: Poursuivez, témoin. #anim:Arle:bow
         ARLE: Où en étais-je ? Ah oui : un rôle de tout premier plan.
     * [Ne rien dire.]
 - ARLE: J'aime à penser que je suis, pour ce rôle, une actrice à la hauteur.
-    * [(Se moquer) Toi, une bonne actrice ?] PLAYER: Toi, une bonne actrice ? En voilà une nouvelle à ressuciter les noyés ! #audience:laughter #anim:Arle:angry
+    * [(Se moquer) Toi, une bonne actrice ?] PLAYER: Toi, une bonne actrice ? En voilà une nouvelle à ressusciter les noyés ! #audience:laughter #anim:Arle:angry
         ~ audience_judgement(0.05)
         ARLE: Tu vas te taire, oui ?! #anim:Arle:angry
         {make_arle_angry(): -> arle_leaves_stage}
@@ -150,11 +150,11 @@ ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à 
         JUGE ERNEST: Quant à vous, cessez d'objecter quand la parole ne vous a pas été donnée par le Juge en personne !
         JUGE ERNEST: Témoin, vous mentionniez une mission confiée à l'accusé par la Couronne.
     * [Rester silencieux.]
-- JUGE ERNEST: Précisez quelle était la nature de cette mision, je vous prie. #anim:Arle:bow
+- JUGE ERNEST: Précisez quelle était la nature de cette mission, je vous prie. #anim:Arle:bow
 ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme accusé, était de tuer le Léviathan, et d'en ramener l'organe vital.
 ARLE: Je veux bien entendu parler de son cœur, Votre Honneur. #audience:laughter #anim:Judge:bell #anim:Arle:bow
 JUGE ERNEST: Bien, bien... Est-ce tout ?
-ARLE: Puis-ajouter une dernière chose, Votre Honneur ?
+ARLE: Puis-je ajouter une dernière chose, Votre Honneur ?
     * [(Se moquer) Irène, pitié, faites-la taire.] PLAYER: Ô Irène, ayez pitié de nous, pauvres humains ! Ô, je vous en conjure : faites-la taire ! #audience:laughter #anim:Arle:angry
         ~ audience_judgement(0.05)
         ARLE: Cesse de m'interrompre, morveux ! #anim:Arle:angry
@@ -189,17 +189,17 @@ ARLE: Mon cœur me fit comprendre que l'effroyable était bien loin d'être à l
                 PLAYER: ... Arle a sous-entendu que la reine avait fait preuve de bêtise en me désignant. #audience:choc #audience:debate
                 JUGE ERNEST: L'accusé a raison sur ce point. #anim:Juge:bell #audience:applause #anim:Arle:angry
                 ~ audience_judgement(0.05)
-            ** [Je retire mon accusation.] PLAYER: J'en suis malheuresement incapable, Votre Honneur. Je retire mon accusation. #audience:booing #anim:Arle:laughter
+            ** [Je retire mon accusation.] PLAYER: J'en suis malheureusement incapable, Votre Honneur. Je retire mon accusation. #audience:booing #anim:Arle:laughter
                 ~ audience_judgement(-0.02)
     * [(Se moquer) Ma mission est à ma hauteur, et toi...] PLAYER: Je n'ai rien à objecter, Votre Honneur, sinon à remarquer que la reine confie à chacun une mission à la hauteur de son talent.
         PLAYER: À moi, elle confia la lourde tâche de tuer le Léviathan. À elle, la mission toute aussi difficile de m'apporter une carte... #audience:laugh #anim:Judge:bell
         ~ audience_judgement(0.05)
         {make_arle_angry(): -> arle_leaves_stage}
-        ARLE: Votre Honneur ! Vous voyez bien que le saligot essaye de décridibiliser ma perfor... je veux dire, mon témoignage ! #audience:laughter
+        ARLE: Votre Honneur ! Vous voyez bien que le saligaud essaye de décrédibiliser ma perfor... je veux dire, mon témoignage ! #audience:laughter
         JUGE ERNEST: Euh... Je... Oui... silence ! Je vous demande de faire le silence ! #anim:Juge:bell #audience:applause 
 - (accusation_of_being_forced) JUGE ERNEST: Passons à la suite, voulez-vous ? #anim:Juge:bell
 JUGE ENRNEST: Témoin, avez-vous autre chose à ajouter ?
-ARLE: J'accuse l'abjecte messire de n'avoir accepté la mission sacrée, confiée par notre bonne reine, que parce qu'il en était contraint ! #audience:debate
+ARLE: J'accuse l'abject messire de n'avoir accepté la mission sacrée, confiée par notre bonne reine, que parce qu'il en était contraint ! #audience:debate
 JUGE ERNEST: Accusé, qu'avez-vous à répondre ?
     * [C'est parfaitement faux !] PLAYER: 
     * [Personne n'a le droit de me contraindre !]
@@ -209,25 +209,25 @@ JUGE ERNEST: Accusé, qu'avez-vous à répondre ?
         {make_arle_angry(): -> arle_leaves_stage}
 - JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole.
 JUGE ERNEST: La vérité sort de la bouche du Juge. #audience:ovation #anim:Juge:mask
-- (accusation_of_disrespecting_queen) JUGE ERNEST: Poursivons, poursuivons...
-JUGE ERNEST: Témoin, avez-vous ne autre révélation à faire ?
+- (accusation_of_disrespecting_queen) JUGE ERNEST: Poursuivons, poursuivons...
+JUGE ERNEST: Témoin, avez-vous une autre révélation à faire ?
 ARLE: Bien entendu, Votre Honneur. {accuse_alre_to_disrespect_queen: L'affreux messire m'a accusé de manquer de respect à notre reine, mais celui-ci l'a tout bonnement humilié. | Je voudrais témoigner du fait que l'affreux messire a humilié notre reine.} #audience:choc #anim:Judge:bell
-JUGE ENRNEST: Poursivez, je vous prie.
+JUGE ENRNEST: Poursuivez, je vous prie.
 ARLE: Le terrible messire a cru bon de se moquer de la reine en faisant un bon mot, Votre Honneur.
     * [Je l'avoue, Votre Honneur...] PLAYER: J'ai honte d'admettre qu'elle dit la vérité, votre Honneur... #audience:booing
         JUGE ERNEST: Silence ! Ne vous ai-je pas déjà dit que vous n'avez aucun droit de prendre la parole quand bon vous semble, Accusé ? #anim:Judge:bell #audience:booing
         ~ audience_judgement(-0.02)
         ~ admit_disrespect_queen = true
-        JUGE ERNEST: Puisque l'Accusé a admit avoir prononcé ces terribles paroles...
+        JUGE ERNEST: Puisque l'Accusé a admis avoir prononcé ces terribles paroles...
         -> accusation_of_disrespecting_irene
     * [C'est faux !] PLAYER: Votre Honneur, elle ment ! #audience:debate
         JUGE ERNEST: Silence ! Ne vous ai-je pas déjà dit que vous n'avez aucun droit de prendre la parole quand bon vous semble, Accusé ? #anim:Judge:bell #audience:booing
         ~ audience_judgement(-0.02)
     * [Ne rien dire.]
 - JUGE ERNEST: Quelles paroles exactes témoignez-vous avoir entendu l'Accusé prononcer ?
-ARLE: L'abjecte messire a dit, je cite : « Constance et son inconstance m'inspirent l'indifférence. ». #audience:laughter
+ARLE: L'abject messire a dit, je cite : « Constance et son inconstance m'inspirent l'indifférence. ». #audience:laughter
 JUGE ERNEST: Accusé, qu'avez-vous à dire pour votre défense ?
-        * [J'admets avoir dit cela.] PLAYER: J'ai le regret d'admettre avoir fait ce jeu de mot, Votre Honneur... #audience:booing #anim:Judge:bell
+        * [J'admets avoir dit cela.] PLAYER: J'ai le regret d'admettre avoir fait ce jeu de mots, Votre Honneur... #audience:booing #anim:Judge:bell
             JUGE ERNEST: Ainsi avouez-vous avoir manqué de respect à la reine. #anim:Judge:bell
             ~ audience_judgement(-0.05)
         * [Je n'ai rien dit de tel.] PLAYER: Votre Honneur, mesdames et messieurs les jurés, je jure n'avoir rien dit de tel. #audience:debate
@@ -247,11 +247,11 @@ JUGE ERNEST: Témoin, avez-vous d'autres accusations à faire ? {arle_lied: Tâc
 ARLE: J'en ai peur...
 ARLE: Votre Honneur, il est en effet un ultime acte duquel je dois témoigner...
 ARLE: Celui-ci va choquer nos chers jurés, j'en ai peur... #audience:debate
-JUGE ERNEST: Alors, alors. La Vérité ne saurait souffir d'une quelconque censure. Poursuivez, je vous prie. #anim:Arle:bow
-ARLE: Alors que je lui confiais la mission qui lui était dûe... L'horripilant Accusé a insulté la Déesse en personne... #audience:choc
+JUGE ERNEST: Alors, alors. La Vérité ne saurait souffrir d'une quelconque censure. Poursuivez, je vous prie. #anim:Arle:bow
+ARLE: Alors que je lui confiais la mission qui lui était due... L'horripilant Accusé a insulté la Déesse en personne... #audience:choc
     ~ audience_judgement(-0.1)
 JUGE ERNEST: Est-ce vrai ? La déesse elle-même ? Notre Sauveuse, Irène ? Répondez, Accusé. Et vite !
-    * [J'avoue mon pêché...] PLAYER: Votre Honneur... Mesdames et messieurs les jurés... J'avoue ce pêché, en effet. #audience:choc
+    * [J'avoue mon péché...] PLAYER: Votre Honneur... Mesdames et messieurs les jurés... J'avoue ce péché, en effet. #audience:choc
         ~ audience_judgement(-0.1)
     * [C'est un mensonge !] PLAYER: Votre Honneur, c'est un mensonge ! Moi, insulter la Déesse ? Pas même sous la torture, vous m'entendez !
         ARLE: Un mensonge, un de plus ! #audience:debate
@@ -265,7 +265,7 @@ JUGE ERNEST: Est-ce vrai ? La déesse elle-même ? Notre Sauveuse, Irène ? Rép
             - t_1_disrespect_irene: JUGE ERNEST: « Je me fiche de la Déesse comme du dernier crachin ! ». #audience:booing #anim:Player:stressed #anim:Arle:bow
                 ~ audience_judgement(-0.1)
         }
-- JUGE ERNEST: {arle_lied_again == false: Accusé, ces paroles sont insoutenables, et par la Loi ainsi que la Foi, elle seront punies. | Accusé, je remercie la Déesse que vous n'ayez pas profané son nom comme le témoin le prétendait.}
+- JUGE ERNEST: {arle_lied_again == false: Accusé, ces paroles sont insoutenables, et par la Loi ainsi que la Foi, elles seront punies. | Accusé, je remercie la Déesse que vous n'ayez pas profané son nom comme le témoin le prétendait.}
 - JUGE ERNEST: {arle_lied_again == false: Témoin, la Déesse vous remercie pour votre témoignage. Vous pouvez quitter ce tribunal, désormais... | Témoin, profaner de tels mensonges à l'égard de l'Accusé est un acte grave ! La Déesse vous couvre de honte ! Hors de ma vue !} #audience:booing
     -> witnesses_capucine_and_marcello
 
@@ -276,8 +276,7 @@ CAPUCINE: Votre Honneur, avec tout mon respect... J'apprécierais d'être nommé
 JUGE ERNEST: Bon, bon... Je tâcherais d'y penser. #anim:Capucine:bow
 MARCELLO: Votre Horreur, moi aussi je voudrais être nommé Capucine... Euh... je veux dire Marcello, Vot' Horreur. #audience:laughter
 CAPUCINE: Ferme-la, tu veux ? N'en demande pas trop à Son Honneur. #playsound:VOX_Capucine_fermelaveuxtu
-CAPUCINE: Votre Honneur, veuillez excuser cet fieffé personnage. Sa place est dans une taverne... ou même une étable. #playsound:VOX_Capucine_veuillezexcuser #audience:laughter
-CAPUCINE: ... Pas dans un tel lieu. #playsound:VOX_Capucine_pasdansuntellieu #anim:Capucine:bow #audience:ovation
+CAPUCINE: Votre Honneur, veuillez excuser ce fieffé personnage. Sa place est dans une taverne... ou même une étable. #playsound:VOX_Capucine_veuillezexcuser #audience:laughter
 JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent
 JUGE ERNEST: Veuillez raconter aux jurés votre rencontre avec l'accusé. Et soyez brefs, voulez-vous ?
 CAPUCINE: Je vous remercie, Votre Honneur. #playsound:VOX_Capucine_jevousremercie #anim:Capucine:bow
@@ -288,20 +287,20 @@ CAPUCINE: Ferme-là, tu veux ? C'est à moi de raconter. #playsound:VOX_Capucine
 CAPUCINE: Mon camarade a effectivement entendu du bruit, et moi j'ai eu l'idée d'aller voir de plus près. #playsound:VOX_Capucine_moncamarade
 MARCELLO: Parle-lui de l'odeur, cheffe ! #audience:laughter
 CAPUCINE: La ferme, j'ai dit ! #playsound:VOX_Capucine_lafermejaidit #audience:laughter
-CAPUCINE: Mon camarade n'a pas tort, cependant : l'odeur du rafiot était épouvantable... À l'image du fiéffé gredin à ma gauche. #playsound:VOX_Capucine_lodeurepouvantable
+CAPUCINE: Mon camarade n'a pas tort, cependant : l'odeur du rafiot était épouvantable... À l'image du fieffé gredin à ma gauche. #playsound:VOX_Capucine_lodeurepouvantable
     * [À ta gauche, pas ta droite.] PLAYER: À ta gauche, pas ta droite. Quoique, à bien y réfléchir... #audience:laughter #anim:Capucine:bow
     * [Elle confond les hommes...] PLAYER: Je crois, Votre Honneur, que Madame la témoin confond les hommes... #audience:laughter #anim:Capucine:bow
 - JUGE ERNEST: Silence ! Poursuivez, je vous prie. #anim:Judge:bell #audience:silent
-CAPUCINE: Permettez-moi de vous épargner les détails, Votre Honneur : le malendrin cachait quelqu'un dans sa cale puante. #playsound:VOX_Capucine_permettezepargnerdetails #audience:choc
+CAPUCINE: Permettez-moi de vous épargner les détails, Votre Honneur : le malandrin cachait quelqu'un dans sa cale puante. #playsound:VOX_Capucine_permettezepargnerdetails #audience:choc
     ~ audience_judgement(-0.1)
-    * [C'est toi qui pue.] PLAYER: Votre Honneur, si j'admets que ma cale sent parfois la morue... Ce n'est rien en comparaison de l'odeur de Madame la témoin. #audience:laughter
-    * [C'est toi qui devrait te cacher.] PLAYER: Votre Honneur, je n'ai caché personne, en revanche...
+    * [C'est toi qui pues.] PLAYER: Votre Honneur, si j'admets que ma cale sent parfois la morue... Ce n'est rien en comparaison de l'odeur de Madame la témoin. #audience:laughter
+    * [C'est toi qui devrais te cacher.] PLAYER: Votre Honneur, je n'ai caché personne, en revanche...
         PLAYER: Puis-je suggérer à {capucine_surname} de cacher ce qui lui sert de visage ? #audience:laughter #anim:Capucine:angry
-- SOUFFLEUR: Psssst... Hé, l'ami ! Ces deux-là adorent faire rire le public, même à leur dépend...
+- SOUFFLEUR: Psssst... Hé, l'ami ! Ces deux-là adorent faire rire le public, même à leurs dépends...
 SOUFFLEUR: Tu n'arriveras à rien en te moquant d'eux !
-SOUFFLEUR: Puis-je te suggérer une autre idée ? Adresse-toi au juge en invoquant « le droit de la Lame ».
+SOUFFLEUR: Puis-je te suggérer une autre idée ? Adresse-toi au Juge en invoquant « le droit de la Lame ».
 SOUFFLEUR: Retiens bien : « le droit de la Lame », compris ? Fais-moi confiance, c'est ta seule chance !
-JUGE ERNEST: Accusé, est-ce la vérité ? Cachiez-vous illégallement quelqu'un dans la cale de votre navire ?
+JUGE ERNEST: Accusé, est-ce la vérité ? Cachiez-vous illégalement quelqu'un dans la cale de votre navire ?
     * [J'en appelle à la Loi !] PLAYER: Votre Honneur, je souhaiterais invoquer le.. euh..
         ** [Le droit de la Larme.] PLAYER: ... le droit de la Larme, Votre Honneur. #audience:laughter
             JUGE ERNEST: Sans doute l'Accusé fait-il référence au droit de la Lame ? #audience:debate
@@ -312,7 +311,7 @@ JUGE ERNEST: Accusé, est-ce la vérité ? Cachiez-vous illégallement quelqu'un
             JUGE ERNEST: Sans doute l'Accusé fait-il référence au droit de la Lame ? #audience:debate
             ~ audience_judgement(0.1)
 - JUGE ERNEST: Bien, bien... Le Juge rappelle aux jurés que le droit de la Lame consiste à défier en duel son opposant lors d'un procès. #audience:debate
-JUGE ERNEST: C'est une vieille loi, qui n'a plus été invoquée depuis des décénnies, mais soit... #audience:ovation
+JUGE ERNEST: C'est une vieille loi, qui n'a plus été invoquée depuis des décennies, mais soit... #audience:ovation
 JUGE ERNEST: Lequel des deux témoins voulez-vous défier ?
     * [Défier Capucine à un duel de poirier.] PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation
         JUGE ERNEST: Un duel... de poirier ? #audience:laughter
@@ -333,8 +332,8 @@ JUGE ERNEST: Lequel des deux témoins voulez-vous défier ?
 JUGE ERNEST: J'en appelle désormais à notre dernier témoin.
 JUGE ERNEST: La respectable prêtresse Agathe ! #audience:ovation #move(Agathe)
 JUGE ERNEST: Prêtresse Agathe, nous vous remercions de quitter la demeure d'Irène afin de vous joindre à nous lors de ce procès. #audience:applause #anim:Agathe:bow
-JUGE ERNEST: Je vous en prie, veillez nous raconter votre rencontre avec l'Accusé.
-AGATHE: J'ai acceuilli l'Accusé au sein de ma chapelle, par une nuit d'averse.
+JUGE ERNEST: Je vous en prie, veuillez nous raconter votre rencontre avec l'Accusé.
+AGATHE: J'ai accueilli l'Accusé au sein de ma chapelle, par une nuit d'averse.
 JUGE ERNEST: Avez-vous pour habitude de laisser des manants entrer en ce lieu saint ?
     * [Sans ça, elle se sentirait bien seule...] PLAYER: Sans cela, elle se sentirait bien seule, la pauvre... #audience:booing
         ~ audience_judgement(-0.02)
@@ -347,7 +346,7 @@ AGATHE: L'Accusé et moi avons discuté une partie de la nuit.
 JUGE ERNEST: Sur quel sujet portait votre entretien, prêtresse ?
 AGATHE: Notre discussion concernait la Déesse, Votre Honneur.
     * {souffleur_speech_about_not_mocking_agath_done == false} [Pour changer...] PLAYER: Ce n'est pas comme si la prêtresse avait cet unique sujet en tête... #audience:booing
-        JUGE ERNEST: Accusé, cessez d'interrompre une personne dont la parole compte bien davantage que la votre ! #audience:applause
+        JUGE ERNEST: Accusé, cessez d'interrompre une personne dont la parole compte bien davantage que la vôtre ! #audience:applause
         ~ audience_judgement(-0.02)
         {souffleur_speech_about_mocking_agath()}
         {souffleur_speech_about_agath_testimonial()}
@@ -432,7 +431,7 @@ JUGE ERNEST: ... partez ! #anim:Judge:bell #screenshake #audience:ovation
 - (round_against_capucine_S)
     ~ dext_difficulty -= 5
     ~ capucine_sc -= 5
-    JUGE ERNEST: L'Accusé {a tenu bon | a une nouvelle fois réussi | impresionne par ses talents au poirier | nous délivre une novelle fois une performance impressionnante |  semble désormais inarrêtable | réussit à nouveau }: qu'en sera t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #audience:ovation
+    JUGE ERNEST: L'Accusé {a tenu bon | a une nouvelle fois réussi | impressionne par ses talents au poirier | nous délivre une nouvelle fois une performance impressionnante |  semble désormais inarrêtable | réussit à nouveau }: qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #audience:ovation
     {roll_ai_sc(capucine_sc): -> next_round_against_capucine | -> victory_against_capucine}
     #audience:ovation
 - (defeat_against_capucine) JUGE ERNEST: Nous avons un vainqueur !
@@ -474,7 +473,7 @@ JUGE ERNEST: ... partez ! #anim:Judge:bell #screenshake #audience:ovation
 - (round_against_marcello_S)
     ~ stre_difficulty -= 5
     ~ marcello_sc -= 5
-    JUGE ERNEST: L'Accusé {a tenu bon | a une nouvelle fois réussi | impresionne par ses talents | nous délivre une novelle fois une performance impressionnante |  semble désormais inarrêtable | réussit à nouveau }: qu'en sera t-il de notre témoin ? ({marcello_sc}% que Marcello réussisse) #audience:ovation
+    JUGE ERNEST: L'Accusé {a tenu bon | a une nouvelle fois réussi | impressionne par ses talents | nous délivre une nouvelle fois une performance impressionnante |  semble désormais inarrêtable | réussit à nouveau }: qu'en sera-t-il de notre témoin ? ({marcello_sc}% que Marcello réussisse) #audience:ovation
     {roll_ai_sc(marcello_sc): -> next_round_against_marcello | -> victory_against_marcello}
     #audience:ovation
 - (defeat_against_marcello) JUGE ERNEST: Nous avons un vainqueur !
@@ -496,7 +495,7 @@ JUGE ERNEST: ... partez ! #anim:Judge:bell #screenshake #audience:ovation
 // The player talked about stained glass 1
 = talk_about_stained_glass_1
 AGATHE: J'ai évoqué avec l'Accusé l'histoire de la Déesse et des marins qui la sauvèrent de la tempête.
-JUGE ERNEST: Une histoire des plus émouvantes... Qu'a t-il eu à dire à ce sujet, prêtresse ?
+JUGE ERNEST: Une histoire des plus émouvantes... Qu'a-t-il eu à dire à ce sujet, prêtresse ?
 {
     - t_3_is_with_irene_saviors:
         AGATHE: Il fit preuve du plus grand des soutiens à l'égard des marins et du bébé, Votre Honneur. #audience:applause
@@ -519,7 +518,7 @@ JUGE ERNEST: Une histoire des plus émouvantes... Qu'a t-il eu à dire à ce suj
 AGATHE: Je n'ai pas manqué de le faire, Votre Honneur.
 JUGE ERNEST: Bien, bien. Et quelle fut sa réaction, quand il apprit que la lumière du phare, au loin, sauva les marins et l'enfant ?
 {
-    - t_3_believe_in_lighthouse_sacred_light: AGATHE: Il en fut profondémment ému, Votre Honneur. #audience:ovation
+    - t_3_believe_in_lighthouse_sacred_light: AGATHE: Il en fut profondément ému, Votre Honneur. #audience:ovation
         JUGE ERNEST: Voilà qui est tout à son honneur. #audience:applause
         ~ audience_judgement(0.2)
     - t_3_does_not_believe_in_lighthouse_sacred_light: AGATHE: Il... Il évoqua que cette histoire tenait davantage du mythe que de la réalité. #audience:choc
@@ -555,7 +554,7 @@ JUGE ERNEST: Et qu'a eu à dire l'Accusé au sujet du Juge ? #audience:silent
         JUGE ERNEST: Grand bien lui fasse.
     - t_3_question_judge_position: AGATHE: L'Accusé a remis en question votre position de Juge, Votre Honneur. #audience:choc
         JUGE ERNEST: Je vois, je vois...
-        JUGE ERNEST: Le Juge laissera les jurés décider de son sort... Puisse t-il finir au fond des Eaux ! #audience:ovation
+        JUGE ERNEST: Le Juge laissera les jurés décider de son sort... Puisse-t-il finir au fond des Eaux ! #audience:ovation
         ~ audience_judgement(-0.02)
 }
 - JUGE ERNEST: Ainsi se clôt votre témoignage, prêtresse. #audience:applause
@@ -565,7 +564,7 @@ JUGE ERNEST: Chacun vous remercie pour votre dévouement. #audience:ovation
 // The judge proceed to mention the Leviathan
 = judge_proceed_to_mention_the_leviathan
 JUGE ERNEST: Accusé, nous nous devons désormais d'aborder le sujet du Léviathan. #audience:debate
-JUGE ERNEST: En effet, vous fûtes missioné par la Couronne, afin de vous rendre en mer...
+JUGE ERNEST: En effet, vous fûtes missionné par la Couronne, afin de vous rendre en mer...
 JUGE ERNEST: ... et d'y terrasser le terrible Léviathan. #audience:choc
 JUGE ERNEST: Avez-vous tenu parole, Accusé ? Avez-vous, oui ou non, ramené le cœur de la créature ? #audience:ovation
     * [Je l'ai fait !] PLAYER: Bien entendu, Votre Honneur ! #audience:applause
@@ -574,7 +573,7 @@ JUGE ERNEST: Avez-vous tenu parole, Accusé ? Avez-vous, oui ou non, ramené le 
     * [J'ai eu un léger contretemps...] PLAYER: Votre Honneur, c'était mon souhait le plus cher, mais nous avons subi un contretemps.
         JUGE ERNEST: Un contretemps, vous dites ?
 - JUGE ERNEST: Un tel sujet ne doit pas être abordé avec légèreté, Accusé...
-JUGE ERNEST: Veillez raconter au jurés ainsi qu'eu Juge ce qu'il s'est passé lorsque vous avez trouvé l'emplacement indiqué par la carte.
+JUGE ERNEST: Veuillez raconter aux jurés ainsi qu'au Juge ce qu'il s'est passé lorsque vous avez trouvé l'emplacement indiqué par la carte.
     * [Une tempête déchirait les eaux...] PLAYER: Une terrible tempête déchirait l'océan...
     * [Je livrai une bataille contre l'océan...] PLAYER: Je livrai une véritable bataille contre l'océan...
     * [Je me démenai pour sauver mon équipage...] PLAYER: Je faisais tout ce qui était en mon pouvoir pour sauver mon équipage d'une mort certaine...

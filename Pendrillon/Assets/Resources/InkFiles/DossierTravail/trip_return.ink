@@ -184,7 +184,7 @@ MARCELLO: Il n'y a personne, cheffe.
         -> calm_the_situation
     * (calm_the_situation) [Amadouer.] PLAYER: Et si nous remontions sur le pont, pour discuter entre amis ?
         CAPUCINE: Un garde de la Couronne n'a d'ordre à recevoir de personne. #playsound:VOX_Capucine_gardecouronneordre
-        ** [Faire de l'esprit.] PLAYER: Pas même de la Reine ?
+        ** [Faire de l'esprit.] PLAYER: Pas même de la reine ?
             MARCELLO: Il a pas tort, cheffe.
             CAPUCINE: Cet abruti se fiche de nous. Mais il ne va pas rire longtemps... #playsound:VOX_Capucine_abrutifiche
                 -> confronted_about_fugitive
@@ -372,4 +372,4 @@ SOUFFLEUR: Toute l'équipe ainsi que la troupe te remercient d'avoir participé 
 SOUFFLEUR: Nous avons encore un peu de travail, alors on te laisse l'ami !
 SOUFFLEUR: N'oublie pas de répondre au questionnaire que nous allons te transmettre !
 SOUFFLEUR: À la prochaine, l'ami !
-- #wait:800
+- -> epilogue

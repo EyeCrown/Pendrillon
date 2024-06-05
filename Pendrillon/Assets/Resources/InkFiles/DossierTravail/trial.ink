@@ -207,11 +207,11 @@ VAR t_4_church_is_burnt = false
         - t_arle_patience <= 0:
             ARLE: Il suffit ! Assez de moqueries ! Ferme-la !! #audience:silent
             ARLE: Et vous, public « adoré », vous ne me méritez pas ! Cessez de rire ! #audience:debate
-            ARLE: Auriez-vous le millième de mon talent, vous seriez sur scène plutôt que de l'autre coté ! #audience:choc
+            ARLE: Auriez-vous le millième de mon talent, vous seriez sur scène plutôt que de l'autre côté ! #audience:choc
             ARLE: Bande de ploucs ! Vous pensez qu'avoir payé votre ticket vous donne tous les droits ?! #audience:booing
             // Une corde emmène Arle
             ARLE: Hé ! Laisse-moi ! Laisse-moi j'ai dit ! #audience:laughter
-            SOUFFLEUR: Oula, oula oula...
+            SOUFFLEUR: Oula, oula, oula...
             SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer !
             SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs !
             SOUFFLEUR: Quoi qu'il en soit: « Show must go on! », l'ami !
@@ -231,7 +231,7 @@ VAR t_4_church_is_burnt = false
         SOUFFLEUR: On ne dirait pas comme ça, mais l'actrice qui l'incarne est un véritable monument !
         SOUFFLEUR: Pour ne rien arranger, une bonne partie d'entre eux sont favorables aux enseignements d'Irène...
         SOUFFLEUR: Prends ton mal en patience et laisse Agathe témoigner, elle se contentera de dire la stricte vérité.
-        SOUFFLEUR: Éspérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ?
+        SOUFFLEUR: Espérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ?
     }
     ~ souffleur_speech_about_not_mocking_agath_done = true
 
@@ -245,5 +245,5 @@ VAR t_4_church_is_burnt = false
         SOUFFLEUR: Tu vas devoir laisser Agathe parler, car le public l'apprécie énormément...
         SOUFFLEUR: On ne dirait pas comme ça, mais l'actrice qui l'incarne est un véritable monument !
         SOUFFLEUR: Prends ton mal en patience et laisse Agathe témoigner, elle se contentera de dire la stricte vérité.
-        SOUFFLEUR: Éspérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ?
+        SOUFFLEUR: Espérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ?
     }

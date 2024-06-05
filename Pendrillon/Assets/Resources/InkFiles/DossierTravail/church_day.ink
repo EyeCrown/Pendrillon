@@ -32,7 +32,7 @@ MARCELLO: Et si on le réveillait avec une tape sur le museau, cheffe ?
 CAPUCINE: Cet abruti dort comme un nourrisson... #playsound:VOX_Capucine_cetabrutidort
 #anim:Player:wake_up
 PLAYER: Vous, ici ?! #playsound:Play_MUS_Story_SC_Eglise_6oclockWakeUp
-CAPUCINE: Heureuse de constater que tu nous reconnaîs... #playsound:VOX_Capucine_heureusedeconstaterquetunousreconnais
+CAPUCINE: Heureuse de constater que tu nous reconnais... #playsound:VOX_Capucine_heureusedeconstaterquetunousreconnais
 CAPUCINE: Remets-tu des noms sur nos visages, vermisseau ? #playsound:VOX_Capucine_remetstudesnoms
 SOUFFLEUR: SOUFFLEUR: Psssst... Hé, l'ami !
 SOUFFLEUR: Avec ces deux-là, pas besoin d'y aller mollo pour faire rire le public !
@@ -67,9 +67,9 @@ SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils adorent être ridiculis�
 - PLAYER: Approchez-vous... Contemplez le visage de celui que vous avez condamné... #audience:choc
 #move(Agathe)
 AGATHE: Ce lieu saint a abrité davantage de sauvageons que vous n'en avez croisé dans toute votre vie, mon enfant... #playsound:Play_MUS_Story_SC_Eglise_AgathesBetrayal
-AGATHE: Cependant aucun d'entre eux ne s'était rendu coupable d'un acte aussi grave que le votre... #audience:debate #anim:Agathe:contempt #anim:Player:ashamed
+AGATHE: Cependant aucun d'entre eux ne s'était rendu coupable d'un acte aussi grave que le vôtre... #audience:debate #anim:Agathe:contempt #anim:Player:ashamed
 AGATHE: Lorsque j’ai appris pourquoi vous étiez recherché, j’ai su qu’il était de mon devoir, non envers la Couronne mais la Déesse elle-même, de vous dénoncer.#audience:ovation #anim:Player:disappointed #anim:Capucine:laugh
 {CAPUCINE}: Tout le monde t'abandonne à ton triste sort, marmot. #playsound:VOX_Capucine_toutlemondetabandonne
 {CAPUCINE}: Mais tu ne seras bientôt plus seul... Tu vas aller rejoindre ton affreuse amie, vermine ! #playsound:VOX_Capucine_maistuneserabientôtplusseul
-{CAPUCINE}: Marcello, attrappe-le !! #playsound:VOX_Capucine_marcelloattrape
+{CAPUCINE}: Marcello, attrape-le !! #playsound:VOX_Capucine_marcelloattrape
 - -> barge.scene_5
