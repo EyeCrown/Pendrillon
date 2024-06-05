@@ -12,7 +12,6 @@ VAR failed_breaking_jester_crate = false
 #actor:Arle:???:ARLE
 #actor:Prompter:SOUFFLEUR
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
-#playsound:Play_AMB_SC_Cale_Ambiance
 #anim:Arle:hide
 
 #set:cale
