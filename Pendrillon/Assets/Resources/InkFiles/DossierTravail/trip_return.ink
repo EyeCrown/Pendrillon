@@ -372,4 +372,4 @@ SOUFFLEUR: Toute l'équipe ainsi que la troupe te remercient d'avoir participé 
 SOUFFLEUR: Nous avons encore un peu de travail, alors on te laisse l'ami !
 SOUFFLEUR: N'oublie pas de répondre au questionnaire que nous allons te transmettre !
 SOUFFLEUR: À la prochaine, l'ami !
-- #wait:800
+- -> epilogue
