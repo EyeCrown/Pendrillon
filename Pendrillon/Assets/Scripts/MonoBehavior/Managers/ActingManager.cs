@@ -7,6 +7,7 @@ using System.Reflection;
 using Febucci.UI.Core;
 using Ink.Runtime;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -276,8 +277,28 @@ namespace MonoBehavior.Managers
                 String[] words = _currentDialogue.Split(":");
                 
                 // foreach (var word in words)     Debug.Log($"AM.HandleDialogue > Part > {word}");
+
+                if (words[0].Contains("]"))
+                {
+                    Debug.Log("AM.HandleDialogue > Contains skillcheck");
+
+                    string scoreText = words[0].Remove(words[0].IndexOf("]") + 1,
+                        words[0].Length - (words[0].IndexOf("]") + 1));
+                    
+                    Debug.Log($"AM.HandleDialogue > Contains skillcheck: {scoreText}");
+                    
+                    words[0] = words[0].Remove(0, words[0].IndexOf(']')+1).Trim();
+                }
                 
-                // get character speaking
+                
+                HandleDialogue2(words);
+            }
+        }
+
+
+        void HandleDialogue2(string[] words)
+        {
+            // get character speaking
                 String speaker; 
                 String dialogue;
 
@@ -291,13 +312,6 @@ namespace MonoBehavior.Managers
                 {
                     speaker = words[0].Trim();
                     dialogue = String.Join(":", words.Skip(1));
-                    
-                    if (speaker.Contains("]"))
-                    {
-                        //Debug.Log("AM.HandleDialogue > Contains skillcheck");
-                        // Remove [...] part in speaker
-                        speaker = speaker.Remove(0, speaker.IndexOf(']')+1).Trim();
-                    }
                 }
                 
                 //Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
@@ -337,7 +351,6 @@ namespace MonoBehavior.Managers
                 });
                 
                 _dialogueAlreadyHandle = true;
-            }
         }
         
     
