@@ -40,13 +40,13 @@ SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton
 SOUFFLEUR: Permets-moi de te rafraîchir la mémoire, l'ami. #playsound:VOX_NPC_Souffleur_rafraichirmemoire
 SOUFFLEUR: « Ma mère m'a toujours dit... ».
     * [Ma mère m'a toujours dit...] PLAYER: Ma mère m'a toujours dit... #anim:Player:talk #playsound:VOX_Player_meretoujoursdit #playsound:Play_MUS_Story_SC_Barque_BadViolin1 #audience:applause
-- SOUFFLEUR: « ...qu'enfant, déjà, je n'étais pas très bavard. ». #playsound:VOX_Souffleur_pasbavard
-    * [...qu'enfant, déjà, je n'étais pas très bavard.] PLAYER: ...qu'enfant, déjà, je n'étais pas très bavard. #playsound:VOX_Player_pasbavard #playsound:Play_MUS_Story_SC_Barque_BadViolin2 #audience:applause
-PASSEUR: Vraiment ? J'ai pourtant ouï dire qu'en matière de baratin, tu n'étais pas le dernier... #playsound:VOX_Ferryman_baratinpasdernier #audience:applause
+- SOUFFLEUR: « ... qu'enfant, déjà, je n'étais pas très bavard. ». #playsound:VOX_Souffleur_pasbavard
+    * [... qu'enfant, déjà, je n'étais pas très bavard.] PLAYER: ... qu'enfant, déjà, je n'étais pas très bavard. #playsound:VOX_Player_pasbavard #playsound:Play_MUS_Story_SC_Barque_BadViolin2 #audience:applause
+PASSEUR: Vraiment ? J'ai pourtant ouï-dire qu'en matière de baratin, tu n'étais pas le dernier... #playsound:VOX_Ferryman_baratinpasdernier #audience:applause
 SOUFFLEUR: Psssst... Hé, l'ami ! #anim:Souffleur:colere #playsound:VOX_Souffleur_pssthecolere
 SOUFFLEUR: Quand je te souffle le texte, je n'y mets pas le ton...
 SOUFFLEUR: Ce n'est pas mon métier, tu piges ?
-SOUFFLEUR: Mais toi tu es acteur, pas vrai ?
+SOUFFLEUR: Mais toi, tu es acteur, pas vrai ?
 SOUFFLEUR: Alors mets-y de l'émotion, l'ami !
 - SOUFFLEUR: Reprenons : « Il est vrai que j'ai ce talent-là, mais... ». #anim:Souffleur:deception
     * [Il est vrai que j'ai ce talent-là, mais...] PLAYER: Il est vrai que j'ai ce talent-là, mais... #playsound:VOX_Player_ilestvraitalent
@@ -65,7 +65,7 @@ SOUFFLEUR: Poursuivons : « Je ne suis pas un homme de mauvaise compagnie. ».
 #audience:debate
 - SOUFFLEUR: Aïe ! C'est là qu'on va avoir un petit problème, l'ami.
 SOUFFLEUR: Le metteur en scène de cette pièce, le célèbre Jean Ornicar... son nom te dit sans doute quelque chose...
-SOUFFLEUR: Le respectable Ornicar a quitté la troupe. En assez mauvais terme, vois-tu.
+SOUFFLEUR: Le respectable Ornicar a quitté la troupe. En assez mauvais termes, vois-tu.
 SOUFFLEUR: Là où le bât blesse... c'est qu'il n'a jamais terminé d'écrire tes répliques.
 SOUFFLEUR: On aurait dû te prévenir avant, navré l'ami...
 SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance, l'ami ! #anim:Player:stress
@@ -86,7 +86,7 @@ SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! Show 
     * [À la taverne...] PLAYER: Un jour où je me trouvais à la taverne du Rat Bouilli, je reçus la missive d'un expéditeur inconnu.
 - PLAYER: Habituellement, une lettre de cette nature aurait fini au feu, mais un détail attira mon attention... #playsound:VOX_Player_unjour #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter1
     * [L'écriture.] PLAYER: La lettre était dotée d’une impeccable calligraphie. Ce détail ne pouvait signifier qu’une chose : notre expéditeur était du genre fortuné. #playsound:VOX_Player_lalettreecriture #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
-    * [Le destinataire.] PLAYER: La lettre était destinée à un certain {p_name} Jehovah Banes. Or, la seule personne à m’appeler ainsi est ma mère, qui est absolument et irrémédiablement illetrée... #playsound:VOX_Player_lalettredestinataire{p_name} #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
+    * [Le destinataire.] PLAYER: La lettre était destinée à un certain {p_name} Jehovah Banes. Or, la seule personne à m’appeler ainsi est ma mère, qui est absolument et irrémédiablement illettrée... #playsound:VOX_Player_lalettredestinataire{p_name} #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
     * [L'odeur.] PLAYER: J’ai reçu bien des lettres dans ma vie, certaines avaient l’odeur du sel marin ou des impôts impayés, mais jamais une odeur si... délicate. L'odeur d'un expéditeur fortuné. #playsound:VOX_Player_lalettreodeur #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
 - PLAYER: La lettre me donnait rendez-vous pour une cause « de la plus haute importance ».
 PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous... #playsound:VOX_Player_transitionsecretmeeting  #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
@@ -117,9 +117,9 @@ PASSEUR: Pourquoi avoir accepté une mission si périlleuse ? #anim:Passeur:ques
 PLAYER: À dire vrai...
     * [Je ne crois pas au Léviathan.] PLAYER: Je ne crois pas à ces histoires à dormir debout... Je prévoyais de faire le voyage, prétendre avoir tué le monstre et retourner à bon port. #audience:laughter
         PASSEUR: Tu as pourtant promis de ramener le cœur de la bête.
-            ** [J'avais un plan.] PLAYER: Personne n'a jamais vu le Léviathan de près : un cœur de baleine aurait suffit à faire illusion... #audience:laughter
+            ** [J'avais un plan.] PLAYER: Personne n'a jamais vu le Léviathan de près : un cœur de baleine aurait suffi à faire illusion... #audience:laughter
             ** [Je n'avais pas pensé à ça.] PLAYER: Je suis un homme de l'improvisation. J'aurai trouvé quelque chose... #audience:applause
-    * [Je rêvais le voir.] PLAYER: Je rêve de l'apercevoir, depuis petit. Ma mère me racontait des récits de marins l'ayant aperçu, au loin.
+    * [Je rêvais de le voir.] PLAYER: Je rêve de l'apercevoir, depuis petit. Ma mère me racontait des récits de marins l'ayant aperçu, au loin.
         PASSEUR: N'étais-tu pas effrayé ? #anim:Passeur:question
             ** [Si, mais tout de même...] PLAYER: Seul un idiot ne le serait pas. Mais ce sont ces histoires de créatures mythiques qui ont fait de moi le marin que je suis, alors... #anim:Player:stress
             ** [Pas le moins du monde.] PLAYER: Ce sont ces histoires de créatures mythiques qui ont fait de moi le marin que je suis. J'étais prêt à prendre tous les risques...
@@ -128,7 +128,7 @@ PLAYER: À dire vrai...
     * [(Éluder la question) Rien...] PLAYER: Je me suis rendu sur place, je n'ai trouvé aucune créature, bien entendu... et je suis rentré. Fin de l'histoire.
 - PASSEUR: Pourquoi ne pas me dire ce qu'il s'est réellement passé ? Ton âme s'en verra peut-être allégée... #playsound:VOX_Ferryman_pourquoidireverite
 PLAYER: Bien, bien... Si tu insistes.
-PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, nous sommes revenus... #playsound:VOX_Player_voyagedure1an
+PLAYER: Le voyage a duré près d'une année. Puis, après moult péripéties, nous sommes revenus... #playsound:VOX_Player_voyagedure1an
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreux playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
 - -> trip_return
@@ -171,9 +171,9 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, no
 
 // Start the scene
 - PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #playsound:VOX_Ferryman_pretressehonneur
-    * [Tout à fait.] PLAYER: Jamais n'a t-on vu âme plus acceuillante. Cependant... #playsound:VOX_Player_jamaisame
+    * [Tout à fait, mais...] PLAYER: Jamais n'a-t-on vu âme plus accueillante. Cependant... #playsound:VOX_Player_jamaisame
     * [En un sens...] PLAYER: D'une certaine manière, j'en conviens... Mais... #playsound:VOX_Player_certainemaniere
-    * [C'est ce que je pensais.] PLAYER: La même pensée me traversai l'esprit, alors que je m'endormais... Toutefois... #playsound:VOX_Player_penseetraverseesprit
+    * [C'est ce que je pensais.] PLAYER: La même pensée me traversait l'esprit, alors que je m'endormais... Toutefois... #playsound:VOX_Player_penseetraverseesprit
 - PASSEUR: Quoi donc ? #anim:Passeur:question #playsound:VOX_Ferryman_quoidonc
     * [(Colère froide)] #anim:Player:colere #playsound:Play_MUS_Story_SC_Barque_Treason
     * [(Tragique)] #anim:Player:triste #playsound:Play_MUS_Story_SC_Barque_Treason
@@ -204,10 +204,10 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult pérpéties, no
 PASSEUR: ... il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView
 PASSEUR: Vois-tu ces portes, devant nous ? Dans quelques instants, tu sauras si nous pouvons faire demi-tour, ensemble... #anim:Passeur:show_door #playsound:VOX_Ferryman_voistuporte
 PASSEUR: ... ou si c'est ici que nos chemins se sépareront. #playsound:VOX_Ferryman_voistuporte2
-    * [Que va t-il se passer ?] PLAYER: Que va t-il se passer ? Parle donc, Passeur... et ne me ménage pas. #anim:Player:stress #playsound:VOX_Player_quevapassemenagepas
+    * [Que va t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, Passeur... et ne me ménage pas. #anim:Player:stress #playsound:VOX_Player_quevapassemenagepas
         PASSEUR: Cela, je ne puis te le dire, voyageur. Je connais ton passé, mais j'ignore tout de ton destin. #playsound:VOX_Ferryman_jenepuisteledire
     * [Où mènent ces portes ?] PLAYER: Où mènent ces portes, Passeur ? #anim:Player:stress #playsound:VOX_Player_oumeneporte
-        PASSEUR: Tu le sauras bientôt, ou ne le saura jamais. Attendons un instant... #playsound:VOX_Ferryman_attendons
+        PASSEUR: Tu le sauras bientôt, ou ne le sauras jamais. Attendons un instant... #playsound:VOX_Ferryman_attendons
     * [(Rester silencieux).]
 - PASSEUR: Si les portes s'ouvrent, alors nous serons tenus de passer... #playsound:VOX_Ferryman_silesportes
     * [Qui nous y oblige ?] PLAYER: Qui nous y contraint, Passeur ? #anim:Player:question  #playsound:VOX_Player_quinousycontraint
@@ -218,5 +218,5 @@ PASSEUR: ... ou si c'est ici que nos chemins se sépareront. #playsound:VOX_Ferr
         PASSEUR: ... Je comprends. #playsound:VOX_Ferryman_jecomprends
 - #anim:open_trial_doors #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
 - PASSEUR: Tu vas devoir affronter ton destin. 
-PASSEUR: Ainsi en-ont décidé les portes, voyageur...  #playsound:VOX_Ferryman_devoiraffronterdestin 
+PASSEUR: Ainsi en ont décidé les portes, voyageur...  #playsound:VOX_Ferryman_devoiraffronterdestin 
 - -> tribunal_1
