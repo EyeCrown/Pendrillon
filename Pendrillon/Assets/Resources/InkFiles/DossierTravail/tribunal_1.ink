@@ -446,7 +446,7 @@ JUGE ERNEST: ... partez ! #anim:Judge:bell #screenshake #audience:ovation
     JUGE ERNEST: Ainsi en a jugé... euh la Déesse ! L'Accusé remporte le duel ! #audience:ovation #screenshake
     ~ audience_judgement(0.4)
     MARCELLO : L'important, c'est de participer, cheffe ! #anim:Marcello:applause
-    CAPUCINE: La ferme, tu veux ? #audience:laughter
+    CAPUCINE: La ferme, tu veux ? #audience:laughter #playsound:VOX_Capucine_lafermetuveux
     -> witness_agathe
     
 // Duel against Marcello
