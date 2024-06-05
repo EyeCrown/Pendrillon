@@ -35,6 +35,9 @@ namespace MonoBehavior.Managers
         [SerializeField] private GameObject _arlePrefab;
         [SerializeField] private GameObject _passeurPrefab;
         [SerializeField] private GameObject _prompterPrefab;
+        [SerializeField] private GameObject _agathePrefab;
+        [SerializeField] private GameObject _marcelloPrefab;
+        [SerializeField] private GameObject _capucinePrefab;
         [SerializeField] private GameObject _naidaPrefab;
 
         [Header("=== Locations ===")]
@@ -157,6 +160,15 @@ namespace MonoBehavior.Managers
                         break;
                     case "Naïda":
                         character = Instantiate(_naidaPrefab);
+                        break;
+                    case "Agathe":
+                        character = Instantiate(_agathePrefab);
+                        break;
+                    case "Marcello":
+                        character = Instantiate(_marcelloPrefab);
+                        break;
+                    case "Capucine":
+                        character = Instantiate(_capucinePrefab);
                         break;
                     default:
                         character = Instantiate(_characterPrefab);
