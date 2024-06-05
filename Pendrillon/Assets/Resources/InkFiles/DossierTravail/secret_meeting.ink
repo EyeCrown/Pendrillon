@@ -36,8 +36,8 @@ VAR has_fail = false
 - SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #playsound:VOX_Souffleur_partenairedescene
 SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes talents !
 SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance !
-    * [Effectuer une danse. {t(DEXT, 0)}]
-        {sc(DEXT, 0): -> dancing_S | -> dancing_F}
+    * [Effectuer une danse. {t(DEXT, 30)}]
+        {sc(DEXT, 30): -> dancing_S | -> dancing_F}
         ** (dancing_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami !
             -> success_entertaining_audience
@@ -45,8 +45,8 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami.
             SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
-    * [Faire des pompes. {t(STRE, 0)}]
-        {sc(STRE, 0): -> do_pushups_S | -> do_pushups_F}
+    * [Faire des pompes. {t(STRE, 30)}]
+        {sc(STRE, 30): -> do_pushups_S | -> do_pushups_F}
         ** (do_pushups_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami !
             -> success_entertaining_audience
@@ -54,8 +54,8 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, l'ami.
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
-    * [Hypnotiser le public. {t(CHAR, 0)}]
-        {sc(CHAR, 0): -> hypnotise_S | -> hypnotise_F}
+    * [Hypnotiser le public. {t(CHAR, 30)}]
+        {sc(CHAR, 30): -> hypnotise_S | -> hypnotise_F}
         ** (hypnotise_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Wow...
             SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal... Bien joué, l'ami !
@@ -113,8 +113,8 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
         BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:triste #audience:laughter
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question
             -> arle_presentation
-        ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 0)}]
-            {sc(CHAR, 0): -> mock_arle_S | -> mock_arle_F}
+        ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 30)}]
+            {sc(CHAR, 30): -> mock_arle_S | -> mock_arle_F}
             *** (mock_arle_S) Tu es une authentique bouffonne... #anim:Arle:triste #audience:laughter
                 BOUFFONNE: Bouffonne est l'une de mes professions, mais ce n'est pas mon nom. #anim:Arle:stress
                 -> arle_presentation
@@ -187,8 +187,8 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
     * [Il va falloir me payer grassement.] PLAYER: Si ton maître veut me faire courir un tel risque... Il a intérêt à me payer grassement ! #audience:laughter
 - ARLE: Si vous acceptez de ramener le cœur du terrible Léviathan, mon maître vous offrira le poids de votre navire en or.
     * [Une sacrée somme.] PLAYER: Une somme qui n'est pas à prendre à la légère... #anim:Player:joy
-    * [(Négocier) Mon navire est léger. {t(CHAR, -20)}]
-        {sc(CHAR, -20): -> negociate_S | -> negociate_F} 
+    * [(Négocier) Mon navire est léger. {t(CHAR, -10)}]
+        {sc(CHAR, -10): -> negociate_S | -> negociate_F} 
             *** (negociate_S) PLAYER: Mon navire est fait d'un bois très léger, voyez-vous...
                 ARLE: Vous êtes dur en affaire, messire. Alors disons le double ! #anim:Arle:colere
             *** (negociate_F) PLAYER: Mon navire, euh... est au régime. Il a perdu du poids, et... #anim:Player:stress
@@ -198,7 +198,7 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
         -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:joie
             ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour notre bonne reine !
                 ~ trial(t_1_respect_the_crown)
-            ** [La Reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence.
+            ** [La Reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence. #audience:laughter
                 ~ trial(t_1_disrespect_the_crown)
                 ARLE: Ces petites rimes, messire, pourraient vous coûter cher. #anim:Arle:deception
     * [Pour la Reine Constance ?] PLAYER: Est-ce la Reine elle-même qui demande mon renfort ? #anim:Player:question
