@@ -180,7 +180,8 @@ MARCELLO: Il n'y a personne, cheffe.
         ** [Calmer le jeu. {t(CHAR, 10)}]
             {sc(CHAR, 10): -> try_diplomacy_S | -> try_diplomacy_F}
             *** (try_diplomacy_S) -> calm_the_situation
-            *** (try_diplomacy_F) PLAYER: Euh... Pardon, j'ai tendance à dire tout haut ce que je pense tout bas... -> calm_the_situation
+            *** (try_diplomacy_F) PLAYER: Euh... Pardon, j'ai tendance à dire tout haut ce que je pense tout bas... 
+        -> calm_the_situation
     * (calm_the_situation) [Amadouer.] PLAYER: Et si nous remontions sur le pont, pour discuter entre amis ?
         CAPUCINE: Un garde de la Couronne n'a d'ordre à recevoir de personne. #playsound:VOX_Capucine_gardecouronneordre
         ** [Faire de l'esprit.] PLAYER: Pas même de la Reine ?

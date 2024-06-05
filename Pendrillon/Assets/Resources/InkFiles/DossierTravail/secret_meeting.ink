@@ -91,7 +91,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - // Arle fait son apparition
     * [Que faisais-tu cachée ?] PLAYER: Que faisais-tu là, cachée tel un rat ? #anim:Player:question
         BOUFFONNE: J'apprenais à vous connaître, messire. Je vous observais...
-        ** [Me connaître ?] PLAYER: Me connaître, moi ? #anim:Player:surprise
+        ** [Me connaître ?] PLAYER: Me connaître, moi ? #anim:Player:surprised
             BOUFFONNE: Parfaitement, messire.
             *** [Échangeons nos noms.] PLAYER: Faisons un marché. Je t'échange mon nom contre le tien. Qu'en dis-tu ? N'est-ce pas là une honnête transaction ?
                 BOUFFONNE: J'ai bien peur, messire, de posséder déjà ce que vous proposez de m'offrir... #anim:Arle:deception
@@ -99,27 +99,27 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
                 **** [Et à qui {p_name} a-t-il l'honneur ?] PLAYER: Et avec qui ai-je le plaisir de m'entretenir ? #anim:Player:question
                     -> arle_presentation
                 **** [Refuses-tu d'annoncer qui tu es ?] PLAYER: Refuses-tu d'annoncer qui tu es...
-                    ***** [... plaisantine ?] PLAYER: ... plaisantine ? #anim:Player:question #anim:Arle:triste
+                    ***** [... plaisantine ?] PLAYER: ... plaisantine ? #anim:Player:question #anim:Arle:sad
                         -> arle_presentation
-                    ***** [... malandrine ?] PLAYER: ... malandrine ? #anim:Player:question #anim:Arle:triste
+                    ***** [... malandrine ?] PLAYER: ... malandrine ? #anim:Player:question #anim:Arle:sad
                         -> arle_presentation
         ** [C'est toi que je veux connaître.] PLAYER: La politesse exige qu'on se présente le premier.
-            BOUFFONNE: Me présenter ? Cela, je sais le faire, et fort bien ! #anim:Arle:joie
+            BOUFFONNE: Me présenter ? Cela, je sais le faire, et fort bien ! #anim:Arle:happy
             --- (arle_presentation) BOUFFONNE: Je suis Arle, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle #audience:ovation
     * [Es-tu l'autrice de la lettre ?] PLAYER: Est-ce donc toi qui as écrit la lettre que j'ai reçue la veille ? #anim:Player:question
-        BOUFFONNE: Je sais faire bien des choses, messire... #anim:Arle:joie
+        BOUFFONNE: Je sais faire bien des choses, messire... #anim:Arle:happy
         BOUFFONNE: Faire la belle... #anim:Arle:prettypose
         BOUFFONNE: Faire le show... #anim:Arle:acrobatics
-        BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:triste #audience:laughter
+        BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question
             -> arle_presentation
         ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 30)}]
             {sc(CHAR, 30): -> mock_arle_S | -> mock_arle_F}
-            *** (mock_arle_S) Tu es une authentique bouffonne... #anim:Arle:triste #audience:laughter
-                BOUFFONNE: Bouffonne est l'une de mes professions, mais ce n'est pas mon nom. #anim:Arle:stress
+            *** (mock_arle_S) Tu es une authentique bouffonne... #anim:Arle:sad #audience:laughter
+                BOUFFONNE: Bouffonne est l'une de mes professions, mais ce n'est pas mon nom. #anim:Arle:stressed
                 -> arle_presentation
-            *** (mock_arle_F) Une authentique bouffonne... #anim:Player:stress #anim:Arle:joie
-                BOUFFONNE: Je me plais à inspirer le rire, le bonheur... la félicité ! Vous plaisez-vous à inspirer la pitié ? #anim:Arle:joie #audience:laugther #anim:Player:triste
+            *** (mock_arle_F) Une authentique bouffonne... #anim:Player:stressed #anim:Arle:happy
+                BOUFFONNE: Je me plais à inspirer le rire, le bonheur... la félicité ! Vous plaisez-vous à inspirer la pitié ? #anim:Arle:happy #audience:laugther #anim:Player:sad
                 -> arle_presentation
 - #character_presentation:Arle
     * [Qui t'envoie ?] PLAYER: Je présume que tu es au service de quelqu'un. Qui donc ? #anim:Player:question
@@ -139,14 +139,14 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * [Je t'écoute.]  -> what_is_the_mission
     * [Dépêche-toi !]  -> what_is_the_mission
 - (what_is_the_mission) PLAYER: Quelle est donc cette mission ? #anim:Player:question #playsound:VOX_Player_quelleestcettemission
-ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #anim:Arle:question #playsound:VOX_Arle_quelrapporttuer #anim:Player:surprise #audience:choc
+ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #anim:Arle:question #playsound:VOX_Arle_quelrapporttuer #anim:Player:surprised #audience:choc
     * [Hors de question.] PLAYER: Je t'arrête tout de suite, ôter une vie n'est pas dans mes pratiques. Je suis un marin. Tout juste suis-je bon à tuer un poisson... #anim:Player:non
-        ARLE: Il se trouve justement que c'est un poisson que l'on souhaiterait voir mort. Un gros poisson. #anim:Arle:joie
+        ARLE: Il se trouve justement que c'est un poisson que l'on souhaiterait voir mort. Un gros poisson. #anim:Arle:happy
         ~ trial(t_1_refuse_to_kill)
         -- (big_fish)
         ** [Un gros poisson ?] PLAYER : Un gros poisson tu dis ? Gros comment ? #anim:Player:question
             ARLE: Je n'ai pas les bras assez longs, messire. Gros comme le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
-        ** [Assez de mystère !] PLAYER: Il suffit ! J'en ai assez de tout ce mystère : parle maintenant ou permets-moi d'aller me recoucher. #anim:Player:colere
+        ** [Assez de mystère !] PLAYER: Il suffit ! J'en ai assez de tout ce mystère : parle maintenant ou permets-moi d'aller me recoucher. #anim:Player:angry
             ARLE : Ce poisson est un très gros poisson, messire. Aussi gros que le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
     * [Sans soucis.] PLAYER : Je n'y vois aucun problème. Dis-m'en plus : qui voulez-vous voir périr ?
             ARLE: Un poisson, messire. Un gros poisson.
@@ -156,15 +156,15 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
     * [Qu'est-ce que c'est ?] PLAYER: Qu'est-ce donc ? #anim:Player:question
 - ARLE: Un marin tel que vous ne reconnaît-il pas une carte quand il en voit une, messire ? #anim:Arle:bow #audience:laughter
     * [Quel endroit indique t-elle ?] PLAYER: Quel endroit indique-t-elle ? #anim:Player:question
-        ARLE: En voilà une question intéressante... #anim:Arle:joie
+        ARLE: En voilà une question intéressante... #anim:Arle:happy
     * [Une carte, pourquoi donc ?] PLAYER: Pourquoi aurais-je besoin d'une carte ? #anim:Player:question
-        ARLE: Vous le saurez bien assez tôt... #anim:Arle:joie
+        ARLE: Vous le saurez bien assez tôt... #anim:Arle:happy
     * [Pas besoin de carte.] PLAYER: Je n'ai nul besoin de carte. Je puis déjà aller où je le désire...
         ARLE: Prenez-là tout de même, faites-moi confiance, messire...
 ~ add_to_inventory(i_map_leviathan)
 - ARLE: Puis-je vous raconter une petite histoire, messire ? #anim:Arle:question
     * [J'adore les histoires !] PLAYER: Je t'en prie !
-    * [Fais vite.] PLAYER: Je n'ai point ton temps, presse-toi. #anim:Player:colere
+    * [Fais vite.] PLAYER: Je n'ai point ton temps, presse-toi. #anim:Player:angry
     * [Hors de question.] PLAYER: Non. #anim:Player:non
         ARLE: Si je ne le fais pas pour vous, messire...
         ARLE: Je le ferai pour eux. #anim:Arle:point_audience #audience:applause
@@ -174,7 +174,7 @@ ARLE: Pour survivre, les Hommes durent bâtir un immense navire... #audsience:ov
 ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poisson...
 - #anim:Arle:swimming #audience:laughter // Arle, accroché à une corde, mime un poisson qui nage
 - ARLE: Ce poisson, voyez-vous, était si gros qu'il aurait pu avaler une ville entière. #audience:choc
-    * [Le Léviathan !] PLAYER: Le léviathan ! #anim:Player:surprise #audience:choc
+    * [Le Léviathan !] PLAYER: Le léviathan ! #anim:Player:surprised #audience:choc
         ARLE: Le Léviathan, messire.
     * [Rester silencieux.]
 - ARLE: Plus d'une fois, il manqua d'engloutir les Hommes... Fort heureusement, la Déesse nous sauva tous ! #audience:applause
@@ -190,12 +190,12 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
     * [(Négocier) Mon navire est léger. {t(CHAR, -10)}]
         {sc(CHAR, -10): -> negociate_S | -> negociate_F} 
             *** (negociate_S) PLAYER: Mon navire est fait d'un bois très léger, voyez-vous...
-                ARLE: Vous êtes dur en affaire, messire. Alors disons le double ! #anim:Arle:colere
-            *** (negociate_F) PLAYER: Mon navire, euh... est au régime. Il a perdu du poids, et... #anim:Player:stress
+                ARLE: Vous êtes dur en affaire, messire. Alors disons le double ! #anim:Arle:angry
+            *** (negociate_F) PLAYER: Mon navire, euh... est au régime. Il a perdu du poids, et... #anim:Player:stressed
                 ARLE: Messire, ces simagrées ne vous honorent pas. Notre position est ferme, j'en ai peur. #anim:Arle:deception
 - ARLE: Ramenez-nous le cœur de l'immonde Léviathan, sinon pour la gloire, pour l'intérêt de la Couronne.
     * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la Couronne qui t'envoie ? #anim:Player:question
-        -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:joie
+        -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:happy
             ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour notre bonne reine !
                 ~ trial(t_1_respect_the_crown)
             ** [La Reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence. #audience:laughter
@@ -207,7 +207,7 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
 - ARLE: Puis-je ajouter, messire, que vaincre le Léviathan constituerait une offrande de taille à la Déesse Elle-même.
     * [J'en serais honoré !] PLAYER: J'honorerai la Déesse, j'en fais le serment ! #audience:ovation
         ~ trial(t_1_respect_irene)
-    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme du dernier crachin ! #anim:Player:deception #audience:booing
+    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme du dernier crachin ! #anim:Player:disappointed#audience:booing
         ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix. #anim:Arle:deception
         ~ trial(t_1_disrespect_irene)
     * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la Reine, ni pour la Déesse, mais pour mon seul profit.
