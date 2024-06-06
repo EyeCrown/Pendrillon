@@ -20,6 +20,12 @@ public class Map : MonoBehaviour
     [SerializeField] [Range(0, -10)] private float _yOffset;
     private Vector3 _positionOutsideStage;
     private Vector3 _positionOnStage;
+
+    [Header("=== Movement Curves ===")] 
+    [SerializeField] private AnimationCurve _arrivingCurve;
+    [SerializeField] private AnimationCurve _leavingCurve;
+    [SerializeField] private AnimationCurve _cursorCurve;
+    public float multiplier;
     
     #endregion
 
@@ -39,6 +45,20 @@ public class Map : MonoBehaviour
         //StartCoroutine(MoveCursor(_place1, _place2));
         _light.SetActive(false);
         _cursor.transform.position = _place1;
+    }
+
+    void Update()
+    {
+        float xOffset = (Mathf.PingPong(Time.time, 2) - 1) * multiplier;
+        float zOffset = (Mathf.PingPong(Time.time, 2) - 1) * -multiplier;
+
+        _positionOutsideStage.x += xOffset;
+        _positionOnStage.x += xOffset;
+        
+        _positionOutsideStage.z += zOffset;
+        _positionOnStage.z += zOffset;
+        
+        transform.position += new Vector3(xOffset, 0, zOffset);
     }
     
     #endregion
@@ -73,11 +93,12 @@ public class Map : MonoBehaviour
     IEnumerator ArriveOnStage(IEnumerator coroutine)
     {
         Debug.Log("Map.ArriveOnStage > Start arriving");
-        float time = 0.0f, duration = 1.4f;
+        float time = 0.0f, duration = 2.5f;
 
         while (time < duration)
         {
-            transform.position = Vector3.Lerp(_positionOutsideStage, _positionOnStage, time / duration);
+            transform.position = Vector3.Lerp(_positionOutsideStage, _positionOnStage, 
+                _arrivingCurve.Evaluate(time / duration));
             time += Time.deltaTime;
             yield return null;
         }
@@ -91,7 +112,8 @@ public class Map : MonoBehaviour
 
         while (time < duration)
         {
-            transform.position = Vector3.Lerp(_positionOnStage,_positionOutsideStage, time / duration);
+            transform.position = Vector3.Lerp(_positionOnStage,_positionOutsideStage, 
+                _leavingCurve.Evaluate(time / duration));
             time += Time.deltaTime;
             yield return null;
         }
@@ -115,7 +137,8 @@ public class Map : MonoBehaviour
 
         while (time < duration)
         {
-            _cursor.transform.localPosition = Vector3.Lerp(startPos, endPos, time / duration);
+            _cursor.transform.localPosition = Vector3.Lerp(startPos, endPos, 
+                _cursorCurve.Evaluate(time / duration));
             _cursor.transform.localPosition = 
                 new Vector3(0.105f, _cursor.transform.localPosition.y, _cursor.transform.localPosition.z);
             time += Time.deltaTime;
