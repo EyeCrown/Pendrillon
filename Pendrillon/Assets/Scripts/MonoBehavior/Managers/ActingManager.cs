@@ -80,6 +80,10 @@ namespace MonoBehavior.Managers
         public List<Button> _choicesButtonList;
 
         #endregion
+
+        [Header("=== Wheel ===")]
+        public Wheel _wheel;
+        [HideInInspector] public bool _canContinueDialogue;
         
         // Dialogue
         string _currentDialogue;
@@ -272,31 +276,39 @@ namespace MonoBehavior.Managers
                     return;
                 
                 //Debug.Log($"AM.HandleDialogue > Dialogue > {_currentDialogue} | Length: {_currentDialogue.Length}");
+                _canContinueDialogue = false;
                 
                 // split dialogue in 2
                 String[] words = _currentDialogue.Split(":");
                 
                 // foreach (var word in words)     Debug.Log($"AM.HandleDialogue > Part > {word}");
-
+                
+                // Check if there is a skillcheck
                 if (words[0].Contains("]"))
                 {
-                    Debug.Log("AM.HandleDialogue > Contains skillcheck");
-
                     string scoreText = words[0].Remove(words[0].IndexOf("]") + 1,
                         words[0].Length - (words[0].IndexOf("]") + 1));
+
+                    string resultText = scoreText.Remove(scoreText.IndexOf("/")).Remove(0, 1);
+                    int result = int.Parse(resultText);
                     
-                    Debug.Log($"AM.HandleDialogue > Contains skillcheck: {scoreText}");
+                    Debug.Log($"AM.HandleDialogue > Contains skillcheck: {scoreText} | Result: {result}");
                     
                     words[0] = words[0].Remove(0, words[0].IndexOf(']')+1).Trim();
+                    
+                    StartCoroutine(_wheel.SpinningCoroutine(result));
+                }
+                else
+                {
+                    _canContinueDialogue = true;
                 }
                 
-                
-                HandleDialogue2(words);
+                HandleDialogueText(words);
             }
         }
 
 
-        void HandleDialogue2(string[] words)
+        void HandleDialogueText(string[] words)
         {
             // get character speaking
                 String speaker; 
@@ -314,7 +326,7 @@ namespace MonoBehavior.Managers
                     dialogue = String.Join(":", words.Skip(1));
                 }
                 
-                //Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
+                Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
                 
                 if (speaker == "PLAYER")
                     _speakerText.text = _playerName;
@@ -349,7 +361,7 @@ namespace MonoBehavior.Managers
                         StartCoroutine(GenerateText(dialogue));
                     }
                 });
-                
+                Debug.Log("Allo ?");
                 _dialogueAlreadyHandle = true;
         }
         
@@ -1175,6 +1187,12 @@ namespace MonoBehavior.Managers
 
         IEnumerator GenerateText(string textToDisplay)
         {
+            while (!_canContinueDialogue)
+            {
+                //Debug.Log("Wait to display text");
+                yield return null;
+            }
+            
             _dialogueBox.SetActive(true);
             
             _dialogueTypewriter.onTextShowed.AddListener(DialogueTextFinished);

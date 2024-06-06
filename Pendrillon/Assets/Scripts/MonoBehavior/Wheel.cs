@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MonoBehavior.Managers;
 using UnityEditor;
 using UnityEngine;
 
@@ -33,7 +34,7 @@ public class Wheel : MonoBehaviour
     
     void Start()
     {
-        StartCoroutine(LerpPositionCoroutine(_positionOnStage, Spin));
+        //StartCoroutine(LerpPositionCoroutine(_positionOnStage, Spin));
     }
 
     private void OnEnable()
@@ -46,82 +47,47 @@ public class Wheel : MonoBehaviour
 
     #region Methods
 
-    public void Spin()
+    /*public void Spin()
     {
         transform.rotation = Quaternion.Euler(_score * 3.6f, 0, 0);
         StartCoroutine(SpinningCoroutine());
-    }
+    }*/
 
     #endregion
 
     #region Coroutines
 
-    IEnumerator LerpPositionCoroutine(Vector3 destination, Action callbackOnFinish = null, float duration = 4.0f)
+    public IEnumerator SpinningCoroutine(int score)
     {
-        float time = 0.0f;
+        float duration = 1.4f, time = 0.0f;
+        transform.rotation = Quaternion.Euler(score * -3.6f, 0, 0);
+        _anim.Play("Spin");
 
-        Vector3 start = transform.position;
+        var startPos = _positionOutsideStage;
+        var endPos = _positionOnStage;
         
+        Debug.Log($"Wheel.SpinningCoroutine > Start rotate anim + move down");
         while (time < duration)
         {
-            transform.position = Vector3.Lerp(start, destination, _movementCurve.Evaluate(time / duration));
+            transform.position = Vector3.Lerp(_positionOutsideStage, _positionOnStage, 
+                _movementCurve.Evaluate(time/duration));
             time += Time.deltaTime;
             yield return null;
         }
+        Debug.Log($"Wheel.SpinningCoroutine > Rotate anim is done + Is on stage");
+        
+        yield return new WaitForSeconds(1.5f);
 
-        callbackOnFinish();
-    }
-    
-    IEnumerator SpinningCoroutine()
-    {
-        _anim.Play("Spin");
-        // Start anim
-        Debug.Log("Start anim");
-        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
-            yield return null;
-        Debug.Log("End anim");
+        ActingManager.Instance._canContinueDialogue = true;
 
-        yield return new WaitForSeconds(2.0f);
-
-        StartCoroutine(LerpPositionCoroutine(_positionOutsideStage));
-    }
-
-    #endregion
-
-    /*#region Gizmos
-
-    private void OnDrawGizmosSelected()
-    {
-        var position = new Vector3(transform.position.x, transform.position.y + _yOffset, transform.position.z);
-        DrawWireCapsule(position, Quaternion.Euler(0, 0, 90), 1,1);
-    }
-
-    public static void DrawWireCapsule(Vector3 _pos, Quaternion _rot, float _radius, float _height, Color _color = default(Color))
-    {
-        if (_color != default(Color))
-            Handles.color = _color;
-        Matrix4x4 angleMatrix = Matrix4x4.TRS(_pos, _rot, Handles.matrix.lossyScale);
-        using (new Handles.DrawingScope(angleMatrix))
+        time = 0.0f;
+        while (time < duration)
         {
-            var pointOffset = (_height - (_radius * 2)) / 2;
- 
-            //draw sideways
-            Handles.DrawWireArc(Vector3.up * pointOffset, Vector3.left, Vector3.back, -180, _radius);
-            Handles.DrawLine(new Vector3(0, pointOffset, -_radius), new Vector3(0, -pointOffset, -_radius));
-            Handles.DrawLine(new Vector3(0, pointOffset, _radius), new Vector3(0, -pointOffset, _radius));
-            Handles.DrawWireArc(Vector3.down * pointOffset, Vector3.left, Vector3.back, 180, _radius);
-            //draw frontways
-            Handles.DrawWireArc(Vector3.up * pointOffset, Vector3.back, Vector3.left, 180, _radius);
-            Handles.DrawLine(new Vector3(-_radius, pointOffset, 0), new Vector3(-_radius, -pointOffset, 0));
-            Handles.DrawLine(new Vector3(_radius, pointOffset, 0), new Vector3(_radius, -pointOffset, 0));
-            Handles.DrawWireArc(Vector3.down * pointOffset, Vector3.back, Vector3.left, -180, _radius);
-            //draw center
-            Handles.DrawWireDisc(Vector3.up * pointOffset, Vector3.up, _radius);
-            Handles.DrawWireDisc(Vector3.down * pointOffset, Vector3.up, _radius);
- 
+            transform.position = Vector3.Lerp(_positionOnStage,_positionOutsideStage, _movementCurve.Evaluate(time/duration));
+            time += Time.deltaTime;
+            yield return null;
         }
     }
 
-    
-    #endregion*/
+    #endregion
 }
