@@ -95,7 +95,7 @@ VAR irene_torch_is_on = false
             *** [...un trésor interdit.] PLAYER: ...un trésor qui m'était interdit.
             *** [...un bagage de trop.] PLAYER: ...un bagage de plus. Un bagage de trop. Un poids sur ma conscience.
             *** [...un tas de problèmes.] PLAYER: ...tout un lot d'embêtements.
-            ~ trial(t_3_light_on_irene_torch)
+                ~ trial(t_3_light_on_irene_torch)
             --- PLAYER: Irène, trouvez en votre bonne âme la force de me pardonner, et d'alléger par la même le poids de mes supplices !
         ** [Lui demander de l'aide.] PLAYER: Irène, je vous en conjure, venez-moi en aide. Ô, allégez le poids de mes supplices !
             ~ trial(t_3_light_on_irene_torch)
@@ -151,15 +151,15 @@ AGATHE: En plein affrontement avec les vagues furieuses... Ils entendirent des p
         ~ trial(t_3_is_with_irene_saviors)
         AGATHE: Bénit soyez-vous, mon enfant.
     * [Un signe de leur inconscience.] PLAYER: Par ce temps ? Mieux vaut une âme en pleurs que dix épouses en deuil. J'aurai écouté ma prudence et fait taire ma curiosité.
-        AGATHE: Fort heureusement, ces marins furent mieux conseillés par leur conscience...
         ~ trial(t_3_is_against_irene_saviors)
+        AGATHE: Fort heureusement, ces marins furent mieux conseillés par leur conscience...
     * [Écouter en silence.]
 - AGATHE: L'un d'eux, n'écoutant que son courage...
 {
     - t_3_is_against_irene_saviors:
         * [... ou sa bêtise.] PLAYER: ...ou sa stupidité...
-            -> a_navigator_save_baby
             ~ trial(t_3_insult_irene_savior)
+            -> a_navigator_save_baby
         * [Rester silencieux.]
             -> a_navigator_save_baby
 }
@@ -321,7 +321,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
         AGATHE: La tâche que nos aïeux lui ont confiée lorsqu'il fût libéré est à la hauteur de notre respect à son égard... #playsound:Play_SFX_Story_JudgeBellFar #wait:0.5 #audience:choc
     * [Ce qu'il est devenu après...] PLAYER: Certains disent qu'il aurait dû être sanctifié, plutôt que...
         AGATHE: ... plutôt que voué à une tâche si grave ? #playsound:Play_SFX_Story_JudgeBellFar #wait:0.5 #audience:choc
-        ** [Peut-être...] PLAYER: J'ose le dire, en effet. Son sacrifice fut salvateur pour nos ancêtres, mais au lieu de lui faire atteindre la béatitude, cela l'a... consumé... #playsound:Play_SFX_Story_JudgeBellFar #wait:0.5 #audience:choc
+        ** [Peut-être...] PLAYER: J'ose le dire, en effet. Son sacrifice fut salvateur pour nos ancêtres, mais au lieu de lui faire atteindre la béatitude, cela l'a... consumé... 
             ~ trial(t_3_question_judge_position)
         ** [Oubliez.] PLAYER: Ce n'est pas ce que je voulais dire. Disons que la tâche qui lui incombe est... épuisante. #playsound:Play_SFX_Story_JudgeBellFar #wait:0.5 #audience:choc
             ~ trial(t_3_show_judge_respect)

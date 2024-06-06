@@ -33,13 +33,10 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #position:Agathe:4:20
 
 // Start the scene
-#open_curtains
-#audience:shock
-#judge_bell
+//#open_curtains
 #audience:debate
 #audience:silent
 // Le juge est encore seul sur scène
-#scene_open_to_judge
 #audience:ovation
 #wait:5
 #audience:ovation
@@ -55,7 +52,7 @@ JUGE ERNEST: Silence ! J'exige le silence ! #anim:Judge:bell #audience:silent
         ~ audience_judgement(-0.02)
 }
 {
-    - is_accused_of("t_2_attack_guards"): JUGE ERNEST: ... De violence à l'encontre de représentants de l'autorité Royale... #audience:laughter
+    - is_accused_of("attack guards"): JUGE ERNEST: ... De violence à l'encontre de représentants de l'autorité Royale... #audience:laughter
     ~ audience_judgement(-0.02)
 }
 {
@@ -172,7 +169,7 @@ JUGE ERNEST: Vraiment ? Accusé, qu'avez-vous à répondre ?
                 ~ audience_judgement(0.1)
                 JUGE ERNEST: Ainsi, l'Accusé dit la vérité. #audience:applause
                 ~ audience_judgement(0.04)
-                JUGE ERNEST: Témoin, que l'on ne vous reprenne plus à mentir en ces lieux ! #anim:Arle:stress #audience:booing
+                JUGE ERNEST: Témoin, que l'on ne vous reprenne plus à mentir en ces lieux ! #anim:Arle:stressed #audience:booing
         }
     * [C'est la vérité...] PLAYER: J'admets avoir accepté de tuer, Votre Honneur... #audience:choc
         ~ audience_judgement(-0.04)

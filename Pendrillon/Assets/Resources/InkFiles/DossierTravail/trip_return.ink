@@ -225,7 +225,6 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
         {sc(DEXT, -10): -> bribe_guards_S | -> bribe_guards_F}
     PLAYER: Est-ce que {p_gold} pièces d'or pourraient vous faire quitter mon navire sans faire de vagues ? Si vous me permettez l'expression...
         ** (bribe_guards_S) CAPUCINE: Laisse-moi te débarrasser de ces pièces...
-            ~ trial(t_2_try_and_succeed_bribing_guards)
             *** [Donner les pièces.] PLAYER: Voilà pour toi, mon amie. #playsound:gold_coins
                 CAPUCINE: Nous allons maintenant t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde, quadruple forban. #playsound:VOX_Capucine_quadrupleforbandangerssoudoyer
                 MARCELLO: C'est là que je le frappe, cheffe ?
@@ -234,7 +233,6 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
                     -> battle
             *** [Assommer Marcello.] -> attack_marcello_S
         ** (bribe_guards_F) CAPUCINE: À qui penses-tu avoir affaire, quadruple forban ? Nous allons t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde ! #playsound:VOX_Capucine_aquiquadrupleforban
-            ~ trial(t_2_try_but_fail_bribing_guards)
             MARCELLO: C'est là que je le frappe, cheffe ?
             CAPUCINE: En effet, Marcello. C'est là que tu le frappes. #playsound:VOX_Capucine_eneffetfrappes
             MARCELLO: Compris, cheffe ! #anim:Marcello:attack #anim:Player:hurt
@@ -268,26 +266,24 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
 // Battle (acting phase)
 = battle
     * [Attaquer Marcello. {t(STRE, -10)}]
+        ~ trial(t_2_attack_guards)
         {sc(STRE, -10): -> attack_marcello_S | -> attack_marcello_F}
         ** (attack_marcello_S) PLAYER: Prends ça ! #anim:Player:attack #anim:Marcello:hurt #audience:choc
             MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête !
-            ~ trial(t_2_attack_guards)
         ** (attack_marcello_F) PLAYER: Prends ça ! #anim:Player:attack #anim:Marcello:dodge
             MARCELLO: Héhé... Trop lent, minable.
-            ~ trial(t_2_attack_guards)
     * [Attaquer par derrière. {t(DEXT, -10)}]
+        ~ trial(t_2_attack_guards)
         {sc(DEXT, -10): -> sneaky_attack_marcello_S | -> sneaky_attack_marcello_F}
         ** (sneaky_attack_marcello_S) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine
             PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:hurt #audience:choc
             MARCELLO: M'attaquer alors que j'ai le dos tourné ? Tu es un lâche !
-            ~ trial(t_2_attack_guards)
             *** [Et toi un crétin.] PLAYER: C'est toi qui es stupide, à tourner le dos à quelqu'un que tu viens de frapper. #audience:laughter
             *** [C'est tout moi, en effet.] PLAYER: Je dirai plutôt que je sais saisir une opportunité quand je la vois... #audience:applause
                 PLAYER: Surtout quand cette opportunité consiste à cogner un rustre comme toi.
         ** (sneaky_attack_marcello_F) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine
             PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:dodge
             MARCELLO: Tu te crois discret, abruti ?
-            ~ trial(t_2_attack_guards)
     * [Calmer le jeu. {t(CHAR, -10)}]
         {sc(CHAR, -10): -> calm_marcello_S | -> calm_marcello_F}
         ** (calm_marcello_S) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
@@ -299,22 +295,6 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             MARCELLO: Je confirme. #audience:laughter
             MARCELLO: Tiens, la voilà ! #anim:Marcello:attack #anim:Player:hurt
 - -> arrest_naida
-
-// Battle against two guards
-= battle_marcello_capucine_full_life
-Combat contre les deux gardes.
-- -> after_battle
-
-
-// Battle against Marcello with Capucine hurt
-= battle_marcello_with_capucine_hurt
-Combat contre Marcello et Capucine, où Capucine est blessée.
-- -> after_battle
-
-// Battle against Capucine with Marcello hurt
-= battle_capucine_with_marcello_hurt
-Combat contre Capucine et Marcello, où Marcello est blessé.
-- -> after_battle
 
 // After the battle
 = after_battle

@@ -214,23 +214,27 @@ PLAYER ... Et c'est au port de Miraterre, de retour de notre voyage, que notre h
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
-- PASSEUR: Notre voyage fut en fin de compte des plus captivants, toutefois... #playsound:VOX_Ferryman_voyagecaptivant
-PASSEUR: ... il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView
-PASSEUR: Vois-tu ces portes, devant nous ? Dans quelques instants, tu sauras si nous pouvons faire demi-tour, ensemble... #anim:Passeur:show_door #playsound:VOX_Ferryman_voistuporte
-PASSEUR: ... ou si c'est ici que nos chemins se sépareront. #playsound:VOX_Ferryman_voistuporte2
-    * [Que va t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, Passeur... et ne me ménage pas. #anim:Player:stressed #playsound:VOX_Player_quevapassemenagepas
-        PASSEUR: Cela, je ne puis te le dire, voyageur. Je connais ton passé, mais j'ignore tout de ton destin. #playsound:VOX_Ferryman_jenepuisteledire
-    * [Où mènent ces portes ?] PLAYER: Où mènent ces portes, Passeur ? #anim:Player:stressed #playsound:VOX_Player_oumeneporte
-        PASSEUR: Tu le sauras bientôt, ou ne le sauras jamais. Attendons un instant... #playsound:VOX_Ferryman_attendons
+- PASSEUR: Notre voyage fut, en fin de compte, des plus captivants. Toutefois... #audience:ovation #playsound:VOX_Ferryman_voyagecaptivant
+PASSEUR: ... Il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView #audience:debate
+    * [Que va t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, Passeur... et ne me ménage pas. #anim:Player:stressed #playsound:VOX_Player_quevapassemenagepas #audience:debate
+        PASSEUR: Cela, je ne puis te le dire, voyageur. Je connais ton passé, mais j'ignore tout de ton avenir. #playsound:VOX_Ferryman_jenepuisteledire #audience:applause
+    * [Où mène ce chemin ?] PLAYER: Où mène ce chemin, Passeur ? #anim:Player:stressed #playsound:VOX_Player_oumeneporte #audience:debate
+        PASSEUR: Il te mène à Lui, voyageur. #audience:choc
     * [(Rester silencieux).]
-- PASSEUR: Si les portes s'ouvrent, alors nous serons tenus de passer... #playsound:VOX_Ferryman_silesportes
-    * [Qui nous y oblige ?] PLAYER: Qui nous y contraint, Passeur ? #anim:Player:question  #playsound:VOX_Player_quinousycontraint
-        PASSEUR: La Loi. #playsound:VOX_Ferryman_laloi
-    * [Faisons demi-tour.] PLAYER: Faisons demi-tour, je t'en prie. #playsound:VOX_Player_faisonsdemitour
-        PASSEUR: Je regrette, ce n'est pas à moi d'en décider. #playsound:VOX_Ferryman_jeregrettepasmadecision
-    * [J'ai peur...] PLAYER: J'ai si peur... #anim:Player:stressed #playsound:VOX_Player_jaisipeur
-        PASSEUR: ... Je comprends. #playsound:VOX_Ferryman_jecomprends
+- PASSEUR: Attendons un instant.
+PASSEUR: Si la <b>Cloche</b> sonne, alors nous serons tenus de passer... #playsound:VOX_Ferryman_silesportes #audience:debate
+PASSEUR: ...
+PLAYER: ...
+    * [Faire face à son destin.]
+- #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #audience:choc
+PASSEUR: Tu vas devoir affronter ton destin, désormais. #audience:ovation
+    * [Qui m'y oblige ?] PLAYER: Qui m'y contraint, Passeur ? #anim:Player:question  #playsound:VOX_Player_quinousycontraint #audience:debate
+        PASSEUR: La Loi. #playsound:VOX_Ferryman_laloi #audience:choc
+    * [Faisons demi-tour.] PLAYER: Faisons demi-tour, je t'en prie. #playsound:VOX_Player_faisonsdemitour #audience:booing
+        PASSEUR: Je regrette, ce n'est pas à moi d'en décider. #playsound:VOX_Ferryman_jeregrettepasmadecision #audience:debate
+    * [J'ai peur...] PLAYER: J'ai si peur... #anim:Player:stressed #playsound:VOX_Player_jaisipeur #audience:debate
+        PASSEUR: ... Je comprends. #playsound:VOX_Ferryman_jecomprends #audience:applause
 - #anim:open_trial_doors #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
-- PASSEUR: Tu vas devoir affronter ton destin. 
-PASSEUR: Ainsi en ont décidé les portes, voyageur...  #playsound:VOX_Ferryman_devoiraffronterdestin 
+PASSEUR: C'est ici que nos chemins vont se séparer, voyageur. #playsound:VOX_Ferryman_voistuporte2 #audience:choc
+PASSEUR: Ainsi en a décidé la <shake>Cloche du Destin</shake>.  #playsound:VOX_Ferryman_devoiraffronterdestin #audience:ovation
 - -> tribunal_1

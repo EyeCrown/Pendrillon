@@ -2,6 +2,7 @@
 
 // Variables
 VAR naida_name = "LA POISCAILLE"
+VAR naida_name_on_text = "Naïda"
 VAR verdict_is_innocent = false
 VAR verdict_is_guilty = false
 
@@ -27,7 +28,9 @@ VAR verdict_is_guilty = false
 #judge_bell
 #wait:5
 #audience:ovation
-#wait:4
+#wait:3
+#audience:ovation
+#wait:1
 // Start the scene
 - JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent
 JUGE ERNEST: Ainsi, vous avez véritablement affronté une créature marine ?
@@ -84,7 +87,7 @@ SOUFFLEUR: Mais ainsi sont fait nos mythes, pas vrai ?
 SOUFFLEUR: Le moment risque d'être difficile pour le personnage de Naïda. Elle saura rester digne, ne t'en fais pas !
 SOUFFLEUR: Quand à toi, essaye de la défendre du mieux que tu le peux auprès du Juge, mais surtout du public !
 SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
-- JUGE ERNEST: Commencez par nous raconter comment vous avez fait la rencontre de {naida_name}, voulez-vous ?
+- JUGE ERNEST: Commencez par nous raconter comment vous avez fait la rencontre de {naida_name_on_text}, voulez-vous ?
 - (player_and_naida_met)
     * [À l'intérieur du Léviathan.] PLAYER: Lorsque le Léviathan nous a avalé, mon équipage et moi-même... Nous nous sommes retrouvés à l'intérieur de son estomac. #audience:choc
         PLAYER: C'est là que j'ai fait la rencontre du peuple des Sireines. #audience:debate
