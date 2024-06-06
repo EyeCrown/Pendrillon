@@ -161,11 +161,11 @@ JUGE ERNEST: Vraiment ? Accusé, qu'avez-vous à répondre ?
         }
         JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #audience:ovation #anim:Juge:mask
         {
-            - t_1_accept_to_kill: JUGE ERNEST: « Tuer ne me dérange nullement. ». #audience:choc
+            - t_1_accept_to_kill == true: JUGE ERNEST: « Tuer ne me dérange nullement. ». #audience:choc
                 ~ audience_judgement(-0.1)
                 JUGE ERNEST: Ainsi il apparaît que vous avez menti, Accusé.
                 ~ audience_judgement(-0.05)
-            - t_1_refuse_to_kill: JUGE ERNEST: « Ôter une vie n'est pas dans mes pratiques. ». #audience:ovation
+            - t_1_refuse_to_kill == true: JUGE ERNEST: « Ôter une vie n'est pas dans mes pratiques. ». #audience:ovation
                 ~ audience_judgement(0.1)
                 JUGE ERNEST: Ainsi, l'Accusé dit la vérité. #audience:applause
                 ~ audience_judgement(0.04)

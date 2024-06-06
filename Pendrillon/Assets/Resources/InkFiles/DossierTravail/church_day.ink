@@ -40,28 +40,34 @@ SOUFFLEUR: Ils ont beau se disputer sur scène, sache qu'en dehors des planches,
 SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils adorent être ridiculisés !
 - PLAYER: J'ai bien peur de vous reconnaître, en effet... vous êtes...
     * [Capucine la larbine...] PLAYER: Capucine la larbine... #audience:laughter #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1
-        ~ trial("t_4_give_guards_surname")
+        ~ trial()
+        ~ t_4_give_guards_surname = true
         ~ CAPUCINE = "CAPUCINE LA LARBINE"
         ~ capucine_surname = "la larbine"
     * [Capucine la marcassine...] PLAYER: Capucine la marcassine... #audience:laughter #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1
-        ~ trial("t_4_give_guards_surname")
+        ~ trial()
+        ~ t_4_give_guards_surname = true
         ~ CAPUCINE = "CAPUCINE LA MARCASSINE"
         ~ capucine_surname = "la marcassine"
     * [Capucine la tartine...] PLAYER: Capucine la tartine... #audience:laughter #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1
-        ~ trial("t_4_give_guards_surname")
+        ~ trial()
+        ~ t_4_give_guards_surname = true
         ~ CAPUCINE = "CAPUCINE LA TARTINE"
         ~ capucine_surname = "la tartine"
 - PLAYER: ... accompagnée de son affreux sbire...
     * [Marcellogre...] PLAYER: ... Marcellogre ! #audience:laughter #anim:Capucine:applause #anim:Marcello:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname2
-        ~ trial("t_4_give_guards_surname")
+        ~ trial()
+        ~ t_4_give_guards_surname = true
         ~ MARCELLO = "MARCELLOGRE"
         ~ marcello_surname = "Marcellogre"
     * [Marcellotarie...] PLAYER: ... Marcellotarie ! #audience:laughter #anim:Capucine:applause #anim:Marcello:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname2
-        ~ trial("t_4_give_guards_surname")
+        ~ trial()
+        ~ t_4_give_guards_surname = true
         ~ MARCELLO = "MARCELLOTARIE"
         ~ marcello_surname = "Marcellotarie"
     * [Marcellocroupie...] PLAYER: ... Marcellocroupie ! #audience:laughter #anim:Capucine:applause #anim:Marcello:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname2
-        ~ trial("t_4_give_guards_surname")
+        ~ trial()
+        ~ t_4_give_guards_surname = true
         ~ MARCELLO = "MARCELLOCROUPIE"
         ~ marcello_surname = "Marcellocroupie"
 - #anim:Marcello:shameful

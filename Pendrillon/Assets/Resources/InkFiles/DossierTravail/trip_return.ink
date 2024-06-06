@@ -55,7 +55,8 @@ VAR player_won_battle = false // Define if the player won the battle or not
             *** (lie_S) PLAYER: Je suis ce qu'on appelle un honnête homme.
                 PERSONNAGE MASQUÉ: Vous semblez sincère.
             *** (lie_F) PLAYER: Je suis blanc comme neige au soleil.
-                ~ trial(t_2_lawless)
+                ~ trial()
+                ~ t_2_lawless = true
                 PERSONNAGE MASQUÉ: Vous mentez très mal, mon ami.
         ** [Certes.] C'est vrai, je l'admets. Mais ne dit-on pas que nul homme n'a à rougir d'une faute avouée ?
             PERSONNAGE MASQUÉ: Je n'ai jamais entendu cela, non.
@@ -88,15 +89,20 @@ VAR player_won_battle = false // Define if the player won the battle or not
     * [C'est la Loi.] PLAYER: Certaines lois sont sujettes à interprétations, mais...
         PERSONNAGE MASQUÉ: ... mais ?
         PLAYER: ... mais pas celle que nous avons bravée, j'en ai peur. #playsound:judge_bell #audience:choc
-            ~ trial(t_2_lawfull)
+            ~ trial()
+            ~ t_2_lawfull = true
 - PERSONNAGE MASQUÉ: N'éprouvez-vous jamais aucun regret ? Si la Loi et la Foi l'interdisent...
     * [Sans foi ni loi.] PLAYER: Je me fiche de la Loi comme de la Foi. #trial
-        ~ trial(t_2_against_law)
-        ~ trial(t_2_against_crown)
+        ~ trial()
+        ~ t_2_against_law = true
+        ~ trial()
+        ~ t_2_against_crown = true
     * [Pas le temps pour des regrets.] PLAYER: L'heure n'est pas au regret.
-        ~ trial(t_2_show_no_regrets)
+        ~ trial()
+        ~ t_2_show_no_regrets = true
     * [(Tiraillé) Parfois...] PLAYER: Il est des jours où je crois être le plus vil des hommes... #trial
-        ~ trial(t_2_show_regrets)
+        ~ trial()
+        ~ t_2_show_regrets = true
 - PERSONNAGE MASQUÉ: J'entends des bruits. Quelqu'un vient. #playsound:activity_far
 * [Cachez-vous.] PLAYER: Il va falloir vous trouver une cachette, et en vitesse.
     -- (hide_sireine) PERSONNAGE MASQUÉ: Les bruits se rapprochent ! #playsound:activity_close
@@ -227,7 +233,8 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             MARCELLO: Je vais t'apprendre à menacer des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
                 -> battle
     * {p_gold > 0} [Soudoyer. {t(DEXT, -10)}]
-        ~ trial(t_2_bribe_guards)
+        ~ trial()
+        ~ t_2_bribe_guards = true
         {sc(DEXT, -10): -> bribe_guards_S | -> bribe_guards_F}
     PLAYER: Est-ce que {p_gold} pièces d'or pourraient vous faire quitter mon navire sans faire de vagues ? Si vous me permettez l'expression...
         ** (bribe_guards_S) CAPUCINE: Laisse-moi te débarrasser de ces pièces...
@@ -272,14 +279,16 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
 // Battle (acting phase)
 = battle
     * [Attaquer Marcello. {t(STRE, -10)}]
-        ~ trial(t_2_attack_guards)
+        ~ trial()
+        ~ t_2_attack_guards = true
         {sc(STRE, -10): -> attack_marcello_S | -> attack_marcello_F}
         ** (attack_marcello_S) PLAYER: Prends ça ! #anim:Player:attack #anim:Marcello:hurt #audience:choc
             MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête !
         ** (attack_marcello_F) PLAYER: Prends ça ! #anim:Player:attack #anim:Marcello:dodge
             MARCELLO: Héhé... Trop lent, minable.
     * [Attaquer par derrière. {t(DEXT, -10)}]
-        ~ trial(t_2_attack_guards)
+        ~ trial()
+        ~ t_2_attack_guards = true
         {sc(DEXT, -10): -> sneaky_attack_marcello_S | -> sneaky_attack_marcello_F}
         ** (sneaky_attack_marcello_S) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine
             PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:hurt #audience:choc

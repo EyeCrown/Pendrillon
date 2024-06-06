@@ -141,7 +141,8 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - (what_is_the_mission) PLAYER: Quelle est donc cette mission ? #anim:Player:question #playsound:VOX_Player_quelleestcettemission
 ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #anim:Arle:question #playsound:VOX_Arle_quelrapporttuer #anim:Player:surprised #audience:choc
     * [Hors de question.] PLAYER: Ôter une vie n'est pas dans mes pratiques. #audience:ovation
-        ~ trial(t_1_refuse_to_kill)
+        ~ trial()
+        ~ t_1_refuse_to_kill = true
         PLAYER: Je ne suis pas un tueur, mais un marin. Tout juste suis-je capable d'ôter la vie à un poisson... #anim:Player:non
         ARLE: Il se trouve justement que c'est un poisson que l'on souhaiterait voir mort. Un gros poisson. #anim:Arle:happy #audience:debate
         -- (big_fish)
@@ -150,7 +151,8 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
         ** [Assez de mystère !] PLAYER: Il suffit ! J'en ai assez de tout ce mystère : parle maintenant ou permets-moi d'aller me recoucher. #anim:Player:angry
             ARLE : Ce poisson est un très gros poisson, messire. Aussi gros que le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
     * [Sans soucis.] PLAYER : Tuer ne me dérange nullement. #audience:choc
-        ~ trial(t_1_accept_to_kill)
+        ~ trial()
+        ~ t_1_accept_to_kill = true
         PLAYER: Dis-m'en plus : qui voulez-vous voir périr ? #audience:debate
         ARLE: Un poisson, messire. Un gros poisson. #audience:debate
         -> big_fish
@@ -199,21 +201,26 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
     * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la Couronne qui t'envoie ? #anim:Player:question
         -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:happy
             ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour notre bonne reine !
-                ~ trial(t_1_respect_the_crown)
+                ~ trial()
+                ~ t_1_respect_the_crown = true
             ** [La reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence. #audience:laughter
-                ~ trial(t_1_disrespect_the_crown)
+                ~ trial()
+                ~ t_1_disrespect_the_crown = true
                 ARLE: Ces petites rimes, messire, pourraient vous coûter cher. #anim:Arle:deception
     * [Pour la reine Constance ?] PLAYER: Est-ce la reine elle-même qui demande mon renfort ? #anim:Player:question
         ARLE: Nulle demande ne saurait provenir de la bouche de la reine, messire. Seulement des ordres...
         -> to_the_crown
 - ARLE: Puis-je ajouter, messire, que vaincre le Léviathan constituerait une offrande de taille à la Déesse Elle-même.
     * [J'en serais honoré !] PLAYER: J'honorerai la Déesse, j'en fais le serment ! #audience:ovation
-        ~ trial(t_1_respect_irene)
+        ~ trial()
+        ~ t_1_respect_irene = true
     * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme du dernier crachin ! #anim:Player:disappointed#audience:booing
-        ~ trial(t_1_disrespect_irene)
+        ~ trial()
+        ~ t_1_disrespect_irene = true
         ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix. #anim:Arle:deception
     * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la reine, ni pour la Déesse, mais pour mon seul profit.
-        ~ trial(t_1_gold_digger)
+        ~ trial()
+        ~ t_1_gold_digger = true
 - ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence
     * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur de ramener le cœur du Léviathan. #playsound:VOX_Player_celaseraitunhonneur
         ~ t_1_accept_mission_with_positivity = true
