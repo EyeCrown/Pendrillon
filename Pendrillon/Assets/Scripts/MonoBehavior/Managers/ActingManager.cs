@@ -86,6 +86,9 @@ namespace MonoBehavior.Managers
         [Header("=== Wheel ===")]
         public Wheel _wheel;
         [HideInInspector] public bool _canContinueDialogue;
+
+        [Header("=== Map ===")] 
+        public Map _map;
         
         // Dialogue
         string _currentDialogue;
@@ -151,6 +154,9 @@ namespace MonoBehavior.Managers
             
             _dialogueTypewriter = _dialogueText.GetComponent<TypewriterCore>();
             _prompterTypewriter = _uiParent.transform.Find("PROMPTER_PART/DialogueBox/DialogueText").GetComponent<TypewriterCore>();
+
+            _wheel = GameObject.Find("WheelSupport").GetComponent<Wheel>();
+            _map = GameObject.Find("Map").GetComponent<Map>();
             
             if (_dialogueTypewriter == null)
                 Debug.LogError("AHH");
@@ -686,7 +692,7 @@ namespace MonoBehavior.Managers
 
         void ParseTag(string tagName)
         {
-            //Debug.Log($"AM.ParseTag > Tag to parse: {tagName}");
+            Debug.Log($"AM.ParseTag > Tag to parse: {tagName}");
             string[] words = tagName.Split(Constants.Separator);
         
             // foreach (var word in words)
@@ -713,6 +719,7 @@ namespace MonoBehavior.Managers
                 case Constants.TagLook:     HandleTagLook(words.Skip(1).ToArray());     break;
                 case Constants.TagAudience: HandleTagAudience(words[1]);                    break;
                 case Constants.TagRope:     HandleTagRope(words[1]);                        break;
+                case Constants.TagMap:      HandleTagMap(words[1]);                        break;
                 default: Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag."); break;
             }
         }
@@ -1132,6 +1139,39 @@ namespace MonoBehavior.Managers
         }
         
         
+        void HandleTagMap(string travelName)
+        {
+            Debug.Log($"AM.HandleTagMap > travel: {travelName}");
+
+            string travel = string.Empty;
+            
+            foreach (var travelType in Constants.TravelArray)
+            {
+                if (travelName == travelType)
+                {
+                    travel = travelName;
+                    Debug.Log($"AM.HandleTagMap > Valide travel name");
+                    break;
+                }
+            }
+            if (travel != string.Empty)
+                Debug.LogError($"AM.HandleTagMap > Error: unknown travel name: {travel}");
+            
+            void TravelAction()
+            {
+                Debug.Log("TravelAction");
+                if (travel != string.Empty)
+                    _map.DisplayTravel(travel);
+                
+                TagActionOver();
+            }
+
+            Debug.Log(_tagMethods.Count);
+            _tagMethods.Add(TravelAction);
+            Debug.Log(_tagMethods.Count);
+
+        }
+        
         //TODO: Make curtains tag handlers
         /* void HandleCurtains()
         {
@@ -1270,6 +1310,7 @@ namespace MonoBehavior.Managers
             
             foreach (var tagAction in _tagMethods)
             {
+                Debug.Log($"{tagAction.Method.Name}");
                 _isActionDone = false;
                 tagAction();
                 while (!_isActionDone)
