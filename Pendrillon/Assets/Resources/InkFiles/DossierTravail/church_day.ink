@@ -74,7 +74,8 @@ SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils adorent être ridiculis�
 #move(Agathe)
 AGATHE: Ce lieu saint a abrité davantage de sauvageons que vous n'en avez croisé dans toute votre vie, mon enfant... #playsound:Play_MUS_Story_SC_Eglise_AgathesBetrayal
 AGATHE: Cependant aucun d'entre eux ne s'était rendu coupable d'un acte aussi grave que le vôtre... #audience:debate #anim:Agathe:contempt #anim:Player:ashamed
-AGATHE: Lorsque j’ai appris pourquoi vous étiez recherché, j’ai su qu’il était de mon devoir, non envers la Couronne mais la Déesse elle-même, de vous dénoncer.#audience:ovation #anim:Player:disappointed #anim:Capucine:laugh
+AGATHE: Lorsque j’ai appris qui vous cachiez dans votre navire... #audience:debate
+AGATHE: J’ai su qu’il était de mon devoir, non envers la Couronne mais la Déesse elle-même, de vous dénoncer.#audience:choc #anim:Player:disappointed #anim:Capucine:laugh
 {CAPUCINE}: Tout le monde t'abandonne à ton triste sort, marmot. #playsound:VOX_Capucine_toutlemondetabandonne
 {CAPUCINE}: Mais tu ne seras bientôt plus seul... Tu vas aller rejoindre ton affreuse amie, vermine ! #playsound:VOX_Capucine_maistuneserabientôtplusseul
 {CAPUCINE}: Marcello, attrape-le !! #playsound:VOX_Capucine_marcelloattrape

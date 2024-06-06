@@ -63,14 +63,14 @@ VAR player_won_battle = false // Define if the player won the battle or not
 - PERSONNAGE MASQUÉ: Et maintenant ? Qu'avez-vous en tête ?
     * [Forcer la caisse du fond. {t(STRE, 0)}] #playsound:crate_search
         {sc(STRE, 0): -> crate_back_search_S | -> crate_back_search_F}
-        ** (crate_back_search_S) PLAYER: Du poisson pourri... J'empeste ! Mais j'ai trouvé quelques pièces. #playsound:gold_coins
+        ** (crate_back_search_S) PLAYER: Du poisson pourri... J'empeste ! Mais j'ai trouvé <b>quelques pièces</b>. #playsound:gold_coins
             ~ p_gold += 3
             ~ player_is_stinky = true
         ** (crate_back_search_F) PLAYER: Du poisson pourri... J'empeste !
             ~ player_is_stinky = true
     * [Fouiller le tonneau. {t(DEXT, 10)}]
         {sc(DEXT, 10): -> barrel_search_S | -> barrel_search_F}
-        ** (barrel_search_S) PLAYER: J'ai trouvé un gros os. Ça pourrait servir. #playsound:inventory
+        ** (barrel_search_S) PLAYER: J'ai trouvé un <b>gros os</b>. Ça pourrait servir. #playsound:inventory
         ~ has_bone = true
             PERSONNAGE MASQUÉ: Qu'avez-vous en tête ?
             *** [Plaisanter.] PLAYER: Peut-être qu'en l'envoyant, les gardes iront chercher ? #audience:laughter
@@ -80,7 +80,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
         ** (barrel_search_F) PLAYER: Je n'ai rien trouvé.
     * [Fouiller la caisse de devant. {t(DEXT, -10)}] #playsound:crate_search
         {sc(DEXT, -10): -> crate_front_search_S | -> crate_front_search_F}
-        ** (crate_front_search_S) PLAYER: Une noix de coco. Ça pourrait être utile, qui sait. #playsound:inventory
+        ** (crate_front_search_S) PLAYER: Une <b>noix de coco</b>. Ça pourrait être utile, qui sait. #playsound:inventory
             ~ has_coconut = true
         ** (crate_front_search_F) PLAYER: Je n'ai rien trouvé.
 - PERSONNAGE MASQUÉ: Ne peut-on pas éviter que des gardes ne viennent fourrer leur nez ici ?
@@ -128,11 +128,11 @@ VAR player_won_battle = false // Define if the player won the battle or not
 // The guards arrive
 = guards_arrive
 #playsound:guards_arrive
-- #move:Capucine:11:9 #move:Marcello:9:11
-MARCELLO: J'ai entendu du bruit dans la cale. #anim:Marcello:enter_scene
+- #move:Capucine:11:9 #move:Marcello:9:11 #audience:ovation
+MARCELLO: J'ai entendu du bruit dans la cale. #anim:Marcello:enter_scene #audience:ovation
 CAPUCINE: Tu entends des voix, maintenant ? Peut-être la Déesse en personne qui te cause... #playsound:VOX_Capucine_tuentendsvoixQ #anim:Capucine:enter_scene #audience:laughter
 MARCELLO: Vous me croyez fou, cheffe ? #audience:laughter
-CAPUCINE: Que tu sois cinglé ou non... Nous devons fouiller tous les navires qui arrivent au port. #playsound:VOX_Capucine_soiscinglenon #audience:applause
+CAPUCINE: Que tu sois cinglé ou non... Nous devons <b>fouiller</b> tous les navires qui <b>arrivent au port</b>. #playsound:VOX_Capucine_soiscinglenon #audience:applause
 - {player_is_hidden: -> player_hidden | -> player_not_hidden}
 
 
@@ -143,7 +143,12 @@ MARCELLO: Il n'y a personne, cheffe.
 * [Rester discret. {t(DEXT, -20)}]
     {sc(DEXT, -20): -> discretion_1_S | -> discretion_1_F} #anim:Marcello:seek_intruder_near_player
     ** (discretion_1_S) MARCELLO: Je ne vois personne. Et toi ?
-        -- {player_is_stinky: CAPUCINE: Je ne vois personne, mais ça pue le poisson mort par ici. -> player_is_found | -> player_not_found}
+        -- {
+                - player_is_stinky: CAPUCINE: Je ne vois personne, mais ça pue le poisson mort par ici. 
+                    -> player_is_found
+                -else:
+                    -> player_not_found
+            }
     ** (discretion_1_F) MARCELLO: Là ! Derrière cette caisse ! Il y a quelqu'un ! #anim:Player:stop_hiding
         -> player_is_found
 * [Sortir de sa cachette] #anim:Player:stop_hiding
@@ -166,12 +171,14 @@ MARCELLO: Il n'y a personne, cheffe.
 - CAPUCINE: Décline ton identité, et vite ! #playsound:VOX_Capucine_declineidentite
     * [Je suis le capitaine.] PLAYER: Vous vous trouvez sur mon humble navire.
         CAPUCINE: C'est toi le capitaine ? #playsound:VOX_Capucine_cesttoicapitaineQ
-    * [(Mentir) Un simple moussaillon. {t(CHAR, 10)}] PLAYER: Je suis un simple moussaillon.
+    * [(Mentir) Un simple moussaillon. {t(CHAR, 10)}]
         {sc(CHAR, 10): -> lie_about_not_being_capitaine_S | -> lie_about_not_being_capitaine_F}
-            ** (lie_about_not_being_capitaine_S) MARCELLO: Il a l'air de dire vrai, cheffe.
-            ** (lie_about_not_being_capitaine_F) MARCELLO: Tu mens comme tu respires, pas vrai ?
+            ** (lie_about_not_being_capitaine_S) PLAYER: Je suis un simple moussaillon.
+                MARCELLO: Il a l'air de dire vrai, cheffe.
+            ** (lie_about_not_being_capitaine_F) PLAYER: Je... euh... Je suis un simple moussaillon.
+                MARCELLO: Tu mens comme tu respires, pas vrai ?
 - CAPUCINE: Le fripon a l'air louche... #playsound:VOX_Capucine_friponlouche
-    * [Vous-mêmes.] PLAYER: C'est vous qui êtes louches, les baveux.
+    * [Louches vous-mêmes !] PLAYER: C'est vous qui êtes louches, les baveux.
         MARCELLO: Répète ça pour voir, abruti !
         ** [Répéter.] PLAYER: Louches et sourdingues, en plus de ça.
             MARCELLO: Nous allons t'apprendre à insulter des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
@@ -334,21 +341,7 @@ CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la. #playsound:
 #anim:Marcello:dodge
 #anim:Marcello:attack
 #anim:Player:hurt
-CAPUCINE: Allons-nous-en avec notre trouvaille. Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts... #playsound:VOX_Capucine_allonsnousen #audience:debate
+CAPUCINE: Allons-nous-en avec notre trouvaille. 
+CAPUCINE: Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts... #playsound:VOX_Capucine_allonsnousen #audience:debate
 CAPUCINE: Il finira sa triste vie au cachot, comme son amie. #playsound:VOX_Capucine_ilfinira #audience:ovation
-- -> end_playtest_demo
-#move(Capucine)
-// Marcello remet un coup gratuit au Player
-#anim:Marcello:attack
-#anim:Player:hurt
-#move(Marcello)
--> barge.scene_3
-
-= end_playtest_demo
-- SOUFFLEUR: Psssst... Hé, l'ami !
-SOUFFLEUR: C'est la fin de la démo de <wiggle>PENDRILLONS</wiggle> !
-SOUFFLEUR: Toute l'équipe ainsi que la troupe te remercient d'avoir participé aux playtests du jeu !
-SOUFFLEUR: Nous avons encore un peu de travail, alors on te laisse l'ami !
-SOUFFLEUR: N'oublie pas de répondre au questionnaire que nous allons te transmettre !
-SOUFFLEUR: À la prochaine, l'ami !
-- -> epilogue
+- -> barge.scene_3
