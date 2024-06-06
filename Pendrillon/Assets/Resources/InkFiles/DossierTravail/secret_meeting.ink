@@ -140,18 +140,20 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * [Dépêche-toi !]  -> what_is_the_mission
 - (what_is_the_mission) PLAYER: Quelle est donc cette mission ? #anim:Player:question #playsound:VOX_Player_quelleestcettemission
 ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #anim:Arle:question #playsound:VOX_Arle_quelrapporttuer #anim:Player:surprised #audience:choc
-    * [Hors de question.] PLAYER: Je t'arrête tout de suite, ôter une vie n'est pas dans mes pratiques. Je suis un marin. Tout juste suis-je bon à tuer un poisson... #anim:Player:non
-        ARLE: Il se trouve justement que c'est un poisson que l'on souhaiterait voir mort. Un gros poisson. #anim:Arle:happy
+    * [Hors de question.] PLAYER: Ôter une vie n'est pas dans mes pratiques. #audience:ovation
         ~ trial(t_1_refuse_to_kill)
+        PLAYER: Je ne suis pas un tueur, mais un marin. Tout juste suis-je capable d'ôter la vie à un poisson... #anim:Player:non
+        ARLE: Il se trouve justement que c'est un poisson que l'on souhaiterait voir mort. Un gros poisson. #anim:Arle:happy #audience:debate
         -- (big_fish)
         ** [Un gros poisson ?] PLAYER : Un gros poisson tu dis ? Gros comment ? #anim:Player:question
             ARLE: Je n'ai pas les bras assez longs, messire. Gros comme le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
         ** [Assez de mystère !] PLAYER: Il suffit ! J'en ai assez de tout ce mystère : parle maintenant ou permets-moi d'aller me recoucher. #anim:Player:angry
             ARLE : Ce poisson est un très gros poisson, messire. Aussi gros que le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
-    * [Sans soucis.] PLAYER : Je n'y vois aucun problème. Dis-m'en plus : qui voulez-vous voir périr ?
-            ARLE: Un poisson, messire. Un gros poisson.
-            ~ trial(t_1_accept_to_kill)
-            -> big_fish
+    * [Sans soucis.] PLAYER : Tuer ne me dérange nullement. #audience:choc
+        ~ trial(t_1_accept_to_kill)
+        PLAYER: Dis-m'en plus : qui voulez-vous voir périr ? #audience:debate
+        ARLE: Un poisson, messire. Un gros poisson. #audience:debate
+        -> big_fish
 - ARLE: Prenez ceci, voulez-vous ? #anim:Arle:give_map #playsound:VOX_Arle_prenezceci
     * [Qu'est-ce que c'est ?] PLAYER: Qu'est-ce donc ? #anim:Player:question
 - ARLE: Un marin tel que vous ne reconnaît-il pas une carte quand il en voit une, messire ? #anim:Arle:bow #audience:laughter
@@ -208,11 +210,9 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
     * [J'en serais honoré !] PLAYER: J'honorerai la Déesse, j'en fais le serment ! #audience:ovation
         ~ trial(t_1_respect_irene)
     * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme du dernier crachin ! #anim:Player:disappointed#audience:booing
+        ~ trial(t_1_disrespect_irene)
         ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix. #anim:Arle:deception
-        ~ trial(t_1_disrespect_irene)
     * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la reine, ni pour la Déesse, mais pour mon seul profit.
-        ~ trial(t_1_disrespect_the_crown)
-        ~ trial(t_1_disrespect_irene)
         ~ trial(t_1_gold_digger)
 - ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence
     * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur. J'accepte de ramener le cœur du Léviathan. #playsound:VOX_Player_celaseraitunhonneur

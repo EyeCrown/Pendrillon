@@ -131,7 +131,7 @@ PLAYER: Bien, bien... Si tu insistes, Passeur.
 PLAYER: Notre voyage dura...
     * [Près d'une année.] PLAYER: ... près d'une année, en tout.
     * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté.
-- PLAYER: Je garderai secret ce qu'il se passa lorsque nous atteignîmes le répère du Léviathan.
+- PLAYER: Je garderai <i>secret</i> ce qu'il se passa lorsque nous atteignîmes le répère du Léviathan.
 PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX_Player_voyagedure1an
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreux playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
@@ -144,7 +144,7 @@ PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX
     * [Inattendu.] PLAYER: ... des plus <i>inattendus</i>.
         PASSEUR: Inattendu, tu dis ?
 - PLAYER: Constatez par vous-même : nous avons bravé une tempête, affronté un monstre marin...
-PLAYER ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna...
+PLAYER ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna... #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake
 - -> trip_return
 
 // Scène 3

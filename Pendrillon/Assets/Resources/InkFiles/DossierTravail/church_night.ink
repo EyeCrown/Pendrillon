@@ -4,7 +4,6 @@
 // Variables
 VAR claim_to_be_free = false
 VAR irene_torch_is_on = false
-VAR irene_was_a_sireine = true
 
 // Scene
 === church_night ===
@@ -102,6 +101,7 @@ VAR irene_was_a_sireine = true
             ~ trial(t_3_light_on_irene_torch)
             ~ irene_torch_is_on = true
         ** [Éteindre la lampe.] PLAYER: J'ai changé d'avis. La lampe restera éteinte, j'en ai peur.
+            ~ trial(t_3_no_light_on_irene_torch)
             -> lamp_off
         -- AGATHE: Irène saura entendre vos prières, mon enfant. Sachez, à votre tour, entendre son récit.
     * [Laisser la lampe éteinte.] PLAYER: Elle restera éteinte, j'en ai peur.
@@ -155,10 +155,15 @@ AGATHE: En plein affrontement avec les vagues furieuses... Ils entendirent des p
         ~ trial(t_3_is_against_irene_saviors)
     * [Écouter en silence.]
 - AGATHE: L'un d'eux, n'écoutant que son courage...
-    * [... ou sa bêtise.] PLAYER: ...ou sa stupidité...
-        ~ trial(t_3_insult_irene_savior)
-    * [Rester silencieux.]
-- AGATHE: L'un d'eux, dis-je, affréta un canot et suivit le son des pleurs au cœur de la tempête.
+{
+    - t_3_is_against_irene_saviors:
+        * [... ou sa bêtise.] PLAYER: ...ou sa stupidité...
+            -> a_navigator_save_baby
+            ~ trial(t_3_insult_irene_savior)
+        * [Rester silencieux.]
+            -> a_navigator_save_baby
+}
+- (a_navigator_save_baby) AGATHE: L'un d'eux, dis-je, affréta un canot et suivit le son des pleurs au cœur de la tempête.
 - AGATHE: Au milieu des vagues, il découvrit sur un rocher, allongé, un bébé.
     * [La vision du vitrail !] PLAYER: C'est cette scène que le vitrail représente, n'est-ce pas ?
         AGATHE: Celle-là même.
@@ -177,15 +182,12 @@ AGATHE: En plein affrontement avec les vagues furieuses... Ils entendirent des p
 AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du nom de...
 - (ernest)
     * [...Eugène, sans nul doute.] PLAYER: Vous parlez sans l'ombre d'un doute du célèbre Eugène.
-        ~ trial(t_3_does_not_know_ernest)
         AGATHE: Je n'ai aucune idée de qui donc est cet Eugène. L'homme que je mentionne n'est autre qu'Ernest.
     * [...Ernest, cela va sans dire.] PLAYER: Vous faites sans doute allusion au pieu Ernest.
-        ~ trial(t_3_know_ernest)
         AGATHE: La Déesse le bénisse, entre tous les hommes.
     * [(Avec certitude) Je connais son nom. {t(STRE, -20)}]
         {sc(STRE, -20): -> player_knows_ernest_S | -> player_knows_ernest_F}
         ** (player_knows_ernest_S) PLAYER: Vous faites sans doute allusion au pieu Ernest.
-            ~ trial(t_3_know_ernest)
             AGATHE: Absolument
         ** (player_knows_ernest_F) PLAYER: Vous parlez sans l'ombre d'un doute du célèbre Edgar.
             AGATHE: Edgar, vous dites ?
@@ -197,7 +199,6 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
                 PLAYER: (Les yeux fous) Il nous attend peut-être de l'autre côté d'une ruelle, prêt à nous suriner !
                 AGATHE: ... Euh...
                 AGATHE: L'homme auquel je faisais en réalité allusion est Ernest, la Déesse le bénisse.
-                ~ trial(t_3_does_not_know_ernest)
 - AGATHE: Ernest, le gardien du phare.
     * [Qu'a-t-il donc fait ?] PLAYER: Qu'a-t-il fait pour les aider ?
         AGATHE: Cette nuit-là, Ernest dormait dans son phare, usé par une journée de labeur.
@@ -220,10 +221,9 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
         AGATHE: Cher enfant, vous semblez confondre le tonnage d'un mortel et l'étoffe d'une Sainte.
 - AGATHE: Savez-vous seulement ce que les pêcheurs firent pour remercier Ernest ?
     * [Ils s'en prirent à lui.] PLAYER: Je connais les Hommes, et leur cœur impur. Ils s'en prirent à leur sauveur, n'est-ce pas ?
-        ~ trial(t_3_does_not_know_fishermen_holy_gift)
         AGATHE: Ces pêcheurs risquèrent leur vie pour sauver une pauvre âme de la noyade. Ils ne firent rien de cela, et confièrent plutôt l'enfant sacré à leur sauveur.
     * [Ils lui offrirent l'enfant.] PLAYER: Ils lui confièrent la garde de l'enfant sacré.
-        -- (know_fishermen_gift) ~ trial(t_3_know_fishermen_holy_gift)
+        -- (know_fishermen_gift)
         AGATHE: Précisément.
     * [Seul un idiot l'ignorerait. {t(STRE, 20)}]
         {sc(STRE, 0): -> know_fishermen_gift_S | -> know_fishermen_gift_F}
@@ -264,7 +264,6 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
         ** [Que l'océan les avale.] PLAYER: Que l'océan soit leur tombeau ! #audience:ovation
         ** [Ont-ils vraiment tort ?] PLAYER: Pourtant, cela expliquerait certains détails des Écrits, ne pensez-vous pas ? #audience:debate
             ~ trial(t_3_question_if_irene_is_a_sireine)
-            ~ irene_was_a_sireine = true
             AGATHE: Il est des prêtresses qui étudient les Écrits leur vie durant pour tenter d'en percer ses mystères... 
             AGATHE: Préférez laisser ces zones d'ombres intactes...
             AGATHE: ... à l'idée de les éclairer d'une lumière impie.
@@ -335,12 +334,13 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
 AGATHE: C'est Lui, en effet. L'homme a souffert pour sauver sa fille, et notre peuple tout entier.
 AGATHE: Quand les gardes de la Couronne vinrent arrêter le Messie, c'est lui qu'ils emmenèrent.
     * [Nous lui devons tant.] PLAYER: Notre dette à son égard est immense.
+        ~ trial(t_3_show_judge_respect)
     * [Irène l'a-t-elle su ?] PLAYER: Sait-on si Irène a su quel sacrifice son père avait fait ?
         AGATHE: Elle l'apprit le soir même, mais il était trop tard. Les gardes s'en étaient allé depuis longtemps déjà.
     * [Devrions-nous le craindre ?] PLAYER: Serait-on avisé de le craindre, désormais ? Ou bien pensez-vous que la cloche ne sonne pas pour le juste ? #audience:debate
         AGATHE: À tort ou à raison, tous les habitants de Miraterre le craignent...
 - AGATHE: Lorsque nos ancêtres revinrent à Miraterre, ils le trouvèrent enchaîné à sa roue. Vivant. Intact.
-AGATHE: Durant un siècle entier, il avait souffert sans jamais mourir. 
+AGATHE: Durant un siècle entier, il avait souffert sans jamais mourir.
 AGATHE: Pourquoi donc, d'après vous ?
     * [Le savez-vous vous-même ?] PLAYER: Le savez-vous vous-même, prêtresse ?
         AGATHE: Je crois que quelque chose l'a empêché de mourir. Quelque chose de l'ordre du Divin, mon enfant...
@@ -353,6 +353,7 @@ AGATHE: Pourquoi donc, d'après vous ?
         {sc(STRE, 0): -> watch_judge_closer_S | -> watch_judge_closer_F}
         ** (watch_judge_closer_S) AGATHE: Voyez comme l'Homme a souffert. Quand on le retrouva, son corps avait été si déformé par les années, qu'Il avait acquis une taille inhumaine.
             *** [Il n'a rien d'humain.] PLAYER: Il n'y a rien, chez lui, qui soit encore humain.
+                ~ trial(t_3_say_judge_is_not_human)
                 AGATHE: Vous fait-il peur, mon enfant ?
                     **** [Je n'ai peur de personne.] PLAYER: Je n'en ai pas peur. Pas le moindre du monde...
                     **** [C'est tout naturel.] PLAYER: Tout est fait, chez Lui, pour inspirer la peur. La peur et le respect.
@@ -363,6 +364,7 @@ AGATHE: Pourquoi donc, d'après vous ?
         ** (watch_judge_closer_F) -> not_watch_judge
     * [Détourner le regard.]
         -- (not_watch_judge) AGATHE: Vous détournez votre regard, mon enfant...
+            ~ trial(t_3_look_away_judge_stained_glass)
             ** [Suis-je un couard ?] PLAYER: Cela fait-il de moi un couard ?
                 --- (you_are_right_to_be_afraid) AGATHE: J'ai vu tant de fois ce vitrail. Je crois y être devenue presque insensible. Au fond, c'est sans doute vous qui avez raison...
             ** [Ne rien dire.] -> you_are_right_to_be_afraid
