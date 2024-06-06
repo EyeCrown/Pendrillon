@@ -22,4 +22,5 @@ INCLUDE boss_battle.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
--> barge
+//-> barge
+-> tribunal_1
