@@ -22,12 +22,17 @@ namespace AK
         static const AkUniqueID PLAY_AMB_SC_THEATER_CROWDCHATTER = 23769754U;
         static const AkUniqueID PLAY_AMB_SC_TRIAL_AMBIANCE = 1105680401U;
         static const AkUniqueID PLAY_CROWDREACTION_APPLAUSE = 3488008550U;
+        static const AkUniqueID PLAY_CROWDREACTION_APPLAUSEBIGSHORT = 2521936442U;
+        static const AkUniqueID PLAY_CROWDREACTION_APPLAUSEINFINITE = 511443706U;
+        static const AkUniqueID PLAY_CROWDREACTION_APPLAUSESMALLLONG = 1696445813U;
+        static const AkUniqueID PLAY_CROWDREACTION_APPLAUSESMALLSHORT = 2102909907U;
         static const AkUniqueID PLAY_CROWDREACTION_BOOING = 363331623U;
         static const AkUniqueID PLAY_CROWDREACTION_CHOC = 1681429952U;
         static const AkUniqueID PLAY_CROWDREACTION_CURRENTREACTIONLEVEL = 2113844951U;
         static const AkUniqueID PLAY_CROWDREACTION_DEBATE = 3108286192U;
         static const AkUniqueID PLAY_CROWDREACTION_LAUGHTER = 1181182787U;
         static const AkUniqueID PLAY_CROWDREACTION_OVATION = 3292652439U;
+        static const AkUniqueID PLAY_CROWDREACTION_STOPAPPLAUSEINFINITE = 1516269050U;
         static const AkUniqueID PLAY_CROWDREACTION_SURPRISED = 285796174U;
         static const AkUniqueID PLAY_FOL_HUMANOID_HURT = 786277887U;
         static const AkUniqueID PLAY_FOL_PLAYER_WALK_STEPPLANK = 2657927902U;
@@ -331,6 +336,7 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID DRY_CROWD = 672170402U;
         static const AkUniqueID DRY_ENVIRONMENT = 3848410326U;
         static const AkUniqueID DRY_MUSIC = 4010064756U;
         static const AkUniqueID DRY_SFX = 3872602748U;
@@ -346,6 +352,11 @@ namespace AK
         static const AkUniqueID REVERB_UI_01 = 189108676U;
         static const AkUniqueID REVERB_VOICES_01 = 3299242565U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID REVERB_CROWD = 1166417795U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

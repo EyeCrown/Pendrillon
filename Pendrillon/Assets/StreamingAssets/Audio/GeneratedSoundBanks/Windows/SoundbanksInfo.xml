@@ -9,10 +9,13 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{28D8E638-8120-273A-1950-76EBB574E66D}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{51EF087C-ECE5-AA42-1D07-AEF60D19A327}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<ShareSets>
+					<Plugin Id="1520064353" Name="Hall_Medium_Bright" LibName="Wwise RoomVerb" LibId="7733251"/>
+				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
@@ -23,6 +26,7 @@
 				<Bus Id="189108676" Name="Reverb_UI_01"/>
 				<Bus Id="318808210" Name="Dry_Voices"/>
 				<Bus Id="603598863" Name="Reverb_Environment_01"/>
+				<Bus Id="672170402" Name="Dry_Crowd"/>
 				<Bus Id="744331921" Name="Reverb_SFX_01"/>
 				<Bus Id="1636724294" Name="MainReverb"/>
 				<Bus Id="2800544509" Name="MainDry"/>
@@ -34,6 +38,15 @@
 				<Bus Id="4010064756" Name="Dry_Music"/>
 				<Bus Id="4073358989" Name="Reverb_Music_01"/>
 			</Busses>
+			<AuxBusses>
+				<AuxBus Id="1166417795" Name="Reverb_Crowd">
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1520064353"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+			</AuxBusses>
 			<GameParameters>
 				<GameParameter Id="1006055004" Name="AmbianceFatigue"/>
 				<GameParameter Id="1006694123" Name="Music_Volume"/>
@@ -71,10 +84,14 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{B4568A47-9BC8-452F-6CB8-D6934676B47C}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{98FF74E4-727B-B301-D6A4-6269241913C9}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
+				<File Id="308911" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-017.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-017_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="4272060" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_neutral-005.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_neutral-005_3F75BDB9.wem</CachePath>
@@ -107,13 +124,25 @@
 					<ShortName>AMB_SC_Barque_RND_Lantern_03.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_RND_Lantern_03_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="15820428" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BooingSingle_Booing-002.wav</ShortName>
+					<CachePath>SFX/BooingSingle_Booing-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="19546796" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_meretoujoursdit.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_meretoujoursdit_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="23421905" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-010.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-010_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="23547510" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Barque_RND_Lantern_09.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_RND_Lantern_09_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="27558471" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-002.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-002_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="28965928" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_Bed_WoodCreaking.wav</ShortName>
@@ -127,6 +156,10 @@
 					<ShortName>VOX_Capucine_tuentendsvoixQ.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_tuentendsvoixQ_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="46289423" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-005.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-005_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="47045859" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Ferryman_detoutefacon.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Ferryman_detoutefacon_3F75BDB9.wem</CachePath>
@@ -139,13 +172,33 @@
 					<ShortName>AMB_SC_PontTempete_Thunder_Far_1.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_Thunder_Far_1_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="53838940" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_End-002.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_End-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="56926588" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Start-002.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Start-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="58096542" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_11.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_BoatCreaking_11_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="59127582" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-026.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-026_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="63932064" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_ClothRustle_07.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_07_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="65663942" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-013.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-013_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="68286471" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-007.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-007_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="68900219" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_Combat_NPC_Bouffon_Attack1.wav</ShortName>
@@ -158,6 +211,10 @@
 				<File Id="70701178" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_6.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_6_B0506F9C.wem</CachePath>
+				</File>
+				<File Id="71655673" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-001.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="71742877" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_06.wav</ShortName>
@@ -179,17 +236,33 @@
 					<ShortName>FOL_Player_Walk_PlankStep_03.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_PlankStep_03_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="83276523" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-027.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-027_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="83558779" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_stressed-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_stressed-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="86194364" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-009.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-009_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="86437770" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_pasdutoutabruti.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_pasdutoutabruti_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="90365696" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-003.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="90854277" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_astuentenduquelquechoeabouge.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_astuentenduquelquechoeabouge_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="91511088" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-030.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-030_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="92586305" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_Bed_Rain.wav</ShortName>
@@ -239,6 +312,18 @@
 					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_5.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_5_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="139363190" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-010.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-010_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="145725991" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-006.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-006_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="145942901" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-010.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-010_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="147463948" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Souffleur_oublietexeteQ.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Souffleur_oublietexeteQ_3F75BDB9.wem</CachePath>
@@ -251,6 +336,10 @@
 					<ShortName>SFX_Story_JudgeBellFar.wav</ShortName>
 					<CachePath>SFX/SFX_Story_JudgeBellFar_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="151032344" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-006.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-006_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="151801143" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>SouffleurBarks-006.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-006_3F75BDB9.wem</CachePath>
@@ -262,6 +351,10 @@
 				<File Id="157522930" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_HUD_SpeechBubble_Appears_1.wav</ShortName>
 					<CachePath>SFX/UI_HUD_SpeechBubble_Appears_1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="161036481" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-028.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-028_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="162505701" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_6.wav</ShortName>
@@ -282,6 +375,10 @@
 				<File Id="171597142" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_Barque_MysteriousLetter1.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_Barque_MysteriousLetter1_A51A26C1.wem</CachePath>
+				</File>
+				<File Id="171699714" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-009.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-009_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="176130958" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_permettezepargnerdetails.wav</ShortName>
@@ -331,6 +428,10 @@
 					<ShortName>MUS_Story_SC_SecretMeeting_Intro.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_SecretMeeting_Intro_237E3CCF.wem</CachePath>
 				</File>
+				<File Id="194779143" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Surprise_Faible_surprise-002.wav</ShortName>
+					<CachePath>SFX/Surprise_Faible_surprise-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="197874328" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdNeutral_3.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdNeutral_3_3F75BDB9.wem</CachePath>
@@ -350,6 +451,10 @@
 				<File Id="205424553" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>neutre-003.wav</ShortName>
 					<CachePath>Voices/French(FR)/neutre-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="206908110" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-007.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-007_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="207051331" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_ClothRustle_09.wav</ShortName>
@@ -379,6 +484,10 @@
 					<ShortName>AMB_SC_SecretMeeting_RND_Owl_8.wav</ShortName>
 					<CachePath>SFX/AMB_SC_SecretMeeting_RND_Owl_8_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="222011772" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Start-002.wav</ShortName>
+					<CachePath>SFX/Laugh_Start-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="222034761" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_netexxcusepas.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_netexxcusepas_3F75BDB9.wem</CachePath>
@@ -399,9 +508,17 @@
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_5.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_RND_HugeWave_5_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="233674518" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-002.wav</ShortName>
+					<CachePath>SFX/Cough-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="234036720" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_nulignorerloi.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_nulignorerloi_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="234527113" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Start-001.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Start-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="239095991" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_angry-005.wav</ShortName>
@@ -419,6 +536,10 @@
 					<ShortName>SFX_SC_Theater_SkillCheck_Roll_02.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_02_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="243637981" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-004.wav</ShortName>
+					<CachePath>SFX/Cough-004_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="243914165" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_2.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_2_3F75BDB9.wem</CachePath>
@@ -435,6 +556,10 @@
 					<ShortName>FOL_Player_Walk_ClothRustle_03.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_03_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="250978802" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Surprise_Faible_surprise-003.wav</ShortName>
+					<CachePath>SFX/Surprise_Faible_surprise-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="261048577" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>stress-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/stress-002_3F75BDB9.wem</CachePath>
@@ -447,6 +572,10 @@
 					<ShortName>VOX_Capucine_Emotions_disappointed-003.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_disappointed-003_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="263932578" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BooingSingle_Booing-001.wav</ShortName>
+					<CachePath>SFX/BooingSingle_Booing-001_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="271659276" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>surprise-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/surprise-002_3F75BDB9.wem</CachePath>
@@ -458,6 +587,10 @@
 				<File Id="273231204" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_HUD_SpeechBubble_Appears_3.wav</ShortName>
 					<CachePath>SFX/UI_HUD_SpeechBubble_Appears_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="273758999" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Surprise_Moyen_surprise.wav</ShortName>
+					<CachePath>SFX/Surprise_Moyen_surprise_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="277603230" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_Hover_1_v2.wav</ShortName>
@@ -507,6 +640,10 @@
 					<ShortName>SouffleurBarks-008.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-008_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="299866767" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-017.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-017_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="301964937" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_moncamarade.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_moncamarade_3F75BDB9.wem</CachePath>
@@ -527,6 +664,10 @@
 					<ShortName>FOL_Player_Walk_ClothRustle_05.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_05_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="314417557" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-015.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-015_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="316054915" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>question-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/question-002_3F75BDB9.wem</CachePath>
@@ -534,6 +675,22 @@
 				<File Id="316464088" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Ferryman_quiestu.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Ferryman_quiestu_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="316657973" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerFail_08-001.wav</ShortName>
+					<CachePath>SFX/PlayerFail_08-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="318649675" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Surprise_Moyen-Long_surprise.wav</ShortName>
+					<CachePath>SFX/Surprise_Moyen-Long_surprise_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="321388247" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shhh-003.wav</ShortName>
+					<CachePath>SFX/Shhh-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="322745404" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-004.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-004_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="322916489" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_Octave.wav</ShortName>
@@ -579,6 +736,10 @@
 					<ShortName>VOX_NPC_Leviathan_Scream_4.wav</ShortName>
 					<CachePath>SFX/VOX_NPC_Leviathan_Scream_4_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="338887280" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shock-004.wav</ShortName>
+					<CachePath>SFX/Shock-004_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="339819353" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_neutral-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_neutral-002_3F75BDB9.wem</CachePath>
@@ -607,6 +768,14 @@
 					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_1.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_1_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="354553982" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-024.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-024_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="355678384" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_End-003.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_End-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="356412955" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_question-004.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_question-004_3F75BDB9.wem</CachePath>
@@ -618,6 +787,10 @@
 				<File Id="362178170" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_eneffetfrappes.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_eneffetfrappes_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="362370015" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Loop-005.wav</ShortName>
+					<CachePath>SFX/Whispers_Loop-005_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="367112495" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>question-001.wav</ShortName>
@@ -634,6 +807,10 @@
 				<File Id="370460190" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_allonsnousen.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_allonsnousen_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="373292435" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-003.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="373313578" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>neutre-005.wav</ShortName>
@@ -655,6 +832,10 @@
 					<ShortName>AMB_Mockup_CaleBateau_RND_Water_06.wav</ShortName>
 					<CachePath>SFX/AMB_Mockup_CaleBateau_RND_Water_06_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="387486987" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-016.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-016_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="387662592" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_HUD_ChoiceBubbleClick_1.wav</ShortName>
 					<CachePath>SFX/UI_HUD_ChoiceBubbleClick_1_3F75BDB9.wem</CachePath>
@@ -675,6 +856,10 @@
 					<ShortName>VOX_Capucine_Emotions_surprised-004.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_surprised-004_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="398679397" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cute_15-002.wav</ShortName>
+					<CachePath>SFX/Cute_15-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="401904084" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_pasbavard.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_pasbavard_3F75BDB9.wem</CachePath>
@@ -686,6 +871,14 @@
 				<File Id="402754267" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_envoilaenrevanche.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_envoilaenrevanche_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="406717313" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-005.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-005_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="407617718" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-011.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-011_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="408195026" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>SouffleurBarks-002.wav</ShortName>
@@ -723,6 +916,10 @@
 					<ShortName>VOX_Capucine_Emotions_angry-003.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_angry-003_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="427879571" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-001.wav</ShortName>
+					<CachePath>SFX/Cough-001_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="428894477" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_SC_Theater_SkillCheck_Roll_03.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_03_3F75BDB9.wem</CachePath>
@@ -751,9 +948,21 @@
 					<ShortName>AMB_SC_SecretMeeting_RND_Owl_2.wav</ShortName>
 					<CachePath>SFX/AMB_SC_SecretMeeting_RND_Owl_2_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="454790840" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-005.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-005_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="455293543" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-007.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-007_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="455376796" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_NPC_Leviathan_Scream_2.wav</ShortName>
 					<CachePath>SFX/VOX_NPC_Leviathan_Scream_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="456194261" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-007.wav</ShortName>
+					<CachePath>SFX/Cough-007_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="457556400" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_SecretMeeting_RND_Owl_1.wav</ShortName>
@@ -783,9 +992,21 @@
 					<ShortName>FOL_Humanoid_Hurt_3.wav</ShortName>
 					<CachePath>SFX/FOL_Humanoid_Hurt_3_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="471536104" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-001.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="476461882" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-031.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-031_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="479016596" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMC_SC_Eglise_RND_Thunder_Far_4.wav</ShortName>
 					<CachePath>SFX/AMC_SC_Eglise_RND_Thunder_Far_4_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="479278076" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Start-004.wav</ShortName>
+					<CachePath>SFX/Laugh_Start-004_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="482176403" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_PlankStep_06.wav</ShortName>
@@ -803,9 +1024,21 @@
 					<ShortName>AMB_SC_PontTempete_Thunder_MidDistance_2.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_Thunder_MidDistance_2_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="491568240" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-029.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-029_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="492496761" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_surprised-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_surprised-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="494103653" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-009.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-009_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="496134875" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_End-002.wav</ShortName>
+					<CachePath>SFX/Whispers_End-002_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="503067574" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_ilestvraitalent.wav</ShortName>
@@ -851,6 +1084,10 @@
 					<ShortName>VOX_NPC_Leviathan_Underwater_1.wav</ShortName>
 					<CachePath>SFX/VOX_NPC_Leviathan_Underwater_1_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="516352244" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shhh-002.wav</ShortName>
+					<CachePath>SFX/Shhh-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="519832428" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_09.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_BoatCreaking_09_3F75BDB9.wem</CachePath>
@@ -862,6 +1099,14 @@
 				<File Id="525458759" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>neutre-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/neutre-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="532274087" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shock-003.wav</ShortName>
+					<CachePath>SFX/Shock-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="535455236" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-020.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-020_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="541330996" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_envoilaraisonnable.wav</ShortName>
@@ -878,6 +1123,10 @@
 				<File Id="547720263" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_angry-004.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_angry-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="553104796" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_End-001.wav</ShortName>
+					<CachePath>SFX/Laugh_End-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="557710724" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_NPC_Leviathan_Spawn.wav</ShortName>
@@ -907,6 +1156,22 @@
 					<ShortName>SFX_Story_SC_Eglise_GuardsSearchingFar_3.wav</ShortName>
 					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_3_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="568460084" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_End-002.wav</ShortName>
+					<CachePath>SFX/Laugh_End-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="572201610" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-004.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="574722161" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-020.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-020_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="579303990" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Loop-004.wav</ShortName>
+					<CachePath>SFX/Whispers_Loop-004_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="580828587" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Ferryman_passagersloquaces2.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Ferryman_passagersloquaces2_3F75BDB9.wem</CachePath>
@@ -918,6 +1183,10 @@
 				<File Id="582082362" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Souffleur_parici.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Souffleur_parici_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="582994312" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-018.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-018_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="583238607" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMC_SC_Eglise_Bed_ChurchSilent.wav</ShortName>
@@ -967,6 +1236,10 @@
 					<ShortName>FOL_Player_Walk_ClothRustle_02.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_02_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="604627892" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-019.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-019_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="605287387" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_Debuff.wav</ShortName>
 					<CachePath>SFX/UI_Combat_Debuff_3F75BDB9.wem</CachePath>
@@ -975,9 +1248,41 @@
 					<ShortName>VOX_Capucine_marcelloattrape.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_marcelloattrape_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="612462630" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-025.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-025_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="613887687" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-011.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-011_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="615532513" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-003.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="615805347" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_ClapsOnly_01.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_ClapsOnly_01_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="617952202" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Surprise_Faible_surprise-001.wav</ShortName>
+					<CachePath>SFX/Surprise_Faible_surprise-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="619915790" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-002.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="622173725" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_End-001.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_End-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="623377661" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-008.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-008_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="623717850" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-004.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-004_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="626361040" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Story_SC_Eglise_LightIreneLamp.wav</ShortName>
@@ -987,6 +1292,14 @@
 					<ShortName>AMC_SC_Eglise_RND_Thunder_MidDistance_7.wav</ShortName>
 					<CachePath>SFX/AMC_SC_Eglise_RND_Thunder_MidDistance_7_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="627224201" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-033.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-033_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="627310811" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-005.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-005_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="635065215" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_ClapsOnly_05.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_ClapsOnly_05_3F75BDB9.wem</CachePath>
@@ -995,9 +1308,17 @@
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_01.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_BoatCreaking_01_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="636308883" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-006.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-006_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="639546303" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_tetequitourne.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_tetequitourne_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="648460667" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-007.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-007_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="657140677" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_3.wav</ShortName>
@@ -1006,6 +1327,10 @@
 				<File Id="658760467" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_bloqueluilaroute_alt.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_bloqueluilaroute_alt_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="659389947" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-012.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-012_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="659565307" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_HUD_ChoiceBubble_Appears_2_v3.wav</ShortName>
@@ -1019,6 +1344,10 @@
 					<ShortName>VOX_Capucine_Emotions_neutral-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_neutral-001_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="668040117" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-016.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-016_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="671022519" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>laugh-003.wav</ShortName>
 					<CachePath>Voices/French(FR)/laugh-003_3F75BDB9.wem</CachePath>
@@ -1026,6 +1355,10 @@
 				<File Id="671177936" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_SecretMeeting_Bed.wav</ShortName>
 					<CachePath>SFX/AMB_SC_SecretMeeting_Bed_A96AE17E.wem</CachePath>
+				</File>
+				<File Id="673686168" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-003.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="676425834" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>SouffleurBarks-011.wav</ShortName>
@@ -1038,6 +1371,10 @@
 				<File Id="683766544" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_Thunder_Close_3.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_Thunder_Close_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="686820096" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-003.wav</ShortName>
+					<CachePath>SFX/Cough-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="687613328" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_2.wav</ShortName>
@@ -1087,13 +1424,25 @@
 					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_8.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_8_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="709112806" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-021.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-021_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="716954534" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_Mockup_CaleBateau_WaterBed.wav</ShortName>
 					<CachePath>SFX/AMB_Mockup_CaleBateau_WaterBed_C1CDCB6E.wem</CachePath>
 				</File>
+				<File Id="717125793" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-003.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="719646880" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_NPC_Leviathan_Underwater_2.wav</ShortName>
 					<CachePath>SFX/VOX_NPC_Leviathan_Underwater_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="720061317" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_End-002.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_End-002_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="721132792" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_fermelatuveux.wav</ShortName>
@@ -1107,6 +1456,18 @@
 					<ShortName>AMC_SC_Eglise_RND_ChoirChord_1.wav</ShortName>
 					<CachePath>SFX/AMC_SC_Eglise_RND_ChoirChord_1_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="722496134" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Loop-002.wav</ShortName>
+					<CachePath>SFX/Whispers_Loop-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="722675419" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-022.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-022_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="723761029" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Loop-003.wav</ShortName>
+					<CachePath>SFX/Whispers_Loop-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="725713458" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>deception-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/deception-001_3F75BDB9.wem</CachePath>
@@ -1114,6 +1475,10 @@
 				<File Id="727631927" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_3.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="730630621" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-006.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-006_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="731746254" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_Barque_MysteriousLetter2.wav</ShortName>
@@ -1126,6 +1491,10 @@
 				<File Id="737385051" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_NPC_Leviathan_Hurt_2.wav</ShortName>
 					<CachePath>SFX/VOX_NPC_Leviathan_Hurt_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="738085398" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-001.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="738241972" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_6.wav</ShortName>
@@ -1143,9 +1512,25 @@
 					<ShortName>FOL_Player_Walk_PlankStep_13.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_PlankStep_13_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="743384577" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-001.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-001_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="743528828" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>laugh-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/laugh-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="744510117" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Start-002.wav</ShortName>
+					<CachePath>SFX/Whispers_Start-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="745759955" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Start-003.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Start-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="750486872" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-001.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="752299475" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_HUD_ChoiceBubbleClick_2.wav</ShortName>
@@ -1158,6 +1543,18 @@
 				<File Id="756338795" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_04.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_BoatCreaking_04_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="757244166" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-004.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="757718628" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-009.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-009_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="757869913" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-003.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="757911818" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_avectoutmonrespect.wav</ShortName>
@@ -1179,6 +1576,10 @@
 					<ShortName>VOX_Player_toutdispose.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_toutdispose_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="775644139" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_End-001.wav</ShortName>
+					<CachePath>SFX/Whispers_End-001_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="775810034" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>SouffleurBarks-007.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-007_3F75BDB9.wem</CachePath>
@@ -1195,6 +1596,14 @@
 					<ShortName>FOL_Player_Walk_ClothRustle_06.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_06_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="787674042" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-008.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-008_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="788589716" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-002.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="789280311" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_05.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_BoatCreaking_05_3F75BDB9.wem</CachePath>
@@ -1207,6 +1616,10 @@
 					<ShortName>AMC_SC_Eglise_RND_ChoirChord_4.wav</ShortName>
 					<CachePath>SFX/AMC_SC_Eglise_RND_ChoirChord_4_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="792558178" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerFail_08-003.wav</ShortName>
+					<CachePath>SFX/PlayerFail_08-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="793515356" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_cesprecisement.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_cesprecisement_3F75BDB9.wem</CachePath>
@@ -1214,6 +1627,10 @@
 				<File Id="793563289" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_gardecouronneordre.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_gardecouronneordre_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="795390290" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cute_15-001.wav</ShortName>
+					<CachePath>SFX/Cute_15-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="796709831" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMC_SC_Eglise_Bed_ChurchMystic.wav</ShortName>
@@ -1226,6 +1643,10 @@
 				<File Id="800240790" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_Barque_Intro.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_Barque_Intro_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="800442352" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-006.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-006_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="800469680" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdNeutral_1.wav</ShortName>
@@ -1243,9 +1664,17 @@
 					<ShortName>VOX_Capucine_quadrupleforbandangerssoudoyer.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_quadrupleforbandangerssoudoyer_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="807359897" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-018.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-018_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="807378842" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingBoat_05.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Cale_RND_WoodCreakingBoat_05_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="808827452" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_End-003.wav</ShortName>
+					<CachePath>SFX/Laugh_End-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="809406999" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>stress-003.wav</ShortName>
@@ -1263,9 +1692,17 @@
 					<ShortName>UI_HUD_ChoiceBubble_Appears_4_v3.wav</ShortName>
 					<CachePath>SFX/UI_HUD_ChoiceBubble_Appears_4_v3_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="819742608" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-013.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-013_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="821980279" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_Bed_Thunder.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_Bed_Thunder_48589AC7.wem</CachePath>
+				</File>
+				<File Id="822303483" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-014.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-014_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="822422415" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_toutlemondetabandonne.wav</ShortName>
@@ -1275,6 +1712,14 @@
 					<ShortName>AMB_SC_Barque_Bed_MechanismRolling.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_Bed_MechanismRolling_43F284C8.wem</CachePath>
 				</File>
+				<File Id="823655028" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-008.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-008_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="824347013" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-002.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="825670896" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_SC_Theater_CrowdChatter.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_CrowdChatter_E5530176.wem</CachePath>
@@ -1282,6 +1727,10 @@
 				<File Id="832031639" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Humanoid_Hurt_2.wav</ShortName>
 					<CachePath>SFX/FOL_Humanoid_Hurt_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="833130831" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-012.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-012_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="834505559" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_PlankStep_02.wav</ShortName>
@@ -1307,9 +1756,17 @@
 					<ShortName>MUS_Story_SC_Barque_ANewName.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_Barque_ANewName_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="847475115" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Start-005.wav</ShortName>
+					<CachePath>SFX/Laugh_Start-005_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="852967546" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMC_SC_Eglise_RND_ChoirChord_2.wav</ShortName>
 					<CachePath>SFX/AMC_SC_Eglise_RND_ChoirChord_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="854495594" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cute_15-003.wav</ShortName>
+					<CachePath>SFX/Cute_15-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="855470147" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_2.wav</ShortName>
@@ -1347,6 +1804,10 @@
 					<ShortName>AMB_Mockup_CaleBateau_RND_Water_03.wav</ShortName>
 					<CachePath>SFX/AMB_Mockup_CaleBateau_RND_Water_03_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="865681236" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Start-002.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Start-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="868161685" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>stress-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/stress-001_3F75BDB9.wem</CachePath>
@@ -1370,6 +1831,14 @@
 				<File Id="874406933" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_7.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_RND_HugeWave_7_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="878100028" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlyMultiple_ovation.wav</ShortName>
+					<CachePath>SFX/WallaOnlyMultiple_ovation_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="881480617" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Start-001.wav</ShortName>
+					<CachePath>SFX/Laugh_Start-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="881778037" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_surprised-001.wav</ShortName>
@@ -1403,9 +1872,21 @@
 					<ShortName>FOL_Player_Walk_PlankStep_01.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_PlankStep_01_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="897318909" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Start-003.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Start-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="897619615" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_maistuneserabientôtplusseul.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_maistuneserabientôtplusseul_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="903409546" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-004.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="910554860" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-005.wav</ShortName>
+					<CachePath>SFX/Cough-005_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="914399227" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_remetstudesnoms.wav</ShortName>
@@ -1415,9 +1896,29 @@
 					<ShortName>AMB_SC_PontTempete_Thunder_Close_1.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_Thunder_Close_1_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="917423320" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Start-003.wav</ShortName>
+					<CachePath>SFX/Laugh_Start-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="917798828" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Start-001.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Start-001_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="918670542" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_SC_Theater_SkillCheck_Roll_01.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_01_F7CC2C07.wem</CachePath>
+				</File>
+				<File Id="918792658" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-021.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-021_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="920196783" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-005.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-005_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="921097647" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shhh-001.wav</ShortName>
+					<CachePath>SFX/Shhh-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="924900935" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Barque_RND_Lantern_02.wav</ShortName>
@@ -1426,6 +1927,10 @@
 				<File Id="928569971" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingMechanism_10.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Cale_RND_WoodCreakingMechanism_10_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="930006986" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerFail_08-002.wav</ShortName>
+					<CachePath>SFX/PlayerFail_08-002_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="930328798" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_tiensdoncmaisquivouila.wav</ShortName>
@@ -1443,9 +1948,17 @@
 					<ShortName>deception-003.wav</ShortName>
 					<CachePath>Voices/French(FR)/deception-003_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="942126375" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-002.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="947545656" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_1.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_RND_HugeWave_1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="948019163" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Loop-001.wav</ShortName>
+					<CachePath>SFX/Whispers_Loop-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="948235498" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_ClapsOnly_07.wav</ShortName>
@@ -1479,6 +1992,14 @@
 					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_4.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_4_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="965666241" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-023.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-023_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="965795127" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shock-002.wav</ShortName>
+					<CachePath>SFX/Shock-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="971748999" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_laugh-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_laugh-002_3F75BDB9.wem</CachePath>
@@ -1487,13 +2008,29 @@
 					<ShortName>VOX_Capucine_quelqunsortait.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_quelqunsortait_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="975050806" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-004.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-004_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="988007069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingMechanism_07.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Cale_RND_WoodCreakingMechanism_07_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="988141909" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-019.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-019_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="988620847" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-002.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="989695392" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>neutre-004.wav</ShortName>
 					<CachePath>Voices/French(FR)/neutre-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="990607855" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shock-001.wav</ShortName>
+					<CachePath>SFX/Shock-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="993911334" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_neutral-004.wav</ShortName>
@@ -1503,6 +2040,10 @@
 					<ShortName>SouffleurBarks-009.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-009_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="997177379" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-015.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-015_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="997735127" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Barque_Bed_Darkwind.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_Bed_Darkwind_451247C3.wem</CachePath>
@@ -1510,6 +2051,10 @@
 				<File Id="1000361129" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_SelectCharacter.wav</ShortName>
 					<CachePath>SFX/UI_Combat_SelectCharacter_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1004102871" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Start-001.wav</ShortName>
+					<CachePath>SFX/Whispers_Start-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1005052698" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_07.wav</ShortName>
@@ -1531,6 +2076,10 @@
 					<ShortName>VOX_Ferryman_hahajevois.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Ferryman_hahajevois_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1010109479" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-011.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-011_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1010207419" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_voilaquitenseignera.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_voilaquitenseignera_3F75BDB9.wem</CachePath>
@@ -1547,6 +2096,14 @@
 					<ShortName>VOX_Player_pasmauvaisecompagnie.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_pasmauvaisecompagnie_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1012804336" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-014.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-014_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1012861845" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-008.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-008_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1015211357" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>surprise-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/surprise-001_3F75BDB9.wem</CachePath>
@@ -1554,6 +2111,10 @@
 				<File Id="1016101576" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_SelectAttack_2_v2.wav</ShortName>
 					<CachePath>SFX/UI_Combat_SelectAttack_2_v2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1020798651" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_End-004.wav</ShortName>
+					<CachePath>SFX/Laugh_End-004_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1023383296" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_EndTurn.wav</ShortName>
@@ -1591,6 +2152,10 @@
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingBoat_01.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Cale_RND_WoodCreakingBoat_01_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1041574578" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_End-003.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_End-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1041947587" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_Emotions_disappointed-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_disappointed-002_3F75BDB9.wem</CachePath>
@@ -1607,9 +2172,17 @@
 					<ShortName>VOX_Capucine_veuillezexcuser.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_veuillezexcuser_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1051350135" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-010.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-010_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1054106289" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_SecretMeeting_Meubler.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_SecretMeeting_Meubler_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1054717103" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-032.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-032_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1060649899" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_PlankStep_08.wav</ShortName>
@@ -1619,6 +2192,10 @@
 					<ShortName>SouffleurBarks-005.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-005_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1063459142" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-006.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-006_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1067579051" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Barque_RND_Lantern_01.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_RND_Lantern_01_3F75BDB9.wem</CachePath>
@@ -1626,6 +2203,14 @@
 				<File Id="1067837867" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_SC_Theater_SkillCheck_Roll_03.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_03_F282D97C.wem</CachePath>
+				</File>
+				<File Id="1068553587" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-005.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-005_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1068848619" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-006.wav</ShortName>
+					<CachePath>SFX/Cough-006_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1069338701" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>laugh-002.wav</ShortName>
@@ -1642,6 +2227,10 @@
 				<File Id="1072938198" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_SC_Theater_SkillCheck_Failed_2.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Failed_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1073470351" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-001.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-001_3F75BDB9.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -1778,13 +2367,49 @@
 				</Event>
 				<Event Id="23769754" Name="Play_AMB_SC_Theater_CrowdChatter" DurationType="Infinite">
 					<MediaRefs>
+						<MediaRef Id="308911"/>
+						<MediaRef Id="59127582"/>
+						<MediaRef Id="83276523"/>
+						<MediaRef Id="90365696"/>
+						<MediaRef Id="91511088"/>
+						<MediaRef Id="145942901"/>
+						<MediaRef Id="161036481"/>
+						<MediaRef Id="171699714"/>
+						<MediaRef Id="206908110"/>
+						<MediaRef Id="314417557"/>
+						<MediaRef Id="354553982"/>
+						<MediaRef Id="476461882"/>
+						<MediaRef Id="491568240"/>
+						<MediaRef Id="535455236"/>
+						<MediaRef Id="572201610"/>
+						<MediaRef Id="582994312"/>
+						<MediaRef Id="604627892"/>
+						<MediaRef Id="612462630"/>
+						<MediaRef Id="613887687"/>
+						<MediaRef Id="627224201"/>
+						<MediaRef Id="659389947"/>
+						<MediaRef Id="668040117"/>
+						<MediaRef Id="722675419"/>
+						<MediaRef Id="750486872"/>
+						<MediaRef Id="787674042"/>
+						<MediaRef Id="819742608"/>
+						<MediaRef Id="824347013"/>
 						<MediaRef Id="825670896"/>
+						<MediaRef Id="918792658"/>
+						<MediaRef Id="965666241"/>
+						<MediaRef Id="1012804336"/>
+						<MediaRef Id="1054717103"/>
+						<MediaRef Id="1063459142"/>
+						<MediaRef Id="1068553587"/>
 					</MediaRefs>
 					<PluginRefs>
 						<ShareSets>
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="1105680401" Name="Play_AMB_SC_Trial_Ambiance" DurationType="Infinite">
 					<MediaRefs>
@@ -1844,8 +2469,116 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2521936442" Name="Play_CrowdReaction_applauseBigShort" DurationType="OneShot" DurationMin="5.577511" DurationMax="9.217922">
+					<MediaRefs>
+						<MediaRef Id="46289423"/>
+						<MediaRef Id="71655673"/>
+						<MediaRef Id="145725991"/>
+						<MediaRef Id="234527113"/>
+						<MediaRef Id="619915790"/>
+						<MediaRef Id="622173725"/>
+						<MediaRef Id="673686168"/>
+						<MediaRef Id="865681236"/>
+						<MediaRef Id="897318909"/>
+						<MediaRef Id="975050806"/>
+						<MediaRef Id="1041574578"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="511443706" Name="Play_CrowdReaction_applauseinfinite" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="46289423"/>
+						<MediaRef Id="71655673"/>
+						<MediaRef Id="145725991"/>
+						<MediaRef Id="234527113"/>
+						<MediaRef Id="619915790"/>
+						<MediaRef Id="622173725"/>
+						<MediaRef Id="673686168"/>
+						<MediaRef Id="865681236"/>
+						<MediaRef Id="897318909"/>
+						<MediaRef Id="975050806"/>
+						<MediaRef Id="1041574578"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1696445813" Name="Play_CrowdReaction_applauseSmallLong" DurationType="OneShot" DurationMin="2.6044426" DurationMax="6.00138">
+					<MediaRefs>
+						<MediaRef Id="53838940"/>
+						<MediaRef Id="56926588"/>
+						<MediaRef Id="86194364"/>
+						<MediaRef Id="139363190"/>
+						<MediaRef Id="355678384"/>
+						<MediaRef Id="471536104"/>
+						<MediaRef Id="648460667"/>
+						<MediaRef Id="717125793"/>
+						<MediaRef Id="730630621"/>
+						<MediaRef Id="745759955"/>
+						<MediaRef Id="757244166"/>
+						<MediaRef Id="823655028"/>
+						<MediaRef Id="917798828"/>
+						<MediaRef Id="920196783"/>
+						<MediaRef Id="988620847"/>
+						<MediaRef Id="1010109479"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2102909907" Name="Play_CrowdReaction_applauseSmallShort" DurationType="OneShot" DurationMin="1.9954298" DurationMax="3.8815362">
+					<MediaRefs>
+						<MediaRef Id="53838940"/>
+						<MediaRef Id="56926588"/>
+						<MediaRef Id="86194364"/>
+						<MediaRef Id="139363190"/>
+						<MediaRef Id="355678384"/>
+						<MediaRef Id="471536104"/>
+						<MediaRef Id="648460667"/>
+						<MediaRef Id="717125793"/>
+						<MediaRef Id="730630621"/>
+						<MediaRef Id="745759955"/>
+						<MediaRef Id="757244166"/>
+						<MediaRef Id="823655028"/>
+						<MediaRef Id="917798828"/>
+						<MediaRef Id="920196783"/>
+						<MediaRef Id="988620847"/>
+						<MediaRef Id="1010109479"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="363331623" Name="Play_CrowdReaction_booing" DurationType="OneShot" DurationMin="4.216854" DurationMax="6.7901874">
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="2134499837" Id="486820066"/>
@@ -2240,8 +2973,14 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="2113844951" Name="Play_CrowdReaction_CurrentReactionLevel" DurationType="OneShot" DurationMin="4.216854" DurationMax="6.7901874">
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="2134499837" Id="486820066"/>
@@ -2628,6 +3367,9 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="3108286192" Name="Play_CrowdReaction_debate" DurationType="OneShot" DurationMin="4.216854" DurationMax="6.7901874">
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="2134499837" Id="486820066"/>
@@ -3022,6 +3764,9 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="3292652439" Name="Play_CrowdReaction_ovation" DurationType="OneShot" DurationMin="6.7901874" DurationMax="6.7901874">
 					<MediaRefs>
@@ -3039,6 +3784,30 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1516269050" Name="Play_CrowdReaction_stopapplauseinfinite" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="46289423"/>
+						<MediaRef Id="71655673"/>
+						<MediaRef Id="145725991"/>
+						<MediaRef Id="234527113"/>
+						<MediaRef Id="619915790"/>
+						<MediaRef Id="673686168"/>
+						<MediaRef Id="865681236"/>
+						<MediaRef Id="897318909"/>
+						<MediaRef Id="975050806"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="285796174" Name="Play_CrowdReaction_Surprised" DurationType="OneShot" DurationMin="2.9835076" DurationMax="3.7589843">
 					<MediaRefs>
@@ -3049,6 +3818,9 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="786277887" Name="Play_FOL_Humanoid_Hurt" DurationType="OneShot" DurationMin="1.4865093" DurationMax="2.018936">
 					<MediaRefs>
@@ -4290,6 +5062,9 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="2391403843" Name="Stop_AMB_SC_Trial_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
@@ -4782,10 +5557,14 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{261C0CDD-E075-A208-953A-6CB71D3DA450}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{87559D9E-215F-982C-AE71-F54CD43190FE}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
+				<File Id="308911" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-017.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-017_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="4272060" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_neutral-005.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_neutral-005_3F75BDB9.wem</CachePath>
@@ -4818,13 +5597,25 @@
 					<ShortName>AMB_SC_Barque_RND_Lantern_03.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_RND_Lantern_03_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="15820428" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BooingSingle_Booing-002.wav</ShortName>
+					<CachePath>SFX/BooingSingle_Booing-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="19546796" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_meretoujoursdit.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_meretoujoursdit_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="23421905" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-010.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-010_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="23547510" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Barque_RND_Lantern_09.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_RND_Lantern_09_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="27558471" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-002.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-002_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="28965928" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_Bed_WoodCreaking.wav</ShortName>
@@ -4838,6 +5629,10 @@
 					<ShortName>VOX_Capucine_tuentendsvoixQ.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_tuentendsvoixQ_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="46289423" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-005.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-005_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="47045859" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Ferryman_detoutefacon.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Ferryman_detoutefacon_3F75BDB9.wem</CachePath>
@@ -4850,13 +5645,33 @@
 					<ShortName>AMB_SC_PontTempete_Thunder_Far_1.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_Thunder_Far_1_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="53838940" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_End-002.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_End-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="56926588" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Start-002.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Start-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="58096542" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_11.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_BoatCreaking_11_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="59127582" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-026.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-026_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="63932064" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_ClothRustle_07.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_07_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="65663942" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-013.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-013_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="68286471" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-007.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-007_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="68900219" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_Combat_NPC_Bouffon_Attack1.wav</ShortName>
@@ -4869,6 +5684,10 @@
 				<File Id="70701178" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_6.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdHappy_6_B0506F9C.wem</CachePath>
+				</File>
+				<File Id="71655673" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-001.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="71742877" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_06.wav</ShortName>
@@ -4890,17 +5709,33 @@
 					<ShortName>FOL_Player_Walk_PlankStep_03.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_PlankStep_03_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="83276523" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-027.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-027_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="83558779" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_stressed-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_stressed-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="86194364" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-009.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-009_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="86437770" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_pasdutoutabruti.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_pasdutoutabruti_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="90365696" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-003.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="90854277" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_astuentenduquelquechoeabouge.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_astuentenduquelquechoeabouge_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="91511088" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-030.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-030_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="92586305" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_Bed_Rain.wav</ShortName>
@@ -4950,6 +5785,18 @@
 					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_5.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_5_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="139363190" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-010.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-010_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="145725991" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-006.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-006_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="145942901" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-010.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-010_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="147463948" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Souffleur_oublietexeteQ.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Souffleur_oublietexeteQ_3F75BDB9.wem</CachePath>
@@ -4962,6 +5809,10 @@
 					<ShortName>SFX_Story_JudgeBellFar.wav</ShortName>
 					<CachePath>SFX/SFX_Story_JudgeBellFar_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="151032344" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-006.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-006_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="151801143" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>SouffleurBarks-006.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-006_3F75BDB9.wem</CachePath>
@@ -4973,6 +5824,10 @@
 				<File Id="157522930" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_HUD_SpeechBubble_Appears_1.wav</ShortName>
 					<CachePath>SFX/UI_HUD_SpeechBubble_Appears_1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="161036481" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-028.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-028_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="162505701" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_6.wav</ShortName>
@@ -4993,6 +5848,10 @@
 				<File Id="171597142" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_Barque_MysteriousLetter1.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_Barque_MysteriousLetter1_A51A26C1.wem</CachePath>
+				</File>
+				<File Id="171699714" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-009.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-009_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="176130958" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_permettezepargnerdetails.wav</ShortName>
@@ -5042,6 +5901,10 @@
 					<ShortName>MUS_Story_SC_SecretMeeting_Intro.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_SecretMeeting_Intro_237E3CCF.wem</CachePath>
 				</File>
+				<File Id="194779143" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Surprise_Faible_surprise-002.wav</ShortName>
+					<CachePath>SFX/Surprise_Faible_surprise-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="197874328" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdNeutral_3.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdNeutral_3_3F75BDB9.wem</CachePath>
@@ -5061,6 +5924,10 @@
 				<File Id="205424553" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>neutre-003.wav</ShortName>
 					<CachePath>Voices/French(FR)/neutre-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="206908110" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-007.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-007_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="207051331" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_ClothRustle_09.wav</ShortName>
@@ -5090,6 +5957,10 @@
 					<ShortName>AMB_SC_SecretMeeting_RND_Owl_8.wav</ShortName>
 					<CachePath>SFX/AMB_SC_SecretMeeting_RND_Owl_8_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="222011772" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Start-002.wav</ShortName>
+					<CachePath>SFX/Laugh_Start-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="222034761" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_netexxcusepas.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_netexxcusepas_3F75BDB9.wem</CachePath>
@@ -5110,9 +5981,17 @@
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_5.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_RND_HugeWave_5_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="233674518" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-002.wav</ShortName>
+					<CachePath>SFX/Cough-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="234036720" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_nulignorerloi.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_nulignorerloi_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="234527113" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Start-001.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Start-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="239095991" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_angry-005.wav</ShortName>
@@ -5130,6 +6009,10 @@
 					<ShortName>SFX_SC_Theater_SkillCheck_Roll_02.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_02_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="243637981" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-004.wav</ShortName>
+					<CachePath>SFX/Cough-004_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="243914165" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_2.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_2_3F75BDB9.wem</CachePath>
@@ -5146,6 +6029,10 @@
 					<ShortName>FOL_Player_Walk_ClothRustle_03.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_03_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="250978802" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Surprise_Faible_surprise-003.wav</ShortName>
+					<CachePath>SFX/Surprise_Faible_surprise-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="261048577" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>stress-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/stress-002_3F75BDB9.wem</CachePath>
@@ -5158,6 +6045,10 @@
 					<ShortName>VOX_Capucine_Emotions_disappointed-003.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_disappointed-003_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="263932578" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BooingSingle_Booing-001.wav</ShortName>
+					<CachePath>SFX/BooingSingle_Booing-001_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="271659276" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>surprise-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/surprise-002_3F75BDB9.wem</CachePath>
@@ -5169,6 +6060,10 @@
 				<File Id="273231204" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_HUD_SpeechBubble_Appears_3.wav</ShortName>
 					<CachePath>SFX/UI_HUD_SpeechBubble_Appears_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="273758999" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Surprise_Moyen_surprise.wav</ShortName>
+					<CachePath>SFX/Surprise_Moyen_surprise_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="277603230" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_Hover_1_v2.wav</ShortName>
@@ -5218,6 +6113,10 @@
 					<ShortName>SouffleurBarks-008.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-008_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="299866767" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-017.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-017_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="301964937" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_moncamarade.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_moncamarade_3F75BDB9.wem</CachePath>
@@ -5238,6 +6137,10 @@
 					<ShortName>FOL_Player_Walk_ClothRustle_05.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_05_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="314417557" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-015.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-015_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="316054915" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>question-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/question-002_3F75BDB9.wem</CachePath>
@@ -5245,6 +6148,22 @@
 				<File Id="316464088" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Ferryman_quiestu.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Ferryman_quiestu_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="316657973" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerFail_08-001.wav</ShortName>
+					<CachePath>SFX/PlayerFail_08-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="318649675" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Surprise_Moyen-Long_surprise.wav</ShortName>
+					<CachePath>SFX/Surprise_Moyen-Long_surprise_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="321388247" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shhh-003.wav</ShortName>
+					<CachePath>SFX/Shhh-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="322745404" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-004.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-004_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="322916489" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_Octave.wav</ShortName>
@@ -5290,6 +6209,10 @@
 					<ShortName>VOX_NPC_Leviathan_Scream_4.wav</ShortName>
 					<CachePath>SFX/VOX_NPC_Leviathan_Scream_4_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="338887280" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shock-004.wav</ShortName>
+					<CachePath>SFX/Shock-004_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="339819353" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_neutral-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_neutral-002_3F75BDB9.wem</CachePath>
@@ -5318,6 +6241,14 @@
 					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_1.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_1_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="354553982" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-024.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-024_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="355678384" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_End-003.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_End-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="356412955" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_question-004.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_question-004_3F75BDB9.wem</CachePath>
@@ -5329,6 +6260,10 @@
 				<File Id="362178170" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_eneffetfrappes.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_eneffetfrappes_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="362370015" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Loop-005.wav</ShortName>
+					<CachePath>SFX/Whispers_Loop-005_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="367112495" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>question-001.wav</ShortName>
@@ -5345,6 +6280,10 @@
 				<File Id="370460190" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_allonsnousen.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_allonsnousen_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="373292435" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-003.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="373313578" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>neutre-005.wav</ShortName>
@@ -5366,6 +6305,10 @@
 					<ShortName>AMB_Mockup_CaleBateau_RND_Water_06.wav</ShortName>
 					<CachePath>SFX/AMB_Mockup_CaleBateau_RND_Water_06_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="387486987" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-016.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-016_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="387662592" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_HUD_ChoiceBubbleClick_1.wav</ShortName>
 					<CachePath>SFX/UI_HUD_ChoiceBubbleClick_1_3F75BDB9.wem</CachePath>
@@ -5386,6 +6329,10 @@
 					<ShortName>VOX_Capucine_Emotions_surprised-004.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_surprised-004_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="398679397" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cute_15-002.wav</ShortName>
+					<CachePath>SFX/Cute_15-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="401904084" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_pasbavard.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_pasbavard_3F75BDB9.wem</CachePath>
@@ -5397,6 +6344,14 @@
 				<File Id="402754267" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_envoilaenrevanche.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_envoilaenrevanche_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="406717313" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-005.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-005_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="407617718" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-011.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-011_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="408195026" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>SouffleurBarks-002.wav</ShortName>
@@ -5434,6 +6389,10 @@
 					<ShortName>VOX_Capucine_Emotions_angry-003.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_angry-003_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="427879571" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-001.wav</ShortName>
+					<CachePath>SFX/Cough-001_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="428894477" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_SC_Theater_SkillCheck_Roll_03.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_03_3F75BDB9.wem</CachePath>
@@ -5462,9 +6421,21 @@
 					<ShortName>AMB_SC_SecretMeeting_RND_Owl_2.wav</ShortName>
 					<CachePath>SFX/AMB_SC_SecretMeeting_RND_Owl_2_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="454790840" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-005.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-005_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="455293543" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-007.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-007_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="455376796" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_NPC_Leviathan_Scream_2.wav</ShortName>
 					<CachePath>SFX/VOX_NPC_Leviathan_Scream_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="456194261" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-007.wav</ShortName>
+					<CachePath>SFX/Cough-007_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="457556400" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_SecretMeeting_RND_Owl_1.wav</ShortName>
@@ -5494,9 +6465,21 @@
 					<ShortName>FOL_Humanoid_Hurt_3.wav</ShortName>
 					<CachePath>SFX/FOL_Humanoid_Hurt_3_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="471536104" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-001.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="476461882" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-031.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-031_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="479016596" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMC_SC_Eglise_RND_Thunder_Far_4.wav</ShortName>
 					<CachePath>SFX/AMC_SC_Eglise_RND_Thunder_Far_4_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="479278076" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Start-004.wav</ShortName>
+					<CachePath>SFX/Laugh_Start-004_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="482176403" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_PlankStep_06.wav</ShortName>
@@ -5514,9 +6497,21 @@
 					<ShortName>AMB_SC_PontTempete_Thunder_MidDistance_2.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_Thunder_MidDistance_2_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="491568240" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-029.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-029_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="492496761" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_surprised-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_surprised-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="494103653" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-009.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-009_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="496134875" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_End-002.wav</ShortName>
+					<CachePath>SFX/Whispers_End-002_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="503067574" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_ilestvraitalent.wav</ShortName>
@@ -5562,6 +6557,10 @@
 					<ShortName>VOX_NPC_Leviathan_Underwater_1.wav</ShortName>
 					<CachePath>SFX/VOX_NPC_Leviathan_Underwater_1_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="516352244" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shhh-002.wav</ShortName>
+					<CachePath>SFX/Shhh-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="519832428" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_09.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_BoatCreaking_09_3F75BDB9.wem</CachePath>
@@ -5573,6 +6572,14 @@
 				<File Id="525458759" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>neutre-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/neutre-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="532274087" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shock-003.wav</ShortName>
+					<CachePath>SFX/Shock-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="535455236" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-020.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-020_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="541330996" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_envoilaraisonnable.wav</ShortName>
@@ -5589,6 +6596,10 @@
 				<File Id="547720263" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_angry-004.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_angry-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="553104796" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_End-001.wav</ShortName>
+					<CachePath>SFX/Laugh_End-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="557710724" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_NPC_Leviathan_Spawn.wav</ShortName>
@@ -5618,6 +6629,22 @@
 					<ShortName>SFX_Story_SC_Eglise_GuardsSearchingFar_3.wav</ShortName>
 					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_3_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="568460084" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_End-002.wav</ShortName>
+					<CachePath>SFX/Laugh_End-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="572201610" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-004.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="574722161" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-020.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-020_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="579303990" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Loop-004.wav</ShortName>
+					<CachePath>SFX/Whispers_Loop-004_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="580828587" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Ferryman_passagersloquaces2.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Ferryman_passagersloquaces2_3F75BDB9.wem</CachePath>
@@ -5629,6 +6656,10 @@
 				<File Id="582082362" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Souffleur_parici.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Souffleur_parici_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="582994312" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-018.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-018_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="583238607" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMC_SC_Eglise_Bed_ChurchSilent.wav</ShortName>
@@ -5678,6 +6709,10 @@
 					<ShortName>FOL_Player_Walk_ClothRustle_02.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_02_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="604627892" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-019.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-019_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="605287387" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_Debuff.wav</ShortName>
 					<CachePath>SFX/UI_Combat_Debuff_3F75BDB9.wem</CachePath>
@@ -5686,9 +6721,41 @@
 					<ShortName>VOX_Capucine_marcelloattrape.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_marcelloattrape_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="612462630" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-025.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-025_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="613887687" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-011.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-011_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="615532513" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-003.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="615805347" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_ClapsOnly_01.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_ClapsOnly_01_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="617952202" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Surprise_Faible_surprise-001.wav</ShortName>
+					<CachePath>SFX/Surprise_Faible_surprise-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="619915790" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-002.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="622173725" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_End-001.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_End-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="623377661" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-008.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-008_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="623717850" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-004.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-004_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="626361040" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Story_SC_Eglise_LightIreneLamp.wav</ShortName>
@@ -5698,6 +6765,14 @@
 					<ShortName>AMC_SC_Eglise_RND_Thunder_MidDistance_7.wav</ShortName>
 					<CachePath>SFX/AMC_SC_Eglise_RND_Thunder_MidDistance_7_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="627224201" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-033.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-033_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="627310811" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-005.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-005_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="635065215" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_ClapsOnly_05.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_ClapsOnly_05_3F75BDB9.wem</CachePath>
@@ -5706,9 +6781,17 @@
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_01.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_BoatCreaking_01_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="636308883" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-006.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-006_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="639546303" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_tetequitourne.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_tetequitourne_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="648460667" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-007.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-007_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="657140677" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_3.wav</ShortName>
@@ -5717,6 +6800,10 @@
 				<File Id="658760467" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_bloqueluilaroute_alt.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_bloqueluilaroute_alt_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="659389947" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-012.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-012_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="659565307" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_HUD_ChoiceBubble_Appears_2_v3.wav</ShortName>
@@ -5730,6 +6817,10 @@
 					<ShortName>VOX_Capucine_Emotions_neutral-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_neutral-001_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="668040117" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-016.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-016_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="671022519" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>laugh-003.wav</ShortName>
 					<CachePath>Voices/French(FR)/laugh-003_3F75BDB9.wem</CachePath>
@@ -5737,6 +6828,10 @@
 				<File Id="671177936" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_SecretMeeting_Bed.wav</ShortName>
 					<CachePath>SFX/AMB_SC_SecretMeeting_Bed_A96AE17E.wem</CachePath>
+				</File>
+				<File Id="673686168" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-003.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="676425834" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>SouffleurBarks-011.wav</ShortName>
@@ -5749,6 +6844,10 @@
 				<File Id="683766544" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_Thunder_Close_3.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_Thunder_Close_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="686820096" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-003.wav</ShortName>
+					<CachePath>SFX/Cough-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="687613328" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_2.wav</ShortName>
@@ -5798,13 +6897,25 @@
 					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_8.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_8_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="709112806" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-021.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-021_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="716954534" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_Mockup_CaleBateau_WaterBed.wav</ShortName>
 					<CachePath>SFX/AMB_Mockup_CaleBateau_WaterBed_C1CDCB6E.wem</CachePath>
 				</File>
+				<File Id="717125793" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-003.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="719646880" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_NPC_Leviathan_Underwater_2.wav</ShortName>
 					<CachePath>SFX/VOX_NPC_Leviathan_Underwater_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="720061317" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_End-002.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_End-002_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="721132792" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_fermelatuveux.wav</ShortName>
@@ -5818,6 +6929,18 @@
 					<ShortName>AMC_SC_Eglise_RND_ChoirChord_1.wav</ShortName>
 					<CachePath>SFX/AMC_SC_Eglise_RND_ChoirChord_1_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="722496134" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Loop-002.wav</ShortName>
+					<CachePath>SFX/Whispers_Loop-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="722675419" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-022.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-022_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="723761029" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Loop-003.wav</ShortName>
+					<CachePath>SFX/Whispers_Loop-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="725713458" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>deception-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/deception-001_3F75BDB9.wem</CachePath>
@@ -5825,6 +6948,10 @@
 				<File Id="727631927" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_3.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_3_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="730630621" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-006.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-006_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="731746254" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_Barque_MysteriousLetter2.wav</ShortName>
@@ -5837,6 +6964,10 @@
 				<File Id="737385051" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_NPC_Leviathan_Hurt_2.wav</ShortName>
 					<CachePath>SFX/VOX_NPC_Leviathan_Hurt_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="738085398" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlySingle_ovation-001.wav</ShortName>
+					<CachePath>SFX/WallaOnlySingle_ovation-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="738241972" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdHappy_6.wav</ShortName>
@@ -5854,9 +6985,25 @@
 					<ShortName>FOL_Player_Walk_PlankStep_13.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_PlankStep_13_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="743384577" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-001.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-001_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="743528828" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>laugh-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/laugh-001_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="744510117" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Start-002.wav</ShortName>
+					<CachePath>SFX/Whispers_Start-002_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="745759955" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Start-003.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Start-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="750486872" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-001.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="752299475" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_HUD_ChoiceBubbleClick_2.wav</ShortName>
@@ -5869,6 +7016,18 @@
 				<File Id="756338795" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_04.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_BoatCreaking_04_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="757244166" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-004.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="757718628" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-009.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-009_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="757869913" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-003.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="757911818" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_avectoutmonrespect.wav</ShortName>
@@ -5890,6 +7049,10 @@
 					<ShortName>VOX_Player_toutdispose.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_toutdispose_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="775644139" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_End-001.wav</ShortName>
+					<CachePath>SFX/Whispers_End-001_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="775810034" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>SouffleurBarks-007.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-007_3F75BDB9.wem</CachePath>
@@ -5906,6 +7069,14 @@
 					<ShortName>FOL_Player_Walk_ClothRustle_06.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_06_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="787674042" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-008.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-008_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="788589716" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-002.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="789280311" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_05.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_BoatCreaking_05_3F75BDB9.wem</CachePath>
@@ -5918,6 +7089,10 @@
 					<ShortName>AMC_SC_Eglise_RND_ChoirChord_4.wav</ShortName>
 					<CachePath>SFX/AMC_SC_Eglise_RND_ChoirChord_4_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="792558178" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerFail_08-003.wav</ShortName>
+					<CachePath>SFX/PlayerFail_08-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="793515356" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_cesprecisement.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_cesprecisement_3F75BDB9.wem</CachePath>
@@ -5925,6 +7100,10 @@
 				<File Id="793563289" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_gardecouronneordre.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_gardecouronneordre_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="795390290" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cute_15-001.wav</ShortName>
+					<CachePath>SFX/Cute_15-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="796709831" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMC_SC_Eglise_Bed_ChurchMystic.wav</ShortName>
@@ -5937,6 +7116,10 @@
 				<File Id="800240790" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_Barque_Intro.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_Barque_Intro_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="800442352" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-006.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-006_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="800469680" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdNeutral_1.wav</ShortName>
@@ -5954,9 +7137,17 @@
 					<ShortName>VOX_Capucine_quadrupleforbandangerssoudoyer.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_quadrupleforbandangerssoudoyer_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="807359897" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-018.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-018_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="807378842" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingBoat_05.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Cale_RND_WoodCreakingBoat_05_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="808827452" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_End-003.wav</ShortName>
+					<CachePath>SFX/Laugh_End-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="809406999" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>stress-003.wav</ShortName>
@@ -5974,9 +7165,17 @@
 					<ShortName>UI_HUD_ChoiceBubble_Appears_4_v3.wav</ShortName>
 					<CachePath>SFX/UI_HUD_ChoiceBubble_Appears_4_v3_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="819742608" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-013.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-013_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="821980279" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_Bed_Thunder.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_Bed_Thunder_48589AC7.wem</CachePath>
+				</File>
+				<File Id="822303483" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-014.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-014_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="822422415" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_toutlemondetabandonne.wav</ShortName>
@@ -5986,6 +7185,14 @@
 					<ShortName>AMB_SC_Barque_Bed_MechanismRolling.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_Bed_MechanismRolling_43F284C8.wem</CachePath>
 				</File>
+				<File Id="823655028" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-008.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-008_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="824347013" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-002.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="825670896" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_SC_Theater_CrowdChatter.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_CrowdChatter_E5530176.wem</CachePath>
@@ -5993,6 +7200,10 @@
 				<File Id="832031639" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Humanoid_Hurt_2.wav</ShortName>
 					<CachePath>SFX/FOL_Humanoid_Hurt_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="833130831" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-012.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-012_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="834505559" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_PlankStep_02.wav</ShortName>
@@ -6018,9 +7229,17 @@
 					<ShortName>MUS_Story_SC_Barque_ANewName.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_Barque_ANewName_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="847475115" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Start-005.wav</ShortName>
+					<CachePath>SFX/Laugh_Start-005_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="852967546" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMC_SC_Eglise_RND_ChoirChord_2.wav</ShortName>
 					<CachePath>SFX/AMC_SC_Eglise_RND_ChoirChord_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="854495594" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cute_15-003.wav</ShortName>
+					<CachePath>SFX/Cute_15-003_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="855470147" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_2.wav</ShortName>
@@ -6058,6 +7277,10 @@
 					<ShortName>AMB_Mockup_CaleBateau_RND_Water_03.wav</ShortName>
 					<CachePath>SFX/AMB_Mockup_CaleBateau_RND_Water_03_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="865681236" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Start-002.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Start-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="868161685" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>stress-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/stress-001_3F75BDB9.wem</CachePath>
@@ -6081,6 +7304,14 @@
 				<File Id="874406933" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_7.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_RND_HugeWave_7_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="878100028" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WallaOnlyMultiple_ovation.wav</ShortName>
+					<CachePath>SFX/WallaOnlyMultiple_ovation_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="881480617" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Start-001.wav</ShortName>
+					<CachePath>SFX/Laugh_Start-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="881778037" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_surprised-001.wav</ShortName>
@@ -6114,9 +7345,21 @@
 					<ShortName>FOL_Player_Walk_PlankStep_01.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_PlankStep_01_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="897318909" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Start-003.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Start-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="897619615" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_maistuneserabientôtplusseul.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_maistuneserabientôtplusseul_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="903409546" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-004.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="910554860" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-005.wav</ShortName>
+					<CachePath>SFX/Cough-005_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="914399227" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_remetstudesnoms.wav</ShortName>
@@ -6126,9 +7369,29 @@
 					<ShortName>AMB_SC_PontTempete_Thunder_Close_1.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_Thunder_Close_1_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="917423320" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Start-003.wav</ShortName>
+					<CachePath>SFX/Laugh_Start-003_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="917798828" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Start-001.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Start-001_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="918670542" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_SC_Theater_SkillCheck_Roll_01.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_01_F7CC2C07.wem</CachePath>
+				</File>
+				<File Id="918792658" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-021.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-021_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="920196783" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-005.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-005_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="921097647" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shhh-001.wav</ShortName>
+					<CachePath>SFX/Shhh-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="924900935" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Barque_RND_Lantern_02.wav</ShortName>
@@ -6137,6 +7400,10 @@
 				<File Id="928569971" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingMechanism_10.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Cale_RND_WoodCreakingMechanism_10_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="930006986" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerFail_08-002.wav</ShortName>
+					<CachePath>SFX/PlayerFail_08-002_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="930328798" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_tiensdoncmaisquivouila.wav</ShortName>
@@ -6154,9 +7421,17 @@
 					<ShortName>deception-003.wav</ShortName>
 					<CachePath>Voices/French(FR)/deception-003_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="942126375" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-002.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="947545656" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_1.wav</ShortName>
 					<CachePath>SFX/AMB_SC_PontTempete_RND_HugeWave_1_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="948019163" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Loop-001.wav</ShortName>
+					<CachePath>SFX/Whispers_Loop-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="948235498" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_ClapsOnly_07.wav</ShortName>
@@ -6190,6 +7465,14 @@
 					<ShortName>SFX_Theater_CrowdHype_CrowdQuietRND_4.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdQuietRND_4_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="965666241" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-023.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-023_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="965795127" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shock-002.wav</ShortName>
+					<CachePath>SFX/Shock-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="971748999" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_laugh-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_laugh-002_3F75BDB9.wem</CachePath>
@@ -6198,13 +7481,29 @@
 					<ShortName>VOX_Capucine_quelqunsortait.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_quelqunsortait_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="975050806" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Fort_Loop-004.wav</ShortName>
+					<CachePath>SFX/Applause_Fort_Loop-004_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="988007069" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingMechanism_07.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Cale_RND_WoodCreakingMechanism_07_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="988141909" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-019.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-019_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="988620847" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-002.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-002_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="989695392" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>neutre-004.wav</ShortName>
 					<CachePath>Voices/French(FR)/neutre-004_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="990607855" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shock-001.wav</ShortName>
+					<CachePath>SFX/Shock-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="993911334" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_neutral-004.wav</ShortName>
@@ -6214,6 +7513,10 @@
 					<ShortName>SouffleurBarks-009.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-009_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="997177379" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_Loop-015.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_Loop-015_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="997735127" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Barque_Bed_Darkwind.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_Bed_Darkwind_451247C3.wem</CachePath>
@@ -6221,6 +7524,10 @@
 				<File Id="1000361129" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_SelectCharacter.wav</ShortName>
 					<CachePath>SFX/UI_Combat_SelectCharacter_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1004102871" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Whispers_Start-001.wav</ShortName>
+					<CachePath>SFX/Whispers_Start-001_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1005052698" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_BoatCreaking_07.wav</ShortName>
@@ -6242,6 +7549,10 @@
 					<ShortName>VOX_Ferryman_hahajevois.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Ferryman_hahajevois_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1010109479" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Faible_Loop-011.wav</ShortName>
+					<CachePath>SFX/Applause_Faible_Loop-011_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1010207419" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_voilaquitenseignera.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_voilaquitenseignera_3F75BDB9.wem</CachePath>
@@ -6258,6 +7569,14 @@
 					<ShortName>VOX_Player_pasmauvaisecompagnie.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_pasmauvaisecompagnie_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1012804336" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-014.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-014_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1012861845" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-008.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-008_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1015211357" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>surprise-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/surprise-001_3F75BDB9.wem</CachePath>
@@ -6265,6 +7584,10 @@
 				<File Id="1016101576" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_SelectAttack_2_v2.wav</ShortName>
 					<CachePath>SFX/UI_Combat_SelectAttack_2_v2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1020798651" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_End-004.wav</ShortName>
+					<CachePath>SFX/Laugh_End-004_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1023383296" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_EndTurn.wav</ShortName>
@@ -6302,6 +7625,10 @@
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingBoat_01.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Cale_RND_WoodCreakingBoat_01_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1041574578" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Applause_Moyen_End-003.wav</ShortName>
+					<CachePath>SFX/Applause_Moyen_End-003_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1041947587" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_Emotions_disappointed-002.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_Emotions_disappointed-002_3F75BDB9.wem</CachePath>
@@ -6318,9 +7645,17 @@
 					<ShortName>VOX_Capucine_veuillezexcuser.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Capucine_veuillezexcuser_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1051350135" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-010.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-010_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1054106289" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_SecretMeeting_Meubler.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_SecretMeeting_Meubler_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1054717103" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-032.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-032_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1060649899" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_PlankStep_08.wav</ShortName>
@@ -6330,6 +7665,10 @@
 					<ShortName>SouffleurBarks-005.wav</ShortName>
 					<CachePath>Voices/French(FR)/SouffleurBarks-005_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1063459142" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-006.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-006_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1067579051" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Barque_RND_Lantern_01.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Barque_RND_Lantern_01_3F75BDB9.wem</CachePath>
@@ -6337,6 +7676,14 @@
 				<File Id="1067837867" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_SC_Theater_SkillCheck_Roll_03.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_03_F282D97C.wem</CachePath>
+				</File>
+				<File Id="1068553587" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Amphi_Chatter_Crowd Chatter-005.wav</ShortName>
+					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-005_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1068848619" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cough-006.wav</ShortName>
+					<CachePath>SFX/Cough-006_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1069338701" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>laugh-002.wav</ShortName>
@@ -6353,6 +7700,10 @@
 				<File Id="1072938198" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_SC_Theater_SkillCheck_Failed_2.wav</ShortName>
 					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Failed_2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="1073470351" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Laugh_Loop-001.wav</ShortName>
+					<CachePath>SFX/Laugh_Loop-001_3F75BDB9.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -6489,13 +7840,49 @@
 				</Event>
 				<Event Id="23769754" Name="Play_AMB_SC_Theater_CrowdChatter" DurationType="Infinite">
 					<MediaRefs>
+						<MediaRef Id="308911"/>
+						<MediaRef Id="59127582"/>
+						<MediaRef Id="83276523"/>
+						<MediaRef Id="90365696"/>
+						<MediaRef Id="91511088"/>
+						<MediaRef Id="145942901"/>
+						<MediaRef Id="161036481"/>
+						<MediaRef Id="171699714"/>
+						<MediaRef Id="206908110"/>
+						<MediaRef Id="314417557"/>
+						<MediaRef Id="354553982"/>
+						<MediaRef Id="476461882"/>
+						<MediaRef Id="491568240"/>
+						<MediaRef Id="535455236"/>
+						<MediaRef Id="572201610"/>
+						<MediaRef Id="582994312"/>
+						<MediaRef Id="604627892"/>
+						<MediaRef Id="612462630"/>
+						<MediaRef Id="613887687"/>
+						<MediaRef Id="627224201"/>
+						<MediaRef Id="659389947"/>
+						<MediaRef Id="668040117"/>
+						<MediaRef Id="722675419"/>
+						<MediaRef Id="750486872"/>
+						<MediaRef Id="787674042"/>
+						<MediaRef Id="819742608"/>
+						<MediaRef Id="824347013"/>
 						<MediaRef Id="825670896"/>
+						<MediaRef Id="918792658"/>
+						<MediaRef Id="965666241"/>
+						<MediaRef Id="1012804336"/>
+						<MediaRef Id="1054717103"/>
+						<MediaRef Id="1063459142"/>
+						<MediaRef Id="1068553587"/>
 					</MediaRefs>
 					<PluginRefs>
 						<ShareSets>
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="1105680401" Name="Play_AMB_SC_Trial_Ambiance" DurationType="Infinite">
 					<MediaRefs>
@@ -6555,8 +7942,116 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2521936442" Name="Play_CrowdReaction_applauseBigShort" DurationType="OneShot" DurationMin="5.577511" DurationMax="9.217922">
+					<MediaRefs>
+						<MediaRef Id="46289423"/>
+						<MediaRef Id="71655673"/>
+						<MediaRef Id="145725991"/>
+						<MediaRef Id="234527113"/>
+						<MediaRef Id="619915790"/>
+						<MediaRef Id="622173725"/>
+						<MediaRef Id="673686168"/>
+						<MediaRef Id="865681236"/>
+						<MediaRef Id="897318909"/>
+						<MediaRef Id="975050806"/>
+						<MediaRef Id="1041574578"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="511443706" Name="Play_CrowdReaction_applauseinfinite" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="46289423"/>
+						<MediaRef Id="71655673"/>
+						<MediaRef Id="145725991"/>
+						<MediaRef Id="234527113"/>
+						<MediaRef Id="619915790"/>
+						<MediaRef Id="622173725"/>
+						<MediaRef Id="673686168"/>
+						<MediaRef Id="865681236"/>
+						<MediaRef Id="897318909"/>
+						<MediaRef Id="975050806"/>
+						<MediaRef Id="1041574578"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1696445813" Name="Play_CrowdReaction_applauseSmallLong" DurationType="OneShot" DurationMin="2.6044426" DurationMax="6.00138">
+					<MediaRefs>
+						<MediaRef Id="53838940"/>
+						<MediaRef Id="56926588"/>
+						<MediaRef Id="86194364"/>
+						<MediaRef Id="139363190"/>
+						<MediaRef Id="355678384"/>
+						<MediaRef Id="471536104"/>
+						<MediaRef Id="648460667"/>
+						<MediaRef Id="717125793"/>
+						<MediaRef Id="730630621"/>
+						<MediaRef Id="745759955"/>
+						<MediaRef Id="757244166"/>
+						<MediaRef Id="823655028"/>
+						<MediaRef Id="917798828"/>
+						<MediaRef Id="920196783"/>
+						<MediaRef Id="988620847"/>
+						<MediaRef Id="1010109479"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="2102909907" Name="Play_CrowdReaction_applauseSmallShort" DurationType="OneShot" DurationMin="1.9954298" DurationMax="3.8815362">
+					<MediaRefs>
+						<MediaRef Id="53838940"/>
+						<MediaRef Id="56926588"/>
+						<MediaRef Id="86194364"/>
+						<MediaRef Id="139363190"/>
+						<MediaRef Id="355678384"/>
+						<MediaRef Id="471536104"/>
+						<MediaRef Id="648460667"/>
+						<MediaRef Id="717125793"/>
+						<MediaRef Id="730630621"/>
+						<MediaRef Id="745759955"/>
+						<MediaRef Id="757244166"/>
+						<MediaRef Id="823655028"/>
+						<MediaRef Id="917798828"/>
+						<MediaRef Id="920196783"/>
+						<MediaRef Id="988620847"/>
+						<MediaRef Id="1010109479"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="363331623" Name="Play_CrowdReaction_booing" DurationType="OneShot" DurationMin="4.216854" DurationMax="6.7901874">
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="2134499837" Id="486820066"/>
@@ -6951,8 +8446,14 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="2113844951" Name="Play_CrowdReaction_CurrentReactionLevel" DurationType="OneShot" DurationMin="4.216854" DurationMax="6.7901874">
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="2134499837" Id="486820066"/>
@@ -7339,6 +8840,9 @@
 					</SwitchContainers>
 				</Event>
 				<Event Id="3108286192" Name="Play_CrowdReaction_debate" DurationType="OneShot" DurationMin="4.216854" DurationMax="6.7901874">
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 					<SwitchContainers>
 						<SwitchContainer>
 							<SwitchValue GroupType="Switch" GroupId="2134499837" Id="486820066"/>
@@ -7733,6 +9237,9 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="3292652439" Name="Play_CrowdReaction_ovation" DurationType="OneShot" DurationMin="6.7901874" DurationMax="6.7901874">
 					<MediaRefs>
@@ -7750,6 +9257,30 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
+				<Event Id="1516269050" Name="Play_CrowdReaction_stopapplauseinfinite" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="46289423"/>
+						<MediaRef Id="71655673"/>
+						<MediaRef Id="145725991"/>
+						<MediaRef Id="234527113"/>
+						<MediaRef Id="619915790"/>
+						<MediaRef Id="673686168"/>
+						<MediaRef Id="865681236"/>
+						<MediaRef Id="897318909"/>
+						<MediaRef Id="975050806"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="285796174" Name="Play_CrowdReaction_Surprised" DurationType="OneShot" DurationMin="2.9835076" DurationMax="3.7589843">
 					<MediaRefs>
@@ -7760,6 +9291,9 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="786277887" Name="Play_FOL_Humanoid_Hurt" DurationType="OneShot" DurationMin="1.4865093" DurationMax="2.018936">
 					<MediaRefs>
@@ -9001,6 +10535,9 @@
 							<PluginRef Id="4165585856"/>
 						</ShareSets>
 					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="2391403843" Name="Stop_AMB_SC_Trial_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
@@ -9494,5 +11031,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4BE98BBE-CBAF-D472-FEF1-58F31C8F7B22}</FileHash>
+	<FileHash>{F7D23BFA-3B3A-9FB0-4011-8A99E6543930}</FileHash>
 </SoundBanksInfo>

@@ -228,27 +228,10 @@
 														</Reference>
 													</ReferenceList>
 												</Action>
-												<Action Name="" ID="{B589E42D-4F77-4B7F-8D73-5C9B657D4F82}" ShortID="1034673767">
-													<PropertyList>
-														<Property Name="Delay" Type="Real64" Value="0.3"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_Combat_Player_Attack1" ID="{7E6BD419-A5EA-41C1-A3D9-79205467003F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
 											</ChildrenList>
 										</Event>
 										<Event Name="Play_SFX_Combat_Player_Hurt" ID="{6E4F5767-3925-4AE4-97EE-6C6197676551}">
 											<ChildrenList>
-												<Action Name="" ID="{43961A73-CDB0-4C82-947C-7A3DF109B9FE}" ShortID="221117955">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_Combat_Player_Hurt" ID="{43F5B8F3-EB09-4483-A68E-79E34234FF50}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
 												<Action Name="" ID="{A0B71D14-1F0B-44D4-B787-7B951B4A0D69}" ShortID="656449351">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="41"/>
@@ -422,27 +405,10 @@
 														</Reference>
 													</ReferenceList>
 												</Action>
-												<Action Name="" ID="{57710008-E76C-4091-BBF3-E9EBD90A9E08}" ShortID="770814387">
-													<PropertyList>
-														<Property Name="Delay" Type="Real64" Value="0.1"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_Combat_NPC_RoyalGuard1_Attack1" ID="{DE6CDF03-9C0F-46D6-9674-A581BE286B1F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
 											</ChildrenList>
 										</Event>
 										<Event Name="Play_SFX_Combat_NPC_RoyalGuard_Hurt" ID="{5D8CC151-742E-4E37-9CB9-B9CD506887E7}">
 											<ChildrenList>
-												<Action Name="" ID="{92A1AD72-7E62-40EF-ADBC-5B69E68371E9}" ShortID="937396411">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_Combat_NPC_RoyalGuard1_Hurt" ID="{55DFBAD9-2BCE-4A6B-B167-E1353CB04B8E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
 												<Action Name="" ID="{773C6AF6-2E3D-4FC2-86DE-D8D7A3FFA882}" ShortID="782238518">
 													<PropertyList>
 														<Property Name="ActionType" Type="int16" Value="41"/>
@@ -781,7 +747,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+													<ObjectRef Name="SFX_SC_Theater_CrowdChatterBed" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1059,7 +1025,7 @@
 										<Action Name="" ID="{5692299C-482D-451E-B035-57D8534606EF}" ShortID="327194016">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="SFX_Theater_Applause" ID="{79E59F7E-0AAF-47C0-B06D-576F20723D20}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+													<ObjectRef Name="SFX_Theater_Applause" ID="{79E59F7E-0AAF-47C0-B06D-576F20723D20}" WorkUnitID="{276A8C69-D7B5-4370-A86E-6798E1DCB5B8}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1090,7 +1056,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="SFX_Theater_Applause" ID="{79E59F7E-0AAF-47C0-B06D-576F20723D20}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+													<ObjectRef Name="SFX_Theater_Applause" ID="{79E59F7E-0AAF-47C0-B06D-576F20723D20}" WorkUnitID="{276A8C69-D7B5-4370-A86E-6798E1DCB5B8}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1118,6 +1084,68 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Folder Name="Applauses" ID="{EFA1953A-C62C-416E-9CAA-99CF5D2A6C2B}" ShortID="8333291">
+									<ChildrenList>
+										<Event Name="Play_CrowdReaction_applauseSmallShort" ID="{62D35614-CA2C-4402-836A-E171B1386F15}">
+											<ChildrenList>
+												<Action Name="" ID="{592FC927-5784-42B4-9F7D-9EC738B00BE1}" ShortID="316398191">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="ApplauseFaibleGenerator3" ID="{584C8C9B-C3AD-49C7-B314-C362AF02B141}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_CrowdReaction_applauseinfinite" ID="{911AFC2F-1094-4A66-9684-7A36CAFB1AE4}">
+											<ChildrenList>
+												<Action Name="" ID="{12B4C209-65EF-4CF5-BA27-6791DAFC39FE}" ShortID="155607943">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="ApplauseFortGeneratorINF" ID="{252D81DA-5327-46CD-9A43-125B202BB55E}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_CrowdReaction_stopapplauseinfinite" ID="{7C55F853-8AE8-4CB5-B4B6-569A15FEA44E}">
+											<ChildrenList>
+												<Action Name="" ID="{C0D49F92-4512-4F1D-9963-F07AFCD015F9}" ShortID="400656312">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="34"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="ApplauseFortStartLoopINF" ID="{50CE2A59-3493-4272-A792-FD02342C3958}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_CrowdReaction_applauseSmallLong" ID="{B79C6586-9D95-4A9A-8537-9BAABED33640}">
+											<ChildrenList>
+												<Action Name="" ID="{241F26E5-ECF0-4282-80A6-D5B7D40A043A}" ShortID="767806600">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="ApplauseFaibleGenerator6" ID="{EFBED10E-E898-40BD-BE47-5E2B64A2ADAA}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_CrowdReaction_applauseBigShort" ID="{2E9B23BC-595A-426D-9B86-CFE753D1B349}">
+											<ChildrenList>
+												<Action Name="" ID="{A56450F3-C7C2-48D4-9BCB-334AB9FE4C30}" ShortID="899850652">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="ApplauseFortGenerator6" ID="{A5464CC3-90A1-4B6B-9D4C-2A84DD26D91F}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+									</ChildrenList>
+								</Folder>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="PlayAmbiances" ID="{01FCF146-BF18-45A3-A422-54F625DEF4C9}" ShortID="478229591">
@@ -1194,13 +1222,13 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
-										<Action Name="" ID="{9F5B447C-BF1D-43B1-AC3A-C05D4CAC2010}" ShortID="620740651">
+										<Action Name="" ID="{FE579F3C-A9C5-455B-8A0C-A0380B521F1D}" ShortID="680231898">
 											<PropertyList>
 												<Property Name="FadeTime" Type="Real64" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="SFX_SC_Theater_CrowdChatter" ID="{5E8975BA-AE33-4734-A896-4A4127FF42C8}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+													<ObjectRef Name="SFX_Theater_CrowdChatter" ID="{C36B611E-451F-4293-B76E-FFA84BB47E78}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
