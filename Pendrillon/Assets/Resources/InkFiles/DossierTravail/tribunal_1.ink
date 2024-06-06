@@ -266,7 +266,7 @@ JUGE ERNEST: Accusé, qu'avez-vous à dire pour votre défense ?
                     JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole.
                     ~ judge_explained_mask = true
             }
-            JUGE ERNEST: La vérité sort de la bouche du Juge. #audience:ovation #anim:Juge:mask
+            JUGE ERNEST: <shake>La vérité sort de la bouche du Juge.</shake> #audience:ovation #anim:Juge:mask
             {
                 - t_1_respect_the_crown: JUGE ERNEST: « Je braverai tous les dangers pour notre bonne reine ! ». #audience:ovation #anim:Arle:angry #anim:Player:bow
                     JUGE ERNEST: Témoin, que le Juge ne vous reprenne plus à mentir lors d'un procès divin. #anim:Arle:stressed #audience:booing
@@ -304,6 +304,7 @@ JUGE ERNEST: Est-ce vrai ? La déesse elle-même ? Répondez, Accusé. Et vite !
         }
 - JUGE ERNEST: {arle_lied_again == false: Accusé, ces paroles sont insoutenables, et par la Loi ainsi que la Foi, elles seront punies. | Accusé, je remercie la Déesse que vous n'ayez pas profané son nom comme le témoin le prétendait.}
 - JUGE ERNEST: {arle_lied_again == false: Témoin, la Déesse vous remercie pour votre témoignage. Vous pouvez quitter ce tribunal, désormais... | Témoin, profaner de tels mensonges à l'égard de l'Accusé est un acte grave ! La Déesse vous couvre de honte ! Hors de ma vue !} #audience:booing
+- JUGE ERNEST: J'appelle à la barre nos deux prochains témoins.
     -> witnesses_capucine_and_marcello
 
 // Witnesses Capucine and marcello
@@ -538,6 +539,7 @@ AGATHE: J'ai évoqué avec l'Accusé l'histoire de la Déesse et des marins qui 
     - t_3_rant_about_edgar_the_traquenard: AGATHE: Ensuite, il ne cessa de mentionner un certain Edgard le Traquenard, Votre Honneur... #audience:laughter
         JUGE ERNEST: Comment dites-vous ? Edgar... le Traquenard ? #audience:laughter
         AGATHE: Il semblerait, oui... Il en parlait avec des yeux fous, Votre Honneur. #audience:laughter
+        ~ audience_judgement(-0.02)
         JUGE ERNEST: Passons, passons...
 }
 - JUGE ERNEST: Avez-vous évoqué avec l'Accusé la fin de l'histoire ? Celle-ci est des plus attendrissantes... #audience:applause
@@ -578,6 +580,7 @@ JUGE ERNEST: Et qu'a eu à dire l'Accusé au sujet du Juge ? #audience:silent
         AGATHE: L'Accusé...
         AGATHE: L'Accusé contesta votre humanité, Votre Honneur.#audience:choc
         ~ audience_judgement(-0.04)
+        JUGE ERNEST: Je vois...
     - t_3_question_judge_position: AGATHE: L'Accusé remit en question votre position de Juge, Votre Honneur. #audience:choc
         JUGE ERNEST: Je vois, je vois...
         JUGE ERNEST: Le Juge laissera les jurés décider de son sort... Puisse-t-il finir au fond des Eaux ! #audience:ovation

@@ -85,7 +85,6 @@ VAR player_won_battle = false // Define if the player won the battle or not
         ** (crate_front_search_F) PLAYER: Je n'ai rien trouvé.
 - PERSONNAGE MASQUÉ: Ne peut-on pas éviter que des gardes ne viennent fourrer leur nez ici ?
     * [Je connais certains gardes...] PLAYER: Il est certains gardes que je... connais bien, disons. Pas ceux-là.
-        ~ trial(t_2_have_bribed_guards)
     * [C'est la Loi.] PLAYER: Certaines lois sont sujettes à interprétations, mais...
         PERSONNAGE MASQUÉ: ... mais ?
         PLAYER: ... mais pas celle que nous avons bravée, j'en ai peur. #playsound:judge_bell #audience:choc

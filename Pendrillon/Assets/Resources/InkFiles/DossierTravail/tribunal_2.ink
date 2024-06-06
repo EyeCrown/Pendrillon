@@ -101,7 +101,7 @@ SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
             -> player_and_naida_met
         ** [C'est entendu.] PLAYER: Entendu, Votre Honneur. #audience:applause
             -> player_and_naida_met
-- JUGE ERNEST: Ainsi, tu as découvert le peuple maudit qui fut jadis noyé...
+- JUGE ERNEST: Ainsi, tu as découvert le peuple maudit qui fut jadis noyé, avalé par le Léviathan...
     * [Ils ne sont pas maudits. {t(DEXT, -20)}]
         {sc(DEXT, -20): -> sireine_are_not_cursed_S | -> sireine_are_not_cursed_F}
         ** (sireine_are_not_cursed_S) PLAYER: Votre Honneur, j'ai toutes les raisons de penser que le peuple des Sireines n'est en rien maudit. #audience:debate

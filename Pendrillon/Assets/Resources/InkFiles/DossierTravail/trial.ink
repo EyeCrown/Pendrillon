@@ -13,7 +13,7 @@ VAR t_souffleur_explanations_bell = false
 // VAR t_1_gold_digger = false
 // VAR t_1_accept_mission_with_positivity = false
 // VAR t_1_accept_mission_with_negativity = false
-// DEBUG Tribunal
+// DEBUG TRIBUNAL
 VAR t_1_accept_to_kill = false
 VAR t_1_refuse_to_kill = true
 VAR t_1_disrespect_the_crown = true
@@ -27,19 +27,15 @@ VAR t_1_accept_mission_with_negativity = true
 // TRIP RETURN SCENE
 // VAR t_2_lawfull = false
 // VAR t_2_lawless = false
-// VAR t_2_have_bribed_guards = false
 // VAR t_2_against_law = false
 // VAR t_2_against_crown = false
 // VAR t_2_show_regrets = false
 // VAR t_2_show_no_regrets = false
 // VAR t_2_bribe_guards = false
-// VAR t_2_try_but_fail_bribing_guards = false
-// VAR t_2_try_and_succeed_bribing_guards = false
 // VAR t_2_attack_guards = false
-//Debug Tribunal
+//Debug TRIBUNAL
 VAR t_2_lawfull = true
 VAR t_2_lawless = false
-VAR t_2_have_bribed_guards = false
 VAR t_2_against_law = false
 VAR t_2_against_crown = true
 VAR t_2_show_regrets = true
@@ -75,7 +71,7 @@ VAR t_2_attack_guards = true
 // VAR t_3_stained_glass_1_talk = false
 // VAR t_3_stained_glass_2_talk = false
 // VAR t_3_stained_glass_3_talk = false
-//DEBUG Tribunal
+//DEBUG TRIBUNAL
 VAR t_3_implore_irene = true
 VAR t_3_blame_irene = false
 VAR t_3_no_light_on_irene_torch = false
@@ -153,14 +149,14 @@ VAR t_4_give_guards_surname = false
             }
         - pFelony == "crown outrage":
             {
-                - t_1_disrespect_the_crown: //or t_2_against_crown:
+                - t_1_disrespect_the_crown or t_2_against_crown:
                     ~ isAccused = true
                 - else:
                     ~ isAccused = false
             }
         - pFelony == "judge outrage":
             {
-                - t_3_question_judge_position:
+                - t_3_question_judge_position or t_3_say_judge_is_not_human:
                     ~ isAccused = true
                 - else:
                     ~ isAccused = false
