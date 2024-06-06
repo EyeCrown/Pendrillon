@@ -110,7 +110,7 @@ SOUFFLEUR: N'oublie pas : dans ce procès, c'est le public que tu dois convaincr
 
 // Witness Arle
 = witness_arle
-- JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle, la trublionne de la reine Constance. #anim:Judge:bell #move(Arle) #anim:Arle:bow #audience:applause
+- JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle, la trublionne de la reine Constance. #anim:Judge:bell #move(Arle) #anim:Arle:bow #audience:ovation
 JUGE ERNEST: Décrivez au jury votre rencontre avec l'accusé, je vous prie.
 ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège d'occuper, au sein de la Couronne, un rôle de tout premier plan...
     * [(Se moquer) Contrairement à cette pièce.] PLAYER: Ce qui n'est pas le cas de ton rôle dans cette pièce... #audience:laughter #anim:Arle:angry
@@ -148,13 +148,13 @@ ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à 
         JUGE ERNEST: Témoin, vous mentionniez une mission confiée à l'accusé par la Couronne.
     * [Rester silencieux.]
 - JUGE ERNEST: Précisez quelle était la nature de cette mission, je vous prie. #anim:Arle:bow
-ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme accusé, était de tuer le Léviathan, et d'en ramener l'organe vital.
+ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme accusé, était de tuer le Léviathan, et d'en ramener l'organe vital. #audience:choc
 ARLE: Je veux bien entendu parler de son cœur, Votre Honneur. #audience:laughter #anim:Judge:bell #anim:Arle:bow
 JUGE ERNEST: Bien, bien... Ensuite ?
 - ARLE: Je voudrais, Votre Honneur, témoigner du fait que, lorsque j'abordais avec le détestable messire, le sujet du meurtre...
 ARLE: ... celui-ci n'eût aucun scruple à accepter d'ôter une vie. #audience:choc
 JUGE ERNEST: Vraiment ? Accusé, qu'avez-vous à répondre ?
-    * [J'ai refusé de tuer !] PLAYER: J'ai tojours refusé de tuer, Votre Honneur ! #audience:debate
+    * [J'ai refusé de tuer !] PLAYER: J'ai toujours refusé de tuer, Votre Honneur ! #audience:debate
         ARLE: Mais bien sûr... Quel fieffé menteur ! #audience:debate
         JUGE ERNEST: Silence ! le Juge exige le silence ! #anim:Judge:bell
         {
@@ -189,26 +189,13 @@ JUGE ERNEST: Vraiment ? Accusé, qu'avez-vous à répondre ?
     * [La laisser continuer.]
 - JUGE ERNEST: Soyez brève. #anim:Arle:bow
 ARLE: Entendez bien que mon ambition, Votre Honneur, n'est point de prêter à mon image plus d'éloges qu'elle n'en mérite.
-JUGE ERNEST: Bon, bon... Concluez.
+JUGE ERNEST: Bon, bon... Concluez. #audience:laughter
 ARLE: Je voulais simplement signifier, au profit de la Vérité ainsi que la Justice, qu'à peine notre bonne reine Constance m'eut chargée de confier à messire ladite mission...
-ARLE: Mon cœur me fit comprendre que l'effroyable était bien loin d'être à la hauteur de la tâche. #audience:laughter #audience:applause #anim:Arle:bow
+ARLE: Mon cœur me fit comprendre que l'effroyable messire était bien loin d'être à la hauteur de la tâche. #audience:laughter #audience:applause #anim:Arle:bow
     ~ audience_judgement(-0.01)
 - JUGE ERNEST: J'en appelle à l'accusé : qu'avez-vous à dire pour votre défense ?
-    * [On ne m'a confié aucune mission.] PLAYER: J'annonce, au jury comme à Votre Honneur, que jamais on ne me confia pareille mission. #audience:debate
-        ARLE: Le gredin ment, Votre Honneur ! #audience:debate
-        JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent
-        {
-            - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre.
-                JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole.
-                ~ judge_explained_mask = true
-        }
-        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #audience:ovation #anim:Juge:mask
-        {
-            - t_1_accept_mission_with_positivity: JUGE ERNEST: « Cela serait pour moi un véritable honneur. J'accepte de ramener le cœur du Léviathan. ».
-                ~ audience_judgement(-0.1)
-            - t_1_accept_mission_with_negativity: JUGE ERNEST: « Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du Léviathan. ».
-                ~ audience_judgement(-0.1)
-        }
+    * [Je me suis montré à la hauteur.] PLAYER: Votre Honneur, messieurs les jurés...
+        PLAYER: J'espère que ce procès sera l'occasion de démontrer que j'ai bel et bien été à la hauteur de cette tâche. #anim:Player:bow #audience:applause
         -> accusation_of_disrespecting_queen
     * [Arle vient d'insulter notre reine.] PLAYER: Je crois, Votre Honneur, et mesdames et messieurs les jurés, qu'Arle a trahit son manque de respect pour la reine Constance. #audience:debate
         ~ accuse_alre_to_disrespect_queen = true
@@ -231,19 +218,28 @@ ARLE: Mon cœur me fit comprendre que l'effroyable était bien loin d'être à l
 JUGE ENRNEST: Témoin, avez-vous autre chose à ajouter ?
 ARLE: J'accuse l'abject messire de n'avoir accepté la mission sacrée, confiée par notre bonne reine, que parce qu'il en était contraint ! #audience:debate
 JUGE ERNEST: Accusé, qu'avez-vous à répondre ?
-    * [C'est parfaitement faux !] PLAYER: 
-    * [Personne n'a le droit de me contraindre !]
+    * [C'est parfaitement faux !] PLAYER: Votre Honneur, je récuse cette accusation ! Elle ment ! #audience:debate
+        JUGE ERNEST: Silence ! le Juge vous ordonne de vous taire ! #anim:judge:bell
+        {
+            - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre.
+                JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole.
+                ~ judge_explained_mask = true
+        }
+        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #audience:ovation #anim:Juge:mask
+        {
+            - t_1_accept_mission_with_positivity: JUGE ERNEST: « Cela serait pour moi un véritable honneur de ramener le cœur du Léviathan. ».
+                ~ audience_judgement(-0.1)
+            - t_1_accept_mission_with_negativity: JUGE ERNEST: « Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du Léviathan. ».
+                ~ audience_judgement(-0.1)
+        }
+    * [C'est vrai.] PLAYER: C'est vrai, bien entendu. Qui, dans cette salle, aurait accepté de courir un tel risque ? #audience:debate
+        ~ audience_judgement(-0.02)
     * [(Se moquer) J'ai accepté pour mettre fin à la scène.] PLAYER: Que je n'ai accepté, Votre Honneur, que pour mettre fin à une scène désastreuse... #audience:laughter
-        PLAYER: En arrivant en retard, elle pensait faire languir le public, mais en réalité le faisait-elle fuir de la salle à toutes jambes ! #audience:laughter #anim:Player:bow
+        PLAYER: En arrivant en retard, elle pensait faire languir le public...
+        PLAYER: Mais en réalité le faisait-elle fuir de la salle à toutes jambes ! #audience:laughter #anim:Player:bow
         ~ audience_judgement(0.05)
+        ARLE: Moi ? La <shake>vedette</shake> de cette pièce ? Faire fuir le public ?!
         {make_arle_angry(): -> arle_leaves_stage}
-- JUGE ERNEST: Silence ! le Juge vous ordonne de vous taire ! #anim:judge:bell
-{
-    - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre.
-        JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole.
-        ~ judge_explained_mask = true
-}
-JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #audience:ovation #anim:Juge:mask
 - (accusation_of_disrespecting_queen) JUGE ERNEST: Poursuivons, poursuivons...
 JUGE ERNEST: Témoin, avez-vous une autre révélation à faire ?
 ARLE: Bien entendu, Votre Honneur. {accuse_alre_to_disrespect_queen: L'affreux messire m'a accusé de manquer de respect à notre reine, mais celui-ci l'a tout bonnement humilié. | Je voudrais témoigner du fait que l'affreux messire a humilié notre reine.} #audience:choc #anim:Judge:bell
@@ -290,7 +286,7 @@ ARLE: Celui-ci va choquer nos chers jurés, j'en ai peur... #audience:debate
 JUGE ERNEST: Alors, alors. La Vérité ne saurait souffrir d'une quelconque censure. Poursuivez, je vous prie. #anim:Arle:bow
 ARLE: Alors que je lui confiais la mission qui lui était due... L'horripilant Accusé a insulté la Déesse en personne... #audience:choc
     ~ audience_judgement(-0.1)
-JUGE ERNEST: Est-ce vrai ? La déesse elle-même ? Notre Sauveuse, Irène ? Répondez, Accusé. Et vite !
+JUGE ERNEST: Est-ce vrai ? La déesse elle-même ? Répondez, Accusé. Et vite !
     * [J'avoue mon péché...] PLAYER: Votre Honneur... Mesdames et messieurs les jurés... J'avoue ce péché, en effet. #audience:choc
         ~ audience_judgement(-0.1)
     * [C'est un mensonge !] PLAYER: Votre Honneur, c'est un mensonge ! Moi, insulter la Déesse ? Pas même sous la torture, vous m'entendez !

@@ -215,7 +215,7 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
     * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la reine, ni pour la Déesse, mais pour mon seul profit.
         ~ trial(t_1_gold_digger)
 - ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence
-    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur. J'accepte de ramener le cœur du Léviathan. #playsound:VOX_Player_celaseraitunhonneur
+    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur de ramener le cœur du Léviathan. #playsound:VOX_Player_celaseraitunhonneur
         ~ t_1_accept_mission_with_positivity = true
     * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du Léviathan. #playsound:VOX_Player_pointleloisirsoustraire
         ~ t_1_accept_mission_with_negativity = true
