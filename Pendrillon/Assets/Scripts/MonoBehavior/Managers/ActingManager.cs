@@ -69,6 +69,8 @@ namespace MonoBehavior.Managers
         readonly float _maxButtonPosX =  960;
         float _buttonPosY =  -260;
 
+        [HideInInspector] public string _choiceType;
+        
         #endregion
 
         #region Button Attributes
@@ -291,12 +293,16 @@ namespace MonoBehavior.Managers
 
                     string resultText = scoreText.Remove(scoreText.IndexOf("/")).Remove(0, 1);
                     int result = int.Parse(resultText);
+
+                    string mustObtainText = scoreText.Remove(scoreText.IndexOf("/") + 4)
+                        .Remove(0, scoreText.IndexOf("/") + 1);
+                    int mustObtain = int.Parse(mustObtainText);
                     
-                    Debug.Log($"AM.HandleDialogue > Contains skillcheck: {scoreText} | Result: {result}");
+                    Debug.Log($"AM.HandleDialogue > Contains skillcheck: {scoreText} | Result: {result} / MustObtain {mustObtain}");
                     
                     words[0] = words[0].Remove(0, words[0].IndexOf(']')+1).Trim();
                     
-                    StartCoroutine(_wheel.SpinningCoroutine(result));
+                    StartCoroutine(_wheel.SpinningCoroutine(result, mustObtain, _choiceType));
                 }
                 else
                 {
@@ -430,7 +436,7 @@ namespace MonoBehavior.Managers
             button.GetComponentInChildren<TextMeshProUGUI>().text = choice.text;
             
             // Button Type
-            SetButtonType(button, choice.text);
+            SetButtonType(button, choice);
             
             button.GetComponent<Image>().color = new Color(
                 button.GetComponent<Image>().color.r,
@@ -438,29 +444,32 @@ namespace MonoBehavior.Managers
                 button.GetComponent<Image>().color.b,
                 GameManager.Instance._opacityUI
             );
-            
-            button.onClick.AddListener (delegate {
-                OnClickChoiceButton (choice);
-            });
 
             button.interactable = false; // De base les boutons sont désactivées
             _choicesButtonList.Add(button);
             //Debug.Log($"AM.Refresh > button.GetComponentInChildren<TextMeshProUGUI>().text:{button.GetComponentInChildren<TextMeshProUGUI>().text}");
         }
 
-        void SetButtonType(Button button, string choiceText)
+        void SetButtonType(Button button, Choice choice)
         {
             foreach (var typeName in Constants.ButtonTypesArray)
             {
-                if (choiceText.Contains(typeName))
+                if (choice.text.Contains(typeName))
                 {
                     Debug.Log($"AM.SetButtonType > This button is {typeName} > Wheel must appear");
                     button.transform.Find(typeName).gameObject.SetActive(true);
+                    
+                    button.onClick.AddListener (delegate {
+                        OnClickChoiceButton (choice, typeName);
+                    });
+                    
                     return;
                 }
             }
             Debug.Log("AM.SetButtonType > This button is neutral");
-            
+            button.onClick.AddListener (delegate {
+                OnClickChoiceButton (choice);
+            });
         }
         
 
@@ -581,8 +590,9 @@ namespace MonoBehavior.Managers
         
         #endregion
         
-        public void OnClickChoiceButton (Choice choice)
+        public void OnClickChoiceButton (Choice choice, string type = null)
         {
+            _choiceType = type;
             _historyText.text += $"     > {choice.text}\n";
             GameManager.Instance._story.ChooseChoiceIndex(choice.index);
             Refresh();
