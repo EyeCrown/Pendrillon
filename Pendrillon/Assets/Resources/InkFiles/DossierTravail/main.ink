@@ -22,7 +22,8 @@ INCLUDE boss_battle.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
-//-> barge
+-> barge.scene_5
 //-> tribunal_1
 //-> barge.scene_3
--> church_night
+//-> church_night
+//-> trip_return
