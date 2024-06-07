@@ -298,7 +298,6 @@ public class CharacterHandler : MonoBehaviour
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = transform.position + new Vector3(0, 10.0f,0);
         
-        
         _rope.SetActive(true);
         var ropeStart = _ropeOffset + new Vector3(0, 10f, 0);
         var ropeDestination = _ropeOffset;
