@@ -227,7 +227,7 @@ PASSEUR: ... Il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_doo
         PASSEUR: Il te mène à Lui, voyageur. #audience:choc #playsound:VOX_Ferryman_menealui
     * [(Rester silencieux).]
 - PASSEUR: Attendons un instant. #playsound:VOX_Ferryman_attendonsuninstant
-PASSEUR: Si la <b>Cloche</b> sonne, alors nous serons tenus de passer... #playsound:VOX_Ferryman_silacloche #audience:debate
+PASSEUR: Si la <shake>Cloche du Destin</shake> sonne, alors nous serons tenus de passer... #playsound:VOX_Ferryman_silacloche #audience:debate
 PASSEUR: ...
 PLAYER: ...
     * [Faire face à son destin.]

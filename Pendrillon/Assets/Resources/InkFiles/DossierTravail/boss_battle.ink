@@ -130,11 +130,11 @@ Fin du tour.
 = default_state
     // Player movepool
     + [Utiliser le grappin.]
-        ++ {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == false} [Remonter le grappin. (1)]
+        ++ {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == false} [Remonter le grappin. (PA)]
             ~ load_grabble()
-        ++ {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Viser. (1)]
+        ++ {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Viser. (PA)]
             ~ aim_grabble()
-        ++ {b_player_AP >= 3 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Tirer. (3)]
+        ++ {b_player_AP >= 3 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Tirer. (PA)]
             ~ shoot_grabble()
         ++ [Retourner sur le pont.]
             -> default_state
@@ -142,13 +142,13 @@ Fin du tour.
         -> canon_movepool
     + [Utiliser les tonneaux.]
         -> barrel_movepool
-        + [Monter au mât. (1)]
+        + [Monter au mât. (PA)]
             ~ climb_up_mast()
-            ** {b_player_AP >= 3 && b_player_is_on_top_of_mast == true && b_sail_is_down == false} [Baisser la voile. (3)]
+            ** {b_player_AP >= 3 && b_player_is_on_top_of_mast == true && b_sail_is_down == false} [Baisser la voile. (PA)]
                 ~ lower_sail()
-            ++ {b_player_AP >= 2 && b_player_is_on_top_of_mast == true} [Saut de l'ange. (2)]
+            ++ {b_player_AP >= 2 && b_player_is_on_top_of_mast == true} [Saut de l'ange. (PA)]
                 ~ angel_jump()
-            ++ {b_player_AP >= 1 && b_player_is_on_top_of_mast == true} [Descendre du mât. (1)]
+            ++ {b_player_AP >= 1 && b_player_is_on_top_of_mast == true} [Descendre du mât.]
                 Vous descendez du mât. #anim:climb_down_mast
 - {b_player_AP>0: -> default_state | -> end_turn}
 
