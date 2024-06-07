@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     #region Attributes
-
+    
     #region Stats Text Attributes
 
     private TextMeshProUGUI _charisma;
@@ -18,13 +18,18 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     private TextMeshProUGUI _composition;
 
     #endregion
-    
-    
+
+    private Animator _anim;
 
     #endregion
 
     #region Unity API
 
+    void Awake()
+    {
+        _anim = GetComponent<Animator>();
+    }
+    
     void Start()
     {
         ConnectAttributes();
@@ -79,14 +84,17 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     #endregion
     
+    #region Mouse Events
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        //Debug.Log("mouse enter");
+        _anim.SetBool("InOut", true);
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        //Debug.Log("mouse exit");
+        _anim.SetBool("InOut", false);
     }
+
+    #endregion
 }
