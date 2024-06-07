@@ -308,6 +308,7 @@ namespace MonoBehavior.Managers
                     
                     words[0] = words[0].Remove(0, words[0].IndexOf(']')+1).Trim();
                     
+                    GameManager.Instance._playerInput.Player.Interact.performed += OnClickCloseSkillcheck;
                     StartCoroutine(_wheel.SpinningCoroutine(result, mustObtain, _choiceType));
                 }
                 else
@@ -373,7 +374,7 @@ namespace MonoBehavior.Managers
                         StartCoroutine(GenerateText(dialogue));
                     }
                 });
-                Debug.Log("Allo ?");
+                
                 _dialogueAlreadyHandle = true;
         }
         
@@ -396,7 +397,7 @@ namespace MonoBehavior.Managers
             //Debug.Log("Click += DisplayText");
             GameManager.Instance._playerInput.Player.Interact.performed += OnClickDisplayText;
             
-            if (GameManager.Instance._story.currentChoices.Count > 0)
+            if (GameManager.Instance._story.currentChoices.Any())
             {
                 GameManager.Instance._playerInput.Player.Interact.performed -= OnClickNextDialogue;
 
@@ -591,6 +592,13 @@ namespace MonoBehavior.Managers
             GameManager.Instance._playerInput.Player.Interact.performed -= OnClickDisplayText;
             //Debug.Log("Click -= NextDialogue");
             
+        }
+
+        public void OnClickCloseSkillcheck(InputAction.CallbackContext context)
+        {
+            Debug.Log($"CloseSkillcheck > close skillcheck window");
+            StartCoroutine(_wheel.CloseScoreCoroutine());
+            GameManager.Instance._playerInput.Player.Interact.performed -= OnClickCloseSkillcheck;
         }
         
         
@@ -1305,8 +1313,11 @@ namespace MonoBehavior.Managers
         IEnumerator ExecuteTagMethods()
         {
             // Waiting if someone is still using a rope
-            // while (IsRopeActionRunning())
-            //     yield return null;
+            while (!_canContinueDialogue)
+            {
+                //Debug.Log("Wait to display text");
+                yield return null;
+            }
             
             foreach (var tagAction in _tagMethods)
             {
