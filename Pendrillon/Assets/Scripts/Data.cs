@@ -125,15 +125,19 @@ public static class Constants
 
     #endregion
 
-    #region TravelNames
+    #region MapStates
 
-    public const string TravelTMP1 = "departure";
-    public const string TravelTMP2 = "arrival";
+    public const string MapDisplay = "down";
+    public const string MapTravelDeparture = "departure";
+    public const string MapTravelArrival = "arrival";
+    public const string MapLeave = "up";
 
     public static readonly string[] TravelArray = new string[]
     {
-        TravelTMP1,
-        TravelTMP2
+        MapDisplay,
+        MapTravelDeparture,
+        MapTravelArrival,
+        MapLeave
     };
 
     #endregion
