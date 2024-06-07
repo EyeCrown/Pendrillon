@@ -130,10 +130,10 @@ PLAYER: À dire vrai...
 - PASSEUR: Pourquoi ne pas me dire ce qu'il s'est réellement passé ? Ton âme s'en verra peut-être allégée... #playsound:VOX_Ferryman_pourquoidireverite
 PLAYER: Bien, bien... Si tu insistes, Passeur.
 PLAYER: Notre voyage dura...
-    * [Près d'une année.] PLAYER: ... près d'une année, en tout.
-    * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté.
+    * [Près d'une année.] PLAYER: ... près d'une année, en tout. #map:departure
+    * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté. #map:Travel:departure
 - PLAYER: Je garderai <b>secret</b> ce qu'il se passa lorsque nous atteignîmes le répère du Léviathan.
-PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX_Player_voyagedure1an
+PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX_Player_voyagedure1an #map:arrival
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreux playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
 - PASSEUR: Ainsi, c'est à votre retour à Miraterre que les problèmes ont commencé ? #playsound:VOX_Ferryman_retourmiraterre
@@ -218,8 +218,8 @@ PLAYER: ... Et c'est au port de Miraterre, de retour de notre voyage, que notre 
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
-- PASSEUR: En fin de compte... Notre voyage fut des plus captivants. 
-PASSEUR: Toutefois... #audience:ovation #playsound:VOX_Ferryman_voyagecaptivant
+- PASSEUR: En fin de compte... Notre voyage fut des plus captivants. #playsound:VOX_Ferryman_voyagecaptivant
+PASSEUR: Toutefois... #audience:ovation #playsound:VOX_Ferryman_toutefois
 PASSEUR: ... Il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView #audience:debate
     * [Que va t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, Passeur... et ne me ménage pas. #anim:Player:stressed #playsound:VOX_Player_quevapassemenagepas #audience:debate
         PASSEUR: Cela, je ne puis te le dire, voyageur. Je connais ton passé, mais j'ignore tout de ton avenir. #playsound:VOX_Ferryman_jenepuisteledire #audience:applause
