@@ -41,7 +41,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<ActorMixer Name="Bouffon" ID="{C0E868A7-CD4D-46F7-995F-44199E60F7A5}" ShortID="1066710430">
+								<ActorMixer Name="Arle" ID="{C0E868A7-CD4D-46F7-995F-44199E60F7A5}" ShortID="1066710430">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -51,7 +51,14 @@
 										</Reference>
 									</ReferenceList>
 								</ActorMixer>
-								<ActorMixer Name="Gardes" ID="{784000DE-0686-4C31-B69B-E3BE8D0D7BAD}" ShortID="78202432">
+								<ActorMixer Name="Capucine" ID="{784000DE-0686-4C31-B69B-E3BE8D0D7BAD}" ShortID="78202432">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>13</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -60,6 +67,1433 @@
 											<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="VOX_Capucine_abrutifiche" ID="{83A0CD7D-9003-41A8-977A-BFA012F371F3}" ShortID="709363218">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_abrutifiche" ID="{A4A0E87F-3A2F-4C10-85C8-1E417FFA45D4}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_abrutifiche.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="422805754"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_abrutifiche" ID="{A4A0E87F-3A2F-4C10-85C8-1E417FFA45D4}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_allonsallonsmarecello" ID="{B767F7FD-07AD-4FDE-BF81-D37273C526DC}" ShortID="1000688584">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_allonsallonsmarecello" ID="{0DC5EE0F-3548-4F3A-BEAB-06F1FA3DD2DE}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_allonsallonsmarecello.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="333375722"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_allonsallonsmarecello" ID="{0DC5EE0F-3548-4F3A-BEAB-06F1FA3DD2DE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_allonsnousen" ID="{738E1C08-2D48-429D-8AEE-05C7BBA2057B}" ShortID="738431927">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_allonsnousen" ID="{164A58FE-5E14-4788-83DF-F4A2049ADC70}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_allonsnousen.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="370460190"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_allonsnousen" ID="{164A58FE-5E14-4788-83DF-F4A2049ADC70}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_aquiquadrupleforban" ID="{AC94EFA1-5A4C-4A00-B340-35E70D435D05}" ShortID="1022596981">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_aquiquadrupleforban" ID="{41600C12-1CEE-49D9-A8FF-0B2AA34B2C70}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_aquiquadrupleforban.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="367459424"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_aquiquadrupleforban" ID="{41600C12-1CEE-49D9-A8FF-0B2AA34B2C70}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_astuentenduquelquechoeabouge" ID="{1087652A-1951-4660-BD39-5AE58C34F310}" ShortID="732163344">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_astuentenduquelquechoeabouge" ID="{75EDFFD1-3037-4F05-8E3D-729814DD951E}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_astuentenduquelquechoeabouge.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="90854277"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_astuentenduquelquechoeabouge" ID="{75EDFFD1-3037-4F05-8E3D-729814DD951E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_aussimoncamarade" ID="{85B0A60C-5712-4119-80E9-B83B24528FC7}" ShortID="495992636">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_aussimoncamarade" ID="{FF0A4EE6-D753-4B2A-996A-A0F24EFF892F}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_aussimoncamarade.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="541380956"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_aussimoncamarade" ID="{FF0A4EE6-D753-4B2A-996A-A0F24EFF892F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_avectoutmonrespect" ID="{5910BD8E-505B-41E8-A05A-088F7B5D8DC8}" ShortID="846959069">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_avectoutmonrespect" ID="{D0B9E879-A5C7-4501-BDA6-7D27F9DEC091}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_avectoutmonrespect.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="757911818"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_avectoutmonrespect" ID="{D0B9E879-A5C7-4501-BDA6-7D27F9DEC091}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_bloqueluilaroute" ID="{8FEF13AB-A76F-454D-8DA3-520BA1EDC82D}" ShortID="660150424">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_bloqueluilaroute" ID="{FB942B38-02C6-4DEE-B133-9432340C69E7}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_bloqueluilaroute.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="126237393"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_bloqueluilaroute" ID="{FB942B38-02C6-4DEE-B133-9432340C69E7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_bloqueluilaroute_alt" ID="{7331BDB2-C022-4E39-B781-4A74C2E1F453}" ShortID="704652515">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_bloqueluilaroute_alt" ID="{9CCD25C6-65C1-4C36-9BB7-F8E174231541}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_bloqueluilaroute_alt.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="658760467"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_bloqueluilaroute_alt" ID="{9CCD25C6-65C1-4C36-9BB7-F8E174231541}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_camenatoutlair" ID="{09015267-9ED4-4C10-AC28-7252E4E14871}" ShortID="361132925">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_camenatoutlair" ID="{29F1E26F-72AC-4020-83D9-181CDCE272A7}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_camenatoutlair.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="280896767"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_camenatoutlair" ID="{29F1E26F-72AC-4020-83D9-181CDCE272A7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_cesprecisement" ID="{87EBA795-3D1A-42D4-A92B-FC0348310B62}" ShortID="20536814">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_cesprecisement" ID="{5778F922-6B49-4D5D-8C5F-EE37EB77A0EC}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_cesprecisement.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="793515356"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_cesprecisement" ID="{5778F922-6B49-4D5D-8C5F-EE37EB77A0EC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_cestdonccela" ID="{72EE3948-1F25-49E8-9473-00172D9C1354}" ShortID="388011689">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_cestdonccela" ID="{A82B478B-8A7F-48B6-882B-4344E795B70D}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_cestdonccela.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="344299812"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_cestdonccela" ID="{A82B478B-8A7F-48B6-882B-4344E795B70D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_cesttoicapitaineQ" ID="{B7EFD7B9-269C-4465-A722-D9423ABD8A9C}" ShortID="214134243">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_cesttoicapitaineQ" ID="{D83AC58D-4374-4F48-B171-2A4411E3A031}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_cesttoicapitaineQ.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="93026806"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_cesttoicapitaineQ" ID="{D83AC58D-4374-4F48-B171-2A4411E3A031}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_cetabrutidort" ID="{FFB65361-15E7-4350-8CFC-E36AA29EDC62}" ShortID="1020154842">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_cetabrutidort" ID="{451E5993-23D7-4ACA-B344-F102D28AA75B}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_cetabrutidort.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1031090699"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_cetabrutidort" ID="{451E5993-23D7-4ACA-B344-F102D28AA75B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_declineidentite" ID="{EE9B8B99-BC55-4FE3-8A2E-5EC3B3022142}" ShortID="425625006">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_declineidentite" ID="{9AE3D2B2-D2ED-4B85-826C-A683B1C6537C}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_declineidentite.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="892381585"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_declineidentite" ID="{9AE3D2B2-D2ED-4B85-826C-A683B1C6537C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_eneffetfrappes" ID="{236DC089-995F-4107-9B7A-270CE039340E}" ShortID="458439821">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_eneffetfrappes" ID="{91EBA7BE-EB8F-40B7-A0EA-2CAD04A69DC3}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_eneffetfrappes.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="362178170"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_eneffetfrappes" ID="{91EBA7BE-EB8F-40B7-A0EA-2CAD04A69DC3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_envoilaenrevanche" ID="{1160D7B2-6C10-4699-94A8-696250775B88}" ShortID="493060928">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_envoilaenrevanche" ID="{DCC5FA5B-25AB-4227-A58E-BA4A3E5F4B51}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_envoilaenrevanche.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="402754267"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_envoilaenrevanche" ID="{DCC5FA5B-25AB-4227-A58E-BA4A3E5F4B51}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_envoilaraisonnable" ID="{B8D69162-0691-4A69-AD70-1E7ED314B790}" ShortID="630849553">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_envoilaraisonnable" ID="{99404B40-096E-4A31-B05D-766EA8A609C5}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_envoilaraisonnable.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="541330996"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_envoilaraisonnable" ID="{99404B40-096E-4A31-B05D-766EA8A609C5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_fermelatuveux" ID="{42EE7B0E-BAE4-4DA3-9135-A977E4EBE461}" ShortID="458231833">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_fermelatuveux" ID="{5F9534F5-04FB-40C7-9A28-5402198A13E5}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_fermelatuveux.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="721132792"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_fermelatuveux" ID="{5F9534F5-04FB-40C7-9A28-5402198A13E5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_fermelaveuxtu" ID="{2824598C-5D66-4456-9E25-157C85202BCE}" ShortID="733563332">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_fermelaveuxtu" ID="{A2DA5B92-D7A7-419C-84EC-0E415D710B8F}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_fermelaveuxtu.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="128607407"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_fermelaveuxtu" ID="{A2DA5B92-D7A7-419C-84EC-0E415D710B8F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_fouillernaviredoute" ID="{2E8FBCE8-47B6-4623-83F2-C0C2A60C71C9}" ShortID="328980868">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_fouillernaviredoute" ID="{35A9DBC9-5E12-4520-BDB9-5F8D130AFF5B}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_fouillernaviredoute.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="450491827"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_fouillernaviredoute" ID="{35A9DBC9-5E12-4520-BDB9-5F8D130AFF5B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_friponlouche" ID="{0433EC75-018D-4FA6-8314-355821C8AB3D}" ShortID="766260314">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_friponlouche" ID="{1E1A9E46-8EF9-4090-BF8B-BB0651DA231B}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_friponlouche.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="215200088"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_friponlouche" ID="{1E1A9E46-8EF9-4090-BF8B-BB0651DA231B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_gardecouronneordre" ID="{608C622C-D076-40FC-B404-E0182BD4449B}" ShortID="150368014">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_gardecouronneordre" ID="{28EBCB26-DB47-4929-B5B7-38782DB26329}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_gardecouronneordre.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="793563289"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_gardecouronneordre" ID="{28EBCB26-DB47-4929-B5B7-38782DB26329}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_heureusedeconstaterquetunousreconnais" ID="{2B2AA4B6-1630-4E99-BBEA-2B7F857DBB28}" ShortID="840932153">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_heureusedeconstaterquetunousreconnais" ID="{F11FD799-1E3B-4C1D-A84D-2B7D3F38AA2F}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_heureusedeconstaterquetunousreconnais.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="9880211"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_heureusedeconstaterquetunousreconnais" ID="{F11FD799-1E3B-4C1D-A84D-2B7D3F38AA2F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_idiotsoujereve" ID="{62D21B1F-2B66-454E-A0C2-879B34F9663D}" ShortID="457465355">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_idiotsoujereve" ID="{25788250-97F6-4999-849A-2200A97F3DBD}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_idiotsoujereve.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="562744092"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_idiotsoujereve" ID="{25788250-97F6-4999-849A-2200A97F3DBD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_ilfinira1" ID="{2E555B79-F219-4072-B8F0-F2DF69B8A436}" ShortID="1031529094">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_ilfinira1" ID="{943A89D8-4173-4C97-AB8A-E2C302716943}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_ilfinira1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="597545731"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_ilfinira1" ID="{943A89D8-4173-4C97-AB8A-E2C302716943}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_ilfinira2" ID="{49BEC64C-3BA4-49F3-AF4F-680A9A8A1291}" ShortID="411549583">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_ilfinira2" ID="{42823614-4857-49EB-B2AD-86019410EBC2}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_ilfinira2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="507951076"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_ilfinira2" ID="{42823614-4857-49EB-B2AD-86019410EBC2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_ilsecroitintimidant" ID="{EE0BE767-6324-43B7-8169-0C5FAEF7A8A5}" ShortID="813498455">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_ilsecroitintimidant" ID="{BC0C9C78-B3F6-44B3-A4C7-6C047D6D899B}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_ilsecroitintimidant.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="840171134"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_ilsecroitintimidant" ID="{BC0C9C78-B3F6-44B3-A4C7-6C047D6D899B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_jeviensprecisement" ID="{0BD0AF3F-A5E1-43EB-90C2-961DE5C03BF2}" ShortID="887631196">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_jeviensprecisement" ID="{94827958-464F-470C-9D2B-E7B5BA9C5881}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_jeviensprecisement.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="756010431"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_jeviensprecisement" ID="{94827958-464F-470C-9D2B-E7B5BA9C5881}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_jevousremercie" ID="{A3360EE6-2189-4565-9CFE-C3A8CBADA5C8}" ShortID="864542255">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_jevousremercie" ID="{7FC0FCC8-5A11-4BAB-88EC-C20F5A22774A}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_jevousremercie.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="219738557"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_jevousremercie" ID="{7FC0FCC8-5A11-4BAB-88EC-C20F5A22774A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_lafermejaidit" ID="{A0BDEA6A-21D0-4C2E-9384-F53E90C02B2F}" ShortID="964743701">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_lafermejaidit" ID="{01402646-D18E-44F1-A98C-766206214A1C}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_lafermejaidit.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="736136613"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_lafermejaidit" ID="{01402646-D18E-44F1-A98C-766206214A1C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_lafermetuveux" ID="{DDF55169-62E0-44B2-8920-835797D98F63}" ShortID="806634520">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_lafermetuveux" ID="{3C2BF9B9-A118-4A44-A5EE-BFF23E20533C}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_lafermetuveux.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="8506166"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_lafermetuveux" ID="{3C2BF9B9-A118-4A44-A5EE-BFF23E20533C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_lodeurepouvantable" ID="{0109C036-B8B9-49F7-9FF5-5E8E154792E6}" ShortID="531114418">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_lodeurepouvantable" ID="{3454473A-B1EF-4C3B-8541-1AD432350DFA}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_lodeurepouvantable.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="385425393"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_lodeurepouvantable" ID="{3454473A-B1EF-4C3B-8541-1AD432350DFA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_maistuneserabientôtplusseul" ID="{18992F1A-979E-4A7C-993E-D7B3A9181233}" ShortID="824740651">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_maistuneserabientôtplusseul" ID="{4209AFEC-E574-4E26-B312-0A849DD692C7}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_maistuneserabientôtplusseul.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="897619615"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_maistuneserabientôtplusseul" ID="{4209AFEC-E574-4E26-B312-0A849DD692C7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_maladierare" ID="{BB3F287E-731F-4A73-839B-03B22A23F4B7}" ShortID="1042953781">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_maladierare" ID="{43A70727-3963-4933-9083-A53830FA9C90}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_maladierare.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="290665139"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_maladierare" ID="{43A70727-3963-4933-9083-A53830FA9C90}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_maladierare_alt" ID="{1694F929-98F3-431D-B0B7-F3F109253412}" ShortID="302108623">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_maladierare_alt" ID="{E87AC286-C282-4D85-8575-E7C65124E36A}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_maladierare_alt.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="182783531"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_maladierare_alt" ID="{E87AC286-C282-4D85-8575-E7C65124E36A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_marcelloattrape" ID="{94B7711C-E1A3-4FBD-AA9B-D4580325502D}" ShortID="751507066">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_marcelloattrape" ID="{04414888-8D6E-4E97-8C2A-9E7FC6FF18BF}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_marcelloattrape.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="611524276"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_marcelloattrape" ID="{04414888-8D6E-4E97-8C2A-9E7FC6FF18BF}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_moncamarade" ID="{AF94F3F3-AB68-4A8A-94B1-58552047D325}" ShortID="804125911">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_moncamarade" ID="{960ABED6-89D7-4985-AB62-BDF34E90E5FE}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_moncamarade.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="301964937"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_moncamarade" ID="{960ABED6-89D7-4985-AB62-BDF34E90E5FE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_netexxcusepas" ID="{C344BB29-69F3-49D8-8F5D-C50660B9DA80}" ShortID="661712476">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_netexxcusepas" ID="{1EDA7EFD-A6B1-441F-8728-453DF1829BF0}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_netexxcusepas.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="222034761"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_netexxcusepas" ID="{1EDA7EFD-A6B1-441F-8728-453DF1829BF0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_nulignorerloi" ID="{518ED1C7-FA15-4A70-8551-94BCBE9B0016}" ShortID="999579388">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_nulignorerloi" ID="{5A25491B-69DF-48D9-A9AD-FB6B219E974B}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_nulignorerloi.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="234036720"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_nulignorerloi" ID="{5A25491B-69DF-48D9-A9AD-FB6B219E974B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_pasaussivide" ID="{6E2618EA-03EE-42DF-ACCB-F54538CE0118}" ShortID="45235819">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_pasaussivide" ID="{B01C5B2B-0260-475E-B1A9-74F82B2F37FE}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_pasaussivide.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="862764957"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_pasaussivide" ID="{B01C5B2B-0260-475E-B1A9-74F82B2F37FE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_pasdutoutabruti" ID="{D05043BB-2605-48C0-BA49-12F0D69ED830}" ShortID="678187370">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_pasdutoutabruti" ID="{76D75398-204C-4049-88B9-EAAB7E389872}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_pasdutoutabruti.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="86437770"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_pasdutoutabruti" ID="{76D75398-204C-4049-88B9-EAAB7E389872}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_permettezepargnerdetails" ID="{A564D544-34CB-4466-9EF2-57176D0E8BA9}" ShortID="719477889">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_permettezepargnerdetails" ID="{4E4DCD2D-2A45-40D1-BFD6-04F0DA100E9C}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_permettezepargnerdetails.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="176130958"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_permettezepargnerdetails" ID="{4E4DCD2D-2A45-40D1-BFD6-04F0DA100E9C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_quadrupleforbandangerssoudoyer" ID="{8568BCE1-E053-4C72-8AF0-B70B122872BF}" ShortID="92287029">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_quadrupleforbandangerssoudoyer" ID="{A57B9866-16BD-4718-95C0-0133C5581D1C}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_quadrupleforbandangerssoudoyer.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="805795974"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_quadrupleforbandangerssoudoyer" ID="{A57B9866-16BD-4718-95C0-0133C5581D1C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_quelqunsortait" ID="{4B9CCB2B-B477-489D-8D8F-6FC2E22E8209}" ShortID="90724331">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_quelqunsortait" ID="{2F84DFB9-6E73-4785-BC99-9DE978DBEAFE}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_quelqunsortait.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="972960590"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_quelqunsortait" ID="{2F84DFB9-6E73-4785-BC99-9DE978DBEAFE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_quiestu" ID="{9DAE41E9-E407-4222-8BBF-77B585318340}" ShortID="686596877">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_quiestu" ID="{12B1CB9A-9668-47FE-A420-E397AB660EB0}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_quiestu.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="838562676"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_quiestu" ID="{12B1CB9A-9668-47FE-A420-E397AB660EB0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_remetstudesnoms" ID="{0CF2C83C-1E5A-4C45-9B59-E0883D2D5A19}" ShortID="426343494">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_remetstudesnoms" ID="{1D32F4E4-0297-48BF-8002-3F6F5C2634B6}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_remetstudesnoms.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="914399227"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_remetstudesnoms" ID="{1D32F4E4-0297-48BF-8002-3F6F5C2634B6}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_soiscinglenon" ID="{1ADD5C57-5D65-4BB3-BC9E-D43D45CE49DD}" ShortID="653639147">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_soiscinglenon" ID="{C6897315-E4F7-4C2C-B23A-9DAF471A8B05}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_soiscinglenon.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="199064501"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_soiscinglenon" ID="{C6897315-E4F7-4C2C-B23A-9DAF471A8B05}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_tetequitourne" ID="{AE67FAF1-258B-4F4A-B9A3-48A1635BB111}" ShortID="854451578">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_tetequitourne" ID="{B3EF157B-C537-4D4A-85DA-51E0B5EAEB26}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_tetequitourne.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="639546303"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_tetequitourne" ID="{B3EF157B-C537-4D4A-85DA-51E0B5EAEB26}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_tiensdoncmaisquivouila" ID="{E8077681-48D8-4149-A9DD-CF124826088D}" ShortID="567980566">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_tiensdoncmaisquivouila" ID="{D765C1F0-C0F2-41A6-A425-9F790ED8E028}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_tiensdoncmaisquivouila.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="930328798"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_tiensdoncmaisquivouila" ID="{D765C1F0-C0F2-41A6-A425-9F790ED8E028}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_toutlemondetabandonne" ID="{B8A1EDCD-E1CF-47FC-B371-05146DAFAFB7}" ShortID="328249617">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_toutlemondetabandonne" ID="{67BE9AEF-B0B6-42BA-BB74-E3F6DCA5D057}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_toutlemondetabandonne.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="822422415"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_toutlemondetabandonne" ID="{67BE9AEF-B0B6-42BA-BB74-E3F6DCA5D057}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_tuentendsvoixQ" ID="{C9AA2ED3-1090-4FFF-920B-87200B0D66C3}" ShortID="232872056">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_tuentendsvoixQ" ID="{7C9E0E40-18A1-4644-A59E-E076B56EE332}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_tuentendsvoixQ.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="40837630"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_tuentendsvoixQ" ID="{7C9E0E40-18A1-4644-A59E-E076B56EE332}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_tututecrois" ID="{0D4CCBF8-A666-4493-BAB9-00F4B444281B}" ShortID="542712581">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_tututecrois" ID="{7DBC6C51-4E41-46DC-8AE8-B044AC98FD87}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_tututecrois.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="507137651"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_tututecrois" ID="{7DBC6C51-4E41-46DC-8AE8-B044AC98FD87}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_veuillezexcuser" ID="{89E07C3B-7123-482C-84E4-62EB9CFEB18D}" ShortID="83799423">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_veuillezexcuser" ID="{B0E590CA-F833-4CC7-9297-83CCC6FAA499}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_veuillezexcuser.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1051076272"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_veuillezexcuser" ID="{B0E590CA-F833-4CC7-9297-83CCC6FAA499}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_voilaquitenseignera" ID="{EDC9A053-E941-481F-B1A5-0B523EA0F15E}" ShortID="937464733">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_voilaquitenseignera" ID="{F87C796F-5448-44A7-A2D5-7B258647BF6A}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_voilaquitenseignera.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1010207419"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_voilaquitenseignera" ID="{F87C796F-5448-44A7-A2D5-7B258647BF6A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_volontiersvotrehonneur" ID="{E2056231-367B-4423-BFF0-50B1852FC1AE}" ShortID="864970700">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_volontiersvotrehonneur" ID="{23EF3BBE-A51A-42FB-8FA3-5B18FF700ED3}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_volontiersvotrehonneur.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="883300753"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_volontiersvotrehonneur" ID="{23EF3BBE-A51A-42FB-8FA3-5B18FF700ED3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="VOX_Capucine_vousnetespassanssavoir" ID="{29CE5E92-19A5-4C54-AB27-C04647383285}" ShortID="185010357">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_vousnetespassanssavoir" ID="{54CCAF30-74AF-4067-B0CB-B0350BFC37F2}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_vousnetespassanssavoir.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="462154690"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_vousnetespassanssavoir" ID="{54CCAF30-74AF-4067-B0CB-B0350BFC37F2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="Juge" ID="{56993A0D-E8DF-400D-9B4C-75F58C726BD3}" ShortID="671661644">
 									<ReferenceList>
@@ -71,7 +1505,7 @@
 										</Reference>
 									</ReferenceList>
 								</ActorMixer>
-								<ActorMixer Name="Moussaillons" ID="{0FE5B91F-F3A9-4AC7-A69B-022B3ACD1DAC}" ShortID="331825906">
+								<ActorMixer Name="Marcello" ID="{0FE5B91F-F3A9-4AC7-A69B-022B3ACD1DAC}" ShortID="331825906">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -480,7 +1914,7 @@
 										</Sound>
 									</ChildrenList>
 								</ActorMixer>
-								<ActorMixer Name="Pretre" ID="{D7F27B48-4F2B-4217-9AFD-E404589B8FCA}" ShortID="263025939">
+								<ActorMixer Name="Agathe" ID="{D7F27B48-4F2B-4217-9AFD-E404589B8FCA}" ShortID="263025939">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -490,7 +1924,7 @@
 										</Reference>
 									</ReferenceList>
 								</ActorMixer>
-								<ActorMixer Name="Sireine" ID="{617DAF5A-2344-4B22-8948-0C4C36112D41}" ShortID="934550579">
+								<ActorMixer Name="Naida" ID="{617DAF5A-2344-4B22-8948-0C4C36112D41}" ShortID="934550579">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -1794,6 +3228,1083 @@
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
+								<ActorMixer Name="Capucine" ID="{83557D7B-8129-4659-A03D-9786E2264A74}" ShortID="710318138">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="VOX_Capucine_Emotions_sad" ID="{75BF595E-DC9A-4975-9458-DB2CF97EC3DF}" ShortID="164944258">
+											<PropertyList>
+												<Property Name="IsVoice" Type="bool" Value="True"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_Capucine_Emotions_sad" ID="{E930FFFE-80D9-4BD4-AD18-544DB0DD74B3}">
+													<Language>French(FR)</Language>
+													<AudioFile>VOX_Capucine_Emotions_sad.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="664221502"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_Capucine_Emotions_sad" ID="{E930FFFE-80D9-4BD4-AD18-544DB0DD74B3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<RandomSequenceContainer Name="Capucine_Angry" ID="{8BFBD971-7B6E-4295-8C27-B0C5482CA5A1}" ShortID="1057762586">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_Capucine_Emotions_angry-001" ID="{5F271BF2-3978-412C-BA9C-4A0C693F3D36}" ShortID="354980278">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_angry-001" ID="{0E268F22-5425-4BDA-9921-914B34AE5B9C}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_angry-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="232115883"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_angry-001" ID="{0E268F22-5425-4BDA-9921-914B34AE5B9C}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_angry-002" ID="{EE0EFFD4-08E3-4FC8-BE92-1B28A6636570}" ShortID="690662472">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_angry-002" ID="{4466C9B4-9BA5-4E5C-8F2D-40CA35761EB4}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_angry-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="189324521"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_angry-002" ID="{4466C9B4-9BA5-4E5C-8F2D-40CA35761EB4}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_angry-003" ID="{48A5AF60-5C92-42EB-93E0-2A3D43C11FAD}" ShortID="18057007">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_angry-003" ID="{55311A2E-509C-4A7B-B885-532CB1727452}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_angry-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="426191414"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_angry-003" ID="{55311A2E-509C-4A7B-B885-532CB1727452}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_angry-004" ID="{5AB4F9B3-7E50-4149-9A85-201B4EDF3EEB}" ShortID="394185494">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_angry-004" ID="{A28D1F3F-3E4A-4E43-99B7-5DF219581300}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_angry-004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="547720263"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_angry-004" ID="{A28D1F3F-3E4A-4E43-99B7-5DF219581300}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_angry-005" ID="{89C9BB26-EB6C-4436-9453-19C1BA1C8D88}" ShortID="911900692">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_angry-005" ID="{832A4766-4D11-463F-8E66-A247DA56491F}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_angry-005.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="239095991"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_angry-005" ID="{832A4766-4D11-463F-8E66-A247DA56491F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Capucine_Disappointed" ID="{CA38F216-4EC2-4F70-B56E-6E6558E4466C}" ShortID="586175841">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_Capucine_Emotions_disappointed-001" ID="{9D0A9923-79EF-40CF-B860-108CCA24E94E}" ShortID="1053294280">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_disappointed-001" ID="{A29DA9D7-725F-42A4-BB8E-A8EC021B1234}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_disappointed-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="587127760"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_disappointed-001" ID="{A29DA9D7-725F-42A4-BB8E-A8EC021B1234}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_disappointed-002" ID="{05B34D66-0E66-4029-BD95-54F559C55C50}" ShortID="67128710">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_disappointed-002" ID="{7275401D-D1A3-4F6E-870A-0554C234A4FA}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_disappointed-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1041947587"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_disappointed-002" ID="{7275401D-D1A3-4F6E-870A-0554C234A4FA}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_disappointed-003" ID="{4E7E76F1-051A-40F9-B289-C28780DF8F6F}" ShortID="652082839">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_disappointed-003" ID="{C44A1550-FE44-4C15-A404-A1E4FFB81272}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_disappointed-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="263087409"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_disappointed-003" ID="{C44A1550-FE44-4C15-A404-A1E4FFB81272}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Capucine_happy" ID="{A40D9BAB-5075-4417-AEF8-1D386BB12327}" ShortID="996765452">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_Capucine_Emotions_happy-001" ID="{D2C03BAF-4B06-4EED-9116-A619F0E1975E}" ShortID="557033946">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_happy-001" ID="{485ED2CA-1329-4D34-9E92-1A8D6986F1B2}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_happy-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="419797554"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_happy-001" ID="{485ED2CA-1329-4D34-9E92-1A8D6986F1B2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_happy-002" ID="{9AD37227-8A0D-45D5-B85F-2D220BDB6EF0}" ShortID="430834995">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_happy-002" ID="{6397B026-5425-4D38-84F3-1866B0B8DD35}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_happy-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="342273878"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_happy-002" ID="{6397B026-5425-4D38-84F3-1866B0B8DD35}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_happy-003" ID="{454D499E-BE82-4794-AFD0-0D86FA924978}" ShortID="846606672">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_happy-003" ID="{3AB72D3D-8389-440A-8A07-882C329F995D}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_happy-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="858388008"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_happy-003" ID="{3AB72D3D-8389-440A-8A07-882C329F995D}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_happy-004" ID="{D529F376-6D25-4A92-A1F9-DACA2BC14253}" ShortID="209063514">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_happy-004" ID="{C783FD86-7A45-48EA-9022-0E37D07E9D7F}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_happy-004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="872562115"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_happy-004" ID="{C783FD86-7A45-48EA-9022-0E37D07E9D7F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Capucine_laugh" ID="{53BBF62C-EC47-445B-B055-F2BA1A28F3F4}" ShortID="122870912">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_Capucine_Emotions_laugh-001" ID="{DE6EB88A-68A3-469F-B89B-3DD3BFBB351E}" ShortID="700570055">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_laugh-001" ID="{BF160D57-1937-4285-89A3-A55C08C703B8}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_laugh-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="93211337"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_laugh-001" ID="{BF160D57-1937-4285-89A3-A55C08C703B8}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_laugh-002" ID="{5F5B241B-A708-4C9B-96DA-D1E3AADAFE4C}" ShortID="846830967">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_laugh-002" ID="{CB8629BB-8A06-4B8D-85D3-AF0FF7EBFFE8}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_laugh-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="971748999"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_laugh-002" ID="{CB8629BB-8A06-4B8D-85D3-AF0FF7EBFFE8}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_laugh-003" ID="{B4544B1F-AD2C-4025-AFCD-89D8DBDC0C70}" ShortID="897848770">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_laugh-003" ID="{A32A8E96-0C54-4CE9-8314-918C20FCECE2}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_laugh-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="778520336"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_laugh-003" ID="{A32A8E96-0C54-4CE9-8314-918C20FCECE2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Capucine_neutral" ID="{D82C1BEA-2279-49E4-A240-8578097FC617}" ShortID="770876123">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_Capucine_Emotions_neutral-001" ID="{B079329A-0DBD-46AB-BF05-CF3D4A1A0CC8}" ShortID="595098149">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_neutral-001" ID="{08DADB15-FCC6-41BD-9D07-772E4E4BEF16}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_neutral-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="667226561"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_neutral-001" ID="{08DADB15-FCC6-41BD-9D07-772E4E4BEF16}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_neutral-002" ID="{7F8EBF77-F412-40CF-9E06-AC209D91CC38}" ShortID="59981323">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_neutral-002" ID="{C0DFF4D3-962C-48DC-B5F1-1401D554471B}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_neutral-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="339819353"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_neutral-002" ID="{C0DFF4D3-962C-48DC-B5F1-1401D554471B}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_neutral-003" ID="{67A78E65-2920-4AD2-A78D-2005F4E695EC}" ShortID="397379464">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_neutral-003" ID="{E5C6621A-1054-4D35-B188-448C68B3BB29}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_neutral-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="110655805"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_neutral-003" ID="{E5C6621A-1054-4D35-B188-448C68B3BB29}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_neutral-004" ID="{5174D8CF-CFB3-4BE3-8CF1-20608DB5C2DA}" ShortID="49025991">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_neutral-004" ID="{82B6A23F-48A2-4524-BBAE-4766C7A056E5}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_neutral-004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="993911334"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_neutral-004" ID="{82B6A23F-48A2-4524-BBAE-4766C7A056E5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_neutral-005" ID="{3E769DD7-D93B-4092-8B1C-3C6B30F43A62}" ShortID="997222869">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_neutral-005" ID="{8F84AFFC-FB75-4FF4-8620-3D6E645DC0F2}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_neutral-005.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="4272060"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_neutral-005" ID="{8F84AFFC-FB75-4FF4-8620-3D6E645DC0F2}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_neutral-006" ID="{B03B4863-4241-4E26-94B9-68CA7BB4AD6E}" ShortID="197728013">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_neutral-006" ID="{FC10211C-D03C-4B80-A4FA-239EBB05D3CF}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_neutral-006.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1010631691"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_neutral-006" ID="{FC10211C-D03C-4B80-A4FA-239EBB05D3CF}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Capucine_question" ID="{003210EF-E79A-4919-BF4A-57A30D32C41F}" ShortID="286819461">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_Capucine_Emotions_question-001" ID="{F779F93D-1C9C-45B2-8EA1-45BBBE019AF9}" ShortID="1020084555">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_question-001" ID="{0D8BCB6A-1706-4816-BB78-B2F801144603}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_question-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="505039874"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_question-001" ID="{0D8BCB6A-1706-4816-BB78-B2F801144603}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_question-002" ID="{D41B2A73-6148-4AB3-ABF2-5D16F926D770}" ShortID="902028371">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_question-002" ID="{1B5F5ADE-75DE-47C3-8458-B909AD0A8DD7}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_question-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="721363234"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_question-002" ID="{1B5F5ADE-75DE-47C3-8458-B909AD0A8DD7}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_question-003" ID="{7B88343F-7E6B-4B62-BD40-84D471249C89}" ShortID="645085997">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_question-003" ID="{53176BDE-CDF1-4625-960A-517294311E36}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_question-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="343160440"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_question-003" ID="{53176BDE-CDF1-4625-960A-517294311E36}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_question-004" ID="{2724D2C8-10DC-4BAB-801C-497552B81E6A}" ShortID="632983923">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_question-004" ID="{B9529B96-5984-4715-A672-DE68665DCCCD}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_question-004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="356412955"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_question-004" ID="{B9529B96-5984-4715-A672-DE68665DCCCD}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_question-005" ID="{0E1A4405-FBBB-495F-B3DD-60F3BC8CFE47}" ShortID="623168559">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_question-005" ID="{6B0D2139-97B7-4BD2-A100-2D3A2957F5BD}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_question-005.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="50966608"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_question-005" ID="{6B0D2139-97B7-4BD2-A100-2D3A2957F5BD}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_question-006" ID="{13E61091-0487-4ECB-A915-012FE725E765}" ShortID="369614875">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_question-006" ID="{6CE3DF9D-3598-4BED-AE04-8FDCE67773DE}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_question-006.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="955947801"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_question-006" ID="{6CE3DF9D-3598-4BED-AE04-8FDCE67773DE}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Capucine_stressed" ID="{6DC9ECB0-FB9B-4170-955F-1FB273F9DC88}" ShortID="98684571">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_Capucine_Emotions_stressed-001" ID="{7B414A98-2E14-4FF2-B564-6DE8AE4A70F9}" ShortID="926883350">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_stressed-001" ID="{60F09E73-39C2-4CF6-8785-7B902EAE675A}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_stressed-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="705252491"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_stressed-001" ID="{60F09E73-39C2-4CF6-8785-7B902EAE675A}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_stressed-002" ID="{8D17B15D-17EF-4DD0-8C14-45F5C81E588E}" ShortID="229859280">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_stressed-002" ID="{9A340AA5-A800-4513-B282-EEDE09F4A6BC}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_stressed-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="83558779"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_stressed-002" ID="{9A340AA5-A800-4513-B282-EEDE09F4A6BC}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Capucine_surprised" ID="{1E958E25-8F60-4C60-A8F5-996D45A1A5AD}" ShortID="855483184">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_Capucine_Emotions_surprised-001" ID="{36735910-9339-480E-AFB9-3BDBD7B2D985}" ShortID="104089359">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_surprised-001" ID="{B326A395-6508-499B-A1E3-6260795D047F}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_surprised-001.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="881778037"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_surprised-001" ID="{B326A395-6508-499B-A1E3-6260795D047F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_surprised-002" ID="{EBC6D691-8F5D-4536-8A5B-FA3AD7DE4AF2}" ShortID="848838374">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_surprised-002" ID="{275E1025-E81B-4CAE-AD99-043F9C33B224}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_surprised-002.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="492496761"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_surprised-002" ID="{275E1025-E81B-4CAE-AD99-043F9C33B224}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_surprised-003" ID="{22CE4308-1778-4BF7-AAAA-D93261976E13}" ShortID="619915766">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_surprised-003" ID="{E76AA604-A293-4C2E-920A-1C9C43B5F36F}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_surprised-003.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="765447964"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_surprised-003" ID="{E76AA604-A293-4C2E-920A-1C9C43B5F36F}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_surprised-004" ID="{57480A05-9D0C-40AB-948A-D6842960E16A}" ShortID="384794115">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_surprised-004" ID="{23EACBAD-8596-4B8A-8988-BD9255247590}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_surprised-004.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="398261987"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_surprised-004" ID="{23EACBAD-8596-4B8A-8988-BD9255247590}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</RandomSequenceContainer>
+										<ActorMixer Name="Capucine_Poirier" ID="{0F01D39A-D758-4C3A-9FF5-D8BF6AE36048}" ShortID="57161723">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<Sound Name="VOX_Capucine_Emotions_efforts chute" ID="{0CD41926-FFD2-4B33-9B0E-1F54F3D77F74}" ShortID="53757828">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_efforts chute" ID="{E2E0AE7D-EDFC-4CA4-83E4-470C1A004826}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_efforts chute.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="33321402"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_efforts chute" ID="{E2E0AE7D-EDFC-4CA4-83E4-470C1A004826}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_effortsPoirier2" ID="{7CFF2B2F-B6E6-4E2C-9578-9649AEA366DC}" ShortID="1057629648">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_effortsPoirier2" ID="{8E80DF8D-2826-48D3-ADB4-46894150B0E5}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_effortsPoirier2.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="1024650362"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_effortsPoirier2" ID="{8E80DF8D-2826-48D3-ADB4-46894150B0E5}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_effortsPoirier3" ID="{F2282570-581C-4E6E-A75D-DDEB516CF4AB}" ShortID="475421097">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_effortsPoirier3" ID="{E76B2D04-11FE-47A9-A6DF-54EE635ED874}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_effortsPoirier3.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="766129581"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_effortsPoirier3" ID="{E76B2D04-11FE-47A9-A6DF-54EE635ED874}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="VOX_Capucine_Emotions_effortsPoirier1" ID="{9A4B621A-C408-4013-BAC4-4FECD12398E8}" ShortID="631062507">
+													<PropertyList>
+														<Property Name="IsVoice" Type="bool" Value="True"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="VOX_Capucine_Emotions_effortsPoirier1" ID="{E69054DC-0147-40AD-821A-D875B116A4CB}">
+															<Language>French(FR)</Language>
+															<AudioFile>VOX_Capucine_Emotions_effortsPoirier1.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="218863536"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="VOX_Capucine_Emotions_effortsPoirier1" ID="{E69054DC-0147-40AD-821A-D875B116A4CB}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+										</ActorMixer>
+									</ChildrenList>
+								</ActorMixer>
 							</ChildrenList>
 						</ActorMixer>
 					</ChildrenList>
@@ -1815,7 +4326,7 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<ActorMixer Name="Bouffon" ID="{E563D235-9D35-4E01-A801-7E5F80989ED1}" ShortID="516037736">
+						<ActorMixer Name="Arle" ID="{E563D235-9D35-4E01-A801-7E5F80989ED1}" ShortID="516037736">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -1885,7 +4396,7 @@
 								</Sound>
 							</ChildrenList>
 						</ActorMixer>
-						<ActorMixer Name="Gardes" ID="{22ECB24C-F809-4236-80F2-EC55A5F8BF6B}" ShortID="487496528">
+						<ActorMixer Name="Capucine" ID="{22ECB24C-F809-4236-80F2-EC55A5F8BF6B}" ShortID="487496528">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -1894,103 +4405,6 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="VOX_Combat_NPC_RoyalGuard1_Attack1" ID="{DE6CDF03-9C0F-46D6-9674-A581BE286B1F}" ShortID="434588299">
-									<PropertyList>
-										<Property Name="MakeUpGain" Type="Real64">
-											<ValueList>
-												<Value>5</Value>
-											</ValueList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="VOX_Combat_NPC_RoyalGuard1_Attack1" ID="{4D250EDC-C1CF-41E2-BFFF-CF1F88D50A84}">
-											<Language>SFX</Language>
-											<AudioFile>VOX_Combat_NPC_RoyalGuard1_Attack1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="828352719"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="VOX_Combat_NPC_RoyalGuard1_Attack1" ID="{4D250EDC-C1CF-41E2-BFFF-CF1F88D50A84}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="VOX_Combat_NPC_RoyalGuard1_Hurt" ID="{55DFBAD9-2BCE-4A6B-B167-E1353CB04B8E}" ShortID="913635385">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="VOX_Combat_NPC_RoyalGuard1_Hurt" ID="{F8C1B495-3371-4999-9330-D775DC332473}">
-											<Language>SFX</Language>
-											<AudioFile>VOX_Combat_NPC_RoyalGuard1_Hurt.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="13105253"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="VOX_Combat_NPC_RoyalGuard1_Hurt" ID="{F8C1B495-3371-4999-9330-D775DC332473}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="VOX_Combat_NPC_RoyalGuard2_Attack1" ID="{8A39E538-74C8-4151-A788-6C9D1D155440}" ShortID="986183447">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="VOX_Combat_NPC_RoyalGuard2_Attack1" ID="{CD7A5680-7570-4124-9E79-F177FCA0C402}">
-											<Language>SFX</Language>
-											<AudioFile>VOX_Combat_NPC_RoyalGuard2_Attack1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="153264769"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="VOX_Combat_NPC_RoyalGuard2_Attack1" ID="{CD7A5680-7570-4124-9E79-F177FCA0C402}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="VOX_Combat_NPC_RoyalGuard2_Hurt" ID="{CEFAC4E6-AF09-487B-B5DC-03B39DB6E2DD}" ShortID="660450631">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="VOX_Combat_NPC_RoyalGuard2_Hurt" ID="{15F9A58B-D2D6-428F-B7BC-30983BA5828C}">
-											<Language>SFX</Language>
-											<AudioFile>VOX_Combat_NPC_RoyalGuard2_Hurt.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="34596526"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="VOX_Combat_NPC_RoyalGuard2_Hurt" ID="{15F9A58B-D2D6-428F-B7BC-30983BA5828C}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="Juge" ID="{7BDF70DB-7255-469F-8CA3-A6317BB12BD3}" ShortID="390261980">
 							<ReferenceList>
@@ -2031,87 +4445,6 @@
 									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 								</Reference>
 							</ReferenceList>
-							<ChildrenList>
-								<Sound Name="VOX_Combat_Player_Attack1" ID="{7E6BD419-A5EA-41C1-A3D9-79205467003F}" ShortID="800834633">
-									<PropertyList>
-										<Property Name="MakeUpGain" Type="Real64">
-											<ValueList>
-												<Value>3</Value>
-											</ValueList>
-										</Property>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{42312728-5C84-4A8A-842C-2EC8ADB60BF2}">
-														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="51"/>
-															<Property Name="Min" Type="Real64" Value="-76"/>
-														</PropertyList>
-													</Modifier>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="VOX_Combat_Player_Attack1" ID="{0F782948-792C-4EE6-ACDB-A5762E5309A0}">
-											<Language>SFX</Language>
-											<AudioFile>VOX_Combat_Player_Attack1.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="1062970758"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="VOX_Combat_Player_Attack1" ID="{0F782948-792C-4EE6-ACDB-A5762E5309A0}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="VOX_Combat_Player_Hurt" ID="{43F5B8F3-EB09-4483-A68E-79E34234FF50}" ShortID="414099556">
-									<PropertyList>
-										<Property Name="Pitch" Type="int32">
-											<ModifierList>
-												<ModifierInfo>
-													<Modifier Name="" ID="{739AA1F3-4E87-47D8-BE0D-D1A0CE10D820}">
-														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
-															<Property Name="Max" Type="Real64" Value="151"/>
-															<Property Name="Min" Type="Real64" Value="-126"/>
-														</PropertyList>
-													</Modifier>
-												</ModifierInfo>
-											</ModifierList>
-										</Property>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="VOX_Combat_Player_Hurt" ID="{0318C501-984D-4893-9718-59F8F03D8274}">
-											<Language>SFX</Language>
-											<AudioFile>VOX_Combat_Player_Hurt.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="882016150"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="VOX_Combat_Player_Hurt" ID="{0318C501-984D-4893-9718-59F8F03D8274}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="Pretre" ID="{EC7908D0-5CF9-45A0-B7A6-7665A7944094}" ShortID="25357583">
 							<ReferenceList>

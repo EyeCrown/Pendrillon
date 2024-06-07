@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{276A8C69-D7B5-4370-A86E-6798E1DCB5B8}" SchemaVersion="110">
+	<AudioObjects>
+		<WorkUnit Name="Deprecated" ID="{276A8C69-D7B5-4370-A86E-6798E1DCB5B8}" PersistMode="Standalone">
+			<ChildrenList>
+				<RandomSequenceContainer Name="SFX_Theater_Applause" ID="{79E59F7E-0AAF-47C0-B06D-576F20723D20}" ShortID="213461257">
+					<PropertyList>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>-10</Value>
+							</ValueList>
+						</Property>
+						<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
+						<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismLoopCount" Type="int32" Value="7"/>
+						<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+						<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+						<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
+						<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+						<Property Name="UserAuxSendVolume0" Type="Real64">
+							<ValueList>
+								<Value>-4</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+						</Reference>
+						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+						</Reference>
+						<Reference Name="UserAuxSend0">
+							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="SFX_Theater_CrowdHype_ClapsOnly" ID="{36A6960D-0FA8-4166-9E09-D06DEC0864A6}" ShortID="908677590">
+							<PropertyList>
+								<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+									<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="SFX_Theater_CrowdHype_ClapsOnly_01" ID="{34D9604E-BCF3-4988-8FC4-EC601B075FCF}" ShortID="1007478669">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Theater_CrowdHype_ClapsOnly_01" ID="{60FF4776-EA34-4D27-8F84-0C56D8D3B2F7}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Theater_CrowdHype_ClapsOnly_01.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="615805347"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Theater_CrowdHype_ClapsOnly_01" ID="{60FF4776-EA34-4D27-8F84-0C56D8D3B2F7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_Theater_CrowdHype_ClapsOnly_02" ID="{AEC00CEB-0D31-4436-A62F-6EA593A3F54C}" ShortID="916972537">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Theater_CrowdHype_ClapsOnly_02" ID="{78026EF5-68C3-48F7-9204-64D8CEBB99EE}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Theater_CrowdHype_ClapsOnly_02.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="949732719"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Theater_CrowdHype_ClapsOnly_02" ID="{78026EF5-68C3-48F7-9204-64D8CEBB99EE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_Theater_CrowdHype_ClapsOnly_03" ID="{2B7CE65B-615A-4317-80C1-AE9D45FA6185}" ShortID="671352849">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Theater_CrowdHype_ClapsOnly_03" ID="{569EEEBD-BEE9-4851-AED3-0FDEAEB25E46}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Theater_CrowdHype_ClapsOnly_03.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="873849917"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Theater_CrowdHype_ClapsOnly_03" ID="{569EEEBD-BEE9-4851-AED3-0FDEAEB25E46}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_Theater_CrowdHype_ClapsOnly_04" ID="{14D25495-F8CE-4D6C-A514-93547CD325BC}" ShortID="1041882887">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Theater_CrowdHype_ClapsOnly_04" ID="{3DDC237D-41A3-4AA1-9644-BA972D812B88}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Theater_CrowdHype_ClapsOnly_04.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="963045880"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Theater_CrowdHype_ClapsOnly_04" ID="{3DDC237D-41A3-4AA1-9644-BA972D812B88}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_Theater_CrowdHype_ClapsOnly_05" ID="{D0819DEA-F369-4681-9E60-C1662268295A}" ShortID="870746533">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Theater_CrowdHype_ClapsOnly_05" ID="{3B6FB8CC-DD62-4476-8609-8BC89F134FAC}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Theater_CrowdHype_ClapsOnly_05.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="635065215"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Theater_CrowdHype_ClapsOnly_05" ID="{3B6FB8CC-DD62-4476-8609-8BC89F134FAC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_Theater_CrowdHype_ClapsOnly_06" ID="{93BF2504-F4EE-4ABA-BADE-0D39078A65A9}" ShortID="976883125">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Theater_CrowdHype_ClapsOnly_06" ID="{D6F46D13-B7DB-4AEC-B8FE-1BBE3B3932A2}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Theater_CrowdHype_ClapsOnly_06.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1011539359"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Theater_CrowdHype_ClapsOnly_06" ID="{D6F46D13-B7DB-4AEC-B8FE-1BBE3B3932A2}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_Theater_CrowdHype_ClapsOnly_07" ID="{7122EA76-8DB9-434A-B811-ED5DFB4E219C}" ShortID="913127639">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Theater_CrowdHype_ClapsOnly_07" ID="{B39C40FF-7006-43A3-9ABB-17BC730DC583}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Theater_CrowdHype_ClapsOnly_07.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="948235498"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Theater_CrowdHype_ClapsOnly_07" ID="{B39C40FF-7006-43A3-9ABB-17BC730DC583}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_Theater_CrowdHype_ClapsOnly_08" ID="{770481E8-E63B-436D-9B47-4849669DAB26}" ShortID="586505937">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Theater_CrowdHype_ClapsOnly_08" ID="{4328881B-3893-4D51-8C32-3880E9A40EFB}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Theater_CrowdHype_ClapsOnly_08.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="864268265"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Theater_CrowdHype_ClapsOnly_08" ID="{4328881B-3893-4D51-8C32-3880E9A40EFB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SFX_Theater_CrowdHype_ClapsOnly_09" ID="{4E0496E8-A6F9-4F47-B5D6-45A3C6F1087D}" ShortID="1037730936">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+											<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SFX_Theater_CrowdHype_ClapsOnly_09" ID="{03B614D5-8E7C-4284-8DDD-D09B5F903DD6}">
+											<Language>SFX</Language>
+											<AudioFile>SFX_Theater_CrowdHype_ClapsOnly_09.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="168236230"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SFX_Theater_CrowdHype_ClapsOnly_09" ID="{03B614D5-8E7C-4284-8DDD-D09B5F903DD6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<Playlist>
+						<ItemRef Name="SFX_Theater_CrowdHype_ClapsOnly" ID="{36A6960D-0FA8-4166-9E09-D06DEC0864A6}"/>
+					</Playlist>
+				</RandomSequenceContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
