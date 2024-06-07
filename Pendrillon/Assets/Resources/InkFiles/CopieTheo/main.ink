@@ -23,7 +23,4 @@ INCLUDE boss_battle.ink
 
 // Start the game
 //-> barge
--> church_night
-//-> secret_meeting
-//-> church_night
-//-> barge.scene_5
+-> secret_meeting

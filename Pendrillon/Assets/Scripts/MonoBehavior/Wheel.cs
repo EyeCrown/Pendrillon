@@ -1,8 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MonoBehavior.Managers;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Wheel : MonoBehaviour
 {
@@ -12,6 +15,22 @@ public class Wheel : MonoBehaviour
     private Animator _anim;
     #endregion
 
+    #region UI Attributes
+
+    public GameObject _uiBox;
+    private TextMeshProUGUI _resultText;
+    private TextMeshProUGUI _mustObtainText;
+    private TextMeshProUGUI _maxText;
+    private TextMeshProUGUI _typeText;
+    private TextMeshProUGUI _levelUpText;
+
+    #endregion
+    
+    
+    private GameObject _wheel;
+    private GameObject _resultBox;
+    
+    
     public AnimationCurve _movementCurve;
 
     [Range(0, 100)] public int _score;
@@ -27,101 +46,146 @@ public class Wheel : MonoBehaviour
 
     void Awake()
     {
+        _uiBox = GameObject.Find("Canvas/ACTING_PART/SkillcheckBox").gameObject;
+        _resultText     = _uiBox.transform.Find("ResultText").GetComponent<TextMeshProUGUI>();
+        _mustObtainText = _uiBox.transform.Find("MustObtainText").GetComponent<TextMeshProUGUI>();
+        _maxText        = _uiBox.transform.Find("MaxText").GetComponent<TextMeshProUGUI>();
+        _typeText       = _uiBox.transform.Find("TypeText").GetComponent<TextMeshProUGUI>();
+        _levelUpText    = _uiBox.transform.Find("LevelUpText").GetComponent<TextMeshProUGUI>();
+        
+        _resultBox = _uiBox.transform.Find("ResultColor").gameObject;
+        
+        _wheel = transform.Find("Wheel").gameObject;
+        
         _positionOutsideStage = transform.position;
         _positionOnStage = new Vector3(transform.position.x, transform.position.y + _yOffset, transform.position.z);
     }
     
     void Start()
     {
-        StartCoroutine(LerpPositionCoroutine(_positionOnStage, Spin));
+        _uiBox.SetActive(false);
     }
 
     private void OnEnable()
     {
         _anim = GetComponentInChildren<Animator>();
-        //Spin(_score);
     }
 
     #endregion
 
     #region Methods
 
-    public void Spin()
+    /*public void Spin()
     {
         transform.rotation = Quaternion.Euler(_score * 3.6f, 0, 0);
         StartCoroutine(SpinningCoroutine());
+    }*/
+
+    void UpdateText(int score, int mustObtain, string type)
+    {
+        SetUIBox(type);
+        
+        _resultText.text = score.ToString();
+        _mustObtainText.text = mustObtain.ToString();
+        _typeText.text = "";
+        _levelUpText.text = type + " > +1";
+
+        if (score <= mustObtain)
+        {
+            _resultBox.GetComponent<Image>().color = Color.green;
+        }
+        else
+        {
+            _resultBox.GetComponent<Image>().color = Color.red;
+        }
     }
 
+
+    void SetUIBox(string typeName)
+    {
+        Sprite sprite;
+        foreach (var type in Constants.ButtonTypesArray)
+        {
+            if (type == typeName)
+            {
+                sprite = Resources.Load <Sprite>($"SkillcheckUI/{typeName}");
+                _uiBox.GetComponent<Image>().sprite = sprite;
+                return;
+            }
+        }
+        sprite = Resources.Load <Sprite>($"SkillcheckUI/Neutral");
+        _uiBox.GetComponent<Image>().sprite = sprite;
+    }
+    
     #endregion
 
     #region Coroutines
 
-    IEnumerator LerpPositionCoroutine(Vector3 destination, Action callbackOnFinish = null, float duration = 4.0f)
+    public IEnumerator SpinningCoroutine(int score, int mustObtain, string type)
     {
-        float time = 0.0f;
-
-        Vector3 start = transform.position;
+        UpdateText(score, mustObtain, type);
         
+        float duration = 1.4f, time = 0.0f;
+        
+        _wheel.transform.rotation = Quaternion.Euler(score * -3.6f, 0, 0);
+        _anim.Play("Spin");
+
+        var startPos = _positionOutsideStage;
+        var endPos = _positionOnStage;
+        
+        Debug.Log($"Wheel.SpinningCoroutine > Start rotate anim + move down");
         while (time < duration)
         {
-            transform.position = Vector3.Lerp(start, destination, _movementCurve.Evaluate(time / duration));
+            transform.position = Vector3.Lerp(_positionOutsideStage, _positionOnStage, 
+                _movementCurve.Evaluate(time/duration));
             time += Time.deltaTime;
             yield return null;
         }
+        Debug.Log($"Wheel.SpinningCoroutine > Rotate anim is done + Is on stage");
 
-        callbackOnFinish();
-    }
-    
-    IEnumerator SpinningCoroutine()
-    {
-        _anim.Play("Spin");
-        // Start anim
-        Debug.Log("Start anim");
-        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
-            yield return null;
-        Debug.Log("End anim");
+        StartCoroutine(DisplayScore());
+        yield return new WaitForSeconds(1.0f);
 
-        yield return new WaitForSeconds(2.0f);
+        ActingManager.Instance._canContinueDialogue = true;
 
-        StartCoroutine(LerpPositionCoroutine(_positionOutsideStage));
-    }
-
-    #endregion
-
-    /*#region Gizmos
-
-    private void OnDrawGizmosSelected()
-    {
-        var position = new Vector3(transform.position.x, transform.position.y + _yOffset, transform.position.z);
-        DrawWireCapsule(position, Quaternion.Euler(0, 0, 90), 1,1);
-    }
-
-    public static void DrawWireCapsule(Vector3 _pos, Quaternion _rot, float _radius, float _height, Color _color = default(Color))
-    {
-        if (_color != default(Color))
-            Handles.color = _color;
-        Matrix4x4 angleMatrix = Matrix4x4.TRS(_pos, _rot, Handles.matrix.lossyScale);
-        using (new Handles.DrawingScope(angleMatrix))
+        time = 0.0f;
+        while (time < duration)
         {
-            var pointOffset = (_height - (_radius * 2)) / 2;
- 
-            //draw sideways
-            Handles.DrawWireArc(Vector3.up * pointOffset, Vector3.left, Vector3.back, -180, _radius);
-            Handles.DrawLine(new Vector3(0, pointOffset, -_radius), new Vector3(0, -pointOffset, -_radius));
-            Handles.DrawLine(new Vector3(0, pointOffset, _radius), new Vector3(0, -pointOffset, _radius));
-            Handles.DrawWireArc(Vector3.down * pointOffset, Vector3.left, Vector3.back, 180, _radius);
-            //draw frontways
-            Handles.DrawWireArc(Vector3.up * pointOffset, Vector3.back, Vector3.left, 180, _radius);
-            Handles.DrawLine(new Vector3(-_radius, pointOffset, 0), new Vector3(-_radius, -pointOffset, 0));
-            Handles.DrawLine(new Vector3(_radius, pointOffset, 0), new Vector3(_radius, -pointOffset, 0));
-            Handles.DrawWireArc(Vector3.down * pointOffset, Vector3.back, Vector3.left, -180, _radius);
-            //draw center
-            Handles.DrawWireDisc(Vector3.up * pointOffset, Vector3.up, _radius);
-            Handles.DrawWireDisc(Vector3.down * pointOffset, Vector3.up, _radius);
- 
+            transform.position = Vector3.Lerp(_positionOnStage,_positionOutsideStage, 
+                _movementCurve.Evaluate(time / duration));
+            time += Time.deltaTime;
+            yield return null;
         }
     }
 
-    
-    #endregion*/
+
+    IEnumerator DisplayScore()
+    {
+        float time = 0.0f, duration = 0.5f;
+        _uiBox.SetActive(true);
+        // Scale from 0 to 1
+        while (time < duration)
+        {
+            var size = time / duration;
+            _uiBox.transform.localScale = new Vector3(size, size, size);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        
+        // Wait X.x seconds
+        yield return new WaitForSeconds(1.0f);
+        
+        // Scale from 1 to 0
+        time = 0.0f;
+        while (time < duration)
+        {
+            var size = 1 - time / duration;
+            _uiBox.transform.localScale = new Vector3(size, size, size);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        _uiBox.SetActive(false);
+    }
+
+    #endregion
 }

@@ -4,25 +4,25 @@ VAR t_arle_patience = 5 // Patience de Arle (0 = Arle pète un câble)
 VAR t_souffleur_explanations_bell = false
 
 // SECRET MEETING
-// VAR t_1_accept_to_kill = false
-// VAR t_1_refuse_to_kill = false
-// VAR t_1_disrespect_the_crown = false
-// VAR t_1_respect_the_crown = false
-// VAR t_1_disrespect_irene = false
-// VAR t_1_respect_irene = false
-// VAR t_1_gold_digger = false
-// VAR t_1_accept_mission_with_positivity = false
-// VAR t_1_accept_mission_with_negativity = false
-// DEBUG TRIAL
 VAR t_1_accept_to_kill = false
 VAR t_1_refuse_to_kill = false
-VAR t_1_disrespect_the_crown = true
+VAR t_1_disrespect_the_crown = false
 VAR t_1_respect_the_crown = false
-VAR t_1_disrespect_irene = true
+VAR t_1_disrespect_irene = false
 VAR t_1_respect_irene = false
-VAR t_1_gold_digger = true
+VAR t_1_gold_digger = false
 VAR t_1_accept_mission_with_positivity = false
-VAR t_1_accept_mission_with_negativity = true
+VAR t_1_accept_mission_with_negativity = false
+// DEBUG TRIAL
+// VAR t_1_accept_to_kill = false
+// VAR t_1_refuse_to_kill = false
+// VAR t_1_disrespect_the_crown = true
+// VAR t_1_respect_the_crown = false
+// VAR t_1_disrespect_irene = true
+// VAR t_1_respect_irene = false
+// VAR t_1_gold_digger = true
+// VAR t_1_accept_mission_with_positivity = false
+// VAR t_1_accept_mission_with_negativity = true
 
 // TRIP RETURN SCENE
 VAR t_2_lawfull = false
@@ -77,13 +77,13 @@ VAR t_3_stained_glass_1_talk = false
 VAR t_3_stained_glass_2_talk = false
 VAR t_3_stained_glass_3_talk = false
 // DEBUG TRIAL
-//VAR t_3_lie_abot_being_innocent = true
-//VAR t_3_did_not_lie_abot_being_innocent = false
-//VAR t_3_implore_irene = false
-//VAR t_3_blame_irene = true
-//VAR t_3_show_no_regrets = false
-//VAR t_3_show_some_regrets = false
-//VAR t_3_show_plenty_regrets = true
+// VAR t_3_lie_abot_being_innocent = true
+// VAR t_3_did_not_lie_abot_being_innocent = false
+// VAR t_3_implore_irene = false
+// VAR t_3_blame_irene = true
+// VAR t_3_show_no_regrets = false
+// VAR t_3_show_some_regrets = false
+// VAR t_3_show_plenty_regrets = true
 // VAR t_3_no_light_on_irene_torch = false
 // VAR t_3_light_on_irene_torch = true
 // VAR t_3_doubt_about_irene_cryings = true
@@ -124,7 +124,7 @@ VAR t_4_church_is_burnt = false
 === function trial(pVariable) ===
     ~ pVariable = true
     #trial
-    #playsound:Play_SFX_Story_JudgeBellFar
+    #playsound:Play_SFX_Story_JudgeBellFarTrial
     #wait:0.5 #audience:choc
     {
         - t_souffleur_explanations_bell == false:
@@ -207,11 +207,11 @@ VAR t_4_church_is_burnt = false
         - t_arle_patience <= 0:
             ARLE: Il suffit ! Assez de moqueries ! Ferme-la !! #audience:silent
             ARLE: Et vous, public « adoré », vous ne me méritez pas ! Cessez de rire ! #audience:debate
-            ARLE: Auriez-vous le millième de mon talent, vous seriez sur scène plutôt que de l'autre coté ! #audience:choc
+            ARLE: Auriez-vous le millième de mon talent, vous seriez sur scène plutôt que de l'autre côté ! #audience:choc
             ARLE: Bande de ploucs ! Vous pensez qu'avoir payé votre ticket vous donne tous les droits ?! #audience:booing
             // Une corde emmène Arle
             ARLE: Hé ! Laisse-moi ! Laisse-moi j'ai dit ! #audience:laughter
-            SOUFFLEUR: Oula, oula oula...
+            SOUFFLEUR: Oula, oula, oula...
             SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer !
             SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs !
             SOUFFLEUR: Quoi qu'il en soit: « Show must go on! », l'ami !
@@ -231,7 +231,7 @@ VAR t_4_church_is_burnt = false
         SOUFFLEUR: On ne dirait pas comme ça, mais l'actrice qui l'incarne est un véritable monument !
         SOUFFLEUR: Pour ne rien arranger, une bonne partie d'entre eux sont favorables aux enseignements d'Irène...
         SOUFFLEUR: Prends ton mal en patience et laisse Agathe témoigner, elle se contentera de dire la stricte vérité.
-        SOUFFLEUR: Éspérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ?
+        SOUFFLEUR: Espérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ?
     }
     ~ souffleur_speech_about_not_mocking_agath_done = true
 
@@ -245,5 +245,5 @@ VAR t_4_church_is_burnt = false
         SOUFFLEUR: Tu vas devoir laisser Agathe parler, car le public l'apprécie énormément...
         SOUFFLEUR: On ne dirait pas comme ça, mais l'actrice qui l'incarne est un véritable monument !
         SOUFFLEUR: Prends ton mal en patience et laisse Agathe témoigner, elle se contentera de dire la stricte vérité.
-        SOUFFLEUR: Éspérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ?
+        SOUFFLEUR: Espérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ?
     }

@@ -19,6 +19,7 @@ public static class Constants
     public const string TagLook         = "look";           // #look:Character:Target       Character: nom du personnage    Target: cible vers laquelle se tourner
     public const string TagAudience     = "audience";       // #audience:Reaction           Reaction: type de réaction
     public const string TagRope         = "rope";           // #rope:Character              Character: nom du personnage
+    public const string TagMap          = "map";            // #map:Travel                  Travel: nom du voyage (voir TravelNames region)
     
             
     // public const string TagCurtains     = "curtains";       // #curtains
@@ -121,6 +122,19 @@ public static class Constants
     #region Animations
 
     public const string AnimTalk = "talk";
+
+    #endregion
+
+    #region TravelNames
+
+    public const string TravelTMP1 = "departure";
+    public const string TravelTMP2 = "arrival";
+
+    public static readonly string[] TravelArray = new string[]
+    {
+        TravelTMP1,
+        TravelTMP2
+    };
 
     #endregion
 }

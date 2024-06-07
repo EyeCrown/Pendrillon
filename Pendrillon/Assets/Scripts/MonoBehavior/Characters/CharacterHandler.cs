@@ -237,11 +237,11 @@ public class CharacterHandler : MonoBehaviour
     public IEnumerator ArriveOnStage(Vector2Int targetCoordPosition, float duration = 8.0f)
     {
         _arriveCoroutine = true;
-        Debug.Log($"{name} start arriving on stage");
+        //Debug.Log($"{name} start arriving on stage");
 
         while (_leaveCoroutine)
         {
-            Debug.Log("Waiting leaving coroutine to finish");
+            //Debug.Log("Waiting leaving coroutine to finish");
             yield return null;
         }
         
@@ -266,7 +266,7 @@ public class CharacterHandler : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        Debug.Log($"{gameObject.name} is now on stage");
+        //Debug.Log($"{gameObject.name} is now on stage");
         
         _anim.SetBool("falling", false);
 
@@ -282,7 +282,7 @@ public class CharacterHandler : MonoBehaviour
             yield return null;
         }
         _rope.SetActive(false);
-        Debug.Log($"{gameObject.name}.Rope is done");
+        //Debug.Log($"{gameObject.name}.Rope is done");
 
         _onStage = true;
         _arriveCoroutine = false;
@@ -292,7 +292,7 @@ public class CharacterHandler : MonoBehaviour
     public IEnumerator LeaveStage(float duration = 2.0f)
     {
         _leaveCoroutine = true;
-        Debug.Log($"{name} start leaving stage");
+        //Debug.Log($"{name} start leaving stage");
         
         float time = 0.0f;
         Vector3 startPosition = transform.position;
@@ -327,7 +327,7 @@ public class CharacterHandler : MonoBehaviour
         }
         // Character is up
         transform.position = new Vector3(-100, -100, -100);
-        Debug.Log($"{gameObject.name} has leave the stage");
+        //Debug.Log($"{gameObject.name} has leave the stage");
         _onStage = false;
         _anim.SetBool("falling", false);
         _leaveCoroutine = false;

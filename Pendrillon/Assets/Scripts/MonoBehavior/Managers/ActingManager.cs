@@ -7,6 +7,7 @@ using System.Reflection;
 using Febucci.UI.Core;
 using Ink.Runtime;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -68,6 +69,8 @@ namespace MonoBehavior.Managers
         readonly float _maxButtonPosX =  960;
         float _buttonPosY =  -260;
 
+        [HideInInspector] public string _choiceType;
+        
         #endregion
 
         #region Button Attributes
@@ -79,6 +82,13 @@ namespace MonoBehavior.Managers
         public List<Button> _choicesButtonList;
 
         #endregion
+
+        [Header("=== Wheel ===")]
+        public Wheel _wheel;
+        [HideInInspector] public bool _canContinueDialogue;
+
+        [Header("=== Map ===")] 
+        public Map _map;
         
         // Dialogue
         string _currentDialogue;
@@ -144,6 +154,9 @@ namespace MonoBehavior.Managers
             
             _dialogueTypewriter = _dialogueText.GetComponent<TypewriterCore>();
             _prompterTypewriter = _uiParent.transform.Find("PROMPTER_PART/DialogueBox/DialogueText").GetComponent<TypewriterCore>();
+
+            _wheel = GameObject.Find("WheelSupport").GetComponent<Wheel>();
+            _map = GameObject.Find("Map").GetComponent<Map>();
             
             if (_dialogueTypewriter == null)
                 Debug.LogError("AHH");
@@ -271,13 +284,45 @@ namespace MonoBehavior.Managers
                     return;
                 
                 //Debug.Log($"AM.HandleDialogue > Dialogue > {_currentDialogue} | Length: {_currentDialogue.Length}");
+                _canContinueDialogue = false;
                 
                 // split dialogue in 2
                 String[] words = _currentDialogue.Split(":");
                 
                 // foreach (var word in words)     Debug.Log($"AM.HandleDialogue > Part > {word}");
                 
-                // get character speaking
+                // Check if there is a skillcheck
+                if (words[0].Contains("]"))
+                {
+                    string scoreText = words[0].Remove(words[0].IndexOf("]") + 1,
+                        words[0].Length - (words[0].IndexOf("]") + 1));
+
+                    string resultText = scoreText.Remove(scoreText.IndexOf("/")).Remove(0, 1);
+                    int result = int.Parse(resultText);
+
+                    string mustObtainText = scoreText.Remove(scoreText.IndexOf("/") + 4)
+                        .Remove(0, scoreText.IndexOf("/") + 1);
+                    int mustObtain = int.Parse(mustObtainText);
+                    
+                    Debug.Log($"AM.HandleDialogue > Contains skillcheck: {scoreText} | Result: {result} / MustObtain {mustObtain}");
+                    
+                    words[0] = words[0].Remove(0, words[0].IndexOf(']')+1).Trim();
+                    
+                    StartCoroutine(_wheel.SpinningCoroutine(result, mustObtain, _choiceType));
+                }
+                else
+                {
+                    _canContinueDialogue = true;
+                }
+                
+                HandleDialogueText(words);
+            }
+        }
+
+
+        void HandleDialogueText(string[] words)
+        {
+            // get character speaking
                 String speaker; 
                 String dialogue;
 
@@ -291,16 +336,9 @@ namespace MonoBehavior.Managers
                 {
                     speaker = words[0].Trim();
                     dialogue = String.Join(":", words.Skip(1));
-                    
-                    if (speaker.Contains("]"))
-                    {
-                        //Debug.Log("AM.HandleDialogue > Contains skillcheck");
-                        // Remove [...] part in speaker
-                        speaker = speaker.Remove(0, speaker.IndexOf(']')+1).Trim();
-                    }
                 }
                 
-                //Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
+                Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
                 
                 if (speaker == "PLAYER")
                     _speakerText.text = _playerName;
@@ -335,9 +373,8 @@ namespace MonoBehavior.Managers
                         StartCoroutine(GenerateText(dialogue));
                     }
                 });
-                
+                Debug.Log("Allo ?");
                 _dialogueAlreadyHandle = true;
-            }
         }
         
     
@@ -405,7 +442,7 @@ namespace MonoBehavior.Managers
             button.GetComponentInChildren<TextMeshProUGUI>().text = choice.text;
             
             // Button Type
-            SetButtonType(button, choice.text);
+            SetButtonType(button, choice);
             
             button.GetComponent<Image>().color = new Color(
                 button.GetComponent<Image>().color.r,
@@ -413,29 +450,32 @@ namespace MonoBehavior.Managers
                 button.GetComponent<Image>().color.b,
                 GameManager.Instance._opacityUI
             );
-            
-            button.onClick.AddListener (delegate {
-                OnClickChoiceButton (choice);
-            });
 
             button.interactable = false; // De base les boutons sont désactivées
             _choicesButtonList.Add(button);
             //Debug.Log($"AM.Refresh > button.GetComponentInChildren<TextMeshProUGUI>().text:{button.GetComponentInChildren<TextMeshProUGUI>().text}");
         }
 
-        void SetButtonType(Button button, string choiceText)
+        void SetButtonType(Button button, Choice choice)
         {
             foreach (var typeName in Constants.ButtonTypesArray)
             {
-                if (choiceText.Contains(typeName))
+                if (choice.text.Contains(typeName))
                 {
                     Debug.Log($"AM.SetButtonType > This button is {typeName} > Wheel must appear");
                     button.transform.Find(typeName).gameObject.SetActive(true);
+                    
+                    button.onClick.AddListener (delegate {
+                        OnClickChoiceButton (choice, typeName);
+                    });
+                    
                     return;
                 }
             }
             Debug.Log("AM.SetButtonType > This button is neutral");
-            
+            button.onClick.AddListener (delegate {
+                OnClickChoiceButton (choice);
+            });
         }
         
 
@@ -556,8 +596,9 @@ namespace MonoBehavior.Managers
         
         #endregion
         
-        public void OnClickChoiceButton (Choice choice)
+        public void OnClickChoiceButton (Choice choice, string type = null)
         {
+            _choiceType = type;
             _historyText.text += $"     > {choice.text}\n";
             GameManager.Instance._story.ChooseChoiceIndex(choice.index);
             Refresh();
@@ -651,7 +692,7 @@ namespace MonoBehavior.Managers
 
         void ParseTag(string tagName)
         {
-            //Debug.Log($"AM.ParseTag > Tag to parse: {tagName}");
+            Debug.Log($"AM.ParseTag > Tag to parse: {tagName}");
             string[] words = tagName.Split(Constants.Separator);
         
             // foreach (var word in words)
@@ -678,6 +719,7 @@ namespace MonoBehavior.Managers
                 case Constants.TagLook:     HandleTagLook(words.Skip(1).ToArray());     break;
                 case Constants.TagAudience: HandleTagAudience(words[1]);                    break;
                 case Constants.TagRope:     HandleTagRope(words[1]);                        break;
+                case Constants.TagMap:      HandleTagMap(words[1]);                        break;
                 default: Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag."); break;
             }
         }
@@ -1097,6 +1139,39 @@ namespace MonoBehavior.Managers
         }
         
         
+        void HandleTagMap(string travelName)
+        {
+            Debug.Log($"AM.HandleTagMap > travel: {travelName}");
+
+            string travel = string.Empty;
+            
+            foreach (var travelType in Constants.TravelArray)
+            {
+                if (travelName == travelType)
+                {
+                    travel = travelName;
+                    Debug.Log($"AM.HandleTagMap > Valide travel name");
+                    break;
+                }
+            }
+            if (travel != string.Empty)
+                Debug.LogError($"AM.HandleTagMap > Error: unknown travel name: {travel}");
+            
+            void TravelAction()
+            {
+                Debug.Log("TravelAction");
+                if (travel != string.Empty)
+                    _map.DisplayTravel(travel);
+                
+                TagActionOver();
+            }
+
+            Debug.Log(_tagMethods.Count);
+            _tagMethods.Add(TravelAction);
+            Debug.Log(_tagMethods.Count);
+
+        }
+        
         //TODO: Make curtains tag handlers
         /* void HandleCurtains()
         {
@@ -1162,6 +1237,12 @@ namespace MonoBehavior.Managers
 
         IEnumerator GenerateText(string textToDisplay)
         {
+            while (!_canContinueDialogue)
+            {
+                //Debug.Log("Wait to display text");
+                yield return null;
+            }
+            
             _dialogueBox.SetActive(true);
             
             _dialogueTypewriter.onTextShowed.AddListener(DialogueTextFinished);
@@ -1229,6 +1310,7 @@ namespace MonoBehavior.Managers
             
             foreach (var tagAction in _tagMethods)
             {
+                Debug.Log($"{tagAction.Method.Name}");
                 _isActionDone = false;
                 tagAction();
                 while (!_isActionDone)
