@@ -5,7 +5,7 @@ VAR b_player_is_dead = false
 VAR b_player_won = false
 VAR b_player_hp = 10
 VAR b_player_AP = 3
-VAR b_player_nb_combo_attack = 0 // max per turn = 3
+//VAR b_player_nb_combo_attack = 0 // max per turn = 3
 VAR b_player_is_on_top_of_mast = false
 VAR b_week_attack_AP = 1
 VAR b_strong_attack_AP = 3
@@ -77,13 +77,26 @@ VAR b_boss_body_attack_5_precision = 100
 
 // Scene
 === boss_battle ===
-// Boss battle begin
--> default_state
+- -> start
 
-- -> end_battle
+= start
+// Define the actors of the scene
+#actor:Player:PLAYER
+#actor:Moussaillon:MOUSSAILLON
+// Set the location
+#set:tempest
+// Set the actor's positions
+#position:Player:4:2
+#position:Moussaillon:30:30
+// Audience reaction
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
+// Start the scene
+#audience:ovation
+#move(Player)
+- -> main_menu
 // Default state
-= default_state
+= main_menu
 // Checks if boss or player is dead
 {
     - b_boss_is_dead:
@@ -91,8 +104,70 @@ VAR b_boss_body_attack_5_precision = 100
     - b_player_is_dead:
         -> kill_player
 }
-Default state : dans l’eau, avec sa queue dans l’eau aussi.
-// Player attack
+// Checks monster's current state
+{
+    - b_boss_state == "default":
+        Default state : dans l’eau, avec sa queue dans l’eau aussi.
+        // Player movepool
+        + [Utiliser le canon.]
+            -> canon_movepool
+        + [Utiliser le grappin.]
+            -> grapple_movepool
+        + [Monter au mât.]
+            -> mast_movepool
+    - b_boss_state == "open mouth":
+        Open mouth state : ouvre la gueule et hurle (screenshake).
+        -> open_mouth_state
+    - b_boss_state == "under water":
+        Under water state : plonge sous l'eau (inatteignable mais n’attaque pas).
+        -> under_water_state
+    - b_boss_state == "on boat":
+        On boat state : rapproche sa tête et pose sa queue sur le bateau.
+        -> on_boat_state
+}
+- // Suite combat
+// Boss attack
+/*~ boss_attack()*/
+// Next turn
+/*- -> next_turn*/
+
+= default_state
+bb
+    // Player move pool
+    // Player movepool
+/*    + [Utiliser le canon.]
+        -> canon_movepool
+    + [Utiliser le grappin.]
+        -> grapple_movepool
+    + [Monter au mât.]
+        -> mast_movepool*/
+
+= open_mouth_state
+Open mouth
+
+= under_water_state
+Under water
+
+= on_boat_state
+On boat
+
+= canon_movepool
+Vous êtes devant le canon.
+
+= grapple_movepool
+Vous êtes devant le grappin.
+    + {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == false} [Remonter le grappin. (1)]
+    + {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Viser avec le grappin. (1)]
+        Vous visez avec le grappin. #anim:aim_grabble
+    + {b_player_AP >= 3 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Tirer avec le grappin. (3)]
+    + [Retourner sur le pont.]
+        -> main_menu
+
+= mast_movepool
+Vous montez au mât.
+
+= all_actions_moovepool
+// Player movepool
     + {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == false} [Remonter le grappin. (1)]
         Vous remontez le grappin. #anim:load_grabble
     + {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Viser avec le grappin. (1)]
@@ -116,11 +191,6 @@ Default state : dans l’eau, avec sa queue dans l’eau aussi.
         Vous effectuez une attaque puissante. #anim:Player:strong_attack
     + [Se protéger.]
         Vous vous protégez et passez le tour.
-- // Suite combat
-// Boss attack
-~ boss_attack()
-// Next turn
-- -> next_turn
 
 // Next turn
 = next_turn
@@ -135,7 +205,7 @@ Default state : dans l’eau, avec sa queue dans l’eau aussi.
 }
 
 // Open mouth state
-= open_mouth_state
+= open_mouth_state_2
 // Checks if boss or player is dead
 {
     - b_boss_is_dead:
