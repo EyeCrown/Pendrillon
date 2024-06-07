@@ -25,4 +25,4 @@ INCLUDE boss_battle.ink
 //-> barge
 //-> tribunal_1
 //-> barge.scene_3
--> church_night
+-> barge
