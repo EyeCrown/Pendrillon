@@ -85,7 +85,7 @@ namespace MonoBehavior.Managers
 
         [Header("=== Wheel ===")]
         public Wheel _wheel;
-        [HideInInspector] public bool _canContinueDialogue;
+        /*[HideInInspector]*/ public bool _canContinueDialogue;
 
         [Header("=== Map ===")] 
         public Map _map;
@@ -197,15 +197,18 @@ namespace MonoBehavior.Managers
             //_setTrial   = Instantiate(_setTrial,   GameObject.Find("Environment").transform);
             _setTempest = Instantiate(_setTempest, GameObject.Find("Environment").transform);
             _setForest  = Instantiate(_setForest,  GameObject.Find("Environment").transform);
+            
+            _canContinueDialogue = true;
         }
 
         void Start()
         {
             _uiParent.SetActive(false);
         }
-
+        
         void Update()
         {
+            
             _dialogueBox.GetComponent<Image>().color = new Color(
                 _dialogueBox.GetComponent<Image>().color.r,
                 _dialogueBox.GetComponent<Image>().color.g,
@@ -232,6 +235,8 @@ namespace MonoBehavior.Managers
         }
         
         #endregion
+
+        #region Methods
 
         public void Refresh()
         {
@@ -276,6 +281,7 @@ namespace MonoBehavior.Managers
             }
         }
 
+        
         void HandleDialogue()
         {
             if (!_dialogueAlreadyHandle)
@@ -284,7 +290,7 @@ namespace MonoBehavior.Managers
                     return;
                 
                 //Debug.Log($"AM.HandleDialogue > Dialogue > {_currentDialogue} | Length: {_currentDialogue.Length}");
-                _canContinueDialogue = false;
+                _canContinueDialogue = true;
                 
                 // split dialogue in 2
                 String[] words = _currentDialogue.Split(":");
@@ -294,6 +300,7 @@ namespace MonoBehavior.Managers
                 // Check if there is a skillcheck
                 if (words[0].Contains("]"))
                 {
+                    _canContinueDialogue = false;
                     string scoreText = words[0].Remove(words[0].IndexOf("]") + 1,
                         words[0].Length - (words[0].IndexOf("]") + 1));
 
@@ -309,7 +316,7 @@ namespace MonoBehavior.Managers
                     words[0] = words[0].Remove(0, words[0].IndexOf(']')+1).Trim();
                     
                     GameManager.Instance._playerInput.Player.Interact.performed += OnClickCloseSkillcheck;
-                    StartCoroutine(_wheel.SpinningCoroutine(result, mustObtain, _choiceType));
+                    _wheel.Spin(result, mustObtain, _choiceType);
                 }
                 else
                 {
@@ -324,58 +331,58 @@ namespace MonoBehavior.Managers
         void HandleDialogueText(string[] words)
         {
             // get character speaking
-                String speaker; 
-                String dialogue;
+            String speaker; 
+            String dialogue;
 
-                if (words.Length == 1)
+            if (words.Length == 1)
+            {
+                Debug.LogError("ONLY ONE WORD");
+                speaker = "ERROR";
+                dialogue = _currentDialogue;
+            }
+            else
+            {
+                speaker = words[0].Trim();
+                dialogue = String.Join(":", words.Skip(1));
+            }
+                
+            Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
+                
+            if (speaker == "PLAYER")
+                _speakerText.text = _playerName;
+            else
+                _speakerText.text = speaker;
+                
+            _tagMethods.Add(() =>
+            {
+                // send to character the dialogue
+                if (speaker.ToLower() == Constants.PrompterName.ToLower())
                 {
-                    Debug.LogError("ONLY ONE WORD");
-                    speaker = "ERROR";
-                    dialogue = _currentDialogue;
+                    _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
+                    GameManager.Instance._prompter.DialogueUpdate.Invoke(dialogue);
+                    TagActionOver();
                 }
                 else
                 {
-                    speaker = words[0].Trim();
-                    dialogue = String.Join(":", words.Skip(1));
-                }
-                
-                Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
-                
-                if (speaker == "PLAYER")
-                    _speakerText.text = _playerName;
-                else
-                    _speakerText.text = speaker;
-                
-                _tagMethods.Add(() =>
-                {
-                    // send to character the dialogue
-                    if (speaker.ToLower() == Constants.PrompterName.ToLower())
-                    {
-                        _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
-                        GameManager.Instance._prompter.DialogueUpdate.Invoke(dialogue);
-                        TagActionOver();
-                    }
+                    var character = GameManager.Instance.GetCharacter(speaker);
+                        
+                    if (character == null)
+                        Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > Unknown speaker | {speaker} |");
                     else
                     {
-                        var character = GameManager.Instance.GetCharacter(speaker);
-                        
-                        if (character == null)
-                            Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > Unknown speaker | {speaker} |");
-                        else
-                        {
-                            character.DialogueUpdate.Invoke(dialogue);
-                            _masks.transform.Find(character.name.ToLower())?.gameObject.SetActive(true);
-                        }
+                        character.DialogueUpdate.Invoke(dialogue);
+                        _masks.transform.Find(character.name.ToLower())?.gameObject.SetActive(true);
+                    }
 
                         
-                        // play sound
-                        PlaySoundDialogAppears();
+                    // play sound
+                    PlaySoundDialogAppears();
         
-                        StartCoroutine(GenerateText(dialogue));
-                    }
-                });
+                    StartCoroutine(GenerateText(dialogue));
+                }
+            });
                 
-                _dialogueAlreadyHandle = true;
+            _dialogueAlreadyHandle = true;
         }
         
     
@@ -463,7 +470,7 @@ namespace MonoBehavior.Managers
             {
                 if (choice.text.Contains(typeName))
                 {
-                    Debug.Log($"AM.SetButtonType > This button is {typeName} > Wheel must appear");
+                    //Debug.Log($"AM.SetButtonType > This button is {typeName} > Wheel must appear");
                     button.transform.Find(typeName).gameObject.SetActive(true);
                     
                     button.onClick.AddListener (delegate {
@@ -473,42 +480,12 @@ namespace MonoBehavior.Managers
                     return;
                 }
             }
-            Debug.Log("AM.SetButtonType > This button is neutral");
+            //Debug.Log("AM.SetButtonType > This button is neutral");
             button.onClick.AddListener (delegate {
                 OnClickChoiceButton (choice);
             });
         }
         
-
-        /*bool CheckBeginOfFight(String path)
-        {
-            if (path == null)
-                return false;
-        
-            String[] words = path.Split(".");
-            if (words.Length <= 1)
-                return false;
-        
-            String[] battleWords = words[1].Split("_");
-            if (battleWords[0].ToLower() != "battle")
-                return false;
-            
-            
-            _enemiesToFight.Clear();
-            foreach (var enemyName in battleWords.Skip(1))
-            {
-                CharacterHandler character = GameManager.Instance.GetCharacter(enemyName);
-                if (character != null)
-                {
-                    _enemiesToFight.Add(character);
-                    //Debug.Log($"AC.CheckBeginOfFight > Add {enemyName} to fight");
-                }
-            }
-            
-            PhaseEnded.Invoke();
-            return true;
-        }*/
-
         void ChangePlayerName(string newName)
         {
             Debug.Log($"AM.ChangePleyrName > {newName}");
@@ -529,6 +506,8 @@ namespace MonoBehavior.Managers
             return _currentDialogue == String.Empty || _currentDialogue.Length <= 1;
         }
         
+
+        #endregion
 
         #region TypeWriting
 
@@ -727,7 +706,7 @@ namespace MonoBehavior.Managers
                 case Constants.TagLook:     HandleTagLook(words.Skip(1).ToArray());     break;
                 case Constants.TagAudience: HandleTagAudience(words[1]);                    break;
                 case Constants.TagRope:     HandleTagRope(words[1]);                        break;
-                case Constants.TagMap:      HandleTagMap(words[1]);                        break;
+                case Constants.TagMap:      HandleTagMap(words[1]);                         break;
                 default: Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag."); break;
             }
         }
@@ -1313,15 +1292,15 @@ namespace MonoBehavior.Managers
         IEnumerator ExecuteTagMethods()
         {
             // Waiting if someone is still using a rope
-            while (!_canContinueDialogue)
-            {
-                //Debug.Log("Wait to display text");
-                yield return null;
-            }
+            // while (!_canContinueDialogue)
+            // {
+            //     Debug.Log("Wait to display text");
+            //     yield return null;
+            // }
             
             foreach (var tagAction in _tagMethods)
             {
-                Debug.Log($"{tagAction.Method.Name}");
+                //Debug.Log($"{tagAction.Method.Name}");
                 _isActionDone = false;
                 tagAction();
                 while (!_isActionDone)

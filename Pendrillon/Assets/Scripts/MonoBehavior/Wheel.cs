@@ -26,16 +26,16 @@ public class Wheel : MonoBehaviour
 
     #endregion
     
-    
     private GameObject _axle;
     private GameObject _wheel;
     private GameObject _resultBox;
 
+    private IEnumerator _spinCoroutine;
+    
     public bool _onStage;
     
     public AnimationCurve _movementCurve;
-
-    [Range(0, 100)] public int _score;
+    
 
     [Header("=== Positions ===")] 
     [SerializeField] [Range(0, -10)] private float _yOffset;
@@ -77,6 +77,12 @@ public class Wheel : MonoBehaviour
 
     #region Methods
 
+    public void Spin(int score, int mustObtain, string type)
+    {
+        _spinCoroutine = SpinningCoroutine(score, mustObtain, type);
+        StartCoroutine(_spinCoroutine);
+    }
+    
     void UpdateText(int score, int mustObtain, string type)
     {
         SetUIBox(type);
@@ -161,6 +167,11 @@ public class Wheel : MonoBehaviour
 
     public IEnumerator CloseScoreCoroutine()
     {
+        StopCoroutine(_spinCoroutine);
+        StopCoroutine(DisplayScoreCoroutine());
+        
+        Debug.Log("Wheel.CloseScoreCoroutine > Start");
+        
         _onStage = false;
         ActingManager.Instance._canContinueDialogue = true;
         
@@ -180,6 +191,9 @@ public class Wheel : MonoBehaviour
             yield return null;
         }
         _uiBox.SetActive(false);
+        
+        Debug.Log("Wheel.CloseScoreCoroutine > End");
+
     }
 
     #endregion

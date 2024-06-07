@@ -74,6 +74,9 @@ namespace MonoBehavior.Managers
         
         [Header("=== Debug ===")]
         [SerializeField] private bool _goDirectToFight;
+
+        public int _charisma = 0;
+        
         #endregion
         
         
@@ -110,6 +113,8 @@ namespace MonoBehavior.Managers
             SetupPlayer();
             SetupCharacters();
             SetupPrompter();
+
+            MakeObservables();
         }
 
         private void Start()
@@ -148,30 +153,30 @@ namespace MonoBehavior.Managers
         {
             for (var i = 0; i < _charactersBase.Count; i++)
             {
-                GameObject character;
+                CharacterHandler character;
                 //Debug.Log($"Setup > {_charactersBase[i]}");
                 switch (_charactersBase[i].name)
                 {
                     case "Arle":
-                        character = Instantiate(_arlePrefab);
+                        character = Instantiate(_arlePrefab).GetComponent<CharacterHandler>();
                         break;
                     case "Passeur":
-                        character = Instantiate(_passeurPrefab);
+                        character = Instantiate(_passeurPrefab).GetComponent<CharacterHandler>();
                         break;
                     case "Naïda":
-                        character = Instantiate(_naidaPrefab);
+                        character = Instantiate(_naidaPrefab).GetComponent<CharacterHandler>();
                         break;
                     case "Agathe":
-                        character = Instantiate(_agathePrefab);
+                        character = Instantiate(_agathePrefab).GetComponent<CharacterHandler>();
                         break;
                     case "Marcello":
-                        character = Instantiate(_marcelloPrefab);
+                        character = Instantiate(_marcelloPrefab).GetComponent<CharacterHandler>();
                         break;
                     case "Capucine":
-                        character = Instantiate(_capucinePrefab);
+                        character = Instantiate(_capucinePrefab).GetComponent<CharacterHandler>();
                         break;
                     default:
-                        character = Instantiate(_characterPrefab);
+                        character = Instantiate(_characterPrefab).GetComponent<CharacterHandler>();
                         break;
                 }
                 
@@ -181,19 +186,14 @@ namespace MonoBehavior.Managers
                 //character.transform.rotation = _enemyPos.rotation;
                 //character.transform.LookAt(Camera.main.transform);
                 character.transform.rotation = Quaternion.Euler(0, 90, 0);
-;
                 
+                character._character = _charactersBase[i];
+                character._character._nicknames.Clear();
+                character._character._nicknames.Add(character._character.name);
                 
-                character.GetComponent<CharacterHandler>()._character = _charactersBase[i];
-                character.GetComponent<CharacterHandler>()._character._nicknames.Clear();
-                character.GetComponent<CharacterHandler>()._character._nicknames.Add(character.GetComponent<CharacterHandler>()._character.name);
-
-                // character.GetComponent<Enemy>()._character = _charactersBase[i];
-                // character.GetComponent<Enemy>().enabled = false;
+                character.name = character._character.name;
                 
-                character.name = character.GetComponent<CharacterHandler>()._character.name;
-                
-                _characters.Add(character.GetComponent<CharacterHandler>());
+                _characters.Add(character);
             }
         }
 
@@ -312,11 +312,19 @@ namespace MonoBehavior.Managers
             Debug.Log($"Player data: {_player._character}");
         }
 
-        /*void GenerateCharacterStats(ref Character character, string inkId)
+
+        void MakeObservables()
         {
+            _story.ObserveVariable ("p_char", (string varName, object newValue) => {
+                UpdateCharismaVariable((int)newValue);
+            });
+        }
+
+        void UpdateCharismaVariable(int newValue)
+        {
+            _charisma = newValue;
             
-        }*/
-        
+        }
         
         #region Coroutines
 
