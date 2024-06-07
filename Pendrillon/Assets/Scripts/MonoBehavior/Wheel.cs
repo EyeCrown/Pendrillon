@@ -27,9 +27,11 @@ public class Wheel : MonoBehaviour
     #endregion
     
     
+    private GameObject _axle;
     private GameObject _wheel;
     private GameObject _resultBox;
-    
+
+    public bool _onStage;
     
     public AnimationCurve _movementCurve;
 
@@ -55,7 +57,10 @@ public class Wheel : MonoBehaviour
         
         _resultBox = _uiBox.transform.Find("ResultColor").gameObject;
         
-        _wheel = transform.Find("Wheel").gameObject;
+        _axle = transform.Find("Axle").gameObject;
+        _wheel = _axle.transform.Find("Wheel").gameObject;
+        _anim = _wheel.GetComponent<Animator>();
+
         
         _positionOutsideStage = transform.position;
         _positionOnStage = new Vector3(transform.position.x, transform.position.y + _yOffset, transform.position.z);
@@ -64,22 +69,13 @@ public class Wheel : MonoBehaviour
     void Start()
     {
         _uiBox.SetActive(false);
+        _onStage = false;
     }
 
-    private void OnEnable()
-    {
-        _anim = GetComponentInChildren<Animator>();
-    }
 
     #endregion
 
     #region Methods
-
-    /*public void Spin()
-    {
-        transform.rotation = Quaternion.Euler(_score * 3.6f, 0, 0);
-        StartCoroutine(SpinningCoroutine());
-    }*/
 
     void UpdateText(int score, int mustObtain, string type)
     {
@@ -127,7 +123,7 @@ public class Wheel : MonoBehaviour
         
         float duration = 1.4f, time = 0.0f;
         
-        _wheel.transform.rotation = Quaternion.Euler(score * -3.6f, 0, 0);
+        _axle.transform.rotation = Quaternion.Euler(score * -3.6f, 0, 0);
         _anim.Play("Spin");
 
         var startPos = _positionOutsideStage;
@@ -143,23 +139,11 @@ public class Wheel : MonoBehaviour
         }
         Debug.Log($"Wheel.SpinningCoroutine > Rotate anim is done + Is on stage");
 
-        StartCoroutine(DisplayScore());
-        yield return new WaitForSeconds(1.0f);
-
-        ActingManager.Instance._canContinueDialogue = true;
-
-        time = 0.0f;
-        while (time < duration)
-        {
-            transform.position = Vector3.Lerp(_positionOnStage,_positionOutsideStage, 
-                _movementCurve.Evaluate(time / duration));
-            time += Time.deltaTime;
-            yield return null;
-        }
+        StartCoroutine(DisplayScoreCoroutine());
     }
 
 
-    IEnumerator DisplayScore()
+    IEnumerator DisplayScoreCoroutine()
     {
         float time = 0.0f, duration = 0.5f;
         _uiBox.SetActive(true);
@@ -172,15 +156,26 @@ public class Wheel : MonoBehaviour
             yield return null;
         }
         
-        // Wait X.x seconds
-        yield return new WaitForSeconds(1.0f);
+        
+    }
+
+    public IEnumerator CloseScoreCoroutine()
+    {
+        _onStage = false;
+        ActingManager.Instance._canContinueDialogue = true;
         
         // Scale from 1 to 0
+        float time = 0.0f, duration = 0.5f;
+
         time = 0.0f;
         while (time < duration)
         {
             var size = 1 - time / duration;
             _uiBox.transform.localScale = new Vector3(size, size, size);
+            
+            transform.position = Vector3.Lerp(_positionOnStage,_positionOutsideStage, 
+                _movementCurve.Evaluate(time / duration));
+            
             time += Time.deltaTime;
             yield return null;
         }
