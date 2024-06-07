@@ -83,9 +83,11 @@ public class Wheel : MonoBehaviour
 
     void UpdateText(int score, int mustObtain, string type)
     {
+        SetUIBox(type);
+        
         _resultText.text = score.ToString();
         _mustObtainText.text = mustObtain.ToString();
-        _typeText.text = type;
+        _typeText.text = "";
         _levelUpText.text = type + " > +1";
 
         if (score <= mustObtain)
@@ -97,7 +99,23 @@ public class Wheel : MonoBehaviour
             _resultBox.GetComponent<Image>().color = Color.red;
         }
     }
-    
+
+
+    void SetUIBox(string typeName)
+    {
+        Sprite sprite;
+        foreach (var type in Constants.ButtonTypesArray)
+        {
+            if (type == typeName)
+            {
+                sprite = Resources.Load <Sprite>($"SkillcheckUI/{typeName}");
+                _uiBox.GetComponent<Image>().sprite = sprite;
+                return;
+            }
+        }
+        sprite = Resources.Load <Sprite>($"SkillcheckUI/Neutral");
+        _uiBox.GetComponent<Image>().sprite = sprite;
+    }
     
     #endregion
 
