@@ -204,6 +204,16 @@
 										<Property Name="Color" Type="int16" Value="5"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
+									<ChildrenList>
+										<Bus Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}"/>
+										<AuxBus Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}">
+											<ReferenceList>
+												<Reference Name="Effect0" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+													<ObjectRef Name="Hall_Medium_Bright" ID="{3C3845B2-C76E-4634-9108-83FA43A5A7BC}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+												</Reference>
+											</ReferenceList>
+										</AuxBus>
+									</ChildrenList>
 									<ObjectLists>
 										<ObjectList Name="RTPC">
 											<Reference>

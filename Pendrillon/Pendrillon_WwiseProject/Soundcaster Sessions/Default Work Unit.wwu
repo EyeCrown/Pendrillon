@@ -65,8 +65,12 @@
 				<SoundcasterSession Name="Public Reaction" ID="{BCB14403-B44E-44FD-BD8E-8267C11C0D35}">
 					<ModuleList>
 						<Module>
-							<ObjectRef Name="Play_CrowdReaction_CurrentReactionLevel" ID="{5AA3B44C-A286-49F9-946A-DAA2FF0A6380}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<ObjectRef Name="Play_CrowdReaction_applauseinfinite" ID="{911AFC2F-1094-4A66-9684-7A36CAFB1AE4}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_CrowdReaction_stopapplauseinfinite" ID="{7C55F853-8AE8-4CB5-B4B6-569A15FEA44E}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_AMB_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
@@ -84,7 +88,7 @@
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="CrowdBoredom" ID="{61A3171D-F115-49E4-AADA-025E1CEAD958}"/>
-							<Value>50</Value>
+							<Value>71.8840683982061</Value>
 						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="Environment_Volume" ID="{CEE89D78-1B7E-4D51-9450-E9BDB6FC83F7}"/>
@@ -103,7 +107,7 @@
 						<CurrentStateRef Name="None" ID="{5BA632EA-E74D-4A6D-88CC-9F9D0CCCDC94}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Hype_07" ID="{A4B6237A-78DA-4CD9-A22C-7B244B2B4FBC}"/>
+						<CurrentSwitchRef Name="Hype_06" ID="{E9D40200-B585-4FE3-B917-5118A09DA24C}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Eglise" ID="{5F6CB8B3-FC9E-41B6-8073-B7E7C27C6AB5}">
