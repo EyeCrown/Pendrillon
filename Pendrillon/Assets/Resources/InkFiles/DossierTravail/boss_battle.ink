@@ -93,7 +93,6 @@ VAR b_boss_body_attack_5_precision = 100
 
 // Start the scene
 #audience:ovation
-#move(Player)
 - -> main_menu
 // Default state
 = main_menu
@@ -108,13 +107,7 @@ VAR b_boss_body_attack_5_precision = 100
 {
     - b_boss_state == "default":
         Default state : dans l’eau, avec sa queue dans l’eau aussi.
-        // Player movepool
-        + [Utiliser le canon.]
-            -> canon_movepool
-        + [Utiliser le grappin.]
-            -> grapple_movepool
-        + [Monter au mât.]
-            -> mast_movepool
+        -> default_state
     - b_boss_state == "open mouth":
         Open mouth state : ouvre la gueule et hurle (screenshake).
         -> open_mouth_state
@@ -125,22 +118,40 @@ VAR b_boss_body_attack_5_precision = 100
         On boat state : rapproche sa tête et pose sa queue sur le bateau.
         -> on_boat_state
 }
-- // Suite combat
+
+= end_turn
+Fin du tour.
+// Suite combat
 // Boss attack
 /*~ boss_attack()*/
 // Next turn
 /*- -> next_turn*/
 
 = default_state
-bb
-    // Player move pool
     // Player movepool
-/*    + [Utiliser le canon.]
-        -> canon_movepool
     + [Utiliser le grappin.]
-        -> grapple_movepool
-    + [Monter au mât.]
-        -> mast_movepool*/
+        ++ {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == false} [Remonter le grappin. (1)]
+            ~ load_grabble()
+        ++ {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Viser. (1)]
+            ~ aim_grabble()
+        ++ {b_player_AP >= 3 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Tirer. (3)]
+            ~ shoot_grabble()
+        ++ [Retourner sur le pont.]
+            -> default_state
+    + [Utiliser le canon.]
+        -> canon_movepool
+    + [Utiliser les tonneaux.]
+        -> barrel_movepool
+        + [Monter au mât. (1)]
+            ~ climb_up_mast()
+            ** {b_player_AP >= 3 && b_player_is_on_top_of_mast == true && b_sail_is_down == false} [Baisser la voile. (3)]
+                ~ lower_sail()
+            ++ {b_player_AP >= 2 && b_player_is_on_top_of_mast == true} [Saut de l'ange. (2)]
+                ~ angel_jump()
+            ++ {b_player_AP >= 1 && b_player_is_on_top_of_mast == true} [Descendre du mât. (1)]
+                Vous descendez du mât. #anim:climb_down_mast
+- {b_player_AP>0: -> default_state | -> end_turn}
+
 
 = open_mouth_state
 Open mouth
@@ -163,6 +174,9 @@ Vous êtes devant le grappin.
     + [Retourner sur le pont.]
         -> main_menu
 
+= barrel_movepool
+Vous êtes devant les tonneaux explosifs.
+
 = mast_movepool
 Vous montez au mât.
 
@@ -181,8 +195,7 @@ Vous montez au mât.
         Vous remontez la voile. #anim:lower_sail
             ~ b_player_is_on_top_of_mast = true
     + {b_player_AP >= 2 && b_player_is_on_top_of_mast == true} [Saut de l'ange. (2)]
-        Vous sautez depuis le mât et attaquez. #anim:Player:mast_attack
-        ~ b_player_is_on_top_of_mast = false
+        -- ~ angel_jump()
     + {b_player_AP >= 1 && b_player_is_on_top_of_mast == true} [Descendre du mât. (1)]
         Vous descendez du mât. #anim:climb_down_mast
     + {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_player_AP >= b_week_attack_AP} [Attaque faible. (1)]
@@ -192,7 +205,7 @@ Vous montez au mât.
     + [Se protéger.]
         Vous vous protégez et passez le tour.
 
-// Next turn
+// End turn
 = next_turn
 ~ b_player_AP += 3
 ~ roll_boss_state()
@@ -325,7 +338,37 @@ Le tail a attaqué. Vous avez {b_player_hp} HP.
         kill_boss()
 }
 
+// Load the grabble
+=== function load_grabble()
+Vous remontez le grappin. #anim:load_grabble
+~ b_grabble_is_loaded = true
 
+// Aim with the grabble
+=== function aim_grabble()
+Vous visez avec le grappin. #anim:aim_grabble
+~ b_grabble_is_aimed = true
 
+// Shoot with the grabble
+=== function shoot_grabble()
+Vous tirez avec le grappin.
+~ b_grabble_is_loaded = false
+~ b_grabble_is_aimed = false
 
+// Climb up the sail
+=== function climb_up_mast()
+Vous montez au mât.
+~ b_player_is_on_top_of_mast = true
 
+// Climb down the sail
+=== function climb_down_mast()
+Vous descendez du mât.
+~ b_player_is_on_top_of_mast = true
+
+// Lower the sail
+=== function lower_sail()
+Vous descendez la voile.
+~ b_sail_is_down = true
+
+=== function angel_jump()
+Vous sautez depuis le mât et attaquez. #anim:Player:mast_attack
+        ~ b_player_is_on_top_of_mast = false
