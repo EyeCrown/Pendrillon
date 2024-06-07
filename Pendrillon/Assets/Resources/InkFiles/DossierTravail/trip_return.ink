@@ -146,8 +146,8 @@ CAPUCINE: Que tu sois cinglé ou non... Nous devons <b>fouiller</b> tous les nav
 = player_hidden
 #playsound:guards_arrive
 MARCELLO: Il n'y a personne, cheffe.
-* [Rester discret. {t(DEXT, -20)}]
-    {sc(DEXT, -20): -> discretion_1_S | -> discretion_1_F} #anim:Marcello:seek_intruder_near_player
+* [Rester discret. {t(DEXT, -10)}]
+    {sc(DEXT, -10): -> discretion_1_S | -> discretion_1_F} #anim:Marcello:seek_intruder_near_player
     ** (discretion_1_S) MARCELLO: Je ne vois personne. Et toi ?
         -- {
                 - player_is_stinky: CAPUCINE: Je ne vois personne, mais ça pue le poisson mort par ici. 

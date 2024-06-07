@@ -527,7 +527,7 @@ AGATHE: J'ai évoqué avec l'Accusé l'histoire de la Déesse et des marins qui 
     - t_3_is_with_irene_saviors:
         AGATHE: Il fit preuve du plus grand des soutiens à l'égard des marins et du bébé, Votre Honneur. #audience:applause
             ~ audience_judgement(0.2)
-    - t_3_is_against_irene_saviors or t_3_insult_irene_savior:
+    - t_3_is_against_irene_saviors:
         AGATHE: Il s'en prit aux marins, prétextant qu'ils étaient ignares d'aller sauver le bébé, en proie à la tempête. #audience:boing
         ~ audience_judgement(-0.3)
     - else:

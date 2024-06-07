@@ -149,7 +149,7 @@ VAR irene_torch_is_on = false
 AGATHE: En plein affrontement avec les vagues furieuses... Ils entendirent des pleurs.
     * [Des pleurs ?] PLAYER: Des pleurs ? Les pleurs de qui ?
         AGATHE: Quelle autre voix que la Sienne saurait étouffer les vents les plus impétueux ?
-    * [J'en doute.] PLAYER: Par ce temps ? Croyez un marin lorsqu'il vous dit ceci : c'est impossible...
+    * [J'en doute.] PLAYER: En pleine tempête ? Croyez un marin lorsqu'il vous dit ceci : c'est impossible...
             ~ trial()
             ~ t_3_doubt_about_irene_cryings = true
         AGATHE: Les vents les plus impétueux ne sauraient étouffer la voix de la Déesse.
@@ -163,17 +163,8 @@ AGATHE: En plein affrontement avec les vagues furieuses... Ils entendirent des p
         ~ t_3_is_against_irene_saviors = true
         AGATHE: Fort heureusement, ces marins furent mieux conseillés par leur conscience...
     * [Écouter en silence.]
-- AGATHE: L'un d'eux, n'écoutant que son courage...
-{
-    - t_3_is_against_irene_saviors:
-        * [... ou sa bêtise.] PLAYER: ...ou sa stupidité...
-            ~ trial()
-            ~ t_3_insult_irene_savior = true
-            -> a_navigator_save_baby
-        * [Rester silencieux.]
-            -> a_navigator_save_baby
-}
-- (a_navigator_save_baby) AGATHE: L'un d'eux, dis-je, affréta un canot et suivit le son des pleurs au cœur de la tempête.
+- (a_navigator_save_baby) AGATHE: L'un d'eux, n'écoutant que son courage...
+- AGATHE: Affréta un canot et suivit le son des pleurs au cœur de la tempête.
 - AGATHE: Au milieu des vagues, il découvrit sur un rocher, allongé, un bébé.
     * [La vision du vitrail !] PLAYER: C'est cette scène que le vitrail représente, n'est-ce pas ?
         AGATHE: Celle-là même.

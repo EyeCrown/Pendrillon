@@ -38,17 +38,14 @@ SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes talents !
 SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance !
     * [Effectuer une danse. {t(DEXT, 30)}]
         {sc(DEXT, 30): -> dancing_S | -> dancing_F}
-        ** (dancing_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
-            SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami !
+        ** (dancing_S) SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             -> success_entertaining_audience
-        ** (dancing_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
-            SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami.
+        ** (dancing_F) SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami. #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
     * [Faire des pompes. {t(STRE, 30)}]
         {sc(STRE, 30): -> do_pushups_S | -> do_pushups_F}
-        ** (do_pushups_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
-            SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami !
+        ** (do_pushups_S) SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             -> success_entertaining_audience
         ** (do_pushups_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, l'ami.
