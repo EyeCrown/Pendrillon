@@ -11,10 +11,8 @@ public class Map : MonoBehaviour
     private GameObject _light;
 
     [Header("=== Places ===")] 
-    [SerializeField] private Vector3 _place1;
-    [SerializeField] private Vector3 _place2;
-    [SerializeField] private Vector3 _place3;
-    [SerializeField] private Vector3 _place4;
+    [SerializeField] private Vector3 _placeMiraterre;
+    [SerializeField] private Vector3 _placeLeviathan;
     
     [Header("=== Positions ===")] 
     [SerializeField] [Range(0, -10)] private float _yOffset;
@@ -44,7 +42,7 @@ public class Map : MonoBehaviour
     {
         //StartCoroutine(MoveCursor(_place1, _place2));
         _light.SetActive(false);
-        _cursor.transform.position = _place1;
+        _cursor.transform.localPosition = _placeMiraterre;
     }
 
     void Update()
@@ -71,11 +69,17 @@ public class Map : MonoBehaviour
 
         switch (travel)
         {
-            case Constants.TravelTMP1:
-                StartCoroutine(ArriveOnStage(MoveCursor(_place1, _place2)));
+            case Constants.MapTravelDeparture:
+                StartCoroutine(MoveCursor(_placeMiraterre, _placeLeviathan));
                 break;
-            case Constants.TravelTMP2:
-                StartCoroutine(ArriveOnStage(MoveCursor(_place2, _place1)));
+            case Constants.MapTravelArrival:
+                StartCoroutine(MoveCursor(_placeLeviathan, _placeMiraterre));
+                break;
+            case Constants.MapDisplay:
+                StartCoroutine(ArriveOnStage());
+                break;
+            case Constants.MapLeave:
+                StartCoroutine(LeaveStage());
                 break;
             default:
                 Debug.LogError($"Map.DisplayTravel > Error: unknown travel name: {travel}");
@@ -90,7 +94,7 @@ public class Map : MonoBehaviour
 
     #region Coroutines
 
-    IEnumerator ArriveOnStage(IEnumerator coroutine)
+    IEnumerator ArriveOnStage()
     {
         Debug.Log("Map.ArriveOnStage > Start arriving");
         float time = 0.0f, duration = 2.5f;
@@ -102,8 +106,6 @@ public class Map : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-
-        StartCoroutine(coroutine);
     }
     
     IEnumerator LeaveStage()
@@ -146,7 +148,6 @@ public class Map : MonoBehaviour
         }
         
         _light.SetActive(false);
-        StartCoroutine(LeaveStage());
     }
 
 
@@ -157,19 +158,13 @@ public class Map : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         
-        Color _color1 = Color.green;
-        Color _color2 = Color.red;
-        Color _color3 = Color.blue;
-        Color _color4 = Color.yellow;
+        Color _colorMiraterre = Color.green;
+        Color _colorLeviathan = Color.red;
         
-        Gizmos.color = _color1;
-        Gizmos.DrawLine(transform.localPosition + _place1, transform.localPosition + _place1 + Vector3.right);
-        Gizmos.color = _color2;
-        Gizmos.DrawLine(transform.position + _place2, transform.position + _place2 + Vector3.right);
-        Gizmos.color = _color3;
-        Gizmos.DrawLine(transform.position + _place3, transform.position + _place3 + Vector3.right);
-        Gizmos.color = _color4;
-        Gizmos.DrawLine(transform.position + _place4, transform.position + _place4 + Vector3.right);
+        Gizmos.color = _colorMiraterre;
+        Gizmos.DrawLine(transform.localPosition + _placeMiraterre, transform.localPosition + _placeMiraterre + Vector3.right);
+        Gizmos.color = _colorLeviathan;
+        Gizmos.DrawLine(transform.position + _placeLeviathan, transform.position + _placeLeviathan + Vector3.right);
         
     }
 

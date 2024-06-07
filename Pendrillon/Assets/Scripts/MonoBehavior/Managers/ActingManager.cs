@@ -1141,30 +1141,28 @@ namespace MonoBehavior.Managers
                     break;
                 }
             }
-            if (travel != string.Empty)
-                Debug.LogError($"AM.HandleTagMap > Error: unknown travel name: {travel}");
-            
-            void TravelAction()
+
+            if (travel == string.Empty)
             {
-                Debug.Log("TravelAction");
+                Debug.LogError($"AM.HandleTagMap > Error: unknown travel name: {travel}");
+                return;
+            }
+            
+            void MapAction()
+            {
+                Debug.Log("MapAction");
                 if (travel != string.Empty)
                     _map.DisplayTravel(travel);
                 
                 TagActionOver();
             }
 
-            Debug.Log(_tagMethods.Count);
-            _tagMethods.Add(TravelAction);
-            Debug.Log(_tagMethods.Count);
-
+            _tagMethods.Add(MapAction);
         }
         
         //TODO: Make curtains tag handlers
         /* void HandleCurtains()
         {
-            
-            
-            
         }*/
         
         #endregion
@@ -1300,7 +1298,7 @@ namespace MonoBehavior.Managers
             
             foreach (var tagAction in _tagMethods)
             {
-                //Debug.Log($"{tagAction.Method.Name}");
+                Debug.Log($"{tagAction.Method.Name}");
                 _isActionDone = false;
                 tagAction();
                 while (!_isActionDone)

@@ -82,11 +82,11 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        Debug.Log("mouse enter");
+        //Debug.Log("mouse enter");
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        Debug.Log("mouse exit");
+        //Debug.Log("mouse exit");
     }
 }
