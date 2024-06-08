@@ -5339,6 +5339,20 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Event Name="MuteMusic" ID="{D5423E3F-9842-4F5D-BA81-E482A366B9FF}">
+					<ChildrenList>
+						<Action Name="" ID="{B95BF17A-A0FF-4FB6-A592-E134CC9171EC}" ShortID="745532520">
+							<PropertyList>
+								<Property Name="ActionType" Type="int16" Value="38"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Music_Volume" ID="{0DEF2135-992A-418F-9A75-DCAC5D85ED44}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

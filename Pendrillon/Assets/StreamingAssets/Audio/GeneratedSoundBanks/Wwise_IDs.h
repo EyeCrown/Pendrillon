@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID GAMESTART = 4058101365U;
+        static const AkUniqueID MUTEMUSIC = 2316563647U;
         static const AkUniqueID PLAY_AMB_SC_BARQUE_AMBIANCE = 2018964231U;
         static const AkUniqueID PLAY_AMB_SC_CALE_AMBIANCE = 4168969102U;
         static const AkUniqueID PLAY_AMB_SC_EGLISE_AMBIANCE = 679935618U;
