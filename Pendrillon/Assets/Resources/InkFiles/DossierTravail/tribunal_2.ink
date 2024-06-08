@@ -284,4 +284,4 @@ NAÏDA: Car les noms, voyez-vous, sont le cœur battant de toute chose. Les noms
 NAÏDA: Ainsi il m'apparaît, pour conclure notre histoire, qu'en donnant à un système partial et imparfait, le nom même d'une vertu... #audience:silent
 NAÏDA: En lui donnant le nom de « Justice »... #audience:debate
 NAÏDA: Vous autres humains ayez commis une erreur... cruelle. #anim:Naida:bow #audience:ovation
-- -> epilogue
+- -> cast_salutations

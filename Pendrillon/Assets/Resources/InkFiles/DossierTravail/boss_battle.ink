@@ -5,14 +5,7 @@ VAR b_player_is_dead = false
 VAR b_player_won = false
 VAR b_player_hp = 10
 VAR b_player_AP = 3
-//VAR b_player_nb_combo_attack = 0 // max per turn = 3
 VAR b_player_is_on_top_of_mast = false
-VAR b_week_attack_AP = 1
-VAR b_strong_attack_AP = 3
-VAR b_week_attack_power = 2
-VAR b_strong_attack_power = 5
-VAR b_week_attack_sc = 20 // dext
-VAR b_strong_attack_sc = 0 // stre
 
 // Environement
 VAR b_grabble_is_loaded = true
@@ -33,7 +26,6 @@ VAR b_boss_is_dead = false
 VAR b_boss_state = "default"
 VAR b_boss_body_attack = 1
 VAR b_boss_tail_attack = 1
-VAR b_boss_is_grabbled = false
 VAR b_boss_body_hp = 10
 VAR b_boss_tail_hp = 5
 // Boss attacks
@@ -94,7 +86,13 @@ VAR b_boss_body_attack_5_precision = 100
 
 // Start the scene
 #audience:ovation
+- SOUFFLEUR: Psssst... Hé, l'ami ! #wait:3
+SOUFFLEUR: Cette scène nous coûte une fortune en effets spéciaux à chaque spectacle...
+SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en terme de chorégraphie, de matériel, de main-d'oeuvre...
+SOUFFLEUR: Sans parler des <shake>coûts d'entretiens</shake> !
+SOUFFLEUR: Essayons d'en profiter pour en mettre plein les yeux au public, d'accord l'ami ?
 - -> main_menu
+
 // Default state
 = main_menu
 // Checks if boss or player is dead
@@ -205,12 +203,6 @@ Vous montez au mât.
         -- ~ angel_jump()
     + {b_player_AP >= 1 && b_player_is_on_top_of_mast == true} [Descendre du mât. (1)]
         Vous descendez du mât. #anim:climb_down_mast
-    + {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_player_AP >= b_week_attack_AP} [Attaque faible. (1)]
-        Vous effectuez une attaque faible. #anim:Player:attack
-    + {b_player_AP >= 3 && b_player_is_on_top_of_mast == false && b_player_AP >= b_strong_attack_AP} [Attaque forte. (3)]
-        Vous effectuez une attaque puissante. #anim:Player:strong_attack
-    + [Se protéger.]
-        Vous vous protégez et passez le tour.
 
 // End turn
 = next_turn
@@ -246,10 +238,6 @@ Open mouth state : ouvre la gueule et hurle.
             ~ b_player_is_on_top_of_mast = true
     * {b_player_is_on_top_of_mast == true} [Saut de l'ange. (2)]
         Vous sautez depuis le mât et attaquez. #anim:Player:mast_attack
-    * {b_player_AP >= b_week_attack_AP} [Attaque faible. (1)]
-        Vous effectuez une attaque faible. #anim:Player:attack
-    * {b_player_AP >= b_strong_attack_AP} [Attaque forte. (3)]
-        Vous effectuez une attaque puissante. #anim:Player:strong_attack
 // Boss attack
 ~ boss_attack()
 // Next turn
@@ -276,20 +264,6 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
 
 
 // FUNCTIONS
-
-// Player attack
-=== function player_attack(pAttack)
-{
-    - b_boss_state == "default":
-        {
-            - pAttack == "weak":
-                ~ b_boss_body_hp -= b_week_attack_power
-                ~ b_player_AP -= b_week_attack_AP
-            - pAttack == "strong":
-                ~ b_boss_body_hp -= b_strong_attack_power
-                ~ b_player_AP -= b_strong_attack_AP
-        }
-}
 
 // Boss attack
 === function boss_attack()
@@ -335,14 +309,6 @@ Le tail a attaqué. Vous avez {b_player_hp} HP.
 {
     - b_boss_state == "default":
         
-}
-
-// Player weak attack
-=== function weak_attack()
-~ b_boss_body_hp -= b_week_attack_power
-{
-    - b_boss_body_hp <= 0:
-        kill_boss()
 }
 
 // Load the grabble
