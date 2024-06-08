@@ -4,21 +4,22 @@
 VAR b_player_is_dead = false
 VAR b_player_won = false
 VAR b_player_hp = 10
-VAR b_player_AP = 3
+VAR b_player_AP = 99
 VAR b_player_is_on_top_of_mast = false
 
 // Environement
-VAR b_grabble_is_loaded = true
-VAR b_grabble_is_aimed = false
+VAR b_harpoon_is_loaded = true
+VAR b_harpoon_is_aimed = false
 VAR b_canon_is_loaded = false
 VAR b_canon_is_aimed = false
 VAR b_nb_canon_bullet_left = 3
 VAR b_sail_is_down = false
 VAR b_explosive_barrel_1_is_used = false
 VAR b_explosive_barrel_1_is_loaded = false
-VAR b_explosive_barrel_2_is_brought = false
+VAR b_explosive_barrel_2_is_brought_and_not_used = true
 VAR b_explosive_barrel_2_is_used = false
 VAR b_explosive_barrel_2_is_loaded = false
+VAR b_explosive_barrel_left = true
 
 // Boss variables
 // Base
@@ -128,27 +129,43 @@ Fin du tour.
 
 = default_state
     // Player movepool
-    + [Utiliser le grappin.]
-        ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == false} [Remonter le grappin. (PA)]
-            ~ load_grabble()
-        ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Viser. (PA)]
-            ~ aim_grabble()
-        ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Tirer. (PA)]
-            ~ shoot_grabble()
-        ++ [Retourner sur le pont.]
+    + [Utiliser le harpon]
+        ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == false} [Remonter le harpon (AP)]
+            ~ load_harpoon()
+        ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == true && b_harpoon_is_aimed == false} [Viser avec le harpon (AP)]
+            ~ aim_harpoon()
+        ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == true} [Tirer. (AP)]
+            ~ shoot_harpoon()
+        ++ [Retourner sur le pont]
             -> default_state
-    +  {b_nb_canon_bullet_left > 0} [Utiliser le canon.]
-        -> canon_movepool
-    + [Utiliser les tonneaux.]
-        -> barrel_movepool
-        + [Monter au mât. (PA)]
-            ~ climb_up_mast()
-            ** {b_player_AP > 0 && b_player_is_on_top_of_mast == true && b_sail_is_down == false} [Baisser la voile. (PA)]
-                ~ lower_sail()
-            ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == true} [Saut de l'ange. (PA)]
-                ~ angel_jump()
-            ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == true} [Descendre du mât.]
-                Vous descendez du mât. #anim:climb_down_mast
+    +  {b_nb_canon_bullet_left > 0} [Utiliser le canon]
+        ++ {b_player_AP > 0 && b_canon_is_loaded == false} [Charger le canon (AP)]
+            ~ load_canon()
+        ++ {b_player_AP > 0 && b_canon_is_loaded == true && b_canon_is_aimed == false} [Viser avec le canon (AP)]
+            ~ aim_canon()
+        ++ {b_player_AP > 0 && b_canon_is_loaded == true} [Tirer avec le canon (AP)]
+            ~ shoot_canon()
+        ++ [Retourner sur le pont]
+            -> main_menu
+    + {b_explosive_barrel_left == true} [Utiliser les tonneaux explosifs]
+        ++ {b_player_AP > 0 && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == false} [Charger le tonneau d'explosifs (AP)]
+            ~ load_barrel_1()
+        ++ {b_player_AP > 0 && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == true} [Lancer le tonneau explosif (AP)]
+            ~ throw_barrel_1()
+        ++ {b_player_AP > 0 && b_explosive_barrel_1_is_used == true && b_explosive_barrel_2_is_brought_and_not_used == true && b_explosive_barrel_2_is_used == false && b_explosive_barrel_2_is_loaded == false} [Charger le tonneau d'explosifs (AP)]
+            ~ load_barrel_2()
+        ++ {b_player_AP > 0 && b_explosive_barrel_1_is_used == true && b_explosive_barrel_2_is_brought_and_not_used == true && b_explosive_barrel_2_is_used == false && b_explosive_barrel_2_is_loaded == true} [Lancer le tonneau explosif (AP)]
+            ~ throw_barrel_2()
+        ++ [Retourner sur le pont]
+            -> main_menu
+    + [Monter au mât (AP)]
+        ~ climb_up_mast()
+        ** {b_player_AP > 0 && b_sail_is_down == false} [Baisser la voile (AP)]
+            ~ lower_sail()
+        ++ {b_player_AP > 0} [Saut de l'ange (AP)]
+            ~ angel_jump()
+        ++ {b_player_AP > 0} [Descendre du mât]
+            Vous descendez du mât. #anim:climb_down_mast
 - {b_player_AP>0: -> default_state | -> end_turn}
 
 
@@ -160,49 +177,6 @@ Under water
 
 = on_boat_state
 On boat
-
-= canon_movepool
-Vous êtes devant le canon.
-    + {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == false} [Charger le canon. (1)]
-    + {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Viser avec le grappin. (1)]
-        Vous visez avec le grappin. #anim:aim_grabble
-    + {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Tirer avec le grappin. (3)]
-    + [Retourner sur le pont.]
-        -> main_menu
-
-= grapple_movepool
-Vous êtes devant le grappin.
-    + {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == false} [Remonter le grappin. (1)]
-    + {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Viser avec le grappin. (1)]
-        Vous visez avec le grappin. #anim:aim_grabble
-    + {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Tirer avec le grappin. (3)]
-    + [Retourner sur le pont.]
-        -> main_menu
-
-= barrel_movepool
-Vous êtes devant les tonneaux explosifs.
-
-= mast_movepool
-Vous montez au mât.
-
-= all_actions_moovepool
-// Player movepool
-    + {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == false} [Remonter le grappin. (1)]
-        Vous remontez le grappin. #anim:load_grabble
-    + {b_player_AP >= 1 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Viser avec le grappin. (1)]
-        Vous visez avec le grappin. #anim:aim_grabble
-    + {b_player_AP >= 3 && b_player_is_on_top_of_mast == false && b_grabble_is_loaded == true} [Tirer avec le grappin. (3)]
-        Vous tirez avec le grappin. #anim:shoot_grabble
-    + {b_player_AP >= 3 && b_player_is_on_top_of_mast == false} [Monter au mât. (3)]
-        Vous montez au mât. #anim:Player:climb_mast
-            ~ b_player_is_on_top_of_mast = true
-    * {b_player_AP >= 3 && b_player_is_on_top_of_mast == true && b_sail_is_down == false} [Remonter la voile. (3)]
-        Vous remontez la voile. #anim:lower_sail
-            ~ b_player_is_on_top_of_mast = true
-    + {b_player_AP >= 2 && b_player_is_on_top_of_mast == true} [Saut de l'ange. (2)]
-        -- ~ angel_jump()
-    + {b_player_AP >= 1 && b_player_is_on_top_of_mast == true} [Descendre du mât. (1)]
-        Vous descendez du mât. #anim:climb_down_mast
 
 // End turn
 = next_turn
@@ -227,16 +201,16 @@ Vous montez au mât.
 }
 Open mouth state : ouvre la gueule et hurle.
 // Player attack
-    * {b_grabble_is_loaded == false} [Remonter le grappin. (1)]
-        Vous remontez le grappin. #anim:load_grabble
-    * {b_grabble_is_loaded == true} [Viser avec le grappin. (1)]
-        Vous visez avec le grappin. #anim:aim_grabble
-    * {b_grabble_is_loaded == true} [Tirer avec le grappin. (3)]
-        Vous tirez avec le grappin. #anim:shoot_grabble
-    * {b_player_is_on_top_of_mast == false} [Monter au mât. (3)]
+    * {b_harpoon_is_loaded == false} [Remonter le harpon (AP)]
+        Vous remontez le harpon. #anim:load_harpoon
+    * {b_harpoon_is_loaded == true} [Viser avec le harpon (AP)]
+        Vous visez avec le harpon. #anim:aim_harpoon
+    * {b_harpoon_is_loaded == true} [Tirer avec le harpon (AP)]
+        Vous tirez avec le harpon. #anim:shoot_harpoon
+    * {b_player_is_on_top_of_mast == false} [Monter au mât (AP)]
         Vous montez au mât. #anim:Player:climb_mast
             ~ b_player_is_on_top_of_mast = true
-    * {b_player_is_on_top_of_mast == true} [Saut de l'ange. (2)]
+    * {b_player_is_on_top_of_mast == true} [Saut de l'ange (AP)]
         Vous sautez depuis le mât et attaquez. #anim:Player:mast_attack
 // Boss attack
 ~ boss_attack()
@@ -300,9 +274,13 @@ Le body a attaqué. Vous avez {b_player_hp} HP.
 }
 Le tail a attaqué. Vous avez {b_player_hp} HP.
 
+// Use one action point
+== function use_action_point()
+    ~ b_player_AP -= 1
+
 // Roll boss state
 === function roll_boss_state()
-~ b_boss_state = "default"
+~    b_boss_state = "default"
 
 // Roll the boss attack
 === function roll_boss_attack()
@@ -311,37 +289,93 @@ Le tail a attaqué. Vous avez {b_player_hp} HP.
         
 }
 
-// Load the grabble
-=== function load_grabble()
-Vous remontez le grappin. #anim:load_grabble
-~ b_grabble_is_loaded = true
+// Load the harpoon
+=== function load_harpoon()
+Vous remontez le harpon. #anim:load_harpoon
+    ~ b_harpoon_is_loaded = true
+    ~ use_action_point()
 
 // Aim with the grabble
-=== function aim_grabble()
-Vous visez avec le grappin. #anim:aim_grabble
-~ b_grabble_is_aimed = true
+=== function aim_harpoon()
+Vous visez avec le harpon. #anim:aim_harpoon
+    ~ b_harpoon_is_aimed = true
+    ~ use_action_point()
 
 // Shoot with the grabble
-=== function shoot_grabble()
-Vous tirez avec le grappin.
-~ b_grabble_is_loaded = false
-~ b_grabble_is_aimed = false
+=== function shoot_harpoon()
+Vous tirez avec le harpon. #anim:shoot_harpoon
+    ~ b_harpoon_is_loaded = false
+    ~ b_harpoon_is_aimed = false
+    ~ use_action_point()
 
 // Climb up the sail
 === function climb_up_mast()
 Vous montez au mât.
-~ b_player_is_on_top_of_mast = true
+    ~ b_player_is_on_top_of_mast = true
+    ~ use_action_point()
 
 // Climb down the sail
 === function climb_down_mast()
 Vous descendez du mât.
-~ b_player_is_on_top_of_mast = true
+    ~ b_player_is_on_top_of_mast = true
 
 // Lower the sail
 === function lower_sail()
 Vous descendez la voile.
-~ b_sail_is_down = true
+    ~ b_sail_is_down = true
+    ~ use_action_point()
 
 === function angel_jump()
 Vous sautez depuis le mât et attaquez. #anim:Player:mast_attack
-        ~ b_player_is_on_top_of_mast = false
+    ~ b_player_is_on_top_of_mast = false
+    ~ use_action_point()
+
+// Load the canon
+=== function load_canon()
+Vous remontez le canon. #anim:load_canon
+    ~ b_canon_is_loaded = true
+    ~ use_action_point()
+
+// Aim with the canon
+=== function aim_canon()
+Vous visez avec le canon. #anim:aim_canon
+    ~ b_canon_is_aimed = true
+    ~ use_action_point()
+
+// Shoot with the canon
+=== function shoot_canon()
+Vous tirez avec le canon. #anim:shoot_canon
+    ~ b_canon_is_loaded = false
+    ~ b_canon_is_aimed = false
+    ~ b_nb_canon_bullet_left -= 1
+    ~ use_action_point()
+
+// Load the barrel 1
+=== function load_barrel_1()
+Vous chargez le tonneau explosif. #anim:load_barrel_1
+    ~ b_explosive_barrel_1_is_loaded = true
+    ~ use_action_point()
+
+// Throw the barrel 1
+=== function throw_barrel_1()
+Vous lancez le tonneau explosif. #anim:throw_barrel_1
+    ~ b_explosive_barrel_1_is_used = true
+    ~ use_action_point()
+{
+    - b_explosive_barrel_2_is_brought_and_not_used == false:
+        ~ b_explosive_barrel_left = false
+}
+
+// Load the barrel 2
+=== function load_barrel_2()
+Vous chargez le tonneau explosif. #anim:load_barrel_2
+    ~ b_explosive_barrel_2_is_loaded = true
+    ~ use_action_point()
+
+// Throw the barrel 1
+=== function throw_barrel_2()
+Vous lancez le tonneau explosif. #anim:throw_barrel_2
+    ~ b_explosive_barrel_2_is_used = true
+    ~ b_explosive_barrel_2_is_brought_and_not_used = false
+    ~ b_explosive_barrel_left = false
+    ~ use_action_point()
