@@ -1,11 +1,9 @@
 using System;
 using System.Collections;
-using System.Linq;
 using System.Reflection;
 using MonoBehavior.Managers;
 using UnityEngine;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine.Events;
 
 public class CharacterHandler : MonoBehaviour
@@ -19,9 +17,12 @@ public class CharacterHandler : MonoBehaviour
     
     Animator _anim;
     private GameObject _rope;
-    private Vector3 _ropeOffset = new Vector3(0, 10.0f, -0.35f);
+    private Vector3 _ropeOffset = new Vector3(0, 10.0f, 0f);
+    private Vector3 _ropeUpOffset = new Vector3(0, 30.0f, 0f);
+    private Vector3 _ropeDownOffset = new Vector3(0, 10.0f, 0f);
 
     public bool _playAnim = false;
+    private GameObject _charaRig;
     
     // UI
     Canvas _canvas;
@@ -32,6 +33,7 @@ public class CharacterHandler : MonoBehaviour
     // Coroutines booleans
     private bool _leaveCoroutine = false;
     private bool _arriveCoroutine = false;
+    private bool _ropeCoroutine = false;
 
     private Vector3 _lookAt = Vector3.zero;
     
@@ -53,6 +55,7 @@ public class CharacterHandler : MonoBehaviour
         _canvas     = transform.Find("Canvas").GetComponent<Canvas>();
         _uiActing   = transform.Find("Canvas/ACTING_PART").gameObject;
         _rope       = transform.Find("Rope").gameObject;
+        _charaRig   = transform.Find("Chara_Rig").gameObject;
         
         _canvas.worldCamera = Camera.main;
         _canvas.gameObject.SetActive(true);
@@ -116,6 +119,23 @@ public class CharacterHandler : MonoBehaviour
         //TODO: Add animations when moving
 
         StartCoroutine(MovePositionCoroutine(end, duration, callbackOnFinish));
+    }
+
+
+    public void RopeAction(Action callbackOnFinish)
+    {
+        if (_onStage)
+        {
+            Debug.Log($"{name}.RopeAction > Leaves stage");
+            StartCoroutine(NewLeaveStageCoroutine());
+        }
+        else
+        {
+            Debug.Log($"{name}.RopeAction > Arrives on stage");
+            StartCoroutine(ArriveOnStage());
+        }
+
+        callbackOnFinish();
     }
     
     
@@ -234,7 +254,27 @@ public class CharacterHandler : MonoBehaviour
     }
 
 
-    public IEnumerator ArriveOnStage(Vector2Int targetCoordPosition, float duration = 8.0f)
+    IEnumerator MoveRopeCoroutine(Vector3 localStartPos, Vector3 localEndPos, float duration = 4.0f)
+    {
+        _ropeCoroutine = true;
+        
+        float time = 0.0f;
+        Debug.Log($"{_character.name}.MoveRopeCoroutine > Start");
+        
+        while (time < duration)
+        {
+            _rope.transform.localPosition = Vector3.Lerp(localStartPos, localEndPos, 
+                _character.movementCurve.Evaluate(time/ duration)); 
+            time += Time.deltaTime;
+            yield return null;
+        }
+        
+        Debug.Log($"{_character.name}.MoveRopeCoroutine > End");
+        _ropeCoroutine = false;
+    }
+
+    
+    public IEnumerator ArriveOnStage(float duration = 8.0f)
     {
         _arriveCoroutine = true;
         //Debug.Log($"{name} start arriving on stage");
@@ -245,8 +285,7 @@ public class CharacterHandler : MonoBehaviour
             yield return null;
         }
         
-        _coordsOnStatge = targetCoordPosition;
-        Vector3 targetPosition = GameManager.Instance._gridScene.GetWorldPositon(targetCoordPosition);
+        Vector3 targetPosition = GameManager.Instance._gridScene.GetWorldPositon(_coordsOnStatge);
         
         float time = 0.0f;
         Vector3 startPosition = targetPosition + new Vector3(0, 10.0f,0);
@@ -325,13 +364,83 @@ public class CharacterHandler : MonoBehaviour
             yield return null;
         }
         // Character is up
-        transform.position = new Vector3(-100, -100, -100);
+        //transform.position = new Vector3(-100, -100, -100);
         //Debug.Log($"{gameObject.name} has leave the stage");
         _onStage = false;
         _anim.SetBool("falling", false);
         _leaveCoroutine = false;
     }
 
+
+    IEnumerator NewLeaveStageCoroutine(float duration = 2.0f)
+    {
+        _leaveCoroutine = true;
+
+        // Make rope goes down
+        _rope.SetActive(true);
+        StartCoroutine(MoveRopeCoroutine(_ropeUpOffset, _ropeDownOffset));
+
+        while (_ropeCoroutine)
+            yield return null;
+        
+        // Make player goes up
+        _anim.SetBool("falling", true);
+        var startPos = transform.position;
+        var endPos = startPos + new Vector3(0, 20.0f, 0);
+        float time = 0.0f;
+        while (time < duration)
+        {
+            _charaRig.transform.localPosition = Vector3.zero;
+            
+            transform.position = Vector3.Lerp(startPos, endPos, 
+                _character.movementCurve.Evaluate(time / duration));
+            time += Time.deltaTime;
+            yield return null;
+        }
+        _anim.SetBool("falling", false);
+        _onStage = false;
+        _leaveCoroutine = false;
+    }
+    
+    public IEnumerator NewArriveOnStage(float duration = 4.0f)
+    {
+        _arriveCoroutine = true;
+        //Debug.Log($"{name} start arriving on stage");
+        
+        while (_leaveCoroutine)
+            yield return null;
+        
+        // Make player goes down
+        _anim.SetBool("falling", true);
+        var endPos = GameManager.Instance._gridScene.GetWorldPositon(_coordsOnStatge);
+        var startPos = endPos + new Vector3(0, 20.0f, 0);
+
+        _rope.SetActive(true);
+        _rope.transform.localPosition = _ropeDownOffset;
+        
+        float time = 0.0f;
+        while (time < duration)
+        {
+            _charaRig.transform.localPosition = Vector3.zero;
+            
+            transform.position = Vector3.Lerp(startPos, endPos, 
+                _character.movementCurve.Evaluate(time / duration));
+            time += Time.deltaTime;
+            yield return null;
+        }
+        _anim.SetBool("falling", false);
+        
+        // Make rope goes up
+        StartCoroutine(MoveRopeCoroutine(_ropeDownOffset, _ropeUpOffset, 1.0f));
+        
+        while (_ropeCoroutine)
+            yield return null;
+        
+        _onStage = false;
+        _arriveCoroutine = false;
+    }
+    
+    
     #endregion
     
     public static bool HasParameter(string paramName, Animator animator)

@@ -839,9 +839,9 @@ namespace MonoBehavior.Managers
 
             //Debug.Log($"AM.HandleTagPosition > Set {data[0]} to position [{position.x}, {position.y}]");
 
-            Vector2Int position = new Vector2Int(int.Parse(data[1]), int.Parse(data[2]));
+            character._coordsOnStatge = new Vector2Int(int.Parse(data[1]), int.Parse(data[2]));
             
-            StartCoroutine(character.ArriveOnStage(position));
+            StartCoroutine(character.NewArriveOnStage());
         }
 
         
@@ -1107,20 +1107,7 @@ namespace MonoBehavior.Managers
                 return;
             }
 
-            void RopeAction()
-            {
-                if (character._onStage)
-                {
-                    Debug.Log($"AM.HandleTagRope > {characterName} leaves stage");
-                    StartCoroutine(character.LeaveStage());
-                }
-                else
-                {
-                    Debug.Log($"AM.HandleTagRope > {characterName} arrives on stage");
-                    StartCoroutine(character.ArriveOnStage(character._coordsOnStatge));
-                }
-                TagActionOver();
-            }
+            void RopeAction() => character.RopeAction(TagActionOver);
 
             _tagMethods.Add(RopeAction);
         }
