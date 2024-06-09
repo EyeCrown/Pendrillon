@@ -212,7 +212,7 @@ ARLE: Mon cœur me fit comprendre que l'effroyable messire était bien loin d'ê
         ARLE: Votre Honneur ! Vous voyez bien que le saligaud essaye de décrédibiliser ma perfor... je veux dire, mon témoignage ! #audience:laughter
         JUGE ERNEST: Euh... Je... Oui... silence ! Je vous demande de faire le silence ! #anim:Juge:bell #audience:applause 
 - (accusation_of_being_forced) JUGE ERNEST: Passons à la suite, voulez-vous ? #anim:Juge:bell
-JUGE ENRNEST: Témoin, avez-vous autre chose à ajouter ?
+JUGE ERNEST: Témoin, avez-vous autre chose à ajouter ?
 ARLE: J'accuse l'abject messire de n'avoir accepté la mission sacrée, confiée par notre bonne reine, que parce qu'il en était contraint ! #audience:debate
 JUGE ERNEST: Accusé, qu'avez-vous à répondre ?
     * [C'est parfaitement faux !] PLAYER: Votre Honneur, je récuse cette accusation ! Elle ment ! #audience:debate

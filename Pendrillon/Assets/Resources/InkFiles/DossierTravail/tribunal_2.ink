@@ -72,7 +72,9 @@ LA POISCAILLE: ... #audience:booing
                 JUGE ERNEST: Bon, bon... Je consens à appeler la créature par ce qui lui sert de nom... #audience:applause
                 JUGE ERNEST: Tant que celle-ci ne profane pas ces lieux de sa parole impie. #audience:ovation
                 ~ naida_name = "NAÏDA"
-            ** (convince_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez me faire peur, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : la poiscaille. #audience:ovation
+                ~ naida_name_on_text = "Naïda"
+            ** (convince_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez me faire peur, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #audience:ovation
+                ~ naida_name_on_text = "la poiscaille"
     * [(Calme) Tout être a droit à un nom.{t(CHAR, -20)}]
         {sc(CHAR, -20): -> force_name_naida_S | -> force_name_naida_F}
             ** (force_name_naida_S) PLAYER: Votre Honneur, je vous demande de faire preuve d'humanité en appelant Naïda par son nom. #audience:debate
@@ -80,14 +82,16 @@ LA POISCAILLE: ... #audience:booing
                 JUGE ERNEST: Bon, bon... Je consens à appeler la créature par ce qui lui sert de nom... #audience:applause
                 JUGE ERNEST: Tant que celle-ci ne profane pas ces lieux de sa parole impie. #audience:ovation
                 ~ naida_name = "NAÏDA"
-            ** (force_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez m'attendrir, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : la poiscaille. #audience:ovation
+                ~ naida_name_on_text = "Naïda"
+            ** (force_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez m'attendrir, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #audience:ovation
+                ~ naida_name_on_text = "la poiscaille"
 - SOUFFLEUR: Je sais ce que tu penses, l'ami... 
 SOUFFLEUR: La pièce prend des tournures particulièrement sombres...
 SOUFFLEUR: Mais ainsi sont fait nos mythes, pas vrai ?
 SOUFFLEUR: Le moment risque d'être difficile pour le personnage de Naïda. Elle saura rester digne, ne t'en fais pas !
 SOUFFLEUR: Quand à toi, essaye de la défendre du mieux que tu le peux auprès du Juge, mais surtout du public !
 SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
-- JUGE ERNEST: Commencez par nous raconter comment vous avez fait la rencontre de {naida_name_on_text}, voulez-vous ?
+- JUGE ERNEST: Commencez par nous raconter comment vous avez fait la rencontre de <b>{naida_name_on_text}</b>, voulez-vous ?
 - (player_and_naida_met)
     * [À l'intérieur du Léviathan.] PLAYER: Lorsque le Léviathan nous a avalé, mon équipage et moi-même... Nous nous sommes retrouvés à l'intérieur de son estomac. #audience:choc
         PLAYER: C'est là que j'ai fait la rencontre du peuple des Sireines. #audience:debate

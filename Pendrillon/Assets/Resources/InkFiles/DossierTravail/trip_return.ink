@@ -34,7 +34,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
-- PERSONNAGE MASQUÉ: (Écœurée) Ça sent mauvais là-dedans...
+- PERSONNAGE MASQUÉ: Ça sent mauvais là-dedans...
     * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...
         ** [Désolé pour l'odeur...] PLAYER: Les marins ne sont pas dérangés par ce genre d'odeur. Mais ce n'est pas du goût de tout le monde... #audience:laughter
         ** [Ça peut nous être profitable !] PLAYER: Avec un peu de chance, l'odeur fera passer aux gardes l'envie de trop s'attarder. #audience:laughter
@@ -45,7 +45,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
     * [Je vous protégerai. {t(CHAR, 0)}]
         {sc(CHAR, 0): -> protect_S | -> protect_F}
         ** (protect_S) PLAYER: Je braverai les dangers pour vous protéger !
-            PERSONNAGE MASQUÉ: (Inquiète) Espérons qu'on n'en arrive pas là.
+            PERSONNAGE MASQUÉ: Espérons que l'on n'en arrive pas là.
         ** (protect_F) PLAYER: Euh.. Je.. Je vous défendrai ?
             PERSONNAGE MASQUÉ: Ne le prenez pas mal, mais... vous n'êtes pas très convaincant.
     * [On improvisera.] PLAYER: On improvisera, comme j'en ai l'habitude.
@@ -134,10 +134,9 @@ VAR player_won_battle = false // Define if the player won the battle or not
 // The guards arrive
 = guards_arrive
 #playsound:guards_arrive
-- #move:Capucine:11:9 #move:Marcello:9:11 #audience:ovation
-MARCELLO: J'ai entendu du bruit dans la cale. #anim:Marcello:enter_scene #audience:ovation
+- MARCELLO: J'ai entendu du bruit dans la cale. #anim:Marcello:enter_scene #audience:ovation
 CAPUCINE: Tu entends des voix, maintenant ? Peut-être la Déesse en personne qui te cause... #playsound:VOX_Capucine_tuentendsvoixQ #anim:Capucine:enter_scene #audience:laughter
-MARCELLO: Vous me croyez fou, cheffe ? #audience:laughter
+MARCELLO: Vous me croyez fou, cheffe ? #audience:laughter #move:Capucine:11:9 #move:Marcello:9:11 #audience:ovation
 CAPUCINE: Que tu sois cinglé ou non... Nous devons <b>fouiller</b> tous les navires qui <b>arrivent au port</b>. #playsound:VOX_Capucine_soiscinglenon #audience:applause
 - {player_is_hidden: -> player_hidden | -> player_not_hidden}
 

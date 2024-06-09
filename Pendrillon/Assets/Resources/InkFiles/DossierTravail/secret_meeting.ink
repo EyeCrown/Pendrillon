@@ -112,10 +112,10 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             -> arle_presentation
         ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 30)}]
             {sc(CHAR, 30): -> mock_arle_S | -> mock_arle_F}
-            *** (mock_arle_S) Tu es une authentique bouffonne... #anim:Arle:sad #audience:laughter
+        *** (mock_arle_S) PLAYER: Tu es une authentique bouffonne... #anim:Arle:sad #audience:laughter
                 BOUFFONNE: Bouffonne est l'une de mes professions, mais ce n'est pas mon nom. #anim:Arle:stressed
                 -> arle_presentation
-            *** (mock_arle_F) Une authentique bouffonne... #anim:Player:stressed #anim:Arle:happy
+            *** (mock_arle_F) PLAYER: Une authentique bouffonne... #anim:Player:stressed #anim:Arle:happy
                 BOUFFONNE: Je me plais à inspirer le rire, le bonheur... la félicité ! Vous plaisez-vous à inspirer la pitié ? #anim:Arle:happy #audience:laugther #anim:Player:sad
                 -> arle_presentation
 - #character_presentation:Arle

@@ -79,7 +79,6 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
         - export_mode == false && result == false:
             [{D100} / {threshold} FAILURE]
     }
-    //{export_mode == false && result == false: [{D100} / {threshold}: FAILURE]}
     ~ return result
 
 // Calculate the percentage of success of an action tied with a skill check
