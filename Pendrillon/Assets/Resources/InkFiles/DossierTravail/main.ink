@@ -26,7 +26,5 @@ INCLUDE cast_salutation.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
-//-> barge
+-> barge
 //-> boss_battle
-//-> trip_return
--> tribunal_1
