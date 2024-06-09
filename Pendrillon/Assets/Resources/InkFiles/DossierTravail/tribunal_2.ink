@@ -257,7 +257,7 @@ JUGE ERNEST: Qui vote... <shake>innocent</shake> ? #box #wait:1.4 #audience:ovat
 JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé.
 JUGE ERNEST: Le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé...
 JUGE ERNEST: <b>INNOCENT</b> !!! #audience:ovation
-JUGE ERNEST: Emmenez-le, ainsi que la Sireine, retrouver leur liberté. #audience:ovation
+JUGE ERNEST: L'Accusé, ainsi que Naïda la Sireine, peuvent retrouver leur liberté. #audience:ovation
 - -> naida_speech
 
 // Player is guilty
@@ -268,11 +268,12 @@ JUGE ERNEST: Et maintenant... #audience:debate
 JUGE ERNEST: Qui vote... <shake>coupable</shake> ? #box #wait:1.4 #audience:ovation #anim:Player:bow
 JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé...
 JUGE ERNEST: <b>COUPABLE</b> !!! #audience:ovation
-JUGE ERNEST: Emmenez-le, ainsi que la Sireine, au fond des océans. #audience:ovation
+JUGE ERNEST: Coulez-le, ainsi que la Sireine, où la Déesse Elle-même ne saurait le trouver... #audience:ovation
+JUGE ERNEST: ... Au fond des océans ! #audience:ovation
 - -> naida_speech
 
 = naida_speech
-NAÏDA: Avant cela, si vous le permettez... #audience:debate
+NAÏDA: Avant cela, si vous le permettez... #audience:choc
 NAÏDA: Je voudrais dire quelques mots. #audience:debate
 NAÏDA: Je resterai digne, et ferai montre de respect, car j'ai souffert de ne pas l'avoir obtenu de votre part à tous... #audience:silent
 NAÏDA: Que nos ancêtres aient été ou non des semblables, des frères... cela, pour moi, ne change rien. #audience:applause

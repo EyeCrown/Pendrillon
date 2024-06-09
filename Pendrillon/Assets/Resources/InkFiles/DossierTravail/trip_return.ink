@@ -8,7 +8,6 @@ VAR weapon_on_hand = true // If the player's weapon is on hand or not
 VAR has_bone = false // Can be found in the back crate
 VAR has_coconut = false // Can be found in the front crate
 VAR player_is_stinky = false // Player is stinky if he searches through the back crate
-VAR sireine_is_stinky = false // Sireine is stinky if she hides in the back crate
 VAR player_is_hidden = false // Define if the player is hidden or not
 VAR player_won_battle = false // Define if the player won the battle or not
 
@@ -36,9 +35,6 @@ VAR player_won_battle = false // Define if the player won the battle or not
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
 - PERSONNAGE MASQUÉ: Ça sent mauvais là-dedans...
     * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...
-        ** [Désolé pour l'odeur...] PLAYER: Les marins ne sont pas dérangés par ce genre d'odeur. Mais ce n'est pas du goût de tout le monde... #audience:laughter
-        ** [Ça peut nous être profitable !] PLAYER: Avec un peu de chance, l'odeur fera passer aux gardes l'envie de trop s'attarder. #audience:laughter
-        ** [Impossible d'aérer ici.] PLAYER: C'est le problème d'une cale de bateau : difficile d'aérer un navire plongé dans l'eau. #audience:laughter
     * [Ça sent les ennuis...] PLAYER: Ça sent les ennuis !
     * [L'odeur de la liberté !] PLAYER: Le poisson pas frais et le sel marin : l'odeur de la liberté !
 - PERSONNAGE MASQUÉ: Que fera-t-on s'ils me trouvent ?
@@ -58,10 +54,10 @@ VAR player_won_battle = false // Define if the player won the battle or not
                 ~ trial()
                 ~ t_2_lawless = true
                 PERSONNAGE MASQUÉ: Vous mentez très mal, mon ami.
-        ** [Certes.] C'est vrai, je l'admets. Mais ne dit-on pas que nul homme n'a à rougir d'une faute avouée ?
+        ** [Certes.] PLAYER: C'est vrai, je l'admets. Mais ne dit-on pas que nul homme n'a à rougir d'une faute avouée ?
             PERSONNAGE MASQUÉ: Je n'ai jamais entendu cela, non.
-            *** [...] PLAYER: J'ai dû l'inventer, alors.
-- PERSONNAGE MASQUÉ: Et maintenant ? Qu'avez-vous en tête ?
+            *** [Oubliez.] PLAYER: J'ai dû l'inventer, alors.
+- PERSONNAGE MASQUÉ: Et maintenant, que fait-on ?
     * [Forcer la caisse du fond. {t(STRE, 0)}] #playsound:crate_search
         {sc(STRE, 0): -> crate_back_search_S | -> crate_back_search_F}
         ** (crate_back_search_S) PLAYER: Du poisson pourri... J'empeste ! Mais j'ai trouvé <b>quelques pièces</b>. #playsound:gold_coins
@@ -86,9 +82,9 @@ VAR player_won_battle = false // Define if the player won the battle or not
         ** (crate_front_search_F) PLAYER: Je n'ai rien trouvé.
 - PERSONNAGE MASQUÉ: Ne peut-on pas éviter que des gardes ne viennent fourrer leur nez ici ?
     * [Je connais certains gardes...] PLAYER: Il est certains gardes que je... connais bien, disons. Pas ceux-là.
-    * [C'est la Loi.] PLAYER: Certaines lois sont sujettes à interprétations, mais...
-        PERSONNAGE MASQUÉ: ... mais ?
-        PLAYER: ... mais pas celle que nous avons bravée, j'en ai peur. #playsound:judge_bell #audience:choc
+    * [C'est la Loi.] PLAYER: Tous les navires qui arrivent à Miraterre doivent être fouillés. Par ailleurs...
+        PERSONNAGE MASQUÉ: Par ailleurs ?
+        PLAYER: Votre simple présence enfreint une <b>Loi capitale</b>, j'en ai peur. #audience:debate
             ~ trial()
             ~ t_2_lawfull = true
 - PERSONNAGE MASQUÉ: N'éprouvez-vous jamais aucun regret ? Si la Loi et la Foi l'interdisent...
@@ -109,7 +105,6 @@ VAR player_won_battle = false // Define if the player won the battle or not
         *** [Dans la caisse du fond.] PLAYER: Cette caisse, au fond ! Vite ! #move:Naïda:-2:10
             ~ sireine_hideout = "crate_back"
             ~ sireine_is_hidden = true
-            ~ sireine_is_stinky = true
         *** [Derrière le tonneau.] PLAYER: Derrière ce tonneau, vite ! #move:Naïda:-3:-1
             ~ sireine_hideout = "barrel"
             ~ sireine_is_hidden = true
@@ -120,7 +115,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
     PERSONNAGE MASQUÉ: Il le faut pourtant !
         -> hide_sireine
 - PLAYER: Quant à moi...
-    * [Se cacher. {t(DEXT, 10)}]
+    * {has_coconut == true or has_bone == true} [Se cacher. {t(DEXT, 10)}]
         {sc(DEXT, 10): -> player_hide_S | -> player_hide_F}
         ** (player_hide_S) #move:Player:3:-3
             ~ player_is_hidden = true
@@ -166,6 +161,10 @@ MARCELLO: Il n'y a personne, cheffe.
     * [Sortir de sa cachette] #anim:Player:stop_hiding
         -> player_not_hidden
 - (player_is_found) CAPUCINE: Qui es-tu, maraud ? {player_is_stinky: Tu empestes le poisson pourri !} #playsound:VOX_Capucine_quiestu
+    SOUFFLEUR: SOUFFLEUR: Psssst... Hé, l'ami !
+    SOUFFLEUR: En fouillant la caisse pleine de poisson pourri, l'odeur s'est incrustée à ton costume...
+    SOUFFLEUR: Ce doit être pour ça que tu t'es fait repéré.
+    SOUFFLEUR: Interagir avec le décors entraîne parfois des conséquences inattendues, l'ami !
     -> player_not_hidden
 
 
@@ -191,7 +190,7 @@ MARCELLO: Il n'y a personne, cheffe.
         ** [Calmer le jeu. {t(CHAR, 10)}]
             {sc(CHAR, 10): -> try_diplomacy_S | -> try_diplomacy_F}
             *** (try_diplomacy_S) -> calm_the_situation
-            *** (try_diplomacy_F) PLAYER: Euh... Pardon, j'ai tendance à dire tout haut ce que je pense tout bas... 
+            *** (try_diplomacy_F) PLAYER: Euh... Pardon, j'ai tendance à dire tout haut ce que je pense tout bas...
         -> calm_the_situation
     * (calm_the_situation) [Amadouer.] PLAYER: Et si nous remontions sur le pont, pour discuter entre amis ?
         CAPUCINE: Un garde de la Couronne n'a d'ordre à recevoir de personne. #playsound:VOX_Capucine_gardecouronneordre
@@ -266,7 +265,8 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
 // Attack Marcello with a coconut
 = attack_marcello_with_coconut
 {sc(DEXT, -10): -> attack_marcello_coconut_S | -> attack_marcello_coconut_F}
-    ** (attack_marcello_coconut_S)MARCELLO: Aïe !
+    ** (attack_marcello_coconut_S) MARCELLO: Le navire est vide, cheffe. #anim:Player:throw_coconut_success
+        MARCELLO: Aïe !
         CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #playsound:VOX_Capucine_pasaussivide #audience:laugh
         MARCELLO: Cet abruti m'a envoyé une noix de coco en plein dans les narines !
         CAPUCINE: Ça m'en a tout l'air, en effet. #playsound:VOX_Capucine_camenatoutlair
@@ -302,10 +302,10 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
         {sc(CHAR, -10): -> calm_marcello_S | -> calm_marcello_F}
         ** (calm_marcello_S) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
             CAPUCINE: En voilà une parole raisonnable. #playsound:VOX_Capucine_envoilaraisonnable
-            MARCELLO: Dommage, je n'aurais pas détesté t'en claquer une dernière sur le museau... #audience:laughter
+            MARCELLO: Dommage, je n'aurais pas détesté t'en claquer une sur le museau... #audience:laughter
             CAPUCINE: Allons, allons, Marcello... Le monsieur est raisonnable, alors soyons-le à notre tour. #playsound:VOX_Capucine_allonsallonsmarecello #audience:applause
         ** (calm_marcello_F) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
-            CAPUCINE: En voilà une parole raisonnable. Mon ami, en revanche, apprécierait de t'en claquer une dernière sur le museau. Pas vrai, Marcello ? #playsound:VOX_Capucine_envoilaenrevanche
+            CAPUCINE: En voilà une parole raisonnable. Mon ami, en revanche, apprécierait de t'en claquer une sur le museau. Pas vrai, Marcello ? #playsound:VOX_Capucine_envoilaenrevanche
             MARCELLO: Je confirme. #audience:laughter
             MARCELLO: Tiens, la voilà ! #anim:Marcello:attack #anim:Player:hurt
 - -> arrest_naida

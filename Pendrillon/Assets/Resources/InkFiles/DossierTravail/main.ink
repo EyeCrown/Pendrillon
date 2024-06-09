@@ -28,4 +28,5 @@ INCLUDE cast_salutation.ink
 // Start the game
 //-> barge
 //-> boss_battle
--> trip_return
+//-> trip_return
+-> tribunal_1

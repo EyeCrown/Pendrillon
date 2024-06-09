@@ -128,7 +128,7 @@ VAR irene_torch_is_on = false
 * {t_3_stained_glass_3_talk == false} [À propos du  vitrail de l'homme écartelé sur sa roue.] PLAYER: L'homme attaché à la roue... c'est Lui n'est-ce pas ?
     ~ t_3_stained_glass_3_talk = true
     -> man_tied_to_a_wheel
-+ {t_3_stained_glass_1_talk or t_3_stained_glass_2_talk or t_3_stained_glass_3_talk} [(Conclure) Passer la nuit.] PLAYER: J'ai besoin de me reposer, prêtresse.
++ {t_3_stained_glass_1_talk or t_3_stained_glass_2_talk or t_3_stained_glass_3_talk} [(Conclure) Passer la nuit.] PLAYER: J'aimerais me reposer, prêtresse.
     {
         - t_3_stained_glass_1_talk == true && t_3_stained_glass_2_talk == true && t_3_stained_glass_3_talk == true:
             #anim:Player:go_to_sleep_on_bench
@@ -239,22 +239,22 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
         ** (know_fishermen_gift_F) PLAYER: Ils lui firent offrande de la pêche du jour ?
             AGATHE: Ils surent mieux mesurer l'ampleur de leur dette. Les pêcheurs lui confièrent la garde de l'enfant sacré, pour sûr.
 - AGATHE: Et c'est ainsi que, sauvée des eaux, <b>Irène</b> fut élevée comme sa fille par le gardien du phare...
-- AGATHE: Cet acte scella le destin de nos ancêtres, qui purent survivre au Déluge à venir.
+- AGATHE: Cet acte scella le destin de nos ancêtres, qui purent survivre au <b>Déluge</b> à venir.
 - -> stained_glass
 
 // Stained glass of Irene next ton the lighthouse
 = irene_next_to_the_lighthouse
 #playsound:Play_MUS_Story_SC_Eglise_StainedGlassLookingOcean
-- AGATHE: Savez-vous ce que disait l'homme qui éleva notre <b>Déesse</b> comme sa fille ?
+- AGATHE: Savez-vous ce que disait l'homme qui éleva la <b>Déesse</b> comme sa fille ?
     * [Qui pourrait le prétendre ?] PLAYER: J'aimerais bien connaître celui qui le prétend.
         AGATHE: Les Écrits nous renseignent à ce sujet, mon enfant.
         ** [Que disent les Écrits ?] PLAYER: Et que disent-ils à ce sujet, prêtresse ?
-            --- (irene_obsessed_with_ocean) AGATHE: Qu'<b>Irène</b> passait ses journées à observer l'océan, comme fascinée par le mouvement des vagues. Ensorcelée.
+            --- (irene_obsessed_with_ocean) AGATHE: Que la <b>Déesse Irène</b> passait ses journées à observer l'océan, comme fascinée par le mouvement des vagues. Ensorcelée.
         ** [Encore faut-il y croire...] PLAYER: Ces Écrits soit-disant sacrés sont des mythes...
             ~trial()
             ~ t_3_does_not_believe_the_sacred_writings = true
             AGATHE: Mon enfant, il est des récits qui doivent être entendus avec le cœur, non avec la raison.
-                -> irene_obsessed_with_ocean
+            AGATHE: La <b>Déesse Irène</b> passait ses journées à observer l'océan, comme fascinée par le mouvement des vagues. Ensorcelée.
     * [Je l'ignore.] PLAYER: Je dois avouer mon ignorance. Que disait-il ?
         -> irene_obsessed_with_ocean
 - AGATHE: Cela effrayait son père.
@@ -278,14 +278,14 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
             AGATHE: ... à l'idée de les éclairer d'une lumière impie.
 - AGATHE: Observez davantage le vitrail, mon enfant. Qu'y voyez-vous d'autre ?
     * [Irène semble... inquiète.] PLAYER: Elle a l'air préoccupée...
-        AGATHE: Ne le seriez-vous pas, si vous saviez que le Déluge arrivait ? Ne le seriez-vous pas, si nul ne vous croyait ?
+        AGATHE: Ne le seriez-vous pas, si vous saviez que le <b>Déluge</b> arrivait ? Ne le seriez-vous pas, si nul ne vous croyait ?
     * [Une tempête se prépare.] PLAYER: Je sais reconnaître une tempête qui arrive...
-        AGATHE: Une tempête, vous dites ? Le Déluge, mon enfant.
+        AGATHE: Une tempête, vous dites ? Le <b>Déluge</b>, mon enfant.
     * [La lune est pleine.] PLAYER: La pleine lune...
-        AGATHE: Une lune incandescente.
+        AGATHE: Une lune incandescente, annonçant le <b>Déluge</b>.
 - AGATHE: Connaissez-vous la comptine, mon enfant ?
 - AGATHE: « Quand le ciel fût sombre, et la lune fût levée... <b>Irène</b>, Fille des eaux...
-    * [... ouït le Déluge gronder.] PLAYER: ... ouït le Déluge gronder. ». 
+    * [... ouït le Déluge gronder.] PLAYER: ... ouït le <b>Déluge</b> gronder. ». 
     * [... vit le monde sombrer.] PLAYER: ... vit le monde sombrer. ».
     * [... sentit la Vie cesser.] PLAYER: ... sentit la Vie cesser. ».
 - AGATHE: « Près du phare, cette nuit, l'océan lui parla... Puis elle n'eut qu'une seule cause...
@@ -316,7 +316,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
     * [... pour le Messie, se fit passer.] PLAYER: ... pour le Messie, se fit passer. ».
     * [... se sacrifia pour la sauver.] PLAYER: ... se sacrifia pour la sauver. ».
     * [... à sa place, fut enfermé.] PLAYER: ... à sa place, fut enfermé. ».
-- AGATHE: « Son supplice fut à la hauteur de son âme. Enchaîné à une roue...
+- AGATHE: « Son supplice, désormais, nulle âme ne l'ignore. Enchaîné à une roue...
     * [... on le laissa pour mort.] PLAYER: ... on le laissa pour mort. ».
     * [... on y scella son sort.] PLAYER: ... on y scella son sort. ».
     * [... on déforma son corps.] PLAYER: ... on déforma son corps. ».

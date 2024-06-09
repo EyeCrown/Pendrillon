@@ -239,17 +239,15 @@ JUGE ERNEST: Accusé, qu'avez-vous à répondre ?
         {make_arle_angry(): -> arle_leaves_stage}
 - (accusation_of_disrespecting_queen) JUGE ERNEST: Poursuivons, poursuivons...
 JUGE ERNEST: Témoin, avez-vous une autre révélation à faire ?
-ARLE: Bien entendu, Votre Honneur. {accuse_alre_to_disrespect_queen: L'affreux messire m'a accusé de manquer de respect à notre reine, mais celui-ci l'a tout bonnement humilié. | Je voudrais témoigner du fait que l'affreux messire a humilié notre reine.} #audience:choc #anim:Judge:bell
-JUGE ENRNEST: Poursuivez, je vous prie.
+ARLE: Bien entendu, Votre Honneur. {accuse_alre_to_disrespect_queen: L'horripilant messire m'a accusé de manquer de respect à notre reine, mais celui-ci l'a tout bonnement humilié. | Je voudrais témoigner du fait que l'affreux messire a humilié notre reine.} #audience:choc #anim:Judge:bell
+JUGE ERNEST: Poursuivez, je vous prie.
 ARLE: Le terrible messire a cru bon de se moquer de la reine en faisant un bon mot, Votre Honneur.
-    * [Je l'avoue, Votre Honneur...] PLAYER: J'ai honte d'admettre qu'elle dit la vérité, votre Honneur... #audience:booing
-        JUGE ERNEST: Silence ! Ne vous ai-je pas déjà dit que vous n'avez aucun droit de prendre la parole quand bon vous semble, Accusé ? #anim:Judge:bell #audience:booing
+    * [Ce n'est pas ce que vous croyez.] PLAYER: Ce n'est pas ce que vous pensez, votre Honneur... #audience:debate
+        JUGE ERNEST: Silence ! Cessez de prendre la parole quand bon vous semble, Accusé ! #anim:Judge:bell #audience:booing
         ~ audience_judgement(-0.02)
         ~ admit_disrespect_queen = true
-        JUGE ERNEST: Puisque l'Accusé a admis avoir prononcé ces terribles paroles...
-        -> accusation_of_disrespecting_irene
     * [C'est faux !] PLAYER: Votre Honneur, elle ment ! #audience:debate
-        JUGE ERNEST: Silence ! Ne vous ai-je pas déjà dit que vous n'avez aucun droit de prendre la parole quand bon vous semble, Accusé ? #anim:Judge:bell #audience:booing
+        JUGE ERNEST: Silence ! Cessez de prendre la parole quand bon vous semble, Accusé ! #anim:Judge:bell #audience:booing
         ~ audience_judgement(-0.02)
     * [Ne rien dire.]
 - JUGE ERNEST: Quelles paroles exactes témoignez-vous avoir entendu l'Accusé prononcer ?
@@ -328,12 +326,13 @@ CAPUCINE: Mon camarade a effectivement entendu du bruit, et moi j'ai eu l'idée 
 MARCELLO: Parle-lui de l'odeur, cheffe ! #audience:laughter
 CAPUCINE: La ferme, j'ai dit ! #playsound:VOX_Capucine_lafermejaidit #audience:laughter
 CAPUCINE: Mon camarade n'a pas tort, cependant : l'odeur du rafiot était épouvantable... À l'image du fieffé gredin à ma gauche. #playsound:VOX_Capucine_lodeurepouvantable
-    * [À ta gauche, pas ta droite.] PLAYER: À ta gauche, pas ta droite. Quoique, à bien y réfléchir... #audience:laughter #anim:Capucine:bow
+    * [À ta droite, pas ta gauche.] PLAYER: À ta droite, pas ta gauche. Quoique, à bien y réfléchir... #audience:laughter #anim:Capucine:bow
     * [Elle confond les hommes...] PLAYER: Je crois, Votre Honneur, que Madame la témoin confond les hommes... #audience:laughter #anim:Capucine:bow
 - JUGE ERNEST: Silence ! Poursuivez, je vous prie. #anim:Judge:bell #audience:silent
 CAPUCINE: Permettez-moi de vous épargner les détails, Votre Honneur : le malandrin cachait quelqu'un dans sa cale puante. #playsound:VOX_Capucine_permettezepargnerdetails #audience:choc
     ~ audience_judgement(-0.1)
-    * [C'est toi qui pues.] PLAYER: Votre Honneur, si j'admets que ma cale sent parfois la morue... Ce n'est rien en comparaison de l'odeur de Madame la témoin. #audience:laughter
+    * [L'odeur est arrivée avec vous.] PLAYER: Votre Honneur, sans accuser personne... #audience:debate
+        PLAYER: L'odeur susmentionnée a fait son apparition en même temps que {capucine_surname} et son sbire. #audience:laughter
     * [C'est toi qui devrais te cacher.] PLAYER: Votre Honneur, je n'ai caché personne, en revanche...
         PLAYER: Puis-je suggérer à {capucine_surname} de cacher ce qui lui sert de visage ? #audience:laughter #anim:Capucine:angry
 - SOUFFLEUR: Psssst... Hé, l'ami ! Ces deux-là adorent faire rire le public, même à leurs dépends...
@@ -553,6 +552,7 @@ JUGE ERNEST: Bien, bien. Et quelle fut sa réaction, quand il apprit que la lumi
         ~ audience_judgement(0.2)
     - t_3_does_not_believe_in_lighthouse_sacred_light: AGATHE: Il... Il évoqua que cette histoire tenait davantage du mythe que de la réalité. #audience:choc
         JUGE ERNEST: Vraiment ? <b>Irène</b> en soit témoin : l'Accusé n'a aucun cœur. #audience:booing
+        ~ audience_judgement(-0.05)
 }
 - JUGE ERNEST: Votre discussion s'est-elle arrêtée là, prêtresse ?
 {
@@ -560,7 +560,7 @@ JUGE ERNEST: Bien, bien. Et quelle fut sa réaction, quand il apprit que la lumi
         -> talk_about_stained_glass_2
     - t_3_stained_glass_3_talk:
         -> talk_about_stained_glass_3
-    - else: AGATHE: Rien de plus, Votre Honneur. L'Accusé alla dormir, puis fut arrêté le lendemain, à son réveil.
+    - else: AGATHE: Oui, Votre Honneur. Après ça, l'Accusé alla dormir, puis fut arrêté le lendemain, à son réveil.
         -> judge_proceed_to_mention_the_leviathan
 }
 
