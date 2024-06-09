@@ -47,9 +47,8 @@ VAR b_boss_open_mouth_attack_probability = 30
 VAR b_boss_on_boat_attack_power = 3
 VAR b_boss_on_boat_attack_precision = 100
 VAR b_boss_on_boat_attack_probability = 30
-// [5: special attack]
+// [4: special attack]
 VAR b_boss_special_attack_power = 8
-VAR b_boss_special_attack_precision = 100
 
 // Scene
 === boss_battle ===
@@ -69,7 +68,7 @@ VAR b_boss_special_attack_precision = 100
 #audience:ovation
 - SOUFFLEUR: Psssst... Hé, l'ami ! #wait:3
 SOUFFLEUR: Cette scène nous coûte une fortune en effets spéciaux à chaque spectacle...
-SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en terme de chorégraphie, de matériel, de main-d'oeuvre...
+SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en terme de chorégraphie, matériel, main-d'oeuvre...
 SOUFFLEUR: Sans parler des <shake>coûts d'entretiens</shake> !
 SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami ?
 - -> player_moovepool
@@ -93,21 +92,21 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
             ~ shoot_harpoon()
         ++ [Retourner sur le pont]
             -> player_moovepool
-        ++ [Passer son tour]
-            -> end_turn
+        // ++ [Passer son tour]
+        //     -> end_turn
         -- {b_player_AP>0: -> use_harpoon | -> end_turn}
-    + (use_canon) {b_nb_canon_bullet_left > 0} [Utiliser le canon]
-        ++ {b_player_AP > 0 && b_canon_is_loaded == false && b_nb_canon_bullet_left > 0} [Charger le canon (AP:STRE)]
-            ~ load_canon()
-        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_canon_is_loaded == true && b_canon_is_aimed == false} [Viser avec le canon (AP:DEXT)]
-            ~ aim_canon()
-        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_canon_is_loaded == true} [Tirer avec le canon (AP:STRE)]
-            ~ shoot_canon()
-        ++ [Retourner sur le pont]
-            -> player_moovepool
-        ++ [Passer son tour]
-            -> end_turn
-        -- {b_player_AP>0: -> use_canon | -> end_turn}
+    // + (use_canon) {b_nb_canon_bullet_left > 0} [Utiliser le canon]
+    //     ++ {b_player_AP > 0 && b_canon_is_loaded == false && b_nb_canon_bullet_left > 0} [Charger le canon (AP:STRE)]
+    //         ~ load_canon()
+    //     ++ {b_player_AP > 0 && b_boss_state != "under water" && b_canon_is_loaded == true && b_canon_is_aimed == false} [Viser avec le canon (AP:DEXT)]
+    //         ~ aim_canon()
+    //     ++ {b_player_AP > 0 && b_boss_state != "under water" && b_canon_is_loaded == true} [Tirer avec le canon (AP:STRE)]
+    //         ~ shoot_canon()
+    //     ++ [Retourner sur le pont]
+    //         -> player_moovepool
+    //     ++ [Passer son tour]
+    //         -> end_turn
+    //     -- {b_player_AP>0: -> use_canon | -> end_turn}
     + (use_barrels) {b_explosive_barrel_left == true} [Utiliser les tonneaux explosifs]
         ++ {b_player_AP > 0 && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == false && b_explosive_barrel_left == true} [Charger le tonneau d'explosifs (AP:STRE)]
             ~ load_barrel_1()
@@ -119,8 +118,8 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
             ~ throw_barrel_2()
         ++ [Retourner sur le pont]
             -> player_moovepool
-        ++ [Passer son tour]
-            -> end_turn
+        // ++ [Passer son tour]
+        //     -> end_turn
         -- {b_player_AP>0: -> use_barrels | -> end_turn}
     + (climb_mast) [Monter au mât (AP:DEXT)]
         ~ climb_up_mast()
@@ -128,13 +127,14 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
             ~ lower_sail()
         ++ {b_player_AP > 0 && b_boss_state != "under water" && b_boss_state == "on boat"} [Saut de l'ange (AP:CHAR)]
             ~ angel_jump()
+            -> player_moovepool
         ++ {b_player_AP > 0} [Descendre du mât]
             Vous descendez du mât. #anim:climb_down_mast
             ~ climb_down_mast()
             -> player_moovepool
-        ++ [Passer son tour]
-            -> end_turn
-        -- {b_player_AP>0: -> climb_mast | -> end_turn}
+        // ++ [Passer son tour]
+        //     -> end_turn
+        -- {b_player_AP>0: -> climb_mast | -> climb_mast}
 - {b_player_AP>0: -> player_moovepool | -> end_turn}
 
 
@@ -335,9 +335,27 @@ L'attaque spéciale a été esquivée car vous êtes sur le mât.
 
 // Roll the boss attack
 === function roll_boss_attack()
+// Roll the state dice
+~ temp D100Atk = roll_D100()
 {
     - b_boss_state == "default":
-        
+        ~ b_boss_attack = 1
+    - b_boss_state == "open mouth":
+        {
+            - D100Atk>=b_boss_open_mouth_attack_probability: 
+                ~ b_boss_attack = 1
+            - else:
+                ~ b_boss_attack = 2
+        }
+    - b_boss_state == "on boat":
+        {
+            - D100Atk>=b_boss_on_boat_attack_probability: 
+                ~ b_boss_attack = 1
+            - else:
+                ~ b_boss_attack = 3
+        }
+    - b_boss_state == "under water":
+        ~ b_boss_attack = 4
 }
 
 // Load the harpoon
@@ -365,8 +383,8 @@ Vous tirez avec le harpon. #anim:shoot_harpoon
 {
     - b_player_is_on_top_of_mast == false:
         Vous montez au mât.
-    ~ b_player_is_on_top_of_mast = true
-    ~ use_action_point()
+        ~ b_player_is_on_top_of_mast = true
+        ~ use_action_point()
 }
 
 // Climb down the sail
@@ -385,6 +403,7 @@ Vous descendez la voile.
 Vous sautez depuis le mât et attaquez. #anim:Player:mast_attack
     ~ b_player_is_on_top_of_mast = false
     ~ attack_boss("angel jump")
+    ~ b_player_is_on_top_of_mast = false
     ~ use_action_point()
 
 // Load the canon
