@@ -178,7 +178,7 @@ ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poiss
     * [Le Léviathan !] PLAYER: Le léviathan ! #anim:Player:surprised #audience:choc
         ARLE: Le Léviathan, messire.
     * [Rester silencieux.]
-- ARLE: Plus d'une fois, il manqua d'engloutir les Hommes... Fort heureusement, la Déesse nous sauva tous ! #audience:applause
+- ARLE: Plus d'une fois, il manqua d'engloutir les Hommes... Fort heureusement, la <b>Déesse Irène</b> nous sauva tous ! #audience:applause
 - ARLE: C'est pourquoi nous jouissons d'être en vie aujourd'hui, n'est-ce pas ?
 ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge... La créature, elle aussi, est en vie aujourd'hui. #audience:debate
     * [Moi, tuer le Léviathan ?] PLAYER: Suis-je en plein rêve, ou me demandes-tu vraiment d'aller tuer le Léviathan ? #anim:Player:question #audience:laugther
@@ -207,15 +207,15 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
     * [Pour la reine Constance ?] PLAYER: Est-ce la reine elle-même qui demande mon renfort ? #anim:Player:question
         ARLE: Nulle demande ne saurait provenir de la bouche de la reine, messire. Seulement des ordres...
         -> to_the_crown
-- ARLE: Puis-je ajouter, messire, que vaincre le Léviathan constituerait une offrande de taille à la Déesse Elle-même.
-    * [J'en serais honoré !] PLAYER: J'honorerai la Déesse, j'en fais le serment ! #audience:ovation
+- ARLE: Puis-je ajouter, messire, que vaincre le Léviathan constituerait une offrande de taille à la <b>Déesse</b> Elle-même.
+    * [Pour la Déesse !] PLAYER: J'honorerai la <b>Déesse</b>, j'en fais le serment ! #audience:ovation
         ~ trial()
         ~ t_1_respect_irene = true
-    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la Déesse comme du dernier crachin ! #anim:Player:disappointed#audience:booing
+    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la <b>Déesse Irène</b> comme du dernier crachin ! #anim:Player:disappointed#audience:booing
         ~ trial()
         ~ t_1_disrespect_irene = true
         ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix. #anim:Arle:deception
-    * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la reine, ni pour la Déesse, mais pour mon seul profit.
+    * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la reine, ni pour la <b>Déesse</b>, mais pour mon seul profit.
         ~ trial()
         ~ t_1_gold_digger = true
 - ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence

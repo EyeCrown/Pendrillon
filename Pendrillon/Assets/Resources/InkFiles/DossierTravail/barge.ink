@@ -192,11 +192,7 @@ PLAYER: ... Et c'est au port de Miraterre, de retour de notre voyage, que notre 
     * [Tout à fait, mais...] PLAYER: Jamais n'a-t-on vu âme plus accueillante. Cependant... #playsound:VOX_Player_jamaisame
     * [En un sens...] PLAYER: D'une certaine manière, j'en conviens... Mais... #playsound:VOX_Player_certainemaniere
     * [C'est ce que je pensais.] PLAYER: La même pensée me traversait l'esprit, alors que je m'endormais... Toutefois... #playsound:VOX_Player_penseetraverseesprit
-- PASSEUR: Quoi donc ? #anim:Passeur:question #playsound:VOX_Ferryman_quoidonc
-    * [(Colère froide)] #anim:Player:angry #playsound:Play_MUS_Story_SC_Barque_Treason
-    * [(Tragique)] #anim:Player:sad #playsound:Play_MUS_Story_SC_Barque_Treason
-    * [(Déception)] #anim:Player:disappointed #playsound:Play_MUS_Story_SC_Barque_Treason
-- #audience:choc
+- #audience:debate
 - PASSEUR: Parle, je t'en prie. #playsound:VOX_Ferryman_parlejetenprie
 - PLAYER: À mon réveil... #playsound:VOX_Player_amonreveil
     * [Une mauvaise surprise m'attendait.] PLAYER: ... une surprise des plus désagréables m'attendait... #playsound:VOX_Player_unemauvaisesurprise
