@@ -78,7 +78,7 @@ VAR b_boss_special_attack_power = 8
 
 // Start the scene
 #audience:ovation
-- SOUFFLEUR: Psssst... Hé, l'ami ! #wait:3
+- SOUFFLEUR: Psssst... Hé, l'ami !
 SOUFFLEUR: Cette scène nous coûte une fortune en effets spéciaux à chaque spectacle...
 SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en terme de chorégraphie, matériel, main-d'oeuvre...
 SOUFFLEUR: Sans parler des <shake>coûts d'entretiens</shake> !
@@ -87,6 +87,8 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
 
 // Player mooves
 = player_moovepool
+// Player turn
+C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
 // Checks if boss or player is dead
 {
     - b_boss_is_dead:
@@ -119,8 +121,6 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
             }
         ++ [Retourner sur le pont]
             -> player_moovepool
-        // ++ [Passer son tour]
-        //     -> end_turn
         -- {b_player_AP>0: -> use_harpoon | -> end_turn}
     + (use_canon) {b_nb_canon_bullet_left > 0} [Utiliser le canon]
         ++ {b_player_AP > 0 && b_canon_is_loaded == false && b_nb_canon_bullet_left > 0} [Charger le canon {t(STRE, load_canon_mod)}]
@@ -146,8 +146,6 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
             }
         ++ [Retourner sur le pont]
             -> player_moovepool
-        ++ [Passer son tour]
-            -> end_turn
         -- {b_player_AP>0: -> use_canon | -> end_turn}
     + (use_barrels) {b_explosive_barrel_left == true} [Utiliser les tonneaux explosifs]
         ++ {b_player_AP > 0 && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == false && b_explosive_barrel_left == true} [Charger le tonneau d'explosifs {t(STRE, load_barrel_mod)}]
@@ -180,8 +178,6 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
             }
         ++ [Retourner sur le pont]
             -> player_moovepool
-        // ++ [Passer son tour]
-        //     -> end_turn
         -- {b_player_AP>0: -> use_barrels | -> end_turn}
     + [Monter au mât {t(DEXT, climb_mast_mod)}]
         {
@@ -189,9 +185,9 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
                 ~ climb_up_mast()
             - else:
                 ~ use_action_point()
-                -> player_moovepool
+                //-> player_moovepool
         }
-        -- (climb_mast)
+        -- (on_top_of_mast)
             +++ {b_player_AP > 0 && b_sail_is_down == false} [Baisser la voile {t(STRE, lower_sail_mod)}]
                 {
                     - sc(STRE, lower_sail_mod): 
@@ -211,9 +207,11 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
                 Vous descendez du mât. #anim:climb_down_mast
                 ~ climb_down_mast()
                 -> player_moovepool
-            // +++ [Passer son tour]
-            //     -> end_turn
-            --- {b_player_AP>0: -> climb_mast | -> end_turn}
+            +++ {b_player_AP > 0} [Passer son tour]
+                -> end_turn
+        -- {b_player_AP>0: -> on_top_of_mast | -> end_turn}
+    + {b_player_AP > 0} [Passer son tour]
+        -> end_turn
 - {b_player_AP>0: -> player_moovepool | -> end_turn}
 
 
@@ -225,13 +223,18 @@ Fin du tour.
 // Roll new boss state
 ~ roll_boss_state()
 // Grant action points to player
+Bibu
 ~ b_player_AP += 3
+Babi
 {
-    - b_player_is_on_top_of_mast:
-        -> climb_mast
+    - b_player_is_on_top_of_mast == true:
+        Debug: vous allez être ramené sur le mât
+        -> on_top_of_mast
     - else:
+        noooooo
         -> player_moovepool
 }
+Goooo
 
 // Kill the boss
 = kill_boss
@@ -357,7 +360,7 @@ L'attaque spéciale a été esquivée car vous êtes sur le mât.
 // Use one action point
 == function use_action_point()
     ~ b_player_AP -= 1
-    Vous avez {b_player_AP} AP
+    Il vous reste {b_player_AP} AP.
 
 // Roll boss state
 === function roll_boss_state()
@@ -485,7 +488,6 @@ Vous descendez la voile.
 // Do an angel jump
 === function angel_jump()
 Vous sautez depuis le mât et attaquez. #anim:Player:mast_attack
-    ~ b_player_is_on_top_of_mast = false
     ~ attack_boss("angel jump")
     ~ b_player_is_on_top_of_mast = false
     ~ use_action_point()
