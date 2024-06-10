@@ -338,7 +338,7 @@ namespace MonoBehavior.Managers
             {
                 Debug.LogWarning($"ONLY ONE WORD > {words[0]}");
                 _currentDialogue = words[0];
-                if (IsCurrentDialogueNotValid() && _tagMethods.Any())
+                if (IsCurrentDialogueNotValid())
                 {
                     
                     Debug.Log($"AM.HandleDialogueText > Add Refresh()");
