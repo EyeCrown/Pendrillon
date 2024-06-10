@@ -421,7 +421,23 @@ namespace MonoBehavior.Managers
             Choice choice = GameManager.Instance._story.currentChoices[index];
             Button button;
 
-            switch (GameManager.Instance._story.currentChoices.Count)
+            int nbChoices = GameManager.Instance._story.currentChoices.Count;
+
+            if (index < nbChoices/2)
+            {
+                button = Instantiate(_choiceButtonLeftPrefab, _uiParent.transform);
+            }
+            else if (nbChoices % 2 == 1 && index == nbChoices / 2)
+            {
+                button = Instantiate(_choiceButtonMiddlePrefab, _uiParent.transform);
+            }
+            else // (index > nbChoices / 2)
+            {
+                button = Instantiate(_choiceButtonRightPrefab, _uiParent.transform);
+            }
+            
+
+            /*switch (GameManager.Instance._story.currentChoices.Count)
             {
                 case 1 :
                     button = Instantiate(_choiceButtonMiddlePrefab, _uiParent.transform);
@@ -439,7 +455,7 @@ namespace MonoBehavior.Managers
                     break;
                 default:
                     return;
-            }
+            }*/
             
             // Button Position
             float t = (float) (index + 1) / (GameManager.Instance._story.currentChoices.Count + 1);
