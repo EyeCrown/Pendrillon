@@ -96,14 +96,11 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
     - b_player_is_dead:
         -> kill_player
 }
+// Checks if player has no AP
+{b_player_AP<=0: -> end_turn}
 // Player movepool
     + (use_harpoon) [Utiliser le harpon]
         ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == false} [Remonter le harpon {t(DEXT, load_harpoon_mod)}]
-            // {sc(DEXT, load_harpoon_mod): -> use_harpoon_S | -> use_harpoon_F}
-            // +++ (use_harpoon_S)
-            //     ~ load_harpoon()
-            // +++ (use_harpoon_F)
-            //     ~ use_action_point()
             {
                 - sc(DEXT, load_harpoon_mod):
                     ~ load_harpoon()
@@ -185,11 +182,13 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
             -> player_moovepool
         -- {b_player_AP>0: -> use_barrels | -> end_turn}
     + (on_top_of_mast) [Monter au mât {t(DEXT, climb_mast_mod)}]
+        {b_player_AP<=0: -> end_turn}
         {
             - b_player_is_on_top_of_mast == false:
                 {
                     - sc(DEXT, climb_mast_mod): 
                         ~ climb_up_mast()
+                        -> on_top_of_mast
                     - else:
                         ~ use_action_point()
                         -> player_moovepool
@@ -230,13 +229,9 @@ Fin du tour.
 // Roll new boss state
 ~ roll_boss_state()
 // Grant action points to player
-Bibu
 ~ b_player_AP += 3
-Babi
-top_of_mast = {b_player_is_on_top_of_mast}
 {
     - b_player_is_on_top_of_mast == true:
-        Debug: vous allez être ramené sur le mât
         -> on_top_of_mast
     - else:
         -> player_moovepool
@@ -293,6 +288,7 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
                 ~ fail_boss_attack()
         }
     - b_boss_attack == 4:
+        ~ nb_state_before_special_attack = 2
         {
             - b_player_is_on_top_of_mast == false:
                 ~ hurt_player(b_boss_special_attack_power)
