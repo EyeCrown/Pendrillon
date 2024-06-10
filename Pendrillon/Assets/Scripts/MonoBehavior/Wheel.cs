@@ -81,8 +81,10 @@ public class Wheel : MonoBehaviour
     {
         _spinCoroutine = SpinningCoroutine(score, mustObtain, type);
         StartCoroutine(_spinCoroutine);
+        AkSoundEngine.PostEvent("Play_UI_HUD_SkillCheck_Roll", gameObject);
+
     }
-    
+
     void UpdateText(int score, int mustObtain, string type)
     {
         SetUIBox(type);
@@ -95,10 +97,12 @@ public class Wheel : MonoBehaviour
         if (score <= mustObtain)
         {
             _resultBox.GetComponent<Image>().color = Color.green;
+            AkSoundEngine.PostEvent("Play_UI_HUD_SkillCheck_Success", gameObject);
         }
         else
         {
             _resultBox.GetComponent<Image>().color = Color.red;
+            AkSoundEngine.PostEvent("Play_UI_HUD_SkillCheck_Failed", gameObject);
         }
     }
 

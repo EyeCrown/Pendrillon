@@ -187,23 +187,40 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_UI_HUD_SkillCheck_Failed" ID="{F3BC03B4-5F58-40C0-A686-6D3329E4DEC7}">
+								<Event Name="Play_UI_HUD_SkillCheck_Failed" ID="{305D100A-9915-40D8-9A25-0E52EDE01355}">
 									<ChildrenList>
-										<Action Name="" ID="{BB13E009-8063-4710-9025-2A8E82FA78FD}" ShortID="140367893">
+										<Action Name="" ID="{BD783A34-D8E5-48D1-96D6-9BB95F6304C6}" ShortID="162070504">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="1.4"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="UI_HUD_SkillCheck_Failed" ID="{3DC74F1B-89BA-4DFC-9894-4A87AA2C6739}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+													<ObjectRef Name="UI_HUD_SkillCheck_Failed" ID="{3099461C-44BE-488A-AD4B-D6F631CDE463}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="Play_UI_HUD_SkillCheck_Success" ID="{971E56CA-D095-4FB3-BF42-7FB1B5ACBB96}">
+								<Event Name="Play_UI_HUD_SkillCheck_Roll" ID="{67BCE829-ED1F-441D-AAE4-412C2C2ABDAA}">
 									<ChildrenList>
-										<Action Name="" ID="{A2342085-4855-4DF6-8901-30A36CEAFB97}" ShortID="393036560">
+										<Action Name="" ID="{C9A4BA52-9850-4B44-94A7-C02B608EBDA4}" ShortID="43459948">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="UI_HUD_SkillCheck_Success" ID="{4545A394-2810-4635-B39B-24724902FE6B}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+													<ObjectRef Name="UI_HUD_SkillCheck_Roll" ID="{D66217A5-5C31-4034-9DAC-F2999D30BBF1}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_UI_HUD_SkillCheck_Success" ID="{EC109B00-C807-471A-8226-B9B43998B2BD}">
+									<ChildrenList>
+										<Action Name="" ID="{58C44DDF-E555-4618-9E45-24FB7D780266}" ShortID="1053611830">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="1.4"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="UI_HUD_SkillCheck_Success" ID="{CDB1B383-80C2-465F-B8D0-DFF62E7982DF}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -3556,6 +3573,9 @@
 										<Event Name="VOX_Ferryman_ehbien" ID="{5A757791-AF45-4FED-A377-CBB2F0810FD8}">
 											<ChildrenList>
 												<Action Name="" ID="{A91546D7-335A-429A-B149-4DFC28A91DE5}" ShortID="220330179">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="8"/>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="VOX_Ferryman_ehbien" ID="{27044311-45BF-4BE1-B80B-DB0891DA0230}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
@@ -5288,6 +5308,9 @@
 						<Folder Name="SC_SecretMeeting" ID="{BD9C2E5D-85EF-49E8-9653-1C7F53588F71}" ShortID="71344311">
 							<ChildrenList>
 								<Event Name="Play_MUS_Story_SC_SecretMeeting_Meubler" ID="{940AA98C-DFFD-417C-A9D7-7F48F91325E2}">
+									<PropertyList>
+										<Property Name="Inclusion" Type="bool" Value="False"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{DD2BA7F9-1650-4440-BEB1-C54FC26240BB}" ShortID="770652849">
 											<ReferenceList>

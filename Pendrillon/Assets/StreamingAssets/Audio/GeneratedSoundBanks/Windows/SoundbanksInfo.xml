@@ -84,7 +84,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{9208AD87-8634-E194-D77A-462CDBF9DDBB}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{7739E12D-113E-6F73-B342-6DF77C9C3957}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -600,10 +600,6 @@
 					<ShortName>UI_HUD_ChoiceBubbleClick_4.wav</ShortName>
 					<CachePath>SFX/UI_HUD_ChoiceBubbleClick_4_3F75BDB9.wem</CachePath>
 				</File>
-				<File Id="243172115" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SFX_SC_Theater_SkillCheck_Roll_02.wav</ShortName>
-					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_02_3F75BDB9.wem</CachePath>
-				</File>
 				<File Id="243637981" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cough-004.wav</ShortName>
 					<CachePath>SFX/Cough-004_3F75BDB9.wem</CachePath>
@@ -1028,10 +1024,6 @@
 					<ShortName>Cough-001.wav</ShortName>
 					<CachePath>SFX/Cough-001_3F75BDB9.wem</CachePath>
 				</File>
-				<File Id="428894477" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SFX_SC_Theater_SkillCheck_Roll_03.wav</ShortName>
-					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_03_3F75BDB9.wem</CachePath>
-				</File>
 				<File Id="429151901" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingMechanism_05.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Cale_RND_WoodCreakingMechanism_05_3F75BDB9.wem</CachePath>
@@ -1199,10 +1191,6 @@
 				<File Id="514092623" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_4.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_4_3F75BDB9.wem</CachePath>
-				</File>
-				<File Id="514826034" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SFX_SC_Theater_SkillCheck_Roll_01.wav</ShortName>
-					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_01_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="516243609" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_NPC_Leviathan_Underwater_1.wav</ShortName>
@@ -2387,10 +2375,6 @@
 				<File Id="1051635437" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Emotions_Passeur_happy-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Emotions_Passeur_happy-001_3F75BDB9.wem</CachePath>
-				</File>
-				<File Id="1054106289" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>MUS_Story_SC_SecretMeeting_Meubler.wav</ShortName>
-					<CachePath>SFX/MUS_Story_SC_SecretMeeting_Meubler_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1054717103" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Amphi_Chatter_Crowd Chatter-032.wav</ShortName>
@@ -4131,11 +4115,6 @@
 						<MediaRef Id="193431738"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3836141485" Name="Play_MUS_Story_SC_SecretMeeting_Meubler" DurationType="OneShot" DurationMin="6.4276147" DurationMax="6.4276147">
-					<MediaRefs>
-						<MediaRef Id="1054106289"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="3286192894" Name="Play_SFX_Combat_NPC_Bouffon_Attack1" DurationType="OneShot" DurationMin="1.0658854" DurationMax="1.0658854">
 					<MediaRefs>
 						<MediaRef Id="68900219"/>
@@ -4367,21 +4346,22 @@
 						<MediaRef Id="887120920"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="635201916" Name="Play_UI_HUD_SkillCheck_Failed" DurationType="OneShot" DurationMin="4.6600833" DurationMax="4.6600833">
+				<Event Id="635201916" Name="Play_UI_HUD_SkillCheck_Failed" DurationType="OneShot" DurationMin="4.655083" DurationMax="4.655083">
 					<MediaRefs>
-						<MediaRef Id="243172115"/>
-						<MediaRef Id="428894477"/>
-						<MediaRef Id="514826034"/>
 						<MediaRef Id="739520621"/>
 						<MediaRef Id="1072938198"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3116772656" Name="Play_UI_HUD_SkillCheck_Success" DurationType="OneShot" DurationMin="3.8077292" DurationMax="3.8077292">
+				<Event Id="3067094186" Name="Play_UI_HUD_SkillCheck_Roll" DurationType="OneShot" DurationMin="2.5235834" DurationMax="2.5235834">
 					<MediaRefs>
 						<MediaRef Id="324882226"/>
-						<MediaRef Id="485237145"/>
 						<MediaRef Id="918670542"/>
 						<MediaRef Id="1067837867"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3116772656" Name="Play_UI_HUD_SkillCheck_Success" DurationType="OneShot" DurationMin="3.8027291" DurationMax="3.8027291">
+					<MediaRefs>
+						<MediaRef Id="485237145"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3687899778" Name="Play_UI_HUD_SpeechBubble_Appears" DurationType="OneShot" DurationMin="1.3783542" DurationMax="1.3783542">
@@ -5660,7 +5640,7 @@
 						<MediaRef Id="47045859"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1537286827" Name="VOX_Ferryman_ehbien" DurationType="OneShot" DurationMin="1.6348854" DurationMax="1.6348854">
+				<Event Id="1537286827" Name="VOX_Ferryman_ehbien" DurationType="OneShot" DurationMin="9.634886" DurationMax="9.634886">
 					<MediaRefs>
 						<MediaRef Id="236060013"/>
 					</MediaRefs>
@@ -5961,7 +5941,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{62937BA8-3540-5B23-D119-B6FB46C5A907}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{97C153A6-F46D-50E1-9289-0FC4D0CADC51}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -6477,10 +6457,6 @@
 					<ShortName>UI_HUD_ChoiceBubbleClick_4.wav</ShortName>
 					<CachePath>SFX/UI_HUD_ChoiceBubbleClick_4_3F75BDB9.wem</CachePath>
 				</File>
-				<File Id="243172115" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SFX_SC_Theater_SkillCheck_Roll_02.wav</ShortName>
-					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_02_3F75BDB9.wem</CachePath>
-				</File>
 				<File Id="243637981" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Cough-004.wav</ShortName>
 					<CachePath>SFX/Cough-004_3F75BDB9.wem</CachePath>
@@ -6905,10 +6881,6 @@
 					<ShortName>Cough-001.wav</ShortName>
 					<CachePath>SFX/Cough-001_3F75BDB9.wem</CachePath>
 				</File>
-				<File Id="428894477" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SFX_SC_Theater_SkillCheck_Roll_03.wav</ShortName>
-					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_03_3F75BDB9.wem</CachePath>
-				</File>
 				<File Id="429151901" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_Cale_RND_WoodCreakingMechanism_05.wav</ShortName>
 					<CachePath>SFX/AMB_SC_Cale_RND_WoodCreakingMechanism_05_3F75BDB9.wem</CachePath>
@@ -7076,10 +7048,6 @@
 				<File Id="514092623" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Theater_CrowdHype_CrowdUnhappyRND_4.wav</ShortName>
 					<CachePath>SFX/SFX_Theater_CrowdHype_CrowdUnhappyRND_4_3F75BDB9.wem</CachePath>
-				</File>
-				<File Id="514826034" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SFX_SC_Theater_SkillCheck_Roll_01.wav</ShortName>
-					<CachePath>SFX/SFX_SC_Theater_SkillCheck_Roll_01_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="516243609" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>VOX_NPC_Leviathan_Underwater_1.wav</ShortName>
@@ -8264,10 +8232,6 @@
 				<File Id="1051635437" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Emotions_Passeur_happy-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Emotions_Passeur_happy-001_3F75BDB9.wem</CachePath>
-				</File>
-				<File Id="1054106289" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>MUS_Story_SC_SecretMeeting_Meubler.wav</ShortName>
-					<CachePath>SFX/MUS_Story_SC_SecretMeeting_Meubler_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="1054717103" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Amphi_Chatter_Crowd Chatter-032.wav</ShortName>
@@ -10008,11 +9972,6 @@
 						<MediaRef Id="193431738"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3836141485" Name="Play_MUS_Story_SC_SecretMeeting_Meubler" DurationType="OneShot" DurationMin="6.4276147" DurationMax="6.4276147">
-					<MediaRefs>
-						<MediaRef Id="1054106289"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="3286192894" Name="Play_SFX_Combat_NPC_Bouffon_Attack1" DurationType="OneShot" DurationMin="1.0658854" DurationMax="1.0658854">
 					<MediaRefs>
 						<MediaRef Id="68900219"/>
@@ -10244,21 +10203,22 @@
 						<MediaRef Id="887120920"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="635201916" Name="Play_UI_HUD_SkillCheck_Failed" DurationType="OneShot" DurationMin="4.6600833" DurationMax="4.6600833">
+				<Event Id="635201916" Name="Play_UI_HUD_SkillCheck_Failed" DurationType="OneShot" DurationMin="4.655083" DurationMax="4.655083">
 					<MediaRefs>
-						<MediaRef Id="243172115"/>
-						<MediaRef Id="428894477"/>
-						<MediaRef Id="514826034"/>
 						<MediaRef Id="739520621"/>
 						<MediaRef Id="1072938198"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3116772656" Name="Play_UI_HUD_SkillCheck_Success" DurationType="OneShot" DurationMin="3.8077292" DurationMax="3.8077292">
+				<Event Id="3067094186" Name="Play_UI_HUD_SkillCheck_Roll" DurationType="OneShot" DurationMin="2.5235834" DurationMax="2.5235834">
 					<MediaRefs>
 						<MediaRef Id="324882226"/>
-						<MediaRef Id="485237145"/>
 						<MediaRef Id="918670542"/>
 						<MediaRef Id="1067837867"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3116772656" Name="Play_UI_HUD_SkillCheck_Success" DurationType="OneShot" DurationMin="3.8027291" DurationMax="3.8027291">
+					<MediaRefs>
+						<MediaRef Id="485237145"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3687899778" Name="Play_UI_HUD_SpeechBubble_Appears" DurationType="OneShot" DurationMin="1.3783542" DurationMax="1.3783542">
@@ -11537,7 +11497,7 @@
 						<MediaRef Id="47045859"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1537286827" Name="VOX_Ferryman_ehbien" DurationType="OneShot" DurationMin="1.6348854" DurationMax="1.6348854">
+				<Event Id="1537286827" Name="VOX_Ferryman_ehbien" DurationType="OneShot" DurationMin="9.634886" DurationMax="9.634886">
 					<MediaRefs>
 						<MediaRef Id="236060013"/>
 					</MediaRefs>
@@ -11839,5 +11799,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{DE45F669-DF73-977F-BEE1-D019CB23DE1D}</FileHash>
+	<FileHash>{2098067D-C064-E32B-E100-6916BA26E3B2}</FileHash>
 </SoundBanksInfo>
