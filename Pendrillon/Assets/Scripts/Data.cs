@@ -61,12 +61,6 @@ public static class Constants
 
     #endregion
 
-    #region Stage
-
-    public const string FirstSetOnStage = "barge";
-
-    #endregion
-
     #region Button types
 
     public const string TypeCharisma    = "Charisma";
@@ -88,6 +82,8 @@ public static class Constants
 
     #region Sets
 
+    public const string FirstSetOnStage = "barge";
+    
     public const string SetBarge   = "barge";
     public const string SetCale    = "cale";
     public const string SetPort    = "port";

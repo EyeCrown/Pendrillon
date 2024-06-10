@@ -190,13 +190,13 @@ namespace MonoBehavior.Managers
             // _dialogueTypewriter.onTextShowed.AddListener(DialogueTextFinished);
             // _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
             
-            _setBarge   = Instantiate(_setBarge,  GameObject.Find("Environment").transform);
-            _setCale    = Instantiate(_setCale,   GameObject.Find("Environment").transform);
+            _setBarge   = Instantiate(_setBarge,    GameObject.Find("Environment").transform);
+            _setCale    = Instantiate(_setCale,     GameObject.Find("Environment").transform);
             //_setPort    = Instantiate(_setPort,   GameObject.Find("Environment").transform);
-            _setChurch  = Instantiate(_setChurch, GameObject.Find("Environment").transform);
-            //_setTrial   = Instantiate(_setTrial,   GameObject.Find("Environment").transform);
-            _setTempest = Instantiate(_setTempest, GameObject.Find("Environment").transform);
-            _setForest  = Instantiate(_setForest,  GameObject.Find("Environment").transform);
+            _setChurch  = Instantiate(_setChurch,   GameObject.Find("Environment").transform);
+            _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
+            _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
+            _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
             
             _canContinueDialogue = true;
         }
@@ -800,7 +800,7 @@ namespace MonoBehavior.Managers
             //_setCale.SetActive(false);
             //_setPort.SetActive(false);
             _setChurch.SetActive(false);
-            //_setTrial.SetActive(false);
+            _setTrial.SetActive(false);
             _setTempest.SetActive(false);
             //_setForest.SetActive(false);
             
