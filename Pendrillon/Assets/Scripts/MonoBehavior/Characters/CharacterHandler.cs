@@ -86,7 +86,6 @@ public class CharacterHandler : MonoBehaviour
     public void SetPosition(Vector2Int positionOnStage)
     {
         transform.position = GameManager.Instance._gridScene.GetWorldPositon(positionOnStage);
-
         //StartCoroutine(ArriveOnStage(GameManager.Instance._gridScene.GetWorldPositon(positionOnStage)));
     }
 
@@ -127,12 +126,12 @@ public class CharacterHandler : MonoBehaviour
         if (_onStage)
         {
             Debug.Log($"{name}.RopeAction > Leaves stage");
-            StartCoroutine(NewLeaveStageCoroutine());
+            StartCoroutine(LeaveStageCoroutine());
         }
         else
         {
             Debug.Log($"{name}.RopeAction > Arrives on stage");
-            StartCoroutine(ArriveOnStage());
+            StartCoroutine(ArriveOnStageCoroutine());
         }
 
         callbackOnFinish();
@@ -272,9 +271,77 @@ public class CharacterHandler : MonoBehaviour
         Debug.Log($"{_character.name}.MoveRopeCoroutine > End");
         _ropeCoroutine = false;
     }
-
     
-    public IEnumerator ArriveOnStage(float duration = 8.0f)
+    
+    IEnumerator LeaveStageCoroutine(float duration = 2.0f)
+    {
+        _leaveCoroutine = true;
+
+        // Make rope goes down
+        _rope.SetActive(true);
+        StartCoroutine(MoveRopeCoroutine(_ropeUpOffset, _ropeDownOffset));
+
+        while (_ropeCoroutine)
+            yield return null;
+        
+        // Make player goes up
+        _anim.SetBool("falling", true);
+        var startPos = transform.position;
+        var endPos = startPos + new Vector3(0, 20.0f, 0);
+        float time = 0.0f;
+        while (time < duration)
+        {
+            _charaRig.transform.localPosition = Vector3.zero;
+            
+            transform.position = Vector3.Lerp(startPos, endPos, 
+                _character.movementCurve.Evaluate(time / duration));
+            time += Time.deltaTime;
+            yield return null;
+        }
+        _anim.SetBool("falling", false);
+        _onStage = false;
+        _leaveCoroutine = false;
+    }
+    
+    public IEnumerator ArriveOnStageCoroutine(float duration = 4.0f)
+    {
+        _arriveCoroutine = true;
+        //Debug.Log($"{name} start arriving on stage");
+        
+        while (_leaveCoroutine)
+            yield return null;
+        
+        // Make player goes down
+        _anim.SetBool("falling", true);
+        var endPos = GameManager.Instance._gridScene.GetWorldPositon(_coordsOnStatge);
+        var startPos = endPos + new Vector3(0, 20.0f, 0);
+
+        _rope.SetActive(true);
+        _rope.transform.localPosition = _ropeDownOffset;
+        
+        float time = 0.0f;
+        while (time < duration)
+        {
+            _charaRig.transform.localPosition = Vector3.zero;
+            
+            transform.position = Vector3.Lerp(startPos, endPos, 
+                _character.movementCurve.Evaluate(time / duration));
+            time += Time.deltaTime;
+            yield return null;
+        }
+        _anim.SetBool("falling", false);
+        
+        // Make rope goes up
+        StartCoroutine(MoveRopeCoroutine(_ropeDownOffset, _ropeUpOffset, 1.0f));
+        
+        while (_ropeCoroutine)
+            yield return null;
+        
+        _onStage = false;
+        _arriveCoroutine = false;
+    }
+    
+    /*public IEnumerator OldArriveOnStage(float duration = 8.0f)
     {
         _arriveCoroutine = true;
         //Debug.Log($"{name} start arriving on stage");
@@ -326,9 +393,7 @@ public class CharacterHandler : MonoBehaviour
         _onStage = true;
         _arriveCoroutine = false;
     }
-    
-    
-    public IEnumerator LeaveStage(float duration = 2.0f)
+    public IEnumerator OldLeaveStage(float duration = 2.0f)
     {
         _leaveCoroutine = true;
         //Debug.Log($"{name} start leaving stage");
@@ -369,77 +434,7 @@ public class CharacterHandler : MonoBehaviour
         _onStage = false;
         _anim.SetBool("falling", false);
         _leaveCoroutine = false;
-    }
-
-
-    IEnumerator NewLeaveStageCoroutine(float duration = 2.0f)
-    {
-        _leaveCoroutine = true;
-
-        // Make rope goes down
-        _rope.SetActive(true);
-        StartCoroutine(MoveRopeCoroutine(_ropeUpOffset, _ropeDownOffset));
-
-        while (_ropeCoroutine)
-            yield return null;
-        
-        // Make player goes up
-        _anim.SetBool("falling", true);
-        var startPos = transform.position;
-        var endPos = startPos + new Vector3(0, 20.0f, 0);
-        float time = 0.0f;
-        while (time < duration)
-        {
-            _charaRig.transform.localPosition = Vector3.zero;
-            
-            transform.position = Vector3.Lerp(startPos, endPos, 
-                _character.movementCurve.Evaluate(time / duration));
-            time += Time.deltaTime;
-            yield return null;
-        }
-        _anim.SetBool("falling", false);
-        _onStage = false;
-        _leaveCoroutine = false;
-    }
-    
-    public IEnumerator NewArriveOnStage(float duration = 4.0f)
-    {
-        _arriveCoroutine = true;
-        //Debug.Log($"{name} start arriving on stage");
-        
-        while (_leaveCoroutine)
-            yield return null;
-        
-        // Make player goes down
-        _anim.SetBool("falling", true);
-        var endPos = GameManager.Instance._gridScene.GetWorldPositon(_coordsOnStatge);
-        var startPos = endPos + new Vector3(0, 20.0f, 0);
-
-        _rope.SetActive(true);
-        _rope.transform.localPosition = _ropeDownOffset;
-        
-        float time = 0.0f;
-        while (time < duration)
-        {
-            _charaRig.transform.localPosition = Vector3.zero;
-            
-            transform.position = Vector3.Lerp(startPos, endPos, 
-                _character.movementCurve.Evaluate(time / duration));
-            time += Time.deltaTime;
-            yield return null;
-        }
-        _anim.SetBool("falling", false);
-        
-        // Make rope goes up
-        StartCoroutine(MoveRopeCoroutine(_ropeDownOffset, _ropeUpOffset, 1.0f));
-        
-        while (_ropeCoroutine)
-            yield return null;
-        
-        _onStage = false;
-        _arriveCoroutine = false;
-    }
-    
+    }*/
     
     #endregion
     
