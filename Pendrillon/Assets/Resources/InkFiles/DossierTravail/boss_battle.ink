@@ -179,36 +179,38 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
         ++ [Retourner sur le pont]
             -> player_moovepool
         -- {b_player_AP>0: -> use_barrels | -> end_turn}
-    + [Monter au mât {t(DEXT, climb_mast_mod)}]
+    + (on_top_of_mast) [Monter au mât {t(DEXT, climb_mast_mod)}]
         {
-            - sc(DEXT, climb_mast_mod): 
-                ~ climb_up_mast()
-            - else:
-                ~ use_action_point()
-                //-> player_moovepool
+            - b_player_is_on_top_of_mast == false:
+                {
+                    - sc(DEXT, climb_mast_mod): 
+                        ~ climb_up_mast()
+                    - else:
+                        ~ use_action_point()
+                        -> player_moovepool
+                }
         }
-        -- (on_top_of_mast)
-            +++ {b_player_AP > 0 && b_sail_is_down == false} [Baisser la voile {t(STRE, lower_sail_mod)}]
-                {
-                    - sc(STRE, lower_sail_mod): 
-                        ~ lower_sail()
-                    - else:
-                        ~ use_action_point()
-                }
-            +++ {b_player_AP > 0 && b_boss_state != "under water" && b_boss_state == "on boat"} [Saut de l'ange {t(CHAR, angel_jump_mod)}]
-                {
-                    - sc(CHAR, angel_jump_mod): 
-                        ~ angel_jump()
-                    - else:
-                        ~ use_action_point()
-                }
-                -> player_moovepool
-            +++ {b_player_AP > 0} [Descendre du mât]
-                Vous descendez du mât. #anim:climb_down_mast
-                ~ climb_down_mast()
-                -> player_moovepool
-            +++ {b_player_AP > 0} [Passer son tour]
-                -> end_turn
+        ++ {b_player_AP > 0 && b_sail_is_down == false} [Baisser la voile {t(STRE, lower_sail_mod)}]
+            {
+                - sc(STRE, lower_sail_mod): 
+                    ~ lower_sail()
+                - else:
+                    ~ use_action_point()
+            }
+        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_boss_state == "on boat"} [Saut de l'ange {t(CHAR, angel_jump_mod)}]
+            {
+                - sc(CHAR, angel_jump_mod): 
+                    ~ angel_jump()
+                - else:
+                    ~ use_action_point()
+            }
+            -> player_moovepool
+        ++ {b_player_AP > 0} [Descendre du mât]
+            Vous descendez du mât. #anim:climb_down_mast
+            ~ climb_down_mast()
+            -> player_moovepool
+        ++ {b_player_AP > 0} [Passer son tour]
+            -> end_turn
         -- {b_player_AP>0: -> on_top_of_mast | -> end_turn}
     + {b_player_AP > 0} [Passer son tour]
         -> end_turn
@@ -226,15 +228,14 @@ Fin du tour.
 Bibu
 ~ b_player_AP += 3
 Babi
+top_of_mast = {b_player_is_on_top_of_mast}
 {
     - b_player_is_on_top_of_mast == true:
         Debug: vous allez être ramené sur le mât
         -> on_top_of_mast
     - else:
-        noooooo
         -> player_moovepool
 }
-Goooo
 
 // Kill the boss
 = kill_boss
