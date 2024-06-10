@@ -99,8 +99,13 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
 // Player movepool
     + (use_harpoon) [Utiliser le harpon]
         ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == false} [Remonter le harpon {t(DEXT, load_harpoon_mod)}]
+            // {sc(DEXT, load_harpoon_mod): -> use_harpoon_S | -> use_harpoon_F}
+            // +++ (use_harpoon_S)
+            //     ~ load_harpoon()
+            // +++ (use_harpoon_F)
+            //     ~ use_action_point()
             {
-                - sc(DEXT, load_harpoon_mod): 
+                - sc(DEXT, load_harpoon_mod):
                     ~ load_harpoon()
                 - else:
                     ~ use_action_point()
