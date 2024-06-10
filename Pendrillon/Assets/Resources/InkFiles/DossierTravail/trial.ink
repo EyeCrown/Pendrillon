@@ -53,7 +53,6 @@ VAR t_3_is_with_irene_saviors = false
 VAR t_3_is_against_irene_saviors = false
 VAR t_3_insult_interest_about_irene = false
 VAR t_3_not_believing_irene_predictions = false
-VAR t_3_insult_irene_savior = false
 VAR t_3_moved_by_baby_irene = false
 VAR t_3_fake_about_feeling_for_the_baby = false
 VAR t_3_religion_is_to_make_naive_cry = false
@@ -81,7 +80,6 @@ VAR t_3_stained_glass_3_talk = false
 // VAR t_3_is_against_irene_saviors = false
 // VAR t_3_insult_interest_about_irene = false
 // VAR t_3_not_believing_irene_predictions = false
-// VAR t_3_insult_irene_savior = false
 // VAR t_3_moved_by_baby_irene = true
 // VAR t_3_fake_about_feeling_for_the_baby = false
 // VAR t_3_religion_is_to_make_naive_cry = true
@@ -140,7 +138,7 @@ VAR t_4_give_guards_surname = false
             }
         - pFelony == "blasphemy":
             {
-                - t_1_disrespect_irene or t_3_blame_irene or t_3_doubt_about_irene_cryings or t_3_insult_interest_about_irene or t_3_not_believing_irene_predictions or t_3_insult_irene_savior or t_3_religion_is_to_make_naive_cry or t_3_does_not_believe_in_lighthouse_sacred_light or t_3_does_not_believe_the_sacred_writings or t_3_criticise_irene_coldness: 
+                - t_1_disrespect_irene or t_3_blame_irene or t_3_doubt_about_irene_cryings or t_3_insult_interest_about_irene or t_3_not_believing_irene_predictions or t_3_religion_is_to_make_naive_cry or t_3_does_not_believe_in_lighthouse_sacred_light or t_3_does_not_believe_the_sacred_writings or t_3_criticise_irene_coldness: 
                     ~ isAccused = true
                 - else:
                     ~ isAccused = false

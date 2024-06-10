@@ -74,6 +74,14 @@
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_AMB_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_UI_HUD_SpeechBubble_Appears" ID="{9FD67083-E0A1-4160-9B63-6743D08F0F21}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="3"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_AMB_SC_Theater_CrowdChatter" ID="{8A355971-6A65-45DB-983F-DB2CD3F0CC31}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
@@ -82,6 +90,10 @@
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="Music_Volume" ID="{0DEF2135-992A-418F-9A75-DCAC5D85ED44}"/>
+							<Value>50</Value>
+						</RTPCValue>
 						<RTPCValue>
 							<GameParameterRef Name="AmbianceFatigue" ID="{D7454268-6505-48E5-AFDE-47F4443C6058}"/>
 							<Value>0</Value>
@@ -107,7 +119,7 @@
 						<CurrentStateRef Name="None" ID="{5BA632EA-E74D-4A6D-88CC-9F9D0CCCDC94}"/>
 					</CurrentStateList>
 					<CurrentSwitchList ShowAll="true">
-						<CurrentSwitchRef Name="Hype_06" ID="{E9D40200-B585-4FE3-B917-5118A09DA24C}"/>
+						<CurrentSwitchRef Name="Hype_01" ID="{6FE51898-ED61-4D42-BA7D-9CFC12A21193}"/>
 					</CurrentSwitchList>
 				</SoundcasterSession>
 				<SoundcasterSession Name="Eglise" ID="{5F6CB8B3-FC9E-41B6-8073-B7E7C27C6AB5}">

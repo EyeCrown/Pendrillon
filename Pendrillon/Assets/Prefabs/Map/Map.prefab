@@ -150,7 +150,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 0.9386792, g: 1, b: 0.9973339, a: 1}
-  m_Intensity: 10
+  m_Intensity: 20
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -347,10 +347,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f56042db134f80449d52a89bae8bfad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _place1: {x: 0, y: -0.2, z: -0.46}
-  _place2: {x: 0, y: 0.259, z: 0.304}
-  _place3: {x: 0, y: 0.21, z: -0.07}
-  _place4: {x: 0, y: -0.15, z: 0.32}
+  _placeMiraterre: {x: 0, y: -0.22, z: -0.48}
+  _placeLeviathan: {x: 0, y: 0.26, z: 0.32}
   _yOffset: 0
   _arrivingCurve:
     serializedVersion: 2
@@ -358,53 +356,26 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.6102775
-      value: 0.98340964
-      inSlope: 0.70736074
-      outSlope: 0.70736074
+      time: 0.77632195
+      value: 1.0054798
+      inSlope: 1.8754544
+      outSlope: 1.8754544
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.694072
-      value: 1.021078
-      inSlope: -0.13167968
-      outSlope: -0.13167968
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.79255676
-      value: 0.98434806
-      inSlope: -0.1766196
-      outSlope: -0.1766196
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.88971305
-      value: 1.0134745
-      inSlope: 0.16029446
-      outSlope: 0.16029446
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.9555602
-      value: 0.98970526
-      inSlope: -0.22861059
-      outSlope: -0.22861059
+      time: 0.8635478
+      value: 0.9934868
+      inSlope: 1.9011827
+      outSlope: 1.9011827
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -412,8 +383,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -427,35 +398,35 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
-      time: 0.23700973
-      value: -0.022858419
-      inSlope: 0.33378923
-      outSlope: 0.33378923
+      time: 0.08211332
+      value: -0.0055504143
+      inSlope: 1.9473635
+      outSlope: 1.9473635
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.3521268
-      value: 0.023233226
-      inSlope: -0.20398122
-      outSlope: -0.20398122
+      time: 0.11141598
+      value: 0.012964946
+      inSlope: -0.9756131
+      outSlope: -0.9756131
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 0.53032374
-      value: 0.00002797693
-      inSlope: 0.90008026
-      outSlope: 0.90008026
+      time: 0.15229404
+      value: -0.0050006844
+      inSlope: 1.917453
+      outSlope: 1.917453
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -463,8 +434,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -1104,13 +1075,28 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5987632813164574047, guid: 28bd8f6000cc0a14cbf57f92935f0371,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987632813164574047, guid: 28bd8f6000cc0a14cbf57f92935f0371,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987632813164574047, guid: 28bd8f6000cc0a14cbf57f92935f0371,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987632813164574047, guid: 28bd8f6000cc0a14cbf57f92935f0371,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.16
       objectReference: {fileID: 0}
     - target: {fileID: 5987632813164574047, guid: 28bd8f6000cc0a14cbf57f92935f0371,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.01
+      value: 3.84
       objectReference: {fileID: 0}
     - target: {fileID: 5987632813164574047, guid: 28bd8f6000cc0a14cbf57f92935f0371,
         type: 3}
@@ -1151,6 +1137,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5987632813164574047, guid: 28bd8f6000cc0a14cbf57f92935f0371,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6792183564337235427, guid: 28bd8f6000cc0a14cbf57f92935f0371,
         type: 3}
