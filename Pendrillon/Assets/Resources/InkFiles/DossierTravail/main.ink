@@ -27,4 +27,4 @@ INCLUDE cast_salutation.ink
 
 // Start the game
 //-> barge
--> boss_battle
+-> barge
