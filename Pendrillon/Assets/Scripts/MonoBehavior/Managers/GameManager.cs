@@ -39,6 +39,7 @@ namespace MonoBehavior.Managers
         [SerializeField] private GameObject _marcelloPrefab;
         [SerializeField] private GameObject _capucinePrefab;
         [SerializeField] private GameObject _naidaPrefab;
+        [SerializeField] private GameObject _jugePrefab;
 
         [Header("=== Locations ===")]
         public GroundGrid _gridScene;
@@ -174,6 +175,9 @@ namespace MonoBehavior.Managers
                         break;
                     case "Capucine":
                         character = Instantiate(_capucinePrefab).GetComponent<CharacterHandler>();
+                        break;
+                    case "Judge":
+                        character = Instantiate(_jugePrefab).GetComponent<CharacterHandler>();
                         break;
                     default:
                         character = Instantiate(_characterPrefab).GetComponent<CharacterHandler>();
