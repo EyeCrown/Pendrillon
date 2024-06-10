@@ -273,7 +273,7 @@ public class CharacterHandler : MonoBehaviour
     }
     
     
-    IEnumerator LeaveStageCoroutine(float duration = 2.0f)
+    public IEnumerator LeaveStageCoroutine(float duration = 2.0f)
     {
         _leaveCoroutine = true;
 

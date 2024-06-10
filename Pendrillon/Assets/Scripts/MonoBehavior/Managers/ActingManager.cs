@@ -749,10 +749,10 @@ namespace MonoBehavior.Managers
             foreach (var character in GameManager.Instance._characters)
             {
                 if (character._onStage)
-                    StartCoroutine(character.LeaveStage(2.0f));
+                    StartCoroutine(character.LeaveStageCoroutine());
             }
             if (GameManager.Instance._player._onStage)
-                StartCoroutine(GameManager.Instance._player.LeaveStage());
+                StartCoroutine(GameManager.Instance._player.LeaveStageCoroutine());
             
             AkSoundEngine.PostEvent("Play_SFX_SC_Theater_TransitionTo" + location, gameObject);
 
@@ -841,7 +841,7 @@ namespace MonoBehavior.Managers
 
             character._coordsOnStatge = new Vector2Int(int.Parse(data[1]), int.Parse(data[2]));
             
-            StartCoroutine(character.NewArriveOnStage());
+            StartCoroutine(character.ArriveOnStageCoroutine());
         }
 
         
