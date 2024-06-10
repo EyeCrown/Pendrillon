@@ -223,7 +223,7 @@ namespace MonoBehavior.Managers
                 GameManager.Instance._opacityUI
             );
 
-            foreach (Transform mask in _masks.transform)
+            /*foreach (Transform mask in _masks.transform)
             {
                 mask.GetComponent<Image>().color = new Color(
                     mask.GetComponent<Image>().color.r,
@@ -231,7 +231,7 @@ namespace MonoBehavior.Managers
                     mask.GetComponent<Image>().color.b,
                     GameManager.Instance._opacityUI
                 );
-            }
+            }*/
         }
         
         #endregion
