@@ -77,9 +77,9 @@ public class Wheel : MonoBehaviour
 
     #region Methods
 
-    public void Spin(int score, int mustObtain, string type)
+    public void Spin(int score, int mustObtain, string type, Action handleDialogueText = null)
     {
-        _spinCoroutine = SpinningCoroutine(score, mustObtain, type);
+        _spinCoroutine = SpinningCoroutine(score, mustObtain, type, handleDialogueText);
         StartCoroutine(_spinCoroutine);
     }
     
@@ -123,7 +123,7 @@ public class Wheel : MonoBehaviour
 
     #region Coroutines
 
-    public IEnumerator SpinningCoroutine(int score, int mustObtain, string type)
+    public IEnumerator SpinningCoroutine(int score, int mustObtain, string type, Action handleDialogueText = null)
     {
         UpdateText(score, mustObtain, type);
         
@@ -145,15 +145,16 @@ public class Wheel : MonoBehaviour
         }
         Debug.Log($"Wheel.SpinningCoroutine > Rotate anim is done + Is on stage");
 
-        StartCoroutine(DisplayScoreCoroutine());
+        StartCoroutine(DisplayScoreCoroutine(handleDialogueText));
     }
 
 
-    IEnumerator DisplayScoreCoroutine()
+    IEnumerator DisplayScoreCoroutine(Action handleDialogueText = null)
     {
         float time = 0.0f, duration = 0.5f;
         _uiBox.SetActive(true);
         // Scale from 0 to 1
+        Debug.Log($"Wheel.DisplayScoreCoroutine > Begin display");
         while (time < duration)
         {
             var size = time / duration;
@@ -161,8 +162,9 @@ public class Wheel : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        
-        
+        Debug.Log($"Wheel.DisplayScoreCoroutine > End display");
+        GameManager.Instance._playerInput.Player.Interact.performed += ActingManager.Instance.OnClickCloseSkillcheck;
+        handleDialogueText();
     }
 
     public IEnumerator CloseScoreCoroutine()
