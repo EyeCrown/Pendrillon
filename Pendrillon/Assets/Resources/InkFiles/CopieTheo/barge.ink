@@ -26,11 +26,11 @@
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
-- PASSEUR: Eh, bien...
+- PASSEUR: Eh, bien... #playsound:VOX_Ferryman_ehbien
 PASSEUR: J'ai connu des passagers plus loquaces... #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause
     * [(Rester silencieux)]
-- PASSEUR: *Hum hum* #bark:Passeur:clear_voice
-- PASSEUR: J'ai dit : « J'ai connu des passagers plus loquaces... ». #box #audience:debate
+- PASSEUR: *Hum hum* #anim:Passeur:clear_voice #playsound:VOX_Ferryman_humhum
+- PASSEUR: J'ai dit : « J'ai connu des passagers plus loquaces... ». #box #audience:debate #playsound:VOX_Ferryman_jaidit
 - SOUFFLEUR: Psssst... Hé ! #playsound:VOX_Souffleur_pssthe
 SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_parici
 SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #playsound:VOX_Souffleur_tracparalyse
@@ -78,10 +78,10 @@ SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance, l
     * [On m'appelle Octave...] PLAYER: Je réponds au doux nom d'Octave... #anim:Player:bow #playsound:VOX_Player_Octave #playsound:Play_MUS_Story_SC_Barque_ANewName
         ~ p_name = "Octave"
 - #audience:ovation
-SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! Show must go on!
-- PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question
+SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! <i>Show must go on!</i>
+- PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question #playsound:VOX_Ferryman_commentretrouveici
 - PLAYER: Un jour où je me trouvais...
-    * [À l'auberge...] PLAYER: Un jour où je me trouvais à l'auberge du Bois Joli, je reçus la missive d'un expéditeur inconnu.
+    * [À l'auberge...] PLAYER: Un jour où je me trouvais à l'auberge des Deux Frères, je reçus la missive d'un expéditeur inconnu.
     * [Sur mon navire...] PLAYER: Un jour où je me trouvais sur mon navire, je reçus la missive d'un expéditeur inconnu.
     * [À la taverne...] PLAYER: Un jour où je me trouvais à la taverne du Rat Bouilli, je reçus la missive d'un expéditeur inconnu.
 - PLAYER: Habituellement, une lettre de cette nature aurait fini au feu, mais un détail attira mon attention... #playsound:VOX_Player_unjour #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter1
@@ -108,30 +108,46 @@ PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rend
 
 // Start the scene
 - PASSEUR: ...
-PASSEUR: Pourquoi avoir accepté une mission si périlleuse ? #anim:Passeur:question #playsound:VOX_Ferryman_pourquoimission
+PASSEUR: Dis-moi, voyageur : pourquoi avoir accepté une mission si périlleuse ? #anim:Passeur:question #playsound:VOX_Ferryman_pourquoimission
     * [Pour la fortune !] PLAYER: Pour la fortune, évidemment ! #anim:Player:gloire #playsound:VOX_Player_pourlafortune #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
     * [Pour la gloire !] PLAYER: Pour la gloire, cela va sans dire ! #anim:Player:gloire #playsound:VOX_Player_pourlagloire #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
     * [Pour l'aventure !] PLAYER: Pour l'aventure bien entendu ! #anim:Player:gloire #playsound:VOX_Player_pourlaventure #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
 - #audience:applause
 - PASSEUR: Tout de même... Te confronter à une créature mythique telle que le Léviathan... #playsound:VOX_Ferryman_toutdememe
 PLAYER: À dire vrai...
-    * [Je ne crois pas au Léviathan.] PLAYER: Je ne crois pas à ces histoires à dormir debout... Je prévoyais de faire le voyage, prétendre avoir tué le monstre et retourner à bon port. #audience:laughter
-        PASSEUR: Tu as pourtant promis de ramener le cœur de la bête.
+    * [Je ne crois pas au Léviathan.] PLAYER: Je ne crois pas à ces histoires à dormir debout... 
+        PLAYER: Je prévoyais de faire le voyage, prétendre avoir tué le monstre et retourner à bon port. #audience:laughter
+        PASSEUR: Tu as pourtant promis de ramener le cœur de la bête. #playsound:VOX_Ferryman_coeurbete
             ** [J'avais un plan.] PLAYER: Personne n'a jamais vu le Léviathan de près : un cœur de baleine aurait suffi à faire illusion... #audience:laughter
             ** [Je n'avais pas pensé à ça.] PLAYER: Je suis un homme de l'improvisation. J'aurai trouvé quelque chose... #audience:applause
     * [Je rêvais de le voir.] PLAYER: Je rêve de l'apercevoir, depuis petit. Ma mère me racontait des récits de marins l'ayant aperçu, au loin.
-        PASSEUR: N'étais-tu pas effrayé ? #anim:Passeur:question
+        PASSEUR: N'étais-tu pas effrayé ? #anim:Passeur:question #playsound:VOX_Ferryman_paseffrayeq
             ** [Si, mais tout de même...] PLAYER: Seul un idiot ne le serait pas. Mais ce sont ces histoires de créatures mythiques qui ont fait de moi le marin que je suis, alors... #anim:Player:stressed
             ** [Pas le moins du monde.] PLAYER: Ce sont ces histoires de créatures mythiques qui ont fait de moi le marin que je suis. J'étais prêt à prendre tous les risques...
-- PASSEUR: Et que s'est-il passé ensuite ? #anim:Passeur:question2
+- PASSEUR: As-tu trouvé le monstre à l'endroit indiqué par la carte ? #playsound:VOX_Ferryman_etqueensuite
     * [(Mentir) J'ai tué le monstre.] PLAYER: J'ai trouvé le monstre à l'endroit indiqué par la carte, et je l'ai tué, avec l'aide de mon équipage. Quelle bataille avons-nous livrée ! #anim:Player:happy
     * [(Éluder la question) Rien...] PLAYER: Je me suis rendu sur place, je n'ai trouvé aucune créature, bien entendu... et je suis rentré. Fin de l'histoire.
 - PASSEUR: Pourquoi ne pas me dire ce qu'il s'est réellement passé ? Ton âme s'en verra peut-être allégée... #playsound:VOX_Ferryman_pourquoidireverite
-PLAYER: Bien, bien... Si tu insistes.
-PLAYER: Le voyage a duré près d'une année. Puis, après moult péripéties, nous sommes revenus... #playsound:VOX_Player_voyagedure1an
+PLAYER: Bien, bien... Si tu insistes, Passeur.
+PLAYER: Notre voyage dura...
+    * [Près d'une année.] PLAYER: ... près d'une année, en tout. #map:departure
+    * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté. #map:Travel:departure
+- PLAYER: Je garderai <b>secret</b> ce qu'il se passa lorsque nous atteignîmes le répère du Léviathan.
+PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX_Player_voyagedure1an #map:arrival
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreux playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
-- -> trip_return
+- PASSEUR: Ainsi, c'est à votre retour à Miraterre que les problèmes ont commencé ? #playsound:VOX_Ferryman_retourmiraterre
+- PLAYER: En effet. Un dénouement...
+    * [Ironique.] PLAYER: ... des plus <i>ironiques</i>.
+        PASSEUR: Ironique, tu dis ? #playsound:VOX_Ferryman_ironique
+    * [Tragi-comique.] PLAYER: ... qu'on pourrait qualifier de <i>tragi-comique</i>.
+        PASSEUR: Tragi-comique, tu dis ? #playsound:VOX_Ferryman_tragicomique
+    * [Inattendu.] PLAYER: ... des plus <i>inattendus</i>.
+        PASSEUR: Inattendu, tu dis ? #playsound:VOX_Ferryman_innatendu
+- PLAYER: Constatez par vous-même : nous avons bravé une tempête, affronté un monstre marin...
+PLAYER: ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna...
+- #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #wait:1
+- -> trip_return 
 
 // Scène 3
 = scene_3
@@ -149,11 +165,13 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult péripéties, n
 // Start the scene
 - PASSEUR: Ainsi, ton ami s'est fait arrêter par les gardes... #playsound:VOX_Ferryman_ainsitonami
     * [Je la retrouverai.] PLAYER: Je la retrouverai. Par tous les moyens, la Déesse m'en soit témoin ! #audience:ovation
-        PASSEUR: Ainsi, ton ami est <i>une</i> amie. Je vois...
+        PASSEUR: Ainsi, ton ami est <i>une</i> amie. Je vois... #playsound:VOX_Ferryman_tonamie
     * [Rester silencieux.]
-- PASSEUR: Dis-moi plutôt : où t'es-tu rendu, après cela ? #playsound:VOX_Ferryman_tudevais
-    * [Tous les gardes en avaient après moi...] PLAYER: Tous les gardes de la ville étaient à mes trousses... #playsound:VOX_Player_touslesgardes #playsound:Play_MUS_Story_SC_Barque_ToChurch
-    * [J'ai trouvé un refuge...] PLAYER: J'ai trouvé un endroit pour passer la nuit... #playsound:VOX_Player_trouveunendroit #playsound:Play_MUS_Story_SC_Barque_ToChurch 
+- PASSEUR: Dis-moi plutôt : où t'es-tu rendu, après cela ? #playsound:VOX_Ferryman_outurendu
+    * [Tous les gardes en avaient après moi...] PLAYER: Tous les gardes de la ville étaient à mes trousses.
+        PLAYER: Mais il est un lieu où ils ne pénètrent jamais... #playsound:VOX_Player_touslesgardes #playsound:Play_MUS_Story_SC_Barque_ToChurch
+    * [J'ai trouvé un refuge...] PLAYER: J'ai trouvé un endroit pour passer la nuit. 
+        PLAYER: Un endroit où les gardes n'auraient pas idée de me chercher... #playsound:VOX_Player_trouveunendroit #playsound:Play_MUS_Story_SC_Barque_ToChurch
 - -> church_night
 
 // Scène 4
@@ -174,11 +192,7 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult péripéties, n
     * [Tout à fait, mais...] PLAYER: Jamais n'a-t-on vu âme plus accueillante. Cependant... #playsound:VOX_Player_jamaisame
     * [En un sens...] PLAYER: D'une certaine manière, j'en conviens... Mais... #playsound:VOX_Player_certainemaniere
     * [C'est ce que je pensais.] PLAYER: La même pensée me traversait l'esprit, alors que je m'endormais... Toutefois... #playsound:VOX_Player_penseetraverseesprit
-- PASSEUR: Quoi donc ? #anim:Passeur:question #playsound:VOX_Ferryman_quoidonc
-    * [(Colère froide)] #anim:Player:angry #playsound:Play_MUS_Story_SC_Barque_Treason
-    * [(Tragique)] #anim:Player:sad #playsound:Play_MUS_Story_SC_Barque_Treason
-    * [(Déception)] #anim:Player:disappointed #playsound:Play_MUS_Story_SC_Barque_Treason
-- #audience:choc
+- #audience:debate
 - PASSEUR: Parle, je t'en prie. #playsound:VOX_Ferryman_parlejetenprie
 - PLAYER: À mon réveil... #playsound:VOX_Player_amonreveil
     * [Une mauvaise surprise m'attendait.] PLAYER: ... une surprise des plus désagréables m'attendait... #playsound:VOX_Player_unemauvaisesurprise
@@ -200,23 +214,28 @@ PLAYER: Le voyage a duré près d'une année. Puis, après moult péripéties, n
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
-- PASSEUR: Notre voyage fut en fin de compte des plus captivants, toutefois... #playsound:VOX_Ferryman_voyagecaptivant
-PASSEUR: ... il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView
-PASSEUR: Vois-tu ces portes, devant nous ? Dans quelques instants, tu sauras si nous pouvons faire demi-tour, ensemble... #anim:Passeur:show_door #playsound:VOX_Ferryman_voistuporte
-PASSEUR: ... ou si c'est ici que nos chemins se sépareront. #playsound:VOX_Ferryman_voistuporte2
-    * [Que va t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, Passeur... et ne me ménage pas. #anim:Player:stressed #playsound:VOX_Player_quevapassemenagepas
-        PASSEUR: Cela, je ne puis te le dire, voyageur. Je connais ton passé, mais j'ignore tout de ton destin. #playsound:VOX_Ferryman_jenepuisteledire
-    * [Où mènent ces portes ?] PLAYER: Où mènent ces portes, Passeur ? #anim:Player:stressed #playsound:VOX_Player_oumeneporte
-        PASSEUR: Tu le sauras bientôt, ou ne le sauras jamais. Attendons un instant... #playsound:VOX_Ferryman_attendons
+- PASSEUR: En fin de compte... Notre voyage fut des plus captivants. #playsound:VOX_Ferryman_voyagecaptivant
+PASSEUR: Toutefois... #audience:ovation #playsound:VOX_Ferryman_toutefois
+PASSEUR: ... Il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView #audience:debate
+    * [Que va t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, Passeur... et ne me ménage pas. #anim:Player:stressed #playsound:VOX_Player_quevapassemenagepas #audience:debate
+        PASSEUR: Cela, je ne puis te le dire, voyageur. Je connais ton passé, mais j'ignore tout de ton avenir. #playsound:VOX_Ferryman_jenepuisteledire #audience:applause
+    * [Où mène ce chemin ?] PLAYER: Où mène ce chemin, Passeur ? #anim:Player:stressed #playsound:VOX_Player_oumeneporte #audience:debate
+        PASSEUR: Il te mène à Lui, voyageur. #audience:choc #playsound:VOX_Ferryman_menealui
     * [(Rester silencieux).]
-- PASSEUR: Si les portes s'ouvrent, alors nous serons tenus de passer... #playsound:VOX_Ferryman_silesportes
-    * [Qui nous y oblige ?] PLAYER: Qui nous y contraint, Passeur ? #anim:Player:question  #playsound:VOX_Player_quinousycontraint
-        PASSEUR: La Loi. #playsound:VOX_Ferryman_laloi
-    * [Faisons demi-tour.] PLAYER: Faisons demi-tour, je t'en prie. #playsound:VOX_Player_faisonsdemitour
-        PASSEUR: Je regrette, ce n'est pas à moi d'en décider. #playsound:VOX_Ferryman_jeregrettepasmadecision
-    * [J'ai peur...] PLAYER: J'ai si peur... #anim:Player:stressed #playsound:VOX_Player_jaisipeur
-        PASSEUR: ... Je comprends. #playsound:VOX_Ferryman_jecomprends
+- PASSEUR: Attendons un instant. #playsound:VOX_Ferryman_attendonsuninstant
+PASSEUR: Si la <shake>Cloche du Destin</shake> sonne, alors nous serons tenus de passer... #playsound:VOX_Ferryman_silacloche #audience:debate
+PASSEUR: ...
+PLAYER: ...
+    * [Faire face à son destin.]
+- #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #audience:choc
+PASSEUR: Tu vas devoir affronter ton destin, désormais. #audience:ovation #playsound:VOX_Ferryman_affrontetondestin
+    * [Qui m'y oblige ?] PLAYER: Qui m'y contraint, Passeur ? #anim:Player:question  #playsound:VOX_Player_quinousycontraint #audience:debate
+        PASSEUR: La Loi. #playsound:VOX_Ferryman_laloi #audience:choc
+    * [Faisons demi-tour.] PLAYER: Faisons demi-tour, je t'en prie. #playsound:VOX_Player_faisonsdemitour #audience:booing
+        PASSEUR: Je regrette, ce n'est pas à moi d'en décider. #playsound:VOX_Ferryman_jeregrettepasmadecision #audience:debate
+    * [J'ai peur...] PLAYER: J'ai si peur... #anim:Player:stressed #playsound:VOX_Player_jaisipeur #audience:debate
+        PASSEUR: ... Je comprends. #playsound:VOX_Ferryman_jecomprends #audience:applause
 - #anim:open_trial_doors #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
-- PASSEUR: Tu vas devoir affronter ton destin. 
-PASSEUR: Ainsi en ont décidé les portes, voyageur...  #playsound:VOX_Ferryman_devoiraffronterdestin 
+PASSEUR: C'est ici que nos chemins se séparent, voyageur... #playsound:VOX_Ferryman_voistuporte2 #audience:choc
+PASSEUR: Ainsi en a décidé la <shake>Cloche du Destin</shake>.  #playsound:VOX_Ferryman_ainsienadecide #audience:ovation
 - -> tribunal_1

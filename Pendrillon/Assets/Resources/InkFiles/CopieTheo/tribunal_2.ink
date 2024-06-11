@@ -2,6 +2,7 @@
 
 // Variables
 VAR naida_name = "LA POISCAILLE"
+VAR naida_name_on_text = "Naïda"
 VAR verdict_is_innocent = false
 VAR verdict_is_guilty = false
 
@@ -27,11 +28,13 @@ VAR verdict_is_guilty = false
 #judge_bell
 #wait:5
 #audience:ovation
-#wait:4
+#wait:3
+#audience:ovation
+#wait:1
 // Start the scene
 - JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent
 JUGE ERNEST: Ainsi, vous avez véritablement affronté une créature marine ?
-    * [Pour Irène !] PLAYER: Je l'ai fait. Pour nul autre qu'Irène, Votre Honneur. #audience:ovation
+    * [Pour Irène !] PLAYER: Je l'ai fait. Pour nul autre qu'<b>Irène</b>, Votre Honneur. #audience:ovation
         ~ audience_judgement(0.4)
     * [Pour la Couronne !] PLAYER: Je l'ai fait. Pour nul autre que la Couronne, Votre Honneur. #audience:ovation
         ~ audience_judgement(0.3)
@@ -45,65 +48,68 @@ JUGE ERNEST: Vous, et votre navire...
 - JUGE ERNEST: Bien, bien... Si vous le dites...
     -> judge_proceed_to_mention_the_sireine
 
-// The judge proceed to mention the sireine
+// The judge proceed to mention the Sireine
 = judge_proceed_to_mention_the_sireine
 JUGE ERNEST: Accusé, il est un sujet que nous n'avons pas encore évoqué lors de ce procès. #audience:debate
 JUGE ERNEST: Ce sujet constitue pourtant le cœur de ce qu'il vous est reproché. #audience:debate
-JUGE ERNEST: Je veux bien entendu parler... de votre histoire d'amour avec une sireine. #audience:choc
+JUGE ERNEST: Je veux bien entendu parler... de votre histoire d'amour avec une Sireine. #audience:choc
     * [Laisser le silence retomber.]
 - JUGE ERNEST: Mesdames et messieurs les jurés, je vous demande de garder votre calme. #audienc:silent
 JUGE ERNEST: Vous savez l'importance de la tâche qui vous incombe. Sachez vous en montrer digne.
-JUGE ERNEST: J'appelle à la barre... la sireine. #anim:Judge:bell #audience:choc #move(Naida)
+JUGE ERNEST: J'appelle à la barre... la Sireine. #anim:Judge:bell #audience:choc #move(Naida)
 JUGE ERNEST: Avant toute chose : je demande à la créature de ne pas prendre la parole. #audience:booing
 JUGE ERNEST: Si tant est qu'elle soit capable de s'exprimer... #audience:laughter
-JUGE ERNEST: En effet, ce lieu saint ne saurait accueillir la voix d'une affreuse sireine ! #audience:booing
+JUGE ERNEST: En effet, ce lieu saint ne saurait accueillir la voix d'une affreuse Sireine ! #audience:booing
 L'AFFREUSE SIREINE: ... #audience:boing
     * [Vous allez regretter ces paroles !] PLAYER: Retirez ces sales paroles, maudit Juge ! Naïda vaut plus que vous tous réunis ! #audience:choc
-    * [Elle possède un nom.] PLAYER: L'affreuse sireine, comme vous dites, possède un nom. Naïda.
+    * [Elle possède un nom.] PLAYER: L'affreuse Sireine, comme vous dites, possède un nom. Naïda.
 - JUGE ERNEST: Ainsi, la poiscaille possède un nom ? #audience:debate
 LA POISCAILLE: ... #audience:booing
     * [(Menaçant) Appelez-la par son nom. {t(STRE, -20)}]
         {sc(STRE, -20): -> convince_name_naida_S | -> convince_name_naida_F}
-            ** (convince_name_naida_S) PLAYER: Votre Honneur, si vous ne daignez pas appeler Naïda par son nom, par la Déesse, vous le paierez. #audience:choc
+            ** (convince_name_naida_S) PLAYER: Votre Honneur, si vous ne daignez pas appeler Naïda par son nom, par la <b>Déesse</b>, vous le paierez. #audience:choc
                 ~ audience_judgement(0.1)
                 JUGE ERNEST: Bon, bon... Je consens à appeler la créature par ce qui lui sert de nom... #audience:applause
                 JUGE ERNEST: Tant que celle-ci ne profane pas ces lieux de sa parole impie. #audience:ovation
                 ~ naida_name = "NAÏDA"
-            ** (convince_name_naida_F) JUGE ERNEST: Peuh... Si tu crois me faire peur, Accusé... Ce procès sera l'occasion de rebaptiser ton amie : la poiscaille. #audience:ovation
-    * [(Calme) Tout être a le droit à un nom.{t(CHAR, -20)}]
+                ~ naida_name_on_text = "Naïda"
+            ** (convince_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez me faire peur, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #audience:ovation
+                ~ naida_name_on_text = "la poiscaille"
+    * [(Calme) Tout être a droit à un nom.{t(CHAR, -20)}]
         {sc(CHAR, -20): -> force_name_naida_S | -> force_name_naida_F}
             ** (force_name_naida_S) PLAYER: Votre Honneur, je vous demande de faire preuve d'humanité en appelant Naïda par son nom. #audience:debate
                 ~ audience_judgement(0.1)
                 JUGE ERNEST: Bon, bon... Je consens à appeler la créature par ce qui lui sert de nom... #audience:applause
                 JUGE ERNEST: Tant que celle-ci ne profane pas ces lieux de sa parole impie. #audience:ovation
                 ~ naida_name = "NAÏDA"
-            ** (force_name_naida_F) JUGE ERNEST: Peuh... Si tu crois m'attendrir, Accusé... Ce procès sera l'occasion de rebaptiser ton amie : la poiscaille. #audience:ovation
+                ~ naida_name_on_text = "Naïda"
+            ** (force_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez m'attendrir, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #audience:ovation
+                ~ naida_name_on_text = "la poiscaille"
 - SOUFFLEUR: Je sais ce que tu penses, l'ami... 
 SOUFFLEUR: La pièce prend des tournures particulièrement sombres...
 SOUFFLEUR: Mais ainsi sont fait nos mythes, pas vrai ?
 SOUFFLEUR: Le moment risque d'être difficile pour le personnage de Naïda. Elle saura rester digne, ne t'en fais pas !
 SOUFFLEUR: Quand à toi, essaye de la défendre du mieux que tu le peux auprès du Juge, mais surtout du public !
 SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
-- JUGE ERNEST: Commencez par nous raconter comment vous avez fait la rencontre de {naida_name}, voulez-vous ?
+- JUGE ERNEST: Commencez par nous raconter comment vous avez fait la rencontre de <b>{naida_name_on_text}</b>, voulez-vous ?
 - (player_and_naida_met)
     * [À l'intérieur du Léviathan.] PLAYER: Lorsque le Léviathan nous a avalé, mon équipage et moi-même... Nous nous sommes retrouvés à l'intérieur de son estomac. #audience:choc
-        PLAYER: C'est là que j'ai fait la rencontre du peuple des sireines. #audience:debate
+        PLAYER: C'est là que j'ai fait la rencontre du peuple des Sireines. #audience:debate
         PLAYER: Durant près d'une année, j'ai appris à les connaître.
         PLAYER: À apprécier vivre à leurs côtés... #audience:debate
-        PLAYER: ... À les aimer. #audience:choc
     * [Cela ne vous regarde pas.] PLAYER: Notre histoire ne vous regarde en rien, Votre Honneur.
-        JUGE ERNEST: Allons, allons... Que dirais-tu d'un marché ?
-        JUGE ERNEST: Toi, tu témoignes de votre histoire, et moi je consens à appeler ton amie par son nom. 
+        JUGE ERNEST: Allons, allons... Que diriez-vous d'un marché, Accusé ?
+        JUGE ERNEST: Vous témoignez de votre histoire, et je consens à appeler votre amie par son nom. 
         ** [Pas question.] PLAYER: Vous avez perdu ma confiance, Votre Honneur. Il n'en est pas question.
-            JUGE ERNEST: Si tu ne racontes pas ton histoire, Accusé... vous serez jugés coupables. #audience:booing
+            JUGE ERNEST: Si vous ne témoignez pas de votre histoire, Accusé... vous serez jugés coupables, tous les deux. #audience:booing
             -> player_and_naida_met
-        ** [C'est entendu.] PLAYER: Marché conclus, Votre Honneur. #audience:applause
+        ** [C'est entendu.] PLAYER: Entendu, Votre Honneur. #audience:applause
             -> player_and_naida_met
-- JUGE ERNEST: Ainsi, tu as découvert le peuple maudit qui fut jadis noyé...
+- JUGE ERNEST: Ainsi, vous avez découvert le peuple maudit qui fut jadis noyé, avalé par le Léviathan...
     * [Ils ne sont pas maudits. {t(DEXT, -20)}]
         {sc(DEXT, -20): -> sireine_are_not_cursed_S | -> sireine_are_not_cursed_F}
         ** (sireine_are_not_cursed_S) PLAYER: Votre Honneur, j'ai toutes les raisons de penser que le peuple des Sireines n'est en rien maudit. #audience:debate
-            PLAYER: Ne pensez-vous pas que si la Déesse avait voulu que le Déluge ne les tue, ils ne seraient pas vivants aujourd'hui ? #audience:applause
+            PLAYER: Ne pensez-vous pas que si la <b>Déesse</b> avait voulu que le Déluge ne les tue, ils ne seraient pas vivants aujourd'hui ? #audience:applause
             ~ audience_judgement(0.1)
         ** (sireine_are_not_cursed_F) PLAYER: Sont-ils réellement maudits ? Qui peut le dire ? #audience:debate
             ~ audience_judgement(-0.03)
@@ -111,11 +117,11 @@ SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
         {sc(STRE, -20): -> judge_is_cursed_S | -> judge_is_cursed_F}
         ** (judge_is_cursed_S) PLAYER: Votre Honneur, s'il est un être maudit en ces lieux, c'est bien vous. #audience:debate
             PLAYER: Un siècle à souffrir, accroché à une roue...
-            PLAYER: Si la Déesse avait voulu abréger vos souffrances, ne l'aurait-elle pas fait ? #audience:applause
+            PLAYER: Si la <b>Déesse</b> avait voulu abréger vos souffrances, ne l'aurait-elle pas fait ? #audience:applause
             ~ audience_judgement(0.1)
         ** (judge_is_cursed_F) PLAYER: C'est vous qui êtes maudit, pas eux ! #audience:debate
             ~ audience_judgement(-0.03)
-    * [Rester silencieux.] JUGE ERNEST: Tu sembles n'avoir rien à répondre... #audience:debate
+    * [Rester silencieux.] JUGE ERNEST: Vous semblez n'avoir rien à répondre... #audience:debate
         ~ audience_judgement(-0.03)
 - JUGE ERNEST: Accusé, il est une question qui est dans tous les esprits...
 JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ?
@@ -153,13 +159,13 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ?
     * [Nos ancêtres sont communs. {t(DEXT, 0)}]
         {sc(DEXT, 0): -> we_have_same_ancesters_S | -> we_have_same_ancesters_F}
         ** (we_have_same_ancesters_S) PLAYER: Votre Honneur, nos ancêtres et ceux des Sireines sont les mêmes. #audience:choc
-            PLAYER: Lorsque Miraterre sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la Déesse... #audience:debate
+            PLAYER: Lorsque Miraterre sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la <b>Déesse</b>... #audience:debate
             PLAYER: D'autres n'eurent pas cette chance... Fort heureusement, ils échappèrent à la noyade, eux aussi... #audience:debate
             PLAYER: Sauvés par le Léviathan. #audience:choc
             PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un même peuple. #audience:ovation
             ~ audience_judgement(0.3)
         ** (we_have_same_ancesters_F) PLAYER: Votre Honneur, nos ancêtres et ceux des Sireines sont les mêmes. #audience:choc
-            PLAYER: Lorsque Miraterre sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la Déesse... #audience:debate
+            PLAYER: Lorsque Miraterre sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la <b>Déesse</b>... #audience:debate
             PLAYER: D'autres n'eurent pas cette chance... Fort heureusement, ils échappèrent à la noyade, eux aussi... #audience:debate
             PLAYER: Sauvés par le Léviathan. #audience:choc
             PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un même peuple. #audience:booing
@@ -201,28 +207,28 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ?
     * [Irène était une Sireine. {t(CHAR, -30)}]
         {sc(CHAR, -30): -> irene_was_a_sireine_S | -> irene_was_a_sireine_F}
         ** (irene_was_a_sireine_S) PLAYER: Votre Honneur, n'avez-vous donc pas compris ? #audience:debate
-            PLAYER: Irène elle-même... Votre propre fille...
+            PLAYER: <b>Irène</b> elle-même... Votre propre fille...
             PLAYER: ... était une Sireine. #audience:choc
             PLAYER: Elle fut retrouvée, sur un rocher, en pleine tempête. Pour quelle raison se trouvait-elle en pleine mer ? #audience:debate
             PLAYER: Comment expliquer autrement qu'elle ne fut pas noyée ? #audience:applause
-            PLAYER: En conspuant Naïda, ainsi que les siens, c'est la Déesse elle-même que vous insultez ! #audience:ovation
+            PLAYER: En conspuant Naïda, ainsi que les siens, c'est la <b>Déesse</b> elle-même que vous insultez ! #audience:ovation
             ~ audience_judgement(0.4)
         ** (irene_was_a_sireine_F) PLAYER: Votre Honneur, n'avez-vous donc pas compris ? #audience:debate
-            PLAYER: Irène elle-même... Votre propre fille...
+            PLAYER: <b>Irène</b> elle-même... Votre propre fille...
             PLAYER: ... était une Sireine. #audience:choc
             PLAYER: Elle fut retrouvée, sur un rocher, en pleine tempête. Pour quelle raison se trouvait-elle en pleine mer ? #audience:debate
             PLAYER: Comment expliquer autrement qu'elle ne fut pas noyée ? #audience:debate
-            PLAYER: En conspuant Naïda, ainsi que les siens, c'est la Déesse elle-même que vous insultez ! #audience:booing
+            PLAYER: En conspuant Naïda, ainsi que les siens, c'est la <b>Déesse</b> elle-même que vous insultez ! #audience:booing
                 ~ audience_judgement(-0.07)
     * [Pas maudites mais bénies. {t(DEXT, -20)}]
         {sc(DEXT, -20): -> sireine_are_blessed_S | -> sireine_are_blessed_F}
         ** (sireine_are_blessed_S) PLAYER: Votre Honneur, si un peuple, avalé par les Eaux lors du Déluge, a pu survivre jusqu'à aujourdhui... #audience:debate
-            PLAYER: Ne pensez-vous pas qu'il en va de la volonté de la Déesse elle-même ? #audience:debate
-            PLAYER: Le peuple des Sireines est bénie ! Béni de la Déesse ! #audience:ovation
+            PLAYER: Ne pensez-vous pas qu'il en va de la volonté de la <b>Déesse</b> elle-même ? #audience:debate
+            PLAYER: Le peuple des Sireines est bénie ! Béni de la <b>Déesse</b> ! #audience:ovation
             ~ audience_judgement(0.3)
         ** (sireine_are_blessed_F) PLAYER: Votre Honneur, si un peuple, avalé par les Eaux lors du Déluge, a pu survivre jusqu'à aujourdhui... #audience:debate
-            PLAYER: Ne pensez-vous pas qu'il en va de la volonté de la Déesse elle-même ? #audience:debate
-            PLAYER: Le peuple des Sireines est bénie ! Béni de la Déesse ! #audience:booing
+            PLAYER: Ne pensez-vous pas qu'il en va de la volonté de la <b>Déesse</b> elle-même ? #audience:debate
+            PLAYER: Le peuple des Sireines est bénie ! Béni de la <b>Déesse</b> ! #audience:booing
             ~ audience_judgement(-0.04)
     * [Rester silencieux.] JUGE ERNEST: Vous préférez garder le silence ? Passons... #audience:debate
         ~ audience_judgement(-0.03)
@@ -251,7 +257,7 @@ JUGE ERNEST: Qui vote... <shake>innocent</shake> ? #box #wait:1.4 #audience:ovat
 JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé.
 JUGE ERNEST: Le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé...
 JUGE ERNEST: <b>INNOCENT</b> !!! #audience:ovation
-JUGE ERNEST: Emmenez-le, ainsi que la sireine, retrouver leur liberté. #audience:ovation
+JUGE ERNEST: L'Accusé, ainsi que Naïda la Sireine, peuvent retrouver leur liberté. #audience:ovation
 - -> naida_speech
 
 // Player is guilty
@@ -262,16 +268,17 @@ JUGE ERNEST: Et maintenant... #audience:debate
 JUGE ERNEST: Qui vote... <shake>coupable</shake> ? #box #wait:1.4 #audience:ovation #anim:Player:bow
 JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé...
 JUGE ERNEST: <b>COUPABLE</b> !!! #audience:ovation
-JUGE ERNEST: Emmenez-le, ainsi que la sireine, au fond des océans. #audience:ovation
+JUGE ERNEST: Coulez-le, ainsi que la Sireine, où la Déesse Elle-même ne saurait le trouver... #audience:ovation
+JUGE ERNEST: ... Au fond des océans ! #audience:ovation
 - -> naida_speech
 
 = naida_speech
-NAÏDA: Avant cela, si vous le permettez... #audience:debate
+NAÏDA: Avant cela, si vous le permettez... #audience:choc
 NAÏDA: Je voudrais dire quelques mots. #audience:debate
 NAÏDA: Je resterai digne, et ferai montre de respect, car j'ai souffert de ne pas l'avoir obtenu de votre part à tous... #audience:silent
 NAÏDA: Que nos ancêtres aient été ou non des semblables, des frères... cela, pour moi, ne change rien. #audience:applause
 NAÏDA: Je voudrais simplement dire à quel point il est étrange, pour une créature telle que moi...
-NAÏDA: Une pauvre sireine... Une poiscaille...
+NAÏDA: Une pauvre Sireine... Une poiscaille...
 NAÏDA: Combien il est étrange de constater que vous autres, humains, ayez donné à ce système, le nom de « Justice ». #audience:debate
 {
     - verdict_is_innocent: NAÏDA: Aujourd'hui, elle nous est favorable... L'aurait-elle été hier ? #audience:debate
@@ -282,4 +289,4 @@ NAÏDA: Car les noms, voyez-vous, sont le cœur battant de toute chose. Les noms
 NAÏDA: Ainsi il m'apparaît, pour conclure notre histoire, qu'en donnant à un système partial et imparfait, le nom même d'une vertu... #audience:silent
 NAÏDA: En lui donnant le nom de « Justice »... #audience:debate
 NAÏDA: Vous autres humains ayez commis une erreur... cruelle. #anim:Naida:bow #audience:ovation
-- -> epilogue
+- -> cast_salutations
