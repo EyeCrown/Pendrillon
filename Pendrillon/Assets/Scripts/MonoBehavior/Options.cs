@@ -31,6 +31,7 @@ public class Options : MonoBehaviour
     
     private Slider _rtpcMainVolumeSlider;
     private Slider _rtpcEnvironmentVolumeSlider;
+    private Slider _rtpcMusicVolumeSlider;
     private Slider _rtpcSFXVolumeSlider;
     private Slider _rtpcUIVolumeSlider;
     private Slider _rtpcVoicesVolumeSlider;
@@ -92,6 +93,7 @@ public class Options : MonoBehaviour
         var soundLocation = "SoundParameters/";
         _rtpcMainVolumeSlider   = _panel.transform.Find(soundLocation + "MainVolume" + "/Slider").gameObject.GetComponent<Slider>();
         _rtpcEnvironmentVolumeSlider = _panel.transform.Find(soundLocation + "EnvironmentVolume" + "/Slider").gameObject.GetComponent<Slider>();
+        _rtpcMusicVolumeSlider = _panel.transform.Find(soundLocation + "MusicVolume" + "/Slider").gameObject.GetComponent<Slider>();
         _rtpcSFXVolumeSlider    = _panel.transform.Find(soundLocation + "SFXVolume" + "/Slider").gameObject.GetComponent<Slider>();
         _rtpcUIVolumeSlider     = _panel.transform.Find(soundLocation + "UIVolume" + "/Slider").gameObject.GetComponent<Slider>();
         _rtpcVoicesVolumeSlider = _panel.transform.Find(soundLocation + "VoicesVolume" + "/Slider").gameObject.GetComponent<Slider>();
@@ -119,6 +121,8 @@ public class Options : MonoBehaviour
             delegate { UpdateRTPC("Main_Volume",   _rtpcMainVolumeSlider.value); });
         _rtpcEnvironmentVolumeSlider.onValueChanged.AddListener(
             delegate { UpdateRTPC("Environment_Volume", _rtpcEnvironmentVolumeSlider.value); });
+        _rtpcMusicVolumeSlider.onValueChanged.AddListener(
+            delegate { UpdateRTPC("Music_Volume", _rtpcMusicVolumeSlider.value); });
         _rtpcSFXVolumeSlider.onValueChanged.AddListener(
             delegate { UpdateRTPC("SFX_Volume", _rtpcSFXVolumeSlider.value); });
         _rtpcUIVolumeSlider.onValueChanged.AddListener(
