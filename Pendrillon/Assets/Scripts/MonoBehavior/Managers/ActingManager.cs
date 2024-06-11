@@ -48,7 +48,6 @@ namespace MonoBehavior.Managers
         GameObject _dialogueBox;
         TextMeshProUGUI _dialogueText;  // Text box
         TextMeshProUGUI _speakerText;   // Text box
-        TextMeshProUGUI _tagsText;  // Tags box
         GameObject _historyBox;     // History box
         GameObject _masks;
         private string _playerName;
@@ -64,7 +63,6 @@ namespace MonoBehavior.Managers
         private TypewriterCore _prompterTypewriter;
         
         TextMeshProUGUI _historyText;
-        RawImage _nextDialogueIndicator;
         readonly float _minButtonPosX = -960;
         readonly float _maxButtonPosX =  960;
         float _buttonPosY =  -260;
@@ -380,8 +378,9 @@ namespace MonoBehavior.Managers
             {
                 foreach (var tagName in GameManager.Instance._story.currentTags)
                 {
-                    _tagsText.text += tagName.Trim() + "\n";
-                    ParseTag(tagName);
+                    string[] words = tagName.Split(Constants.Separator);
+                    //foreach (var word in words) Debug.Log("word: " + word);
+                    CheckTag(words);
                 }
             }
         }
@@ -517,27 +516,6 @@ namespace MonoBehavior.Managers
                 button = Instantiate(_choiceButtonRightPrefab, _uiParent.transform);
             }
             
-
-            /*switch (GameManager.Instance._story.currentChoices.Count)
-            {
-                case 1 :
-                    button = Instantiate(_choiceButtonMiddlePrefab, _uiParent.transform);
-                    break;
-                case 2:
-                    button = Instantiate(index == 0 ? _choiceButtonLeftPrefab : _choiceButtonRightPrefab, _uiParent.transform);
-                    break;
-                case 3:
-                    if (index == 0)
-                        button = Instantiate(_choiceButtonLeftPrefab, _uiParent.transform);
-                    else if (index == 1)
-                        button = Instantiate(_choiceButtonMiddlePrefab, _uiParent.transform);
-                    else
-                        button = Instantiate(_choiceButtonRightPrefab, _uiParent.transform);
-                    break;
-                default:
-                    return;
-            }*/
-            
             // Button Position
             float t = (float) (index + 1) / (GameManager.Instance._story.currentChoices.Count + 1);
             float xPos = Mathf.Lerp(_minButtonPosX, _maxButtonPosX, t);
@@ -602,7 +580,6 @@ namespace MonoBehavior.Managers
         {
             return _currentDialogue == String.Empty || _currentDialogue.Length <= 1;
         }
-        
 
         #endregion
 
@@ -616,8 +593,6 @@ namespace MonoBehavior.Managers
             {
                 GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
                 //Debug.Log("Click += NextDialogue");
-                if (!GameManager.Instance._story.currentChoices.Any())
-                    StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
         }
 
@@ -630,8 +605,6 @@ namespace MonoBehavior.Managers
             {
                 GameManager.Instance._playerInput.Player.Interact.performed += OnClickNextDialogue;
                 //Debug.Log("Click += NextDialogue");
-                if (!GameManager.Instance._story.currentChoices.Any())
-                    StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, 0, 1, 1.0f));
             }
         }
 
@@ -734,6 +707,7 @@ namespace MonoBehavior.Managers
             Debug.Log($"AM.OnPhaseStart > Start story | Refresh call ");
             Refresh();
         }
+        
         void OnPhaseEnded()
         {
             Debug.Log("AM.OnPhaseEnded()");
@@ -741,15 +715,13 @@ namespace MonoBehavior.Managers
             _uiParent.SetActive(false);
             ClearUI.Invoke();
         }
+        
         void OnClearUI()
         {
             _dialogueText.text = String.Empty;
-            _tagsText.text = "Tags:\n";
 
             foreach (var button in _choicesButtonList)
-            {
                 Destroy(button.gameObject);
-            }
             _choicesButtonList.Clear();
         
             _dialogueTypewriter.onTextShowed.RemoveListener(DialogueTextFinished);
@@ -758,14 +730,9 @@ namespace MonoBehavior.Managers
             
             // Clear masks
             foreach (Transform mask in _masks.transform)
-            {
                 mask.gameObject.SetActive(false);
-            }
-            
-            
-            StartCoroutine(FadeImageCoroutine(_nextDialogueIndicator, _nextDialogueIndicator.color.a, 0, 0.05f));
-
-            //_nextDialogueIndicator.gameObject.SetActive(false);
+        }
+        
 
         }
         
@@ -773,18 +740,6 @@ namespace MonoBehavior.Managers
         
         
         #region TagHandlers
-
-        void ParseTag(string tagName)
-        {
-            Debug.Log($"AM.ParseTag > Tag to parse: {tagName}");
-            string[] words = tagName.Split(Constants.Separator);
-        
-            // foreach (var word in words)
-            //     Debug.Log("word: " + word);
-
-            CheckTag(words);
-        }
-        
         
         void CheckTag(string[] words)
         {
@@ -1336,8 +1291,7 @@ namespace MonoBehavior.Managers
             
             TagActionOver();
         }
-
-
+        
         IEnumerator WaitingCoroutine(float timeToWait)
         {
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Begin waiting for {timeToWait} seconds");
@@ -1345,27 +1299,6 @@ namespace MonoBehavior.Managers
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Finish waiting for {timeToWait} seconds");
             TagActionOver();
         }
-
-
-        IEnumerator FadeImageCoroutine(RawImage img, float begin, float end, float duration)
-        {
-            //Debug.Log($"FadeImageCoroutine > Begin: {begin} to {end}");
-            var timeElapsed = 0.0f;
-            Color color;
-            while (timeElapsed < duration)
-            {
-                color = img.color;
-                color.a = Mathf.Lerp(begin, end, timeElapsed/duration);
-                img.color = color;
-                timeElapsed += Time.deltaTime;
-                yield return null;
-            }
-            color = img.color;
-            color.a = end;
-            img.color = color;
-            //Debug.Log($"FadeImageCoroutine > It's done");
-        }
-        
 
         /// <summary>
         /// Execute Tag methods one by one
