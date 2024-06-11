@@ -76,6 +76,8 @@ namespace MonoBehavior.Managers
         [Header("=== Debug ===")]
         [SerializeField] private bool _goDirectToFight;
 
+        [Header("=== Intro ===")]
+        public bool _intro;
         
         #endregion
         

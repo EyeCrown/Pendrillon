@@ -5,6 +5,8 @@ public static class Constants
 
     public const string Separator = ":";    // Separator between tags paramaters
 
+    public const string TagIntro        = "intro";         // #intro            Indique si nous sommes dans l'intro
+    
     public const string TagActor        = "actor";         // #actor:Character:Name1:Name2:...:NameN   Character: nom du personnage    Name1: 1er surnom     Name2: 2ème surnom  ...  NameN: Nième surnom   
     public const string TagPosition     = "position";      // #position:Character:X:Y        Character: nom du personnage    X: position en X    Y: position en Y  
     public const string TagSet          = "set";           // #set:Location        Location: nom du décor  

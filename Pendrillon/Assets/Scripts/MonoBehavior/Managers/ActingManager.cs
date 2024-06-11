@@ -87,6 +87,18 @@ namespace MonoBehavior.Managers
 
         [Header("=== Map ===")] 
         public Map _map;
+
+        #region Introduction
+
+        [Header("=== Intro ===")] 
+        [SerializeField] private GameObject _introDialoguePrefab;
+        [SerializeField] private GameObject _regularDialoguePrefab;
+        [SerializeField] private Button     _introButtonPrefab;
+        [SerializeField] Button _choiceButtonRegularLeftPrefab;
+        [SerializeField] Button _choiceButtonRegularMiddlePrefab;
+        [SerializeField] Button _choiceButtonRegularRightPrefab;
+        
+        #endregion 
         
         // Dialogue
         string _currentDialogue;
@@ -122,6 +134,7 @@ namespace MonoBehavior.Managers
         [HideInInspector] public UnityEvent PhaseEnded;
         [HideInInspector] public UnityEvent NextDialogue;
         [HideInInspector] public UnityEvent ClearUI;
+        [HideInInspector] public UnityEvent IntroEnded;
     
         #endregion
     
@@ -138,63 +151,14 @@ namespace MonoBehavior.Managers
         
             // Connect Attributes
             _uiParent = GameObject.Find("Canvas/ACTING_PART").gameObject;
-            _dialogueBox    = _uiParent.transform.Find("DialogueBox").gameObject;
-            _dialogueText   = _uiParent.transform.Find("DialogueBox/DialogueText").GetComponent<TextMeshProUGUI>();
-            _speakerText    = _uiParent.transform.Find("DialogueBox/SpeakerText").GetComponent<TextMeshProUGUI>();
-            _masks          = _uiParent.transform.Find("DialogueBox/Masks").gameObject;
-            _tagsText       = _uiParent.transform.Find("TagsText").GetComponent<TextMeshProUGUI>();
-            _nextDialogueIndicator = _uiParent.transform.Find("NextDialogueIndicator").GetComponent<RawImage>();
-            _historyBox     = _uiParent.transform.Find("History").gameObject;
-            _historyText    = _historyBox.transform.Find("Scroll View/Viewport/Content").GetComponent<TextMeshProUGUI>();
+            _dialogueBox = Instantiate(_regularDialoguePrefab, _uiParent.transform);
+            _dialogueBox.gameObject.name = _dialogueBox.gameObject.name.Remove(_dialogueBox.gameObject.name.IndexOf('('));
 
-            _particleSystemBoo = _uiParent.transform.Find("UIParticleBoo").GetComponentInChildren<ParticleSystem>();
-            _particleSystemCry = _uiParent.transform.Find("UIParticleCry").GetComponentInChildren<ParticleSystem>();
+            ConnectAttributes();
+            ConnectEvents();
+            SetupSets(); 
             
-            _dialogueTypewriter = _dialogueText.GetComponent<TypewriterCore>();
-            _prompterTypewriter = _uiParent.transform.Find("PROMPTER_PART/DialogueBox/DialogueText").GetComponent<TypewriterCore>();
-
-            _wheel = GameObject.Find("WheelSupport").GetComponent<Wheel>();
-            _map = GameObject.Find("Map").GetComponent<Map>();
-            
-            if (_dialogueTypewriter == null)
-                Debug.LogError("AHH");
-            if (_prompterTypewriter == null)
-                Debug.LogError("OHH");
-            
-            var dirPos = GameObject.Find("Directions").transform.position;
-            // Front
-            _directions.Add(Constants.StageFront, dirPos + new Vector3(30, 0, 0));
-            // Back
-            _directions.Add(Constants.StageBack, dirPos + new Vector3(-30, 0, 0));
-            // Garden
-            _directions.Add(Constants.StageGarden, dirPos + new Vector3(0, 0, -30));
-            // Courtyard
-            _directions.Add(Constants.StageCourtyard, dirPos + new Vector3(0, 0, 30));
-
-            foreach (var pair in _directions)
-            {
-                Debug.Log($"Awake > {pair.Key}: {pair.Value}");
-            }
-            
-            
-            _nextDialogueIndicator.gameObject.SetActive(false);
-            
-            
-            // Connect Events
-            PhaseStart.AddListener(OnPhaseStart);
-            PhaseEnded.AddListener(OnPhaseEnded);
-            ClearUI.AddListener(OnClearUI);
-        
-            // _dialogueTypewriter.onTextShowed.AddListener(DialogueTextFinished);
-            // _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
-            
-            _setBarge   = Instantiate(_setBarge,    GameObject.Find("Environment").transform);
-            _setCale    = Instantiate(_setCale,     GameObject.Find("Environment").transform);
-            //_setPort    = Instantiate(_setPort,   GameObject.Find("Environment").transform);
-            _setChurch  = Instantiate(_setChurch,   GameObject.Find("Environment").transform);
-            _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
-            _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
-            _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
+            SetDirections();    // For tag #look
             
             _canContinueDialogue = true;
         }
@@ -581,6 +545,23 @@ namespace MonoBehavior.Managers
             return _currentDialogue == String.Empty || _currentDialogue.Length <= 1;
         }
 
+
+        void SetIntro()
+        {
+            DestroyImmediate(_dialogueBox);
+            _dialogueBox = Instantiate(_introDialoguePrefab, _uiParent.transform);
+            
+            _dialogueBox.gameObject.name = 
+                _dialogueBox.gameObject.name.Remove(_dialogueBox.gameObject.name.IndexOf('(')).Remove(0, 5);
+            
+            _choiceButtonLeftPrefab     = _introButtonPrefab;
+            _choiceButtonMiddlePrefab   = _introButtonPrefab;
+            _choiceButtonRightPrefab    = _introButtonPrefab;
+
+            ConnectAttributes();
+            ClearUI.Invoke();
+        }
+        
         #endregion
 
         #region TypeWriting
@@ -688,6 +669,9 @@ namespace MonoBehavior.Managers
         {
             _uiParent.SetActive(true);
 
+            if (GameManager.Instance._intro)
+                SetIntro();
+                
             GameManager.Instance.GetPlayer()._character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
             GameManager.Instance.GetPlayer()._character.strength.SetupBase((int)GameManager.Instance._story.variablesState["p_stre"]);
             GameManager.Instance.GetPlayer()._character.dexterity.SetupBase((int)GameManager.Instance._story.variablesState["p_dext"]);
@@ -734,6 +718,21 @@ namespace MonoBehavior.Managers
         }
         
 
+        void OnIntroEnded()
+        {
+            Debug.Log("AM.IntroEnded is invoke");
+            // _dialogueBox
+            DestroyImmediate(_dialogueBox);
+            _dialogueBox = Instantiate(_regularDialoguePrefab, _uiParent.transform);
+            _dialogueBox.gameObject.name = 
+                _dialogueBox.gameObject.name.Remove(_dialogueBox.gameObject.name.IndexOf('('));
+
+            _choiceButtonLeftPrefab = _choiceButtonRegularLeftPrefab;
+            _choiceButtonMiddlePrefab = _choiceButtonRegularMiddlePrefab;
+            _choiceButtonRightPrefab = _choiceButtonRegularRightPrefab;
+
+            ConnectAttributes();
+            ClearUI.Invoke();
         }
         
         #endregion
@@ -745,6 +744,7 @@ namespace MonoBehavior.Managers
         {
             switch (words[0])
             {
+                case Constants.TagIntro:    HandleTagIntro();                             break;
                 case Constants.TagMove:     HandleTagMove(words.Skip(1).ToArray());     break;
                 case Constants.TagPosition: HandleTagPosition(words.Skip(1).ToArray()); break;
                 case Constants.TagSet:      HandleTagSet(words[1]);                         break;
@@ -767,6 +767,12 @@ namespace MonoBehavior.Managers
         {
             //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > TagAction is over =======");
             _isActionDone = true;
+        }
+        
+        void HandleTagIntro()
+        {
+            GameManager.Instance._intro = true;
+            SetIntro();
         }
         
         void HandleTagActor(string[] data)
@@ -796,6 +802,9 @@ namespace MonoBehavior.Managers
         {
             Debug.Log($"AM.HandleTagSet > Change from {_stage} to {location}");
             _stage = location;
+            
+            if (GameManager.Instance._intro)
+                IntroEnded.Invoke();
             
             // reset character._onStage 
             foreach (var character in GameManager.Instance._characters)
