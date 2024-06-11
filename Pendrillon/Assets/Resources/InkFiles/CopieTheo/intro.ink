@@ -5,10 +5,11 @@
 -> archetype_choice
 
 = archetype_choice
+#intro
 // Define the actors of the scene
 #actor:Player:PLAYER:VOYAGEUR
 // Set the location
-#set:barge
+//#set:barge
 // Set the actor's positions
 #position:Player:4:1
 #position:Passeur:4:3
