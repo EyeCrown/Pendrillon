@@ -76,7 +76,6 @@ namespace MonoBehavior.Managers
         [Header("=== Debug ===")]
         [SerializeField] private bool _goDirectToFight;
 
-        public int _charisma = 0;
         
         #endregion
         
@@ -298,7 +297,6 @@ namespace MonoBehavior.Managers
         
         void GeneratePlayerStats()
         {
-
             _player._character.name = "Player";//(string) _story.variablesState["p_name"];
             _player._character.hp = (int) _story.variablesState["p_hp"];
             
@@ -309,13 +307,6 @@ namespace MonoBehavior.Managers
             _player._character.luck.SetupBase((int)_story.variablesState["p_luck"]);
             
             Debug.Log($"Player data: {_player._character}");
-        }
-        
-
-        void UpdateCharismaVariable(int newValue)
-        {
-            _charisma = newValue;
-            
         }
         
         #region Coroutines
