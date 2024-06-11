@@ -10,6 +10,11 @@
 				<ActorMixer Name="Environment" ID="{F73ECFB6-17CD-4581-80B4-3E22E3DF3DF3}" ShortID="173600037">
 					<PropertyList>
 						<Property Name="Color" Type="int16" Value="4"/>
+						<Property Name="MakeUpGain" Type="Real64">
+							<ValueList>
+								<Value>4</Value>
+							</ValueList>
+						</Property>
 						<Property Name="OverrideColor" Type="bool" Value="True"/>
 					</PropertyList>
 					<ReferenceList>
@@ -23,6 +28,11 @@
 					<ChildrenList>
 						<ActorMixer Name="AMB_Theater" ID="{F4BDEDAC-420E-4C21-A383-536C0DB068F1}" ShortID="789678465">
 							<PropertyList>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
 								<Property Name="Volume" Type="Real64">
 									<ValueList>
 										<Value>-5</Value>
@@ -1398,114 +1408,6 @@
 															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 														</Reference>
 													</ReferenceList>
-													<ChildrenList>
-														<RandomSequenceContainer Name="SFX_Theater_CrowdNeutral" ID="{2E1C7911-F64E-4AF9-B095-119F1EBCF557}" ShortID="759371250">
-															<PropertyList>
-																<Property Name="Volume" Type="Real64">
-																	<ValueList>
-																		<Value>-7</Value>
-																	</ValueList>
-																</Property>
-															</PropertyList>
-															<ReferenceList>
-																<Reference Name="Conversion">
-																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-																</Reference>
-																<Reference Name="OutputBus">
-																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-																</Reference>
-															</ReferenceList>
-															<ChildrenList>
-																<Sound Name="SFX_Theater_CrowdHype_CrowdNeutral_1" ID="{589E77F2-AFD8-40DB-BD96-1A12562FE2A1}" ShortID="175158330">
-																	<PropertyList>
-																		<Property Name="Weight" Type="Real64">
-																			<ValueList>
-																				<Value>79</Value>
-																			</ValueList>
-																		</Property>
-																	</PropertyList>
-																	<ReferenceList>
-																		<Reference Name="Conversion">
-																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-																		</Reference>
-																		<Reference Name="OutputBus">
-																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-																		</Reference>
-																	</ReferenceList>
-																	<ChildrenList>
-																		<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdNeutral_1" ID="{F2C9EC16-4829-442C-AC83-88F3C61C5453}">
-																			<Language>SFX</Language>
-																			<AudioFile>SFX_Theater_CrowdHype_CrowdNeutral_1.wav</AudioFile>
-																			<MediaIDList>
-																				<MediaID ID="800469680"/>
-																			</MediaIDList>
-																		</AudioFileSource>
-																	</ChildrenList>
-																	<ActiveSourceList>
-																		<ActiveSource Name="SFX_Theater_CrowdHype_CrowdNeutral_1" ID="{F2C9EC16-4829-442C-AC83-88F3C61C5453}" Platform="Linked"/>
-																	</ActiveSourceList>
-																</Sound>
-																<Sound Name="SFX_Theater_CrowdHype_CrowdNeutral_2" ID="{C3AED565-067A-4E29-A74B-93B4EB212544}" ShortID="986387192">
-																	<PropertyList>
-																		<Property Name="Weight" Type="Real64">
-																			<ValueList>
-																				<Value>42</Value>
-																			</ValueList>
-																		</Property>
-																	</PropertyList>
-																	<ReferenceList>
-																		<Reference Name="Conversion">
-																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-																		</Reference>
-																		<Reference Name="OutputBus">
-																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-																		</Reference>
-																	</ReferenceList>
-																	<ChildrenList>
-																		<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdNeutral_2" ID="{7424279C-069D-4695-B295-42F862972CFD}">
-																			<Language>SFX</Language>
-																			<AudioFile>SFX_Theater_CrowdHype_CrowdNeutral_2.wav</AudioFile>
-																			<MediaIDList>
-																				<MediaID ID="286461623"/>
-																			</MediaIDList>
-																		</AudioFileSource>
-																	</ChildrenList>
-																	<ActiveSourceList>
-																		<ActiveSource Name="SFX_Theater_CrowdHype_CrowdNeutral_2" ID="{7424279C-069D-4695-B295-42F862972CFD}" Platform="Linked"/>
-																	</ActiveSourceList>
-																</Sound>
-																<Sound Name="SFX_Theater_CrowdHype_CrowdNeutral_3" ID="{2984558E-9327-4691-8D59-67A0DAF061FF}" ShortID="1070935964">
-																	<PropertyList>
-																		<Property Name="Weight" Type="Real64">
-																			<ValueList>
-																				<Value>41</Value>
-																			</ValueList>
-																		</Property>
-																	</PropertyList>
-																	<ReferenceList>
-																		<Reference Name="Conversion">
-																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-																		</Reference>
-																		<Reference Name="OutputBus">
-																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-																		</Reference>
-																	</ReferenceList>
-																	<ChildrenList>
-																		<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdNeutral_3" ID="{2C10DBFA-8359-4362-9FC0-585D28EC0AA9}">
-																			<Language>SFX</Language>
-																			<AudioFile>SFX_Theater_CrowdHype_CrowdNeutral_3.wav</AudioFile>
-																			<MediaIDList>
-																				<MediaID ID="197874328"/>
-																			</MediaIDList>
-																		</AudioFileSource>
-																	</ChildrenList>
-																	<ActiveSourceList>
-																		<ActiveSource Name="SFX_Theater_CrowdHype_CrowdNeutral_3" ID="{2C10DBFA-8359-4362-9FC0-585D28EC0AA9}" Platform="Linked"/>
-																	</ActiveSourceList>
-																</Sound>
-															</ChildrenList>
-														</RandomSequenceContainer>
-													</ChildrenList>
 												</BlendContainer>
 												<BlendContainer Name="SFX_Theater_CrowdGlobalUnhappy" ID="{F949D3A8-1DEA-4D0C-B9C3-3D68EDC31C83}" ShortID="46766186">
 													<ReferenceList>
@@ -2403,35 +2305,6 @@
 													</ChildrenList>
 													<ActiveSourceList>
 														<ActiveSource Name="SFX_Theater_CrowdHype_CrowdUnhappyRND_8" ID="{C4ABBA35-A287-4900-AE93-E346616894D1}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="SFX_Theater_CrowdHype_Laughing" ID="{CEC1EE1F-797A-42F6-9D6C-0BCAC05D430A}" ShortID="622712830">
-													<PropertyList>
-														<Property Name="MakeUpGain" Type="Real64">
-															<ValueList>
-																<Value>4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_Theater_CrowdHype_Laughing" ID="{26091872-66DF-4444-B9E9-66753FB5EC4B}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_Theater_CrowdHype_Laughing.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="469446100"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_Theater_CrowdHype_Laughing" ID="{26091872-66DF-4444-B9E9-66753FB5EC4B}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 												<Sound Name="SFX_Theater_CrowdHype_ApplauseStart" ID="{2B75AD9F-B8A5-4F19-9BE9-BC21A27C006F}" ShortID="422818261">
@@ -7285,671 +7158,6 @@
 														<ActiveSource Name="Cute_15-003" ID="{6D61DF38-28F5-4E98-B4CD-E58967893CA3}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
-												<Sound Name="Laugh_End-001" ID="{D146F706-9A5F-479A-8C3F-5C567D949B8E}" ShortID="453688828">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_End-001" ID="{C7638D9B-1A54-4B20-96CA-97C62C95AAA5}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_End-001.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="553104796"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_End-001" ID="{C7638D9B-1A54-4B20-96CA-97C62C95AAA5}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_End-002" ID="{3694F079-3DFB-4318-BC4D-1FBCAF9BA546}" ShortID="28826486">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_End-002" ID="{E80B2EE7-BB87-4AA7-8A09-DBE5BEE09A36}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_End-002.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="568460084"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_End-002" ID="{E80B2EE7-BB87-4AA7-8A09-DBE5BEE09A36}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_End-003" ID="{0ECDC189-A783-4B21-8998-B9669765A4FC}" ShortID="164545442">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_End-003" ID="{5E7AC1D5-4E20-4FB0-8F03-AB4CF326CCFA}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_End-003.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="808827452"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_End-003" ID="{5E7AC1D5-4E20-4FB0-8F03-AB4CF326CCFA}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_End-004" ID="{D34A1DC8-3929-43B8-9953-20625990FBFC}" ShortID="823680376">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_End-004" ID="{2F5BD696-8BB2-4BB5-9281-114548D07B43}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_End-004.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="1020798651"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_End-004" ID="{2F5BD696-8BB2-4BB5-9281-114548D07B43}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Loop-001" ID="{C4AE50F8-B48A-4117-8038-42D0FDE22C35}" ShortID="495652034">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Loop-001" ID="{354FEE9B-A493-44FC-B227-AF73D339ED72}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Loop-001.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="1073470351"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Loop-001" ID="{354FEE9B-A493-44FC-B227-AF73D339ED72}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Loop-002" ID="{D9F355B0-EB64-40F2-A8C2-D189AE0F53F0}" ShortID="558891084">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Loop-002" ID="{9E8BB27B-0658-4C84-B4F0-F817D01DBBE3}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Loop-002.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="788589716"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Loop-002" ID="{9E8BB27B-0658-4C84-B4F0-F817D01DBBE3}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Loop-003" ID="{BCFFEC7C-EA30-4694-BD60-B928B2AACAAC}" ShortID="353980268">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Loop-003" ID="{8E0B6B6C-79E7-4BC9-BA13-10D61727B2E6}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Loop-003.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="373292435"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Loop-003" ID="{8E0B6B6C-79E7-4BC9-BA13-10D61727B2E6}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Loop-004" ID="{631D406B-FDF3-42C9-AC01-89786201B0AA}" ShortID="447624947">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Loop-004" ID="{AFF061EE-A8B3-4F82-9A2D-597242A9E647}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Loop-004.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="623717850"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Loop-004" ID="{AFF061EE-A8B3-4F82-9A2D-597242A9E647}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Loop-005" ID="{20C6F2E3-B170-4E5A-AD70-C6465A6D576B}" ShortID="438195873">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Loop-005" ID="{FC5A2C58-81DF-429E-96CD-524B4E1F3626}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Loop-005.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="454790840"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Loop-005" ID="{FC5A2C58-81DF-429E-96CD-524B4E1F3626}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Loop-006" ID="{D0CEEA42-07E0-4BF8-9A58-2F11E9AD3942}" ShortID="825272386">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Loop-006" ID="{EFE9CD30-CC4C-49F1-AB24-BB29E6C8E85F}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Loop-006.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="800442352"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Loop-006" ID="{EFE9CD30-CC4C-49F1-AB24-BB29E6C8E85F}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Loop-007" ID="{DA32714C-9CD8-4917-9647-4D0EC7DF3F0D}" ShortID="104921345">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Loop-007" ID="{20A74F77-552F-4F37-97FE-DF64E7CFE0A3}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Loop-007.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="455293543"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Loop-007" ID="{20A74F77-552F-4F37-97FE-DF64E7CFE0A3}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Loop-008" ID="{C1DDCE00-4981-489F-B7A1-BFCC20F66B4D}" ShortID="160989439">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Loop-008" ID="{63F5B614-F6F0-4A09-B8CE-336A8C834CAF}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Loop-008.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="1012861845"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Loop-008" ID="{63F5B614-F6F0-4A09-B8CE-336A8C834CAF}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Loop-009" ID="{97269D47-BEDA-406E-835C-484D7AAA6DE6}" ShortID="793900849">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Loop-009" ID="{C604DD3F-AF61-4DD2-8C3E-6C915AA813F5}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Loop-009.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="757718628"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Loop-009" ID="{C604DD3F-AF61-4DD2-8C3E-6C915AA813F5}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Loop-010" ID="{6F4E3644-2EB3-491B-A430-3CB4DD3E772F}" ShortID="383303575">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Loop-010" ID="{3C9BE12A-13C4-4756-B0A6-D5ABA1338262}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Loop-010.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="1051350135"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Loop-010" ID="{3C9BE12A-13C4-4756-B0A6-D5ABA1338262}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Start-001" ID="{32457CC2-AF8A-4606-9174-CFD76549ACE5}" ShortID="675129699">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Start-001" ID="{FAC20204-7670-49D1-9B2D-96B30B69F0D8}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Start-001.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="881480617"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Start-001" ID="{FAC20204-7670-49D1-9B2D-96B30B69F0D8}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Start-002" ID="{7ACB6C24-1DF6-47A3-A664-8FDFD40E63D1}" ShortID="496134967">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Start-002" ID="{38DB4554-E426-4006-B248-D28920642121}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Start-002.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="222011772"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Start-002" ID="{38DB4554-E426-4006-B248-D28920642121}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Start-003" ID="{ADE7B55F-826F-461F-A7F4-7E004AC9BB6A}" ShortID="802503568">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Start-003" ID="{B7FD2101-1888-48EB-935E-0642017EE784}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Start-003.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="917423320"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Start-003" ID="{B7FD2101-1888-48EB-935E-0642017EE784}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Start-004" ID="{748B2C2D-FE67-4F99-8A90-3FDB15A85B75}" ShortID="973635001">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Start-004" ID="{E5A8DB91-62CB-45E1-BE51-3C64065F9C40}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Start-004.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="479278076"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Start-004" ID="{E5A8DB91-62CB-45E1-BE51-3C64065F9C40}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Laugh_Start-005" ID="{14601968-8612-44D5-922C-013493C4C486}" ShortID="745378455">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Laugh_Start-005" ID="{C64A6D7F-495B-4E43-B413-B75C2A3400F8}">
-															<Language>SFX</Language>
-															<AudioFile>Laugh_Start-005.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="847475115"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Laugh_Start-005" ID="{C64A6D7F-495B-4E43-B413-B75C2A3400F8}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
 												<Sound Name="PlayerFail_08-001" ID="{8DE4F0F2-85A2-4555-865F-5D44A3A7D217}" ShortID="167918182">
 													<PropertyList>
 														<Property Name="UserAuxSendVolume0" Type="Real64">
@@ -8718,321 +7926,6 @@
 													</ChildrenList>
 													<ActiveSourceList>
 														<ActiveSource Name="WallaOnlySingle_ovation-006" ID="{43C2EB3A-CB7E-4542-B7A9-E33BE045A19E}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Whispers_End-001" ID="{65D714F5-BEBA-475D-BBC1-4657E4E9FBF4}" ShortID="685349932">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Whispers_End-001" ID="{06CD008F-312D-458D-9D72-3606415E1DA0}">
-															<Language>SFX</Language>
-															<AudioFile>Whispers_End-001.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="775644139"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Whispers_End-001" ID="{06CD008F-312D-458D-9D72-3606415E1DA0}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Whispers_End-002" ID="{D909D7E4-53D1-4C1C-B3E8-B2E3F3575ED0}" ShortID="883844092">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Whispers_End-002" ID="{3265F0C1-8428-4A46-BCC7-CF4578BF289C}">
-															<Language>SFX</Language>
-															<AudioFile>Whispers_End-002.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="496134875"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Whispers_End-002" ID="{3265F0C1-8428-4A46-BCC7-CF4578BF289C}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Whispers_Loop-001" ID="{A2327214-B563-488B-80B2-0F71AA916A12}" ShortID="211347886">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Whispers_Loop-001" ID="{4CE1D8A2-E84D-41CF-8BF3-2C04D0A80E86}">
-															<Language>SFX</Language>
-															<AudioFile>Whispers_Loop-001.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="948019163"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Whispers_Loop-001" ID="{4CE1D8A2-E84D-41CF-8BF3-2C04D0A80E86}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Whispers_Loop-002" ID="{E92EB808-A345-4F10-A123-6C870B5A2AC8}" ShortID="639253629">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Whispers_Loop-002" ID="{AB632898-D12C-47DD-BA31-6B2A5DB01557}">
-															<Language>SFX</Language>
-															<AudioFile>Whispers_Loop-002.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="722496134"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Whispers_Loop-002" ID="{AB632898-D12C-47DD-BA31-6B2A5DB01557}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Whispers_Loop-003" ID="{27AE54BA-654F-457B-B0CE-E79577E6C728}" ShortID="748912563">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Whispers_Loop-003" ID="{5ABB99E1-5EC0-465C-9E1C-528137FF9056}">
-															<Language>SFX</Language>
-															<AudioFile>Whispers_Loop-003.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="723761029"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Whispers_Loop-003" ID="{5ABB99E1-5EC0-465C-9E1C-528137FF9056}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Whispers_Loop-004" ID="{BCF994EC-A7B2-4EAB-ABFA-D6FFA4EBF040}" ShortID="824775720">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Whispers_Loop-004" ID="{328C98EB-F91F-4607-8167-F1F5AB8F4DD0}">
-															<Language>SFX</Language>
-															<AudioFile>Whispers_Loop-004.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="579303990"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Whispers_Loop-004" ID="{328C98EB-F91F-4607-8167-F1F5AB8F4DD0}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Whispers_Loop-005" ID="{AB0C74E9-9D7D-4881-9988-F1335A45FD56}" ShortID="1055890305">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Whispers_Loop-005" ID="{3A152856-9A5A-47A7-9842-5C1E774983FF}">
-															<Language>SFX</Language>
-															<AudioFile>Whispers_Loop-005.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="362370015"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Whispers_Loop-005" ID="{3A152856-9A5A-47A7-9842-5C1E774983FF}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Whispers_Start-001" ID="{58053C08-74CC-4BF9-98B7-267C065754AE}" ShortID="671013984">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Whispers_Start-001" ID="{B087CB6A-9EC6-41CD-AC2B-96E5E097B4F5}">
-															<Language>SFX</Language>
-															<AudioFile>Whispers_Start-001.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="1004102871"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Whispers_Start-001" ID="{B087CB6A-9EC6-41CD-AC2B-96E5E097B4F5}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Whispers_Start-002" ID="{47F1D91A-43D2-4B05-953F-08A5B587B58F}" ShortID="332795611">
-													<PropertyList>
-														<Property Name="UserAuxSendVolume0" Type="Real64">
-															<ValueList>
-																<Value>-4</Value>
-															</ValueList>
-														</Property>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
-															<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-														<Reference Name="UserAuxSend0">
-															<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Whispers_Start-002" ID="{A1C54A98-6B13-4170-90F9-611664C72776}">
-															<Language>SFX</Language>
-															<AudioFile>Whispers_Start-002.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="744510117"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Whispers_Start-002" ID="{A1C54A98-6B13-4170-90F9-611664C72776}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -10730,6 +9623,1506 @@
 												</ObjectList>
 											</ObjectLists>
 										</BlendContainer>
+										<ActorMixer Name="ENV_Theater_Crowd_Laugh" ID="{DEBD7A88-B367-464E-8731-3A4BCAE7D60E}" ShortID="940180848">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<BlendContainer Name="LaughGenerator" ID="{F4F6816F-EB26-4CC3-9E15-C91B43BD50AE}" ShortID="334075471">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<RandomSequenceContainer Name="LaughGenerator3" ID="{78BB2D98-40CF-40DB-9CCF-A62DB2532564}" ShortID="498655064">
+															<PropertyList>
+																<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+																<Property Name="UserAuxSendVolume0" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																	<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+																<Reference Name="UserAuxSend0">
+																	<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<RandomSequenceContainer Name="LaughEnd" ID="{4947E97A-150F-471B-8362-1BA0DCE043A8}" ShortID="591384949">
+																	<PropertyList>
+																		<Property Name="UserAuxSendVolume0" Type="Real64">
+																			<ValueList>
+																				<Value>-4</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																			<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																		<Reference Name="UserAuxSend0">
+																			<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<Sound Name="Laugh_End-001" ID="{D146F706-9A5F-479A-8C3F-5C567D949B8E}" ShortID="453688828">
+																			<PropertyList>
+																				<Property Name="UserAuxSendVolume0" Type="Real64">
+																					<ValueList>
+																						<Value>-4</Value>
+																					</ValueList>
+																				</Property>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																					<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																				<Reference Name="UserAuxSend0">
+																					<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="Laugh_End-001" ID="{C7638D9B-1A54-4B20-96CA-97C62C95AAA5}">
+																					<Language>SFX</Language>
+																					<AudioFile>Laugh_End-001.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="553104796"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="Laugh_End-001" ID="{C7638D9B-1A54-4B20-96CA-97C62C95AAA5}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="Laugh_End-003" ID="{0ECDC189-A783-4B21-8998-B9669765A4FC}" ShortID="164545442">
+																			<PropertyList>
+																				<Property Name="UserAuxSendVolume0" Type="Real64">
+																					<ValueList>
+																						<Value>-4</Value>
+																					</ValueList>
+																				</Property>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																					<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																				<Reference Name="UserAuxSend0">
+																					<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="Laugh_End-003" ID="{5E7AC1D5-4E20-4FB0-8F03-AB4CF326CCFA}">
+																					<Language>SFX</Language>
+																					<AudioFile>Laugh_End-003.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="808827452"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="Laugh_End-003" ID="{5E7AC1D5-4E20-4FB0-8F03-AB4CF326CCFA}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="Laugh_End-004" ID="{D34A1DC8-3929-43B8-9953-20625990FBFC}" ShortID="823680376">
+																			<PropertyList>
+																				<Property Name="UserAuxSendVolume0" Type="Real64">
+																					<ValueList>
+																						<Value>-4</Value>
+																					</ValueList>
+																				</Property>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																					<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																				<Reference Name="UserAuxSend0">
+																					<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="Laugh_End-004" ID="{2F5BD696-8BB2-4BB5-9281-114548D07B43}">
+																					<Language>SFX</Language>
+																					<AudioFile>Laugh_End-004.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="1020798651"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="Laugh_End-004" ID="{2F5BD696-8BB2-4BB5-9281-114548D07B43}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="Laugh_End-002" ID="{3694F079-3DFB-4318-BC4D-1FBCAF9BA546}" ShortID="28826486">
+																			<PropertyList>
+																				<Property Name="UserAuxSendVolume0" Type="Real64">
+																					<ValueList>
+																						<Value>-4</Value>
+																					</ValueList>
+																				</Property>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																					<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																				<Reference Name="UserAuxSend0">
+																					<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="Laugh_End-002" ID="{E80B2EE7-BB87-4AA7-8A09-DBE5BEE09A36}">
+																					<Language>SFX</Language>
+																					<AudioFile>Laugh_End-002.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="568460084"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="Laugh_End-002" ID="{E80B2EE7-BB87-4AA7-8A09-DBE5BEE09A36}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																	</ChildrenList>
+																</RandomSequenceContainer>
+																<RandomSequenceContainer Name="LaughStartLoop3" ID="{D49E62D7-9291-4438-9261-E0360E942738}" ShortID="68069210">
+																	<PropertyList>
+																		<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																		<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																		<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<RandomSequenceContainer Name="LaughLoop" ID="{2AC07CBA-AD7D-40BB-BC60-2476AEE6DEA6}" ShortID="411771215">
+																			<PropertyList>
+																				<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
+																				<Property Name="PlayMechanismLoopCount" Type="int32" Value="1"/>
+																				<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																				<Property Name="UserAuxSendVolume0" Type="Real64">
+																					<ValueList>
+																						<Value>-4</Value>
+																					</ValueList>
+																				</Property>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																					<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																				<Reference Name="UserAuxSend0">
+																					<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<Sound Name="Laugh_Loop-001" ID="{C4AE50F8-B48A-4117-8038-42D0FDE22C35}" ShortID="495652034">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Loop-001" ID="{354FEE9B-A493-44FC-B227-AF73D339ED72}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Loop-001.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="1073470351"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Loop-001" ID="{354FEE9B-A493-44FC-B227-AF73D339ED72}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Loop-002" ID="{D9F355B0-EB64-40F2-A8C2-D189AE0F53F0}" ShortID="558891084">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Loop-002" ID="{9E8BB27B-0658-4C84-B4F0-F817D01DBBE3}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Loop-002.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="788589716"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Loop-002" ID="{9E8BB27B-0658-4C84-B4F0-F817D01DBBE3}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Loop-003" ID="{BCFFEC7C-EA30-4694-BD60-B928B2AACAAC}" ShortID="353980268">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Loop-003" ID="{8E0B6B6C-79E7-4BC9-BA13-10D61727B2E6}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Loop-003.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="373292435"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Loop-003" ID="{8E0B6B6C-79E7-4BC9-BA13-10D61727B2E6}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Loop-004" ID="{631D406B-FDF3-42C9-AC01-89786201B0AA}" ShortID="447624947">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Loop-004" ID="{AFF061EE-A8B3-4F82-9A2D-597242A9E647}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Loop-004.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="623717850"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Loop-004" ID="{AFF061EE-A8B3-4F82-9A2D-597242A9E647}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Loop-009" ID="{97269D47-BEDA-406E-835C-484D7AAA6DE6}" ShortID="793900849">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Loop-009" ID="{C604DD3F-AF61-4DD2-8C3E-6C915AA813F5}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Loop-009.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="757718628"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Loop-009" ID="{C604DD3F-AF61-4DD2-8C3E-6C915AA813F5}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Loop-010" ID="{6F4E3644-2EB3-491B-A430-3CB4DD3E772F}" ShortID="383303575">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Loop-010" ID="{3C9BE12A-13C4-4756-B0A6-D5ABA1338262}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Loop-010.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="1051350135"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Loop-010" ID="{3C9BE12A-13C4-4756-B0A6-D5ABA1338262}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Loop-006" ID="{D0CEEA42-07E0-4BF8-9A58-2F11E9AD3942}" ShortID="825272386">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Loop-006" ID="{EFE9CD30-CC4C-49F1-AB24-BB29E6C8E85F}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Loop-006.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="800442352"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Loop-006" ID="{EFE9CD30-CC4C-49F1-AB24-BB29E6C8E85F}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Loop-005" ID="{20C6F2E3-B170-4E5A-AD70-C6465A6D576B}" ShortID="438195873">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Loop-005" ID="{FC5A2C58-81DF-429E-96CD-524B4E1F3626}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Loop-005.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="454790840"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Loop-005" ID="{FC5A2C58-81DF-429E-96CD-524B4E1F3626}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Loop-008" ID="{C1DDCE00-4981-489F-B7A1-BFCC20F66B4D}" ShortID="160989439">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Loop-008" ID="{63F5B614-F6F0-4A09-B8CE-336A8C834CAF}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Loop-008.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="1012861845"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Loop-008" ID="{63F5B614-F6F0-4A09-B8CE-336A8C834CAF}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Loop-007" ID="{DA32714C-9CD8-4917-9647-4D0EC7DF3F0D}" ShortID="104921345">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Loop-007" ID="{20A74F77-552F-4F37-97FE-DF64E7CFE0A3}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Loop-007.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="455293543"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Loop-007" ID="{20A74F77-552F-4F37-97FE-DF64E7CFE0A3}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																			</ChildrenList>
+																		</RandomSequenceContainer>
+																		<RandomSequenceContainer Name="LaughStart" ID="{DFE3BA42-8D2E-44A5-A382-5BF44A9109AC}" ShortID="278318721">
+																			<PropertyList>
+																				<Property Name="UserAuxSendVolume0" Type="Real64">
+																					<ValueList>
+																						<Value>-4</Value>
+																					</ValueList>
+																				</Property>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																					<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																				<Reference Name="UserAuxSend0">
+																					<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<Sound Name="Laugh_Start-003" ID="{ADE7B55F-826F-461F-A7F4-7E004AC9BB6A}" ShortID="802503568">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Start-003" ID="{B7FD2101-1888-48EB-935E-0642017EE784}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Start-003.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="917423320"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Start-003" ID="{B7FD2101-1888-48EB-935E-0642017EE784}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Start-004" ID="{748B2C2D-FE67-4F99-8A90-3FDB15A85B75}" ShortID="973635001">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Start-004" ID="{E5A8DB91-62CB-45E1-BE51-3C64065F9C40}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Start-004.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="479278076"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Start-004" ID="{E5A8DB91-62CB-45E1-BE51-3C64065F9C40}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Start-002" ID="{7ACB6C24-1DF6-47A3-A664-8FDFD40E63D1}" ShortID="496134967">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Start-002" ID="{38DB4554-E426-4006-B248-D28920642121}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Start-002.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="222011772"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Start-002" ID="{38DB4554-E426-4006-B248-D28920642121}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Start-005" ID="{14601968-8612-44D5-922C-013493C4C486}" ShortID="745378455">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Start-005" ID="{C64A6D7F-495B-4E43-B413-B75C2A3400F8}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Start-005.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="847475115"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Start-005" ID="{C64A6D7F-495B-4E43-B413-B75C2A3400F8}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Laugh_Start-001" ID="{32457CC2-AF8A-4606-9174-CFD76549ACE5}" ShortID="675129699">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Laugh_Start-001" ID="{FAC20204-7670-49D1-9B2D-96B30B69F0D8}">
+																							<Language>SFX</Language>
+																							<AudioFile>Laugh_Start-001.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="881480617"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Laugh_Start-001" ID="{FAC20204-7670-49D1-9B2D-96B30B69F0D8}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																			</ChildrenList>
+																		</RandomSequenceContainer>
+																	</ChildrenList>
+																	<Playlist>
+																		<ItemRef Name="LaughStart" ID="{DFE3BA42-8D2E-44A5-A382-5BF44A9109AC}"/>
+																		<ItemRef Name="LaughLoop" ID="{2AC07CBA-AD7D-40BB-BC60-2476AEE6DEA6}"/>
+																		<ItemRef Name="LaughLoop" ID="{2AC07CBA-AD7D-40BB-BC60-2476AEE6DEA6}"/>
+																		<ItemRef Name="LaughLoop" ID="{2AC07CBA-AD7D-40BB-BC60-2476AEE6DEA6}"/>
+																	</Playlist>
+																</RandomSequenceContainer>
+															</ChildrenList>
+															<Playlist>
+																<ItemRef Name="LaughStartLoop3" ID="{D49E62D7-9291-4438-9261-E0360E942738}"/>
+																<ItemRef Name="LaughEnd" ID="{4947E97A-150F-471B-8362-1BA0DCE043A8}"/>
+															</Playlist>
+														</RandomSequenceContainer>
+														<Sound Name="SFX_Theater_CrowdHype_Laughing" ID="{CEC1EE1F-797A-42F6-9D6C-0BCAC05D430A}" ShortID="622712830">
+															<PropertyList>
+																<Property Name="InitialDelay" Type="Real64">
+																	<ValueList>
+																		<Value>0.5</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>-13</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="UserAuxSendVolume0" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																	<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+																<Reference Name="UserAuxSend0">
+																	<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="SFX_Theater_CrowdHype_Laughing" ID="{26091872-66DF-4444-B9E9-66753FB5EC4B}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="1.7906001984127"/>
+																		<Property Name="FadeInShape" Type="int16" Value="4"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<Language>SFX</Language>
+																	<AudioFile>SFX_Theater_CrowdHype_Laughing.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="469446100"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="SFX_Theater_CrowdHype_Laughing" ID="{26091872-66DF-4444-B9E9-66753FB5EC4B}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</BlendContainer>
+											</ChildrenList>
+										</ActorMixer>
+										<ActorMixer Name="ENV_Theater_Whisper" ID="{2B84CA68-92E7-42D2-8F2F-EC5E2715EB34}" ShortID="1040267191">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<BlendContainer Name="WhispersGenerator" ID="{5DF2AEEF-9141-4682-B085-22B89BF1F62C}" ShortID="440395171">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<RandomSequenceContainer Name="WhispersGenerator3" ID="{C57319FA-8648-4748-AD67-6FC5B604EF21}" ShortID="1018604190">
+															<PropertyList>
+																<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+																<Property Name="UserAuxSendVolume0" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																	<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+																<Reference Name="UserAuxSend0">
+																	<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<RandomSequenceContainer Name="WhispersEnd" ID="{C8583C3F-3C51-480F-9A3F-CFEC8EC560C4}" ShortID="879316725">
+																	<PropertyList>
+																		<Property Name="UserAuxSendVolume0" Type="Real64">
+																			<ValueList>
+																				<Value>-4</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																			<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																		<Reference Name="UserAuxSend0">
+																			<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<Sound Name="Whispers_End-002" ID="{D909D7E4-53D1-4C1C-B3E8-B2E3F3575ED0}" ShortID="883844092">
+																			<PropertyList>
+																				<Property Name="UserAuxSendVolume0" Type="Real64">
+																					<ValueList>
+																						<Value>-4</Value>
+																					</ValueList>
+																				</Property>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																					<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																				<Reference Name="UserAuxSend0">
+																					<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="Whispers_End-002" ID="{3265F0C1-8428-4A46-BCC7-CF4578BF289C}">
+																					<PropertyList>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1.27180208333333"/>
+																						<Property Name="FadeOutShape" Type="int16" Value="4"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>Whispers_End-002.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="496134875"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="Whispers_End-002" ID="{3265F0C1-8428-4A46-BCC7-CF4578BF289C}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																		<Sound Name="Whispers_End-001" ID="{65D714F5-BEBA-475D-BBC1-4657E4E9FBF4}" ShortID="685349932">
+																			<PropertyList>
+																				<Property Name="UserAuxSendVolume0" Type="Real64">
+																					<ValueList>
+																						<Value>-4</Value>
+																					</ValueList>
+																				</Property>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																					<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																				<Reference Name="UserAuxSend0">
+																					<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<AudioFileSource Name="Whispers_End-001" ID="{06CD008F-312D-458D-9D72-3606415E1DA0}">
+																					<PropertyList>
+																						<Property Name="FadeOutDuration" Type="Real64" Value="1.22959836769759"/>
+																						<Property Name="LoopBegin" Type="Real64" Value="0"/>
+																						<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																					</PropertyList>
+																					<Language>SFX</Language>
+																					<AudioFile>Whispers_End-001.wav</AudioFile>
+																					<MediaIDList>
+																						<MediaID ID="775644139"/>
+																					</MediaIDList>
+																				</AudioFileSource>
+																			</ChildrenList>
+																			<ActiveSourceList>
+																				<ActiveSource Name="Whispers_End-001" ID="{06CD008F-312D-458D-9D72-3606415E1DA0}" Platform="Linked"/>
+																			</ActiveSourceList>
+																		</Sound>
+																	</ChildrenList>
+																</RandomSequenceContainer>
+																<RandomSequenceContainer Name="LaughStartLoop3" ID="{8DD775AA-5B1B-41C2-AFCA-B9FA8FDFF96A}" ShortID="708010404">
+																	<PropertyList>
+																		<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																		<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																		<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<RandomSequenceContainer Name="WhispersLoop" ID="{DC97244A-ED1D-4C11-83D5-8B3C0BF78F29}" ShortID="1049466617">
+																			<PropertyList>
+																				<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
+																				<Property Name="PlayMechanismLoopCount" Type="int32" Value="1"/>
+																				<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+																				<Property Name="UserAuxSendVolume0" Type="Real64">
+																					<ValueList>
+																						<Value>-4</Value>
+																					</ValueList>
+																				</Property>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																					<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																				<Reference Name="UserAuxSend0">
+																					<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<Sound Name="Whispers_Loop-004" ID="{BCF994EC-A7B2-4EAB-ABFA-D6FFA4EBF040}" ShortID="824775720">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Whispers_Loop-004" ID="{328C98EB-F91F-4607-8167-F1F5AB8F4DD0}">
+																							<Language>SFX</Language>
+																							<AudioFile>Whispers_Loop-004.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="579303990"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Whispers_Loop-004" ID="{328C98EB-F91F-4607-8167-F1F5AB8F4DD0}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Whispers_Loop-003" ID="{27AE54BA-654F-457B-B0CE-E79577E6C728}" ShortID="748912563">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Whispers_Loop-003" ID="{5ABB99E1-5EC0-465C-9E1C-528137FF9056}">
+																							<Language>SFX</Language>
+																							<AudioFile>Whispers_Loop-003.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="723761029"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Whispers_Loop-003" ID="{5ABB99E1-5EC0-465C-9E1C-528137FF9056}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Whispers_Loop-005" ID="{AB0C74E9-9D7D-4881-9988-F1335A45FD56}" ShortID="1055890305">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Whispers_Loop-005" ID="{3A152856-9A5A-47A7-9842-5C1E774983FF}">
+																							<Language>SFX</Language>
+																							<AudioFile>Whispers_Loop-005.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="362370015"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Whispers_Loop-005" ID="{3A152856-9A5A-47A7-9842-5C1E774983FF}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Whispers_Loop-001" ID="{A2327214-B563-488B-80B2-0F71AA916A12}" ShortID="211347886">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Whispers_Loop-001" ID="{4CE1D8A2-E84D-41CF-8BF3-2C04D0A80E86}">
+																							<Language>SFX</Language>
+																							<AudioFile>Whispers_Loop-001.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="948019163"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Whispers_Loop-001" ID="{4CE1D8A2-E84D-41CF-8BF3-2C04D0A80E86}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Whispers_Loop-002" ID="{E92EB808-A345-4F10-A123-6C870B5A2AC8}" ShortID="639253629">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Whispers_Loop-002" ID="{AB632898-D12C-47DD-BA31-6B2A5DB01557}">
+																							<Language>SFX</Language>
+																							<AudioFile>Whispers_Loop-002.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="722496134"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Whispers_Loop-002" ID="{AB632898-D12C-47DD-BA31-6B2A5DB01557}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																			</ChildrenList>
+																		</RandomSequenceContainer>
+																		<RandomSequenceContainer Name="WhispersStart" ID="{12D82644-604D-474A-84AD-6C40A75EB521}" ShortID="785549629">
+																			<PropertyList>
+																				<Property Name="UserAuxSendVolume0" Type="Real64">
+																					<ValueList>
+																						<Value>-4</Value>
+																					</ValueList>
+																				</Property>
+																			</PropertyList>
+																			<ReferenceList>
+																				<Reference Name="Conversion">
+																					<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																				</Reference>
+																				<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																					<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																				</Reference>
+																				<Reference Name="OutputBus">
+																					<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																				<Reference Name="UserAuxSend0">
+																					<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																				</Reference>
+																			</ReferenceList>
+																			<ChildrenList>
+																				<Sound Name="Whispers_Start-001" ID="{58053C08-74CC-4BF9-98B7-267C065754AE}" ShortID="671013984">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Whispers_Start-001" ID="{B087CB6A-9EC6-41CD-AC2B-96E5E097B4F5}">
+																							<Language>SFX</Language>
+																							<AudioFile>Whispers_Start-001.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="1004102871"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Whispers_Start-001" ID="{B087CB6A-9EC6-41CD-AC2B-96E5E097B4F5}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																				<Sound Name="Whispers_Start-002" ID="{47F1D91A-43D2-4B05-953F-08A5B587B58F}" ShortID="332795611">
+																					<PropertyList>
+																						<Property Name="UserAuxSendVolume0" Type="Real64">
+																							<ValueList>
+																								<Value>-4</Value>
+																							</ValueList>
+																						</Property>
+																					</PropertyList>
+																					<ReferenceList>
+																						<Reference Name="Conversion">
+																							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																						</Reference>
+																						<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																							<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																						</Reference>
+																						<Reference Name="OutputBus">
+																							<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																						<Reference Name="UserAuxSend0">
+																							<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																						</Reference>
+																					</ReferenceList>
+																					<ChildrenList>
+																						<AudioFileSource Name="Whispers_Start-002" ID="{A1C54A98-6B13-4170-90F9-611664C72776}">
+																							<Language>SFX</Language>
+																							<AudioFile>Whispers_Start-002.wav</AudioFile>
+																							<MediaIDList>
+																								<MediaID ID="744510117"/>
+																							</MediaIDList>
+																						</AudioFileSource>
+																					</ChildrenList>
+																					<ActiveSourceList>
+																						<ActiveSource Name="Whispers_Start-002" ID="{A1C54A98-6B13-4170-90F9-611664C72776}" Platform="Linked"/>
+																					</ActiveSourceList>
+																				</Sound>
+																			</ChildrenList>
+																		</RandomSequenceContainer>
+																	</ChildrenList>
+																	<Playlist>
+																		<ItemRef Name="WhispersStart" ID="{12D82644-604D-474A-84AD-6C40A75EB521}"/>
+																		<ItemRef Name="WhispersLoop" ID="{DC97244A-ED1D-4C11-83D5-8B3C0BF78F29}"/>
+																		<ItemRef Name="WhispersLoop" ID="{DC97244A-ED1D-4C11-83D5-8B3C0BF78F29}"/>
+																		<ItemRef Name="WhispersLoop" ID="{DC97244A-ED1D-4C11-83D5-8B3C0BF78F29}"/>
+																	</Playlist>
+																</RandomSequenceContainer>
+															</ChildrenList>
+															<Playlist>
+																<ItemRef Name="LaughStartLoop3" ID="{8DD775AA-5B1B-41C2-AFCA-B9FA8FDFF96A}"/>
+																<ItemRef Name="WhispersEnd" ID="{C8583C3F-3C51-480F-9A3F-CFEC8EC560C4}"/>
+															</Playlist>
+														</RandomSequenceContainer>
+														<RandomSequenceContainer Name="SFX_Theater_CrowdNeutral" ID="{2E1C7911-F64E-4AF9-B095-119F1EBCF557}" ShortID="759371250">
+															<PropertyList>
+																<Property Name="InitialDelay" Type="Real64">
+																	<ValueList>
+																		<Value>1</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="MakeUpGain" Type="Real64">
+																	<ValueList>
+																		<Value>-10</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="UserAuxSendVolume0" Type="Real64">
+																	<ValueList>
+																		<Value>-4</Value>
+																	</ValueList>
+																</Property>
+																<Property Name="Volume" Type="Real64">
+																	<ValueList>
+																		<Value>-7</Value>
+																	</ValueList>
+																</Property>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="Effect0" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3">
+																	<ObjectRef Name="Crowd_Compressor" ID="{09EE0197-ABD5-42B3-9123-1EF2BF17C39D}" WorkUnitID="{C2C7763D-ADB6-4758-AC14-A997EBC7D969}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Crowd" ID="{A635A1CA-657F-46BD-A651-100F17BC286C}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+																<Reference Name="UserAuxSend0">
+																	<ObjectRef Name="Reverb_Crowd" ID="{84058263-865C-4A0B-9054-E7CD2976A2CC}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<Sound Name="SFX_Theater_CrowdHype_CrowdNeutral_1" ID="{589E77F2-AFD8-40DB-BD96-1A12562FE2A1}" ShortID="175158330">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>79</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdNeutral_1" ID="{F2C9EC16-4829-442C-AC83-88F3C61C5453}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="1.80412918814433"/>
+																				<Property Name="FadeInShape" Type="int16" Value="4"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="3.58495748664585"/>
+																				<Property Name="FadeOutShape" Type="int16" Value="4"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>SFX_Theater_CrowdHype_CrowdNeutral_1.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="800469680"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="SFX_Theater_CrowdHype_CrowdNeutral_1" ID="{F2C9EC16-4829-442C-AC83-88F3C61C5453}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="SFX_Theater_CrowdHype_CrowdNeutral_2" ID="{C3AED565-067A-4E29-A74B-93B4EB212544}" ShortID="986387192">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>42</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdNeutral_2" ID="{7424279C-069D-4695-B295-42F862972CFD}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="2.78027638172966"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="5.07247916666667"/>
+																				<Property Name="FadeOutShape" Type="int16" Value="4"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>SFX_Theater_CrowdHype_CrowdNeutral_2.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="286461623"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="SFX_Theater_CrowdHype_CrowdNeutral_2" ID="{7424279C-069D-4695-B295-42F862972CFD}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+																<Sound Name="SFX_Theater_CrowdHype_CrowdNeutral_3" ID="{2984558E-9327-4691-8D59-67A0DAF061FF}" ShortID="1070935964">
+																	<PropertyList>
+																		<Property Name="Weight" Type="Real64">
+																			<ValueList>
+																				<Value>41</Value>
+																			</ValueList>
+																		</Property>
+																	</PropertyList>
+																	<ReferenceList>
+																		<Reference Name="Conversion">
+																			<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																		</Reference>
+																		<Reference Name="OutputBus">
+																			<ObjectRef Name="Dry_Environment" ID="{52CA8D18-C316-46DB-BFEC-F8A187B2EC9F}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																		</Reference>
+																	</ReferenceList>
+																	<ChildrenList>
+																		<AudioFileSource Name="SFX_Theater_CrowdHype_CrowdNeutral_3" ID="{2C10DBFA-8359-4362-9FC0-585D28EC0AA9}">
+																			<PropertyList>
+																				<Property Name="FadeInDuration" Type="Real64" Value="2.8587167812142"/>
+																				<Property Name="FadeOutDuration" Type="Real64" Value="5.06376356672394"/>
+																				<Property Name="FadeOutShape" Type="int16" Value="4"/>
+																				<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																			</PropertyList>
+																			<Language>SFX</Language>
+																			<AudioFile>SFX_Theater_CrowdHype_CrowdNeutral_3.wav</AudioFile>
+																			<MediaIDList>
+																				<MediaID ID="197874328"/>
+																			</MediaIDList>
+																		</AudioFileSource>
+																	</ChildrenList>
+																	<ActiveSourceList>
+																		<ActiveSource Name="SFX_Theater_CrowdHype_CrowdNeutral_3" ID="{2C10DBFA-8359-4362-9FC0-585D28EC0AA9}" Platform="Linked"/>
+																	</ActiveSourceList>
+																</Sound>
+															</ChildrenList>
+														</RandomSequenceContainer>
+													</ChildrenList>
+												</BlendContainer>
+											</ChildrenList>
+										</ActorMixer>
 									</ChildrenList>
 								</ActorMixer>
 								<Sound Name="SFX_SC_Theater_TransitionBasic" ID="{807C26DE-D123-4C0E-8ADA-AEC791E8D4E0}" ShortID="704203577">
