@@ -109,7 +109,7 @@ VAR t_4_give_guards_surname = false
     {
         - t_souffleur_explanations_bell == false:
             SOUFFLEUR: Psssst... Hé, l'ami ! Tu as entendu ?
-            SOUFFLEUR: C'est la <shake>Cloche du Destin</shake> !
+            SOUFFLEUR: C'est la <shake>Cloche du Destin™</shake> !
             SOUFFLEUR: Enfin, c'est comme ça que <i>moi</i> je l'appelle.
             SOUFFLEUR: Tu l'entendras sonner lorsque tu feras un choix qui modifie le scénario de la pièce.
             SOUFFLEUR: Cela signifie que ton choix aura des conséquences <b>majeures</b> sur la suite de l’histoire !

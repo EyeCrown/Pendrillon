@@ -34,7 +34,7 @@ VAR has_fail = false
     * [Attendre plus fort.]
 - #audience:booing
 - SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #playsound:VOX_Souffleur_partenairedescene
-SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes talents !
+SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes <b>talents</b> !
 SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance !
     * [Effectuer une danse. {t(DEXT, 30)}]
         {sc(DEXT, 30): -> dancing_S | -> dancing_F}

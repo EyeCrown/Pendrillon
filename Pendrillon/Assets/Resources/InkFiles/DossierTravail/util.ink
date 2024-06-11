@@ -56,7 +56,7 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
     ~ temp result = true
     ~ D100 = roll_D100()
     {
-        - D100 < threshold:
+        - D100 <= threshold:
             ~ result = true
             // Modify the applausemeter
             ~ add_applausemeter(threshold_to_applausemeter_points(threshold, result))
