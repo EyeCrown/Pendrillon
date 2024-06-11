@@ -5,6 +5,7 @@ using System.Reflection;
 using Cinemachine;
 using Ink.Runtime;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.InputSystem;
 
 /*public enum GameState
@@ -81,6 +82,12 @@ namespace MonoBehavior.Managers
         
         #endregion
         
+        #region Events
+
+        public UnityEvent StartGame;
+
+        #endregion
+        
         
         #region UnityAPI
         private void Awake()
@@ -105,6 +112,7 @@ namespace MonoBehavior.Managers
             
             
             // Connect Events
+            StartGame.AddListener(OnStartGame);
             ActingManager.Instance.PhaseEnded.AddListener(PrepareFightingPhase);
             
             /*if (_inkAsset == null)
@@ -122,7 +130,7 @@ namespace MonoBehavior.Managers
             //FightingManager.Instance._player = GetPlayer();
             _cameraPerlin.m_AmplitudeGain = 0.0f;
 
-            BeginGame();
+            //StartGame.Invoke();
         }
         
         #endregion
@@ -310,6 +318,15 @@ namespace MonoBehavior.Managers
             
             Debug.Log($"Player data: {_player._character}");
         }
+
+        #region EventHandlers
+
+        void OnStartGame()
+        {
+            ActingManager.Instance.PhaseStart.Invoke();
+        }
+
+        #endregion
         
         #region Coroutines
 

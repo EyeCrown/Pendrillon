@@ -519,6 +519,21 @@ namespace MonoBehavior.Managers
                     return;
                 }
             }
+
+            if (GameManager.Instance._intro)
+                switch (choice.text)
+                {
+                    case Constants.ArchetypeCharisma:
+                        button.transform.Find(Constants.TypeCharisma).gameObject.SetActive(true);
+                        break;
+                    case Constants.ArchetypeStrength:
+                        button.transform.Find(Constants.TypeStrength).gameObject.SetActive(true);
+                        break;
+                    case Constants.ArchetypeDexterity:
+                        button.transform.Find(Constants.TypeDexterity).gameObject.SetActive(true);
+                        break;
+                }
+            
             //Debug.Log("AM.SetButtonType > This button is neutral");
             button.onClick.AddListener (delegate {
                 OnClickChoiceButton (choice);
@@ -721,6 +736,7 @@ namespace MonoBehavior.Managers
         void OnIntroEnded()
         {
             Debug.Log("AM.IntroEnded is invoke");
+            GameManager.Instance._intro = false;
             // _dialogueBox
             DestroyImmediate(_dialogueBox);
             _dialogueBox = Instantiate(_regularDialoguePrefab, _uiParent.transform);

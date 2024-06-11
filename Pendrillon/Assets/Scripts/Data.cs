@@ -139,4 +139,13 @@ public static class Constants
     };
 
     #endregion
+
+    #region PlayerArchetypes
+
+    public const string ArchetypeCharisma = "Beau Parleur";
+    public const string ArchetypeStrength = "Force de la Nature";
+    public const string ArchetypeDexterity = "Acrobate";
+
+
+    #endregion
 }
