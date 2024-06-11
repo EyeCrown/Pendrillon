@@ -114,16 +114,11 @@ namespace MonoBehavior.Managers
             SetupPlayer();
             SetupCharacters();
             SetupPrompter();
-
-            MakeObservables();
         }
 
         private void Start()
         {
-            
-            
             //FightingManager.Instance._player = GetPlayer();
-            
             _cameraPerlin.m_AmplitudeGain = 0.0f;
 
             BeginGame();
@@ -315,14 +310,7 @@ namespace MonoBehavior.Managers
             
             Debug.Log($"Player data: {_player._character}");
         }
-
-
-        void MakeObservables()
-        {
-            _story.ObserveVariable ("p_char", (string varName, object newValue) => {
-                UpdateCharismaVariable((int)newValue);
-            });
-        }
+        
 
         void UpdateCharismaVariable(int newValue)
         {
