@@ -7790,6 +7790,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 857762492}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2071823161
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3228335476676854271, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228335476676854271, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228335476676854271, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228335476676854271, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228335476676854271, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228335476676854271, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228335476676854271, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228335476676854271, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228335476676854271, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3228335476676854271, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3686644906744861465, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104915721346887347, guid: c956b8d9a85bb704a8bc463a79945077,
+        type: 3}
+      propertyPath: m_Name
+      value: --Sc_Eglise_Day--
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c956b8d9a85bb704a8bc463a79945077, type: 3}
 --- !u!1 &2081740125
 GameObject:
   m_ObjectHideFlags: 0
@@ -8234,7 +8307,7 @@ PrefabInstance:
     - target: {fileID: 8241601096825971287, guid: 59c0214aad52b934d9b76b043de5be64,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8838,6 +8911,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3734276304999477430, guid: 48dcf4c6f1defc142bc7429b7bd5bfc5,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4060207893892042792, guid: 48dcf4c6f1defc142bc7429b7bd5bfc5,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -9460,7 +9538,7 @@ PrefabInstance:
     - target: {fileID: 1685102184115991857, guid: 972e9abcfddb5174ba6e078bb3749ade,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3764644257076258234, guid: 972e9abcfddb5174ba6e078bb3749ade,
         type: 3}
@@ -9880,15 +9958,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6373372148567761976, guid: 9fc05f629b432fc4498ee03463af0180,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7104915721346887347, guid: 9fc05f629b432fc4498ee03463af0180,
         type: 3}
       propertyPath: m_Name
-      value: --Sc_Eglise--
+      value: --Sc_Eglise_Night--
       objectReference: {fileID: 0}
     - target: {fileID: 7104915721346887347, guid: 9fc05f629b432fc4498ee03463af0180,
         type: 3}
@@ -10702,7 +10775,6 @@ SceneRoots:
   - {fileID: 94348209}
   - {fileID: 1133153931}
   - {fileID: 5653439620246049656}
-  - {fileID: 5944730558518152481}
   - {fileID: 958408372}
   - {fileID: 1495872801}
   - {fileID: 1368766789}
@@ -10714,3 +10786,5 @@ SceneRoots:
   - {fileID: 4677662626329250584}
   - {fileID: 2107753172}
   - {fileID: 2939407294782573568}
+  - {fileID: 5944730558518152481}
+  - {fileID: 2071823161}
