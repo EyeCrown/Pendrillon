@@ -45,12 +45,6 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
         - pStat == "dext":
             ~ stat = p_dext
             ~ modifier = p_dext_mod
-        - pStat == "comp":
-            ~ stat = p_comp
-            ~ modifier = p_comp_mod
-        - pStat == "luck":
-            ~ stat = p_luck
-            ~ modifier = p_luck_mod
     }
     ~ temp threshold = ((stat*10)+pDifficulty+modifier)
     ~ temp result = true
@@ -99,14 +93,6 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
             ~ stat = p_dext
             ~ modifier = p_dext_mod
             ~ full_stat = "Dexterity"
-        - pStat == "comp":
-            ~ stat = p_comp
-            ~ modifier = p_comp_mod
-            ~ full_stat = "Composition"
-        - pStat == "luck":
-            ~ stat = p_luck
-            ~ modifier = p_luck_mod
-            ~ full_stat = "Luck"
     }
     ~ temp threshold = ((stat*10)+pDifficulty+modifier)
     // Print the percentage
