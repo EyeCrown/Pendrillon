@@ -116,9 +116,6 @@ public class Options : MonoBehaviour
             delegate { UpdateRTPC("UI_Volume",  _rtpcUIVolumeSlider.value); });
         _rtpcVoicesVolumeSlider.onValueChanged.AddListener(
             delegate { UpdateRTPC("Voices_Volume", _rtpcVoicesVolumeSlider.value); });
-        
-        // Toggles
-        
     }
 
     #endregion
@@ -144,10 +141,14 @@ public class Options : MonoBehaviour
         if (_panel.activeSelf)
         {
             _panel.SetActive(false);
+            Time.timeScale = 1.0f;
+            GameManager.Instance._playerInput.Player.Interact.Enable();
         }
         else
         {
             _panel.SetActive(true);
+            Time.timeScale = 0.0f;
+            GameManager.Instance._playerInput.Player.Interact.Disable();
         }
     }
     
