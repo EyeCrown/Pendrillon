@@ -206,34 +206,6 @@ namespace MonoBehavior.Managers
             _uiParent.SetActive(false);
         }
         
-        void Update()
-        {
-            
-            _dialogueBox.GetComponent<Image>().color = new Color(
-                _dialogueBox.GetComponent<Image>().color.r,
-                _dialogueBox.GetComponent<Image>().color.g,
-                _dialogueBox.GetComponent<Image>().color.b,
-                GameManager.Instance._opacityUI
-            );
-            var speakerBox = _uiParent.transform.Find("PROMPTER_PART/DialogueBox");
-            speakerBox.GetComponent<RawImage>().color = new Color(
-                speakerBox.GetComponent<RawImage>().color.r,
-                speakerBox.GetComponent<RawImage>().color.g,
-                speakerBox.GetComponent<RawImage>().color.b,
-                GameManager.Instance._opacityUI
-            );
-
-            /*foreach (Transform mask in _masks.transform)
-            {
-                mask.GetComponent<Image>().color = new Color(
-                    mask.GetComponent<Image>().color.r,
-                    mask.GetComponent<Image>().color.g,
-                    mask.GetComponent<Image>().color.b,
-                    GameManager.Instance._opacityUI
-                );
-            }*/
-        }
-        
         #endregion
 
         #region Methods
@@ -430,6 +402,100 @@ namespace MonoBehavior.Managers
                 //Debug.Log("No choices, so click can display text");
             }
         }
+
+
+        #region Setup
+
+        void ConnectAttributes()
+        {
+            // Attach to _dialogueBox
+            _dialogueBox    = _uiParent.transform.Find("DialogueBox").gameObject;
+            _dialogueText   = _dialogueBox.transform.Find("DialogueText").GetComponent<TextMeshProUGUI>();
+            _speakerText    = _dialogueBox.transform.Find("SpeakerText").GetComponent<TextMeshProUGUI>();
+            _masks          = _dialogueBox.transform.Find("Masks").gameObject;
+            
+            _dialogueTypewriter = _dialogueText.GetComponent<TypewriterCore>();
+            
+            // Attach History
+            _historyBox  = _uiParent.transform.Find("History").gameObject;
+            _historyText = _historyBox.transform.Find("Scroll View/Viewport/Content").GetComponent<TextMeshProUGUI>();
+
+            ConnectParticuleSystems();
+            
+            _prompterTypewriter = _uiParent.transform.Find("PROMPTER_PART/DialogueBox/DialogueText").GetComponent<TypewriterCore>();
+
+            _wheel = GameObject.Find("WheelSupport").GetComponent<Wheel>();
+            _map = GameObject.Find("Map").GetComponent<Map>();
+        }
+
+        void ConnectParticuleSystems()
+        {
+            // Attach Particule System 
+            _particleSystemBoo = _uiParent.transform.Find("UIParticleBoo").GetComponentInChildren<ParticleSystem>();
+            _particleSystemCry = _uiParent.transform.Find("UIParticleCry").GetComponentInChildren<ParticleSystem>();
+        }
+        
+        void SetDirections()
+        {            
+            // Set directions
+            var dirPos = GameObject.Find("Directions").transform.position;
+            _directions.Add(Constants.StageFront, dirPos + new Vector3(30, 0, 0));
+            _directions.Add(Constants.StageBack, dirPos + new Vector3(-30, 0, 0));
+            _directions.Add(Constants.StageGarden, dirPos + new Vector3(0, 0, -30));
+            _directions.Add(Constants.StageCourtyard, dirPos + new Vector3(0, 0, 30));
+        }
+
+
+        void ConnectEvents()
+        {
+            PhaseStart.AddListener(OnPhaseStart);
+            PhaseEnded.AddListener(OnPhaseEnded);
+            ClearUI.AddListener(OnClearUI);
+            IntroEnded.AddListener(OnIntroEnded);
+        }
+
+        void SetupSets()
+        {
+            _setBarge   = Instantiate(_setBarge,    GameObject.Find("Environment").transform);
+            _setCale    = Instantiate(_setCale,     GameObject.Find("Environment").transform);
+            //_setPort    = Instantiate(_setPort,   GameObject.Find("Environment").transform);
+            _setChurch  = Instantiate(_setChurch,   GameObject.Find("Environment").transform);
+            _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
+            _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
+            _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
+        }
+        
+        #endregion
+
+        public void ChangeOpacityUI(float value)
+        {
+            GameManager.Instance._opacityUI = value;
+            
+            _dialogueBox.GetComponent<Image>().color = new Color(
+                _dialogueBox.GetComponent<Image>().color.r,
+                _dialogueBox.GetComponent<Image>().color.g,
+                _dialogueBox.GetComponent<Image>().color.b,
+                value
+            );
+            var speakerBox = _uiParent.transform.Find("PROMPTER_PART/DialogueBox");
+            speakerBox.GetComponent<RawImage>().color = new Color(
+                speakerBox.GetComponent<RawImage>().color.r,
+                speakerBox.GetComponent<RawImage>().color.g,
+                speakerBox.GetComponent<RawImage>().color.b,
+                value
+            );
+
+            foreach (Button button in _choicesButtonList)
+            {
+                button.GetComponent<Image>().color = new Color(
+                    button.GetComponent<Image>().color.r,
+                    button.GetComponent<Image>().color.g,
+                    button.GetComponent<Image>().color.b,
+                    value
+                );
+            }
+        }
+        
 
         void GenerateButton(int index)
         {

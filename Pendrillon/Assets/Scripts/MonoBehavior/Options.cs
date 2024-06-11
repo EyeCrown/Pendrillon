@@ -27,6 +27,8 @@ public class Options : MonoBehaviour
     private GameObject _panel;
     
     // Sliders      [Header("=== Sliders ===")] 
+    private Slider _opacitySlider;
+    
     private Slider _rtpcMainVolumeSlider;
     private Slider _rtpcEnvironmentVolumeSlider;
     private Slider _rtpcSFXVolumeSlider;
@@ -71,6 +73,10 @@ public class Options : MonoBehaviour
     {
         _panel = transform.Find("Panel").gameObject;
 
+        // Visual
+        var visualLocation = "VisualParameters/";
+        _opacitySlider = _panel.transform.Find(visualLocation+"Opacity"+"/Slider").GetComponent<Slider>();
+        
         // Buttons
         _openMenuButton = transform.Find("OpenMenuButton").GetComponent<Button>();
         
@@ -94,6 +100,9 @@ public class Options : MonoBehaviour
 
     void ConnectListenners()
     {
+        // Visual
+        _opacitySlider.onValueChanged.AddListener(delegate { ActingManager.Instance.ChangeOpacityUI(_opacitySlider.value); });
+        
         // Button
         _openMenuButton.onClick.AddListener(OnClickOpenButton);
         
