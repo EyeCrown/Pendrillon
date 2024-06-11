@@ -39,6 +39,7 @@ namespace MonoBehavior.Managers
         [SerializeField] private GameObject _marcelloPrefab;
         [SerializeField] private GameObject _capucinePrefab;
         [SerializeField] private GameObject _naidaPrefab;
+        [SerializeField] private GameObject _jugePrefab;
 
         [Header("=== Locations ===")]
         public GroundGrid _gridScene;
@@ -113,16 +114,11 @@ namespace MonoBehavior.Managers
             SetupPlayer();
             SetupCharacters();
             SetupPrompter();
-
-            MakeObservables();
         }
 
         private void Start()
         {
-            
-            
             //FightingManager.Instance._player = GetPlayer();
-            
             _cameraPerlin.m_AmplitudeGain = 0.0f;
 
             BeginGame();
@@ -174,6 +170,9 @@ namespace MonoBehavior.Managers
                         break;
                     case "Capucine":
                         character = Instantiate(_capucinePrefab).GetComponent<CharacterHandler>();
+                        break;
+                    case "Judge":
+                        character = Instantiate(_jugePrefab).GetComponent<CharacterHandler>();
                         break;
                     default:
                         character = Instantiate(_characterPrefab).GetComponent<CharacterHandler>();
@@ -311,14 +310,7 @@ namespace MonoBehavior.Managers
             
             Debug.Log($"Player data: {_player._character}");
         }
-
-
-        void MakeObservables()
-        {
-            _story.ObserveVariable ("p_char", (string varName, object newValue) => {
-                UpdateCharismaVariable((int)newValue);
-            });
-        }
+        
 
         void UpdateCharismaVariable(int newValue)
         {

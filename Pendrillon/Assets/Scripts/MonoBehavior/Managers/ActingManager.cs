@@ -190,13 +190,13 @@ namespace MonoBehavior.Managers
             // _dialogueTypewriter.onTextShowed.AddListener(DialogueTextFinished);
             // _prompterTypewriter.onTextShowed.AddListener(PrompterTextFinished);
             
-            _setBarge   = Instantiate(_setBarge,  GameObject.Find("Environment").transform);
-            _setCale    = Instantiate(_setCale,   GameObject.Find("Environment").transform);
+            _setBarge   = Instantiate(_setBarge,    GameObject.Find("Environment").transform);
+            _setCale    = Instantiate(_setCale,     GameObject.Find("Environment").transform);
             //_setPort    = Instantiate(_setPort,   GameObject.Find("Environment").transform);
-            _setChurch  = Instantiate(_setChurch, GameObject.Find("Environment").transform);
-            //_setTrial   = Instantiate(_setTrial,   GameObject.Find("Environment").transform);
-            _setTempest = Instantiate(_setTempest, GameObject.Find("Environment").transform);
-            _setForest  = Instantiate(_setForest,  GameObject.Find("Environment").transform);
+            _setChurch  = Instantiate(_setChurch,   GameObject.Find("Environment").transform);
+            _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
+            _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
+            _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
             
             _canContinueDialogue = true;
         }
@@ -223,7 +223,7 @@ namespace MonoBehavior.Managers
                 GameManager.Instance._opacityUI
             );
 
-            foreach (Transform mask in _masks.transform)
+            /*foreach (Transform mask in _masks.transform)
             {
                 mask.GetComponent<Image>().color = new Color(
                     mask.GetComponent<Image>().color.r,
@@ -231,7 +231,7 @@ namespace MonoBehavior.Managers
                     mask.GetComponent<Image>().color.b,
                     GameManager.Instance._opacityUI
                 );
-            }
+            }*/
         }
         
         #endregion
@@ -315,28 +315,42 @@ namespace MonoBehavior.Managers
                     
                     words[0] = words[0].Remove(0, words[0].IndexOf(']')+1).Trim();
                     
-                    GameManager.Instance._playerInput.Player.Interact.performed += OnClickCloseSkillcheck;
-                    _wheel.Spin(result, mustObtain, _choiceType);
+                    void action() => HandleDialogueText(words);
+                    
+                    _wheel.Spin(result, mustObtain, _choiceType, action);
                 }
                 else
                 {
-                    _canContinueDialogue = true;
-                }
-                
-                HandleDialogueText(words);
+                    HandleDialogueText(words);
+                } 
             }
         }
 
 
         void HandleDialogueText(string[] words)
         {
+            Debug.Log("Begin Handle Dialogue Text");
             // get character speaking
             String speaker; 
             String dialogue;
 
             if (words.Length == 1)
             {
-                Debug.LogError("ONLY ONE WORD");
+                Debug.LogWarning($"ONLY ONE WORD > {words[0]}");
+                _currentDialogue = words[0];
+                if (IsCurrentDialogueNotValid())
+                {
+                    
+                    Debug.Log($"AM.HandleDialogueText > Add Refresh()");
+                    _tagMethods.Add(() =>
+                    {
+                        Debug.LogWarning("CALL REFRESH AFTER EMPTY DIALOGUE BECAUSE SKILLCHECK");
+                        Refresh();
+                    } );
+
+                    return;
+                }
+                
                 speaker = "ERROR";
                 dialogue = _currentDialogue;
             }
@@ -388,6 +402,7 @@ namespace MonoBehavior.Managers
     
         void HandleTags()
         {
+            Debug.Log("AM.HandleTags > Begin handle tags => Clear _tagMethods");
             _tagMethods.Clear();
             if (GameManager.Instance._story.currentTags.Count > 0)
             {
@@ -594,8 +609,8 @@ namespace MonoBehavior.Managers
             Debug.Log($"CloseSkillcheck > close skillcheck window");
             StartCoroutine(_wheel.CloseScoreCoroutine());
             GameManager.Instance._playerInput.Player.Interact.performed -= OnClickCloseSkillcheck;
+            //Refresh();
         }
-        
         
         #endregion
         
@@ -785,7 +800,7 @@ namespace MonoBehavior.Managers
             //_setCale.SetActive(false);
             //_setPort.SetActive(false);
             _setChurch.SetActive(false);
-            //_setTrial.SetActive(false);
+            _setTrial.SetActive(false);
             _setTempest.SetActive(false);
             //_setForest.SetActive(false);
             
@@ -1227,7 +1242,7 @@ namespace MonoBehavior.Managers
         {
             while (!_canContinueDialogue)
             {
-                //Debug.Log("Wait to display text");
+                Debug.Log("Wait to display text");
                 yield return null;
             }
             
@@ -1292,13 +1307,14 @@ namespace MonoBehavior.Managers
         /// <returns></returns>
         IEnumerator ExecuteTagMethods()
         {
-            // Waiting if someone is still using a rope
-            // while (!_canContinueDialogue)
-            // {
-            //     Debug.Log("Wait to display text");
-            //     yield return null;
-            // }
-            
+            Debug.Log("Begin AM.ExecuteTagMethods");
+            // Waiting if something needed to be done first
+            while (!_canContinueDialogue)
+            {
+                //Debug.Log("Wait to display text");
+                yield return null;
+            }
+            Debug.Log($"Can start execute Tags: {_tagMethods.Count} methods");
             foreach (var tagAction in _tagMethods)
             {
                 Debug.Log($"{tagAction.Method.Name}");
