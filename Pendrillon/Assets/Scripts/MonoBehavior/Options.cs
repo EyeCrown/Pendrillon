@@ -99,9 +99,9 @@ public class Options : MonoBehaviour
         
         // Toggles
         _originalFontToggle.onValueChanged.AddListener( 
-            delegate { UpdateFont(_originalFont, _originalFontToggle); });
+            delegate { ChangeFont(_originalFont); });
         _secondFontToggle.onValueChanged.AddListener(   
-            delegate { UpdateFont(_secondFont, _secondFontToggle); });
+            delegate { ChangeFont(_secondFont); });
         // TODO: FIX THIS SHIT
         
         
@@ -128,7 +128,13 @@ public class Options : MonoBehaviour
         
         currentToggle.isOn = true;
         Debug.Log("Change font");
-        foreach (var textMeshObject in FindObjectsOfType(typeof(TextMeshProUGUI)))
+        foreach (var textMeshObject in FindObjectsByType(typeof(TextMeshProUGUI), FindObjectsSortMode.None))
+            ((TextMeshProUGUI)textMeshObject).font = font;
+    }
+
+    void ChangeFont(TMP_FontAsset font)
+    {
+        foreach (var textMeshObject in GameObject.FindObjectsByType(typeof(TextMeshProUGUI), FindObjectsSortMode.None))
             ((TextMeshProUGUI)textMeshObject).font = font;
     }
 
