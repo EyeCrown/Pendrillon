@@ -59,12 +59,12 @@ VAR b_boss_hp = 120 // Doit être le même nombre que b_boss_max_hp
 VAR nb_state_before_special_attack = 2
 // Boss attacks
 // [1: default attack]
-VAR b_boss_default_attack_power = 1
+VAR b_boss_default_attack_power = 2
 // [2: open mouth attack]
 VAR b_boss_open_mouth_attack_power = 3
 VAR b_boss_open_mouth_attack_probability = 80
 // [3: on boat attack]
-VAR b_boss_on_boat_attack_power = 3
+VAR b_boss_on_boat_attack_power = 4
 VAR b_boss_on_boat_attack_probability = 80
 // [4: special attack]
 VAR b_boss_special_attack_power = 9
@@ -140,7 +140,7 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
 }
 // Checks if player has no AP
 {b_player_AP<=0: -> end_turn}
-{b_boss_state == "under water" && souffleur_advice_about_sail_down == false: -> souffleur_advice_about_sail_down}
+//{b_boss_state == "under water" && souffleur_advice_about_sail_down == false: -> souffleur_advice_about_sail_down}
 // Player movepool
     + (use_harpoon) [Utiliser le harpon]
         // Checks if boss or player is dead
@@ -255,7 +255,7 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
                 -> kill_player
         }
         {souffleur_explain_action_points == false: -> souffleur_explain_action_points}
-        {b_boss_state == "under water" && souffleur_advice_about_sail_down == false: -> souffleur_advice_about_sail_down}
+        //{b_boss_state == "under water" && souffleur_advice_about_sail_down == false: -> souffleur_advice_about_sail_down}
         ++ {b_player_AP > 0 && b_sail_is_down == false} [Baisser la voile {t(STRE, lower_sail_mod)}]
             {
                 - sc(STRE, lower_sail_mod): 
