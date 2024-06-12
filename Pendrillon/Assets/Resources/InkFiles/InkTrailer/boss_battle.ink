@@ -14,19 +14,19 @@ VAR explosive_barrel_on_mouth_damages = 38
 VAR angel_jump_damages = 25
 // Player moovepool
 VAR load_harpoon_mod = 40 // 90%
-VAR aim_harpoon_mod = 35 // 85%
-VAR shoot_harpoon_mod_default = 15 // 65% (90% si on réussit)
-VAR shoot_harpoon_mod = 15 // 65% (90% si on réussit)
+VAR aim_harpoon_mod = 30 // 80%
+VAR shoot_harpoon_mod_default = 20 // 70%
+VAR shoot_harpoon_mod = 20 // 70%
 VAR load_canon_mod = 30 // 80%
-VAR aim_canon_mod = 35 // 85%
 VAR shoot_canon_mod_default = 0 // 50%
 VAR shoot_canon_mod = 0 // 50%
-VAR load_barrel_mod = 40 // 90%
-VAR throw_barrel_mod = 25 // 75%
-VAR climb_mast_mod = 25 // 75%
-VAR lower_sail_mod = 40 // 90%
-VAR angel_jump_mod = 10 // 60%
-VAR aim_bonus_mod = 25
+VAR aim_canon_mod = 30 // 80%
+VAR load_barrel_mod = 0
+VAR throw_barrel_mod = 0
+VAR climb_mast_mod = 20
+VAR lower_sail_mod = 0
+VAR angel_jump_mod = 0
+VAR aim_bonus_mod = 20
 // Souffleur variables
 VAR souffleur_explained_AP = false
 VAR souffleur_explained_mast = false
@@ -45,11 +45,10 @@ VAR b_mast_is_cracked = false
 VAR b_mast_is_broken = false
 VAR b_explosive_barrel_1_is_used = false
 VAR b_explosive_barrel_1_is_loaded = false
-VAR b_explosive_barrel_2_is_brought_and_not_used = true
+VAR b_explosive_barrel_2_is_brought_and_not_used = false
 VAR b_explosive_barrel_2_is_used = false
 VAR b_explosive_barrel_2_is_loaded = false
 VAR b_explosive_barrel_left = true
-VAR b_fall_out_of_mast_damages = 9
 
 // Boss variables
 // Base
@@ -57,8 +56,8 @@ VAR b_boss_is_dead = false
 VAR b_boss_state = "default"
 VAR b_boss_attack = 1
 VAR b_tail_attack = false
-VAR b_boss_max_hp = 135 // Doit être le même nombre que b_boss_hp
-VAR b_boss_hp = 135 // Doit être le même nombre que b_boss_max_hp
+VAR b_boss_max_hp = 35 // Doit être le même nombre que b_boss_hp
+VAR b_boss_hp = 35 // Doit être le même nombre que b_boss_max_hp
 VAR nb_state_before_special_attack = 2
 // Boss attacks
 // [1: default attack]
@@ -80,6 +79,15 @@ VAR b_boss_special_attack_power = 8
 - -> start
 
 = start
+// // Define the actors of the scene
+// #actor:Player:PLAYER
+// // Set the location
+// #set:tempest
+// // Set the actor's positions
+// #position:Player:4:2
+// // Audience reaction
+// #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
+
 // Set the location : A SUPPRIMER PLUS TARD CAR LE DECORS EST DEJA SET PAR LA SCENE D'AVANT !!!!
 - #set:tempest
 
@@ -95,9 +103,11 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
 // Souffleur explain action points
 = souffleur_explain_action_points
 - SOUFFLEUR: Psssst... Hé, l'ami !
-SOUFFLEUR: Tu viens de faire une action nécessitant un <b>talent</b>, pas vrai l'ami ?
+SOUFFLEUR: Cette scène est un moment un peu spécial de la pièce : c'est un véritable <shake>combat à mort</shake>.
+SOUFFLEUR: Enfin... pas vraiment. Si tu perds l'affontement, ce n'est pas un drame... Tu ne vas pas <i>vraiment</i> mourir.
+SOUFFLEUR: Bref. Tu viens de faire une action nécessitant un <b>talent</b>, pas vrai l'ami ?
 SOUFFLEUR: Sache que lors d'un combat, tu peux effectuer <b>plusieurs actions</b> de ce type lors d'un <b>même tour</b>.
-SOUFFLEUR: Le nombre de <b>talents</b> que tu peux utiliser avant que ton tour ne se termine est affiché au-dessus.
+SOUFFLEUR: Le nombre de <b>talents</b> que tu peux utiliser avant que ton tour ne se termine est inscrit au dessus.
 SOUFFLEUR: On appelle ça des <shake>points d'action™</shake>. Enfin... c'est <i>moi</i> qui les appelle comme ça.
 SOUFFLEUR: Une dernière chose : tu peux <b>passer ton tour</b> si tu le souhaites.
 SOUFFLEUR: Tes <b>points d'action</b> seront <b>mis de coté</b> pour le tour suivant.
@@ -163,13 +173,6 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
 {b_boss_state == "under water" && souffleur_advice_about_sail_down == false: -> souffleur_advice_about_sail_down}
 // Player movepool
     + (use_harpoon) [Utiliser le harpon]
-        // Checks if boss or player is dead
-        {
-            - b_boss_is_dead:
-                -> kill_boss
-            - b_player_is_dead:
-                -> kill_player
-        }
         ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == false} [Remonter le harpon {t(DEXT, load_harpoon_mod)}]
             {
                 - sc(DEXT, load_harpoon_mod):
@@ -189,20 +192,13 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
                 - sc(DEXT, shoot_harpoon_mod): 
                     ~ shoot_harpoon()
                 - else:
-                    ~ shoot_harpoon_fail()
+                    ~ use_action_point()
             }
         ++ [Retourner sur le pont]
             -> player_moovepool
         -- {souffleur_explain_action_points == false: -> souffleur_explain_action_points}
         -- {b_player_AP>0: -> use_harpoon | -> end_turn}
     + (use_canon) {b_nb_canon_bullet_left > 0} [Utiliser le canon]
-        // Checks if boss or player is dead
-        {
-            - b_boss_is_dead:
-                -> kill_boss
-            - b_player_is_dead:
-                -> kill_player
-        }
         ++ {b_player_AP > 0 && b_canon_is_loaded == false && b_nb_canon_bullet_left > 0} [Charger le canon {t(STRE, load_canon_mod)}]
             {
                 - sc(STRE, load_canon_mod): 
@@ -222,20 +218,13 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
                 - sc(STRE, shoot_canon_mod): 
                     ~ shoot_canon()
                 - else:
-                    ~ shoot_canon_fail()
+                    ~ use_action_point()
             }
         ++ [Retourner sur le pont]
             -> player_moovepool
         -- {souffleur_explain_action_points == false: -> souffleur_explain_action_points}
         -- {b_player_AP>0: -> use_canon | -> end_turn}
-    + (use_barrels) {(b_explosive_barrel_left == true && b_player_AP > 0 && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == false) or (b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == true && b_boss_state == "open mouth") or (b_player_AP > 0 && b_explosive_barrel_1_is_used == true && b_explosive_barrel_2_is_brought_and_not_used == true && b_explosive_barrel_2_is_used == false && b_explosive_barrel_2_is_loaded == false) or (b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_1_is_used == true && b_explosive_barrel_2_is_brought_and_not_used == true && b_explosive_barrel_2_is_used == false && b_explosive_barrel_2_is_loaded == true && b_boss_state == "open mouth")} [Utiliser les tonneaux explosifs]
-        // Checks if boss or player is dead
-        {
-            - b_boss_is_dead:
-                -> kill_boss
-            - b_player_is_dead:
-                -> kill_player
-        }
+    + (use_barrels) {b_explosive_barrel_left == true} [Utiliser les tonneaux explosifs]
         ++ {b_player_AP > 0 && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == false && b_explosive_barrel_left == true} [Charger le tonneau d'explosifs {t(STRE, load_barrel_mod)}]
             {
                 - sc(STRE, load_barrel_mod): 
@@ -248,14 +237,14 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
                 - sc(STRE, throw_barrel_mod): 
                     ~ throw_barrel_1()
                 - else:
-                    ~ throw_barrel_1_fail()
+                    ~ use_action_point()
             }
         ++ {b_player_AP > 0 && b_explosive_barrel_1_is_used == true && b_explosive_barrel_2_is_brought_and_not_used == true && b_explosive_barrel_2_is_used == false && b_explosive_barrel_2_is_loaded == false} [Charger le tonneau d'explosifs {t(STRE, load_barrel_mod)}]
             {
                 - sc(STRE, load_barrel_mod): 
                     ~ load_barrel_2()
                 - else:
-                    ~ throw_barrel_2_fail()
+                    ~ use_action_point()
             }
         ++ {b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_1_is_used == true && b_explosive_barrel_2_is_brought_and_not_used == true && b_explosive_barrel_2_is_used == false && b_explosive_barrel_2_is_loaded == true && b_boss_state == "open mouth"} [Lancer le tonneau explosif {t(STRE, throw_barrel_mod)}]
             {
@@ -281,15 +270,7 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
                         -> player_moovepool
                 }
         }
-        // Checks if boss or player is dead
-        {
-            - b_boss_is_dead:
-                -> kill_boss
-            - b_player_is_dead:
-                -> kill_player
-        }
         {souffleur_explain_action_points == false: -> souffleur_explain_action_points}
-        {b_boss_state == "under water" && souffleur_advice_about_sail_down == false: -> souffleur_advice_about_sail_down}
         ++ {b_player_AP > 0 && b_sail_is_down == false} [Baisser la voile {t(STRE, lower_sail_mod)}]
             {
                 - sc(STRE, lower_sail_mod): 
@@ -302,10 +283,11 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
                 - sc(CHAR, angel_jump_mod): 
                     ~ angel_jump()
                 - else:
-                    ~ angel_jump_fail()
+                    ~ use_action_point()
             }
             -> player_moovepool
         ++ {b_player_AP > 0} [Descendre du mât]
+            Vous descendez du mât. #anim:climb_down_mast
             ~ climb_down_mast()
             -> player_moovepool
         ++ {b_player_AP > 0} [Passer son tour]
@@ -322,11 +304,6 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
 Fin du tour.
 // Boss attack
 ~ boss_attack()
-{
-    - b_mast_is_broken && b_player_is_on_top_of_mast:
-        ~ b_player_is_on_top_of_mast = false
-        -> player_moovepool
-}
 // Roll new boss state
 ~ roll_boss_state()
 // Grant action points to player
@@ -396,22 +373,6 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
             - else:
                 ~ fail_boss_special_attack()
         }
-    Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} HP.
-        // If sail is not down, it breaks
-        {
-            - b_sail_is_down == false:
-            {
-                - b_mast_is_cracked == false:
-                    ~ crack_mast()
-                - b_mast_is_cracked && b_mast_is_broken == false:
-                    ~ break_mast()
-            }
-            - else:
-                SOUFFLEUR: Tu as vu l'attaque que vient de faire le Léviathan ?
-                SOUFFLEUR: Si tu n'avais pas baissé les voiles de ton navire comme tu as eu la bonne idée de le faire...
-                SOUFFLEUR: ... ton mât aurait été réduit en miettes à l'heure qu'il est !
-                SOUFFLEUR: Bien joué, l'ami !
-        }
 }
 
 // Hurt player
@@ -422,6 +383,7 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
         ~ b_player_hp = 0
         ~ b_player_is_dead = true
 }
+Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} HP.
 
 // Hurt boss
 === function attack_boss(pAttack)
@@ -499,43 +461,42 @@ L'attaque spéciale a été esquivée car vous êtes sur le mât.
 === function roll_boss_state()
 // Roll the state dice
 ~ temp D100State = roll_D100()
+{
+    - b_boss_state == "default":
+        {
+            - D100State>=50: 
+                ~ change_boss_state("open mouth")
+            - else:
+                ~ change_boss_state("on boat")
+        }
+    - b_boss_state == "open mouth":
+        {
+            - D100State>=50: 
+                ~ change_boss_state("on boat")
+            - else:
+                ~ change_boss_state("default")
+        }
+    - b_boss_state == "on boat":
+        {
+            - D100State>=50: 
+                ~ change_boss_state("default")
+            - else:
+                ~ change_boss_state("open mouth")
+        }
+    - b_boss_state == "under water":
+        {
+            - D100State>=67: 
+                ~ change_boss_state("default")
+            - D100State>=34:
+                ~ change_boss_state("open mouth")
+            - else:
+                ~ change_boss_state("on boat")
+        }
+}
 // Check if the state is under water
 {
     - nb_state_before_special_attack <= 0:
         ~ change_boss_state("under water")
-    - else:
-        {
-            - b_boss_state == "default":
-                {
-                    - D100State>=50:
-                        ~ change_boss_state("open mouth")
-                    - else:
-                        ~ change_boss_state("on boat")
-                }
-            - b_boss_state == "open mouth":
-                {
-                    - D100State>=50:
-                        ~ change_boss_state("on boat")
-                    - else:
-                        ~ change_boss_state("default")
-                }
-            - b_boss_state == "on boat":
-                {
-                    - D100State>=50:
-                        ~ change_boss_state("default")
-                    - else:
-                        ~ change_boss_state("open mouth")
-                }
-            - b_boss_state == "under water":
-                {
-                    - D100State>=67:
-                        ~ change_boss_state("default")
-                    - D100State>=34:
-                        ~ change_boss_state("open mouth")
-                    - else:
-                        ~ change_boss_state("on boat")
-                }
-        }
 }
 // Decrement 1 before under water state
 ~ nb_state_before_special_attack -= 1
@@ -577,6 +538,16 @@ L'attaque spéciale a été esquivée car vous êtes sur le mât.
         }
     - b_boss_state == "under water":
         ~ b_boss_attack = 4
+        // If sail is not down, it breaks
+        {
+            - b_sail_is_down == false:
+            {
+                - b_mast_is_cracked == false:
+                    ~ crack_mast()
+                - b_mast_is_cracked:
+                    ~ break_mast()
+            }
+        }
 }
 
 // Load the harpoon
@@ -598,14 +569,6 @@ Vous tirez avec le harpon. #anim:shoot_harpoon
     ~ b_harpoon_is_loaded = false
     ~ b_harpoon_is_aimed = false
     ~ attack_boss("harpoon")
-    ~ use_action_point()
-    ~ shoot_harpoon_mod = shoot_harpoon_mod_default
-
-// Shoot with the grabble and fail
-=== function shoot_harpoon_fail()
-Vous ratez votre tir.
-    ~ b_harpoon_is_loaded = false
-    ~ b_harpoon_is_aimed = false
     ~ use_action_point()
     ~ shoot_harpoon_mod = shoot_harpoon_mod_default
 
@@ -636,18 +599,6 @@ Vous sautez depuis le mât et attaquez. #anim:Player:mast_attack
     ~ b_player_is_on_top_of_mast = false
     ~ use_action_point()
 
-// Do an angel jump and fail
-=== function angel_jump_fail()
-Vous ratez votre saut de l'ange.
-    ~ b_player_is_on_top_of_mast = false
-    ~ use_action_point()
-
-// Fall out of mast when it break
-=== function fall_out_of_mast_when_it_breaks()
-    ~ hurt_player(b_fall_out_of_mast_damages)
-    Vous êtes tombé du mât car il a rompu. Vous avez perdu {b_fall_out_of_mast_damages} HP.
-    Il vous reste {b_player_hp} HP. #anim:Player:fall_out_of_mast
-
 // Load the canon
 === function load_canon()
 Vous remontez le canon. #anim:load_canon
@@ -671,15 +622,6 @@ Vous tirez avec le canon. #anim:shoot_canon
     ~ use_action_point()
     ~ shoot_canon_mod = shoot_canon_mod_default
 
-// Shoot with the canon and fail
-=== function shoot_canon_fail()
-Vous ratez votre tir.
-    ~ b_canon_is_loaded = false
-    ~ b_canon_is_aimed = false
-    ~ b_nb_canon_bullet_left -= 1
-    ~ use_action_point()
-    ~ shoot_canon_mod = shoot_canon_mod_default
-
 // Load the barrel 1
 === function load_barrel_1()
 Vous chargez le tonneau explosif. #anim:load_barrel_1
@@ -697,23 +639,13 @@ Vous lancez le tonneau explosif. #anim:throw_barrel_1
         ~ b_explosive_barrel_left = false
 }
 
-// Throw the barrel 1 and fail
-=== function throw_barrel_1_fail()
-Vous ratez votre lancé.
-    ~ b_explosive_barrel_1_is_used = true
-    ~ use_action_point()
-{
-    - b_explosive_barrel_2_is_brought_and_not_used == false:
-        ~ b_explosive_barrel_left = false
-}
-
 // Load the barrel 2
 === function load_barrel_2()
 Vous chargez le tonneau explosif. #anim:load_barrel_2
     ~ b_explosive_barrel_2_is_loaded = true
     ~ use_action_point()
 
-// Throw the barrel 2
+// Throw the barrel 1
 === function throw_barrel_2()
 Vous lancez le tonneau explosif. #anim:throw_barrel_2
     ~ b_explosive_barrel_2_is_used = true
@@ -722,26 +654,18 @@ Vous lancez le tonneau explosif. #anim:throw_barrel_2
     ~ attack_boss("explosive barrel")
     ~ use_action_point()
 
-// Throw the barrel 2 and fail
-=== function throw_barrel_2_fail()
-Vous ratez votre lancé. #anim:throw_barrel_2
-    ~ b_explosive_barrel_2_is_used = true
-    ~ b_explosive_barrel_2_is_brought_and_not_used = false
-    ~ b_explosive_barrel_left = false
-    ~ use_action_point()
-
 // Crack the mast
 === function crack_mast()
 ~ b_mast_is_cracked = true
-Le mât du navire est fissuré suite à l'attaque du Léviathan.
+Le mât du navire est fissuré.
+- SOUFFLEUR: Tu as vu l'attaque que viens de faire le Léviathan ?
+SOUFFLEUR: Si tu n'avais pas baissé les voiles de ton navire comme tu as eu la bonne idée de le faire...
+SOUFFLEUR: ... ton mât aurait été réduit en miettes à l'heure qu'il est !
+SOUFFLEUR: Bien joué, l'ami !
 
 // Break the mast
 === function break_mast()
 ~ b_mast_is_broken = true
-{
-    - b_player_is_on_top_of_mast:
-        ~ fall_out_of_mast_when_it_breaks()
-}
 Le mât du navire est brisé.
 - SOUFFLEUR: Wow ! Impressionnant ! Rien de cassé, l'ami ?
 SOUFFLEUR: La bataille va être bien plus hardue maintenant que le mât est brisé...
