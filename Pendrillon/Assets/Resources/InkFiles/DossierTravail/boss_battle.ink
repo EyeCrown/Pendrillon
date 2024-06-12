@@ -3,14 +3,14 @@
 // Player variables
 VAR b_player_is_dead = false
 VAR b_player_won = false
-VAR b_player_hp = 999
-VAR b_player_AP = 3
+VAR b_player_hp = 24
+VAR b_player_AP = 2
+VAR b_player_AP_by_turn = 2
 VAR b_player_is_on_top_of_mast = false
 // Player attacks damages
-VAR harpoon_damages = 10
-VAR canon_damages = 18
-VAR explosive_barrel_damages = 20
-VAR explosive_barrel_on_mouth_damages = 38
+VAR harpoon_damages = 15
+VAR canon_damages = 25
+VAR explosive_barrel_on_mouth_damages = 50
 VAR angel_jump_damages = 25
 // Player moovepool
 VAR load_harpoon_mod = 40 // 90%
@@ -33,6 +33,7 @@ VAR souffleur_explained_mast = false
 VAR souffleur_explained_sail_down = false
 VAR souffleur_told_mid_life = false
 VAR souffleur_told_about_to_die = false
+VAR souffleur_explained_explosive_barrel = false
 
 // Environement
 VAR b_harpoon_is_loaded = false
@@ -45,7 +46,7 @@ VAR b_mast_is_cracked = false
 VAR b_mast_is_broken = false
 VAR b_explosive_barrel_1_is_used = false
 VAR b_explosive_barrel_1_is_loaded = false
-VAR b_explosive_barrel_2_is_brought_and_not_used = true
+VAR b_explosive_barrel_2_is_brought_and_not_used = false
 VAR b_explosive_barrel_2_is_used = false
 VAR b_explosive_barrel_2_is_loaded = false
 VAR b_explosive_barrel_left = true
@@ -57,23 +58,20 @@ VAR b_boss_is_dead = false
 VAR b_boss_state = "default"
 VAR b_boss_attack = 1
 VAR b_tail_attack = false
-VAR b_boss_max_hp = 135 // Doit être le même nombre que b_boss_hp
-VAR b_boss_hp = 135 // Doit être le même nombre que b_boss_max_hp
+VAR b_boss_max_hp = 180 // Doit être le même nombre que b_boss_hp
+VAR b_boss_hp = 180 // Doit être le même nombre que b_boss_max_hp
 VAR nb_state_before_special_attack = 2
 // Boss attacks
 // [1: default attack]
 VAR b_boss_default_attack_power = 1
-VAR b_boss_default_attack_precision = 90
 // [2: open mouth attack]
-VAR b_boss_open_mouth_attack_power = 2
-VAR b_boss_open_mouth_attack_precision = 80
-VAR b_boss_open_mouth_attack_probability = 30
+VAR b_boss_open_mouth_attack_power = 3
+VAR b_boss_open_mouth_attack_probability = 80
 // [3: on boat attack]
 VAR b_boss_on_boat_attack_power = 3
-VAR b_boss_on_boat_attack_precision = 100
-VAR b_boss_on_boat_attack_probability = 30
+VAR b_boss_on_boat_attack_probability = 80
 // [4: special attack]
-VAR b_boss_special_attack_power = 8
+VAR b_boss_special_attack_power = 12
 
 // Scene
 === boss_battle ===
@@ -133,20 +131,6 @@ SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami !
         -> player_moovepool
 }
 
-// Souffleur give advice about climbing the mast to avoid special attack
-= souffleur_advice_about_climbing_mast
-- SOUFFLEUR: Psssst... Hé, l'ami !
-SOUFFLEUR: L'attaque que vient de faire le Léviathan est dévastatrice, pas vrai ?
-SOUFFLEUR: Un conseil d'ami : si tu parviens à monter au mât avant que le monstre ne fasse cette attaque...
-SOUFFLEUR: Tu éviteras de te blesser inutilement !
-~ souffleur_explained_mast = true
-{
-    - b_player_is_on_top_of_mast:
-        -> on_top_of_mast
-    - else:
-        -> player_moovepool
-}
-
 // Player mooves
 = player_moovepool
 // Player turn
@@ -161,6 +145,14 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
 // Checks if player has no AP
 {b_player_AP<=0: -> end_turn}
 {b_boss_state == "under water" && souffleur_advice_about_sail_down == false: -> souffleur_advice_about_sail_down}
+{
+    - b_explosive_barrel_1_is_loaded == true && b_boss_state != "open mouth" && souffleur_explained_explosive_barrel == false:
+        SOUFFLEUR: Psssst... Hé, l'ami !
+        SOUFFLEUR: Tu as bien fait de charger ces barils d'explosifs !
+        SOUFFLEUR: Ils te seront utiles plus tard, compris ?
+        SOUFFLEUR: Bon courage, l'ami !
+        ~ souffleur_explained_explosive_barrel = true
+}
 // Player movepool
     + (use_harpoon) [Utiliser le harpon]
         // Checks if boss or player is dead
@@ -330,7 +322,7 @@ Fin du tour.
 // Roll new boss state
 ~ roll_boss_state()
 // Grant action points to player
-~ b_player_AP += 3
+~ b_player_AP += b_player_AP_by_turn
 {
     - b_player_is_on_top_of_mast == true:
         -> on_top_of_mast
@@ -368,26 +360,11 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
 // Body attack
 {
     - b_boss_attack == 1:
-        {
-            - boss_attack_check(b_boss_default_attack_precision):
-                ~ hurt_player(b_boss_default_attack_power)
-            - else:
-                ~ fail_boss_attack()
-        }
+        ~ hurt_player(b_boss_default_attack_power)
     - b_boss_attack == 2:
-        {
-            - boss_attack_check(b_boss_open_mouth_attack_precision):
-                ~ hurt_player(b_boss_open_mouth_attack_power)
-            - else:
-                ~ fail_boss_attack()
-        }
+        ~ hurt_player(b_boss_open_mouth_attack_power)
     - b_boss_attack == 3:
-        {
-            - boss_attack_check(b_boss_on_boat_attack_precision):
-                ~ hurt_player(b_boss_on_boat_attack_power)
-            - else:
-                ~ fail_boss_attack()
-        }
+        ~ hurt_player(b_boss_on_boat_attack_power)
     - b_boss_attack == 4:
         ~ nb_state_before_special_attack = 2
         {
@@ -396,7 +373,6 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
             - else:
                 ~ fail_boss_special_attack()
         }
-    Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} HP.
         // If sail is not down, it breaks
         {
             - b_sail_is_down == false:
@@ -413,6 +389,7 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
                 SOUFFLEUR: Bien joué, l'ami !
         }
 }
+Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} HP.
 
 // Hurt player
 === function hurt_player(pDamages)
@@ -421,6 +398,14 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
     - b_player_hp<=0:
         ~ b_player_hp = 0
         ~ b_player_is_dead = true
+}
+{
+    - b_boss_attack == 4 && souffleur_explained_mast == false:
+        SOUFFLEUR: Psssst... Hé, l'ami !
+        SOUFFLEUR: L'attaque que vient de faire le Léviathan est dévastatrice, pas vrai ?
+        SOUFFLEUR: Un conseil d'ami : si tu parviens à monter au mât avant que le monstre ne fasse cette attaque...
+        SOUFFLEUR: Tu éviteras de te blesser inutilement !
+        ~ souffleur_explained_mast = true
 }
 
 // Hurt boss
@@ -434,8 +419,6 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
         {
             - b_boss_state == "open mouth":
                 ~ hurt_boss(explosive_barrel_on_mouth_damages)
-            - else:
-                ~ hurt_boss(explosive_barrel_damages)
         }
     - pAttack == "angel jump":
         {

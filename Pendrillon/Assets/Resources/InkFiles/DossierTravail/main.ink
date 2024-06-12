@@ -26,5 +26,6 @@ INCLUDE cast_salutation.ink
 
 // Start the game
 //-> intro
--> boss_battle
+//-> boss_battle
 //-> tribunal_1
+-> tempest
