@@ -253,7 +253,7 @@ public class CharacterHandler : MonoBehaviour
     }
 
 
-    IEnumerator MoveRopeCoroutine(Vector3 localStartPos, Vector3 localEndPos, float duration = 4.0f)
+    IEnumerator MoveRopeCoroutine(Vector3 localStartPos, Vector3 localEndPos, float duration = 1.0f)
     {
         _ropeCoroutine = true;
         
@@ -337,7 +337,7 @@ public class CharacterHandler : MonoBehaviour
         while (_ropeCoroutine)
             yield return null;
         
-        _onStage = false;
+        _onStage = true;
         _arriveCoroutine = false;
     }
     

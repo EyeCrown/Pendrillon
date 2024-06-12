@@ -426,6 +426,16 @@ namespace MonoBehavior.Managers
             _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
             _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
             _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
+
+            
+        }
+
+        void SetTrialObservable()
+        {
+            GameManager.Instance._story.ObserveVariable ("t_audience_judgement", 
+                (string varName, object newValue) => {
+                    _setTrial.transform.Find("Mesh_Sc_Tribunal_Balance")
+                        .GetComponent<Animator>().SetFloat("balance", (float) newValue); });
         }
         
         #endregion
@@ -686,7 +696,9 @@ namespace MonoBehavior.Managers
 
             if (GameManager.Instance._intro)
                 SetIntro();
-                
+            
+            SetTrialObservable();
+            
             GameManager.Instance.GetPlayer()._character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
             GameManager.Instance.GetPlayer()._character.strength.SetupBase((int)GameManager.Instance._story.variablesState["p_stre"]);
             GameManager.Instance.GetPlayer()._character.dexterity.SetupBase((int)GameManager.Instance._story.variablesState["p_dext"]);
