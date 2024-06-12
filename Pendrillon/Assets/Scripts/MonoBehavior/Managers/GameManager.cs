@@ -130,7 +130,7 @@ namespace MonoBehavior.Managers
             //FightingManager.Instance._player = GetPlayer();
             _cameraPerlin.m_AmplitudeGain = 0.0f;
 
-            StartGame.Invoke();
+            //StartGame.Invoke();
         }
         
         #endregion
