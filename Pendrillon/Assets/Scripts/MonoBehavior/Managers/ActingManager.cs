@@ -972,23 +972,21 @@ namespace MonoBehavior.Managers
 
             //Même probleme que dans le Audience tag pour le son, j'ai fix sale déso
 
-            AkSoundEngine.PostEvent(soundToPlay, gameObject);
+            /*AkSoundEngine.PostEvent(soundToPlay, gameObject);
             if (soundToPlay.Contains("VOX"))
             {
                 Debug.Log("Stopped Emotion Sound FX");
                 AkSoundEngine.PostEvent("Stop_VOX_Emotions", gameObject);
-            }
+            }*/
 
             void PlaysoundAction()
             {
-                /*
                 AkSoundEngine.PostEvent(soundToPlay, gameObject);
                 if (soundToPlay.Contains("VOX"))
                 {
                     Debug.Log("Stopped Emotion Sound FX");
                     AkSoundEngine.PostEvent("Stop_VOX_Emotions", gameObject);
                 }
-                */
                 TagActionOver();
             }
             
