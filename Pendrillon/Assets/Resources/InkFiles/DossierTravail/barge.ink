@@ -79,7 +79,14 @@ SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance, l
         ~ p_name = "Octave"
 - #audience:ovation
 SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! <i>Show must go on!</i>
-- PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question #playsound:VOX_Ferryman_commentretrouveici
+{
+    - p_name == "Merlin":
+        PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question #playsound:VOX_Ferryman_commentretrouveiciMerlin
+    - p_name == "Ambroise":
+        PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question #playsound:VOX_Ferryman_commentretrouveiciAmbroise
+    - p_name == "Octave":
+        PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question #playsound:VOX_Ferryman_commentretrouveiciOctave
+}
 - PLAYER: Un jour où je me trouvais...
     * [À l'auberge...] PLAYER: Un jour où je me trouvais à l'auberge des Deux Frères, je reçus la missive d'un expéditeur inconnu.
     * [Sur mon navire...] PLAYER: Un jour où je me trouvais sur mon navire, je reçus la missive d'un expéditeur inconnu.

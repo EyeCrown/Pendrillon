@@ -475,13 +475,13 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="UI_HUD_SkillCheck_Failed" ID="{3DC74F1B-89BA-4DFC-9894-4A87AA2C6739}" ShortID="418990302">
+								<ActorMixer Name="SKILLCHECK" ID="{06ED793C-AC02-4729-8C22-B98E0063541D}" ShortID="305941412">
 									<PropertyList>
-										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
-										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="1.405"/>
-										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -492,91 +492,6 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<RandomSequenceContainer Name="UI_HUD_SkillCheck_Roll" ID="{BDB76E87-3B6B-4218-9AC1-E0AED7C0CCA0}" ShortID="401113937">
-											<PropertyList>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>-5</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="UI_HUD_SkillCheck_Roll_01" ID="{D5488A69-FBEF-45F3-8CAA-1C50DCBEAC32}" ShortID="394956919">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_SC_Theater_SkillCheck_Roll_01" ID="{2E0F0477-1D2D-4EA0-8FB7-8BCD391CFAFE}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_SC_Theater_SkillCheck_Roll_01.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="514826034"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_SC_Theater_SkillCheck_Roll_01" ID="{2E0F0477-1D2D-4EA0-8FB7-8BCD391CFAFE}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="UI_HUD_SkillCheck_Roll_02" ID="{1268ECB9-C528-4799-926D-F9A274F8E25C}" ShortID="368560217">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_SC_Theater_SkillCheck_Roll_02" ID="{6937A5A5-8E36-4568-ABDC-8E3C04CEBAE5}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_SC_Theater_SkillCheck_Roll_02.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="243172115"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_SC_Theater_SkillCheck_Roll_02" ID="{6937A5A5-8E36-4568-ABDC-8E3C04CEBAE5}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="UI_HUD_SkillCheck_Roll_03" ID="{7A256D0B-5824-4576-A7D7-C83E498C5517}" ShortID="243886020">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="SFX_SC_Theater_SkillCheck_Roll_03" ID="{6E4535FD-1CEC-4D45-8E5D-3E2175DA67F2}">
-															<Language>SFX</Language>
-															<AudioFile>SFX_SC_Theater_SkillCheck_Roll_03.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="428894477"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="SFX_SC_Theater_SkillCheck_Roll_03" ID="{6E4535FD-1CEC-4D45-8E5D-3E2175DA67F2}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="UI_HUD_SkillCheck_Failed" ID="{3099461C-44BE-488A-AD4B-D6F631CDE463}" ShortID="390635028">
 											<PropertyList>
 												<Property Name="MakeUpGain" Type="Real64">
@@ -590,7 +505,7 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -640,34 +555,11 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
-									</ChildrenList>
-									<Playlist>
-										<ItemRef Name="UI_HUD_SkillCheck_Roll" ID="{BDB76E87-3B6B-4218-9AC1-E0AED7C0CCA0}"/>
-										<ItemRef Name="UI_HUD_SkillCheck_Failed" ID="{3099461C-44BE-488A-AD4B-D6F631CDE463}"/>
-									</Playlist>
-								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="UI_HUD_SkillCheck_Success" ID="{4545A394-2810-4635-B39B-24724902FE6B}" ShortID="759137526">
-									<PropertyList>
-										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
-										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="1.405"/>
-										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
 										<RandomSequenceContainer Name="UI_HUD_SkillCheck_Roll" ID="{D66217A5-5C31-4034-9DAC-F2999D30BBF1}" ShortID="113790591">
 											<PropertyList>
 												<Property Name="MakeUpGain" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-6</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -791,7 +683,7 @@
 											<PropertyList>
 												<Property Name="MakeUpGain" Type="Real64">
 													<ValueList>
-														<Value>-7</Value>
+														<Value>-4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -800,7 +692,7 @@
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
 												</Reference>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+													<ObjectRef Name="Dry_UI" ID="{2E652405-D84B-41B7-B2A3-4E7DEB05EB1D}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
@@ -817,11 +709,7 @@
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
-									<Playlist>
-										<ItemRef Name="UI_HUD_SkillCheck_Roll" ID="{D66217A5-5C31-4034-9DAC-F2999D30BBF1}"/>
-										<ItemRef Name="UI_HUD_SkillCheck_Success" ID="{CDB1B383-80C2-465F-B8D0-DFF62E7982DF}"/>
-									</Playlist>
-								</RandomSequenceContainer>
+								</ActorMixer>
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="UI_Menu" ID="{3F7659C2-20B7-4A3E-9FE1-FFC5EF87630A}" ShortID="245343154">
@@ -1197,6 +1085,45 @@
 							</ChildrenList>
 						</ActorMixer>
 					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{5A5F3B00-1C7C-4734-9D42-745047DD075A}" ShortID="28255838">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="UI_Volume" ID="{97F26571-678B-4C43-A716-1FBCD1CD6C89}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{7CCED6F3-23A5-4DDE-8624-0EF6347426B5}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
 				</ActorMixer>
 			</ChildrenList>
 		</WorkUnit>
