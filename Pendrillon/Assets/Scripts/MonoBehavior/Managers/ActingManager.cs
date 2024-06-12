@@ -69,6 +69,10 @@ namespace MonoBehavior.Managers
 
         [HideInInspector] public string _choiceType;
         
+        // UI - Stats panel
+        private StatsUI _statsUI;
+         
+        
         #endregion
 
         #region Button Attributes
@@ -389,6 +393,8 @@ namespace MonoBehavior.Managers
 
             _wheel = GameObject.Find("WheelSupport").GetComponent<Wheel>();
             _map = GameObject.Find("Map").GetComponent<Map>();
+
+            _statsUI = GameObject.Find("Canvas/PLAYER_STATS").GetComponent<StatsUI>();
         }
 
         void ConnectParticuleSystems()
@@ -426,8 +432,9 @@ namespace MonoBehavior.Managers
             _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
             _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
             _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
-
             
+            _setTrial.SetActive(false);
+            _setTempest.SetActive(false);
         }
 
         void SetTrialObservable()
@@ -519,6 +526,8 @@ namespace MonoBehavior.Managers
             {
                 if (choice.text.Contains(typeName))
                 {
+                    _statsUI.DisplayStats.Invoke();
+
                     //Debug.Log($"AM.SetButtonType > This button is {typeName} > Wheel must appear");
                     button.transform.Find(typeName).gameObject.SetActive(true);
                     
@@ -730,7 +739,8 @@ namespace MonoBehavior.Managers
         void OnClearUI()
         {
             _dialogueText.text = String.Empty;
-
+            _statsUI.HideStats.Invoke();
+            
             foreach (var button in _choicesButtonList)
                 Destroy(button.gameObject);
             _choicesButtonList.Clear();
