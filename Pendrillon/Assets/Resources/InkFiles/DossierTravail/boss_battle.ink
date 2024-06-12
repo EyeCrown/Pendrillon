@@ -3,14 +3,14 @@
 // Player variables
 VAR b_player_is_dead = false
 VAR b_player_won = false
-VAR b_player_hp = 24
+VAR b_player_hp = 20
 VAR b_player_AP = 2
 VAR b_player_AP_by_turn = 2
 VAR b_player_is_on_top_of_mast = false
 // Player attacks damages
 VAR harpoon_damages = 15
 VAR canon_damages = 25
-VAR explosive_barrel_on_mouth_damages = 50
+VAR explosive_barrel_on_mouth_damages = 45
 VAR angel_jump_damages = 25
 // Player moovepool
 VAR load_harpoon_mod = 40 // 90%
@@ -33,7 +33,7 @@ VAR souffleur_explained_mast = false
 VAR souffleur_explained_sail_down = false
 VAR souffleur_told_mid_life = false
 VAR souffleur_told_about_to_die = false
-VAR souffleur_explained_explosive_barrel = false
+VAR souffleur_reaction_about_sail_down = false
 
 // Environement
 VAR b_harpoon_is_loaded = false
@@ -44,13 +44,9 @@ VAR b_nb_canon_bullet_left = 2
 VAR b_sail_is_down = false
 VAR b_mast_is_cracked = false
 VAR b_mast_is_broken = false
-VAR b_explosive_barrel_1_is_used = false
-VAR b_explosive_barrel_1_is_loaded = false
-VAR b_explosive_barrel_2_is_brought_and_not_used = false
-VAR b_explosive_barrel_2_is_used = false
-VAR b_explosive_barrel_2_is_loaded = false
-VAR b_explosive_barrel_left = true
-VAR b_fall_out_of_mast_damages = 9
+VAR b_explosive_barrel_is_used = false
+VAR b_explosive_barrel_is_loaded = false
+VAR b_fall_out_of_mast_damages = 2
 
 // Boss variables
 // Base
@@ -58,8 +54,8 @@ VAR b_boss_is_dead = false
 VAR b_boss_state = "default"
 VAR b_boss_attack = 1
 VAR b_tail_attack = false
-VAR b_boss_max_hp = 180 // Doit être le même nombre que b_boss_hp
-VAR b_boss_hp = 180 // Doit être le même nombre que b_boss_max_hp
+VAR b_boss_max_hp = 120 // Doit être le même nombre que b_boss_hp
+VAR b_boss_hp = 120 // Doit être le même nombre que b_boss_max_hp
 VAR nb_state_before_special_attack = 2
 // Boss attacks
 // [1: default attack]
@@ -71,7 +67,7 @@ VAR b_boss_open_mouth_attack_probability = 80
 VAR b_boss_on_boat_attack_power = 3
 VAR b_boss_on_boat_attack_probability = 80
 // [4: special attack]
-VAR b_boss_special_attack_power = 12
+VAR b_boss_special_attack_power = 9
 
 // Scene
 === boss_battle ===
@@ -145,14 +141,6 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
 // Checks if player has no AP
 {b_player_AP<=0: -> end_turn}
 {b_boss_state == "under water" && souffleur_advice_about_sail_down == false: -> souffleur_advice_about_sail_down}
-{
-    - b_explosive_barrel_1_is_loaded == true && b_boss_state != "open mouth" && souffleur_explained_explosive_barrel == false:
-        SOUFFLEUR: Psssst... Hé, l'ami !
-        SOUFFLEUR: Tu as bien fait de charger ces barils d'explosifs !
-        SOUFFLEUR: Ils te seront utiles plus tard, compris ?
-        SOUFFLEUR: Bon courage, l'ami !
-        ~ souffleur_explained_explosive_barrel = true
-}
 // Player movepool
     + (use_harpoon) [Utiliser le harpon]
         // Checks if boss or player is dead
@@ -220,7 +208,7 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
             -> player_moovepool
         -- {souffleur_explain_action_points == false: -> souffleur_explain_action_points}
         -- {b_player_AP>0: -> use_canon | -> end_turn}
-    + (use_barrels) {(b_explosive_barrel_left == true && b_player_AP > 0 && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == false) or (b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == true && b_boss_state == "open mouth") or (b_player_AP > 0 && b_explosive_barrel_1_is_used == true && b_explosive_barrel_2_is_brought_and_not_used == true && b_explosive_barrel_2_is_used == false && b_explosive_barrel_2_is_loaded == false) or (b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_1_is_used == true && b_explosive_barrel_2_is_brought_and_not_used == true && b_explosive_barrel_2_is_used == false && b_explosive_barrel_2_is_loaded == true && b_boss_state == "open mouth")} [Utiliser les tonneaux explosifs]
+    + (use_barrels) {(b_player_AP > 0 && b_explosive_barrel_is_used == false && b_explosive_barrel_is_loaded == false) or (b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_is_used == false && b_explosive_barrel_is_loaded == true && b_boss_state == "open mouth")} [Utiliser les tonneaux explosifs]
         // Checks if boss or player is dead
         {
             - b_boss_is_dead:
@@ -228,33 +216,19 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
             - b_player_is_dead:
                 -> kill_player
         }
-        ++ {b_player_AP > 0 && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == false && b_explosive_barrel_left == true} [Charger le tonneau d'explosifs {t(STRE, load_barrel_mod)}]
+        ++ {b_player_AP > 0 && b_explosive_barrel_is_used == false && b_explosive_barrel_is_loaded == false} [Charger le tonneau d'explosifs {t(STRE, load_barrel_mod)}]
             {
                 - sc(STRE, load_barrel_mod): 
                     ~ load_barrel_1()
                 - else:
                     ~ use_action_point()
             }
-        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_1_is_used == false && b_explosive_barrel_1_is_loaded == true && b_boss_state == "open mouth"} [Lancer le tonneau explosif {t(STRE, throw_barrel_mod)}]
+        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_is_used == false && b_explosive_barrel_is_loaded == true && b_boss_state == "open mouth"} [Lancer le tonneau explosif {t(STRE, throw_barrel_mod)}]
             {
                 - sc(STRE, throw_barrel_mod): 
                     ~ throw_barrel_1()
                 - else:
                     ~ throw_barrel_1_fail()
-            }
-        ++ {b_player_AP > 0 && b_explosive_barrel_1_is_used == true && b_explosive_barrel_2_is_brought_and_not_used == true && b_explosive_barrel_2_is_used == false && b_explosive_barrel_2_is_loaded == false} [Charger le tonneau d'explosifs {t(STRE, load_barrel_mod)}]
-            {
-                - sc(STRE, load_barrel_mod): 
-                    ~ load_barrel_2()
-                - else:
-                    ~ throw_barrel_2_fail()
-            }
-        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_1_is_used == true && b_explosive_barrel_2_is_brought_and_not_used == true && b_explosive_barrel_2_is_used == false && b_explosive_barrel_2_is_loaded == true && b_boss_state == "open mouth"} [Lancer le tonneau explosif {t(STRE, throw_barrel_mod)}]
-            {
-                - sc(STRE, throw_barrel_mod): 
-                    ~ throw_barrel_2()
-                - else:
-                    ~ use_action_point()
             }
         ++ [Retourner sur le pont]
             -> player_moovepool
@@ -382,11 +356,12 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
                 - b_mast_is_cracked && b_mast_is_broken == false:
                     ~ break_mast()
             }
-            - else:
+            - b_sail_is_down == true && souffleur_reaction_about_sail_down == false:
                 SOUFFLEUR: Tu as vu l'attaque que vient de faire le Léviathan ?
                 SOUFFLEUR: Si tu n'avais pas baissé les voiles de ton navire comme tu as eu la bonne idée de le faire...
                 SOUFFLEUR: ... ton mât aurait été réduit en miettes à l'heure qu'il est !
                 SOUFFLEUR: Bien joué, l'ami !
+                ~ souffleur_reaction_about_sail_down = true
         }
 }
 Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} HP.
@@ -666,51 +641,20 @@ Vous ratez votre tir.
 // Load the barrel 1
 === function load_barrel_1()
 Vous chargez le tonneau explosif. #anim:load_barrel_1
-    ~ b_explosive_barrel_1_is_loaded = true
+    ~ b_explosive_barrel_is_loaded = true
     ~ use_action_point()
 
 // Throw the barrel 1
 === function throw_barrel_1()
 Vous lancez le tonneau explosif. #anim:throw_barrel_1
-    ~ b_explosive_barrel_1_is_used = true
+    ~ b_explosive_barrel_is_used = true
     ~ attack_boss("explosive barrel")
     ~ use_action_point()
-{
-    - b_explosive_barrel_2_is_brought_and_not_used == false:
-        ~ b_explosive_barrel_left = false
-}
 
 // Throw the barrel 1 and fail
 === function throw_barrel_1_fail()
 Vous ratez votre lancé.
-    ~ b_explosive_barrel_1_is_used = true
-    ~ use_action_point()
-{
-    - b_explosive_barrel_2_is_brought_and_not_used == false:
-        ~ b_explosive_barrel_left = false
-}
-
-// Load the barrel 2
-=== function load_barrel_2()
-Vous chargez le tonneau explosif. #anim:load_barrel_2
-    ~ b_explosive_barrel_2_is_loaded = true
-    ~ use_action_point()
-
-// Throw the barrel 2
-=== function throw_barrel_2()
-Vous lancez le tonneau explosif. #anim:throw_barrel_2
-    ~ b_explosive_barrel_2_is_used = true
-    ~ b_explosive_barrel_2_is_brought_and_not_used = false
-    ~ b_explosive_barrel_left = false
-    ~ attack_boss("explosive barrel")
-    ~ use_action_point()
-
-// Throw the barrel 2 and fail
-=== function throw_barrel_2_fail()
-Vous ratez votre lancé. #anim:throw_barrel_2
-    ~ b_explosive_barrel_2_is_used = true
-    ~ b_explosive_barrel_2_is_brought_and_not_used = false
-    ~ b_explosive_barrel_left = false
+    ~ b_explosive_barrel_is_used = true
     ~ use_action_point()
 
 // Crack the mast

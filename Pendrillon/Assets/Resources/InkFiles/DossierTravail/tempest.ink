@@ -35,8 +35,8 @@ VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord.
 - // Actions du joueur
     * [Baisser les voiles.]
         ~ b_sail_is_down = true
-    * [Amener un deuxième tonneau.]
-        ~ b_explosive_barrel_2_is_brought_and_not_used = true
+    * [Charger le tonneau d'explosifs.]
+        ~ b_explosive_barrel_is_loaded = true
     * [Charger le harpon.]
         ~ b_harpoon_is_loaded = true
 - PLAYER: Cette tempête...
@@ -46,8 +46,8 @@ VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord.
 -
     * {b_sail_is_down == false} [Baisser les voiles.]
         ~ b_sail_is_down = true
-    * {b_explosive_barrel_2_is_brought_and_not_used == false} [Amener un deuxième tonneau.]
-        ~ b_explosive_barrel_2_is_brought_and_not_used = true
+    * {b_explosive_barrel_is_loaded == false} [Charger le tonneau d'explosifs.]
+        ~ b_explosive_barrel_is_loaded = true
     * {b_harpoon_is_loaded == false} [Charger le harpon.]
         ~ b_harpoon_is_loaded = true
     * [Charger le canon.]
