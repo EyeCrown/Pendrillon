@@ -108,6 +108,12 @@ public class CharacterHandler : MonoBehaviour
     
     public void Move(Vector2Int destination, string speedText, Action callbackOnFinish)
     {
+        if (destination == _coordsOnStatge)
+        {
+            callbackOnFinish();
+            return;
+        }
+        
         Vector3 end = GameManager.Instance._gridScene.GetWorldPositon(destination);
         transform.LookAt(end);
         
@@ -260,10 +266,16 @@ public class CharacterHandler : MonoBehaviour
         float time = 0.0f;
         Debug.Log($"{_character.name}.MoveRopeCoroutine > Start");
         
+        // Move charaRig to zero to
+        var charaRigStart = _charaRig.transform.localPosition;
+        
         while (time < duration)
         {
             _rope.transform.localPosition = Vector3.Lerp(localStartPos, localEndPos, 
-                _character.movementCurve.Evaluate(time/ duration)); 
+                _character.movementCurve.Evaluate(time/ duration));
+
+            _charaRig.transform.localPosition = Vector3.Lerp(charaRigStart, Vector3.zero, time / duration);
+            
             time += Time.deltaTime;
             yield return null;
         }
@@ -291,7 +303,7 @@ public class CharacterHandler : MonoBehaviour
         float time = 0.0f;
         while (time < duration)
         {
-            _charaRig.transform.localPosition = Vector3.zero;
+            //_charaRig.transform.localPosition = Vector3.zero;
             
             transform.position = Vector3.Lerp(startPos, endPos, 
                 _character.movementCurve.Evaluate(time / duration));
@@ -312,6 +324,7 @@ public class CharacterHandler : MonoBehaviour
             yield return null;
         
         // Make player goes down
+        _charaRig.transform.localPosition = Vector3.zero;
         _anim.SetBool("falling", true);
         var endPos = GameManager.Instance._gridScene.GetWorldPositon(_coordsOnStatge);
         var startPos = endPos + new Vector3(0, 20.0f, 0);
@@ -322,7 +335,7 @@ public class CharacterHandler : MonoBehaviour
         float time = 0.0f;
         while (time < duration)
         {
-            _charaRig.transform.localPosition = Vector3.zero;
+            _charaRig.transform.localPosition = new Vector3(0, 0, 0.09f);
             
             transform.position = Vector3.Lerp(startPos, endPos, 
                 _character.movementCurve.Evaluate(time / duration));
@@ -336,6 +349,8 @@ public class CharacterHandler : MonoBehaviour
         
         while (_ropeCoroutine)
             yield return null;
+        
+        _charaRig.transform.localPosition = Vector3.zero;
         
         _onStage = true;
         _arriveCoroutine = false;
@@ -451,7 +466,7 @@ public class CharacterHandler : MonoBehaviour
 
     void PlayEmotionSoundsVFX(string emotionName, string characterName)
     {
-        Debug.Log("playing sound Play_VOX_" + characterName + "_Emotion_" + emotionName);
+        //Debug.Log("playing sound Play_VOX_" + characterName + "_Emotion_" + emotionName);
         AkSoundEngine.PostEvent("Play_VOX_" + characterName + "_Emotion_" + emotionName, gameObject);
     }
 
