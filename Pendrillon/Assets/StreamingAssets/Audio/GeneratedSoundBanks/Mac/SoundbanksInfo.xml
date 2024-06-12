@@ -84,7 +84,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{087BE04F-6945-C32D-11C1-F919DE69EF4B}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{D202B8E9-54F8-EF17-D93F-45EDE6B7C13B}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -3294,7 +3294,7 @@
 				</File>
 				<File Id="1009341017" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Ferryman_hahajevois.wav</ShortName>
-					<CachePath>Voices/French(FR)/VOX_Ferryman_hahajevois_0DBBAEE2.wem</CachePath>
+					<CachePath>Voices/French(FR)/VOX_Ferryman_hahajevois_C2183A0C.wem</CachePath>
 				</File>
 				<File Id="1010109479" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Applause_Faible_Loop-011.wav</ShortName>
@@ -5477,6 +5477,11 @@
 				<Event Id="2437757803" Name="Play_VOX_NPC_Leviathan_Defeated" DurationType="OneShot" DurationMin="11.485886" DurationMax="11.485886">
 					<MediaRefs>
 						<MediaRef Id="692255836"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="941839849" Name="Play_VOX_NPC_Leviathan_Map" DurationType="OneShot" DurationMin="4.7100835" DurationMax="4.7100835">
+					<MediaRefs>
+						<MediaRef Id="557710724"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="218531794" Name="Play_VOX_NPC_Leviathan_Scream" DurationType="OneShot" DurationMin="4.3763647" DurationMax="7.635479">
@@ -7944,7 +7949,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{D79608F5-3B7E-6501-9595-7DD593FCC618}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{4674A3C4-C6DA-0727-A8A7-2DC66D107C38}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -11154,7 +11159,7 @@
 				</File>
 				<File Id="1009341017" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Ferryman_hahajevois.wav</ShortName>
-					<CachePath>Voices/French(FR)/VOX_Ferryman_hahajevois_0DBBAEE2.wem</CachePath>
+					<CachePath>Voices/French(FR)/VOX_Ferryman_hahajevois_C2183A0C.wem</CachePath>
 				</File>
 				<File Id="1010109479" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Applause_Faible_Loop-011.wav</ShortName>
@@ -13337,6 +13342,11 @@
 				<Event Id="2437757803" Name="Play_VOX_NPC_Leviathan_Defeated" DurationType="OneShot" DurationMin="11.485886" DurationMax="11.485886">
 					<MediaRefs>
 						<MediaRef Id="692255836"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="941839849" Name="Play_VOX_NPC_Leviathan_Map" DurationType="OneShot" DurationMin="4.7100835" DurationMax="4.7100835">
+					<MediaRefs>
+						<MediaRef Id="557710724"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="218531794" Name="Play_VOX_NPC_Leviathan_Scream" DurationType="OneShot" DurationMin="4.3763647" DurationMax="7.635479">
@@ -15805,5 +15815,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{0957147F-C1D9-8F42-2036-59D8675312E6}</FileHash>
+	<FileHash>{70A4C661-04F5-7E23-3034-CA811290BA28}</FileHash>
 </SoundBanksInfo>
