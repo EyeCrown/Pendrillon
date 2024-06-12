@@ -23,7 +23,7 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #actor:Marcello:MARCELLO:MARCELLOGRE:MARCELLOTARIE:MARCELLOCROUPIE
 #actor:Agathe:AGATHE
 // Set the location
-#set:forest // En attendant d'avoir le décors trial
+#set:trial
 // Set the actor's positions
 #position:Player:8:2
 #position:Judge:0:5
