@@ -135,7 +135,7 @@ PLAYER: À dire vrai...
     * [(Mentir) J'ai tué le monstre.] PLAYER: J'ai trouvé le monstre à l'endroit indiqué par la carte, et je l'ai tué, avec l'aide de mon équipage. Quelle bataille avons-nous livrée ! #anim:Player:happy
     * [(Éluder la question) Rien...] PLAYER: Je me suis rendu sur place, je n'ai trouvé aucune créature, bien entendu... et je suis rentré. Fin de l'histoire.
 - PASSEUR: Pourquoi ne pas me dire ce qu'il s'est réellement passé ? Ton âme s'en verra peut-être allégée... #playsound:VOX_Ferryman_pourquoidireverite
-PLAYER: Bien, bien... Si tu insistes, Passeur. 
+PLAYER: Bien, bien... Si tu insistes, Passeur. #map:down
 PLAYER: Notre voyage dura...
     * [Près d'une année.] PLAYER: ... près d'une année, en tout. #map:departure
     * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté. #map:Travel:departure
@@ -143,7 +143,7 @@ PLAYER: Notre voyage dura...
 PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX_Player_voyagedure1an #map:arrival
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreux playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
-- PASSEUR: Ainsi, c'est à votre retour à Miraterre que les problèmes ont commencé ? #playsound:VOX_Ferryman_retourmiraterre
+- PASSEUR: Ainsi, c'est à votre retour à Miraterre que les problèmes ont commencé ? #map:up #playsound:VOX_Ferryman_retourmiraterre
 - PLAYER: En effet. Un dénouement...
     * [Ironique.] PLAYER: ... des plus <i>ironiques</i>.
         PASSEUR: Ironique, tu dis ? #playsound:VOX_Ferryman_ironique
