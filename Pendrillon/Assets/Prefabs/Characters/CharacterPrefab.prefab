@@ -467,7 +467,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7232527089434614203}
   - component: {fileID: 636588902162026476}
-  - component: {fileID: -9101743682919766738}
   m_Layer: 0
   m_Name: CharacterPrefab
   m_TagString: Untagged
@@ -506,34 +505,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _character: {fileID: 11400000, guid: 36239629bb22d2d4d93aca931305c114, type: 2}
-  _playAnim: 0
   _coordsOnStatge: {x: 0, y: 0}
+  _onStage: 0
+  _playAnim: 0
   DialogueUpdate:
     m_PersistentCalls:
       m_Calls: []
---- !u!136 &-9101743682919766738
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8241601096825971287}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Radius: 1
-  m_Height: 4
-  m_Direction: 1
-  m_Center: {x: 0, y: 2, z: 0}
 --- !u!1001 &1378280071108695439
 PrefabInstance:
   m_ObjectHideFlags: 0
