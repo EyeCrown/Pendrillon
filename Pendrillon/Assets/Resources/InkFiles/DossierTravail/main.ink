@@ -25,7 +25,4 @@ INCLUDE cast_salutation.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
-//-> intro
-//-> boss_battle
-//-> tribunal_1
--> tempest
+-> barge
