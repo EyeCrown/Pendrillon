@@ -9,8 +9,8 @@ VAR b_player_AP_by_turn = 2
 VAR b_player_is_on_top_of_mast = false
 // Player attacks damages
 VAR harpoon_damages = 15
-VAR canon_damages = 25
-VAR explosive_barrel_on_mouth_damages = 45
+VAR canon_damages = 20
+VAR explosive_barrel_on_mouth_damages = 40
 VAR angel_jump_damages = 25
 // Player moovepool
 VAR load_harpoon_mod = 40 // 90%
@@ -40,7 +40,7 @@ VAR b_harpoon_is_loaded = false
 VAR b_harpoon_is_aimed = false
 VAR b_canon_is_loaded = false
 VAR b_canon_is_aimed = false
-VAR b_nb_canon_bullet_left = 2
+VAR b_nb_canon_bullet_left = 3
 VAR b_sail_is_down = false
 VAR b_mast_is_cracked = false
 VAR b_mast_is_broken = false
@@ -59,12 +59,12 @@ VAR b_boss_hp = 120 // Doit être le même nombre que b_boss_max_hp
 VAR nb_state_before_special_attack = 2
 // Boss attacks
 // [1: default attack]
-VAR b_boss_default_attack_power = 2
+VAR b_boss_default_attack_power = 1
 // [2: open mouth attack]
 VAR b_boss_open_mouth_attack_power = 3
 VAR b_boss_open_mouth_attack_probability = 80
 // [3: on boat attack]
-VAR b_boss_on_boat_attack_power = 4
+VAR b_boss_on_boat_attack_power = 3
 VAR b_boss_on_boat_attack_probability = 80
 // [4: special attack]
 VAR b_boss_special_attack_power = 9
@@ -486,12 +486,12 @@ L'attaque spéciale a été esquivée car vous êtes sur le mât.
                 }
             - b_boss_state == "under water":
                 {
-                    - D100State>=67:
-                        ~ change_boss_state("default")
-                    - D100State>=34:
+                    - D100State>=55:
+                        ~ change_boss_state("on boat")
+                    - D100State>=20:
                         ~ change_boss_state("open mouth")
                     - else:
-                        ~ change_boss_state("on boat")
+                        ~ change_boss_state("default")
                 }
         }
 }
