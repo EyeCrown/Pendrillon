@@ -16,12 +16,13 @@ public static class Constants
     public const string TagAnim         = "anim";           // #anim:Character:Animation    Character: nom du personnage    Animation: animation à jouer
     public const string TagWait         = "wait";           // #wait:Time           Time: temps d'attente en secondes
     public const string TagSleep        = "sleep";          // #sleep:Time          Time: temps d'attente en secondes
-    public const string TagBox          = "box";            // #box
+    public const string TagBox          = "box";            // #box             Affiche le texte au milieu des tags
     public const string TagScreenShake  = "screenshake";    // #screenshake:Intensity:Time  Intensity: Puissance du screenshake     Time: durée du screenshake en secondes
     public const string TagLook         = "look";           // #look:Character:Target       Character: nom du personnage    Target: cible vers laquelle se tourner
     public const string TagAudience     = "audience";       // #audience:Reaction           Reaction: type de réaction
     public const string TagRope         = "rope";           // #rope:Character              Character: nom du personnage
     public const string TagMap          = "map";            // #map:Travel                  Travel: nom du voyage (voir TravelNames region)
+    public const string TagTrial        = "trial";          // #trial           Effectue les actions de trial
     
             
     // public const string TagCurtains     = "curtains";       // #curtains

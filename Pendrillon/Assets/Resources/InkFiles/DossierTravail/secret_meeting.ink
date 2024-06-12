@@ -137,7 +137,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * [Dépêche-toi !]  -> what_is_the_mission
 - (what_is_the_mission) PLAYER: Quelle est donc cette mission ? #anim:Player:question #playsound:VOX_Player_quelleestcettemission
 ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #anim:Arle:question #playsound:VOX_Arle_quelrapporttuer #anim:Player:surprised #audience:choc
-    * [Hors de question.] PLAYER: Ôter une vie n'est pas dans mes pratiques. #audience:ovation
+    * [Hors de question.] PLAYER: Ôter une vie n'est pas dans mes pratiques. #audience:ovation #trial
         ~ trial()
         ~ t_1_refuse_to_kill = true
         PLAYER: Je ne suis pas un tueur, mais un marin. Tout juste suis-je capable d'ôter la vie à un poisson... #anim:Player:non
@@ -147,7 +147,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
             ARLE: Je n'ai pas les bras assez longs, messire. Gros comme le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
         ** [Assez de mystère !] PLAYER: Il suffit ! J'en ai assez de tout ce mystère : parle maintenant ou permets-moi d'aller me recoucher. #anim:Player:angry
             ARLE : Ce poisson est un très gros poisson, messire. Aussi gros que le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
-    * [Sans soucis.] PLAYER : Tuer ne me dérange nullement. #audience:choc
+    * [Sans soucis.] PLAYER : Tuer ne me dérange nullement. #audience:choc #trial
         ~ trial()
         ~ t_1_accept_to_kill = true
         PLAYER: Dis-m'en plus : qui voulez-vous voir périr ? #audience:debate
@@ -197,10 +197,10 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
 - ARLE: Ramenez-nous le cœur de l'immonde Léviathan, sinon pour la gloire, pour l'intérêt de la Couronne.
     * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la Couronne qui t'envoie ? #anim:Player:question
         -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:happy
-            ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour notre bonne reine !
+            ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour notre bonne reine ! #trial
                 ~ trial()
                 ~ t_1_respect_the_crown = true
-            ** [La reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence. #audience:laughter
+            ** [La reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence. #audience:laughter #trial
                 ~ trial()
                 ~ t_1_disrespect_the_crown = true
                 ARLE: Ces petites rimes, messire, pourraient vous coûter cher. #anim:Arle:deception
@@ -208,10 +208,10 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
         ARLE: Nulle demande ne saurait provenir de la bouche de la reine, messire. Seulement des ordres...
         -> to_the_crown
 - ARLE: Puis-je ajouter, messire, que vaincre le Léviathan constituerait une offrande de taille à la <b>Déesse</b> Elle-même.
-    * [Pour la Déesse !] PLAYER: J'honorerai la <b>Déesse</b>, j'en fais le serment ! #audience:ovation
+    * [Pour la Déesse !] PLAYER: J'honorerai la <b>Déesse</b>, j'en fais le serment ! #audience:ovation #trial
         ~ trial()
         ~ t_1_respect_irene = true
-    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la <b>Déesse Irène</b> comme du dernier crachin ! #anim:Player:disappointed#audience:booing
+    * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la <b>Déesse Irène</b> comme du dernier crachin ! #anim:Player:disappointed#audience:booing #trial
         ~ trial()
         ~ t_1_disrespect_irene = true
         ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix. #anim:Arle:deception
