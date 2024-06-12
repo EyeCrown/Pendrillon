@@ -26,5 +26,5 @@ INCLUDE cast_salutation.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
-//-> barge
--> boss_battle
+-> barge
+//-> boss_battle
