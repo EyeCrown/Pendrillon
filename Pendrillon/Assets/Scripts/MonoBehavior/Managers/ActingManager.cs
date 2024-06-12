@@ -160,8 +160,8 @@ namespace MonoBehavior.Managers
 
             ConnectAttributes();
             ConnectEvents();
-            SetupSets(); 
-            
+            SetupSets();
+            AssignElements();
             SetDirections();    // For tag #look
             
             _canContinueDialogue = true;
@@ -390,11 +390,6 @@ namespace MonoBehavior.Managers
             ConnectParticuleSystems();
             
             _prompterTypewriter = _uiParent.transform.Find("PROMPTER_PART/DialogueBox/DialogueText").GetComponent<TypewriterCore>();
-
-            _wheel = GameObject.Find("WheelSupport").GetComponent<Wheel>();
-            _map = GameObject.Find("Map").GetComponent<Map>();
-
-            _statsUI = GameObject.Find("Canvas/PLAYER_STATS").GetComponent<StatsUI>();
         }
 
         void ConnectParticuleSystems()
@@ -414,6 +409,12 @@ namespace MonoBehavior.Managers
             _directions.Add(Constants.StageCourtyard, dirPos + new Vector3(0, 0, 30));
         }
 
+        void AssignElements()
+        {
+            _wheel = GameObject.Find("WheelSupport").GetComponent<Wheel>();
+            _map = GameObject.Find("Map").GetComponent<Map>();
+            _statsUI = GameObject.Find("Canvas/PLAYER_STATS").GetComponent<StatsUI>();
+        }
 
         void ConnectEvents()
         {

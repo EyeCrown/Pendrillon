@@ -46,8 +46,6 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         ConnectAttributes();
         SetupStats();
         MakeObservables();
-        
-        HideStats.Invoke();
     }
 
     #endregion
