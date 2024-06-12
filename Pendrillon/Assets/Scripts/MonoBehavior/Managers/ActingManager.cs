@@ -34,8 +34,8 @@ namespace MonoBehavior.Managers
         [Header("=== Sets ===")]
         public GameObject _setBarge;
         public GameObject _setCale;
-        public GameObject _setPort;
-        public GameObject _setChurch;
+        public GameObject _setChurchNight;
+        public GameObject _setChurchDay;
         public GameObject _setTrial;
         public GameObject _setTempest;
         public GameObject _setForest;
@@ -421,8 +421,8 @@ namespace MonoBehavior.Managers
         {
             _setBarge   = Instantiate(_setBarge,    GameObject.Find("Environment").transform);
             _setCale    = Instantiate(_setCale,     GameObject.Find("Environment").transform);
-            //_setPort    = Instantiate(_setPort,   GameObject.Find("Environment").transform);
-            _setChurch  = Instantiate(_setChurch,   GameObject.Find("Environment").transform);
+            _setChurchNight = Instantiate(_setChurchNight,   GameObject.Find("Environment").transform);
+            _setChurchDay   = Instantiate(_setChurchDay,   GameObject.Find("Environment").transform);
             _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
             _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
             _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
@@ -845,7 +845,8 @@ namespace MonoBehavior.Managers
             //_setBarge.SetActive(false);
             //_setCale.SetActive(false);
             //_setPort.SetActive(false);
-            _setChurch.SetActive(false);
+            // _setChurchNight.SetActive(false);
+            // _setChurchDay.SetActive(false);
             _setTrial.SetActive(false);
             _setTempest.SetActive(false);
             //_setForest.SetActive(false);
@@ -864,15 +865,15 @@ namespace MonoBehavior.Managers
                     _setCale.GetComponent<Animator>().SetBool("InOut",true);
                     _currentSet = _setCale;
                     break;
-                case Constants.SetPort:
-                    _setPort.SetActive(true);
-                    //_setPort.GetComponent<Animator>().SetBool("InOut",true);
-                    _currentSet = _setPort;
+                case Constants.SetChuchNight:
+                    _setChurchNight.SetActive(true);
+                    _setChurchNight.GetComponent<Animator>().SetBool("InOut",true);
+                    _currentSet = _setChurchNight;
                     break;
-                case Constants.SetChuch:
-                    _setChurch.SetActive(true);
-                    //_setChurch.GetComponent<Animator>().SetBool("InOut",true);
-                    _currentSet = _setChurch;
+                case Constants.SetChuchDay:
+                    _setChurchDay.SetActive(true);
+                    _setChurchDay.GetComponent<Animator>().SetBool("InOut",true);
+                    _currentSet = _setChurchDay;
                     break;
                 case Constants.SetTrial:
                     _setTrial.SetActive(true);

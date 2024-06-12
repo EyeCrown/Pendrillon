@@ -16,7 +16,7 @@ VAR verdict_is_guilty = false
 #actor:Judge:JUGE ERNEST
 #actor:Naïda:???:NAÏDA:L'AFFREUSE SIREINE:LA POISCAILLE
 // Set the location
-#set:forest // En attendant d'avoir le décors trial
+#set:trial
 // Set the actor's positions
 #position:Player:8:2
 #position:Judge:0:5

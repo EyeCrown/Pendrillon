@@ -17,7 +17,7 @@ VAR marcello_surname = "Marcellogre"
 #actor:Capucine:CAPUCINE:CAPUCINE LA LARBINE:CAPUCINE LA MARCASSINE:CAPUCINE LA TARTINE
 #actor:Marcello:MARCELLO:MARCELLOGRE:MARCELLOTARIE:MARCELLOCROUPIE
 // Set the location
-#set:church
+#set:church_day
 // Set the actor's positions
 #position:Player:4:2
 #position:Agathe:4:13
