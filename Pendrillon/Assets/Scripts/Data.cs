@@ -89,7 +89,8 @@ public static class Constants
     public const string SetBarge   = "barge";
     public const string SetCale    = "cale";
     public const string SetPort    = "port";
-    public const string SetChuch   = "church";
+    public const string SetChuchNight = "church_night";
+    public const string SetChuchDay   = "church_day";
     public const string SetTrial   = "trial";
     public const string SetTempest = "tempest";
     public const string SetForest  = "forest";
@@ -145,7 +146,6 @@ public static class Constants
     public const string ArchetypeCharisma = "Beau Parleur";
     public const string ArchetypeStrength = "Force de la Nature";
     public const string ArchetypeDexterity = "Acrobate";
-
 
     #endregion
 }
