@@ -30,6 +30,8 @@ public class Wheel : MonoBehaviour
     private GameObject _wheel;
     private GameObject _resultBox;
 
+    private Light _light;
+
     private IEnumerator _spinCoroutine;
     
     public bool _onStage;
@@ -41,6 +43,12 @@ public class Wheel : MonoBehaviour
     [SerializeField] [Range(0, -10)] private float _yOffset;
     private Vector3 _positionOutsideStage;
     private Vector3 _positionOnStage;
+
+    [Header("=== Light Colors ===")] 
+    [SerializeField] private Color _colorLightCharisma;
+    [SerializeField] private Color _colorLightStrength;
+    [SerializeField] private Color _colorLightDexterity;
+    [SerializeField] private Color _colorLightNeutral;
     
     #endregion
 
@@ -60,7 +68,8 @@ public class Wheel : MonoBehaviour
         _axle = transform.Find("Axle").gameObject;
         _wheel = _axle.transform.Find("Wheel").gameObject;
         _anim = _wheel.GetComponent<Animator>();
-
+        
+        _light = transform.Find("Area Light").GetComponent<Light>();
         
         _positionOutsideStage = transform.position;
         _positionOnStage = new Vector3(transform.position.x, transform.position.y + _yOffset, transform.position.z);
@@ -70,6 +79,7 @@ public class Wheel : MonoBehaviour
     {
         _uiBox.SetActive(false);
         _onStage = false;
+        _light.gameObject.SetActive(false);
     }
 
 
@@ -88,6 +98,7 @@ public class Wheel : MonoBehaviour
     void UpdateText(int score, int mustObtain, string type)
     {
         SetUIBox(type);
+        _light.color = GetColorByType(type);
         
         _resultText.text = score.ToString();
         _mustObtainText.text = mustObtain.ToString();
@@ -122,6 +133,21 @@ public class Wheel : MonoBehaviour
         sprite = Resources.Load <Sprite>($"SkillcheckUI/Neutral");
         _uiBox.GetComponent<Image>().sprite = sprite;
     }
+
+    Color GetColorByType(string typeName)
+    {
+        switch (typeName)
+        {
+            case Constants.TypeCharisma:
+                return _colorLightCharisma;
+            case Constants.TypeStrength:
+                return _colorLightStrength;
+            case Constants.TypeDexterity:
+                return _colorLightDexterity;
+        }
+
+        return _colorLightNeutral;
+    }
     
     #endregion
 
@@ -135,7 +161,8 @@ public class Wheel : MonoBehaviour
         
         _axle.transform.rotation = Quaternion.Euler(score * -3.6f, 0, 0);
         _anim.Play("Spin");
-
+        _light.gameObject.SetActive(true);
+        
         var startPos = _positionOutsideStage;
         var endPos = _positionOnStage;
         
@@ -178,6 +205,8 @@ public class Wheel : MonoBehaviour
         
         Debug.Log("Wheel.CloseScoreCoroutine > Start");
         
+        _light.gameObject.SetActive(false);
+
         _onStage = false;
         ActingManager.Instance._canContinueDialogue = true;
         

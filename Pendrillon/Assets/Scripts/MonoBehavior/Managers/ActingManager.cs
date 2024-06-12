@@ -185,7 +185,7 @@ namespace MonoBehavior.Managers
             if (GameManager.Instance._story.canContinue)
             {
                 _currentDialogue = GameManager.Instance._story.Continue();
-                Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
+                //Debug.Log($"AM.Refresh > _currentDialogue:{_currentDialogue}");
                 
                 // Add to history
                 //_historyText.text += _currentDialogue + "\n";
@@ -263,7 +263,7 @@ namespace MonoBehavior.Managers
 
         void HandleDialogueText(string[] words)
         {
-            Debug.Log("Begin Handle Dialogue Text");
+            //Debug.Log("Begin Handle Dialogue Text");
             // get character speaking
             String speaker; 
             String dialogue;
@@ -294,7 +294,7 @@ namespace MonoBehavior.Managers
                 dialogue = String.Join(":", words.Skip(1));
             }
                 
-            Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
+            //Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
                 
             if (speaker == "PLAYER")
                 _speakerText.text = _playerName;
@@ -336,14 +336,14 @@ namespace MonoBehavior.Managers
     
         void HandleTags()
         {
-            Debug.Log("AM.HandleTags > Begin handle tags => Clear _tagMethods");
             _tagMethods.Clear();
             if (GameManager.Instance._story.currentTags.Count > 0)
             {
                 foreach (var tagName in GameManager.Instance._story.currentTags)
                 {
+                    Debug.Log("Tag: " + tagName);
                     string[] words = tagName.Split(Constants.Separator);
-                    //foreach (var word in words) Debug.Log("word: " + word);
+                    //foreach (var word in words) Debug.Log("Tag: " + word);
                     CheckTag(words);
                 }
             }
@@ -426,6 +426,16 @@ namespace MonoBehavior.Managers
             _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
             _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
             _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
+
+            
+        }
+
+        void SetTrialObservable()
+        {
+            GameManager.Instance._story.ObserveVariable ("t_audience_judgement", 
+                (string varName, object newValue) => {
+                    _setTrial.transform.Find("Mesh_Sc_Tribunal_Balance")
+                        .GetComponent<Animator>().SetFloat("balance", (float) newValue); });
         }
         
         #endregion
@@ -686,7 +696,9 @@ namespace MonoBehavior.Managers
 
             if (GameManager.Instance._intro)
                 SetIntro();
-                
+            
+            SetTrialObservable();
+            
             GameManager.Instance.GetPlayer()._character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
             GameManager.Instance.GetPlayer()._character.strength.SetupBase((int)GameManager.Instance._story.variablesState["p_stre"]);
             GameManager.Instance.GetPlayer()._character.dexterity.SetupBase((int)GameManager.Instance._story.variablesState["p_dext"]);
@@ -775,6 +787,7 @@ namespace MonoBehavior.Managers
                 case Constants.TagAudience: HandleTagAudience(words[1]);                    break;
                 case Constants.TagRope:     HandleTagRope(words[1]);                        break;
                 case Constants.TagMap:      HandleTagMap(words[1]);                         break;
+                case Constants.TagTrial:    HandleTagTrial();                               break;
                 default: Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag."); break;
             }
         }
@@ -956,27 +969,25 @@ namespace MonoBehavior.Managers
 
         void HandleTagPlaysound(string soundToPlay)
         {
-            Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Play sound {soundToPlay}");
+            //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Play sound {soundToPlay}");
 
             //Même probleme que dans le Audience tag pour le son, j'ai fix sale déso
 
-            AkSoundEngine.PostEvent(soundToPlay, gameObject);
+            /*AkSoundEngine.PostEvent(soundToPlay, gameObject);
             if (soundToPlay.Contains("VOX"))
             {
                 Debug.Log("Stopped Emotion Sound FX");
                 AkSoundEngine.PostEvent("Stop_VOX_Emotions", gameObject);
-            }
+            }*/
 
             void PlaysoundAction()
             {
-                /*
                 AkSoundEngine.PostEvent(soundToPlay, gameObject);
                 if (soundToPlay.Contains("VOX"))
                 {
                     Debug.Log("Stopped Emotion Sound FX");
                     AkSoundEngine.PostEvent("Stop_VOX_Emotions", gameObject);
                 }
-                */
                 TagActionOver();
             }
             
@@ -1153,7 +1164,7 @@ namespace MonoBehavior.Managers
                     Debug.LogError($"AM.HandleTagAudience > Unkwonw reaction | {reaction} |");
                     return;
             }
-            Debug.Log($"AM.HandleTagAudience > Reaction: {reaction}");
+            //Debug.Log($"AM.HandleTagAudience > Reaction: {reaction}");
 
             var soundToPlay = "Play_CrowdReaction_" + reaction;
 
@@ -1166,7 +1177,7 @@ namespace MonoBehavior.Managers
 
                 foreach (var particleSystem in particleSystemEmiters)
                 {
-                    Debug.Log($"AudienceAction > Emit particles from {particleSystem.transform.parent.name}");
+                    //Debug.Log($"AudienceAction > Emit particles from {particleSystem.transform.parent.name}");
                     particleSystem.Play();
                 }
                 
@@ -1202,7 +1213,7 @@ namespace MonoBehavior.Managers
                 if (travelName == travelType)
                 {
                     travel = travelName;
-                    Debug.Log($"AM.HandleTagMap > Valide travel name");
+                    //Debug.Log($"AM.HandleTagMap > Valide travel name");
                     break;
                 }
             }
@@ -1215,7 +1226,7 @@ namespace MonoBehavior.Managers
             
             void MapAction()
             {
-                Debug.Log("MapAction");
+                //Debug.Log("MapAction");
                 if (travel != string.Empty)
                     _map.DisplayTravel(travel);
                 
@@ -1224,6 +1235,20 @@ namespace MonoBehavior.Managers
 
             _tagMethods.Add(MapAction);
         }
+
+
+        void HandleTagTrial()
+        {
+            Debug.Log("AM.HandleTagTrial");
+            
+            HandleDialogue();
+            HandleTagPlaysound("Play_SFX_Story_JudgeBellFarTrial");
+            HandleTagScreenShake(new[] { "screenshake" });
+            HandleTagWait("0.5");
+            HandleTagAudience(Constants.ReactChoc);
+            
+        }
+        
         
         //TODO: Make curtains tag handlers
         /* void HandleCurtains()
@@ -1289,7 +1314,7 @@ namespace MonoBehavior.Managers
         {
             while (!_canContinueDialogue)
             {
-                Debug.Log("Wait to display text");
+                //Debug.Log("Wait to display text");
                 yield return null;
             }
             
@@ -1309,7 +1334,7 @@ namespace MonoBehavior.Managers
                 yield return new WaitForSeconds(GameManager.Instance._timeTextToAppearInSec);
             }
 
-            Debug.Log($"Update _dialogueText > {textToDisplay}");
+            //Debug.Log($"Update _dialogueText > {textToDisplay}");
             //_dialogueText.text = textToDisplay;
             _dialogueTypewriter.ShowText(textToDisplay);
             
@@ -1332,7 +1357,7 @@ namespace MonoBehavior.Managers
         /// <returns></returns>
         IEnumerator ExecuteTagMethods()
         {
-            Debug.Log("Begin AM.ExecuteTagMethods");
+            //Debug.Log("Begin AM.ExecuteTagMethods");
             // Waiting if something needed to be done first
             while (!_canContinueDialogue)
             {
