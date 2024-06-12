@@ -3450,6 +3450,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 958408372}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &966757504 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 19692555886895479, guid: 972e9abcfddb5174ba6e078bb3749ade,
+    type: 3}
+  m_PrefabInstance: {fileID: 4677662626329250584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &977017310
 GameObject:
   m_ObjectHideFlags: 0
@@ -4473,7 +4479,7 @@ Transform:
   m_LocalScale: {x: 0.00019999995, y: 0.012537001, z: 0.0002499999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4677662626329250585}
+  m_Father: {fileID: 966757504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1196417104
 CapsuleCollider:
@@ -6255,7 +6261,7 @@ Transform:
   m_LocalScale: {x: 0.00019999997, y: 0.012537001, z: 0.0002499999}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4677662626329250585}
+  m_Father: {fileID: 966757504}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &1569708809
 CapsuleCollider:
@@ -10003,6 +10009,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: --Sc_Tribunal--
       objectReference: {fileID: 0}
+    - target: {fileID: 1685102184115991857, guid: 972e9abcfddb5174ba6e078bb3749ade,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3829561592238795085, guid: 972e9abcfddb5174ba6e078bb3749ade,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10093,12 +10104,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 4677662626329250587}
   m_SourcePrefab: {fileID: 100100000, guid: 972e9abcfddb5174ba6e078bb3749ade, type: 3}
---- !u!4 &4677662626329250585 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 19692555886895479, guid: 972e9abcfddb5174ba6e078bb3749ade,
-    type: 3}
-  m_PrefabInstance: {fileID: 4677662626329250584}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4677662626329250586 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5240356080589200033, guid: 972e9abcfddb5174ba6e078bb3749ade,
