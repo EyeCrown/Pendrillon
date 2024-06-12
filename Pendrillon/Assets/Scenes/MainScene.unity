@@ -360,8 +360,9 @@ MonoBehaviour:
     type: 3}
   _setCale: {fileID: 3013891112084279356, guid: bdc67d3f783f005429de68ba6deb2dbf,
     type: 3}
-  _setPort: {fileID: 0}
-  _setChurch: {fileID: 7104915721346887347, guid: 9fc05f629b432fc4498ee03463af0180,
+  _setChurchNight: {fileID: 7104915721346887347, guid: 9fc05f629b432fc4498ee03463af0180,
+    type: 3}
+  _setChurchDay: {fileID: 7104915721346887347, guid: c956b8d9a85bb704a8bc463a79945077,
     type: 3}
   _setTrial: {fileID: 1685102184115991857, guid: 972e9abcfddb5174ba6e078bb3749ade,
     type: 3}
@@ -12357,7 +12358,7 @@ MonoBehaviour:
   _gridYTempest: 2.25
   _PrompterPosition: {fileID: 1236734075}
   _enemyPos: {fileID: 1399118768}
-  _inkAsset: {fileID: 4900000, guid: fece1a5a3634d9b43a17bb45260fd0e1, type: 3}
+  _inkAsset: {fileID: 4900000, guid: daede2a868f56dd428021aab5e82497a, type: 3}
   _buttonPos: {x: 250, y: 150}
   _wwiseEvent:
     idInternal: 0
@@ -19388,6 +19389,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: MAIN_MENU
+      objectReference: {fileID: 0}
+    - target: {fileID: 3353380751480121724, guid: 8317b882f113a22439ba2c370cf01fcf,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3851974848137609052, guid: 8317b882f113a22439ba2c370cf01fcf,
         type: 3}
