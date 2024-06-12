@@ -14,7 +14,7 @@ VAR irene_torch_is_on = false
 #actor:Player:PLAYER
 #actor:Agathe:UNE VOIX:PRÊTRESSE AGATHE:AGATHE
 // Set the location
-#set:church
+#set:church_night
 // Set the actor's positions
 #position:Player:4:1
 #position:Agathe:4:3
