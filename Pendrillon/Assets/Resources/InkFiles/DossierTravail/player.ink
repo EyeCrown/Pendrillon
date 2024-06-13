@@ -11,8 +11,8 @@ VAR p_archetype = "Beau Parleur" // L'archétype du joueur
 
 // Stats
 VAR p_char = 5 // Player's charisma stat
-VAR p_stre = 5 // Player's strength stat
-VAR p_dext = 5 // Player's dexterity stat
+VAR p_stre = 3 // Player's strength stat
+VAR p_dext = 3 // Player's dexterity stat
 VAR p_comp = 1 // Player's composition stat
 VAR p_luck = 1 // Player's luck stat
 
