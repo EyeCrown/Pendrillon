@@ -56,6 +56,11 @@ namespace MonoBehavior.Managers
         [SerializeField] private TextAsset _inkAsset;
         [HideInInspector] public Story _story;
 
+        [Header("=== Parameters ===")] 
+        public bool _beginCurtainsOpen;
+        
+        
+        [Header("=== Choice Button Y Position")]
         public Vector2 _buttonPos = new Vector2(250, 150);
         
         public AK.Wwise.Event _wwiseEvent;
