@@ -65,7 +65,7 @@ L'AFFREUSE SIREINE: ... #audience:boing
     * [Elle possède un nom.] PLAYER: L'affreuse Sireine, comme vous dites, possède un nom. Naïda.
 - JUGE ERNEST: Ainsi, la poiscaille possède un nom ? #playsound:VOX_Judge_poiscalleaunnomq #audience:debate
 LA POISCAILLE: ... #audience:booing
-    * [(Menaçant) Appelez-la par son nom. {t(STRE, -20)}]
+    * [(Menaçant) Appelez-la par son nom. {t(STRE, -20)}] // 30%
         {sc(STRE, -20): -> convince_name_naida_S | -> convince_name_naida_F}
             ** (convince_name_naida_S) PLAYER: Votre Honneur, si vous ne daignez pas appeler Naïda par son nom, par la <b>Déesse</b>, vous le paierez. #audience:choc
                 ~ audience_judgement(0.1)
@@ -75,7 +75,7 @@ LA POISCAILLE: ... #audience:booing
                 ~ naida_name_on_text = "Naïda"
             ** (convince_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez me faire peur, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhfairepeur #audience:ovation
                 ~ naida_name_on_text = "la poiscaille"
-    * [(Calme) Tout être a droit à un nom.{t(CHAR, -20)}]
+    * [(Calme) Tout être a droit à un nom.{t(CHAR, -20)}] // 60%
         {sc(CHAR, -20): -> force_name_naida_S | -> force_name_naida_F}
             ** (force_name_naida_S) PLAYER: Votre Honneur, je vous demande de faire preuve d'humanité en appelant Naïda par son nom. #audience:debate
                 ~ audience_judgement(0.1)
@@ -106,14 +106,14 @@ SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
         ** [C'est entendu.] PLAYER: Entendu, Votre Honneur. #audience:applause
             -> player_and_naida_met
 - JUGE ERNEST: Ainsi, vous avez découvert le peuple maudit qui fut jadis noyé, avalé par le Léviathan... #playsound:VOX_Judge_ainsipeuplejadis
-    * [Ils ne sont pas maudits. {t(DEXT, -20)}]
+    * [Ils ne sont pas maudits. {t(DEXT, -20)}] // 60%
         {sc(DEXT, -20): -> sireine_are_not_cursed_S | -> sireine_are_not_cursed_F}
         ** (sireine_are_not_cursed_S) PLAYER: Votre Honneur, j'ai toutes les raisons de penser que le peuple des Sireines n'est en rien maudit. #audience:debate
             PLAYER: Ne pensez-vous pas que si la <b>Déesse</b> avait voulu que le Déluge ne les tue, ils ne seraient pas vivants aujourd'hui ? #audience:applause
             ~ audience_judgement(0.1)
         ** (sireine_are_not_cursed_F) PLAYER: Sont-ils réellement maudits ? Qui peut le dire ? #audience:debate
             ~ audience_judgement(-0.03)
-    * [Vous seul êtes maudit. {t(STRE, -10)}]
+    * [Vous seul êtes maudit. {t(STRE, -10)}] // 60%
         {sc(STRE, -20): -> judge_is_cursed_S | -> judge_is_cursed_F}
         ** (judge_is_cursed_S) PLAYER: Votre Honneur, s'il est un être maudit en ces lieux, c'est bien vous. #audience:debate
             PLAYER: Un siècle à souffrir, accroché à une roue...
@@ -125,8 +125,8 @@ SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
         ~ audience_judgement(-0.03)
 - JUGE ERNEST: Accusé, il est une question qui est dans tous les esprits... #playsound:VOX_Judge_accusequestionesprits
 JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #playsound:VOX_Judge_commentamoureuxdeluge
-    * [(Convaincre) Elle est plus proche de nous que vous. {t(STRE, -10)}]
-        {sc(STRE, -10): -> closer_to_us_S | -> closer_to_us_F}
+    * [(Convaincre) Elle est plus proche de nous que vous. {t(DEXT, -10)}] // 65%
+        {sc(DEXT, -10): -> closer_to_us_S | -> closer_to_us_F}
         ** (closer_to_us_S) PLAYER: Votre Honneur... Les Sireines sont plus proches des humains que vous ne l'êtes vous-même... #audience:choc
             PLAYER: Naïda a un cœur qui bat : le vôtre n'a-t-il pas cessé il y a bien longtemps ? #audience:debate
             PLAYER: Lorsqu'elle se blesse, son sang coule : est-ce votre cas ? #audience:debate
@@ -141,7 +141,7 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
             PLAYER: Un jour... Elle mourra. #audience:silent
             PLAYER: Peut-on en dire autant de vous ? #audience:booing
             ~ audience_judgement(-0.03)
-    * [(Persuader) J'ai un cœur.{t(CHAR, -10)}]
+    * [(Persuader) J'ai un cœur.{t(CHAR, -10)}] // 70%
         {sc(CHAR, -10): -> we_have_a_heart_S | -> we_have_a_heart_F}
         ** (we_have_a_heart_S) PLAYER: Pour la simple raison que j'ai un cœur, Votre Honneur. #audience:debate
             PLAYER: Naïda aussi en possède un. Et vous, est-ce votre cas ? #audience:choc
@@ -156,7 +156,7 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
     * [Rester silencieux.] JUGE ERNEST: Aucune réponse... Le cœur a ses raisons... #playsound:VOX_Judge_lecoeurasesraisons #audience:debate
         ~ audience_judgement(-0.03)
 - JUGE ERNEST: Accusé, ne souffrez-vous d'aucune honte à défendre ce peuple que le Déluge a puni ? #playsound:VOX_Judge_accuseaucunehonte
-    * [Nos ancêtres sont communs. {t(DEXT, 0)}]
+    * [Nos ancêtres sont communs. {t(DEXT, 0)}] // 75%
         {sc(DEXT, 0): -> we_have_same_ancesters_S | -> we_have_same_ancesters_F}
         ** (we_have_same_ancesters_S) PLAYER: Votre Honneur, nos ancêtres et ceux des Sireines sont les mêmes. #audience:choc
             PLAYER: Lorsque Miraterre sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la <b>Déesse</b>... #audience:debate
@@ -169,8 +169,8 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
             PLAYER: D'autres n'eurent pas cette chance... Fort heureusement, ils échappèrent à la noyade, eux aussi... #audience:debate
             PLAYER: Sauvés par le Léviathan. #audience:choc
             PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un même peuple. #audience:booing
-    * [Nous pourrions nous unir. {t(STRE, 0)}]
-        {sc(STRE, 0): -> we_could_unify_S | -> we_could_unify_F}
+    * [Nous pourrions nous unir. {t(CHAR, 0)}] // 70%
+        {sc(CHAR, 0): -> we_could_unify_S | -> we_could_unify_F}
         ** (we_could_unify_S) PLAYER: Nos deux peuples pourraient s'unir, Votre Honneur. Faire la paix, du moins. #audience:debate
             PLAYER: Avant le Déluge, nous ne formions qu'une seule et même communauté... #audience:debate
             PLAYER: Il serait temps d'abandonner notre haine, et de leur montrer... à eux, nos frères et nos sœurs... le respect qu'ils méritent. #audience:ovation
@@ -181,8 +181,8 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
         ~ audience_judgement(-0.03)
         -> are_sireine_doomed
 - JUGE ERNEST: Insinuez-vous que l'infâme créature... Le Léviathan lui-même, aurait sauvé ces gens ? #playsound:VOX_Judge_insinuezcreatureinfame
-    * [Ma présence en est la preuve. {t(CHAR, 0)}]
-        {sc(CHAR, 0): -> i_am_the_proof_S | -> i_am_the_proof_F}
+    * [Ma présence en est la preuve. {t(DEXT, 0)}] // 80%
+        {sc(DEXT, 0): -> i_am_the_proof_S | -> i_am_the_proof_F}
         ** (i_am_the_proof_S) PLAYER: Votre Honneur, ma présence en ces lieux devrait répondre à votre interrogation... #audience:debate
             PLAYER: Dois-je vous rappeler que le Léviathan m'a avalé, avec tout mon équipage ? #audience:debate
             PLAYER: Pourtant, je suis ici, devant vous. En chair et en os... #anim:Player:bow #audience:ovation
@@ -191,7 +191,7 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
             PLAYER: Dois-je vous rappeler que le Léviathan m'a avalé, avec tout mon équipage ? #audience:debate
             PLAYER: Pourtant, je suis ici, devant vous. En chair et en os... #anim:Player:bow #audience:booing
             ~ audience_judgement(-0.04)
-    * [Êtes-vous donc idiot ? {t(STRE, 0)}]
+    * [Êtes-vous donc idiot ? {t(STRE, 0)}] // 70%
         {sc(STRE, 0): -> are_you_dumb_S | -> are_you_dumb_F}
         ** (are_you_dumb_S) PLAYER: Votre Honneur, êtes-vous stupide ? #audience:choc
             PLAYER: N'avez-vous donc rien remarqué ? Le Léviathan m'a avalé, et pourtant... #audience:debate
@@ -204,7 +204,7 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
             PLAYER: ... Sauf votre respect, Votre Honneur. #audience:booing
             ~ audience_judgement(-0.04)
 - (are_sireine_doomed) JUGE ERNEST: Ainsi, vous semblez penser que les Sireines ne sont pas des créatures damnées ? #playsound:VOX_Judge_sireinespasdamnesq #audience:debate
-    * [Irène était une Sireine. {t(CHAR, -30)}]
+    * [Irène était une Sireine. {t(CHAR, -30)}] // 50%
         {sc(CHAR, -30): -> irene_was_a_sireine_S | -> irene_was_a_sireine_F}
         ** (irene_was_a_sireine_S) PLAYER: Votre Honneur, n'avez-vous donc pas compris ? #audience:debate
             PLAYER: <b>Irène</b> elle-même... Votre propre fille...
@@ -220,7 +220,7 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
             PLAYER: Comment expliquer autrement qu'elle ne fut pas noyée ? #audience:debate
             PLAYER: En conspuant Naïda, ainsi que les siens, c'est la <b>Déesse</b> elle-même que vous insultez ! #audience:booing
                 ~ audience_judgement(-0.07)
-    * [Pas maudites mais bénies. {t(DEXT, -20)}]
+    * [Pas maudites mais bénies. {t(DEXT, -20)}] // 60%
         {sc(DEXT, -20): -> sireine_are_blessed_S | -> sireine_are_blessed_F}
         ** (sireine_are_blessed_S) PLAYER: Votre Honneur, si un peuple, avalé par les Eaux lors du Déluge, a pu survivre jusqu'à aujourdhui... #audience:debate
             PLAYER: Ne pensez-vous pas qu'il en va de la volonté de la <b>Déesse</b> elle-même ? #audience:debate
