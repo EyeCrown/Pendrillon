@@ -1,10 +1,10 @@
 // CAST SALUTATION SCENE
 
 // Scene
-=== cast_salutations ===
--> salutations
+=== cast_salutation ===
+-> salutation
 
-= salutations
+= salutation
 // Define the actors of the scene
 #actor:Player:PLAYER
 #actor:Naïda:NAÏDA

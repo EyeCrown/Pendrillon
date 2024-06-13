@@ -37,7 +37,9 @@ public class Wheel : MonoBehaviour
     public bool _onStage;
     
     public AnimationCurve _movementCurve;
-    
+
+    private Color _successColor = new Color(0.08f, 0.7f, 0);
+    private Color _failColor = new Color(0.75f, 0, 0);
 
     [Header("=== Positions ===")] 
     [SerializeField] [Range(0, -10)] private float _yOffset;
@@ -61,7 +63,7 @@ public class Wheel : MonoBehaviour
         _mustObtainText = _uiBox.transform.Find("MustObtainText").GetComponent<TextMeshProUGUI>();
         _maxText        = _uiBox.transform.Find("MaxText").GetComponent<TextMeshProUGUI>();
         _typeText       = _uiBox.transform.Find("TypeText").GetComponent<TextMeshProUGUI>();
-        _levelUpText    = _uiBox.transform.Find("LevelUpText").GetComponent<TextMeshProUGUI>();
+        //_levelUpText    = _uiBox.transform.Find("LevelUpText").GetComponent<TextMeshProUGUI>();
         
         _resultBox = _uiBox.transform.Find("ResultColor").gameObject;
         
@@ -102,17 +104,17 @@ public class Wheel : MonoBehaviour
         
         _resultText.text = score.ToString();
         _mustObtainText.text = mustObtain.ToString();
-        _typeText.text = "";
-        _levelUpText.text = type + "";
+        
+        //_levelUpText.text = "";
 
         if (score <= mustObtain)
         {
-            _resultBox.GetComponent<Image>().color = Color.green;
+            _resultBox.GetComponent<Image>().color = _successColor;
             AkSoundEngine.PostEvent("Play_UI_HUD_SkillCheck_Success", gameObject);
         }
         else
         {
-            _resultBox.GetComponent<Image>().color = Color.red;
+            _resultBox.GetComponent<Image>().color = _failColor;
             AkSoundEngine.PostEvent("Play_UI_HUD_SkillCheck_Failed", gameObject);
         }
     }
@@ -127,6 +129,8 @@ public class Wheel : MonoBehaviour
             {
                 sprite = Resources.Load <Sprite>($"SkillcheckUI/{typeName}");
                 _uiBox.GetComponent<Image>().sprite = sprite;
+                _typeText.text = Constants.TranslateType(type);
+                
                 return;
             }
         }

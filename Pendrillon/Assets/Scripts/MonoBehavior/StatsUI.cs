@@ -46,6 +46,7 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         ConnectAttributes();
         SetupStats();
         MakeObservables();
+        gameObject.SetActive(false);
     }
 
     #endregion
@@ -85,9 +86,9 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         //     UpdateComposition((int)newValue); });
         
     }
-    void UpdateCharisma(int newValue)    => _charisma.text      = "CHR > " + newValue;
-    void UpdateDexterity(int newValue)   => _dexterity.text     = "DXT > " + newValue;
-    void UpdateStrength(int newValue)    => _strength.text      = "FRC > " + newValue;
+    void UpdateCharisma(int newValue)    => _charisma.text      = newValue.ToString();
+    void UpdateDexterity(int newValue)   => _dexterity.text     = newValue.ToString();
+    void UpdateStrength(int newValue)    => _strength.text      = newValue.ToString();
     //void UpdateComposition(int newValue) => _composition.text   = "CST > " + newValue;
 
     #endregion
@@ -98,6 +99,7 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     void OnDisplayStats()
     {
+        _anim.SetTrigger("reset");
         gameObject.SetActive(true);
     }
 

@@ -54,12 +54,10 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
             ~ result = true
             // Modify the applausemeter
             ~ add_applausemeter(threshold_to_applausemeter_points(threshold, result))
-            #audience:ovation
         - else:
             ~ result = false
             // Modify the applausemeter
             ~ add_applausemeter(threshold_to_applausemeter_points(threshold, result))
-            #audience:booing
     }
     {
         - print_debug:

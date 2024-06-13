@@ -60,7 +60,7 @@ public static class Constants
 
     #endregion
 
-    #region Button types
+    #region Skill types
 
     public const string TypeCharisma    = "Charisma";
     public const string TypeStrength    = "Strength";
@@ -76,6 +76,18 @@ public static class Constants
         TypeComposition,
         TypeLuck
     };
+
+    public static string TranslateType(string englishType)
+    {
+        string frenchName = "";
+        switch (englishType)
+        {
+            case TypeCharisma:  frenchName = "Charisme";    break;
+            case TypeStrength:  frenchName = "Force";       break;
+            case TypeDexterity: frenchName = "Dexterité";   break;
+        }
+        return frenchName;
+    }
     
     #endregion
 

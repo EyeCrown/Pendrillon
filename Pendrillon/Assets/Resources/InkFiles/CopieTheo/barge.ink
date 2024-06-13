@@ -9,6 +9,7 @@
 
 // Scène 1
 = scene_1
+#curtains
 // Define the actors of the scene
 #actor:Player:PLAYER:VOYAGEUR
 #actor:Passeur:PASSEUR
@@ -152,7 +153,7 @@ PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX
     * [Inattendu.] PLAYER: ... des plus <i>inattendus</i>.
         PASSEUR: Inattendu, tu dis ? #playsound:VOX_Ferryman_innatendu
 - PLAYER: Constatez par vous-même : nous avons bravé une tempête, affronté un monstre marin...
-PLAYER: ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna... 
+PLAYER: ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna... #map:up
 - #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #wait:1
 - -> trip_return 
 
