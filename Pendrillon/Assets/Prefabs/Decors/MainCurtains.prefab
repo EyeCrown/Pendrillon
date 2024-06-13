@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 3872911619966256579}
   - component: {fileID: 8825832033896088213}
+  - component: {fileID: 1933788816103678706}
   m_Layer: 0
-  m_Name: Curtains
+  m_Name: MainCurtains
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,6 +59,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1933788816103678706
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7731381328192955328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4eaea8b86b5124dba4169ab0efbec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Call:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &172141860522143013
 PrefabInstance:
   m_ObjectHideFlags: 0

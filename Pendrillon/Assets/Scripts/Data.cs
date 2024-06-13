@@ -23,11 +23,7 @@ public static class Constants
     public const string TagRope         = "rope";           // #rope:Character              Character: nom du personnage
     public const string TagMap          = "map";            // #map:Travel                  Travel: nom du voyage (voir TravelNames region)
     public const string TagTrial        = "trial";          // #trial           Effectue les actions de trial
-    
-            
-    // public const string TagCurtains     = "curtains";       // #curtains
-    // public const string TagOpenCurtains = "open";           // #curtains
-    // public const string TagCloseCurtains = "close";         // #curtains
+    public const string TagCurtains     = "curtains";       // #curtains        Change l'état des pendrillons
     
     #endregion
 
