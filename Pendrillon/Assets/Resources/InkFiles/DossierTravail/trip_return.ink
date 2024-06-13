@@ -46,7 +46,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
             PERSONNAGE MASQUÉ: Ne le prenez pas mal, mais... vous n'êtes pas très convaincant.
     * [On improvisera.] PLAYER: On improvisera, comme j'en ai l'habitude.
         PERSONNAGE MASQUÉ: Ce n'est pas la première fois que vous avez des ennuis avec la Couronne, n'est-ce pas ?
-        ** [(Mentir) C'est une première. {t(CHAR, -10)}] // 35%
+        ** [(Mentir) C'est une première. {t(CHAR, -10)}] // 40%
             {sc(CHAR, -10): -> lie_S | -> lie_F}
             *** (lie_S) PLAYER: Je suis ce qu'on appelle un honnête homme.
                 PERSONNAGE MASQUÉ: Vous semblez sincère.
@@ -217,7 +217,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             CAPUCINE: Il nous prend pour des idiots ou je rêve ? #playsound:VOX_Capucine_idiotsoujereve
             MARCELLO: Je vais t'apprendre à mentir à des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
                 -> battle
-    * [Intimider. {t(STRE, -20)}] // 40%
+    * [Intimider. {t(STRE, -20)}] // 45%
         {sc(STRE, -20): -> intimidate_guards_S | -> intimidate_guards_F}
         ** (intimidate_guards_S) PLAYER: Le marin d'eau douce va te noyer de coups, si tu continues de l'ouvrir.
             MARCELLO: Pardon, m'sieur.
