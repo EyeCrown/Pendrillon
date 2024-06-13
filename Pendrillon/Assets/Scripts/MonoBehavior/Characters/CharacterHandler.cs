@@ -121,8 +121,6 @@ public class CharacterHandler : MonoBehaviour
         float distance = Vector3.Distance(transform.position, end);
         float duration = distance / speed;
         
-        //TODO: Add animations when moving
-
         StartCoroutine(MovePositionCoroutine(end, duration, callbackOnFinish));
     }
 

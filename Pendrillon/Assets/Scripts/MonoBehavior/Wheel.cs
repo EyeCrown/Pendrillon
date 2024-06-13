@@ -129,7 +129,7 @@ public class Wheel : MonoBehaviour
             {
                 sprite = Resources.Load <Sprite>($"SkillcheckUI/{typeName}");
                 _uiBox.GetComponent<Image>().sprite = sprite;
-                _typeText.text = $"Résultat du test de {Constants.TranslateType(type)}";
+                _typeText.text = Constants.TranslateType(type);
                 
                 return;
             }
