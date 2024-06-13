@@ -32,29 +32,29 @@ VAR p_luck_mod = 0 // Player's luck modifier stat
 
 // Select player's archetype and modify its stats accordingly
 === function select_archetype(pArchetype)
-{
-    - pArchetype == "Beau Parleur":
-        ~ p_archetype = "Beau Parleur"
-        ~ p_char = 5
-        ~ p_stre = 3
-        ~ p_dext = 3
-        ~ p_char_xp = 24
-        ~ p_stre_xp = 6.5
-        ~ p_dext_xp = 6.5
-    - pArchetype == "Force de la Nature":
-        ~ p_archetype = "Force de la Nature"
-        ~ p_char = 3
-        ~ p_stre = 5
-        ~ p_dext = 3
-        ~ p_char_xp = 6.5
-        ~ p_stre_xp = 24
-        ~ p_dext_xp = 6.5
-    - pArchetype == "Acrobate":
-        ~ p_archetype = "Acrobate"
-        ~ p_char = 3
-        ~ p_stre = 3
-        ~ p_dext = 5
-        ~ p_char_xp = 6.5
-        ~ p_stre_xp = 6.5
-        ~ p_dext_xp = 24
-}
+    {
+        - pArchetype == "Beau Parleur":
+            ~ p_archetype = "Beau Parleur"
+            ~ p_char = 5
+            ~ p_stre = 3
+            ~ p_dext = 3
+            ~ p_char_xp = 24
+            ~ p_stre_xp = 6.5
+            ~ p_dext_xp = 6.5
+        - pArchetype == "Force de la Nature":
+            ~ p_archetype = "Force de la Nature"
+            ~ p_char = 3
+            ~ p_stre = 5
+            ~ p_dext = 3
+            ~ p_char_xp = 6.5
+            ~ p_stre_xp = 24
+            ~ p_dext_xp = 6.5
+        - pArchetype == "Acrobate":
+            ~ p_archetype = "Acrobate"
+            ~ p_char = 3
+            ~ p_stre = 3
+            ~ p_dext = 5
+            ~ p_char_xp = 6.5
+            ~ p_stre_xp = 6.5
+            ~ p_dext_xp = 24
+    }
