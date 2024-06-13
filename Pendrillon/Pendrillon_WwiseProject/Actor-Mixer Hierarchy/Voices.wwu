@@ -675,6 +675,28 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
+										<Sound Name="VOX_NPC_Leviathan_Map" ID="{70320253-4D50-4689-82A8-09457663D0E4}" ShortID="612806958">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="VOX_NPC_Leviathan_Spawn" ID="{DD5B2049-B2E8-4335-A251-39483DC33C4B}">
+													<Language>SFX</Language>
+													<AudioFile>VOX_NPC_Leviathan_Spawn.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="557710724"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="VOX_NPC_Leviathan_Spawn" ID="{DD5B2049-B2E8-4335-A251-39483DC33C4B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</ActorMixer>
 							</ChildrenList>
@@ -9364,6 +9386,11 @@
 													</ReferenceList>
 													<ChildrenList>
 														<AudioFileSource Name="VOX_Ferryman_hahajevois" ID="{B0B8BE82-A19A-4623-9FDB-F7DAEB2FD815}">
+															<PropertyList>
+																<Property Name="FadeOutDuration" Type="Real64" Value="0.110967606707317"/>
+																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																<Property Name="TrimEnd" Type="Real64" Value="1.79133422256098"/>
+															</PropertyList>
 															<Language>French(FR)</Language>
 															<AudioFile>VOX_Ferryman_hahajevois.wav</AudioFile>
 															<MediaIDList>
