@@ -21,10 +21,8 @@ INCLUDE intro.ink
 INCLUDE cast_salutation.ink
 
 
-
 // Seed of randomize events
 //~ SEED_RANDOM(666)
 
 // Start the game
-//-> barge
--> intro
+-> barge.scene_2

@@ -52,7 +52,7 @@ SOUFFLEUR: Alors mets-y de l'émotion, l'ami !
     * [Il est vrai que j'ai ce talent-là, mais...] PLAYER: Il est vrai que j'ai ce talent-là, mais... #playsound:VOX_Player_ilestvraitalent
 - SOUFFLEUR: N'oublie pas d'incarner ton personnage, l'ami ! Souviens-toi : l'é-mo-tion ! #anim:Souffleur:angry
 - SOUFFLEUR: « Un talent est une ressource précieuse, aussi, je l'utilise à bon escient. ».
-    * [(Avec intensité) Un talent est une ressource précieuse...] PLAYER: Un talent est une ressource précieuse, aussi je l'utilise à bon escient. #wait:1 #audience:ovation #playsound:Play_MUS_Story_SC_Barque_AGoodActor
+    * [(Avec intensité) Un talent est une ressource précieuse...] PLAYER: Un talent est une ressource précieuse, aussi je l'utilise à bon escient. #wait:1 #audience:ovation #playsound:Play_MUS_Story_SC_Barque_AGoodActor #playsound:VOX_Player_talentressourceprecieuse
 - PASSEUR: Héhé, je vois, je vois... #anim:Passeur:laugh #playsound:VOX_Ferryman_hahajevois
 - PASSEUR: Tu sais, voyageur, ce n'est pas auprès de moi qu'il faudra se montrer éloquent. #playsound:VOX_Ferryman_detoutefacon #audience:ovation
 - SOUFFLEUR: C'est exaltant, pas vrai ? #anim:Souffleur:happy
@@ -60,7 +60,7 @@ SOUFFLEUR: Le public réagit à tes répliques, mais aussi à ton jeu de scène 
 SOUFFLEUR: Poursuivons : « Je ne suis pas un homme de mauvaise compagnie. ».
     * [Je ne suis pas un homme de mauvaise compagnie.] PLAYER: Je ne suis pas un homme de mauvaise compagnie. #playsound:VOX_Player_pasmauvaisecompagnie
 - SOUFFLEUR: « De quoi souhaites-tu que l'on parle, Passeur ? ».
-    * [De quoi souhaites-tu que l'on parle, Passeur ?] PLAYER: De quoi souhaites-tu que l'on parle, Passeur ? #anim:Player:question
+    * [De quoi souhaites-tu que l'on parle, Passeur ?] PLAYER: De quoi souhaites-tu que l'on parle, Passeur ? #anim:Player:question #playsound:VOX_Player_quoisouhaiteparle
 - PASSEUR: Commence par te présenter : qui es-tu ? #anim:Passeur:question #playsound:VOX_Ferryman_commencepresenter
 #audience:debate
 - SOUFFLEUR: Aïe ! C'est là qu'on va avoir un petit problème, l'ami.
@@ -79,18 +79,25 @@ SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance, l
         ~ p_name = "Octave"
 - #audience:ovation
 SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! <i>Show must go on!</i>
-- PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question #playsound:VOX_Ferryman_commentretrouveici
+{
+    - p_name == "Merlin":
+        PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question #playsound:VOX_Ferryman_commentretrouveiciMerlin
+    - p_name == "Ambroise":
+        PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question #playsound:VOX_Ferryman_commentretrouveiciAmbroise
+    - p_name == "Octave":
+        PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question #playsound:VOX_Ferryman_commentretrouveiciOctave
+}
 - PLAYER: Un jour où je me trouvais...
     * [À l'auberge...] PLAYER: Un jour où je me trouvais à l'auberge des Deux Frères, je reçus la missive d'un expéditeur inconnu.
     * [Sur mon navire...] PLAYER: Un jour où je me trouvais sur mon navire, je reçus la missive d'un expéditeur inconnu.
     * [À la taverne...] PLAYER: Un jour où je me trouvais à la taverne du Rat Bouilli, je reçus la missive d'un expéditeur inconnu.
 - PLAYER: Habituellement, une lettre de cette nature aurait fini au feu, mais un détail attira mon attention... #playsound:VOX_Player_unjour #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter1
     * [L'écriture.] PLAYER: La lettre était dotée d’une impeccable calligraphie. Ce détail ne pouvait signifier qu’une chose : notre expéditeur était du genre fortuné. #playsound:VOX_Player_lalettreecriture #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
-    * [Le destinataire.] PLAYER: La lettre était destinée à un certain {p_name} Jehovah Banes. Or, la seule personne à m’appeler ainsi est ma mère, qui est absolument et irrémédiablement illettrée... #playsound:VOX_Player_lalettredestinataire{p_name} #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
+    * [Le destinataire.] PLAYER: La lettre était destinée à un certain {p_name} Jehovah Banes. Or, la seule personne à m’appeler ainsi est ma mère, qui est absolument et irrémédiablement illettrée... #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
     * [L'odeur.] PLAYER: J’ai reçu bien des lettres dans ma vie, certaines avaient l’odeur du sel marin ou des impôts impayés, mais jamais une odeur si... délicate. L'odeur d'un expéditeur fortuné. #playsound:VOX_Player_lalettreodeur #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
-- PLAYER: La lettre me donnait rendez-vous pour une cause « de la plus haute importance ».
+- PLAYER: La lettre me donnait rendez-vous pour une cause « de la plus haute importance ». #playsound:VOX_Player_lettreplushauteimportance
 PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous... #playsound:VOX_Player_transitionsecretmeeting  #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
-    * [Le Bois aux Noyés.] PLAYER: Le Bois aux Noyés. #audience:choc
+    * [Le Bois aux Noyés.] PLAYER: Le Bois aux Noyés. #audience:choc #playsound:VOX_Player_leboisnoyes
 - -> secret_meeting
 
 // Scène 2
@@ -128,7 +135,7 @@ PLAYER: À dire vrai...
     * [(Mentir) J'ai tué le monstre.] PLAYER: J'ai trouvé le monstre à l'endroit indiqué par la carte, et je l'ai tué, avec l'aide de mon équipage. Quelle bataille avons-nous livrée ! #anim:Player:happy
     * [(Éluder la question) Rien...] PLAYER: Je me suis rendu sur place, je n'ai trouvé aucune créature, bien entendu... et je suis rentré. Fin de l'histoire.
 - PASSEUR: Pourquoi ne pas me dire ce qu'il s'est réellement passé ? Ton âme s'en verra peut-être allégée... #playsound:VOX_Ferryman_pourquoidireverite
-PLAYER: Bien, bien... Si tu insistes, Passeur.
+PLAYER: Bien, bien... Si tu insistes, Passeur. #map:down
 PLAYER: Notre voyage dura...
     * [Près d'une année.] PLAYER: ... près d'une année, en tout. #map:departure
     * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté. #map:Travel:departure
@@ -136,7 +143,7 @@ PLAYER: Notre voyage dura...
 PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX_Player_voyagedure1an #map:arrival
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreux playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
-- PASSEUR: Ainsi, c'est à votre retour à Miraterre que les problèmes ont commencé ? #playsound:VOX_Ferryman_retourmiraterre
+- PASSEUR: Ainsi, c'est à votre retour à Miraterre que les problèmes ont commencé ? #map:up #playsound:VOX_Ferryman_retourmiraterre
 - PLAYER: En effet. Un dénouement...
     * [Ironique.] PLAYER: ... des plus <i>ironiques</i>.
         PASSEUR: Ironique, tu dis ? #playsound:VOX_Ferryman_ironique
@@ -145,7 +152,7 @@ PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX
     * [Inattendu.] PLAYER: ... des plus <i>inattendus</i>.
         PASSEUR: Inattendu, tu dis ? #playsound:VOX_Ferryman_innatendu
 - PLAYER: Constatez par vous-même : nous avons bravé une tempête, affronté un monstre marin...
-PLAYER: ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna...
+PLAYER: ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna... 
 - #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #wait:1
 - -> trip_return 
 

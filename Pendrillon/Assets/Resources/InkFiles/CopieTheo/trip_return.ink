@@ -50,7 +50,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
             {sc(CHAR, -10): -> lie_S | -> lie_F}
             *** (lie_S) PLAYER: Je suis ce qu'on appelle un honnête homme.
                 PERSONNAGE MASQUÉ: Vous semblez sincère.
-            *** (lie_F) PLAYER: Je suis blanc comme neige au soleil.
+            *** (lie_F) PLAYER: Je suis blanc comme neige au soleil. #trial
                 ~ trial()
                 ~ t_2_lawless = true
                 PERSONNAGE MASQUÉ: Vous mentez très mal, mon ami.
@@ -84,7 +84,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
     * [Je connais certains gardes...] PLAYER: Il est certains gardes que je... connais bien, disons. Pas ceux-là.
     * [C'est la Loi.] PLAYER: Tous les navires qui arrivent à Miraterre doivent être fouillés. Par ailleurs...
         PERSONNAGE MASQUÉ: Par ailleurs ?
-        PLAYER: Votre simple présence enfreint une <b>Loi capitale</b>, j'en ai peur. #audience:debate
+        PLAYER: Votre simple présence enfreint une <b>Loi capitale</b>, j'en ai peur. #audience:debate #trial
             ~ trial()
             ~ t_2_lawfull = true
 - PERSONNAGE MASQUÉ: N'éprouvez-vous jamais aucun regret ? Si la Loi et la Foi l'interdisent...
@@ -93,7 +93,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
         ~ t_2_against_law = true
         ~ trial()
         ~ t_2_against_crown = true
-    * [Pas le temps pour des regrets.] PLAYER: L'heure n'est pas au regret.
+    * [Pas le temps pour des regrets.] PLAYER: L'heure n'est pas au regret. #trial
         ~ trial()
         ~ t_2_show_no_regrets = true
     * [(Tiraillé) Parfois...] PLAYER: Il est des jours où je crois être le plus vil des hommes... #trial
@@ -230,7 +230,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             CAPUCINE: Il se croit intimidant, cet idiot ? #playsound:VOX_Capucine_ilsecroitintimidant
             MARCELLO: Je vais t'apprendre à menacer des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
                 -> battle
-    * {p_gold > 0} [Soudoyer. {t(DEXT, -10)}]
+    * {p_gold > 0} [Soudoyer. {t(DEXT, -10)}] #trial
         ~ trial()
         ~ t_2_bribe_guards = true
         {sc(DEXT, -10): -> bribe_guards_S | -> bribe_guards_F}
@@ -277,25 +277,25 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
 
 // Battle (acting phase)
 = battle
-    * [Attaquer Marcello. {t(STRE, -10)}]
+    * [Attaquer Marcello. {t(STRE, -10)}] #trial
         ~ trial()
         ~ t_2_attack_guards = true
         {sc(STRE, -10): -> attack_marcello_S | -> attack_marcello_F}
-        ** (attack_marcello_S) PLAYER: Prends ça ! #anim:Player:attack #anim:Marcello:hurt #audience:choc
+        ** (attack_marcello_S) PLAYER: Prends ça ! #trial #anim:Player:attack #anim:Marcello:hurt #audience:choc
             MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête !
-        ** (attack_marcello_F) PLAYER: Prends ça ! #anim:Player:attack #anim:Marcello:dodge
+        ** (attack_marcello_F) PLAYER: Prends ça ! #trial #anim:Player:attack #anim:Marcello:dodge
             MARCELLO: Héhé... Trop lent, minable.
-    * [Attaquer par derrière. {t(DEXT, -10)}]
+    * [Attaquer par derrière. {t(DEXT, -10)}] #trial
         ~ trial()
         ~ t_2_attack_guards = true
         {sc(DEXT, -10): -> sneaky_attack_marcello_S | -> sneaky_attack_marcello_F}
-        ** (sneaky_attack_marcello_S) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine
-            PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:hurt #audience:choc
+        ** (sneaky_attack_marcello_S) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine #trial
+            PLAYER: Prends ça !  #anim:Player:sneaky_attack #anim:Marcello:hurt #audience:choc
             MARCELLO: M'attaquer alors que j'ai le dos tourné ? Tu es un lâche !
             *** [Et toi un crétin.] PLAYER: C'est toi qui es stupide, à tourner le dos à quelqu'un que tu viens de frapper. #audience:laughter
             *** [C'est tout moi, en effet.] PLAYER: Je dirai plutôt que je sais saisir une opportunité quand je la vois... #audience:applause
                 PLAYER: Surtout quand cette opportunité consiste à cogner un rustre comme toi.
-        ** (sneaky_attack_marcello_F) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine
+        ** (sneaky_attack_marcello_F) MARCELLO: Je peux le rosser, cheffe ? #trial #look:Marcello:Capucine
             PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:dodge
             MARCELLO: Tu te crois discret, abruti ?
     * [Calmer le jeu. {t(CHAR, -10)}]
@@ -352,4 +352,22 @@ CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la. #playsound:
 CAPUCINE: Allons-nous-en avec notre trouvaille. #playsound:VOX_Capucine_allonsnousen
 CAPUCINE: Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts... #playsound:VOX_Capucine_ilfinira1 #audience:debate
 CAPUCINE: Il finira sa triste vie au cachot, comme son amie. #playsound:VOX_Capucine_ilfinira2 #audience:ovation
-- -> barge.scene_3
+//- -> barge.scene_3
+
+
+    - -> end_playtest_demo
+#move(Capucine)
+// Marcello remet un coup gratuit au Player
+#anim:Marcello:attack
+#anim:Player:hurt
+#move(Marcello)
+-> barge.scene_3
+
+= end_playtest_demo
+- SOUFFLEUR: Psssst... Hé, l'ami !
+SOUFFLEUR: C'est la fin de la démo de <wiggle>PENDRILLONS</wiggle> !
+SOUFFLEUR: Toute l'équipe ainsi que la troupe te remercient d'avoir participé aux playtests du jeu !
+SOUFFLEUR: Nous avons encore un peu de travail, alors on te laisse l'ami !
+SOUFFLEUR: N'oublie pas de répondre au questionnaire que nous allons te transmettre !
+SOUFFLEUR: À la prochaine, l'ami !
+-> END
