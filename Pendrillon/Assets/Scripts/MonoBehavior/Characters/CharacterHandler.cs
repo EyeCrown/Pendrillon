@@ -217,6 +217,9 @@ public class CharacterHandler : MonoBehaviour
     
     IEnumerator MovePositionCoroutine(Vector3 targetPosition, float duration, Action callbackOnFinish)
     {
+        while (!_anim.GetCurrentAnimatorStateInfo(0).IsName("Idle"))
+            yield return null;
+        
         float time = 0.0f;
         Vector3 startPosition = transform.position;
         _anim.SetBool("walking", true);

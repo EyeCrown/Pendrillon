@@ -22,8 +22,8 @@ public static class Constants
     public const string TagAudience     = "audience";       // #audience:Reaction           Reaction: type de réaction
     public const string TagRope         = "rope";           // #rope:Character              Character: nom du personnage
     public const string TagMap          = "map";            // #map:Travel                  Travel: nom du voyage (voir TravelNames region)
-    public const string TagTrial        = "trial";          // #trial           Effectue les actions de trial
-    public const string TagCurtains     = "curtains";       // #curtains        Change l'état des pendrillons
+    public const string TagTrial        = "trial";          // #trial               Effectue les actions de trial
+    public const string TagCurtains     = "curtains";       // #curtains:State              State:état des rideaux
     
     #endregion
 
@@ -157,19 +157,12 @@ public static class Constants
     public const string ArchetypeDexterity = "Acrobate";
 
     #endregion
+
+    #region Curtain States
     
-    // J'ai merge sur le main toutes les branches, puis j'ai testé le jeu en bilan entier. Bilan, le jeu sans le combat de boss m'a pris 42:00 minutes à finir. Voici les timestamps de ma partie:
-    // _Scène 1 - Barge 1        : 2:39  | Durée : 2:39
-    // _Scène 2 - Secret Meeting : 7:45  | Durée : 5:06
-    // _Scène 3 - Barge 2        : 9:30  | Durée : 1:42
-    // _Scène 4 - Trip return    : 13:20 | Durée : 5:06
-    // _Scène 5 - Barge 3        : 13:49 | Durée : 5:06
-    // _Scène 6 - Church 1       : 22:19 | Durée : 5:06
-    // _Scène 7 - Barge 4        : 22:52 | Durée : 5:06
-    // _Scène 8 - Chruch 2       : 24:14 | Durée : 5:06
-    // _Scène 9 -             : 25:13 | Durée : 5:06
-    // _Scène 10 - Secret Meeting : 35:44 | Durée : 5:06
-    // _Scène 11 - Secret Meeting : 36:27| Durée : 5:06
-    // _Scène 12 - Secret Meeting : 7:45 | Durée : 5:06
+    public const string StateCurtainsOpen = "open";
+    public const string StateCurtainsClose = "close";
+
+    #endregion
     
 }

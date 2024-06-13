@@ -707,6 +707,9 @@ namespace MonoBehavior.Managers
         {
             _uiParent.SetActive(true);
 
+            if (GameManager.Instance._beginCurtainsOpen)
+                _curtains.Call.Invoke(Constants.StateCurtainsOpen);
+            
             if (GameManager.Instance._intro)
                 SetIntro();
             
@@ -802,7 +805,7 @@ namespace MonoBehavior.Managers
                 case Constants.TagRope:     HandleTagRope(words[1]);                        break;
                 case Constants.TagMap:      HandleTagMap(words[1]);                         break;
                 case Constants.TagTrial:    HandleTagTrial();                               break;
-                case Constants.TagCurtains: HandleTagCurtains();                            break;
+                case Constants.TagCurtains: HandleTagCurtains(words[1]);                            break;
                 default: Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag."); break;
             }
         }
@@ -1265,11 +1268,11 @@ namespace MonoBehavior.Managers
         }
         
         
-         void HandleTagCurtains()
+         void HandleTagCurtains(string state)
         {
-           Debug.Log("AM.HandleTagCurtains");
+           Debug.Log($"AM.HandleTagCurtains > Curtains must be {state}");
 
-           _curtains.Call.Invoke();
+           _curtains.Call.Invoke(state);
 
         }
         

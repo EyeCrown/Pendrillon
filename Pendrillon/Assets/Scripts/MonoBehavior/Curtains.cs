@@ -16,7 +16,7 @@ public class Curtains : MonoBehaviour
 
     #region Events
 
-    public UnityEvent Call;
+    public UnityEvent<string> Call;
 
     #endregion
 
@@ -41,22 +41,30 @@ public class Curtains : MonoBehaviour
         _anim.SetBool("curtainopen", _isOpen);
     }
 
-    void CloseCurtains()
-    {
-        _isOpen = true;
-        _anim.SetBool("curtainopen", _isOpen);
-    }
-
     #endregion
 
     #region Event Handlers
 
-    void OnCall()
-    {
-        if (_isOpen)
-            SetCurtains(false);
-        else
-            SetCurtains(true);
+    void OnCall(string stateText)
+    {                
+        //Debug.Log($"Curtains.OnCall > State [{stateText}]"); 
+        
+        bool state;
+        switch (stateText)
+        {
+            case Constants.StateCurtainsOpen:   
+                state = true;       break;
+            case Constants.StateCurtainsClose:  
+                state = false;      break;
+            default: 
+                Debug.LogError($"Curtains.OnCall > Error: invalid state [{stateText}]"); 
+                return;
+        }
+
+        if (state == _isOpen)
+            return;
+        
+        SetCurtains(state);
     }
 
     #endregion
