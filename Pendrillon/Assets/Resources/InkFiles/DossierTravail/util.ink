@@ -100,6 +100,11 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
             ~ full_stat = "Dexterity"
     }
     ~ temp threshold = ((stat*10)+pDifficulty+modifier)
+    // Min difficulty is 90%
+    {
+        - threshold >= 90:
+            ~ threshold = 90
+    }
     // Print the percentage
     {export_mode == false: ({full_stat} {threshold}%)}
 

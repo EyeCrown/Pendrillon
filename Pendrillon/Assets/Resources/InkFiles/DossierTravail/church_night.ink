@@ -69,8 +69,8 @@ VAR irene_torch_is_on = false
 - AGATHE: Rassurez-vous, vous êtes au seul endroit que les gardes de la Couronne ne viendront pas fouiller... #playsound:Play_SFX_Story_SC_Eglise_GuardsSearchingFar #playsound:Play_MUS_Story_SC_Eglise_GuardsSearching
 - AGATHE: Seule <b>Irène</b> est en droit de juger vos actes en ces lieux. #playsound:Play_MUS_Story_SC_Eglise_ImploreStatue #light:irene_statue
 // PLAYER se tourne vers la statue
-    * [(Avec intensité) Implorer la statue. {t(CHAR, -10)}] // 75%
-        {sc(CHAR, -10): -> implore_irene_S | -> implore_irene_F}
+    * [(Avec intensité) Implorer la statue. {t(CHAR, 15)}] // 75%
+        {sc(CHAR, 15): -> implore_irene_S | -> implore_irene_F}
         ** (implore_irene_S) PLAYER: Ô divine apparition. Sachez me venir en aide, victime que je suis... #trial
             ~ trial()
             ~ t_3_implore_irene = true
@@ -169,7 +169,7 @@ AGATHE: En plein affrontement avec les vagues furieuses... Ils entendirent des p
     * [La vision du vitrail !] PLAYER: C'est cette scène que le vitrail représente, n'est-ce pas ?
         AGATHE: Celle-là même.
     * [(Avec emphase) Quelle vision émouvante ! {t(CHAR, 10)}]
-        {sc(CHAR, -30): -> moved_by_the_baby_S | -> moved_by_the_baby_F}
+        {sc(CHAR, 10): -> moved_by_the_baby_S | -> moved_by_the_baby_F}
         ** (moved_by_the_baby_S) PLAYER: Imaginer cet enfant - la <b>Déesse</b> ! - pleurant au milieu de la tempête... Quelle vision poignante ! #anim:Player:emotionnal #trial
                 ~ trial()
                 ~ t_3_moved_by_baby_irene = true
@@ -232,8 +232,8 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
     * [Ils lui offrirent l'enfant.] PLAYER: Ils lui confièrent la garde de l'enfant sacré.
         -- (know_fishermen_gift)
         AGATHE: Précisément.
-    * [Seul un idiot l'ignorerait. {t(STRE, 20)}] // 70%
-        {sc(STRE, 0): -> know_fishermen_gift_S | -> know_fishermen_gift_F}
+    * [Seul un idiot l'ignorerait. {t(STRE, 10)}] // 70%
+        {sc(STRE, 10): -> know_fishermen_gift_S | -> know_fishermen_gift_F}
         ** (know_fishermen_gift_S) PLAYER: Ils lui confièrent la garde de l'enfant sacré.
             -> know_fishermen_gift
         ** (know_fishermen_gift_F) PLAYER: Ils lui firent offrande de la pêche du jour ?
