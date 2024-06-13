@@ -69,7 +69,7 @@ VAR irene_torch_is_on = false
 - AGATHE: Rassurez-vous, vous êtes au seul endroit que les gardes de la Couronne ne viendront pas fouiller... #playsound:Play_SFX_Story_SC_Eglise_GuardsSearchingFar #playsound:Play_MUS_Story_SC_Eglise_GuardsSearching
 - AGATHE: Seule <b>Irène</b> est en droit de juger vos actes en ces lieux. #playsound:Play_MUS_Story_SC_Eglise_ImploreStatue #light:irene_statue
 // PLAYER se tourne vers la statue
-    * [(Avec intensité) Implorer la statue. {t(CHAR, -10)}]
+    * [(Avec intensité) Implorer la statue. {t(CHAR, -10)}] // 75%
         {sc(CHAR, -10): -> implore_irene_S | -> implore_irene_F}
         ** (implore_irene_S) PLAYER: Ô divine apparition. Sachez me venir en aide, victime que je suis... #trial
             ~ trial()
@@ -189,8 +189,8 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
         AGATHE: Je n'ai aucune idée de qui donc est cet Eugène. L'homme que je mentionne n'est autre qu'Ernest.
     * [... Ernest, cela va sans dire.] PLAYER: Vous faites sans doute allusion au pieu Ernest.
         AGATHE: La <b>Déesse</b> le bénisse, entre tous les hommes.
-    * [(Avec certitude) Je connais son nom. {t(STRE, -20)}]
-        {sc(STRE, -20): -> player_knows_ernest_S | -> player_knows_ernest_F}
+    * [(Avec certitude) Je connais son nom. {t(CHAR, -20)}] // 30%
+        {sc(CHAR, -20): -> player_knows_ernest_S | -> player_knows_ernest_F}
         ** (player_knows_ernest_S) PLAYER: Vous faites sans doute allusion au pieu Ernest.
             AGATHE: Absolument
         ** (player_knows_ernest_F) PLAYER: Vous parlez sans l'ombre d'un doute du célèbre Edgar.
@@ -232,7 +232,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
     * [Ils lui offrirent l'enfant.] PLAYER: Ils lui confièrent la garde de l'enfant sacré.
         -- (know_fishermen_gift)
         AGATHE: Précisément.
-    * [Seul un idiot l'ignorerait. {t(STRE, 20)}]
+    * [Seul un idiot l'ignorerait. {t(STRE, 20)}] // 70%
         {sc(STRE, 0): -> know_fishermen_gift_S | -> know_fishermen_gift_F}
         ** (know_fishermen_gift_S) PLAYER: Ils lui confièrent la garde de l'enfant sacré.
             -> know_fishermen_gift
@@ -362,7 +362,7 @@ AGATHE: Pourquoi donc, d'après vous ?
     * [Pourquoi cette question ?] PLAYER: Pourquoi cette question, prêtresse ?
         AGATHE: Je crois que quelque chose l'a empêché de mourir. Quelque chose de l'ordre du Divin, mon enfant...
 - AGATHE: Prenez le temps d'observer à nouveau le vitrail... Voyez ses détails...
-    * [Regarder de plus près. {t(STRE, 0)}]
+    * [Regarder de plus près. {t(STRE, 0)}] // 50
         {sc(STRE, 0): -> watch_judge_closer_S | -> watch_judge_closer_F}
         ** (watch_judge_closer_S) AGATHE: Voyez comme l'Homme a souffert. Quand on le retrouva, son corps avait été si déformé par les années, qu'Il avait acquis une taille inhumaine.
             *** [Il n'a rien d'humain.] PLAYER: Il n'y a rien, chez lui, qui soit encore humain. #trial
