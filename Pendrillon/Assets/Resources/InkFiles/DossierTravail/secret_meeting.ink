@@ -20,7 +20,6 @@ VAR has_fail = false
 //#position:Arle:10:11
 //#position:Arle:3:17
 #position:Arle:2:10
-#curtains // DEBUG
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
@@ -108,7 +107,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
         BOUFFONNE: Je sais faire bien des choses, messire... //#anim:Arle:happy
         BOUFFONNE: Faire la belle... #anim:Arle:prettypose
         BOUFFONNE: Faire le show... #anim:Arle:acrobatics
-        BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter
+        BOUFFONNE: ... Mais je ne sais point écrire ! //#anim:Arle:sad #audience:laughter
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question #playsound:VOX_Player_saisdirenom
             -> arle_presentation
         ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 30)}] // 70%

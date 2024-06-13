@@ -49,7 +49,7 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
     ~ temp threshold = ((stat*10)+pDifficulty+modifier)
     // Min difficulty is 90%
     {
-        - threshold <= 90:
+        - threshold >= 90:
             ~ threshold = 90
     }
     ~ temp result = true

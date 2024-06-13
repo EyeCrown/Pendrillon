@@ -25,5 +25,5 @@ INCLUDE cast_salutation.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
--> boss_battle
-//-> secret_meeting
+//-> boss_battle
+-> secret_meeting
