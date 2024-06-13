@@ -16,33 +16,29 @@
 
 // Audience reaction
 #playsound:Play_AMB_SC_Theater_CrowdChatter
-#playsound:Play_MUS_Story_SC_Barque_Intro
-//#anim:Player:kneeling
-//#look:Player:Passeur
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
 - (choose_archetype) Choisissez votre archétype.
     L'archétype influence la répartition de vos statistiques.
-    + [Beau Parleur] #audience:applause
+    + [Beau Parleur]
         Le <shake>Beau Parleur</shake> sait manier les mots et faire preuve de charisme.
         Voulez-vous incarner le rôle d'un <shake>Beau Parleur</shake> ?
         ++ [À bien y réfléchir...]
             -> choose_archetype
-        ++ [Je veux incarner un blablateur !] #audience:ovation
+        ++ [Je veux incarner un blablateur !]
             ~ select_archetype("Beau Parleur")
-    + [Force de la Nature] #audience:applause
+    + [Force de la Nature]
         La <shake>Force de la Nature</shake> sait manier les poings et faire trembler ses détracteurs.
         Voulez-vous incarner le rôle d'une <shake>Force de la Nature</shake> ?
         ++ [Peut-être pas...]
             -> choose_archetype
-        ++ [Je veux incarner une brute !] #audience:ovation
+        ++ [Je veux incarner une brute !]
             ~ select_archetype("Force de la Nature")
-    + [Acrobate] #audience:applause
+    + [Acrobate]
         L'<shake>Acrobate</shake> sait se montrer agile et faire preuve d'adresse.
         Voulez-vous incarner le rôle d'un <shake>Acrobate</shake> ?
         ++ [J'hésite encore...]
             -> choose_archetype
-        ++ [Je veux incarner un athlète !] #audience:ovation
+        ++ [Je veux incarner un athlète !]
             ~ select_archetype("Acrobate")
 - -> barge

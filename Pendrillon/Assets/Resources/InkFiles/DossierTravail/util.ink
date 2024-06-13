@@ -51,13 +51,15 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
     ~ D100 = roll_D100()
     {
         - D100 <= threshold:
+            // Gain XP
+            ~ gain_XP(pStat, threshold)
+            // // Get current stat level of the player
+            ~ check_level_up(pStat)
+            // Skillcheck success
             ~ result = true
-            // Modify the applausemeter
-            ~ add_applausemeter(threshold_to_applausemeter_points(threshold, result))
         - else:
+            // Skillcheck failure
             ~ result = false
-            // Modify the applausemeter
-            ~ add_applausemeter(threshold_to_applausemeter_points(threshold, result))
     }
     {
         - print_debug:
@@ -105,6 +107,143 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
             The D100 result is {result}
     }
     ~ return result
+
+// Gain XP
+=== function gain_XP(pStat, pThreshold)
+~ temp xp_to_add = sqrt(100-pThreshold)
+{
+    - pStat == "char":
+        {
+            - p_char >= 10:
+                ~ xp_to_add = 0
+        }
+        ~ p_char_xp += xp_to_add
+    - pStat == "stre":
+        {
+            - p_stre >= 10:
+                ~ xp_to_add = 0
+        }
+        ~ p_stre_xp += xp_to_add
+    - pStat == "dext":
+        {
+            - p_dext >= 10:
+                ~ xp_to_add = 0
+        }
+        ~ p_dext_xp += xp_to_add
+}
+
+// If the player level up, it changes its stats accordingly
+=== function check_level_up(pStat)
+~ temp stat = 0
+~ temp stat_xp = 0
+~ temp next_level_stat_threshold = 0
+{
+    - pStat == "char":
+        ~ stat = p_char
+        ~ stat_xp = p_char_xp
+    - pStat == "stre":
+        ~ stat = p_stre
+        ~ stat_xp = p_stre_xp
+    - pStat == "dext":
+        ~ stat = p_dext
+        ~ stat_xp = p_dext_xp
+}
+~ next_level_stat_threshold = get_XP_threshold(stat+1)
+//La stat XP est de {stat_xp} et le threshold est de {next_level_stat_threshold}.
+{
+    - stat_xp >= next_level_stat_threshold:
+        {
+            - pStat == "char":
+                ~ p_char += 1
+                Vous avez level up ! Votre {pStat} est maintenant de {p_char}.
+            - pStat == "stre":
+                ~ p_stre += 1
+                Vous avez level up ! Votre {pStat} est maintenant de {p_stre}.
+            - pStat == "dext":
+                ~ p_dext += 1
+                Vous avez level up ! Votre {pStat} est maintenant de {p_dext}.
+        }
+}
+
+// Get the XP Threshold at a given level
+=== function get_XP_threshold(pLevel)
+~ temp result = 0
+{
+    - pLevel == 1:
+        ~ result = 0.45
+    - pLevel == 2:
+        ~ result = 2.5
+    - pLevel == 3:
+        ~ result = 6.5
+    - pLevel == 4:
+        ~ result = 13.5
+    - pLevel == 5:
+        ~ result = 24
+    - pLevel == 6:
+        ~ result = 37.5
+    - pLevel == 7:
+        ~ result = 55.5
+    - pLevel == 8:
+        ~ result = 77
+    - pLevel == 9:
+        ~ result = 104
+    - pLevel == 10:
+        ~ result = 135
+    - pLevel == 11:
+        ~ result = 9999 // Evite d'éventuels bugs
+}
+~ return result
+
+// Return the square root of a predetermined number
+=== function sqrt(pNumber)
+~ temp result = 0
+{
+    - pNumber == 0:
+        ~ result = 0
+    - pNumber == 5:
+        ~ result = 2.23
+    - pNumber == 10:
+        ~ result = 3.16
+    - pNumber == 15:
+        ~ result = 3.87
+    - pNumber == 20:
+        ~ result = 4.47
+    - pNumber == 25:
+        ~ result = 5
+    - pNumber == 30:
+        ~ result = 5.47
+    - pNumber == 35:
+        ~ result = 5.91
+    - pNumber == 40:
+        ~ result = 6.32
+    - pNumber == 45:
+        ~ result = 6.7
+    - pNumber == 50:
+        ~ result = 7.0
+    - pNumber == 55:
+        ~ result = 7.41
+    - pNumber == 60:
+        ~ result = 7.74
+    - pNumber == 65:
+        ~ result = 8.06
+    - pNumber == 70:
+        ~ result = 8.36
+    - pNumber == 75:
+        ~ result = 8.66
+    - pNumber == 80:
+        ~ result = 8.94
+    - pNumber == 85:
+        ~ result = 9.21
+    - pNumber == 90:
+        ~ result = 9.48
+    - pNumber == 95:
+        ~ result = 9.74
+    - pNumber == 100:
+        ~ result = 10
+    - else:
+        ~ result = 8.36 // Valeur par défault en cas de bug (70%)
+}
+~ return result
 
 // Convert action threshold to applausemeter points
 === function threshold_to_applausemeter_points(pThreshold, pSuccess) ===
