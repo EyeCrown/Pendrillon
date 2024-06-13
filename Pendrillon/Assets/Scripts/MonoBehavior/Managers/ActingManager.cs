@@ -41,6 +41,8 @@ namespace MonoBehavior.Managers
         public GameObject _setForest;
         private GameObject _currentSet;
 
+        private Curtains _curtains;
+        
         #endregion
 
         #region UI Attributes
@@ -411,9 +413,10 @@ namespace MonoBehavior.Managers
 
         void AssignElements()
         {
-            _wheel = GameObject.Find("WheelSupport").GetComponent<Wheel>();
-            _map = GameObject.Find("Map").GetComponent<Map>();
-            _statsUI = GameObject.Find("Canvas/PLAYER_STATS").GetComponent<StatsUI>();
+            _wheel      = GameObject.Find("WheelSupport").GetComponent<Wheel>();
+            _map        = GameObject.Find("Map").GetComponent<Map>();
+            _curtains   = GameObject.Find("MainCurtains").GetComponent<Curtains>();
+            _statsUI    = GameObject.Find("Canvas/PLAYER_STATS").GetComponent<StatsUI>();
         }
 
         void ConnectEvents()
@@ -783,7 +786,7 @@ namespace MonoBehavior.Managers
         {
             switch (words[0])
             {
-                case Constants.TagIntro:    HandleTagIntro();                             break;
+                case Constants.TagIntro:    HandleTagIntro();                               break;
                 case Constants.TagMove:     HandleTagMove(words.Skip(1).ToArray());     break;
                 case Constants.TagPosition: HandleTagPosition(words.Skip(1).ToArray()); break;
                 case Constants.TagSet:      HandleTagSet(words[1]);                         break;
@@ -799,6 +802,7 @@ namespace MonoBehavior.Managers
                 case Constants.TagRope:     HandleTagRope(words[1]);                        break;
                 case Constants.TagMap:      HandleTagMap(words[1]);                         break;
                 case Constants.TagTrial:    HandleTagTrial();                               break;
+                case Constants.TagCurtains: HandleTagCurtains();                            break;
                 default: Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag."); break;
             }
         }
@@ -1261,10 +1265,13 @@ namespace MonoBehavior.Managers
         }
         
         
-        //TODO: Make curtains tag handlers
-        /* void HandleCurtains()
+         void HandleTagCurtains()
         {
-        }*/
+           Debug.Log("AM.HandleTagCurtains");
+
+           _curtains.Call.Invoke();
+
+        }
         
         #endregion
 
