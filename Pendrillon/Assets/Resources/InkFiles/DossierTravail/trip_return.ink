@@ -283,8 +283,10 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
         {sc(STRE, -10): -> attack_marcello_S | -> attack_marcello_F}
         ** (attack_marcello_S) PLAYER: Prends ça ! #trial #anim:Player:attack #anim:Marcello:hurt #audience:choc
             MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête !
+            -> combat_part_2
         ** (attack_marcello_F) PLAYER: Prends ça ! #trial #anim:Player:attack #anim:Marcello:dodge
             MARCELLO: Héhé... Trop lent, minable.
+            -> combat_part_2
     * [Attaquer par derrière. {t(DEXT, -10)}] #trial // 80%
         ~ trial()
         ~ t_2_attack_guards = true
@@ -293,22 +295,42 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             PLAYER: Prends ça !  #anim:Player:sneaky_attack #anim:Marcello:hurt #audience:choc
             MARCELLO: M'attaquer alors que j'ai le dos tourné ? Tu es un lâche !
             *** [Et toi un crétin.] PLAYER: C'est toi qui es stupide, à tourner le dos à quelqu'un que tu viens de frapper. #audience:laughter
+                -> combat_part_2
             *** [C'est tout moi, en effet.] PLAYER: Je dirai plutôt que je sais saisir une opportunité quand je la vois... #audience:applause
                 PLAYER: Surtout quand cette opportunité consiste à cogner un rustre comme toi.
+                -> combat_part_2
         ** (sneaky_attack_marcello_F) MARCELLO: Je peux le rosser, cheffe ? #trial #look:Marcello:Capucine
             PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:dodge
             MARCELLO: Tu te crois discret, abruti ?
+            -> combat_part_2
     * [Calmer le jeu. {t(CHAR, -10)}] // 50%
         {sc(CHAR, -10): -> calm_marcello_S | -> calm_marcello_F}
         ** (calm_marcello_S) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
             CAPUCINE: En voilà une parole raisonnable. #playsound:VOX_Capucine_envoilaraisonnable
             MARCELLO: Dommage, je n'aurais pas détesté t'en claquer une sur le museau... #audience:laughter
             CAPUCINE: Allons, allons, Marcello... Le monsieur est raisonnable, alors soyons-le à notre tour. #playsound:VOX_Capucine_allonsallonsmarecello #audience:applause
+            -> arrest
         ** (calm_marcello_F) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
             CAPUCINE: En voilà une parole raisonnable. Mon ami, en revanche, apprécierait de t'en claquer une sur le museau. Pas vrai, Marcello ? #playsound:VOX_Capucine_envoilaenrevanche
             MARCELLO: Je confirme. #audience:laughter
             MARCELLO: Tiens, la voilà ! #anim:Marcello:attack #anim:Player:hurt
-- -> arrest_naida
+            -> combat_part_2
+- (combat_part_2)
+    * [Faire la paix. {t(CHAR, -20)}] // 40%
+        {sc(CHAR, -20): -> make_peace_S | -> make_peace_F}
+        ** (make_peace_S) PLAYER: Faisons la paix, veux-tu ?
+            MARCELLO: La... la paix ? Tu plaisantes ? Toi et moi, c'est la <b>guerre</b>, freluquet !
+            PLAYER: Précisément. Cependant, il faut être en guerre pour pouvoir faire la paix.
+            MARCELLO: Euh... Il faut être en guerre pour... Hein ?
+        ** (make_peace_F) PLAYER: Faisons la paix, veux-tu ?
+            MARCELLO: La... la paix ? Tu plaisantes ? Toi et moi, c'est la <b>guerre</b>, freluquet !
+    * [Faire tomber la caisse pendue. {t(DEXT, 0)}] // 70%
+        {sc(DEXT, 0): -> drop_hanging_crate_S | -> drop_hanging_crate_F}
+        ** (drop_hanging_crate_S) #anim:Player:drop_hanging_crate_succeed
+            MARCELLO: Ouch ! #audience:laughter
+        ** (drop_hanging_crate_F) #anim:Player:drop_hanging_crate_fail
+            MARCELLO: Tu voulais faire tomber la caisse au-dessus de ma tête ? Ou bien es-tu pris de spasmes, avorton ? #audience:laughter
+- (arrest) -> arrest_naida
 
 // After the battle
 = after_battle

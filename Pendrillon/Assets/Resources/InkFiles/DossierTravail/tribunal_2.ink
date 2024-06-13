@@ -106,8 +106,8 @@ SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
         ** [C'est entendu.] PLAYER: Entendu, Votre Honneur. #audience:applause
             -> player_and_naida_met
 - JUGE ERNEST: Ainsi, vous avez découvert le peuple maudit qui fut jadis noyé, avalé par le Léviathan... #playsound:VOX_Judge_ainsipeuplejadis
-    * [Ils ne sont pas maudits. {t(DEXT, -20)}] // 60%
-        {sc(DEXT, -20): -> sireine_are_not_cursed_S | -> sireine_are_not_cursed_F}
+    * [Ils ne sont pas maudits. {t(CHAR, -20)}] // 60%
+        {sc(CHAR, -20): -> sireine_are_not_cursed_S | -> sireine_are_not_cursed_F}
         ** (sireine_are_not_cursed_S) PLAYER: Votre Honneur, j'ai toutes les raisons de penser que le peuple des Sireines n'est en rien maudit. #audience:debate
             PLAYER: Ne pensez-vous pas que si la <b>Déesse</b> avait voulu que le Déluge ne les tue, ils ne seraient pas vivants aujourd'hui ? #audience:applause
             ~ audience_judgement(0.1)
@@ -181,8 +181,8 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
         ~ audience_judgement(-0.03)
         -> are_sireine_doomed
 - JUGE ERNEST: Insinuez-vous que l'infâme créature... Le Léviathan lui-même, aurait sauvé ces gens ? #playsound:VOX_Judge_insinuezcreatureinfame
-    * [Ma présence en est la preuve. {t(DEXT, 0)}] // 80%
-        {sc(DEXT, 0): -> i_am_the_proof_S | -> i_am_the_proof_F}
+    * [Ma présence en est la preuve. {t(CHAR, 0)}] // 80%
+        {sc(CHAR, 0): -> i_am_the_proof_S | -> i_am_the_proof_F}
         ** (i_am_the_proof_S) PLAYER: Votre Honneur, ma présence en ces lieux devrait répondre à votre interrogation... #audience:debate
             PLAYER: Dois-je vous rappeler que le Léviathan m'a avalé, avec tout mon équipage ? #audience:debate
             PLAYER: Pourtant, je suis ici, devant vous. En chair et en os... #anim:Player:bow #audience:ovation
