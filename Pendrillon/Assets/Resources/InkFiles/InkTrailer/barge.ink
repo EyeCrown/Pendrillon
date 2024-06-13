@@ -135,7 +135,7 @@ PLAYER: À dire vrai...
     * [(Mentir) J'ai tué le monstre.] PLAYER: J'ai trouvé le monstre à l'endroit indiqué par la carte, et je l'ai tué, avec l'aide de mon équipage. Quelle bataille avons-nous livrée ! #anim:Player:happy
     * [(Éluder la question) Rien...] PLAYER: Je me suis rendu sur place, je n'ai trouvé aucune créature, bien entendu... et je suis rentré. Fin de l'histoire.
 - PASSEUR: Pourquoi ne pas me dire ce qu'il s'est réellement passé ? Ton âme s'en verra peut-être allégée... #playsound:VOX_Ferryman_pourquoidireverite
-PLAYER: Bien, bien... Si tu insistes, Passeur. #map:down
+PLAYER: Bien, bien... Si tu insistes, Passeur.
 PLAYER: Notre voyage dura...
     * [Près d'une année.] PLAYER: ... près d'une année, en tout. #map:departure
     * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté. #map:Travel:departure
@@ -152,7 +152,7 @@ PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX
     * [Inattendu.] PLAYER: ... des plus <i>inattendus</i>.
         PASSEUR: Inattendu, tu dis ? #playsound:VOX_Ferryman_innatendu
 - PLAYER: Constatez par vous-même : nous avons bravé une tempête, affronté un monstre marin...
-PLAYER: ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna... #map:up
+PLAYER: ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna...
 - #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #wait:1
 - -> trip_return 
 
