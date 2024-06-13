@@ -103,7 +103,7 @@ public class Wheel : MonoBehaviour
         _resultText.text = score.ToString();
         _mustObtainText.text = mustObtain.ToString();
         _typeText.text = "";
-        _levelUpText.text = type + " > +1";
+        _levelUpText.text = type + "";
 
         if (score <= mustObtain)
         {
@@ -155,7 +155,7 @@ public class Wheel : MonoBehaviour
 
     public IEnumerator SpinningCoroutine(int score, int mustObtain, string type, Action handleDialogueText = null)
     {
-        UpdateText(score, mustObtain, type);
+        // UpdateText(score, mustObtain, type);
         
         float duration = 1.4f, time = 0.0f;
         
@@ -175,6 +175,7 @@ public class Wheel : MonoBehaviour
             yield return null;
         }
         Debug.Log($"Wheel.SpinningCoroutine > Rotate anim is done + Is on stage");
+        UpdateText(score, mustObtain, type);
 
         StartCoroutine(DisplayScoreCoroutine(handleDialogueText));
     }
