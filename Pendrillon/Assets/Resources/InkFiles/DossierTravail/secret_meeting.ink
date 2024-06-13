@@ -36,14 +36,14 @@ VAR has_fail = false
 - SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #playsound:VOX_Souffleur_partenairedescene
 SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes <b>talents</b> !
 SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance !
-    * [Effectuer une danse. {t(DEXT, 30)}]
+    * [Effectuer une danse. {t(DEXT, 30)}] // 80%
         {sc(DEXT, 30): -> dancing_S | -> dancing_F}
         ** (dancing_S) SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             -> success_entertaining_audience
         ** (dancing_F) SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami. #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
-    * [Faire des pompes. {t(STRE, 30)}]
+    * [Faire des pompes. {t(STRE, 30)}] // 80%
         {sc(STRE, 30): -> do_pushups_S | -> do_pushups_F}
         ** (do_pushups_S) SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             -> success_entertaining_audience
@@ -51,7 +51,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, l'ami.
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
-    * [Hypnotiser le public. {t(CHAR, 30)}]
+    * [Hypnotiser le public. {t(CHAR, 30)}] // 80%
         {sc(CHAR, 30): -> hypnotise_S | -> hypnotise_F}
         ** (hypnotise_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
             SOUFFLEUR: Wow...
@@ -110,7 +110,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
         BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question #playsound:VOX_Player_saisdirenom
             -> arle_presentation
-        ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 30)}]
+        ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 30)}] // 70%
             {sc(CHAR, 30): -> mock_arle_S | -> mock_arle_F}
         *** (mock_arle_S) PLAYER: Tu es une authentique bouffonne... #anim:Arle:sad #audience:laughter #playsound:VOX_Player_tuesbouffonne
                 BOUFFONNE: Bouffonne est l'une de mes professions, mais ce n'est pas mon nom. #anim:Arle:stressed
@@ -188,7 +188,7 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au Déluge..
     * [Il va falloir me payer grassement.] PLAYER: Si ton maître veut me faire courir un tel risque... Il a intérêt à me payer grassement ! #audience:laughter #playsound:VOX_Player_tonmaitredanger
 - ARLE: Si vous acceptez de ramener le cœur du terrible Léviathan, mon maître vous offrira le poids de votre navire en or.
     * [Une sacrée somme.] PLAYER: Une somme qui n'est pas à prendre à la légère... #anim:Player:joy
-    * [(Négocier) Mon navire est léger. {t(CHAR, -10)}]
+    * [(Négocier) Mon navire est léger. {t(CHAR, -10)}] // 50%
         {sc(CHAR, -10): -> negociate_S | -> negociate_F} 
             *** (negociate_S) PLAYER: Mon navire est fait d'un bois très léger, voyez-vous... #playsound:VOX_Player_boistresleger
                 ARLE: Vous êtes dur en affaire, messire. Alors disons le double ! #anim:Arle:angry
