@@ -15,7 +15,8 @@ public class Options : MonoBehaviour
 
     [Header("=== Fonts ===")] 
     [SerializeField] private TMP_FontAsset _originalFont;
-    [SerializeField] private TMP_FontAsset _secondFont; // TODO: Rename to be more explicit 
+    [SerializeField] private TMP_FontAsset _secondFont;  
+    [SerializeField] private TMP_FontAsset _openDyslexicFont;  
 
     #endregion
     
@@ -43,6 +44,7 @@ public class Options : MonoBehaviour
     private List<Toggle> _toggles;
     private Toggle _originalFontToggle;
     private Toggle _secondFontToggle;
+    private Toggle _thirdFontToggle;
 
     #endregion
     
@@ -85,9 +87,7 @@ public class Options : MonoBehaviour
         var fontLocation = "FontsParameters/";
         _originalFontToggle = _panel.transform.Find(fontLocation + "OriginalFont").GetComponent<Toggle>();
         _secondFontToggle   = _panel.transform.Find(fontLocation + "SecondFont").GetComponent<Toggle>();
-        _toggles = new List<Toggle>();
-        _toggles.Add(_originalFontToggle);
-        _toggles.Add(_secondFontToggle); 
+        _thirdFontToggle    = _panel.transform.Find(fontLocation + "ThirdFont").GetComponent<Toggle>();
         
         // RTPC
         var soundLocation = "SoundParameters/";
@@ -113,7 +113,8 @@ public class Options : MonoBehaviour
             delegate { ChangeFont(_originalFont); });
         _secondFontToggle.onValueChanged.AddListener(   
             delegate { ChangeFont(_secondFont); });
-        // TODO: FIX THIS SHIT
+        _thirdFontToggle.onValueChanged.AddListener(   
+            delegate { ChangeFont(_openDyslexicFont); });
         
         
         // RTPC
@@ -136,10 +137,10 @@ public class Options : MonoBehaviour
     
     void UpdateFont(TMP_FontAsset font, Toggle currentToggle)
     {
-        foreach (var toggle in _toggles)
-            toggle.isOn = false;
-        
-        currentToggle.isOn = true;
+        // foreach (var toggle in _toggles)
+        //     toggle.isOn = false;
+        //
+        // currentToggle.isOn = true;
         Debug.Log("Change font");
         foreach (var textMeshObject in FindObjectsByType(typeof(TextMeshProUGUI), FindObjectsSortMode.None))
             ((TextMeshProUGUI)textMeshObject).font = font;
