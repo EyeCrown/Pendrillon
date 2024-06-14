@@ -5,6 +5,7 @@ using AK.Wwise;
 using MonoBehavior.Managers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Options : MonoBehaviour
@@ -20,8 +21,6 @@ public class Options : MonoBehaviour
 
     #endregion
     
-    
-
     #region UI Attributes
 
     // Panel        [Header("=== Panel ===")]
@@ -39,6 +38,7 @@ public class Options : MonoBehaviour
     
     // Buttons
     private Button _openMenuButton;
+    private Button _closeMenuButton;
     
     // Toggles
     //      ScreenShake
@@ -52,6 +52,12 @@ public class Options : MonoBehaviour
 
     #endregion
     
+    #endregion
+    
+    #region Events
+
+    public UnityEvent Open;
+    public UnityEvent Close;
     
     #endregion
 
@@ -61,14 +67,17 @@ public class Options : MonoBehaviour
     {
         ConnectAttributes();
         ConnectListenners();
-
+        
         SetupRTPC();
     }
 
     void Start()
     {
+        ActingManager.Instance.PhaseStart.AddListener(() => { _openMenuButton.gameObject.SetActive(true);});
+
         _originalFontToggle.isOn = true;
         _screenShakeToggle.isOn = true;
+        _openMenuButton.gameObject.SetActive(false);
         _panel.SetActive(false);
     }
 
@@ -88,6 +97,7 @@ public class Options : MonoBehaviour
         
         // Buttons
         _openMenuButton = transform.Find("OpenMenuButton").GetComponent<Button>();
+        _closeMenuButton = _panel.transform.Find("BackButton").GetComponent<Button>();
         
         // Font toggle
         var fontLocation = "FontsParameters/";
@@ -112,11 +122,18 @@ public class Options : MonoBehaviour
 
     void ConnectListenners()
     {
+        // Events
+        Open.AddListener(OnOpen);
+        Close.AddListener(OnClose);
+        
+        
+        
         // Visual
         _opacitySlider.onValueChanged.AddListener(delegate { ActingManager.Instance.ChangeOpacityUI(_opacitySlider.value); });
         
         // Button
         _openMenuButton.onClick.AddListener(OnClickOpenButton);
+        _closeMenuButton.onClick.AddListener(OnClickCloseButton);
         
         // Toggles
         _originalFontToggle.onValueChanged.AddListener( 
@@ -178,21 +195,26 @@ public class Options : MonoBehaviour
 
     #region EventHandlers
 
-    void OnClickOpenButton()
+    void OnOpen()
     {
-        if (_panel.activeSelf)
-        {
-            _panel.SetActive(false);
-            Time.timeScale = 1.0f;
-            GameManager.Instance._playerInput.Player.Interact.Enable();
-        }
-        else
-        {
-            _panel.SetActive(true);
-            Time.timeScale = 0.0f;
-            GameManager.Instance._playerInput.Player.Interact.Disable();
-        }
+        _panel.SetActive(true);
+        Time.timeScale = 0.0f;
+        GameManager.Instance._playerInput.Player.Interact.Disable();
+        _openMenuButton.gameObject.SetActive(false);
     }
+
+    void OnClose()
+    {
+        _panel.SetActive(false);
+        Time.timeScale = 1.0f;
+        GameManager.Instance._playerInput.Player.Interact.Enable();
+        _openMenuButton.gameObject.SetActive(true);
+    }
+    
+    public void OnClickOpenButton()     => Open.Invoke();
+
+    public void OnClickCloseButton()    => Close.Invoke();
+    
     
     void UpdateRTPC(string parameterName, float value) => AkSoundEngine.SetRTPCValue(parameterName, value);
 
