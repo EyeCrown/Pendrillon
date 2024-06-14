@@ -14,8 +14,7 @@
 // Set the location
 #set:tempest
 // Set the actor's positions
-#position:Player:4:2
-#position:Moussaillon:30:30
+#position:Player:6:2
 // Audience reaction
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 

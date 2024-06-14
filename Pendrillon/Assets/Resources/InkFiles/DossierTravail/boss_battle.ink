@@ -74,8 +74,6 @@ VAR b_boss_special_attack_power = 9
 - -> start
 
 = start
-// Set the location : A SUPPRIMER PLUS TARD CAR LE DECORS EST DEJA SET PAR LA SCENE D'AVANT !!!!
-- #set:tempest
 
 // Start the scene
 #audience:ovation

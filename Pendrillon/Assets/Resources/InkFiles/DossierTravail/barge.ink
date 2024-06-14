@@ -13,8 +13,8 @@
 #actor:Player:PLAYER:VOYAGEUR
 #actor:Passeur:PASSEUR
 // Set the location
+#curtains:open
 #set:barge
-#curtains
 // Set the actor's positions
 #position:Player:4:1
 #position:Passeur:4:3
@@ -144,7 +144,7 @@ PLAYER: Notre voyage dura...
 PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX_Player_voyagedure1an #map:arrival
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreux playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
-- PASSEUR: Ainsi, c'est à votre retour à Miraterre que les problèmes ont commencé ? #map:up #playsound:VOX_Ferryman_retourmiraterre
+- PASSEUR: Ainsi, c'est à votre retour à Miraterre que les problèmes ont commencé ? #playsound:VOX_Ferryman_retourmiraterre
 - PLAYER: En effet. Un dénouement...
     * [Ironique.] PLAYER: ... des plus <i>ironiques</i>.
         PASSEUR: Ironique, tu dis ? #playsound:VOX_Ferryman_ironique
@@ -245,5 +245,5 @@ PASSEUR: Tu vas devoir affronter ton destin, désormais. #audience:ovation #play
         PASSEUR: ... Je comprends. #playsound:VOX_Ferryman_jecomprends #audience:applause
 - #anim:open_trial_doors #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
 PASSEUR: C'est ici que nos chemins se séparent, voyageur... #playsound:VOX_Ferryman_voistuporte2 #audience:choc
-PASSEUR: Ainsi en a décidé la <shake>Cloche du Destin</shake>.  #playsound:VOX_Ferryman_ainsienadecide #audience:ovation
+PASSEUR: Ainsi en a décidé la <shake>Cloche du Destin</shake>.  #box #playsound:VOX_Ferryman_ainsienadecide #audience:ovation #curtains:close #wait:4
 - -> tribunal_1

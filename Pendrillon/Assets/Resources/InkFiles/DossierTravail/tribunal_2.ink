@@ -40,7 +40,14 @@ JUGE ERNEST: Ainsi, vous avez véritablement affronté une créature marine ? #p
         ~ audience_judgement(0.3)
     * [Je n'avais pas le choix...] PLAYER: Je l'ai fait. Je n'avais pas le choix, Votre Honneur... C'était elle ou nous. #audience:ovation
         ~ audience_judgement(0.2)
-    
+{
+    - b_player_won:
+        JUGE ERNEST: Et vous avez triomphé de la bête. #audience:ovation #screenshake
+        ~ audience_judgement(0.4)
+    - b_player_won == false:
+        JUGE ERNEST: Et vous avez été vaincu. #audience:booing
+        ~ audience_judgement(-0.1)
+}
 - JUGE ERNEST: À la fin de votre histoire, il semblerait pourtant que le Léviathan vous ait avalé... #playsound:VOX_Judge_finhistoireleviathanavale
 JUGE ERNEST: Vous, et votre navire... #playsound:VOX_Judge_vousetvotrenavire
     * [Avalé tout cru !] PLAYER: Avalés tout entier, Votre Honneur ! #audience:choc
@@ -65,8 +72,8 @@ L'AFFREUSE SIREINE: ... #audience:boing
     * [Elle possède un nom.] PLAYER: L'affreuse Sireine, comme vous dites, possède un nom. Naïda.
 - JUGE ERNEST: Ainsi, la poiscaille possède un nom ? #playsound:VOX_Judge_poiscalleaunnomq #audience:debate
 LA POISCAILLE: ... #audience:booing
-    * [(Menaçant) Appelez-la par son nom. {t(STRE, -20)}] // 30%
-        {sc(STRE, -20): -> convince_name_naida_S | -> convince_name_naida_F}
+    * [(Menaçant) Appelez-la par son nom. {t(STRE, -30)}] // 30%
+        {sc(STRE, -30): -> convince_name_naida_S | -> convince_name_naida_F}
             ** (convince_name_naida_S) PLAYER: Votre Honneur, si vous ne daignez pas appeler Naïda par son nom, par la <b>Déesse</b>, vous le paierez. #audience:choc
                 ~ audience_judgement(0.1)
                 JUGE ERNEST: Bon, bon... Je consens à appeler la créature par ce qui lui sert de nom... #playsound:VOX_Judge_bonbonjeconsens #audience:applause
@@ -75,8 +82,9 @@ LA POISCAILLE: ... #audience:booing
                 ~ naida_name_on_text = "Naïda"
             ** (convince_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez me faire peur, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhfairepeur #audience:ovation
                 ~ naida_name_on_text = "la poiscaille"
-    * [(Calme) Tout être a droit à un nom.{t(CHAR, -20)}] // 60%
-        {sc(CHAR, -20): -> force_name_naida_S | -> force_name_naida_F}
+                ~ audience_judgement(-0.1)
+    * [(Calme) Tout être a droit à un nom.{t(CHAR, -10)}] // 60%
+        {sc(CHAR, -10): -> force_name_naida_S | -> force_name_naida_F}
             ** (force_name_naida_S) PLAYER: Votre Honneur, je vous demande de faire preuve d'humanité en appelant Naïda par son nom. #audience:debate
                 ~ audience_judgement(0.1)
                 JUGE ERNEST: Bon, bon... Je consens à appeler la créature par ce qui lui sert de nom... #playsound:VOX_Judge_bonbonjeconsens #audience:applause
@@ -85,6 +93,7 @@ LA POISCAILLE: ... #audience:booing
                 ~ naida_name_on_text = "Naïda"
             ** (force_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez m'attendrir, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhattendriraccuse #audience:ovation
                 ~ naida_name_on_text = "la poiscaille"
+                ~ audience_judgement(-0.1)
 - SOUFFLEUR: Je sais ce que tu penses, l'ami... 
 SOUFFLEUR: La pièce prend des tournures particulièrement sombres...
 SOUFFLEUR: Mais ainsi sont fait nos mythes, pas vrai ?
@@ -106,43 +115,41 @@ SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
         ** [C'est entendu.] PLAYER: Entendu, Votre Honneur. #audience:applause
             -> player_and_naida_met
 - JUGE ERNEST: Ainsi, vous avez découvert le peuple maudit qui fut jadis noyé, avalé par le Léviathan... #playsound:VOX_Judge_ainsipeuplejadis
-    * [Ils ne sont pas maudits. {t(CHAR, -20)}] // 60%
-        {sc(CHAR, -20): -> sireine_are_not_cursed_S | -> sireine_are_not_cursed_F}
+    * [Ils ne sont pas maudits. {t(CHAR, -10)}] // 60%
+        {sc(CHAR, -10): -> sireine_are_not_cursed_S | -> sireine_are_not_cursed_F}
         ** (sireine_are_not_cursed_S) PLAYER: Votre Honneur, j'ai toutes les raisons de penser que le peuple des Sireines n'est en rien maudit. #audience:debate
             PLAYER: Ne pensez-vous pas que si la <b>Déesse</b> avait voulu que le Déluge ne les tue, ils ne seraient pas vivants aujourd'hui ? #audience:applause
             ~ audience_judgement(0.1)
         ** (sireine_are_not_cursed_F) PLAYER: Sont-ils réellement maudits ? Qui peut le dire ? #audience:debate
-            ~ audience_judgement(-0.03)
+            ~ audience_judgement(-0.1)
     * [Vous seul êtes maudit. {t(STRE, -10)}] // 60%
-        {sc(STRE, -20): -> judge_is_cursed_S | -> judge_is_cursed_F}
+        {sc(STRE, -10): -> judge_is_cursed_S | -> judge_is_cursed_F}
         ** (judge_is_cursed_S) PLAYER: Votre Honneur, s'il est un être maudit en ces lieux, c'est bien vous. #audience:debate
             PLAYER: Un siècle à souffrir, accroché à une roue...
             PLAYER: Si la <b>Déesse</b> avait voulu abréger vos souffrances, ne l'aurait-elle pas fait ? #audience:applause
             ~ audience_judgement(0.1)
         ** (judge_is_cursed_F) PLAYER: C'est vous qui êtes maudit, pas eux ! #audience:debate
-            ~ audience_judgement(-0.03)
+            ~ audience_judgement(-0.1)
     * [Rester silencieux.] JUGE ERNEST: Vous semblez n'avoir rien à répondre... #playsound:VOX_Judge_semblezavoirrienrepondre #audience:debate
-        ~ audience_judgement(-0.03)
+        ~ audience_judgement(-0.05)
 - JUGE ERNEST: Accusé, il est une question qui est dans tous les esprits... #playsound:VOX_Judge_accusequestionesprits
 JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #playsound:VOX_Judge_commentamoureuxdeluge
-    * [(Convaincre) Elle est plus proche de nous que vous. {t(DEXT, -10)}] // 65%
-        {sc(DEXT, -10): -> closer_to_us_S | -> closer_to_us_F}
+    * [(Convaincre) Elle est plus proche de nous que vous. {t(DEXT, -5)}] // 65%
+        {sc(DEXT, -5): -> closer_to_us_S | -> closer_to_us_F}
         ** (closer_to_us_S) PLAYER: Votre Honneur... Les Sireines sont plus proches des humains que vous ne l'êtes vous-même... #audience:choc
             PLAYER: Naïda a un cœur qui bat : le vôtre n'a-t-il pas cessé il y a bien longtemps ? #audience:debate
             PLAYER: Lorsqu'elle se blesse, son sang coule : est-ce votre cas ? #audience:debate
             PLAYER: Un jour... Elle mourra. #audience:silent
-            PLAYER: ... #anim:Player:sad
             PLAYER: Peut-on en dire autant de vous ? #audience:ovation
-            ~ audience_judgement(0.3)
+            ~ audience_judgement(0.2)
         ** (closer_to_us_F) PLAYER: Votre Honneur... Les Sireines sont plus proches des humains que vous ne l'êtes vous-même... #audience:choc
             PLAYER: Naïda a un cœur qui bat : le vôtre n'a-t-il pas cessé il y a bien longtemps ? #audience:debate
             PLAYER: Lorsqu'elle se blesse, son sang coule : est-ce votre cas ? #audience:debate
-            PLAYER: ... #anim:Player:sad
             PLAYER: Un jour... Elle mourra. #audience:silent
             PLAYER: Peut-on en dire autant de vous ? #audience:booing
-            ~ audience_judgement(-0.03)
-    * [(Persuader) J'ai un cœur.{t(CHAR, -10)}] // 70%
-        {sc(CHAR, -10): -> we_have_a_heart_S | -> we_have_a_heart_F}
+            ~ audience_judgement(-0.1)
+    * [(Persuader) J'ai un cœur.{t(CHAR, 0)}] // 70%
+        {sc(CHAR, 0): -> we_have_a_heart_S | -> we_have_a_heart_F}
         ** (we_have_a_heart_S) PLAYER: Pour la simple raison que j'ai un cœur, Votre Honneur. #audience:debate
             PLAYER: Naïda aussi en possède un. Et vous, est-ce votre cas ? #audience:choc
             PLAYER: Le vôtre n'a-t-il pas cessé de battre il y a des centaines d'années, attaché à votre roue ?
@@ -152,86 +159,89 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
             PLAYER: Naïda aussi en possède un. Et vous, est-ce votre cas ? #audience:choc
             PLAYER: Le vôtre n'a-t-il pas cessé de battre il y a des centaines d'années, attaché à votre roue ?
             PLAYER: Par quel droit un être auquel il manque un cœur peut-il procéder au jugement de ceux qui jouissent et souffrent d'en posséder un ? #audience:booing
-                ~ audience_judgement(-0.03)
+                ~ audience_judgement(-0.1)
     * [Rester silencieux.] JUGE ERNEST: Aucune réponse... Le cœur a ses raisons... #playsound:VOX_Judge_lecoeurasesraisons #audience:debate
-        ~ audience_judgement(-0.03)
-- JUGE ERNEST: Accusé, ne souffrez-vous d'aucune honte à défendre ce peuple que le Déluge a puni ? #playsound:VOX_Judge_accuseaucunehonte
-    * [Nos ancêtres sont communs. {t(DEXT, 0)}] // 75%
-        {sc(DEXT, 0): -> we_have_same_ancesters_S | -> we_have_same_ancesters_F}
+        ~ audience_judgement(-0.05)
+- JUGE ERNEST: Accusé, ne souffrez-vous d'aucune honte à défendre ce peuple que le Déluge a puni ? //#playsound:VOX_Judge_accuseaucunehonte
+    * [Nos ancêtres sont communs. {t(DEXT, 5)}] // 75%
+        {sc(DEXT, 5): -> we_have_same_ancesters_S | -> we_have_same_ancesters_F}
         ** (we_have_same_ancesters_S) PLAYER: Votre Honneur, nos ancêtres et ceux des Sireines sont les mêmes. #audience:choc
             PLAYER: Lorsque Miraterre sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la <b>Déesse</b>... #audience:debate
             PLAYER: D'autres n'eurent pas cette chance... Fort heureusement, ils échappèrent à la noyade, eux aussi... #audience:debate
             PLAYER: Sauvés par le Léviathan. #audience:choc
             PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un même peuple. #audience:ovation
-            ~ audience_judgement(0.3)
+            ~ audience_judgement(0.2)
         ** (we_have_same_ancesters_F) PLAYER: Votre Honneur, nos ancêtres et ceux des Sireines sont les mêmes. #audience:choc
             PLAYER: Lorsque Miraterre sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la <b>Déesse</b>... #audience:debate
             PLAYER: D'autres n'eurent pas cette chance... Fort heureusement, ils échappèrent à la noyade, eux aussi... #audience:debate
             PLAYER: Sauvés par le Léviathan. #audience:choc
             PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un même peuple. #audience:booing
+            ~ audience_judgement(-0.1)
     * [Nous pourrions nous unir. {t(CHAR, 0)}] // 70%
         {sc(CHAR, 0): -> we_could_unify_S | -> we_could_unify_F}
         ** (we_could_unify_S) PLAYER: Nos deux peuples pourraient s'unir, Votre Honneur. Faire la paix, du moins. #audience:debate
             PLAYER: Avant le Déluge, nous ne formions qu'une seule et même communauté... #audience:debate
             PLAYER: Il serait temps d'abandonner notre haine, et de leur montrer... à eux, nos frères et nos sœurs... le respect qu'ils méritent. #audience:ovation
+            ~ audience_judgement(0.2)
         ** (we_could_unify_F) PLAYER: Nos deux peuples pourraient s'unir, Votre Honneur. Faire la paix, du moins. #audience:debate
             PLAYER: Avant le Déluge, nous ne formions qu'une seule et même communauté... #audience:debate
             PLAYER: Il serait temps d'abandonner notre haine, et de leur montrer... à eux, nos frères et nos sœurs... le respect qu'ils méritent. #audience:booing
+            ~ audience_judgement(-0.1)
     * [Rester silencieux.] JUGE ERNEST: Vous préférez garder le silence... #playsound:VOX_Judge_preferezgardersilencepointpointp #audience:debate
-        ~ audience_judgement(-0.03)
+        ~ audience_judgement(-0.05)
         -> are_sireine_doomed
 - JUGE ERNEST: Insinuez-vous que l'infâme créature... Le Léviathan lui-même, aurait sauvé ces gens ? #playsound:VOX_Judge_insinuezcreatureinfame
-    * [Ma présence en est la preuve. {t(CHAR, 0)}] // 80%
-        {sc(CHAR, 0): -> i_am_the_proof_S | -> i_am_the_proof_F}
+    * [Ma présence en est la preuve. {t(CHAR, 10)}] // 80%
+        {sc(CHAR, 10): -> i_am_the_proof_S | -> i_am_the_proof_F}
         ** (i_am_the_proof_S) PLAYER: Votre Honneur, ma présence en ces lieux devrait répondre à votre interrogation... #audience:debate
             PLAYER: Dois-je vous rappeler que le Léviathan m'a avalé, avec tout mon équipage ? #audience:debate
             PLAYER: Pourtant, je suis ici, devant vous. En chair et en os... #anim:Player:bow #audience:ovation
-            ~ audience_judgement(0.3)
+            ~ audience_judgement(0.1)
         ** (i_am_the_proof_F) PLAYER: Votre Honneur, ma présence en ces lieux devrait répondre à votre interrogation... #audience:debate
             PLAYER: Dois-je vous rappeler que le Léviathan m'a avalé, avec tout mon équipage ? #audience:debate
             PLAYER: Pourtant, je suis ici, devant vous. En chair et en os... #anim:Player:bow #audience:booing
-            ~ audience_judgement(-0.04)
+            ~ audience_judgement(-0.1)
     * [Êtes-vous donc idiot ? {t(STRE, 0)}] // 70%
         {sc(STRE, 0): -> are_you_dumb_S | -> are_you_dumb_F}
         ** (are_you_dumb_S) PLAYER: Votre Honneur, êtes-vous stupide ? #audience:choc
             PLAYER: N'avez-vous donc rien remarqué ? Le Léviathan m'a avalé, et pourtant... #audience:debate
             PLAYER: Je ne suis point un spectre, contrairement à vous ! #audience:laughter
             PLAYER: ... Sauf votre respect, Votre Honneur. #audience:ovation
-            ~ audience_judgement(0.3)
+            ~ audience_judgement(0.2)
         ** (are_you_dumb_F) PLAYER: Votre Honneur, êtes-vous stupide ? #audience:choc
             PLAYER: N'avez-vous donc rien remarqué ? Le Léviathan m'a avalé, et pourtant... #audience:debate
             PLAYER: Je ne suis point un spectre, contrairement à vous ! #audience:debate
             PLAYER: ... Sauf votre respect, Votre Honneur. #audience:booing
-            ~ audience_judgement(-0.04)
+            ~ audience_judgement(-0.1)
 - (are_sireine_doomed) JUGE ERNEST: Ainsi, vous semblez penser que les Sireines ne sont pas des créatures damnées ? #playsound:VOX_Judge_sireinespasdamnesq #audience:debate
-    * [Irène était une Sireine. {t(CHAR, -30)}] // 50%
-        {sc(CHAR, -30): -> irene_was_a_sireine_S | -> irene_was_a_sireine_F}
+    * [Irène était une Sireine. {t(CHAR, -20)}] // 50%
+        {sc(CHAR, -20): -> irene_was_a_sireine_S | -> irene_was_a_sireine_F}
         ** (irene_was_a_sireine_S) PLAYER: Votre Honneur, n'avez-vous donc pas compris ? #audience:debate
             PLAYER: <b>Irène</b> elle-même... Votre propre fille...
             PLAYER: ... était une Sireine. #audience:choc
             PLAYER: Elle fut retrouvée, sur un rocher, en pleine tempête. Pour quelle raison se trouvait-elle en pleine mer ? #audience:debate
             PLAYER: Comment expliquer autrement qu'elle ne fut pas noyée ? #audience:applause
             PLAYER: En conspuant Naïda, ainsi que les siens, c'est la <b>Déesse</b> elle-même que vous insultez ! #audience:ovation
-            ~ audience_judgement(0.4)
+            ~ audience_judgement(0.3)
         ** (irene_was_a_sireine_F) PLAYER: Votre Honneur, n'avez-vous donc pas compris ? #audience:debate
             PLAYER: <b>Irène</b> elle-même... Votre propre fille...
             PLAYER: ... était une Sireine. #audience:choc
             PLAYER: Elle fut retrouvée, sur un rocher, en pleine tempête. Pour quelle raison se trouvait-elle en pleine mer ? #audience:debate
             PLAYER: Comment expliquer autrement qu'elle ne fut pas noyée ? #audience:debate
             PLAYER: En conspuant Naïda, ainsi que les siens, c'est la <b>Déesse</b> elle-même que vous insultez ! #audience:booing
-                ~ audience_judgement(-0.07)
-    * [Pas maudites mais bénies. {t(DEXT, -20)}] // 60%
-        {sc(DEXT, -20): -> sireine_are_blessed_S | -> sireine_are_blessed_F}
+                ~ audience_judgement(-0.1)
+    * [Pas maudites mais bénies. {t(DEXT, -10)}] // 60%
+        {sc(DEXT, -10): -> sireine_are_blessed_S | -> sireine_are_blessed_F}
         ** (sireine_are_blessed_S) PLAYER: Votre Honneur, si un peuple, avalé par les Eaux lors du Déluge, a pu survivre jusqu'à aujourdhui... #audience:debate
             PLAYER: Ne pensez-vous pas qu'il en va de la volonté de la <b>Déesse</b> elle-même ? #audience:debate
             PLAYER: Le peuple des Sireines est bénie ! Béni de la <b>Déesse</b> ! #audience:ovation
-            ~ audience_judgement(0.3)
+            ~ audience_judgement(0.2)
         ** (sireine_are_blessed_F) PLAYER: Votre Honneur, si un peuple, avalé par les Eaux lors du Déluge, a pu survivre jusqu'à aujourdhui... #audience:debate
             PLAYER: Ne pensez-vous pas qu'il en va de la volonté de la <b>Déesse</b> elle-même ? #audience:debate
             PLAYER: Le peuple des Sireines est bénie ! Béni de la <b>Déesse</b> ! #audience:booing
-            ~ audience_judgement(-0.04)
+            ~ audience_judgement(-0.1)
     * [Rester silencieux.] JUGE ERNEST: Vous préférez garder le silence ? Passons... #playsound:VOX_Judge_preferezgardersilence2 #audience:debate
-        ~ audience_judgement(-0.03)
+        ~ audience_judgement(-0.05)
 - JUGE ERNEST: Ces paroles seront vos dernières, Accusé. #playsound:VOX_Judge_parolesdernieresaccuse
 JUGE ERNEST: Ainsi ce procès arrive à sa conclusion... #playsound:VOX_Judge_procesconclusiono
 JUGE ERNEST: Je demande désormais solennellement aux jurés de bien vouloir rendre leur verdict... #playsound:VOX_Judge_demandejuresverdict #audience:ovation
@@ -254,6 +264,7 @@ JUGE ERNEST: Mesdames et messieurs les jurés... #playsound:VOX_Judge_mesdamesme
 JUGE ERNEST: Qui vote... <shake>coupable</shake> ? #playsound:VOX_Judge_quicoupable #box #wait:1 #audience:applause
 JUGE ERNEST: Et maintenant... #playsound:VOX_Judge_etmaintenant #audience:debate
 JUGE ERNEST: Qui vote... <shake>innocent</shake> ? #playsound:VOX_Judge_quiinnocent #box #wait:1.4 #audience:ovation #anim:Player:bow
+~ audience_judgement(1) // La balance penche complètement si innocent
 JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé. #playsound:VOX_Judge_verdictjuresprononce
 JUGE ERNEST: Le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_jugedeclareOctave #playsound:VOX_Judge_jugedeclareAmbroise #playsound:VOX_Judge_jugedeclareMerlin
 JUGE ERNEST: <b>INNOCENT</b> !!! #playsound:VOX_Judge_INNOCENT #audience:ovation
@@ -268,6 +279,7 @@ JUGE ERNEST: Et maintenant... #playsound:VOX_Judge_etmaintenantmauvais #audience
 JUGE ERNEST: Qui vote... <shake>coupable</shake> ? #playsound:VOX_Judge_quicoupablemauvais #box #wait:1.4 #audience:ovation #anim:Player:bow
 JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise
 JUGE ERNEST: <b>COUPABLE</b> !!! #playsound:VOX_Judge_COUPABLE #audience:ovation
+~ audience_judgement(-1) // La balance penche complètement si coupable
 JUGE ERNEST: Coulez-le, ainsi que la Sireine, où la Déesse Elle-même ne saurait le trouver... #playsound:VOX_Judge_coulezle #audience:ovation
 JUGE ERNEST: ... Au fond des océans ! #playsound:VOX_Judge_aufonddesoceans #audience:ovation
 - -> naida_speech
