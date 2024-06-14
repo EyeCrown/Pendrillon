@@ -163,6 +163,7 @@ public class CharacterHandler : MonoBehaviour
         var judgePos = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(2, 9));
         transform.position = new Vector3(judgePos.x, 2.75f, judgePos.z);
         _rope.SetActive(false);
+        _onStage = true;
     }
 
     #endregion
