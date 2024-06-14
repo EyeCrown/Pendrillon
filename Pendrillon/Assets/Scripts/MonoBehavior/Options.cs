@@ -41,7 +41,11 @@ public class Options : MonoBehaviour
     private Button _openMenuButton;
     
     // Toggles
-    private List<Toggle> _toggles;
+    //      ScreenShake
+    private Toggle _screenShakeToggle;
+
+    
+    //      Fonts 
     private Toggle _originalFontToggle;
     private Toggle _secondFontToggle;
     private Toggle _thirdFontToggle;
@@ -63,6 +67,7 @@ public class Options : MonoBehaviour
     void Start()
     {
         _originalFontToggle.isOn = true;
+        _screenShakeToggle.isOn = true;
         _panel.SetActive(false);
     }
 
@@ -83,7 +88,7 @@ public class Options : MonoBehaviour
         // Buttons
         _openMenuButton = transform.Find("OpenMenuButton").GetComponent<Button>();
         
-        // Toggles
+        // Font toggle
         var fontLocation = "FontsParameters/";
         _originalFontToggle = _panel.transform.Find(fontLocation + "OriginalFont").GetComponent<Toggle>();
         _secondFontToggle   = _panel.transform.Find(fontLocation + "SecondFont").GetComponent<Toggle>();
@@ -98,6 +103,10 @@ public class Options : MonoBehaviour
         _rtpcUIVolumeSlider     = _panel.transform.Find(soundLocation + "UIVolume" + "/Slider").gameObject.GetComponent<Slider>();
         _rtpcVoicesVolumeSlider = _panel.transform.Find(soundLocation + "VoicesVolume" + "/Slider").gameObject.GetComponent<Slider>();
         
+        // Screenshake
+        
+        _screenShakeToggle = _panel.transform.Find(visualLocation + "ScreenshakeToggle").GetComponent<Toggle>();
+
     }
 
     void ConnectListenners()
@@ -116,6 +125,8 @@ public class Options : MonoBehaviour
         _thirdFontToggle.onValueChanged.AddListener(   
             delegate { ChangeFont(_openDyslexicFont); });
         
+        _screenShakeToggle.onValueChanged.AddListener(
+            delegate { ActingManager.Instance._allowScreenshake = _screenShakeToggle.isOn; });
         
         // RTPC
         _rtpcMainVolumeSlider.onValueChanged.AddListener(

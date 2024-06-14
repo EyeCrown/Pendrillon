@@ -118,6 +118,8 @@ namespace MonoBehavior.Managers
         bool _dialogueAlreadyHandle = false;
 
         readonly Dictionary<string, Vector3> _directions = new Dictionary<string, Vector3>();
+
+        public bool _allowScreenshake { private get; set; }
         
         
         #region Wwise Attributes
@@ -1086,7 +1088,10 @@ namespace MonoBehavior.Managers
             {
                 void ScreenShakeAction()
                 {
-                    StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver));
+                    if (_allowScreenshake)
+                        StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver));
+                    else
+                        TagActionOver();
                 }
                 _tagMethods.Add(ScreenShakeAction);
             }
@@ -1097,7 +1102,10 @@ namespace MonoBehavior.Managers
                 
                 void ScreenShakeAction()
                 {
-                    StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver, intensity, time));
+                    if (_allowScreenshake)
+                        StartCoroutine(GameManager.Instance.ScreenShakeCoroutine(TagActionOver, intensity, time));
+                    else
+                        TagActionOver();
                 }
                 _tagMethods.Add(ScreenShakeAction);
             }
