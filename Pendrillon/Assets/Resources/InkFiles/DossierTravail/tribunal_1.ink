@@ -617,7 +617,7 @@ JUGE ERNEST: Et qu'a eu à dire l'Accusé au sujet du Juge ? #playsound:VOX_Judg
 // The judge proceed to mention the Leviathan
 = judge_proceed_to_mention_the_leviathan
 - JUGE ERNEST: Ainsi se clôt votre témoignage, prêtresse. #playsound:VOX_Judge_ainsiclottemoingnagepre #audience:applause
-JUGE ERNEST: Chacun vous remercie pour votre dévouement. #playsound:VOX_Judge_chacunremerciedevouement #audience:ovation
+JUGE ERNEST: Chacun vous remercie pour votre dévouement. #playsound:VOX_Judge_chacunremerciedevouement #audience:ovation #rope:Agathe
 JUGE ERNEST: Accusé, nous nous devons désormais d'aborder le sujet du Léviathan. #playsound:VOX_Judge_accusesujetleviathan #audience:debate
 JUGE ERNEST: En effet, vous fûtes missionné par la Couronne, afin de vous rendre en mer... #playsound:VOX_Judge_eneffetmissonnecouronne
 JUGE ERNEST: ... et d'y terrasser le terrible Léviathan. #playsound:VOX_Judge_terrasserleviathan #audience:choc
