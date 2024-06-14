@@ -101,7 +101,6 @@ VAR t_3_stained_glass_3_talk = false
 // CHURCH DAY
 VAR t_4_give_guards_surname = false
 
-
 // Let the trial register a player choice by changing the given variable to true
 === function trial() ===
     #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake
@@ -176,7 +175,7 @@ VAR t_4_give_guards_surname = false
 
 // Makes Arle angry until she leaves stage
 === function make_arle_angry() ===
-    ~ temp arle_leave_the_stage = false
+    ~ temp arle_leaves_the_stage = false
     ~ t_arle_patience -= 1
     {
         - t_arle_patience == 4:
@@ -195,15 +194,14 @@ VAR t_4_give_guards_surname = false
             ARLE: Et vous, public « adoré », vous ne me méritez pas ! Cessez de rire ! #audience:debate
             ARLE: Auriez-vous le millième de mon talent, vous seriez sur scène plutôt que de l'autre côté ! #audience:choc
             ARLE: Bande de ploucs ! Vous pensez qu'avoir payé votre ticket vous donne tous les droits ?! #audience:booing
-            // Une corde emmène Arle
             ARLE: Hé ! Laisse-moi ! Laisse-moi j'ai dit ! #audience:laughter
             SOUFFLEUR: Oula, oula, oula...
             SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer !
             SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs !
-            SOUFFLEUR: Quoi qu'il en soit: « Show must go on! », l'ami !
-            ~ arle_leave_the_stage = true
+            SOUFFLEUR: Quoi qu'il en soit: <i>« Show must go on! »</i>, l'ami !
+            ~ arle_leaves_the_stage = true
     }
-    ~ return arle_leave_the_stage
+    ~ return arle_leaves_the_stage
 
 // Souffleur speech about not mocking Agath
 === function souffleur_speech_about_mocking_agath()

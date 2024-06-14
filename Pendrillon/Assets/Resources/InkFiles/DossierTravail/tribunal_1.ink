@@ -2,8 +2,7 @@
 
 // Variables
 VAR judge_explained_mask = false
-VAR arle_patience = 5
-VAR accuse_alre_to_disrespect_queen = false
+VAR accuse_arle_to_disrespect_queen = false
 VAR admit_disrespect_queen = false
 VAR arle_lied = false
 VAR arle_lied_again = false
@@ -195,7 +194,7 @@ ARLE: Mon cœur me fit comprendre que l'effroyable messire était bien loin d'ê
         PLAYER: J'espère que ce procès sera l'occasion de démontrer que j'ai bel et bien été à la hauteur de cette tâche. #anim:Player:bow #audience:applause
         -> accusation_of_disrespecting_queen
     * [Arle vient d'insulter notre reine.] PLAYER: Je crois, Votre Honneur, et mesdames et messieurs les jurés, qu'Arle a trahit son manque de respect pour la reine Constance. #audience:debate
-        ~ accuse_alre_to_disrespect_queen = true
+        ~ accuse_arle_to_disrespect_queen = true
         ARLE: Objection ! L'immonde messire raconte des balivernes !
         JUGE ERNEST: Silence, témoin ! Je ne vous ai pas donné la parole ! #playsound:VOX_Judge_silencetemoinjeneevousaipas #anim:Arle:sad #anim:Judge:bell #audience:silent
         JUGE ERNEST: Pouvez-vous en avancer la preuve, Accusé ? #playsound:VOX_Judge_pouvezvousfournirpreuve
@@ -239,7 +238,7 @@ JUGE ERNEST: Accusé, qu'avez-vous à répondre ? #playsound:VOX_Judge_accuseque
         {make_arle_angry(): -> arle_leaves_stage}
 - (accusation_of_disrespecting_queen) JUGE ERNEST: Poursuivons, poursuivons... #playsound:VOX_Judge_poursuivonsx2
 JUGE ERNEST: Témoin, avez-vous une autre révélation à faire ? #playsound:VOX_Judge_temoinautrerevelation
-ARLE: Bien entendu, Votre Honneur. {accuse_alre_to_disrespect_queen: L'horripilant messire m'a accusé de manquer de respect à notre reine, mais celui-ci l'a tout bonnement humilié. | Je voudrais témoigner du fait que l'affreux messire a humilié notre reine.} #audience:choc #anim:Judge:bell
+ARLE: Bien entendu, Votre Honneur. {accuse_arle_to_disrespect_queen: L'horripilant messire m'a accusé de manquer de respect à notre reine, mais celui-ci l'a tout bonnement humilié. | Je voudrais témoigner du fait que l'affreux messire a humilié notre reine.} #audience:choc #anim:Judge:bell
 JUGE ERNEST: Poursuivez, je vous prie. #playsound:VOX_Judge_poursuivezsvp
 ARLE: Le terrible messire a cru bon de se moquer de la reine en faisant un bon mot, Votre Honneur.
     * [Ce n'est pas ce que vous croyez.] PLAYER: Ce n'est pas ce que vous pensez, votre Honneur... #audience:debate
@@ -431,7 +430,7 @@ JUGE ERNEST: Fit-il briller la lampe d'<b>Irène</b> ? #playsound:VOX_Judge_fiti
 
 // Arle leaves stage
 = arle_leaves_stage
-~ audience_judgement(0.4)
+~ audience_judgement(0.04)
 JUGE ERNEST: Euh... Si... Silence ! #playsound:VOX_Judge_euhsisilencesilence #anim:Judge:bell #audience:ovation
 JUGE ERNEST: Je... J'appelle à la barre nos deux prochains témoins. #playsound:VOX_Judge_jejappellebarre
     -> witnesses_capucine_and_marcello

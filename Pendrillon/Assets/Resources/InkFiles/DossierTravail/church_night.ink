@@ -24,7 +24,7 @@ VAR irene_torch_is_on = false
 #playsound:Play_MUS_Story_SC_Eglise_Intro
 // Player arrive dans l'Église puis avance jusqu'à la statue.
 // Après un moment.
-- UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit...
+- UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit... #wait:60
 // La voix vient d'hors-champ. Après un moment, une femme âgée arrive par la droite de la scène et entre dans le champ.
 - PRÊTRESSE AGATHE: ... quel qu'ils soient. #character_presentation:Agathe
     * [Bénie soit-elle.] PLAYER: Bénie soit-elle.
