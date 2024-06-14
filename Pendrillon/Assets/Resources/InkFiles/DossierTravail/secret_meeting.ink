@@ -79,7 +79,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * [(Au public) On dirait que je suis épié !] PLAYER: J'ai la sensation que je ne suis pas aussi seul que je le croyais... Quelqu'un m'épie ! Quelqu'un qui n'est pas très discret... #audience:laughter #playsound:VOX_Player_quelquunmepie
         VOIX CHUCHOTÉE: <i>(Hé ! Arrête de me ridiculiser auprès du public, tu veux ?)</i>
 - #anim:Arle:get_down
-    * [Raisonner l'actrice.] PLAYER: <i>(Le public n'attend que ton apparition ! C'est maintenant ou jamais !)</i> #anim:Player:chuchote
+    * [Raisonner l'actrice.] PLAYER: <i>(Le public n'attend que ton apparition ! C'est maintenant ou jamais !)</i> #anim:Player:chuchote #playsound:VOX_Player_lepublicattendapparition
         VOIX CHUCHOTÉE: <i>(J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré.)</i> #playsound:VOX_Arle_jailimpressionpublic
     * [Examiner le buisson.] PLAYER: Ce buisson me semble... suspect... #anim:Player:examine_bush #audience:laughter #playsound:VOX_Player_buissonsuspect
 - // Le joueur compte
