@@ -922,6 +922,9 @@ namespace MonoBehavior.Managers
                     _setTrial.SetActive(true);
                     _setTrial.GetComponent<Animator>().SetBool("InOut",true);
                     _currentSet = _setTrial;
+                    // Judge set position
+                    GameManager.Instance.GetCharacter("Judge").SetJudgePosition();
+                    
                     break;
                 case Constants.SetTempest:
                     _setTempest.SetActive(true);
