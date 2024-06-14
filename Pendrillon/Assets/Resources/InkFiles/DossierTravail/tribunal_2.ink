@@ -19,7 +19,7 @@ VAR verdict_is_guilty = false
 #set:trial
 // Set the actor's positions
 #position:Player:8:2
-#position:Judge:0:5
+//#position:Judge:0:5
 #position:Naïda:4:20
 
 // Start the scene

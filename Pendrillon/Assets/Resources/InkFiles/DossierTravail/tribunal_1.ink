@@ -24,7 +24,7 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #curtains:open
 #set:trial
 // Set the actor's positions
-#position:Judge:3:10
+//#position:Judge:3:10
 
 // Start the scene
 //#open_curtains
