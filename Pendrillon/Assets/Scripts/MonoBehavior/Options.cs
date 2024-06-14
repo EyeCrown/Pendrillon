@@ -15,7 +15,8 @@ public class Options : MonoBehaviour
 
     [Header("=== Fonts ===")] 
     [SerializeField] private TMP_FontAsset _originalFont;
-    [SerializeField] private TMP_FontAsset _secondFont; // TODO: Rename to be more explicit 
+    [SerializeField] private TMP_FontAsset _secondFont;  
+    [SerializeField] private TMP_FontAsset _openDyslexicFont;  
 
     #endregion
     
@@ -40,9 +41,14 @@ public class Options : MonoBehaviour
     private Button _openMenuButton;
     
     // Toggles
-    private List<Toggle> _toggles;
+    //      ScreenShake
+    private Toggle _screenShakeToggle;
+
+    
+    //      Fonts 
     private Toggle _originalFontToggle;
     private Toggle _secondFontToggle;
+    private Toggle _thirdFontToggle;
 
     #endregion
     
@@ -55,12 +61,14 @@ public class Options : MonoBehaviour
     {
         ConnectAttributes();
         ConnectListenners();
-        
+
+        SetupRTPC();
     }
 
     void Start()
     {
         _originalFontToggle.isOn = true;
+        _screenShakeToggle.isOn = true;
         _panel.SetActive(false);
     }
 
@@ -81,13 +89,11 @@ public class Options : MonoBehaviour
         // Buttons
         _openMenuButton = transform.Find("OpenMenuButton").GetComponent<Button>();
         
-        // Toggles
+        // Font toggle
         var fontLocation = "FontsParameters/";
         _originalFontToggle = _panel.transform.Find(fontLocation + "OriginalFont").GetComponent<Toggle>();
         _secondFontToggle   = _panel.transform.Find(fontLocation + "SecondFont").GetComponent<Toggle>();
-        _toggles = new List<Toggle>();
-        _toggles.Add(_originalFontToggle);
-        _toggles.Add(_secondFontToggle); 
+        _thirdFontToggle    = _panel.transform.Find(fontLocation + "ThirdFont").GetComponent<Toggle>();
         
         // RTPC
         var soundLocation = "SoundParameters/";
@@ -98,6 +104,10 @@ public class Options : MonoBehaviour
         _rtpcUIVolumeSlider     = _panel.transform.Find(soundLocation + "UIVolume" + "/Slider").gameObject.GetComponent<Slider>();
         _rtpcVoicesVolumeSlider = _panel.transform.Find(soundLocation + "VoicesVolume" + "/Slider").gameObject.GetComponent<Slider>();
         
+        // Screenshake
+        
+        _screenShakeToggle = _panel.transform.Find(visualLocation + "ScreenshakeToggle").GetComponent<Toggle>();
+
     }
 
     void ConnectListenners()
@@ -113,8 +123,11 @@ public class Options : MonoBehaviour
             delegate { ChangeFont(_originalFont); });
         _secondFontToggle.onValueChanged.AddListener(   
             delegate { ChangeFont(_secondFont); });
-        // TODO: FIX THIS SHIT
+        _thirdFontToggle.onValueChanged.AddListener(   
+            delegate { ChangeFont(_openDyslexicFont); });
         
+        _screenShakeToggle.onValueChanged.AddListener(
+            delegate { ActingManager.Instance._allowScreenshake = _screenShakeToggle.isOn; });
         
         // RTPC
         _rtpcMainVolumeSlider.onValueChanged.AddListener(
@@ -131,15 +144,25 @@ public class Options : MonoBehaviour
             delegate { UpdateRTPC("Voices_Volume", _rtpcVoicesVolumeSlider.value); });
     }
 
+    void SetupRTPC()
+    {
+        _rtpcMainVolumeSlider.value = 75;
+        _rtpcEnvironmentVolumeSlider.value  = 50;
+        _rtpcMusicVolumeSlider.value        = 50;
+        _rtpcSFXVolumeSlider.value          = 50;
+        _rtpcUIVolumeSlider.value           = 50;
+        _rtpcVoicesVolumeSlider.value       = 50;
+    }
+
     #endregion
 
     
     void UpdateFont(TMP_FontAsset font, Toggle currentToggle)
     {
-        foreach (var toggle in _toggles)
-            toggle.isOn = false;
-        
-        currentToggle.isOn = true;
+        // foreach (var toggle in _toggles)
+        //     toggle.isOn = false;
+        //
+        // currentToggle.isOn = true;
         Debug.Log("Change font");
         foreach (var textMeshObject in FindObjectsByType(typeof(TextMeshProUGUI), FindObjectsSortMode.None))
             ((TextMeshProUGUI)textMeshObject).font = font;

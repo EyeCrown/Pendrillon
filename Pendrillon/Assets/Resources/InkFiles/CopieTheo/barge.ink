@@ -9,7 +9,7 @@
 
 // Scène 1
 = scene_1
-#curtains
+#curtains:open
 // Define the actors of the scene
 #actor:Player:PLAYER:VOYAGEUR
 #actor:Passeur:PASSEUR
