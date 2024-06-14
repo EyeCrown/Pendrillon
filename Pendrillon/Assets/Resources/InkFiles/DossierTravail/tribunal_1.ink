@@ -7,7 +7,6 @@ VAR accuse_alre_to_disrespect_queen = false
 VAR admit_disrespect_queen = false
 VAR arle_lied = false
 VAR arle_lied_again = false
-VAR arle_left_the_play = false
 VAR souffleur_speech_about_not_mocking_agath_done = false
 
 // Scene
@@ -30,7 +29,7 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #position:Judge:0:5
 #position:Arle:10:20
 #position:Capucine:4:20
-#position:JudMarcelloge:4:20
+#position:Marcello:4:20
 #position:Agathe:4:20
 
 // Start the scene
@@ -111,13 +110,14 @@ SOUFFLEUR: N'oublie pas : dans ce procès, c'est le public que tu dois convaincr
 - JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle, la trublionne de la reine Constance. #playsound:VOX_Judge_jugeappellearle #anim:Judge:bell #move(Arle) #anim:Arle:bow #audience:ovation
 JUGE ERNEST: Décrivez au jury votre rencontre avec l'accusé, je vous prie. #playsound:VOX_Judge_decrivezjuryarle
 ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège d'occuper, au sein de la Couronne, un rôle de tout premier plan...
+    * [Ne pas l'interrompre.]
     * [(Se moquer) Contrairement à cette pièce.] PLAYER: Ce qui n'est pas le cas de ton rôle dans cette pièce... #audience:laughter #anim:Arle:angry
         ~ audience_judgement(0.05)
         ARLE: Pour qui tu te prends, abruti ? #anim:Arle:angry
         {make_arle_angry(): -> arle_leaves_stage}
         JUGE ERNEST: Silence, vous deux ! Silence ! #playsound:VOX_Judge_silencevous2 #anim:Judge:bell #audience:silent
-    * [Ne pas l'interrompre.]
 - JUGE ERNEST: Poursuivez, je vous prie. #playsound:VOX_Judge_poursuivez #anim:Arle:bow
+    * [Ne rien dire.]
     * [(Se moquer) Même Son Honneur s'ennuie.] PLAYER: Son Honneur en personne baille en t'écoutant ! Si ça continue, le public va décéder d'ennui. #audience:laughter #anim:Arle:angry
         ARLE: C'est toi qui vas mourir si tu continues à m'interrompre, minable !
         ~ audience_judgement(0.05)
@@ -125,18 +125,18 @@ ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège
         JUGE ERNEST: Silence ! Je ne le répéterai pas : faites le silence ! #playsound:VOX_Judge_silencejerepetepas #anim:Judge:bell #audience:silent
         JUGE ERNEST: Poursuivez, témoin. #playsound:VOX_Judge_poursuiveztemoin #anim:Arle:bow
         ARLE: Où en étais-je ? Ah oui : un rôle de tout premier plan.
-    * [Ne rien dire.]
 - ARLE: J'aime à penser que je suis, pour ce rôle, une actrice à la hauteur.
+    * [Se taire.]
     * [(Se moquer) Toi, une bonne actrice ?] PLAYER: Toi, une bonne actrice ? En voilà une nouvelle à ressusciter les noyés ! #audience:laughter #anim:Arle:angry
         ~ audience_judgement(0.05)
         ARLE: Tu vas te taire, oui ?! #anim:Arle:angry
         {make_arle_angry(): -> arle_leaves_stage}
         JUGE ERNEST: Silence ! Silence ! #playsound:VOX_Judge_silencesilence2 #anim:Judge:bell #audience:silent
         JUGE ERNEST: Accusé, cessez d'interrompre le témoin ! Quant à vous... #playsound:VOX_Judge_accusecessezdinterrompre
-    * [Se taire.]
 - JUGE ERNEST: Veuillez ne pas vous répandre en détails inutiles. #playsound:VOX_Judge_veuilleznepasvousrepandre #audience:laughter #anim:Arle:sad
 ARLE: ... Hmfrr...
 ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à messire le scélérat une mission de la plus haute importance.
+    * [Rester silencieux.]
     * [(Se moquer) Jouer correctement la comédie ?] PLAYER: Si la mission était de jouer correctement, permets-moi de te dire que c'est un échec cuisant... #audience:laughter #anim:Arle:angry
         ~ audience_judgement(0.05)
         {make_arle_angry(): -> arle_leaves_stage}
@@ -144,7 +144,6 @@ ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à 
         JUGE ERNEST: Ce procès n'est pas une fanfaronnade ! Membres du jury, soyez dignes de la tâche qui vous incombe ! #playsound:VOX_Judge_ceprocesfanfaronnade
         JUGE ERNEST: Quant à vous, cessez d'objecter quand la parole ne vous a pas été donnée par le Juge en personne ! #playsound:VOX_Judge_quantavous
         JUGE ERNEST: Témoin, vous mentionniez une mission confiée à l'accusé par la Couronne. #playsound:VOX_Judge_temoinmentionniez
-    * [Rester silencieux.]
 - JUGE ERNEST: Précisez quelle était la nature de cette mission, je vous prie. #playsound:VOX_Judge_precisezlanature #anim:Arle:bow
 ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme accusé, était de tuer le Léviathan, et d'en ramener l'organe vital. #audience:choc
 ARLE: Je veux bien entendu parler de son cœur, Votre Honneur. #audience:laughter #anim:Judge:bell #anim:Arle:bow
@@ -180,11 +179,11 @@ JUGE ERNEST: Vraiment ? Accusé, qu'avez-vous à répondre ? #playsound:VOX_Judg
         ARLE: Tu te crois drôle, avorton ?
         {make_arle_angry(): -> arle_leaves_stage}
 - ARLE: Votre Honneur, puis-je ajouter quelque chose ?
+    * [La laisser continuer.]
     * [(Se moquer) Irène, pitié, faites-la taire.] PLAYER: Ô <b>Irène</b>, ayez pitié de nous, pauvres humains ! Ô, je vous en conjure : faites-la taire ! #audience:laughter #anim:Arle:angry
         ~ audience_judgement(0.05)
         ARLE: Cesse de m'interrompre, morveux ! #anim:Arle:angry
         {make_arle_angry(): -> arle_leaves_stage}
-    * [La laisser continuer.]
 - JUGE ERNEST: Soyez brève. #playsound:VOX_Judge_soyezbreve #anim:Arle:bow
 ARLE: Entendez bien que mon ambition, Votre Honneur, n'est point de prêter à mon image plus d'éloges qu'elle n'en mérite.
 JUGE ERNEST: Bon, bon... Concluez. #playsound:VOX_Judge_bonbonconcluez #audience:laughter

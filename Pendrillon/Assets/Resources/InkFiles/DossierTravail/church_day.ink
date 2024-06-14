@@ -34,7 +34,7 @@ CAPUCINE: Cet abruti dort comme un nourrisson... #playsound:VOX_Capucine_cetabru
 PLAYER: Vous, ici ?! #playsound:Play_MUS_Story_SC_Eglise_6oclockWakeUp
 CAPUCINE: Heureuse de constater que tu nous reconnais... #playsound:VOX_Capucine_heureusedeconstaterquetunousreconnais
 CAPUCINE: Remets-tu des noms sur nos visages, vermisseau ? #playsound:VOX_Capucine_remetstudesnoms
-SOUFFLEUR: SOUFFLEUR: Psssst... Hé, l'ami !
+SOUFFLEUR: Psssst... Hé, l'ami !
 SOUFFLEUR: Avec ces deux-là, pas besoin d'y aller mollo pour faire rire le public !
 SOUFFLEUR: Ils ont beau se disputer sur scène, sache qu'en dehors des planches, ils sont mari et femme !
 SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils adorent être ridiculisés !

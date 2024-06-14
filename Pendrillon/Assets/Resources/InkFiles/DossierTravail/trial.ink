@@ -176,7 +176,7 @@ VAR t_4_give_guards_surname = false
 
 // Makes Arle angry until she leaves stage
 === function make_arle_angry() ===
-    ~ temp arle_leaves_stage = false
+    ~ temp arle_leave_the_stage = false
     ~ t_arle_patience -= 1
     {
         - t_arle_patience == 4:
@@ -201,10 +201,9 @@ VAR t_4_give_guards_surname = false
             SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer !
             SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs !
             SOUFFLEUR: Quoi qu'il en soit: « Show must go on! », l'ami !
-            ~ arle_leaves_stage = true
-            ~ arle_left_the_play = true
+            ~ arle_leave_the_stage = true
     }
-    ~ return arle_leaves_stage
+    ~ return arle_leave_the_stage
 
 // Souffleur speech about not mocking Agath
 === function souffleur_speech_about_mocking_agath()

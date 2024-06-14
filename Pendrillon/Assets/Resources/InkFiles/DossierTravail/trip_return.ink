@@ -220,8 +220,8 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             CAPUCINE: Il nous prend pour des idiots ou je rêve ? #playsound:VOX_Capucine_idiotsoujereve
             MARCELLO: Je vais t'apprendre à mentir à des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
                 -> battle
-    * [Intimider. {t(STRE, -10)}] // 45%
-        {sc(STRE, -10): -> intimidate_guards_S | -> intimidate_guards_F}
+    * [Intimider. {t(STRE, -5)}] // 45%
+        {sc(STRE, -5): -> intimidate_guards_S | -> intimidate_guards_F}
         ** (intimidate_guards_S) PLAYER: Le marin d'eau douce va te noyer de coups, si tu continues de l'ouvrir.
             MARCELLO: Pardon, m'sieur.
             CAPUCINE: Ne t'excuse pas, abruti. Apprends-lui plutôt ce qu'on obtient en menaçant un garde de la Couronne ! #playsound:VOX_Capucine_netexxcusepas
@@ -280,8 +280,8 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
 
 // Battle (acting phase)
 = battle
-    * [Attaquer Marcello. {t(STRE, 30)}] #trial // 70%
-        {sc(STRE, 30): -> attack_marcello_S | -> attack_marcello_F}
+    * [Attaquer Marcello. {t(STRE, 25)}] #trial // 70%
+        {sc(STRE, 25): -> attack_marcello_S | -> attack_marcello_F}
         ~ trial()
         ~ t_2_attack_guards = true
         ** (attack_marcello_S) PLAYER: Prends ça ! #trial #anim:Player:attack #anim:Marcello:hurt #audience:choc
@@ -306,8 +306,8 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:dodge
             MARCELLO: Tu te crois discret, abruti ?
             -> combat_part_2
-    * [Calmer le jeu. {t(CHAR, 10)}] // 50%
-        {sc(CHAR, 10): -> calm_marcello_S | -> calm_marcello_F}
+    * [Calmer le jeu. {t(CHAR, 0)}] // 50%
+        {sc(CHAR, 0): -> calm_marcello_S | -> calm_marcello_F}
         ** (calm_marcello_S) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
             CAPUCINE: En voilà une parole raisonnable. #playsound:VOX_Capucine_envoilaraisonnable
             MARCELLO: Dommage, je n'aurais pas détesté t'en claquer une sur le museau... #audience:laughter
