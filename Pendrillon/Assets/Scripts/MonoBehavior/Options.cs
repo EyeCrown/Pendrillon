@@ -61,7 +61,8 @@ public class Options : MonoBehaviour
     {
         ConnectAttributes();
         ConnectListenners();
-        
+
+        SetupRTPC();
     }
 
     void Start()
@@ -141,6 +142,16 @@ public class Options : MonoBehaviour
             delegate { UpdateRTPC("UI_Volume",  _rtpcUIVolumeSlider.value); });
         _rtpcVoicesVolumeSlider.onValueChanged.AddListener(
             delegate { UpdateRTPC("Voices_Volume", _rtpcVoicesVolumeSlider.value); });
+    }
+
+    void SetupRTPC()
+    {
+        _rtpcMainVolumeSlider.value = 75;
+        _rtpcEnvironmentVolumeSlider.value  = 50;
+        _rtpcMusicVolumeSlider.value        = 50;
+        _rtpcSFXVolumeSlider.value          = 50;
+        _rtpcUIVolumeSlider.value           = 50;
+        _rtpcVoicesVolumeSlider.value       = 50;
     }
 
     #endregion
