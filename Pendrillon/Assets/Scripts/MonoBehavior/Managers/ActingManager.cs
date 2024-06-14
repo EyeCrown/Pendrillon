@@ -886,7 +886,7 @@ namespace MonoBehavior.Managers
             // _setChurchNight.SetActive(false);
             // _setChurchDay.SetActive(false);
             //_setTrial.SetActive(false);
-            _setTempest.SetActive(false);
+            //_setTempest.SetActive(false);
             //_setForest.SetActive(false);
             
             GameManager.Instance.SetGridHeight();
@@ -920,7 +920,7 @@ namespace MonoBehavior.Managers
                     break;
                 case Constants.SetTempest:
                     _setTempest.SetActive(true);
-                    //_setTempest.GetComponent<Animator>().SetBool("InOut",true);
+                    _setTempest.GetComponent<Animator>().SetBool("InOut",true);
                     _currentSet = _setTempest;
                     break;
                 case Constants.SetForest:
