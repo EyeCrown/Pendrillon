@@ -448,18 +448,7 @@ namespace MonoBehavior.Managers
         
         void ModifyTrialValue(object valueObj)
         {
-            float value = 0.0f;
-            try
-            {
-                value = float.Parse(valueObj.ToString());
-            }
-            catch (Exception e)
-            {
-                Debug.LogError(e);
-                throw;
-            }
-            
-            
+            float value = float.Parse(valueObj.ToString(), CultureInfo.InvariantCulture.NumberFormat);
             
             _setTrial.transform.Find("Mesh_Sc_Tribunal_Balance")
                 .GetComponent<Animator>().SetFloat("balance", value); 
