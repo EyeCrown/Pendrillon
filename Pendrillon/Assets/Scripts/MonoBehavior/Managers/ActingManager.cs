@@ -431,22 +431,38 @@ namespace MonoBehavior.Managers
         {
             _setBarge   = Instantiate(_setBarge,    GameObject.Find("Environment").transform);
             _setCale    = Instantiate(_setCale,     GameObject.Find("Environment").transform);
-            _setChurchNight = Instantiate(_setChurchNight,   GameObject.Find("Environment").transform);
-            _setChurchDay   = Instantiate(_setChurchDay,   GameObject.Find("Environment").transform);
+            _setChurchNight = Instantiate(_setChurchNight, GameObject.Find("Environment").transform);
+            _setChurchDay   = Instantiate(_setChurchDay, GameObject.Find("Environment").transform);
             _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
             _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
             _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
             
-            _setTrial.SetActive(false);
             _setTempest.SetActive(false);
         }
 
         void SetTrialObservable()
         {
             GameManager.Instance._story.ObserveVariable ("t_audience_judgement", 
-                (string varName, object newValue) => {
-                    _setTrial.transform.Find("Mesh_Sc_Tribunal_Balance")
-                        .GetComponent<Animator>().SetFloat("balance", (float) newValue); });
+                (string varName, object newValue) => ModifyTrialValue(newValue));
+        }
+        
+        void ModifyTrialValue(object valueObj)
+        {
+            float value = 0.0f;
+            try
+            {
+                value = float.Parse(valueObj.ToString());
+            }
+            catch (Exception e)
+            {
+                Debug.LogError(e);
+                throw;
+            }
+            
+            
+            
+            _setTrial.transform.Find("Mesh_Sc_Tribunal_Balance")
+                .GetComponent<Animator>().SetFloat("balance", value); 
         }
         
         #endregion
@@ -878,7 +894,7 @@ namespace MonoBehavior.Managers
             //_setPort.SetActive(false);
             // _setChurchNight.SetActive(false);
             // _setChurchDay.SetActive(false);
-            _setTrial.SetActive(false);
+            //_setTrial.SetActive(false);
             _setTempest.SetActive(false);
             //_setForest.SetActive(false);
             
@@ -908,7 +924,7 @@ namespace MonoBehavior.Managers
                     break;
                 case Constants.SetTrial:
                     _setTrial.SetActive(true);
-                    //_setTrial.GetComponent<Animator>().SetBool("InOut",true);
+                    _setTrial.GetComponent<Animator>().SetBool("InOut",true);
                     _currentSet = _setTrial;
                     break;
                 case Constants.SetTempest:
