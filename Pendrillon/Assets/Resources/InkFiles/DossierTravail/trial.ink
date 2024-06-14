@@ -194,7 +194,7 @@ VAR t_4_give_guards_surname = false
             ARLE: Et vous, public « adoré », vous ne me méritez pas ! Cessez de rire ! #audience:debate
             ARLE: Auriez-vous le millième de mon talent, vous seriez sur scène plutôt que de l'autre côté ! #audience:choc
             ARLE: Bande de ploucs ! Vous pensez qu'avoir payé votre ticket vous donne tous les droits ?! #audience:booing
-            ARLE: Hé ! Laisse-moi ! Laisse-moi j'ai dit ! #audience:laughter #rope:Arle
+            ARLE: Hé ! Laisse-moi ! Laisse-moi j'ai dit ! #rope:Arle #box #wait:2 #audience:laughter
             SOUFFLEUR: Oula, oula, oula... #wait:1
             SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer !
             SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs !

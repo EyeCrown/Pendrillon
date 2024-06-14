@@ -371,7 +371,7 @@ JUGE ERNEST: Lequel des deux témoins voulez-vous défier ? #playsound:VOX_Judge
 
 // Witness Agathe
 = witness_agathe
-- JUGE ERNEST: Témoins, veuillez regagner l'assistance. #audience:applause #rope:Capucine #rope:Marcello
+- JUGE ERNEST: Témoins, veuillez regagner l'assistance. #audience:applause #rope:Capucine #rope:Marcello #move:Player:13:5 #move:Player:10:5 #move:Player:10:1 #move:Player:10:0
 JUGE ERNEST: J'en appelle désormais à notre dernier témoin. #playsound:VOX_Judge_jenappellederniertemoin
 JUGE ERNEST: La respectable prêtresse Agathe ! #position:Agathe:8:10 #box #wait:8 #playsound:VOX_Judge_pretresseagathe #audience:ovation
 JUGE ERNEST: Prêtresse Agathe, nous vous remercions de quitter la demeure d'<b>Irène</b> afin de vous joindre à nous lors de ce procès. #playsound:VOX_Judge_quitterdemeureirene #audience:applause #anim:Agathe:bow
@@ -445,12 +445,12 @@ JUGE ERNEST: Je... J'appelle à la barre nos deux prochains témoins. #playsound
 ~ temp capucine_sc = 100
 ~ temp nb_turn_against_capucine = 1
 // Les deux présentoirs sont soulevés par des câbles pour faire de la place
-JUGE ERNEST: Le Juge demande aux deux duellistes de s'approcher des jurés. #playsound:VOX_Judge_jugedemandeduellistes #anim:Judge:bell #move:Player:10:4 #move:Player:13:4 #move:Capucine:8:7 #move:Capucine:13:7
-JUGE ERNEST: Lorsque la cloche sonnera, vous devrez faire le.. euh.. le poirier ! #playsound:VOX_Judge_clochesonnerafairepoirier #audience:laughter
+JUGE ERNEST: Le Juge demande aux deux duellistes de s'approcher des jurés. #playsound:VOX_Judge_jugedemandeduellistes #anim:Judge:bell
+JUGE ERNEST: Lorsque la cloche sonnera, vous devrez faire le.. euh.. le poirier ! #move:Player:10:5 #move:Player:13:5 #move:Player:13:4 #move:Capucine:8:6 #move:Capucine:13:6 #move:Capucine:13:7 #playsound:VOX_Judge_clochesonnerafairepoirier #audience:laughter
 JUGE ERNEST: Celui ou celle qui tiendra le plus longtemps remportera le défi. Tenez-vous prêts... #playsound:VOX_Judge_tiendrapluslongtempsremporte #audience:ovation
 JUGE ERNEST: À vos marques... #playsound:VOX_Judge_amarques
 JUGE ERNEST: ... prêts... #playsound:VOX_Judge_pret #audience:ovation
-JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #screenshake #audience:ovation
+JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience:ovation
 - (start_duel)
     * [Faire le poirier. {t(DEXT, dext_difficulty)}]
         {sc(DEXT, dext_difficulty): -> round_against_capucine_S | -> defeat_against_capucine}
@@ -491,11 +491,11 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #screensh
 ~ temp nb_turn_against_marcello = 1
 // Les deux présentoirs sont soulevés par des câbles pour faire de la place
 JUGE ERNEST: Le Juge demande aux deux duellistes de s'approcher des jurés. #playsound:VOX_Judge_jugedemandeduellistes #anim:Judge:bell
-JUGE ERNEST: Lorsque la cloche sonnera, vous devrez faire le.. euh.. des pompes ! #playsound:VOX_Judge_clochesonnedespompes #audience:laughter #move:Player:13:4 #move:Marcello:13:7
+JUGE ERNEST: Lorsque la cloche sonnera, vous devrez faire le.. euh.. des pompes ! #move:Player:10:5 #move:Player:13:5 #move:Player:13:4 #move:Marcello:8:6 #move:Marcello:13:6 #move:Marcello:13:7 #playsound:VOX_Judge_clochesonnedespompes #audience:laughter
 JUGE ERNEST: Celui qui en fera le plus grand nombre remportera le défi. Tenez-vous prêts... #playsound:VOX_Judge_pompesplusgrandnombre #audience:ovation
 JUGE ERNEST: À vos marques... #playsound:VOX_Judge_amarques
 JUGE ERNEST: ... prêts... #playsound:VOX_Judge_pret #audience:ovation
-JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #screenshake #audience:ovation
+JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience:ovation
 - (start_duel)
     * [Faire une pompe. {t(STRE, stre_difficulty)}]
         {sc(STRE, stre_difficulty): -> round_against_marcello_S | -> defeat_against_marcello}
