@@ -377,10 +377,7 @@ CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la. #playsound:
 CAPUCINE: Allons-nous-en avec notre trouvaille. #playsound:VOX_Capucine_allonsnousen
 CAPUCINE: Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts... #playsound:VOX_Capucine_ilfinira1 #audience:debate
 CAPUCINE: Il finira sa triste vie au cachot, comme son amie. #playsound:VOX_Capucine_ilfinira2 #audience:ovation
-//- -> barge.scene_3
-
-
-    - -> end_playtest_demo
+- -> barge.scene_3
 #move(Capucine)
 // Marcello remet un coup gratuit au Player
 #anim:Marcello:attack

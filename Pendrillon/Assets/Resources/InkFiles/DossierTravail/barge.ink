@@ -13,8 +13,8 @@
 #actor:Player:PLAYER:VOYAGEUR
 #actor:Passeur:PASSEUR
 // Set the location
+#curtains:open
 #set:barge
-#curtains
 // Set the actor's positions
 #position:Player:4:1
 #position:Passeur:4:3
@@ -245,5 +245,5 @@ PASSEUR: Tu vas devoir affronter ton destin, désormais. #audience:ovation #play
         PASSEUR: ... Je comprends. #playsound:VOX_Ferryman_jecomprends #audience:applause
 - #anim:open_trial_doors #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
 PASSEUR: C'est ici que nos chemins se séparent, voyageur... #playsound:VOX_Ferryman_voistuporte2 #audience:choc
-PASSEUR: Ainsi en a décidé la <shake>Cloche du Destin</shake>.  #playsound:VOX_Ferryman_ainsienadecide #audience:ovation
+PASSEUR: Ainsi en a décidé la <shake>Cloche du Destin</shake>.  #box #playsound:VOX_Ferryman_ainsienadecide #audience:ovation #curtains:close #wait:4
 - -> tribunal_1
