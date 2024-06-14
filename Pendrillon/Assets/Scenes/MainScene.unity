@@ -12638,6 +12638,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
+  _currentFont: {fileID: 0}
   _timeButtonSpawnInSec: 0.18
   _timeTextToAppearInSec: 0
   _timeLetterToAppearInSec: 0.0108
@@ -12645,6 +12646,9 @@ MonoBehaviour:
   _goDirectToFight: 0
   _intro: 0
   StartGame:
+    m_PersistentCalls:
+      m_Calls: []
+  ChangeFont:
     m_PersistentCalls:
       m_Calls: []
 --- !u!4 &1286597836

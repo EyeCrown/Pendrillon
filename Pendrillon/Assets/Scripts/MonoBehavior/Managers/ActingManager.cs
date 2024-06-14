@@ -451,6 +451,9 @@ namespace MonoBehavior.Managers
         void ModifyTrialValue(object valueObj)
         {
             float value = float.Parse(valueObj.ToString(), CultureInfo.InvariantCulture.NumberFormat);
+
+            float maxInk = 100;
+            value /= maxInk;
             
             _setTrial.transform.Find("Mesh_Sc_Tribunal_Balance")
                 .GetComponent<Animator>().SetFloat("balance", value); 
