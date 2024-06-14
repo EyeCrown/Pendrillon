@@ -20,6 +20,7 @@ VAR has_fail = false
 //#position:Arle:10:11
 //#position:Arle:3:17
 #position:Arle:2:10
+#curtains // DEBUG
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
@@ -104,7 +105,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             BOUFFONNE: Me présenter ? Cela, je sais le faire, et fort bien ! #anim:Arle:happy
             --- (arle_presentation) BOUFFONNE: Je suis Arle, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle #audience:ovation
     * [Es-tu l'autrice de la lettre ?] PLAYER: Est-ce donc toi qui as écrit la lettre que j'ai reçue la veille ? #anim:Player:question #playsound:VOX_Player_toiecritlettre
-        BOUFFONNE: Je sais faire bien des choses, messire... #anim:Arle:happy
+        BOUFFONNE: Je sais faire bien des choses, messire... //#anim:Arle:happy
         BOUFFONNE: Faire la belle... #anim:Arle:prettypose
         BOUFFONNE: Faire le show... #anim:Arle:acrobatics
         BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter

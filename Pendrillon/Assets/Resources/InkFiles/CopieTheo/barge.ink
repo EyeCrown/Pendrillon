@@ -9,12 +9,12 @@
 
 // Scène 1
 = scene_1
-#curtains:open
 // Define the actors of the scene
 #actor:Player:PLAYER:VOYAGEUR
 #actor:Passeur:PASSEUR
 // Set the location
 #set:barge
+#curtains
 // Set the actor's positions
 #position:Player:4:1
 #position:Passeur:4:3

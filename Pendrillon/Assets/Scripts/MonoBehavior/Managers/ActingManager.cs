@@ -120,7 +120,7 @@ namespace MonoBehavior.Managers
         readonly Dictionary<string, Vector3> _directions = new Dictionary<string, Vector3>();
 
         public bool _allowScreenshake { private get; set; }
-        
+
         
         #region Wwise Attributes
 
@@ -303,7 +303,9 @@ namespace MonoBehavior.Managers
             }
                 
             //Debug.Log($"AM.HandleDialogue > Speaker: {speaker}");
-                
+            
+            _speakerText.font = GameManager.Instance._currentFont;
+            
             if (speaker == "PLAYER")
                 _speakerText.text = _playerName;
             else
@@ -438,8 +440,6 @@ namespace MonoBehavior.Managers
             _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
             _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
             _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
-            
-            _setTempest.SetActive(false);
         }
 
         void SetTrialObservable()
@@ -515,6 +515,7 @@ namespace MonoBehavior.Managers
             
             // Button Text
             button.GetComponentInChildren<TextMeshProUGUI>().text = choice.text;
+            button.GetComponentInChildren<TextMeshProUGUI>().font = GameManager.Instance._currentFont;
             
             // Button Type
             SetButtonType(button, choice);
@@ -729,7 +730,8 @@ namespace MonoBehavior.Managers
             GameManager.Instance.GetPlayer()._character.luck.SetupBase((int)GameManager.Instance._story.variablesState["p_luck"]);
         
             //Debug.Log($"AM.OnPhaseStart() > GameManager.Instance.GetCharacter(\"PLAYER\")._character:{GameManager.Instance.GetPlayer()._character}");
-        
+
+            _historyText.font = GameManager.Instance._currentFont;
             _historyText.text = String.Empty;
             _historyBox.SetActive(false);
 
@@ -1370,6 +1372,7 @@ namespace MonoBehavior.Managers
 
             //Debug.Log($"Update _dialogueText > {textToDisplay}");
             //_dialogueText.text = textToDisplay;
+            _dialogueText.font = GameManager.Instance._currentFont;
             _dialogueTypewriter.ShowText(textToDisplay);
             
             mustWait = false;
