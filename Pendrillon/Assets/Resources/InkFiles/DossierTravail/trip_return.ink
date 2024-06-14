@@ -29,7 +29,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
 #position:Marcello:3:20
 #position:Capucine:5:20
 // Audience reaction
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:4
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:2
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
