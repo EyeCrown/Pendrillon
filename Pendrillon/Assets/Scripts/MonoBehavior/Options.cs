@@ -187,6 +187,8 @@ public class Options : MonoBehaviour
 
     void ChangeFont(TMP_FontAsset font)
     {
+        GameManager.Instance.ChangeFont.Invoke(font);
+        
         foreach (var textMeshObject in GameObject.FindObjectsByType(typeof(TextMeshProUGUI), FindObjectsSortMode.None))
             ((TextMeshProUGUI)textMeshObject).font = font;
     }
