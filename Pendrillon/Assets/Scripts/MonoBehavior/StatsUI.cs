@@ -46,7 +46,9 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         ConnectAttributes();
         SetupStats();
         MakeObservables();
-        gameObject.SetActive(false);
+
+        _anim.SetBool("Accessible", false);
+        
     }
 
     #endregion
@@ -67,10 +69,11 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         _charisma.text      = GameManager.Instance._story.variablesState["p_char"].ToString();
         _dexterity.text     = GameManager.Instance._story.variablesState["p_dext"].ToString();
         _strength.text      = GameManager.Instance._story.variablesState["p_stre"].ToString();
-        //_composition.text   = "CST > " + GameManager.Instance._story.variablesState["p_comp"];
     }
 
     #endregion
+
+    
     
     #region Observables
 
@@ -82,16 +85,13 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             UpdateStrength((int)newValue); });
         GameManager.Instance._story.ObserveVariable ("p_dext", (string varName, object newValue) => {
             UpdateDexterity((int)newValue); });
-        // GameManager.Instance._story.ObserveVariable ("p_comp", (string varName, object newValue) => {
-        //     UpdateComposition((int)newValue); });
-        
     }
 
     void UpdateCharisma(int newValue)
     {
         Debug.Log("Charisma +1");
         
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
 
         StartCoroutine(CharismaLevelUpCoroutine(newValue));
     }
@@ -99,7 +99,7 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     { 
         Debug.Log("Dexterity +1");
         
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
 
         StartCoroutine(DexterityLevelUpCoroutine(newValue));
 
@@ -108,28 +108,31 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         Debug.Log("Strength +1");
         
-        gameObject.SetActive(true);
+        //gameObject.SetActive(true);
 
         StartCoroutine(StrengthLevelUpCoroutine(newValue));
 
     }
-    //void UpdateComposition(int newValue) => _composition.text   = "CST > " + newValue;
 
     #endregion
 
+    
     #endregion
 
     #region Event Handlers
 
     void OnDisplayStats()
     {
-        _anim.SetTrigger("reset");
-        gameObject.SetActive(true);
+        _anim.SetBool("Accessible", true);
+        
+        //gameObject.SetActive(true);
     }
 
     void OnHideStats()
     {
-        gameObject.SetActive(false);
+        _anim.SetBool("Accessible", false);
+
+        //gameObject.SetActive(false);
     }
     
     #endregion
@@ -152,25 +155,22 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     IEnumerator StrengthLevelUpCoroutine(int newValue)
     {
-        var animName = "Strength" + "LvlUp";
+        var animName = "LvlUp"+"Strength";
         _anim.SetTrigger(animName);
         
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(animName))
             yield return null;
         
-        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.75f)
+        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.5f)
             yield return null;
         
         _strength.text = newValue.ToString();
         
-        while (!_anim.GetCurrentAnimatorStateInfo(0).IsName("OutIdle"))
-            yield return null;
-        gameObject.SetActive(false);
     }
     
     IEnumerator DexterityLevelUpCoroutine(int newValue)
     {
-        var animName = "Dexterity" + "LvlUp";
+        var animName = "LvlUp"+"Dexterity";
         _anim.SetTrigger(animName);
         
         Debug.Log("Start lvl up");
@@ -178,35 +178,30 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             yield return null;
         Debug.Log("Start Anim lvl up");
 
-        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.75f)
+        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.5f)
             yield return null;
         Debug.Log("Change lvl value");
 
         _dexterity.text = newValue.ToString();
         
-        while (!_anim.GetCurrentAnimatorStateInfo(0).IsName("OutIdle"))
-            yield return null;
         Debug.Log("End lvl up");
 
-        gameObject.SetActive(false);
     }
     
     IEnumerator CharismaLevelUpCoroutine(int newValue)
     {
-        var animName = "Charisma" + "LvlUp";
+        var animName = "LvlUp"+"Charisma";
         _anim.SetTrigger(animName);
         
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(animName))
             yield return null;
         
-        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.75f)
+        Debug.Log($"Before {_charisma.text}");
+        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.5f)
             yield return null;
-        
         _charisma.text = newValue.ToString();
-        
-        while (!_anim.GetCurrentAnimatorStateInfo(0).IsName("OutIdle"))
-            yield return null;
-        gameObject.SetActive(false);
+        Debug.Log($"Now {_charisma.text}");
+
     }
 
     #endregion
