@@ -1,5 +1,5 @@
 // TRIAL PROPERTIES
-VAR t_audience_judgement = 0.5 // Compris entre 0 et 1
+VAR t_audience_judgement = 50 // Compris entre 0 et 100
 VAR t_arle_patience = 5 // Patience de Arle (0 = Arle pète un câble)
 VAR t_souffleur_explanations_bell = false
 
@@ -163,10 +163,10 @@ VAR t_4_give_guards_surname = false
 === function audience_judgement(pScore) ===
     ~ t_audience_judgement += pScore
     {
-        - t_audience_judgement < 0:
+        - t_audience_judgement <= 0:
             ~ t_audience_judgement = 0
-        - t_audience_judgement > 1:
-            ~ t_audience_judgement = 1
+        - t_audience_judgement >= 100:
+            ~ t_audience_judgement = 100
     }
     // Debug
     {
