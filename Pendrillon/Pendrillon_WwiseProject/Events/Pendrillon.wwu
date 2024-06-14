@@ -191,9 +191,6 @@
 								<Event Name="Play_UI_HUD_SkillCheck_Failed" ID="{305D100A-9915-40D8-9A25-0E52EDE01355}">
 									<ChildrenList>
 										<Action Name="" ID="{BD783A34-D8E5-48D1-96D6-9BB95F6304C6}" ShortID="162070504">
-											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="1.4"/>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="UI_HUD_SkillCheck_Failed" ID="{3099461C-44BE-488A-AD4B-D6F631CDE463}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
@@ -216,9 +213,6 @@
 								<Event Name="Play_UI_HUD_SkillCheck_Success" ID="{EC109B00-C807-471A-8226-B9B43998B2BD}">
 									<ChildrenList>
 										<Action Name="" ID="{58C44DDF-E555-4618-9E45-24FB7D780266}" ShortID="1053611830">
-											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="1.4"/>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="UI_HUD_SkillCheck_Success" ID="{CDB1B383-80C2-465F-B8D0-DFF62E7982DF}" WorkUnitID="{92E32DB4-F792-48B7-9F30-A43B17D69488}"/>
@@ -1249,13 +1243,10 @@
 								</Event>
 								<Event Name="Play_AMB_SC_Trial_Ambiance" ID="{5C0F714F-FC3A-4DF7-B195-15F8C9AC041F}">
 									<ChildrenList>
-										<Action Name="" ID="{B585ADAC-6DC6-4F30-B4CE-D0C119DDE684}" ShortID="896324246">
-											<PropertyList>
-												<Property Name="FadeTime" Type="Real64" Value="1"/>
-											</PropertyList>
+										<Action Name="" ID="{D6CCB269-9753-4176-BFF4-B500E61147AB}" ShortID="246988937">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="AMB_SC_Pont" ID="{90386080-2AA8-4D81-B8F1-639920457433}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+													<ObjectRef Name="AMC_SC_Eglise_Ambiance" ID="{16AED275-433D-4BA2-AD15-4F6366409748}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

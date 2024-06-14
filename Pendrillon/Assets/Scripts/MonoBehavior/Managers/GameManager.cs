@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using Cinemachine;
 using Ink.Runtime;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -69,6 +70,8 @@ namespace MonoBehavior.Managers
         private CinemachineBasicMultiChannelPerlin _cameraPerlin;
 
         [HideInInspector] public PlayerInputs _playerInput = null;
+
+        [HideInInspector] public TMP_FontAsset _currentFont;
         
         
         [Header("=== Timers ===")] 
@@ -90,6 +93,7 @@ namespace MonoBehavior.Managers
         #region Events
 
         public UnityEvent StartGame;
+        [HideInInspector] public UnityEvent<TMP_FontAsset> ChangeFont;
 
         #endregion
         
@@ -118,6 +122,7 @@ namespace MonoBehavior.Managers
             
             // Connect Events
             StartGame.AddListener(OnStartGame);
+            ChangeFont.AddListener(OnChangeFont);
             ActingManager.Instance.PhaseEnded.AddListener(PrepareFightingPhase);
             
             /*if (_inkAsset == null)
@@ -330,6 +335,12 @@ namespace MonoBehavior.Managers
         {
             ActingManager.Instance.PhaseStart.Invoke();
         }
+
+        void OnChangeFont(TMP_FontAsset font)
+        {
+            _currentFont = font;
+        }
+        
 
         #endregion
         

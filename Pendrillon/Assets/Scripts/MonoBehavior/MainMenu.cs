@@ -11,11 +11,10 @@ public class MainMenu : MonoBehaviour
 
     [Header("=== Buttons ===")] 
     [SerializeField] private Button _playButton;
+    [SerializeField] private Button _optionButton;
     [SerializeField] private Button _creditButton;
     [SerializeField] private Button _quitButton;
     [SerializeField] private Button _returnCreditButton;
-    
-    
 
     [Header("=== Credits Panel ===")] 
     [SerializeField] private GameObject _creditPanel;

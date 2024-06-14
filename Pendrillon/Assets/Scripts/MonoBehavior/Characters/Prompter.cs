@@ -91,6 +91,7 @@ public class Prompter : MonoBehaviour
         GameManager.Instance._playerInput.Player.Interact.performed -= ActingManager.Instance.OnClickNextDialogue;      // Toujous sale
         
         //_dialogueText.text = dialogue;
+        _dialogueText.font = GameManager.Instance._currentFont;
         _prompterTypewriter.ShowText(dialogue);
         
         _iconTalking.SetActive(true);
