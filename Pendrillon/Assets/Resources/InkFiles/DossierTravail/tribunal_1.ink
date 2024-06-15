@@ -38,13 +38,13 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 - JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencesilence
 {
     - p_name == "Merlin":
-        JUGE ERNEST: Les Portes du Tribunal se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribMerlin
+        JUGE ERNEST: Les Portes du Tribunal se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribMerlin
     - p_name == "Ambroise":
-        JUGE ERNEST: Les Portes du Tribunal se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribAmbroise
+        JUGE ERNEST: Les Portes du Tribunal se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribAmbroise
     - p_name == "Octave":
-        JUGE ERNEST: Les Portes du Tribunal se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribOctave
+        JUGE ERNEST: Les Portes du Tribunal se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribOctave
     - else:
-        JUGE ERNEST: Les Portes du Tribunal se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribMerlin
+        JUGE ERNEST: Les Portes du Tribunal se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribMerlin
 }
 - JUGE ERNEST: Ainsi est-il accusé, non par le règne des Hommes, mais par celui de la <b>Déesse Irène</b>. #playsound:VOX_Judge_ainsiaccusenonregne
 JUGE ERNEST: De celle-ci nous nous ferons les yeux, les oreilles et le cœur, comme la Loi l'exige. #audience:ovation #playsound:VOX_Judge_decelleciyeux
@@ -87,7 +87,7 @@ JUGE ERNEST: Silence ! J'exige le silence ! #anim:Judge:bell #audience:silent #p
         JUGE ERNEST: Silence ! #playsound:VOX_Judge_silence #anim:Judge:bell #audience:silent
         JUGE ERNEST: Accusé, vous ne pouvez vous comporter en ce lieu sacré comme vous le faites dans un vulgaire rafiot. #playsound:VOX_Judge_accuselieusacre
         JUGE ERNEST: Ne prenez la parole que lorsque le Juge vous la donne. #playsound:VOX_Judge_accusezneprenezparole
-            ** [Hors de question !] PLAYER: Je suis un homme libre, citoyen de plein droit de Miraterre. Je puis parler librement ! #audience:booing #playsound:VOX_Player_jesuislibre #anim:Judge:bell
+            ** [Hors de question !] PLAYER: Je suis un homme libre, citoyen de plein droit de <b>Miraterre</b>. Je puis parler librement ! #audience:booing #playsound:VOX_Player_jesuislibre #anim:Judge:bell
                 ~ audience_judgement(-10)
                 JUGE ERNEST: Accusé, je ne le répéterai pas deux fois : ceci est un lieu saint. Sachez rester à votre place. #playsound:VOX_Judge_accuserepete
                 *** [Entendu.] PLAYER: C'est entendu. #playsound:VOX_Player_cestentendutrib1 #anim:Judge:bell
@@ -148,7 +148,7 @@ ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à 
         JUGE ERNEST: Quant à vous, cessez d'objecter quand la parole ne vous a pas été donnée par le Juge en personne ! #playsound:VOX_Judge_quantavous
         JUGE ERNEST: Témoin, vous mentionniez une mission confiée à l'accusé par la Couronne. #playsound:VOX_Judge_temoinmentionniez
 - JUGE ERNEST: Précisez quelle était la nature de cette mission, je vous prie. #playsound:VOX_Judge_precisezlanature #anim:Arle:bow
-ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme accusé, était de tuer le Léviathan, et d'en ramener l'organe vital. #audience:choc
+ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme accusé, était de tuer le <b>Léviathan</b>, et d'en ramener l'organe vital. #audience:choc
 ARLE: Je veux bien entendu parler de son cœur, Votre Honneur. #audience:laughter #anim:Judge:bell #anim:Arle:bow
 JUGE ERNEST: Bien, bien... Ensuite ? #playsound:VOX_Judge_biebienensuite
 - ARLE: Je voudrais, Votre Honneur, témoigner du fait que, lorsque j'abordais avec le détestable messire, le sujet du meurtre...
@@ -209,7 +209,7 @@ ARLE: Mon cœur me fit comprendre que l'effroyable messire était bien loin d'ê
             ** [Je retire mon accusation.] PLAYER: J'en suis malheureusement incapable, Votre Honneur. Je retire mon accusation. #audience:booing #anim:Arle:laughter
                 ~ audience_judgement(-10)
     * [(Se moquer) Ma mission est à ma hauteur, et toi...] PLAYER: Je n'ai rien à objecter, Votre Honneur, sinon à remarquer que la reine confie à chacun une mission à la hauteur de son talent. #playsound:VOX_Player_rienaobjecter
-        PLAYER: À moi, elle confia la lourde tâche de tuer le Léviathan. À elle, la mission toute aussi difficile de m'apporter une carte... #audience:laugh #playsound:VOX_Player_lourdetachetuerlevi #anim:Judge:bell
+        PLAYER: À moi, elle confia la lourde tâche de tuer le <b>Léviathan</b>. À elle, la mission toute aussi difficile de m'apporter une carte... #audience:laugh #playsound:VOX_Player_lourdetachetuerlevi #anim:Judge:bell
         ~ audience_judgement(5)
         {make_arle_angry(): -> arle_leaves_stage}
         ARLE: Votre Honneur ! Vous voyez bien que le saligaud essaye de décrédibiliser ma perfor... je veux dire, mon témoignage ! #audience:laughter
@@ -227,9 +227,9 @@ JUGE ERNEST: Accusé, qu'avez-vous à répondre ? #playsound:VOX_Judge_accuseque
         }
         JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask
         {
-            - t_1_accept_mission_with_positivity: JUGE ERNEST: « Cela serait pour moi un véritable honneur de ramener le cœur du Léviathan. ». #playsound:VOX_Judge_playercitationhonneurramener
+            - t_1_accept_mission_with_positivity: JUGE ERNEST: « Cela serait pour moi un véritable honneur de ramener le cœur du <b>Léviathan</b>. ». #playsound:VOX_Judge_playercitationhonneurramener
                 ~ audience_judgement(-10)
-            - t_1_accept_mission_with_negativity: JUGE ERNEST: « Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du Léviathan. ». #playsound:VOX_Judge_playercitationpointloisirtache
+            - t_1_accept_mission_with_negativity: JUGE ERNEST: « Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du <b>Léviathan</b>. ». #playsound:VOX_Judge_playercitationpointloisirtache
                 ~ audience_judgement(-10)
         }
     * [C'est vrai.] PLAYER: C'est vrai, bien entendu. Qui, dans cette salle, aurait accepté de courir un tel risque ? #audience:debate
@@ -322,7 +322,7 @@ CAPUCINE: Votre Honneur, veuillez excuser ce fieffé personnage. Sa place est da
 JUGE ERNEST: Silence ! Silence ! #playsound:VOX_Judge_silencesilence #anim:Judge:bell #audience:silent
 JUGE ERNEST: Veuillez raconter aux jurés votre rencontre avec l'accusé. Et soyez brefs, voulez-vous ? #playsound:VOX_Judge_raconterjuresrencontre
 CAPUCINE: Je vous remercie, Votre Honneur. #playsound:VOX_Capucine_jevousremercie #anim:Capucine:bow
-CAPUCINE: Vous n'êtes pas sans savoir, Votre Honneur, que tout navire qui arrive à Miraterre doit être fouillé par des gardes de la Couronne. #playsound:VOX_Capucine_vousnetespassanssavoir
+CAPUCINE: Vous n'êtes pas sans savoir, Votre Honneur, que tout navire qui arrive à <b>Miraterre</b> doit être fouillé par des gardes de la Couronne. #playsound:VOX_Capucine_vousnetespassanssavoir
 CAPUCINE: Aussi mon camarade et moi avons-nous pénétré sur le rafiot du vil personnage pour y faire notre inspection. #playsound:VOX_Capucine_aussimoncamarade
 MARCELLO: J'avais entendu du bruit dans la cale, vot' Horreur.
 CAPUCINE: Ferme-là, tu veux ? C'est à moi de raconter. #playsound:VOX_Capucine_fermelatuveux #audience:laughter
@@ -618,9 +618,9 @@ JUGE ERNEST: Et qu'a eu à dire l'Accusé au sujet du Juge ? #playsound:VOX_Judg
 = judge_proceed_to_mention_the_leviathan
 - JUGE ERNEST: Ainsi se clôt votre témoignage, prêtresse. #playsound:VOX_Judge_ainsiclottemoingnagepre #audience:applause
 JUGE ERNEST: Chacun vous remercie pour votre dévouement. #playsound:VOX_Judge_chacunremerciedevouement #audience:ovation #rope:Agathe
-JUGE ERNEST: Accusé, nous nous devons désormais d'aborder le sujet du Léviathan. #playsound:VOX_Judge_accusesujetleviathan #audience:debate
+JUGE ERNEST: Accusé, nous nous devons désormais d'aborder le sujet du <b>Léviathan</b>. #playsound:VOX_Judge_accusesujetleviathan #audience:debate
 JUGE ERNEST: En effet, vous fûtes missionné par la Couronne, afin de vous rendre en mer... #playsound:VOX_Judge_eneffetmissonnecouronne
-JUGE ERNEST: ... et d'y terrasser le terrible Léviathan. #playsound:VOX_Judge_terrasserleviathan #audience:choc
+JUGE ERNEST: ... et d'y terrasser le terrible <b>Léviathan</b>. #playsound:VOX_Judge_terrasserleviathan #audience:choc
 JUGE ERNEST: Avez-vous tenu parole, Accusé ? Avez-vous, oui ou non, ramené le cœur de la créature ? #playsound:VOX_Judge_aveznvousdtenuparole #audience:ovation
     * [Je l'ai fait !] PLAYER: Bien entendu, Votre Honneur ! #playsound:VOX_Player_bienentenduvotrehonneur #audience:applause
         ~ audience_judgement(10)

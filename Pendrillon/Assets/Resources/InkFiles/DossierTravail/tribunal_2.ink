@@ -49,7 +49,7 @@ JUGE ERNEST: Ainsi, vous avez véritablement affronté une créature marine ? #p
         JUGE ERNEST: Et vous avez été vaincu. #audience:booing
         ~ audience_judgement(-30)
 }
-- JUGE ERNEST: À la fin de votre histoire, il semblerait pourtant que le Léviathan vous ait avalé... #playsound:VOX_Judge_finhistoireleviathanavale
+- JUGE ERNEST: À la fin de votre histoire, il semblerait pourtant que le <b>Léviathan</b> vous ait avalé... #playsound:VOX_Judge_finhistoireleviathanavale
 JUGE ERNEST: Vous, et votre navire... #playsound:VOX_Judge_vousetvotrenavire
     * [Avalé tout cru !] PLAYER: Avalés tout entier, Votre Honneur ! #audience:choc #playsound:VOX_Player_avalestoutentier
     * [Pourtant, je suis en vie.] PLAYER: En effet. Pourtant, je suis bel et bien vivant... #audience:debate #playsound:VOX_Player_eneffetpourtantvivant
@@ -82,7 +82,8 @@ LA POISCAILLE: ... #audience:booing
                 JUGE ERNEST: Tant que celle-ci ne profane pas ces lieux de sa parole impie. #playsound:VOX_Judge_tantqueprofanepas #audience:ovation
                 ~ naida_name = "NAÏDA"
                 ~ naida_name_on_text = "Naïda"
-            ** (convince_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez me faire peur, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhfairepeur #audience:ovation
+            ** (convince_name_naida_F) PLAYER: Votre Honneur, si vous ne daignez pas appeler Naïda par son nom, par la <b>Déesse</b>, vous le paierez. #audience:choc #playsound:VOX_Player_menacerlejuge
+                JUGE ERNEST: Peuh... Si vous croyez me faire peur, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhfairepeur #audience:ovation
                 ~ naida_name_on_text = "la poiscaille"
                 ~ audience_judgement(-10)
     * [(Calme) Tout être a droit à un nom.{t(CHAR, -10)}] // 60%
@@ -93,7 +94,8 @@ LA POISCAILLE: ... #audience:booing
                 JUGE ERNEST: Tant que celle-ci ne profane pas ces lieux de sa parole impie. #playsound:VOX_Judge_tantqueprofanepas #audience:ovation
                 ~ naida_name = "NAÏDA"
                 ~ naida_name_on_text = "Naïda"
-            ** (force_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez m'attendrir, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhattendriraccuse #audience:ovation
+            ** (force_name_naida_F) PLAYER: Votre Honneur, je vous demande de faire preuve d'humanité en appelant Naïda par son nom. #audience:debate #playsound:VOX_Player_attendrirlejuge
+                JUGE ERNEST: Peuh... Si vous croyez m'attendrir, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhattendriraccuse #audience:ovation
                 ~ naida_name_on_text = "la poiscaille"
                 ~ audience_judgement(-10)
 - SOUFFLEUR: Je sais ce que tu penses, l'ami... 
@@ -104,7 +106,7 @@ SOUFFLEUR: Quand à toi, essaye de la défendre du mieux que tu le peux auprès 
 SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
 - JUGE ERNEST: Commencez par nous raconter comment vous avez fait la rencontre de <b>{naida_name_on_text}</b>, voulez-vous ? #playsound:VOX_Judge_commencerencontrenaida #playsound:VOX_Judge_commencerrencontrepoiscaille
 - (player_and_naida_met)
-    * [À l'intérieur du Léviathan.] PLAYER: Lorsque le Léviathan nous a avalé, mon équipage et moi-même... Nous nous sommes retrouvés à l'intérieur de son estomac. #audience:choc
+    * [À l'intérieur du Léviathan.] PLAYER: Lorsque le <b>Léviathan</b> nous a avalé, mon équipage et moi-même... Nous nous sommes retrouvés à l'intérieur de son estomac. #audience:choc
         PLAYER: C'est là que j'ai fait la rencontre du peuple des Sireines. #audience:debate
         PLAYER: Durant près d'une année, j'ai appris à les connaître.
         PLAYER: À apprécier vivre à leurs côtés... #audience:debate
@@ -116,7 +118,7 @@ SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
             -> player_and_naida_met
         ** [C'est entendu.] PLAYER: Entendu, Votre Honneur. #audience:applause
             -> player_and_naida_met
-- JUGE ERNEST: Ainsi, vous avez découvert le peuple maudit qui fut jadis noyé, avalé par le Léviathan... #playsound:VOX_Judge_ainsipeuplejadis
+- JUGE ERNEST: Ainsi, vous avez découvert le peuple maudit qui fut jadis noyé, avalé par le <b>Léviathan</b>... #playsound:VOX_Judge_ainsipeuplejadis
     * [Ils ne sont pas maudits. {t(CHAR, -10)}] // 60%
         {sc(CHAR, -10): -> sireine_are_not_cursed_S | -> sireine_are_not_cursed_F}
         ** (sireine_are_not_cursed_S) PLAYER: Votre Honneur, j'ai toutes les raisons de penser que le peuple des Sireines n'est en rien maudit. #audience:debate
@@ -168,15 +170,15 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
     * [Nos ancêtres sont communs. {t(DEXT, 5)}] // 75%
         {sc(DEXT, 5): -> we_have_same_ancesters_S | -> we_have_same_ancesters_F}
         ** (we_have_same_ancesters_S) PLAYER: Votre Honneur, nos ancêtres et ceux des Sireines sont les mêmes. #audience:choc #playsound:VOX_Player_memesancetres
-            PLAYER: Lorsque Miraterre sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la <b>Déesse</b>... #audience:debate #playsound:VOX_Player_miraterresombra
+            PLAYER: Lorsque <b>Miraterre</b> sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la <b>Déesse</b>... #audience:debate #playsound:VOX_Player_miraterresombra
             PLAYER: D'autres n'eurent pas cette chance... Fort heureusement, ils échappèrent à la noyade, eux aussi... #audience:debate #playsound:VOX_Player_dautrespascettechance
-            PLAYER: Sauvés par le Léviathan. #audience:choc #playsound:VOX_Player_sauvesparleleviathan
+            PLAYER: Sauvés par le <b>Léviathan</b>. #audience:choc #playsound:VOX_Player_sauvesparleleviathan
             PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un même peuple. #audience:ovation #playsound:VOX_Player_deuxfacettesmemepiece
             ~ audience_judgement(20)
         ** (we_have_same_ancesters_F) PLAYER: Votre Honneur, nos ancêtres et ceux des Sireines sont les mêmes. #audience:choc #playsound:VOX_Player_memesancetres
-            PLAYER: Lorsque Miraterre sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la <b>Déesse</b>... #audience:debate #playsound:VOX_Player_miraterresombra
+            PLAYER: Lorsque <b>Miraterre</b> sombra, certains de nos ancêtres furent sauvés du Déluge, sauvés par la <b>Déesse</b>... #audience:debate #playsound:VOX_Player_miraterresombra
             PLAYER: D'autres n'eurent pas cette chance... Fort heureusement, ils échappèrent à la noyade, eux aussi... #audience:debate #playsound:VOX_Player_dautrespascettechance
-            PLAYER: Sauvés par le Léviathan. #audience:choc #playsound:VOX_Player_sauvesparleleviathan
+            PLAYER: Sauvés par le <b>Léviathan</b>. #audience:choc #playsound:VOX_Player_sauvesparleleviathan
             PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un même peuple. #audience:booing #playsound:VOX_Player_deuxfacettesmemepiece
             ~ audience_judgement(-10)
     * [Nous pourrions nous unir. {t(CHAR, 0)}] // 70%
@@ -192,26 +194,26 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du Déluge ? #p
     * [Rester silencieux.] JUGE ERNEST: Vous préférez garder le silence... #playsound:VOX_Judge_preferezgardersilencepointpointp #audience:debate
         ~ audience_judgement(-10)
         -> are_sireine_doomed
-- JUGE ERNEST: Insinuez-vous que l'infâme créature... Le Léviathan lui-même, aurait sauvé ces gens ? #playsound:VOX_Judge_insinuezcreatureinfame
+- JUGE ERNEST: Insinuez-vous que l'infâme créature... Le <b>Léviathan</b> lui-même, aurait sauvé ces gens ? #playsound:VOX_Judge_insinuezcreatureinfame
     * [Ma présence en est la preuve. {t(CHAR, 10)}] // 80%
         {sc(CHAR, 10): -> i_am_the_proof_S | -> i_am_the_proof_F}
         ** (i_am_the_proof_S) PLAYER: Votre Honneur, ma présence en ces lieux devrait répondre à votre interrogation... #audience:debate #playsound:VOX_Player_mapresencerepond
-            PLAYER: Dois-je vous rappeler que le Léviathan m'a avalé, avec tout mon équipage ? #audience:debate #playsound:VOX_Player_doisjerappeler
+            PLAYER: Dois-je vous rappeler que le <b>Léviathan</b> m'a avalé, avec tout mon équipage ? #audience:debate #playsound:VOX_Player_doisjerappeler
             PLAYER: Pourtant, je suis ici, devant vous. En chair et en os... #anim:Player:bow #audience:ovation #playsound:VOX_Player_pourtantjesuisici
             ~ audience_judgement(10)
         ** (i_am_the_proof_F) PLAYER: Votre Honneur, ma présence en ces lieux devrait répondre à votre interrogation... #audience:debate #playsound:VOX_Player_mapresencerepond
-            PLAYER: Dois-je vous rappeler que le Léviathan m'a avalé, avec tout mon équipage ? #audience:debate #playsound:VOX_Player_doisjerappeler
+            PLAYER: Dois-je vous rappeler que le <b>Léviathan</b> m'a avalé, avec tout mon équipage ? #audience:debate #playsound:VOX_Player_doisjerappeler
             PLAYER: Pourtant, je suis ici, devant vous. En chair et en os... #anim:Player:bow #audience:booing #playsound:VOX_Player_pourtantjesuisici
             ~ audience_judgement(-10)
     * [Êtes-vous donc idiot ? {t(STRE, 0)}] // 70%
         {sc(STRE, 0): -> are_you_dumb_S | -> are_you_dumb_F}
         ** (are_you_dumb_S) PLAYER: Votre Honneur, êtes-vous stupide ? #audience:choc #playsound:VOX_Player_etesvousstupide
-            PLAYER: N'avez-vous donc rien remarqué ? Le Léviathan m'a avalé, et pourtant... #audience:debate #playsound:VOX_Player_rienremarquelevi
+            PLAYER: N'avez-vous donc rien remarqué ? Le <b>Léviathan</b> m'a avalé, et pourtant... #audience:debate #playsound:VOX_Player_rienremarquelevi
             PLAYER: Je ne suis point un spectre, contrairement à vous ! #audience:laughter #playsound:VOX_Player_pasunspectre
             PLAYER: ... Sauf votre respect, Votre Honneur. #audience:ovation #playsound:VOX_Player_saufvotrerespecthonneur
             ~ audience_judgement(20)
         ** (are_you_dumb_F) PLAYER: Votre Honneur, êtes-vous stupide ? #audience:choc #playsound:VOX_Player_etesvousstupide
-            PLAYER: N'avez-vous donc rien remarqué ? Le Léviathan m'a avalé, et pourtant... #audience:debate #playsound:VOX_Player_rienremarquelevi
+            PLAYER: N'avez-vous donc rien remarqué ? Le <b>Léviathan</b> m'a avalé, et pourtant... #audience:debate #playsound:VOX_Player_rienremarquelevi
             PLAYER: Je ne suis point un spectre, contrairement à vous ! #audience:debate #playsound:VOX_Player_pasunspectre
             PLAYER: ... Sauf votre respect, Votre Honneur. #audience:booing #playsound:VOX_Player_saufvotrerespecthonneur
             ~ audience_judgement(-10)
@@ -268,7 +270,7 @@ JUGE ERNEST: Et maintenant... #playsound:VOX_Judge_etmaintenant #audience:debate
 JUGE ERNEST: Qui vote... <shake>innocent</shake> ? #playsound:VOX_Judge_quiinnocent #box #wait:1.4 #audience:ovation #anim:Player:bow
 ~ audience_judgement(100) // La balance penche complètement si innocent
 JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé. #playsound:VOX_Judge_verdictjuresprononce
-JUGE ERNEST: Le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_jugedeclareOctave #playsound:VOX_Judge_jugedeclareAmbroise #playsound:VOX_Judge_jugedeclareMerlin
+JUGE ERNEST: Le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_jugedeclareOctave #playsound:VOX_Judge_jugedeclareAmbroise #playsound:VOX_Judge_jugedeclareMerlin
 JUGE ERNEST: <b>INNOCENT</b> !!! #playsound:VOX_Judge_INNOCENT #audience:ovation
 JUGE ERNEST: L'Accusé, ainsi que Naïda la Sireine, peuvent retrouver leur liberté. #playsound:VOX_Judge_accuseetnaidelibres #audience:ovation
 - -> naida_speech
@@ -279,7 +281,7 @@ JUGE ERNEST: Mesdames et messieurs les jurés... #playsound:VOX_Judge_mesdamesma
 JUGE ERNEST: Qui vote... <shake>innocent</shake> ? #playsound:VOX_Judge_quivotemauvaisinnocent #box #wait:1 #audience:applause
 JUGE ERNEST: Et maintenant... #playsound:VOX_Judge_etmaintenantmauvais #audience:debate
 JUGE ERNEST: Qui vote... <shake>coupable</shake> ? #playsound:VOX_Judge_quicoupablemauvais #box #wait:1.4 #audience:ovation #anim:Player:bow
-JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de Miraterre, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise
+JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise
 JUGE ERNEST: <b>COUPABLE</b> !!! #playsound:VOX_Judge_COUPABLE #audience:ovation
 ~ audience_judgement(-100) // La balance penche complètement si coupable
 JUGE ERNEST: Coulez-le, ainsi que la Sireine, où la Déesse Elle-même ne saurait le trouver... #playsound:VOX_Judge_coulezle #audience:ovation
