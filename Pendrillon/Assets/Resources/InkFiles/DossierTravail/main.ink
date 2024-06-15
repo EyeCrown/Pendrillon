@@ -26,4 +26,4 @@ INCLUDE cast_salutation.ink
 
 // Start the game
 //-> intro
--> tribunal_1
+-> secret_meeting

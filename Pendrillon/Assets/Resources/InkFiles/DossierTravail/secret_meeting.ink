@@ -3,6 +3,7 @@
 // Variables
 VAR threat_arle = false
 VAR has_fail = false
+VAR player_is_close_to_bush = false
 
 // Scene
 === secret_meeting ===
@@ -17,9 +18,7 @@ VAR has_fail = false
 #set:forest
 // Set the actor's positions
 #position:Player:8:2
-//#position:Arle:10:11
-//#position:Arle:3:17
-#position:Arle:2:10
+#position:Arle:4:10
 
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
@@ -38,26 +37,26 @@ SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes <b>talents</b> !
 SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance !
     * [Effectuer une danse. {t(DEXT, 40)}] // 80%
         {sc(DEXT, 40): -> dancing_S | -> dancing_F}
-        ** (dancing_S) SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (dancing_S) SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:dance #audience:ovation
             -> success_entertaining_audience
-        ** (dancing_F) SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami. #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (dancing_F) SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami. #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:fail #audience:booing
             SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
     * [Faire des pompes. {t(STRE, 40)}] // 80%
         {sc(STRE, 40): -> do_pushups_S | -> do_pushups_F}
-        ** (do_pushups_S) SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (do_pushups_S) SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:pushup #audience:ovation
             -> success_entertaining_audience
-        ** (do_pushups_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (do_pushups_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:pushup #audience:booing
             SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, l'ami.
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
     * [Hypnotiser le public. {t(CHAR, 40)}] // 80%
         {sc(CHAR, 40): -> hypnotise_S | -> hypnotise_F}
-        ** (hypnotise_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (hypnotise_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:hypnose #audience:ovation
             SOUFFLEUR: Wow...
             SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal... Bien joué, l'ami !
             -> success_entertaining_audience
-        ** (hypnotise_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler
+        ** (hypnotise_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:hypnose #audience:booing
             SOUFFLEUR: Euh...
             SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal...
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
@@ -81,9 +80,17 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - #anim:Arle:get_down
     * [Raisonner l'actrice.] PLAYER: <i>(Le public n'attend que ton apparition ! C'est maintenant ou jamais !)</i> #anim:Player:chuchote #playsound:VOX_Player_lepublicattendapparition
         VOIX CHUCHOTÉE: <i>(J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré.)</i> #playsound:VOX_Arle_jailimpressionpublic
-    * [Examiner le buisson.] PLAYER: Ce buisson me semble... suspect... #anim:Player:examine_bush #audience:laughter #playsound:VOX_Player_buissonsuspect
+    * [Examiner le buisson.] PLAYER: Ce buisson me semble... suspect... #anim:Player:examine_bush #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
+        ~ player_is_close_to_bush = true
 - // Le joueur compte
-    * [Tirer le buisson.] #anim:Player:pull_bush #audience:choc
+    * [Tirer le buisson.]
+    {
+        - player_is_close_to_bush == true:
+            #audience:choc #anim:Player:pull
+        - else:
+            #move:Player:8:7 #audience:choc #anim:Player:pull
+            ~ player_is_close_to_bush = true
+    }
         ARLE: Mais qui voilà ?! N'est-ce pas moi ?  #anim:Arle:get_up #anim:Arle:bow #playsound:VOX_Arle_maisquivoila #audience:ovation
 - // Arle fait son apparition
     * [Que faisais-tu cachée ?] PLAYER: Que faisais-tu là, cachée tel un rat ? #anim:Player:question #playsound:VOX_Player_cacheerat

@@ -82,7 +82,8 @@ LA POISCAILLE: ... #audience:booing
                 JUGE ERNEST: Tant que celle-ci ne profane pas ces lieux de sa parole impie. #playsound:VOX_Judge_tantqueprofanepas #audience:ovation
                 ~ naida_name = "NAÏDA"
                 ~ naida_name_on_text = "Naïda"
-            ** (convince_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez me faire peur, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhfairepeur #audience:ovation
+            ** (convince_name_naida_F) PLAYER: Votre Honneur, si vous ne daignez pas appeler Naïda par son nom, par la <b>Déesse</b>, vous le paierez. #audience:choc #playsound:VOX_Player_menacerlejuge
+                JUGE ERNEST: Peuh... Si vous croyez me faire peur, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhfairepeur #audience:ovation
                 ~ naida_name_on_text = "la poiscaille"
                 ~ audience_judgement(-10)
     * [(Calme) Tout être a droit à un nom.{t(CHAR, -10)}] // 60%
@@ -93,7 +94,8 @@ LA POISCAILLE: ... #audience:booing
                 JUGE ERNEST: Tant que celle-ci ne profane pas ces lieux de sa parole impie. #playsound:VOX_Judge_tantqueprofanepas #audience:ovation
                 ~ naida_name = "NAÏDA"
                 ~ naida_name_on_text = "Naïda"
-            ** (force_name_naida_F) JUGE ERNEST: Peuh... Si vous croyez m'attendrir, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhattendriraccuse #audience:ovation
+            ** (force_name_naida_F) PLAYER: Votre Honneur, je vous demande de faire preuve d'humanité en appelant Naïda par son nom. #audience:debate #playsound:VOX_Player_attendrirlejuge
+                JUGE ERNEST: Peuh... Si vous croyez m'attendrir, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhattendriraccuse #audience:ovation
                 ~ naida_name_on_text = "la poiscaille"
                 ~ audience_judgement(-10)
 - SOUFFLEUR: Je sais ce que tu penses, l'ami... 
