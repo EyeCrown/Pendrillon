@@ -122,7 +122,7 @@ VAR t_4_give_guards_surname = false
     { 
         - pFelony == "bribe guards":
             {
-                - t_2_bribe_guards: 
+                - t_2_bribe_guards:
                     ~ isAccused = true
                 - else:
                     ~ isAccused = false

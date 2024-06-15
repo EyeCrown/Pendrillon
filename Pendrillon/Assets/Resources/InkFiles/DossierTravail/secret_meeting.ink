@@ -46,7 +46,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
         {sc(STRE, 40): -> do_pushups_S | -> do_pushups_F}
         ** (do_pushups_S) SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:pushup #audience:ovation
             -> success_entertaining_audience
-        ** (do_pushups_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:pushup #audience:booing
+        ** (do_pushups_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:fail #audience:booing
             SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, l'ami.
             SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
             -> failure_entertaining_audience
@@ -80,19 +80,17 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - #anim:Arle:get_down
     * [Raisonner l'actrice.] PLAYER: <i>(Le public n'attend que ton apparition ! C'est maintenant ou jamais !)</i> #anim:Player:chuchote #playsound:VOX_Player_lepublicattendapparition
         VOIX CHUCHOTÉE: <i>(J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré.)</i> #playsound:VOX_Arle_jailimpressionpublic
+        PLAYER: <i>(Puisque tu refuses de coopérer...)</i> #audience:debate
+        ** [Aller voir de plus près.] -> move_to_bush
     * [Examiner le buisson.] PLAYER: Ce buisson me semble... suspect... #anim:Player:examine_bush #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
+        -> pull_bush
         ~ player_is_close_to_bush = true
-- // Le joueur compte
-    * [Tirer le buisson.]
-    {
-        - player_is_close_to_bush == true:
-            #audience:choc #anim:Player:pull
-        - else:
-            #move:Player:8:7 #audience:choc #anim:Player:pull
-            ~ player_is_close_to_bush = true
-    }
-        ARLE: Mais qui voilà ?! N'est-ce pas moi ?  #anim:Arle:get_up #anim:Arle:bow #playsound:VOX_Arle_maisquivoila #audience:ovation
-- // Arle fait son apparition
+- {player_is_close_to_bush == false: -> move_to_bush | -> pull_bush}
+    * (move_to_bush) PLAYER: Ce buisson me semble... suspect... #anim:Player:examine_bush #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
+-
+    * (pull_bush) [Tirer le buisson.] #anim:Player:pull #audience:choc
+        ARLE: Mais qui voilà ?! N'est-ce pas moi ? #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila
+- #anim:Arle:bow
     * [Que faisais-tu cachée ?] PLAYER: Que faisais-tu là, cachée tel un rat ? #anim:Player:question #playsound:VOX_Player_cacheerat
         BOUFFONNE: J'apprenais à vous connaître, messire. Je vous observais...
         ** [Me connaître ?] PLAYER: Me connaître, moi ? #anim:Player:surprised
@@ -143,7 +141,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * [Je t'écoute.]  -> what_is_the_mission
     * [Dépêche-toi !]  -> what_is_the_mission
 - (what_is_the_mission) PLAYER: Quelle est donc cette mission ? #anim:Player:question #playsound:VOX_Player_quelleestcettemission
-ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #anim:Arle:question #playsound:VOX_Arle_quelrapporttuer #anim:Player:surprised #audience:choc
+ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #playsound:VOX_Arle_quelrapporttuer #audience:choc
     * [Hors de question.] PLAYER: Ôter une vie n'est pas dans mes pratiques. #audience:ovation #trial #playsound:VOX_Player_oterviepratique
         ~ trial()
         ~ t_1_refuse_to_kill = true
