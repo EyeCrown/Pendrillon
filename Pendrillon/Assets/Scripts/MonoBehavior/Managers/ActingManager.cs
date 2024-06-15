@@ -1280,6 +1280,16 @@ namespace MonoBehavior.Managers
             HandleTagWait("0.5");
             HandleTagAudience(Constants.ReactChoc);
             
+            foreach (var character in GameManager.Instance._characters)
+            {
+                if (character._onStage)
+                {
+                    Debug.Log($"{character.name} > is on stage");
+                    StartCoroutine(character.PlayAnimCoroutine("surprised", TagActionOver));
+                }
+            }
+            StartCoroutine(GameManager.Instance.GetPlayer().PlayAnimCoroutine("surprised", TagActionOver));
+            
         }
         
         
