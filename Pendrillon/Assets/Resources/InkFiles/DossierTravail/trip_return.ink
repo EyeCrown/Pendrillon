@@ -82,7 +82,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
         ** (crate_front_search_F) PLAYER: Je n'ai rien trouvé.
 - PERSONNAGE MASQUÉ: Ne peut-on pas éviter que des gardes ne viennent fourrer leur nez ici ?
     * [Je connais certains gardes...] PLAYER: Il est certains gardes que je... connais bien, disons. Pas ceux-là.
-    * [C'est la Loi.] PLAYER: Tous les navires qui arrivent à Miraterre doivent être fouillés. Par ailleurs...
+    * [C'est la Loi.] PLAYER: Tous les navires qui arrivent à <b>Miraterre</b> doivent être fouillés. Par ailleurs...
         PERSONNAGE MASQUÉ: Par ailleurs ?
         PLAYER: Votre simple présence enfreint une <b>Loi capitale</b>, j'en ai peur. #audience:debate #trial
             ~ trial()

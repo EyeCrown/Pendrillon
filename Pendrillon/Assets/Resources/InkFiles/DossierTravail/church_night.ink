@@ -351,8 +351,8 @@ AGATHE: Quand les gardes de la Couronne vinrent arrêter le Messie, c'est lui qu
     * [Irène l'a-t-elle su ?] PLAYER: Sait-on si <b>Irène</b> a su quel sacrifice son père avait fait ?
         AGATHE: Elle l'apprit le soir même, mais il était trop tard. Les gardes s'en étaient allé depuis longtemps déjà.
     * [Devrions-nous le craindre ?] PLAYER: Serait-on avisé de le craindre, désormais ? Ou bien pensez-vous que la cloche ne sonne pas pour le juste ? #audience:debate
-        AGATHE: À tort ou à raison, tous les habitants de Miraterre le craignent...
-- AGATHE: Lorsque nos ancêtres revinrent à Miraterre, ils le trouvèrent enchaîné à sa roue. Vivant. Intact.
+        AGATHE: À tort ou à raison, tous les habitants de <b>Miraterre</b> le craignent...
+- AGATHE: Lorsque nos ancêtres revinrent à <b>Miraterre</b>, ils le trouvèrent enchaîné à sa roue. Vivant. Intact.
 AGATHE: Durant un siècle entier, il avait souffert sans jamais mourir.
 AGATHE: Pourquoi donc, d'après vous ?
     * [Le savez-vous vous-même ?] PLAYER: Le savez-vous vous-même, prêtresse ?

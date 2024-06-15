@@ -121,12 +121,12 @@ PASSEUR: Dis-moi, voyageur : pourquoi avoir accepté une mission si périlleuse 
     * [Pour la gloire !] PLAYER: Pour la gloire, cela va sans dire ! #anim:Player:gloire #playsound:VOX_Player_pourlagloire #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
     * [Pour l'aventure !] PLAYER: Pour l'aventure bien entendu ! #anim:Player:gloire #playsound:VOX_Player_pourlaventure #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
 - #audience:applause
-- PASSEUR: Tout de même... Te confronter à une créature mythique telle que le Léviathan... #playsound:VOX_Ferryman_toutdememe
+- PASSEUR: Tout de même... Te confronter à une créature mythique telle que le <b>Léviathan</b>... #playsound:VOX_Ferryman_toutdememe
 PLAYER: À dire vrai...
     * [Je ne crois pas au Léviathan.] PLAYER: Je ne crois pas à ces histoires à dormir debout... 
         PLAYER: Je prévoyais de faire le voyage, prétendre avoir tué le monstre et retourner à bon port. #audience:laughter
         PASSEUR: Tu as pourtant promis de ramener le cœur de la bête. #playsound:VOX_Ferryman_coeurbete
-            ** [J'avais un plan.] PLAYER: Personne n'a jamais vu le Léviathan de près : un cœur de baleine aurait suffi à faire illusion... #audience:laughter
+            ** [J'avais un plan.] PLAYER: Personne n'a jamais vu le <b>Léviathan</b> de près : un cœur de baleine aurait suffi à faire illusion... #audience:laughter
             ** [Je n'avais pas pensé à ça.] PLAYER: Je suis un homme de l'improvisation. J'aurai trouvé quelque chose... #audience:applause
     * [Je rêvais de le voir.] PLAYER: Je rêve de l'apercevoir, depuis petit. Ma mère me racontait des récits de marins l'ayant aperçu, au loin.
         PASSEUR: N'étais-tu pas effrayé ? #anim:Passeur:question #playsound:VOX_Ferryman_paseffrayeq
@@ -140,11 +140,11 @@ PLAYER: Bien, bien... Si tu insistes, Passeur. #playsound:VOX_Player_bienbiensit
 PLAYER: Notre voyage dura... #playsound:VOX_Player_notrevoyagedura
     * [Près d'une année.] PLAYER: ... près d'une année, en tout. #map:departure #playsound:VOX_Player_presduneanne
     * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté. #map:Travel:departure #playsound:VOX_Player_beaucouptroplongtemps
-- PLAYER: Je garderai <b>secret</b> ce qu'il se passa lorsque nous atteignîmes le répère du Léviathan.
-PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX_Player_apresmoultper #map:arrival
+- PLAYER: Je garderai <b>secret</b> ce qu'il se passa lorsque nous atteignîmes le répère du <b>Léviathan</b>.
+PLAYER: Après moult péripéties, nous revînmes à <b>Miraterre</b>... #playsound:VOX_Player_apresmoultper #map:arrival
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreuxqua playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
-- PASSEUR: Ainsi, c'est à votre retour à Miraterre que les problèmes ont commencé ? #playsound:VOX_Ferryman_retourmiraterre
+- PASSEUR: Ainsi, c'est à votre retour à <b>Miraterre</b> que les problèmes ont commencé ? #playsound:VOX_Ferryman_retourmiraterre
 - PLAYER: En effet. Un dénouement... #playsound:VOX_Player_eneffetundenouement
     * [Ironique.] PLAYER: ... des plus <i>ironiques</i>. #playsound:VOX_Player_desplusironiques
         PASSEUR: Ironique, tu dis ? #playsound:VOX_Ferryman_ironique
@@ -153,7 +153,7 @@ PLAYER: Après moult péripéties, nous revînmes à Miraterre... #playsound:VOX
     * [Inattendu.] PLAYER: ... des plus <i>inattendus</i>. #playsound:VOX_Player_innattendus
         PASSEUR: Inattendu, tu dis ? #playsound:VOX_Ferryman_innatendu
 - PLAYER: Constatez par vous-même : nous avons bravé une tempête, affronté un monstre marin... #playsound:VOX_Player_constatezparvousmemenousavons
-PLAYER: ... Et c'est au port de Miraterre, de retour de notre voyage, que notre heure sonna... #map:up #playsound:VOX_Player_auportdeMiraterre
+PLAYER: ... Et c'est au port de <b>Miraterre</b>, de retour de notre voyage, que notre heure sonna... #map:up #playsound:VOX_Player_auportdeMiraterre
 - #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #wait:1
 - -> trip_return 
 
