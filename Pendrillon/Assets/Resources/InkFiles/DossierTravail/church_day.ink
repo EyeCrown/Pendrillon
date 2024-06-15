@@ -3,7 +3,7 @@
 // Variables
 VAR CAPUCINE = ""
 VAR MARCELLO = ""
-VAR capucine_surname = "la tartine"
+VAR capucine_surname = "la larbine"
 VAR marcello_surname = "Marcellogre"
 
 // Scene

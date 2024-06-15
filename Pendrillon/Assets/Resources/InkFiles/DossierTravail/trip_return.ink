@@ -24,7 +24,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
 // Set the location
 #set:cale
 // Set the actor's positions
-#position:Player:11:2
+#position:Player:11:3
 #position:Naïda:11:9
 #position:Marcello:3:20
 #position:Capucine:5:20
@@ -58,30 +58,30 @@ VAR player_won_battle = false // Define if the player won the battle or not
             PERSONNAGE MASQUÉ: Je n'ai jamais entendu cela, non.
             *** [Oubliez.] PLAYER: J'ai dû l'inventer, alors.
 - PERSONNAGE MASQUÉ: Et maintenant, que fait-on ?
-    * [Forcer la caisse du fond. {t(STRE, 40)}] #playsound:crate_search // 80%
-        {sc(STRE, 40): -> crate_back_search_S | -> crate_back_search_F}
-        ** (crate_back_search_S) PLAYER: Du poisson pourri... J'empeste ! Mais j'ai trouvé <b>quelques pièces</b>. #playsound:gold_coins
-            ~ p_gold += 3
-            ~ player_is_stinky = true
-        ** (crate_back_search_F) PLAYER: Du poisson pourri... J'empeste !
-            ~ player_is_stinky = true
+    * [Fouiller la caisse de devant. {t(DEXT, 40)}] #playsound:crate_search // 80%
+        {sc(DEXT, 40): -> crate_front_search_S | -> crate_front_search_F}
+        ** (crate_front_search_S) PLAYER: Une <b>noix de coco</b>. Ça pourrait être utile, qui sait. #move:Player:7:0
+            ~ has_coconut = true
+        ** (crate_front_search_F) PLAYER: Je n'ai rien trouvé. #move:Player:7:0
     * [Fouiller le tonneau. {t(DEXT, 40)}] // 80%
         {sc(DEXT, 40): -> barrel_search_S | -> barrel_search_F}
-        ** (barrel_search_S) PLAYER: J'ai trouvé un <b>gros os</b>. Ça pourrait servir. #playsound:inventory
+        ** (barrel_search_S) PLAYER: J'ai trouvé un <b>gros os</b>. Ça pourrait servir. #move:Player:0:-1
         ~ has_bone = true
             PERSONNAGE MASQUÉ: Qu'avez-vous en tête ?
             *** [Plaisanter.] PLAYER: Peut-être qu'en l'envoyant, les gardes iront chercher ? #audience:laughter
                 PERSONNAGE MASQUÉ: Comment pouvez-vous avoir le cœur à rire ?
             *** [Dire la vérité.] PLAYER: Si je n'ai pas d'autres choix, j'assommerai les gardes.
                 PERSONNAGE MASQUÉ: J'ai si peur...
-        ** (barrel_search_F) PLAYER: Je n'ai rien trouvé.
-    * [Fouiller la caisse de devant. {t(DEXT, 40)}] #playsound:crate_search // 80%
-        {sc(DEXT, 40): -> crate_front_search_S | -> crate_front_search_F}
-        ** (crate_front_search_S) PLAYER: Une <b>noix de coco</b>. Ça pourrait être utile, qui sait. #playsound:inventory
-            ~ has_coconut = true
-        ** (crate_front_search_F) PLAYER: Je n'ai rien trouvé.
-- PERSONNAGE MASQUÉ: Ne peut-on pas éviter que des gardes ne viennent fourrer leur nez ici ?
-    * [Je connais certains gardes...] PLAYER: Il est certains gardes que je... connais bien, disons. Pas ceux-là.
+        ** (barrel_search_F) PLAYER: Je n'ai rien trouvé. #move:Player:0:-1
+    * [Forcer la caisse du fond. {t(STRE, 40)}] #playsound:crate_search // 80%
+        {sc(STRE, 40): -> crate_back_search_S | -> crate_back_search_F}
+        ** (crate_back_search_S) PLAYER: Du poisson pourri... J'empeste ! Mais j'ai trouvé <b>quelques pièces</b>. #move:Player:3:10 #playsound:gold_coins
+            ~ p_gold += 3
+            ~ player_is_stinky = true
+        ** (crate_back_search_F) PLAYER: Du poisson pourri... J'empeste ! #move:Player:3:10
+            ~ player_is_stinky = true
+- PERSONNAGE MASQUÉ: Ne peut-on pas éviter que des gardes ne viennent fourrer leur nez ici ? #move:Player:11:3
+    * [Je connais certains gardes, mais...] PLAYER: Il est certains gardes que je... connais bien, disons. Pas ceux-là.
     * [C'est la Loi.] PLAYER: Tous les navires qui arrivent à <b>Miraterre</b> doivent être fouillés. Par ailleurs...
         PERSONNAGE MASQUÉ: Par ailleurs ?
         PLAYER: Votre simple présence enfreint une <b>Loi capitale</b>, j'en ai peur. #audience:debate #trial
@@ -91,7 +91,6 @@ VAR player_won_battle = false // Define if the player won the battle or not
     * [Sans foi ni loi.] PLAYER: Je me fiche de la Loi comme de la Foi. #trial
         ~ trial()
         ~ t_2_against_law = true
-        ~ trial()
         ~ t_2_against_crown = true
     * [Pas le temps pour des regrets.] PLAYER: L'heure n'est pas au regret. #trial
         ~ trial()
@@ -102,14 +101,11 @@ VAR player_won_battle = false // Define if the player won the battle or not
 - PERSONNAGE MASQUÉ: J'entends des bruits. Quelqu'un vient. #playsound:activity_far
 * [Cachez-vous.] PLAYER: Il va falloir vous trouver une cachette, et en vitesse.
     -- (hide_sireine) PERSONNAGE MASQUÉ: Les bruits se rapprochent ! #playsound:activity_close
-        *** [Dans la caisse du fond.] PLAYER: Cette caisse, au fond ! Vite ! #move:Naïda:-2:10
-            ~ sireine_hideout = "crate_back"
-            ~ sireine_is_hidden = true
-        *** [Derrière le tonneau.] PLAYER: Derrière ce tonneau, vite ! #move:Naïda:-3:-1
+        *** [Derrière le tonneau.] PLAYER: Derrière ce tonneau, vite ! #move:Naïda:-2:1 #move:Naïda:-2:-3
             ~ sireine_hideout = "barrel"
             ~ sireine_is_hidden = true
-        *** [Derrière la caisse de devant.] PLAYER: Derrière cette caisse, vite ! #move:Naïda:4:2
-            ~ sireine_hideout = "crate_front"
+        *** [Dans la caisse du fond.] PLAYER: Cette caisse, au fond ! Vite ! #move:Naïda:-2:7 #move:Naïda:-2:10
+            ~ sireine_hideout = "crate_back"
             ~ sireine_is_hidden = true
 * [Attendons.] PLAYER: Pas le temps de se cacher !
     PERSONNAGE MASQUÉ: Il le faut pourtant !
@@ -117,7 +113,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
 - PLAYER: Quant à moi...
     * {has_coconut == true or has_bone == true} [Se cacher. {t(DEXT, 30)}] // 75%
         {sc(DEXT, 30): -> player_hide_S | -> player_hide_F}
-        ** (player_hide_S) #move:Player:3:-3
+        ** (player_hide_S) #move:Player:5:1 #move:Player:5:-3
             ~ player_is_hidden = true
             -> guards_arrive
         ** (player_hide_F) PLAYER: Loupé ! La discrétion n'est pas mon fort !
@@ -133,7 +129,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
 CAPUCINE: Tu entends des voix, maintenant ? Peut-être la Déesse en personne qui te cause... #playsound:VOX_Capucine_tuentendsvoixQ #anim:Capucine:enter_scene #audience:laughter
 MARCELLO: Vous me croyez fou, cheffe ? #audience:laughter #move:Capucine:11:9 #move:Marcello:9:11 #audience:ovation
 CAPUCINE: Que tu sois cinglé ou non... Nous devons <b>fouiller</b> tous les navires qui <b>arrivent au port</b>. #playsound:VOX_Capucine_soiscinglenon #audience:applause
-- {player_is_hidden: -> player_hidden | -> player_not_hidden}
+- {player_is_hidden: -> player_hidden | -> player_greet_guards}
 
 
 //The guards arrive while the player is hidden
@@ -151,15 +147,15 @@ MARCELLO: Il n'y a personne, cheffe.
             }
     ** (discretion_1_F) MARCELLO: Là ! Derrière cette caisse ! Il y a quelqu'un ! #anim:Player:stop_hiding
         -> player_is_found
-* [Sortir de sa cachette] #anim:Player:stop_hiding
-    -> player_not_hidden
+* [Sortir de sa cachette]
+    -> player_stop_hiding
 - (player_not_found) CAPUCINE: Laisse-moi regarder de plus près...
     * {has_bone} [Assommer Marcello avec l'os. {t(STRE, 0)}] // 80%
         -> attack_marcello_with_bone
     * {has_coconut} [Envoyer la noix de coco. {t(DEXT, -10)}] // 80%
         -> attack_marcello_with_coconut
-    * [Sortir de sa cachette] #anim:Player:stop_hiding
-        -> player_not_hidden
+    * [Sortir de sa cachette]
+        -> player_stop_hiding
 - (player_is_found) CAPUCINE: Qui es-tu, maraud ? {player_is_stinky: Tu empestes le poisson pourri !} #playsound:VOX_Capucine_quiestu
     {
         - player_is_stinky:
@@ -168,13 +164,14 @@ MARCELLO: Il n'y a personne, cheffe.
             SOUFFLEUR: Ce doit être pour ça que tu t'es fait repéré.
             SOUFFLEUR: Interagir avec le décors entraîne parfois des conséquences inattendues, l'ami !
     }
-    -> player_not_hidden
+    -> player_stop_hiding
 
 
 // The guards arrive while the player is not hidden
 = player_not_hidden
-#playsound:guards_arrive
-* [S'annoncer.] PLAYER: Bien le bonjour, mes braves. #move:Player:11:2
+- (player_stop_hiding) #move:Player:5:3 #move:Player:11:3
+- (player_greet_guards)
+* [S'annoncer.] PLAYER: Bien le bonjour, mes braves.
 - CAPUCINE: Décline ton identité, et vite ! #playsound:VOX_Capucine_declineidentite
     * [Je suis le capitaine.] PLAYER: Vous vous trouvez sur mon humble navire.
         CAPUCINE: C'est toi le capitaine ? #playsound:VOX_Capucine_cesttoicapitaineQ
@@ -355,20 +352,13 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
 #playsound:sounds_inside_the_crate
 CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans ! #playsound:VOX_Capucine_astuentenduquelquechoeabouge
 MARCELLO : Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang. #audience:laughter
-CAPUCINE: Bloque-lui la route tandis que j'y jette un œil. #playsound:VOX_Capucine_bloqueluilaroute #audience:choc #anim:Marcello:block_the_way
+- CAPUCINE: Bloque-lui la route tandis que j'y jette un œil. #playsound:VOX_Capucine_bloqueluilaroute #audience:choc
 {
-    - sireine_hideout == "crate_back":
-        #move(Capucine)
-        #anim:Capucine:search_crate
-    - sireine_hideout == "crate_front":
-        #move(Capucine)
-        #anim:Capucine:search_crate
-    - sireine_hideout == "barrel":
-        #move(Capucine)
-        #anim:Capucine:search_barrel
+    - sireine_hideout == "barrel": CAPUCINE: Tiens donc... Mais qui voilà ? #move:Capucine:-2:-1 #playsound:VOX_Capucine_tiensdoncmaisquivouila #audience:choc
+    - sireine_hideout == "crate_back": CAPUCINE: Tiens donc... Mais qui voilà ? #move:Capucine:-2:8 #playsound:VOX_Capucine_tiensdoncmaisquivouila #audience:choc
 }
-- CAPUCINE: Tiens donc... Mais qui voilà ? #playsound:VOX_Capucine_tiensdoncmaisquivouila #audience:choc #move:Naïda:10:9
-PERSONNAGE MASQUÉ: Laissez-moi ! Je vous ai dit de me laisser !
+//- CAPUCINE: Tiens donc... Mais qui voilà ? #playsound:VOX_Capucine_tiensdoncmaisquivouila #audience:choc
+-PERSONNAGE MASQUÉ: Laissez-moi ! Je vous ai dit de me laisser !
 CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la. #playsound:VOX_Capucine_cestdonccela
 #anim:Player:attack
 #anim:Marcello:dodge

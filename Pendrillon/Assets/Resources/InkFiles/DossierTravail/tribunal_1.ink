@@ -24,7 +24,6 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #curtains:open
 #set:trial
 // Set the actor's positions
-//#position:Judge:3:10
 
 // Start the scene
 //#open_curtains
@@ -356,13 +355,33 @@ JUGE ERNEST: Accusé, est-ce la vérité ? Cachiez-vous illégalement quelqu'un 
 - JUGE ERNEST: Bien, bien... Le Juge rappelle aux jurés que le droit de la Lame consiste à défier en duel son opposant lors d'un procès. #playsound:VOX_Judge_bienbiendroitlame #audience:debate
 JUGE ERNEST: C'est une vieille loi, qui n'a plus été invoquée depuis des décennies, mais soit... #playsound:VOX_Judge_vieilleloi #audience:ovation
 JUGE ERNEST: Lequel des deux témoins voulez-vous défier ? #playsound:VOX_Judge_lequeltemoindefi
-    * [Défier Capucine à un duel de poirier.] PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defietartine #playsound:VOX_Player_defiemarcassine #playsound:VOX_Player_defielarbine
+    * [Défier Capucine à un duel de poirier.] 
+        {
+            - capucine_surname == "la larbine":
+                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defielarbine
+            - capucine_surname == "la marcassine":
+                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defiemarcassine
+            - capucine_surname == "la tartine":
+                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defietartine
+            - else:
+                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « la larbine » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defielarbine
+        }
         JUGE ERNEST: Un duel... de poirier ? #playsound:VOX_Judge_duelpoirier #audience:laughter
         JUGE ERNEST: Ab... absolument ! Comme l'exige la coutume, en effet... Témoin, acceptez-vous les conditions du duel ? #playsound:VOX_Judge_ababsolument #audience:debate
         CAPUCINE: Volontiers, Votre Honneur. #playsound:VOX_Capucine_volontiersvotrehonneur #audience:ovation #anim:Capucine:happy #anim:Marcello:laugh
         JUGE ERNEST: Ainsi l'issue de cette confrontation entre le témoin et l'Accusé sera décidée par le droit de la Lame ! #playsound:VOX_Judge_ainsiconfontationtemoinaccuse #audience:ovation #anim:Judge:bell #anim:Marcello:applause
         -> duel_against_capucine
-    * [Défier Marcello à un concours de pompes.] PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellogre #playsound:VOX_Player_defiemarcellotarie #playsound:VOX_Player_defiemarcellocroupie 
+    * [Défier Marcello à un concours de pompes.] 
+        {
+            - marcello_surname == "Marcellogre":
+                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellogre
+            - marcello_surname == "Marcellotarie":
+                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellotarie
+            - marcello_surname == "Marcellocroupie":
+                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellocroupie
+            - else:
+                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « Marcellogre » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellogre
+        }
         JUGE ERNEST: Un concours... de pompes ? #playsound:VOX_Judge_concourspompes #audience:laughter
         JUGE ERNEST: Ab... absolument ! Comme l'exige la coutume, en effet... Témoin, acceptez-vous les conditions du duel ? #playsound:VOX_Judge_ababsolument #audience:debate
         MARCELLO: J'accepte, vot' Horreur ! #audience:ovation #anim:Marcello:happy #anim:Capucine:laugh
@@ -371,7 +390,7 @@ JUGE ERNEST: Lequel des deux témoins voulez-vous défier ? #playsound:VOX_Judge
 
 // Witness Agathe
 = witness_agathe
-- JUGE ERNEST: Témoins, veuillez regagner l'assistance. #audience:applause #rope:Capucine #rope:Marcello #move:Player:13:5 #move:Player:10:5 #move:Player:10:2 #move:Player:10:1
+- JUGE ERNEST: Témoins, veuillez regagner l'assistance. #audience:applause #rope:Capucine #rope:Marcello #move:Player:13:5 #move:Player:10:5 #move:Player:10:1
 JUGE ERNEST: J'en appelle désormais à notre dernier témoin. #playsound:VOX_Judge_jenappellederniertemoin
 JUGE ERNEST: La respectable prêtresse Agathe ! #position:Agathe:8:10 #box #wait:8 #playsound:VOX_Judge_pretresseagathe #audience:ovation
 JUGE ERNEST: Prêtresse Agathe, nous vous remercions de quitter la demeure d'<b>Irène</b> afin de vous joindre à nous lors de ce procès. #playsound:VOX_Judge_quitterdemeureirene #audience:applause #anim:Agathe:bow
