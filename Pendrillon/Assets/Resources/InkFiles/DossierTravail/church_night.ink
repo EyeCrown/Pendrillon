@@ -27,11 +27,11 @@ VAR irene_torch_is_on = false
 - UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit... #wait:60
 // La voix vient d'hors-champ. Après un moment, une femme âgée arrive par la droite de la scène et entre dans le champ.
 - PRÊTRESSE AGATHE: ... quel qu'ils soient. #character_presentation:Agathe
-    * [Bénie soit-elle.] PLAYER: Bénie soit-elle.
+    * [Bénie soit-elle.] PLAYER: Bénie soit-elle. #playsound:VOX_Player_beniesoitelle
         Agathe: Bénie entre toutes. Depuis le premier jour de sa vie, et jusqu'à ce que plus une seule d'entre nous ne la serve.
         ** [ « Nous » ? Les prêtresses ?] PLAYER: Vous faites référence aux prêtresses d'<b>Irène</b> ? 
             -> priestess
-    * [Quelle hospitalité !] PLAYER: Vous savez faire preuve d'hospitalité. Merci.
+    * [Quelle hospitalité !] PLAYER: Vous savez faire preuve d'hospitalité. Merci. #playsound:VOX_Player_voussavezhospitalite
         AGATHE: Diriez-vous d'un servant qu'il est hospitalier en vous accueillant dans la maison de son maître ?
         ** [N'êtes-vous pas chez vous ?] PLAYER: N'êtes-vous pas chez vous en ces lieux ?
             AGATHE: « Invitée en son foyer, vaisseau en ce monde. ».
@@ -71,16 +71,16 @@ VAR irene_torch_is_on = false
 // PLAYER se tourne vers la statue
     * [(Avec intensité) Implorer la statue. {t(CHAR, 25)}] // 75%
         {sc(CHAR, 25): -> implore_irene_S | -> implore_irene_F}
-        ** (implore_irene_S) PLAYER: Ô divine apparition. Sachez me venir en aide, victime que je suis... #trial
+        ** (implore_irene_S) PLAYER: Ô divine apparition. Sachez me venir en aide, victime que je suis... #playsound:VOX_Player_osachezmevenirenaide #trial
             ~ trial()
             ~ t_3_implore_irene = true
-            *** [...de la folie des Hommes.] PLAYER: ...des Hommes et de leur folie ! #audience:ovation
+            *** [...de la folie des Hommes.] PLAYER: ...des Hommes et de leur folie ! #playsound:VOX_Player_deshommesetfolie #audience:ovation
                 AGATHE: <b>Irène</b> a eu à souffrir elle aussi de leurs aliénations.
-            *** [...de ma propre convoitise.] PLAYER: ...de mes propres désirs ! #audience:debate
+            *** [...de ma propre convoitise.] PLAYER: ...de mes propres désirs ! #playsound:VOX_Player_mespropresdesirs #audience:debate
                 AGATHE: Au moins avez-vous le courage de reconnaître vos fautes.
-            *** [...du plus funeste destin.] PLAYER: ...d'un destin des plus tragiques ! #audience:choc
+            *** [...du plus funeste destin.] PLAYER: ...d'un destin des plus tragiques ! #playsound:VOX_Player_destintragique #audience:choc
                 AGATHE: Soyez reconnaissant des épreuves que la <b>Déesse</b> dresse sur votre chemin, car dans ces adversités se cachent des trésors de sagesse.
-        ** (implore_irene_F) PLAYER: C'est de votre faute à vous, là-haut ! #trial
+        ** (implore_irene_F) PLAYER: C'est de votre faute à vous, là-haut ! #playsound:VOX_Player_votrefautelahaut #trial
             ~ trial()
             ~ t_3_blame_irene = true
             AGATHE: {claim_to_be_free: N'était-ce pas vous qui, un instant plus tôt, prétendiez être libre, dans vos pensées comme dans vos actes ? | Blâmer notre Sauveuse pour vos malheurs est insensé et cruel.}
@@ -94,22 +94,22 @@ VAR irene_torch_is_on = false
         ~ trial()
         ~ t_3_light_on_irene_torch = true
         AGATHE: Désormais que sa flamme berce ces lieux, n'hésitez plus : parlez-lui. #trial
-        ** [Se confesser.] PLAYER: J'ai ramené de mon voyage...
+        ** [Se confesser.] PLAYER: J'ai ramené de mon voyage... #playsound:VOX_Player_jairamenevoyage
             ~ irene_torch_is_on = true
-            *** [...un trésor interdit.] PLAYER: ...un trésor qui m'était interdit.
-            *** [...un bagage de trop.] PLAYER: ...un bagage de plus. Un bagage de trop. Un poids sur ma conscience.
-            *** [...un tas de problèmes.] PLAYER: ...tout un lot d'embêtements.
+            *** [...un trésor interdit.] PLAYER: ...un trésor qui m'était interdit. #playsound:VOX_Player_untresorinterdit
+            *** [...un bagage de trop.] PLAYER: ...un bagage de plus. Un bagage de trop. Un poids sur ma conscience. #playsound:VOX_Player_unbagagedetrop
+            *** [...un tas de problèmes.] PLAYER: ...tout un lot d'embêtements. #playsound:VOX_Player_toutunlot
             --- PLAYER: <b>Irène</b>, trouvez en votre bonne âme la force de me pardonner, et d'alléger par la même le poids de mes supplices !
-        ** [Lui demander de l'aide.] PLAYER: <b>Irène</b>, je vous en conjure, venez-moi en aide. Ô, allégez le poids de mes supplices ! #trial
+        ** [Lui demander de l'aide.] PLAYER: <b>Irène</b>, je vous en conjure, venez-moi en aide. Ô, allégez le poids de mes supplices ! #playsound:VOX_Player_irenevenezmoienaide #trial
             ~ trial()
             ~ t_3_light_on_irene_torch = true
             ~ irene_torch_is_on = true
-        ** [Éteindre la lampe.] PLAYER: J'ai changé d'avis. La lampe restera éteinte, j'en ai peur. #trial
+        ** [Éteindre la lampe.] PLAYER: J'ai changé d'avis. La lampe restera éteinte, j'en ai peur. #playsound:VOX_Player_jaichangedavis #trial
             ~ trial()
             ~ t_3_no_light_on_irene_torch = true
             -> lamp_off
         -- AGATHE: <b>Irène</b> saura entendre vos prières, mon enfant. Sachez, à votre tour, entendre son récit.
-    * [Laisser la lampe éteinte.] PLAYER: Elle restera éteinte, j'en ai peur. #trial
+    * [Laisser la lampe éteinte.] PLAYER: Elle restera éteinte, j'en ai peur. #playsound:VOX_Player_elleresteraeteinte #trial
         ~ trial()
         ~ t_3_no_light_on_irene_torch = true
         -- (lamp_off) AGATHE: Savez-vous seulement ce que symbolise cette torche, mon, enfant ?
@@ -119,16 +119,16 @@ VAR irene_torch_is_on = false
 // Ask about the different stained glass illustrations
 = stained_glass
 #light:stained_glass #playsound:Play_MUS_Story_SC_Eglise_StainedGlassMentionned
-* {t_3_stained_glass_1_talk == false} [À propos du vitrail du bébé au milieu de la tempête.] PLAYER: Ce bébé, au milieu de la tempête... c'est Elle ?
+* {t_3_stained_glass_1_talk == false} [À propos du vitrail du bébé au milieu de la tempête.] PLAYER: Ce bébé, au milieu de la tempête... c'est Elle ? #playsound:VOX_Player_cebebecestelle
     ~ t_3_stained_glass_1_talk = true
     -> baby_in_the_middle_of_a_tempest
-* {t_3_stained_glass_2_talk == false} [À propos du  vitrail d'Irène regardant l'océan.] PLAYER: <b>Irène</b>, près du phare, contemplant l'océan. Je me demande quelles pensées la traversaient.
+* {t_3_stained_glass_2_talk == false} [À propos du  vitrail d'Irène regardant l'océan.] PLAYER: <b>Irène</b>, près du phare, contemplant l'océan. Je me demande quelles pensées la traversaient. #playsound:VOX_Player_irenepresduphare
     ~ t_3_stained_glass_2_talk = true
     -> irene_next_to_the_lighthouse
-* {t_3_stained_glass_3_talk == false} [À propos du  vitrail de l'homme écartelé sur sa roue.] PLAYER: L'homme attaché à la roue... c'est Lui n'est-ce pas ?
+* {t_3_stained_glass_3_talk == false} [À propos du  vitrail de l'homme écartelé sur sa roue.] PLAYER: L'homme attaché à la roue... c'est Lui n'est-ce pas ? #playsound:VOX_Player_lhommeattachealaroue
     ~ t_3_stained_glass_3_talk = true
     -> man_tied_to_a_wheel
-+ {t_3_stained_glass_1_talk or t_3_stained_glass_2_talk or t_3_stained_glass_3_talk} [(Conclure) Passer la nuit.] PLAYER: J'aimerais me reposer, prêtresse.
++ {t_3_stained_glass_1_talk or t_3_stained_glass_2_talk or t_3_stained_glass_3_talk} [(Conclure) Passer la nuit.] PLAYER: J'aimerais me reposer, prêtresse. #playsound:VOX_Player_jaimeraismereposer
     {
         - t_3_stained_glass_1_talk == true && t_3_stained_glass_2_talk == true && t_3_stained_glass_3_talk == true:
             #anim:Player:go_to_sleep_on_bench
@@ -137,7 +137,7 @@ VAR irene_torch_is_on = false
             AGATHE: Êtes-vous certain de ne pas vouloir poursuivre notre discussion, mon enfant ?
                 + [J'ai changé d'avis.] PLAYER: Sans doute ne souffrirais-je pas d'entendre encore un peu parler votre sagesse...
                     -> stained_glass
-                + [Je souhaite me reposer...] PLAYER: Veuillez me pardonner, prêtresse. Le sommeil m'emporte déjà...
+                + [Je souhaite me reposer...] PLAYER: Veuillez me pardonner, prêtresse. Le sommeil m'emporte déjà... #playsound:VOX_Player_veuillezpardonner
                     #anim:Player:go_to_sleep_on_bench #playsound:Play_MUS_Story_SC_Eglise_Goodnight
                     -> barge.scene_4
     }
@@ -170,14 +170,14 @@ AGATHE: En plein affrontement avec les vagues furieuses... Ils entendirent des p
         AGATHE: Celle-là même.
     * [(Avec emphase) Quelle vision émouvante ! {t(CHAR, 10)}]
         {sc(CHAR, 10): -> moved_by_the_baby_S | -> moved_by_the_baby_F}
-        ** (moved_by_the_baby_S) PLAYER: Imaginer cet enfant - la <b>Déesse</b> ! - pleurant au milieu de la tempête... Quelle vision poignante ! #anim:Player:emotionnal #trial
+        ** (moved_by_the_baby_S) PLAYER: Imaginer cet enfant - la <b>Déesse</b> ! - pleurant au milieu de la tempête... Quelle vision poignante ! #anim:Player:emotionnal #playsound:VOX_Player_imaginerenfantdeesse #trial
                 ~ trial()
                 ~ t_3_moved_by_baby_irene = true
-        ** (moved_by_the_baby_F) PLAYER: Ô quelle magnifique - que dis-je - suprême vision ! #trial
+        ** (moved_by_the_baby_F) PLAYER: Ô quelle magnifique - que dis-je - suprême vision ! #playsound:VOX_Player_oquellemagnifiquesupreme #trial
             ~ trial()
             ~ t_3_fake_about_feeling_for_the_baby = true
             AGATHE: Vous en faites trop, mon enfant...
-    * [Ça n'a ni queue ni tête...] PLAYER: Balivernes. Des mythes pour tirer une larme aux culs bénis. #audience:choc
+    * [Ça n'a ni queue ni tête...] PLAYER: Balivernes. Des mythes pour tirer une larme aux culs bénis. #playsound:VOX_Player_balivernesculbenis #audience:choc
         AGATHE: Mon enfant, soyez sûr qu'<b>Irène</b> entend tout. Les chants les plus clairs comme les paroles les plus sinistres. #trial
             ~ trial()
             ~ t_3_religion_is_to_make_naive_cry = true
@@ -365,14 +365,14 @@ AGATHE: Pourquoi donc, d'après vous ?
     * [Regarder de plus près. {t(STRE, 10)}] // 50
         {sc(STRE, 10): -> watch_judge_closer_S | -> watch_judge_closer_F}
         ** (watch_judge_closer_S) AGATHE: Voyez comme l'Homme a souffert. Quand on le retrouva, son corps avait été si déformé par les années, qu'Il avait acquis une taille inhumaine.
-            *** [Il n'a rien d'humain.] PLAYER: Il n'y a rien, chez lui, qui soit encore humain. #trial
+            *** [Il n'a rien d'humain.] PLAYER: Il n'y a rien, chez lui, qui soit encore humain. #playsound:VOX_Player_rienchezluiencorehumain #trial
                 ~ trial()
                 ~ t_3_say_judge_is_not_human = true
                 AGATHE: Vous fait-il peur, mon enfant ?
                     **** [Je n'ai peur de personne.] PLAYER: Je n'en ai pas peur. Pas le moindre du monde...
-                    **** [C'est tout naturel.] PLAYER: Tout est fait, chez <b>Lui</b>, pour inspirer la peur. La peur et le respect.
+                    **** [C'est tout naturel.] PLAYER: Tout est fait, chez <b>Lui</b>, pour inspirer la peur. La peur et le respect. #playsound:VOX_Player_toutestfaitinspirerpeur
                         -> you_are_right_to_be_afraid
-                    **** [Je n'y pense jamais.] PLAYER: J'évite d'y penser.
+                    **** [Je n'y pense jamais.] PLAYER: J'évite d'y penser. #playsound:VOX_Player_jevitedypenser
                         -> you_are_right_to_be_afraid
             *** [Se taire.]
         ** (watch_judge_closer_F) -> not_watch_judge

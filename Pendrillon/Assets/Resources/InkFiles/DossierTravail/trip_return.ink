@@ -40,11 +40,11 @@ VAR player_won_battle = false // Define if the player won the battle or not
 - PERSONNAGE MASQUÉ: Que fera-t-on s'ils me trouvent ?
     * [Je vous protégerai. {t(STRE, 20)}] // 60%
         {sc(STRE, 20): -> protect_S | -> protect_F}
-        ** (protect_S) PLAYER: Je braverai les dangers pour vous protéger !
+        ** (protect_S) PLAYER: Je braverai les dangers pour vous protéger ! #playsound:VOX_Player_braveraidangers
             PERSONNAGE MASQUÉ: Espérons que l'on n'en arrive pas là.
-        ** (protect_F) PLAYER: Euh.. Je.. Je vous défendrai ?
+        ** (protect_F) PLAYER: Euh.. Je.. Je vous défendrai ? #playsound:VOX_Player_euhjedefendrai
             PERSONNAGE MASQUÉ: Ne le prenez pas mal, mais... vous n'êtes pas très convaincant.
-    * [On improvisera.] PLAYER: On improvisera, comme j'en ai l'habitude.
+    * [On improvisera.] PLAYER: On improvisera, comme j'en ai l'habitude. #playsound:VOX_Player_onimprovisera
         PERSONNAGE MASQUÉ: Ce n'est pas la première fois que vous avez des ennuis avec la Couronne, n'est-ce pas ?
         ** [(Mentir) C'est une première. {t(CHAR, -10)}] // 40%
             {sc(CHAR, -10): -> lie_S | -> lie_F}
@@ -60,35 +60,35 @@ VAR player_won_battle = false // Define if the player won the battle or not
 - PERSONNAGE MASQUÉ: Et maintenant, que fait-on ?
     * [Forcer la caisse du fond. {t(STRE, 40)}] #playsound:crate_search // 80%
         {sc(STRE, 40): -> crate_back_search_S | -> crate_back_search_F}
-        ** (crate_back_search_S) PLAYER: Du poisson pourri... J'empeste ! Mais j'ai trouvé <b>quelques pièces</b>. #playsound:gold_coins
+        ** (crate_back_search_S) PLAYER: Du poisson pourri... J'empeste ! Mais j'ai trouvé <b>quelques pièces</b>. #playsound:VOX_Player_dupoissonpourrimaispieces #playsound:gold_coins 
             ~ p_gold += 3
             ~ player_is_stinky = true
-        ** (crate_back_search_F) PLAYER: Du poisson pourri... J'empeste !
+        ** (crate_back_search_F) PLAYER: Du poisson pourri... J'empeste ! #playsound:VOX_Player_dupoissonpourri
             ~ player_is_stinky = true
     * [Fouiller le tonneau. {t(DEXT, 40)}] // 80%
         {sc(DEXT, 40): -> barrel_search_S | -> barrel_search_F}
-        ** (barrel_search_S) PLAYER: J'ai trouvé un <b>gros os</b>. Ça pourrait servir. #playsound:inventory
+        ** (barrel_search_S) PLAYER: J'ai trouvé un <b>gros os</b>. Ça pourrait servir. #playsound:inventory #playsound:VOX_Player_trouvegrosos
         ~ has_bone = true
             PERSONNAGE MASQUÉ: Qu'avez-vous en tête ?
-            *** [Plaisanter.] PLAYER: Peut-être qu'en l'envoyant, les gardes iront chercher ? #audience:laughter
+            *** [Plaisanter.] PLAYER: Peut-être qu'en l'envoyant, les gardes iront chercher ? #audience:laughter #playsound:VOX_Player_gardesirontchercher
                 PERSONNAGE MASQUÉ: Comment pouvez-vous avoir le cœur à rire ?
-            *** [Dire la vérité.] PLAYER: Si je n'ai pas d'autres choix, j'assommerai les gardes.
+            *** [Dire la vérité.] PLAYER: Si je n'ai pas d'autres choix, j'assommerai les gardes. #playsound:VOX_Player_pasdautrechoixassomer
                 PERSONNAGE MASQUÉ: J'ai si peur...
-        ** (barrel_search_F) PLAYER: Je n'ai rien trouvé.
+        ** (barrel_search_F) PLAYER: Je n'ai rien trouvé. #playsound:VOX_Player_rientrouve
     * [Fouiller la caisse de devant. {t(DEXT, 40)}] #playsound:crate_search // 80%
         {sc(DEXT, 40): -> crate_front_search_S | -> crate_front_search_F}
-        ** (crate_front_search_S) PLAYER: Une <b>noix de coco</b>. Ça pourrait être utile, qui sait. #playsound:inventory
+        ** (crate_front_search_S) PLAYER: Une <b>noix de coco</b>. Ça pourrait être utile, qui sait. #playsound:inventory #playsound:VOX_Player_trouvenoixcoco
             ~ has_coconut = true
         ** (crate_front_search_F) PLAYER: Je n'ai rien trouvé.
 - PERSONNAGE MASQUÉ: Ne peut-on pas éviter que des gardes ne viennent fourrer leur nez ici ?
-    * [Je connais certains gardes...] PLAYER: Il est certains gardes que je... connais bien, disons. Pas ceux-là.
-    * [C'est la Loi.] PLAYER: Tous les navires qui arrivent à Miraterre doivent être fouillés. Par ailleurs...
+    * [Je connais certains gardes...] PLAYER: Il est certains gardes que je... connais bien, disons. Pas ceux-là. #playsound:VOX_Player_certainsgardesjeconnais
+    * [C'est la Loi.] PLAYER: Tous les navires qui arrivent à Miraterre doivent être fouillés. Par ailleurs... #playsound:VOX_Player_touslesnavires
         PERSONNAGE MASQUÉ: Par ailleurs ?
-        PLAYER: Votre simple présence enfreint une <b>Loi capitale</b>, j'en ai peur. #audience:debate #trial
+        PLAYER: Votre simple présence enfreint une <b>Loi capitale</b>, j'en ai peur. #audience:debate #trial #playsound:VOX_Player_loicapitale
             ~ trial()
             ~ t_2_lawfull = true
 - PERSONNAGE MASQUÉ: N'éprouvez-vous jamais aucun regret ? Si la Loi et la Foi l'interdisent...
-    * [Sans foi ni loi.] PLAYER: Je me fiche de la Loi comme de la Foi. #trial
+    * [Sans foi ni loi.] PLAYER: Je me fiche de la Loi comme de la Foi. #playsound:VOX_Player_fichedelaloicommefoi #trial 
         ~ trial()
         ~ t_2_against_law = true
         ~ trial()
@@ -100,18 +100,18 @@ VAR player_won_battle = false // Define if the player won the battle or not
         ~ trial()
         ~ t_2_show_regrets = true
 - PERSONNAGE MASQUÉ: J'entends des bruits. Quelqu'un vient. #playsound:activity_far
-* [Cachez-vous.] PLAYER: Il va falloir vous trouver une cachette, et en vitesse.
+* [Cachez-vous.] PLAYER: Il va falloir vous trouver une cachette, et en vitesse. #playsound:VOX_Player_trouverunecachette
     -- (hide_sireine) PERSONNAGE MASQUÉ: Les bruits se rapprochent ! #playsound:activity_close
-        *** [Dans la caisse du fond.] PLAYER: Cette caisse, au fond ! Vite ! #move:Naïda:-2:10
+        *** [Dans la caisse du fond.] PLAYER: Cette caisse, au fond ! Vite ! #playsound:VOX_Player_cettecaisseaufond #move:Naïda:-2:10
             ~ sireine_hideout = "crate_back"
             ~ sireine_is_hidden = true
-        *** [Derrière le tonneau.] PLAYER: Derrière ce tonneau, vite ! #move:Naïda:-3:-1
+        *** [Derrière le tonneau.] PLAYER: Derrière ce tonneau, vite ! #playsound:VOX_Player_cetonneau #move:Naïda:-3:-1
             ~ sireine_hideout = "barrel"
             ~ sireine_is_hidden = true
-        *** [Derrière la caisse de devant.] PLAYER: Derrière cette caisse, vite ! #move:Naïda:4:2
+        *** [Derrière la caisse de devant.] PLAYER: Derrière cette caisse, vite ! #playsound:VOX_Player_derrierecettecaisse #move:Naïda:4:2
             ~ sireine_hideout = "crate_front"
             ~ sireine_is_hidden = true
-* [Attendons.] PLAYER: Pas le temps de se cacher !
+* [Attendons.] PLAYER: Pas le temps de se cacher ! #playsound:VOX_Player_pasletempsdecacher
     PERSONNAGE MASQUÉ: Il le faut pourtant !
         -> hide_sireine
 - PLAYER: Quant à moi...
@@ -174,30 +174,30 @@ MARCELLO: Il n'y a personne, cheffe.
 // The guards arrive while the player is not hidden
 = player_not_hidden
 #playsound:guards_arrive
-* [S'annoncer.] PLAYER: Bien le bonjour, mes braves. #move:Player:11:2
+* [S'annoncer.] PLAYER: Bien le bonjour, mes braves. #move:Player:11:2 #playsound:VOX_Player_bienlebonjourgardes
 - CAPUCINE: Décline ton identité, et vite ! #playsound:VOX_Capucine_declineidentite
-    * [Je suis le capitaine.] PLAYER: Vous vous trouvez sur mon humble navire.
+    * [Je suis le capitaine.] PLAYER: Vous vous trouvez sur mon humble navire. #playsound:VOX_Player_monhumblenavire
         CAPUCINE: C'est toi le capitaine ? #playsound:VOX_Capucine_cesttoicapitaineQ
     * [(Mentir) Un simple moussaillon. {t(CHAR, 30)}] // 70%
         {sc(CHAR, 30): -> lie_about_not_being_capitaine_S | -> lie_about_not_being_capitaine_F}
-            ** (lie_about_not_being_capitaine_S) PLAYER: Je suis un simple moussaillon.
+            ** (lie_about_not_being_capitaine_S) PLAYER: Je suis un simple moussaillon. #playsound:VOX_Player_unsimplemoussaillon
                 MARCELLO: Il a l'air de dire vrai, cheffe.
-            ** (lie_about_not_being_capitaine_F) PLAYER: Je... euh... Je suis un simple moussaillon.
+            ** (lie_about_not_being_capitaine_F) PLAYER: Je... euh... Je suis un simple moussaillon. #playsound:VOX_Player_jeeuhsimple
                 MARCELLO: Tu mens comme tu respires, pas vrai ?
 - CAPUCINE: Le fripon a l'air louche... #playsound:VOX_Capucine_friponlouche
-    * [Louches vous-mêmes !] PLAYER: C'est vous qui êtes louches, les baveux.
+    * [Louches vous-mêmes !] PLAYER: C'est vous qui êtes louches, les baveux. #playsound:VOX_Player_cestvouslouches
         MARCELLO: Répète ça pour voir, abruti !
-        ** [Répéter.] PLAYER: Louches et sourdingues, en plus de ça.
+        ** [Répéter.] PLAYER: Louches et sourdingues, en plus de ça. #playsound:VOX_Player_louchesetsourdingues
             MARCELLO: Nous allons t'apprendre à insulter des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
                 -> battle
         ** [Calmer le jeu. {t(CHAR, 0)}] // 50%
             {sc(CHAR, 0): -> try_diplomacy_S | -> try_diplomacy_F}
             *** (try_diplomacy_S) -> calm_the_situation
-            *** (try_diplomacy_F) PLAYER: Euh... Pardon, j'ai tendance à dire tout haut ce que je pense tout bas...
+            *** (try_diplomacy_F) PLAYER: Euh... Pardon, j'ai tendance à dire tout haut ce que je pense tout bas... #playsound:VOX_Player_euhpardontendance
         -> calm_the_situation
-    * (calm_the_situation) [Amadouer.] PLAYER: Et si nous remontions sur le pont, pour discuter entre amis ?
+    * (calm_the_situation) [Amadouer.] PLAYER: Et si nous remontions sur le pont, pour discuter entre amis ? #playsound:VOX_Player_etsiremontionspont
         CAPUCINE: Un garde de la Couronne n'a d'ordre à recevoir de personne. #playsound:VOX_Capucine_gardecouronneordre
-        ** [Faire de l'esprit.] PLAYER: Pas même de la reine ?
+        ** [Faire de l'esprit.] PLAYER: Pas même de la reine ? #playsound:VOX_Player_pasmemelareine
             MARCELLO: Il a pas tort, cheffe.
             CAPUCINE: Cet abruti se fiche de nous. Mais il ne va pas rire longtemps... #playsound:VOX_Capucine_abrutifiche
                 -> confronted_about_fugitive
@@ -212,9 +212,9 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             MARCELLO: Il a l'air de dire vrai. T'en penses quoi, cheffe ?
             CAPUCINE: J'en pense que je vais fouiller le navire dans le doute. Garde un œil sur lui. #playsound:VOX_Capucine_fouillernaviredoute #anim:Capucine:seek_intruder_near_sireine
                 -> battle
-        ** (lie_about_fugitive_F) PLAYER: Le type que vous avez vu sortir d'ici est atteint d'une maladie rare.
+        ** (lie_about_fugitive_F) PLAYER: Le type que vous avez vu sortir d'ici est atteint d'une maladie rare. #playsound:VOX_Player_letypemaladie
             CAPUCINE: Une maladie rare ? #playsound:VOX_Capucine_maladierare
-            PLAYER: Absolument. Une maladie qui lui fait voir des fugitifs qui ne sont pas là.
+            PLAYER: Absolument. Une maladie qui lui fait voir des fugitifs qui ne sont pas là. #playsound:VOX_Player_maladiefugitifs
             CAPUCINE: ...
             MARCELLO: ...
             CAPUCINE: Il nous prend pour des idiots ou je rêve ? #playsound:VOX_Capucine_idiotsoujereve
@@ -235,7 +235,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
                 -> battle
     * {p_gold > 0} [Soudoyer. {t(DEXT, 25)}] #trial // 75%
         {sc(DEXT, 25): -> bribe_guards_S | -> bribe_guards_F}
-        PLAYER: Est-ce que {p_gold} pièces d'or pourraient vous faire quitter mon navire sans faire de vagues ? Si vous me permettez l'expression...
+        PLAYER: Est-ce que {p_gold} pièces d'or pourraient vous faire quitter mon navire sans faire de vagues ? Si vous me permettez l'expression... #playsound:VOX_Player_estcequepiecesdor
         ~ trial()
         ~ t_2_bribe_guards = true
         ** (bribe_guards_S) CAPUCINE: Laisse-moi te débarrasser de ces pièces...
@@ -284,10 +284,10 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
         {sc(STRE, 25): -> attack_marcello_S | -> attack_marcello_F}
         ~ trial()
         ~ t_2_attack_guards = true
-        ** (attack_marcello_S) PLAYER: Prends ça ! #trial #anim:Player:attack #anim:Marcello:hurt #audience:choc
+        ** (attack_marcello_S) PLAYER: Prends ça ! #trial #anim:Player:attack #playsound:VOX_Player_prendsca #anim:Marcello:hurt #audience:choc
             MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête !
             -> combat_part_2
-        ** (attack_marcello_F) PLAYER: Prends ça ! #trial #anim:Player:attack #anim:Marcello:dodge
+        ** (attack_marcello_F) PLAYER: Prends ça ! #trial #anim:Player:attack #playsound:VOX_Player_prendsca #anim:Marcello:dodge
             MARCELLO: Héhé... Trop lent, minable.
             -> combat_part_2
     * [Attaquer par derrière. {t(DEXT, 40)}] #trial // 80%
@@ -295,7 +295,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
         ~ trial()
         ~ t_2_attack_guards = true
         ** (sneaky_attack_marcello_S) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine #trial
-            PLAYER: Prends ça !  #anim:Player:sneaky_attack #anim:Marcello:hurt #audience:choc
+            PLAYER: Prends ça !  #anim:Player:sneaky_attack #playsound:VOX_Player_prendsca #anim:Marcello:hurt #audience:choc
             MARCELLO: M'attaquer alors que j'ai le dos tourné ? Tu es un lâche !
             *** [Et toi un crétin.] PLAYER: C'est toi qui es stupide, à tourner le dos à quelqu'un que tu viens de frapper. #audience:laughter
                 -> combat_part_2
@@ -308,12 +308,12 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             -> combat_part_2
     * [Calmer le jeu. {t(CHAR, 0)}] // 50%
         {sc(CHAR, 0): -> calm_marcello_S | -> calm_marcello_F}
-        ** (calm_marcello_S) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
+        ** (calm_marcello_S) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne. #playsound:VOX_Player_pointhommerosser
             CAPUCINE: En voilà une parole raisonnable. #playsound:VOX_Capucine_envoilaraisonnable
             MARCELLO: Dommage, je n'aurais pas détesté t'en claquer une sur le museau... #audience:laughter
             CAPUCINE: Allons, allons, Marcello... Le monsieur est raisonnable, alors soyons-le à notre tour. #playsound:VOX_Capucine_allonsallonsmarecello #audience:applause
             -> arrest
-        ** (calm_marcello_F) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
+        ** (calm_marcello_F) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne. #playsound:VOX_Player_pointhommerosser
             CAPUCINE: En voilà une parole raisonnable. Mon ami, en revanche, apprécierait de t'en claquer une sur le museau. Pas vrai, Marcello ? #playsound:VOX_Capucine_envoilaenrevanche
             MARCELLO: Je confirme. #audience:laughter
             MARCELLO: Tiens, la voilà ! #anim:Marcello:attack #anim:Player:hurt
