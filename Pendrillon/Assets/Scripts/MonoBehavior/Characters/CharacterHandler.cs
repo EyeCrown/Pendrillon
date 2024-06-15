@@ -113,6 +113,8 @@ public class CharacterHandler : MonoBehaviour
             callbackOnFinish();
             return;
         }
+
+        _coordsOnStatge = destination;
         
         Vector3 end = GameManager.Instance._gridScene.GetWorldPositon(destination);
         transform.LookAt(end);
@@ -224,7 +226,8 @@ public class CharacterHandler : MonoBehaviour
         Vector3 startPosition = transform.position;
         _anim.SetBool("walking", true);
 
-        while (Vector3.Distance(transform.position, targetPosition) > 0.0001f)
+        Debug.Log("Start moving");
+        while (time < duration)
         {
             //transform.position = Vector3.Lerp(startPosition, targetPosition, _character.movementCurve.Evaluate(time/duration));
             transform.position = Vector3.Lerp(startPosition, targetPosition, time/duration);
@@ -246,7 +249,7 @@ public class CharacterHandler : MonoBehaviour
         var targetRotation = Quaternion.LookRotation((targetPosition - transform.position), Vector3.up);
         //transform.rotation = startRotation;
         
-        Debug.Log($"{name} > Start rotation: {startRotation} to {targetPosition}");
+        //Debug.Log($"{name} > Start rotation: {startRotation} to {targetPosition}");
         while (time < duration)
         {
             transform.rotation = Quaternion.Slerp(startRotation, targetRotation, time/duration);
@@ -255,7 +258,7 @@ public class CharacterHandler : MonoBehaviour
             Debug.Log($"{name} > {transform.rotation.eulerAngles}");
             yield return null;
         }
-        Debug.Log($"{name} > Rotation done");
+        //Debug.Log($"{name} > Rotation done");
         callbackOnFinish();
     }
 
@@ -265,7 +268,7 @@ public class CharacterHandler : MonoBehaviour
         _ropeCoroutine = true;
         
         float time = 0.0f;
-        Debug.Log($"{_character.name}.MoveRopeCoroutine > Start");
+        //Debug.Log($"{_character.name}.MoveRopeCoroutine > Start");
         
         // Move charaRig to zero to
         var charaRigStart = _charaRig.transform.localPosition;
@@ -281,7 +284,7 @@ public class CharacterHandler : MonoBehaviour
             yield return null;
         }
         
-        Debug.Log($"{_character.name}.MoveRopeCoroutine > End");
+        //Debug.Log($"{_character.name}.MoveRopeCoroutine > End");
         _ropeCoroutine = false;
     }
     
