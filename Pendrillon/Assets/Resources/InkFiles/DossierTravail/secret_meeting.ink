@@ -82,18 +82,18 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
         VOIX CHUCHOTÉE: <i>(J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré.)</i> #playsound:VOX_Arle_jailimpressionpublic
         PLAYER: <i>(Puisque tu refuses de coopérer...)</i> #audience:debate
         ** [Aller voir de plus près.] -> move_to_bush
-    * [Examiner le buisson.] PLAYER: Ce buisson me semble... suspect... #anim:Player:examine_bush #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
+    * [Examiner le buisson.] PLAYER: Ce buisson me semble... suspect... #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
         -> pull_bush
         ~ player_is_close_to_bush = true
 - {player_is_close_to_bush == false: -> move_to_bush | -> pull_bush}
-    * (move_to_bush) PLAYER: Ce buisson me semble... suspect... #anim:Player:examine_bush #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
+    * (move_to_bush) PLAYER: Ce buisson me semble... suspect... #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
 - (pull_bush)
     * [Tirer le buisson.] #anim:Player:pull #audience:choc
         ARLE: Mais qui voilà ?! N'est-ce pas moi ? #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila
-- #move:Player:8:2 #anim:Arle:greet
+- #anim:Arle:greet #move:Player:8:2
     * [Que faisais-tu cachée ?] PLAYER: Que faisais-tu là, cachée tel un rat ? #anim:Player:question #playsound:VOX_Player_cacheerat
         BOUFFONNE: J'apprenais à vous connaître, messire. Je vous observais...
-        ** [Me connaître ?] PLAYER: Me connaître, moi ? #anim:Player:surprised
+        ** [Me connaître ?] PLAYER: Me connaître, moi ?
             BOUFFONNE: Parfaitement, messire.
             *** [Échangeons nos noms.] PLAYER: Faisons un marché. Je t'échange mon nom contre le tien. Qu'en dis-tu ? N'est-ce pas là une honnête transaction ?
                 BOUFFONNE: J'ai bien peur, messire, de posséder déjà ce que vous proposez de m'offrir... #anim:Arle:deception
@@ -109,10 +109,10 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             BOUFFONNE: Me présenter ? Cela, je sais le faire, et fort bien ! #anim:Arle:happy
             --- (arle_presentation) BOUFFONNE: Je suis Arle, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle #audience:ovation
     * [Es-tu l'autrice de la lettre ?] PLAYER: Est-ce donc toi qui as écrit la lettre que j'ai reçue la veille ? #anim:Player:question #playsound:VOX_Player_toiecritlettre
-        BOUFFONNE: Je sais faire bien des choses, messire... //#anim:Arle:happy
-        BOUFFONNE: Faire la belle... #anim:Arle:prettypose
-        BOUFFONNE: Faire le show... #anim:Arle:acrobatics
-        BOUFFONNE: ... Mais je ne sais point écrire ! //#anim:Arle:sad #audience:laughter
+        BOUFFONNE: Je sais faire bien des choses, messire... #anim:Arle:happy
+        BOUFFONNE: Faire la belle... #anim:Arle:pretty_pose
+        BOUFFONNE: Faire le show... #anim:Arle:show_pose
+        BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question #playsound:VOX_Player_saisdirenom
             -> arle_presentation
         ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 30)}] // 70%
@@ -123,7 +123,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             *** (mock_arle_F) PLAYER: Une authentique bouffonne... #anim:Player:stressed #anim:Arle:happy #playsound:VOX_Player_authentiquebouffonne
                 BOUFFONNE: Je me plais à inspirer le rire, le bonheur... la félicité ! Vous plaisez-vous à inspirer la pitié ? #anim:Arle:happy #audience:laugther #anim:Player:sad
                 -> arle_presentation
-- #character_presentation:Arle
+-
     * [Qui t'envoie ?] PLAYER: Je présume que tu es au service de quelqu'un. Qui donc ? #anim:Player:question #playsound:VOX_Player_auservice
         ARLE: Je suis au service, en cuisine et à la plonge, messire. Là où on me somme d'être. Quant à qui me commande... #anim:Arle:Bow
             ** [J'attends.] PLAYER: Alors ? #anim:Player:question #playsound:VOX_Player_alors
