@@ -6,6 +6,7 @@ using MonoBehavior.Managers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Options : MonoBehaviour
@@ -38,6 +39,7 @@ public class Options : MonoBehaviour
     
     // Buttons
     private Button _openMenuButton;
+    private Button _mainMenuButton;
     private Button _closeMenuButton;
     
     // Toggles
@@ -97,6 +99,7 @@ public class Options : MonoBehaviour
         
         // Buttons
         _openMenuButton = transform.Find("OpenMenuButton").GetComponent<Button>();
+        _mainMenuButton = _panel.transform.Find("MainMenuButton").GetComponent<Button>();
         _closeMenuButton = _panel.transform.Find("BackButton").GetComponent<Button>();
         
         // Font toggle
@@ -133,6 +136,7 @@ public class Options : MonoBehaviour
         
         // Button
         _openMenuButton.onClick.AddListener(OnClickOpenButton);
+        _mainMenuButton.onClick.AddListener(OnClickMainMenuButton);
         _closeMenuButton.onClick.AddListener(OnClickCloseButton);
         
         // Toggles
@@ -216,7 +220,8 @@ public class Options : MonoBehaviour
     public void OnClickOpenButton()     => Open.Invoke();
 
     public void OnClickCloseButton()    => Close.Invoke();
-    
+
+    public void OnClickMainMenuButton() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     
     void UpdateRTPC(string parameterName, float value) => AkSoundEngine.SetRTPCValue(parameterName, value);
 

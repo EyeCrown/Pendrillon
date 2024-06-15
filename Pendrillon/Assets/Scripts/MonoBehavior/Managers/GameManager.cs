@@ -108,8 +108,9 @@ namespace MonoBehavior.Managers
                 return;
             }
             Instance = this;
-            DontDestroyOnLoad(this.gameObject);
+            //DontDestroyOnLoad(this.gameObject);
             Application.targetFrameRate = 60;
+            Time.timeScale = 1.0f;
 
             // Connect Attributes
             _gridScene = GameObject.Find("Grid").GetComponent<GroundGrid>();
