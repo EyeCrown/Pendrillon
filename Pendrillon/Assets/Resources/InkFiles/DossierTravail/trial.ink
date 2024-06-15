@@ -103,8 +103,7 @@ VAR t_4_give_guards_surname = false
 
 // Let the trial register a player choice by changing the given variable to true
 === function trial() ===
-    #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake
-    #wait:0.5 #audience:choc
+-
     {
         - t_souffleur_explanations_bell == false:
             SOUFFLEUR: Psssst... Hé, l'ami ! Tu as entendu ?

@@ -112,11 +112,11 @@ VAR player_won_battle = false // Define if the player won the battle or not
         -> hide_sireine
 - PLAYER: Quant à moi...
     * {has_coconut == true or has_bone == true} [Se cacher. {t(DEXT, 30)}] // 75%
-        {sc(DEXT, 30): -> player_hide_S | -> player_hide_F}
+        {sc(DEXT, 130): -> player_hide_S | -> player_hide_F}
         ** (player_hide_S) #move:Player:5:1 #move:Player:5:-3
             ~ player_is_hidden = true
             -> guards_arrive
-        ** (player_hide_F) PLAYER: Loupé ! La discrétion n'est pas mon fort !
+        ** (player_hide_F) PLAYER: Loupé ! La discrétion n'est pas mon fort ! #anim:Player:fail
             -> guards_arrive
     * [Accueillir les gardes.]
 - -> guards_arrive
@@ -127,8 +127,8 @@ VAR player_won_battle = false // Define if the player won the battle or not
 #playsound:guards_arrive
 - MARCELLO: J'ai entendu du bruit dans la cale. #anim:Marcello:enter_scene #audience:ovation
 CAPUCINE: Tu entends des voix, maintenant ? Peut-être la Déesse en personne qui te cause... #playsound:VOX_Capucine_tuentendsvoixQ #anim:Capucine:enter_scene #audience:laughter
-MARCELLO: Vous me croyez fou, cheffe ? #audience:laughter #move:Capucine:11:9 #move:Marcello:9:11 #audience:ovation
-CAPUCINE: Que tu sois cinglé ou non... Nous devons <b>fouiller</b> tous les navires qui <b>arrivent au port</b>. #playsound:VOX_Capucine_soiscinglenon #audience:applause
+MARCELLO: Vous me croyez fou, cheffe ? #audience:laughter #move:Capucine:9:9 #move:Marcello:11:7 #audience:ovation
+CAPUCINE: Que tu sois cinglé ou non... Nous devons <i>fouiller</i> tous les navires qui <i>arrivent au port</i>. #playsound:VOX_Capucine_soiscinglenon #audience:applause
 - {player_is_hidden: -> player_hidden | -> player_greet_guards}
 
 
@@ -150,9 +150,9 @@ MARCELLO: Il n'y a personne, cheffe.
 * [Sortir de sa cachette]
     -> player_stop_hiding
 - (player_not_found) CAPUCINE: Laisse-moi regarder de plus près...
-    * {has_bone} [Assommer Marcello avec l'os. {t(STRE, 0)}] // 80%
+    * {has_bone} [Envoyer l'os sur Marcello. {t(STRE, 0)}] // 80%
         -> attack_marcello_with_bone
-    * {has_coconut} [Envoyer la noix de coco. {t(DEXT, -10)}] // 80%
+    * {has_coconut} [Envoyer la noix de coco sur Marcello. {t(DEXT, -10)}] // 80%
         -> attack_marcello_with_coconut
     * [Sortir de sa cachette]
         -> player_stop_hiding
@@ -185,7 +185,7 @@ MARCELLO: Il n'y a personne, cheffe.
     * [Louches vous-mêmes !] PLAYER: C'est vous qui êtes louches, les baveux.
         MARCELLO: Répète ça pour voir, abruti !
         ** [Répéter.] PLAYER: Louches et sourdingues, en plus de ça.
-            MARCELLO: Nous allons t'apprendre à insulter des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
+            MARCELLO: Nous allons t'apprendre à insulter des gardes de la Couronne !
                 -> battle
         ** [Calmer le jeu. {t(CHAR, 0)}] // 50%
             {sc(CHAR, 0): -> try_diplomacy_S | -> try_diplomacy_F}
@@ -207,7 +207,8 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
         {sc(CHAR, 0): -> lie_about_fugitive_S | -> lie_about_fugitive_F}
         ** (lie_about_fugitive_S) PLAYER: Cet individu ment. D'ailleurs, il m'a détroussé de cinq pièces d'or !
             MARCELLO: Il a l'air de dire vrai. T'en penses quoi, cheffe ?
-            CAPUCINE: J'en pense que je vais fouiller le navire dans le doute. Garde un œil sur lui. #playsound:VOX_Capucine_fouillernaviredoute #anim:Capucine:seek_intruder_near_sireine
+            CAPUCINE: Flanque-lui en une, dans le doute.
+            MARCELLO: Compris, cheffe !
                 -> battle
         ** (lie_about_fugitive_F) PLAYER: Le type que vous avez vu sortir d'ici est atteint d'une maladie rare.
             CAPUCINE: Une maladie rare ? #playsound:VOX_Capucine_maladierare
@@ -215,20 +216,20 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             CAPUCINE: ...
             MARCELLO: ...
             CAPUCINE: Il nous prend pour des idiots ou je rêve ? #playsound:VOX_Capucine_idiotsoujereve
-            MARCELLO: Je vais t'apprendre à mentir à des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
+            MARCELLO: Je vais t'apprendre à mentir à des gardes de la Couronne !
                 -> battle
     * [Intimider. {t(STRE, -5)}] // 45%
         {sc(STRE, -5): -> intimidate_guards_S | -> intimidate_guards_F}
         ** (intimidate_guards_S) PLAYER: Le marin d'eau douce va te noyer de coups, si tu continues de l'ouvrir.
             MARCELLO: Pardon, m'sieur.
             CAPUCINE: Ne t'excuse pas, abruti. Apprends-lui plutôt ce qu'on obtient en menaçant un garde de la Couronne ! #playsound:VOX_Capucine_netexxcusepas
-            MARCELLO: Compris, cheffe ! #anim:Marcello:attack #anim:Player:hurt
+            MARCELLO: Compris, cheffe !
                 -> battle
         ** (intimidate_guards_F) PLAYER: T'as vu mes biscoteaux ? Tu veux les voir de plus près, peut-être ?
             CAPUCINE: ... 
             MARCELLO: ...
             CAPUCINE: Il se croit intimidant, cet idiot ? #playsound:VOX_Capucine_ilsecroitintimidant
-            MARCELLO: Je vais t'apprendre à menacer des gardes de la Couronne ! #anim:Marcello:attack #anim:Player:hurt
+            MARCELLO: Je vais t'apprendre à menacer des gardes de la Couronne !
                 -> battle
     * {p_gold > 0} [Soudoyer. {t(DEXT, 25)}] #trial // 75%
         {sc(DEXT, 25): -> bribe_guards_S | -> bribe_guards_F}
@@ -240,68 +241,76 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
                 CAPUCINE: Nous allons maintenant t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde, quadruple forban. #playsound:VOX_Capucine_quadrupleforbandangerssoudoyer
                 MARCELLO: C'est là que je le frappe, cheffe ?
                 CAPUCINE: En effet, Marcello. C'est là que tu le frappes. #playsound:VOX_Capucine_eneffetfrappes
-                MARCELLO: Compris, cheffe ! #anim:Marcello:attack #anim:Player:hurt
+                MARCELLO: Compris, cheffe !
                     -> battle
             *** [Assommer Marcello.] -> attack_marcello_S
         ** (bribe_guards_F) CAPUCINE: À qui penses-tu avoir affaire, quadruple forban ? Nous allons t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde ! #playsound:VOX_Capucine_aquiquadrupleforban
             MARCELLO: C'est là que je le frappe, cheffe ?
             CAPUCINE: En effet, Marcello. C'est là que tu le frappes. #playsound:VOX_Capucine_eneffetfrappes
-            MARCELLO: Compris, cheffe ! #anim:Marcello:attack #anim:Player:hurt
+            MARCELLO: Compris, cheffe !
                 -> battle
+
 
 // Attack Marcello with a bone
 = attack_marcello_with_bone
-{sc(STRE, 0): -> attack_marcello_bone_S | -> attack_marcello_bone_F} #anim:Marcello:seek_intruder_near_player
-    ** (attack_marcello_bone_S) MARCELLO: Le navire est vide, cheffe. #anim:Player:attack #anim:Marcello:hurt #audience:choc
-        MARCELLO: Aïe !
-        CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #playsound:VOX_Capucine_pasaussivide #audience:laugh
-        MARCELLO: Cet abruti m'a frappé !
+{sc(STRE, 0): -> attack_marcello_bone_S | -> attack_marcello_bone_F}
+    ** (attack_marcello_bone_S) MARCELLO: Le navire est vide, cheffe.
+        MARCELLO: Aïe ! #anim:Player:throw #anim:Marcello:hurt #audience:laugh
+        CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
+        MARCELLO: Cet abruti m'a balancé une entrecôte sur le museau !
         CAPUCINE: Ça m'en a tout l'air, en effet. #playsound:VOX_Capucine_camenatoutlair
-    ** (attack_marcello_bone_F) MARCELLO: Le navire est vide, cheffe. #anim:Player:attack #anim:Marcello:dodge
-        MARCELLO: Ai-je la berlue ou est-ce qu'un gougnafier vient d'essayer de m'assommer avec une entrecôte ? #audience:laugh
-- MARCELLO: Prends ça, pour la peine ! #anim:Marcello:attack #anim:Player:hurt audience:applause
-- -> battle
+    ** (attack_marcello_bone_F) MARCELLO: Le navire est vide, cheffe.
+        MARCELLO: Hein ? #anim:Player:throw #audience:booing
+        CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
+        MARCELLO: Ai-je la berlue ou est-ce qu'un gougnafier vient d'essayer de m'assommer en m'envoyant une entrecôte ? #audience:laugh
+- MARCELLO: Prends ça, pour la peine !
+    -> battle
+
 
 // Attack Marcello with a coconut
 = attack_marcello_with_coconut
 {sc(DEXT, -10): -> attack_marcello_coconut_S | -> attack_marcello_coconut_F}
-    ** (attack_marcello_coconut_S) MARCELLO: Le navire est vide, cheffe. #anim:Player:throw_coconut_success
-        MARCELLO: Aïe !
-        CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #playsound:VOX_Capucine_pasaussivide #audience:laugh
+    ** (attack_marcello_coconut_S) MARCELLO: Le navire est vide, cheffe.
+        MARCELLO: Aïe ! #anim:Player:throw #anim:Marcello:hurt #audience:laugh
+        CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
         MARCELLO: Cet abruti m'a envoyé une noix de coco en plein dans les narines !
         CAPUCINE: Ça m'en a tout l'air, en effet. #playsound:VOX_Capucine_camenatoutlair
-    ** (attack_marcello_coconut_F) MARCELLO: Le navire est vide, cheffe. #anim:Player:throw_coconut_fail
+    ** (attack_marcello_coconut_F) MARCELLO: Le navire est vide, cheffe.
+        MARCELLO: Hein ? #anim:Player:throw #audience:booing
+        CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
         MARCELLO: Ai-je la berlue ou est-ce qu'un gougnafier vient d'essayer de m'envoyer une noix de coco dans la poire ? #audience:laugh
-- MARCELLO: Prends ça, pour la peine ! #anim:Marcello:attack #anim:Player:hurt audience:applause
-- -> battle
+- MARCELLO: Prends ça, pour la peine !
+    -> battle
+
 
 // Battle (acting phase)
 = battle
+- #move:Marcello:11:5 #look:Marcello:Player #anim:Marcello:punch #anim:Player:hurt #look:Marcello:front 
     * [Attaquer Marcello. {t(STRE, 25)}] #trial // 70%
         {sc(STRE, 25): -> attack_marcello_S | -> attack_marcello_F}
         ~ trial()
         ~ t_2_attack_guards = true
-        ** (attack_marcello_S) PLAYER: Prends ça ! #trial #anim:Player:attack #anim:Marcello:hurt #audience:choc
+        ** (attack_marcello_S) PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #anim:Marcello:hurt #look:Player:front #trial 
             MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête !
             -> combat_part_2
-        ** (attack_marcello_F) PLAYER: Prends ça ! #trial #anim:Player:attack #anim:Marcello:dodge
-            MARCELLO: Héhé... Trop lent, minable.
+        ** (attack_marcello_F) PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #look:Player:front #trial 
+            MARCELLO: Héhé... Loupé, minable.
             -> combat_part_2
     * [Attaquer par derrière. {t(DEXT, 40)}] #trial // 80%
         {sc(DEXT, 40): -> sneaky_attack_marcello_S | -> sneaky_attack_marcello_F}
         ~ trial()
         ~ t_2_attack_guards = true
         ** (sneaky_attack_marcello_S) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine #trial
-            PLAYER: Prends ça !  #anim:Player:sneaky_attack #anim:Marcello:hurt #audience:choc
-            MARCELLO: M'attaquer alors que j'ai le dos tourné ? Tu es un lâche !
+            PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #anim:Marcello:hurt #look:Player:front
+            MARCELLO: M'attaquer alors que j'ai le dos tourné ? Tu es un lâche ! #look:Marcello:front
             *** [Et toi un crétin.] PLAYER: C'est toi qui es stupide, à tourner le dos à quelqu'un que tu viens de frapper. #audience:laughter
                 -> combat_part_2
             *** [C'est tout moi, en effet.] PLAYER: Je dirai plutôt que je sais saisir une opportunité quand je la vois... #audience:applause
                 PLAYER: Surtout quand cette opportunité consiste à cogner un rustre comme toi.
                 -> combat_part_2
         ** (sneaky_attack_marcello_F) MARCELLO: Je peux le rosser, cheffe ? #trial #look:Marcello:Capucine
-            PLAYER: Prends ça ! #anim:Player:sneaky_attack #anim:Marcello:dodge
-            MARCELLO: Tu te crois discret, abruti ?
+            PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #look:Marcello:front #look:Player:front
+            MARCELLO: Tu te crois discret, abruti ? #look:Marcello:front
             -> combat_part_2
     * [Calmer le jeu. {t(CHAR, 0)}] // 50%
         {sc(CHAR, 0): -> calm_marcello_S | -> calm_marcello_F}
@@ -313,7 +322,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
         ** (calm_marcello_F) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la Couronne.
             CAPUCINE: En voilà une parole raisonnable. Mon ami, en revanche, apprécierait de t'en claquer une sur le museau. Pas vrai, Marcello ? #playsound:VOX_Capucine_envoilaenrevanche
             MARCELLO: Je confirme. #audience:laughter
-            MARCELLO: Tiens, la voilà ! #anim:Marcello:attack #anim:Player:hurt
+            MARCELLO: Tiens, la voilà ! #look:Marcello:Player #anim:Marcello:punch #anim:Player:hurt #look:Marcello:front
             -> combat_part_2
 - (combat_part_2)
     * [Faire la paix. {t(CHAR, -10)}] // 40%
@@ -324,56 +333,26 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?
             MARCELLO: Euh... Il faut être en guerre pour... Hein ?
         ** (make_peace_F) PLAYER: Faisons la paix, veux-tu ?
             MARCELLO: La... la paix ? Tu plaisantes ? Toi et moi, c'est la <b>guerre</b>, freluquet !
-    * [Faire tomber la caisse pendue. {t(DEXT, 20)}] // 70%
-        {sc(DEXT, 20): -> drop_hanging_crate_S | -> drop_hanging_crate_F}
-        ** (drop_hanging_crate_S) #anim:Player:drop_hanging_crate_succeed
-            MARCELLO: Ouch ! #audience:laughter
-        ** (drop_hanging_crate_F) #anim:Player:drop_hanging_crate_fail
-            MARCELLO: Tu voulais faire tomber la caisse au-dessus de ma tête ? Ou bien es-tu pris de spasmes, avorton ? #audience:laughter
+    * [Ne rien dire.]
 - (arrest) -> arrest_naida
 
-// After the battle
-= after_battle
-{
-    - player_won_battle:
-        MARCELLO: Je crois qu'on lui a donné une bonne leçon, cheffe.
-        CAPUCINE: Pas du tout, abruti. Cette truandaille nous a rossés. Les gardes de la Couronne vont encore passer pour des moins-que-rien. #playsound:VOX_Capucine_pasdutoutabruti
-        MARCELLO: Vraiment ? Vengeons-nous en lui brisant les côtelettes, cheffe !
-        CAPUCINE: C'est précisémment ce que nous venons d'échouer à faire, triple baveux. #playsound:VOX_Capucine_cesprecisement #anim:Marcello:ashamed
-    - else:
-        CAPUCINE: Voilà qui t'enseignera les mérites de ne pas manquer de respect aux gardes de la Couronne, vulgaire truandaille. #playsound:VOX_Capucine_voilaquitenseignera
-        MARCELLO: Bien dit, cheffe ! J'ajouterai une petite insulte afin de marquer le coup.
-        CAPUCINE: Je viens précisément de le faire, triple baveux. #playsound:VOX_Capucine_jeviensprecisement #anim:Marcello:ashamed
-}
-- -> arrest_naida
 
 // Naida is arrested
 =arrest_naida
 #playsound:sounds_inside_the_crate
 CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans ! #playsound:VOX_Capucine_astuentenduquelquechoeabouge
 MARCELLO : Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang. #audience:laughter
-- CAPUCINE: Bloque-lui la route tandis que j'y jette un œil. #playsound:VOX_Capucine_bloqueluilaroute #audience:choc
+- CAPUCINE: Bloque-lui la route tandis que j'y jette un œil. #playsound:VOX_Capucine_bloqueluilaroute #audience:choc #look:Marcello:Player
 {
-    - sireine_hideout == "barrel": CAPUCINE: Tiens donc... Mais qui voilà ? #move:Capucine:-2:-1 #playsound:VOX_Capucine_tiensdoncmaisquivouila #audience:choc
-    - sireine_hideout == "crate_back": CAPUCINE: Tiens donc... Mais qui voilà ? #move:Capucine:-2:8 #playsound:VOX_Capucine_tiensdoncmaisquivouila #audience:choc
+    - sireine_hideout == "barrel": CAPUCINE: Tiens donc... Mais qui voilà ? #move:Capucine:-2:-1 #playsound:VOX_Capucine_tiensdoncmaisquivouila #audience:choc #look:Capucine:Naïda
+    - sireine_hideout == "crate_back": CAPUCINE: Tiens donc... Mais qui voilà ? #move:Capucine:-2:8 #playsound:VOX_Capucine_tiensdoncmaisquivouila #audience:choc #look:Capucine:Naïda
 }
-//- CAPUCINE: Tiens donc... Mais qui voilà ? #playsound:VOX_Capucine_tiensdoncmaisquivouila #audience:choc
--PERSONNAGE MASQUÉ: Laissez-moi ! Je vous ai dit de me laisser !
+- PERSONNAGE MASQUÉ: Laissez-moi ! Je vous ai dit de me laisser ! #look:Naïda:Capucine
 CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la. #playsound:VOX_Capucine_cestdonccela
-#anim:Player:attack
-#anim:Marcello:dodge
-#anim:Marcello:attack
-#anim:Player:hurt
 CAPUCINE: Allons-nous-en avec notre trouvaille. #playsound:VOX_Capucine_allonsnousen
 CAPUCINE: Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts... #playsound:VOX_Capucine_ilfinira1 #audience:debate
 CAPUCINE: Il finira sa triste vie au cachot, comme son amie. #playsound:VOX_Capucine_ilfinira2 #audience:ovation
-- -> barge.scene_3
-#move(Capucine)
-// Marcello remet un coup gratuit au Player
-#anim:Marcello:attack
-#anim:Player:hurt
-#move(Marcello)
--> barge.scene_3
+    -> barge.scene_3
 
 = end_playtest_demo
 - SOUFFLEUR: Psssst... Hé, l'ami !
