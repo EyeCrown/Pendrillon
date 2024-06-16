@@ -111,8 +111,8 @@ VAR player_won_battle = false // Define if the player won the battle or not
     PERSONNAGE MASQUÉ: Il le faut pourtant ! #playsound:VOX_Naida_illefaut
         -> hide_sireine
 - PLAYER: Quant à moi...
-    * {has_coconut == true or has_bone == true} [Se cacher. {t(DEXT, 30)}] // 75%
-        {sc(DEXT, 130): -> player_hide_S | -> player_hide_F}
+    * {has_coconut == true or has_bone == true} [Se cacher. {t(DEXT, 35)}] // 75%
+        {sc(DEXT, 35): -> player_hide_S | -> player_hide_F}
         ** (player_hide_S) #move:Player:5:1 #move:Player:5:-3
             ~ player_is_hidden = true
             -> guards_arrive
@@ -136,8 +136,8 @@ CAPUCINE: Que tu sois cinglé ou non... Nous devons <i>fouiller</i> tous les nav
 = player_hidden
 #playsound:guards_arrive
 MARCELLO: Il n'y a personne, cheffe. #playsound:VOX_Marcello_yapersonne
-* [Rester discret. {t(DEXT, 25)}] // 75%
-    {sc(DEXT, 25): -> discretion_1_S | -> discretion_1_F} #anim:Marcello:seek_intruder_near_player
+* [Rester discret. {t(DEXT, 30)}] // 75%
+    {sc(DEXT, 30): -> discretion_1_S | -> discretion_1_F} #anim:Marcello:seek_intruder_near_player
     ** (discretion_1_S) MARCELLO: Je ne vois personne. Et toi ? #playsound:VOX_Marcello_jevoispersonne
         -- {
                 - player_is_stinky: CAPUCINE: Je ne vois personne, mais ça pue le poisson mort par ici. 
@@ -150,9 +150,9 @@ MARCELLO: Il n'y a personne, cheffe. #playsound:VOX_Marcello_yapersonne
 * [Sortir de sa cachette]
     -> player_stop_hiding
 - (player_not_found) CAPUCINE: Laisse-moi regarder de plus près...
-    * {has_bone} [Envoyer l'os sur Marcello. {t(STRE, 0)}] // 80%
+    * {has_bone} [Envoyer l'os sur Marcello. {t(STRE, 35)}] // 80%
         -> attack_marcello_with_bone
-    * {has_coconut} [Envoyer la noix de coco sur Marcello. {t(DEXT, -10)}] // 80%
+    * {has_coconut} [Envoyer la noix de coco sur Marcello. {t(DEXT, 30)}] // 80%
         -> attack_marcello_with_coconut
     * [Sortir de sa cachette]
         -> player_stop_hiding
@@ -253,7 +253,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
 
 // Attack Marcello with a bone
 = attack_marcello_with_bone
-{sc(STRE, 0): -> attack_marcello_bone_S | -> attack_marcello_bone_F}
+{sc(STRE, 35): -> attack_marcello_bone_S | -> attack_marcello_bone_F}
     ** (attack_marcello_bone_S) MARCELLO: Le navire est vide, cheffe. #playsound:VOX_Marcello_lenavirevide
         MARCELLO: Aïe ! #anim:Player:throw #anim:Marcello:hurt #playsound:VOX_Marcello_aie #audience:laugh #trial
         CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
@@ -273,7 +273,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
 
 // Attack Marcello with a coconut
 = attack_marcello_with_coconut
-{sc(DEXT, -10): -> attack_marcello_coconut_S | -> attack_marcello_coconut_F}
+{sc(DEXT, 30): -> attack_marcello_coconut_S | -> attack_marcello_coconut_F}
     ** (attack_marcello_coconut_S) MARCELLO: Le navire est vide, cheffe. #playsound:VOX_Marcello_lenavirevide
         MARCELLO: Aïe ! #anim:Player:throw #anim:Marcello:hurt #audience:laugh #playsound:VOX_Marcello_aie #trial
         CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
@@ -294,8 +294,8 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
 // Battle (acting phase)
 = battle
 - #move:Marcello:11:5 #look:Marcello:Player #anim:Marcello:punch #anim:Player:hurt #look:Marcello:front 
-    * [Attaquer Marcello. {t(STRE, 25)}] #trial // 70%
-        {sc(STRE, 25): -> attack_marcello_S | -> attack_marcello_F}
+    * [Attaquer Marcello. {t(STRE, 35)}] #trial // 70%
+        {sc(STRE, 35): -> attack_marcello_S | -> attack_marcello_F}
         ** (attack_marcello_S) PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #anim:Marcello:hurt #look:Player:front #trial 
             MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête ! #playsound:VOX_Marcello_attaquerungarde
             ~ trial()

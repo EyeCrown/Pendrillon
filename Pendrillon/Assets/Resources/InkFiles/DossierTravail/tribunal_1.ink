@@ -463,8 +463,8 @@ JUGE ERNEST: Je... J'appelle à la barre nos deux prochains témoins. #playsound
 
 // Duel against Capucine
 = duel_against_capucine
-~ temp dext_difficulty = 40
-~ temp capucine_sc = 100
+~ temp dext_difficulty = 60
+~ temp capucine_sc = 90
 ~ temp nb_turn_against_capucine = 1
 // Les deux présentoirs sont soulevés par des câbles pour faire de la place
 JUGE ERNEST: Le Juge demande aux deux duellistes de s'approcher des jurés. #playsound:VOX_Judge_jugedemandeduellistes #anim:Judge:bell
@@ -508,8 +508,8 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
     
 // Duel against Marcello
 = duel_against_marcello
-~ temp stre_difficulty = 40
-~ temp marcello_sc = 100
+~ temp stre_difficulty = 60
+~ temp marcello_sc = 90
 ~ temp nb_turn_against_marcello = 1
 // Les deux présentoirs sont soulevés par des câbles pour faire de la place
 JUGE ERNEST: Le Juge demande aux deux duellistes de s'approcher des jurés. #playsound:VOX_Judge_jugedemandeduellistes #anim:Judge:bell

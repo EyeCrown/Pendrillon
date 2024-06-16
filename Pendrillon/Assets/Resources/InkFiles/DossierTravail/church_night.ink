@@ -174,8 +174,8 @@ AGATHE: En plein affrontement avec les vagues furieuses... Ils entendirent des p
 - AGATHE: Au milieu des vagues, il découvrit sur un rocher, allongé, un bébé.
     * [La vision du vitrail !] PLAYER: C'est cette scène que le vitrail représente, n'est-ce pas ?
         AGATHE: Celle-là même.
-    * [(Avec emphase) Quelle vision émouvante ! {t(CHAR, 10)}]
-        {sc(CHAR, 10): -> moved_by_the_baby_S | -> moved_by_the_baby_F}
+    * [(Avec emphase) Quelle vision émouvante ! {t(CHAR, 15)}]
+        {sc(CHAR, 15): -> moved_by_the_baby_S | -> moved_by_the_baby_F}
         ** (moved_by_the_baby_S) PLAYER: Imaginer cet enfant - la <b>Déesse</b> ! - pleurant au milieu de la tempête... Quelle vision poignante ! #anim:Player:emotionnal #playsound:VOX_Player_imaginerenfantdeesse #trial
                 ~ trial()
                 ~ t_3_moved_by_baby_irene = true
@@ -195,8 +195,8 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
         AGATHE: Je n'ai aucune idée de qui donc est cet Eugène. L'homme que je mentionne n'est autre qu'Ernest.
     * [... Ernest, cela va sans dire.] PLAYER: Vous faites sans doute allusion au pieu Ernest.
         AGATHE: La <b>Déesse</b> le bénisse, entre tous les hommes.
-    * [(Avec certitude) Je connais son nom. {t(CHAR, -30)}] // 30%
-        {sc(CHAR, -30): -> player_knows_ernest_S | -> player_knows_ernest_F}
+    * [(Avec certitude) Je connais son nom. {t(CHAR, -20)}] // 30%
+        {sc(CHAR, -20): -> player_knows_ernest_S | -> player_knows_ernest_F}
         ** (player_knows_ernest_S) PLAYER: Vous faites sans doute allusion au pieu Ernest.
             AGATHE: Absolument
         ** (player_knows_ernest_F) PLAYER: Vous parlez sans l'ombre d'un doute du célèbre Edgar.
