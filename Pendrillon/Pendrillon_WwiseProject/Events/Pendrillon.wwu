@@ -24584,16 +24584,49 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_AFairReward" ID="{4651FF79-5D19-4D49-92D9-B16E11141013}">
+									<ChildrenList>
+										<Action Name="" ID="{37D5A586-B5BC-4818-BEFF-0DB8AE427D09}" ShortID="268763047">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_AFairReward" ID="{D716B2F7-9AD3-48D1-84D4-CC48443A0974}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_AfterMeeting" ID="{AC8A93B8-C690-49A8-A2FF-81641305263D}">
+									<ChildrenList>
+										<Action Name="" ID="{5F2B1D77-24BD-476D-BED9-F1ABBF1A4B61}" ShortID="846752384">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_AfterMeeting" ID="{021A6C94-97ED-47E1-A246-A0CE96181623}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_LostAFriend" ID="{0D0DF0C5-F7FB-4F87-A200-065E409FC8A7}">
+									<ChildrenList>
+										<Action Name="" ID="{9E226906-7B1B-410D-A639-A563E383325F}" ShortID="87125404">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_LostAFriend" ID="{3E068C6B-1E5C-42F2-90A4-5EF77E71237D}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
-						<Folder Name="SC_Eglise" ID="{27D3A6A8-36DE-43D1-AFB4-636A2D719ABC}" ShortID="815332630">
+						<Folder Name="SC_Trial" ID="{27D3A6A8-36DE-43D1-AFB4-636A2D719ABC}" ShortID="815332630">
 							<ChildrenList>
-								<Event Name="Play_MUS_Story_SC_Eglise_Intro" ID="{8E146ADB-58AA-49A5-997D-AC52ACA740F8}">
+								<Event Name="Play_MUS_Story_SC_Trial_Agathe" ID="{8E146ADB-58AA-49A5-997D-AC52ACA740F8}">
 									<ChildrenList>
 										<Action Name="" ID="{80FCA427-35C4-4E1A-8C54-A34D1FF917F1}" ShortID="462543489">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="MUS_Story_SC_Eglise_Intro" ID="{CB9952DC-2346-4BFB-B8C3-F0AF98581E87}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+													<ObjectRef Name="MUS_Story_SC_Trial_Agathe" ID="{CB9952DC-2346-4BFB-B8C3-F0AF98581E87}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -24634,6 +24667,72 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="MUS_Story_SC_SecretMeeting_Intro" ID="{D0D49321-0E91-4817-8912-E732DF429D3A}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter" ID="{920B6288-7C79-40C7-91EA-B80C66263119}">
+									<ChildrenList>
+										<Action Name="" ID="{265CA38B-B828-4A6D-8FD3-0CBB7A245A40}" ShortID="439875722">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_SecretMeeting_ArleFirstEncounter" ID="{6D49BE6E-5EC6-414A-A0C3-817E51C80474}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_SecretMeeting_ArleGivesName" ID="{896A8DA1-1572-4524-AC86-81A5A5DC120B}">
+									<ChildrenList>
+										<Action Name="" ID="{A0D60FF7-556B-48EA-AC74-554031A24F31}" ShortID="915514303">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_SecretMeeting_ArleGivesName" ID="{1D3CF5D4-B4D2-4824-8061-2A4260E2B2C4}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_SecretMeeting_ArleJoke" ID="{52C2F091-3DF0-4081-947B-F5F784077FF3}">
+									<ChildrenList>
+										<Action Name="" ID="{2919C7A0-0F75-4FC8-A974-C2B673D09F03}" ShortID="513621529">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_SecretMeeting_ArleJoke" ID="{210AF2FB-1644-4EAE-9CF6-E25F80D28765}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_SecretMeeting_Kill" ID="{8A165FC0-7977-4092-A108-857817A7ADC5}">
+									<ChildrenList>
+										<Action Name="" ID="{07CCF3A5-A7D3-44C7-936E-3D61E5950313}" ShortID="1001770813">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_SecretMeeting_Kill" ID="{3745EF04-6C73-466C-A2E0-52E1FB30C4F0}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_SecretMeeting_PlayerAccepts" ID="{FFBD69A4-2601-420D-BBD5-733475E91AC4}">
+									<ChildrenList>
+										<Action Name="" ID="{350968FD-F8CA-40C5-8E46-82F04204A423}" ShortID="475700394">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_SecretMeeting_PlayerAccepts" ID="{F94FB63E-18E2-4EE5-AE3A-DE7E754DDC8E}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_SecretMeeting_TheMission" ID="{0A2D0624-B6CF-450A-8C76-5821AF623ABA}">
+									<ChildrenList>
+										<Action Name="" ID="{83ECB7E5-F0DD-4D69-8880-8A24705FEBE9}" ShortID="676842792">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_SecretMeeting_TheMission" ID="{3AD8CD38-93A0-4E14-85E9-C33223231B3F}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

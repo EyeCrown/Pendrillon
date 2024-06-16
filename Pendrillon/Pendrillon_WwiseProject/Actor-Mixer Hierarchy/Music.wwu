@@ -224,9 +224,75 @@
 										<ActiveSource Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{78BFE421-B70B-4A34-96DC-0A50845AA96B}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="MUS_Story_SC_Barque_AFairReward" ID="{D716B2F7-9AD3-48D1-84D4-CC48443A0974}" ShortID="628461721">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Barque_AFairReward" ID="{01E884D3-2958-45F8-92ED-1FA55A182D0B}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Barque_AFairReward.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="693610198"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Barque_AFairReward" ID="{01E884D3-2958-45F8-92ED-1FA55A182D0B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Barque_AfterMeeting" ID="{021A6C94-97ED-47E1-A246-A0CE96181623}" ShortID="160673209">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Barque_AfterMeeting" ID="{927F0811-51E8-43C4-A0E5-0E689C0CB751}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Barque_AfterMeeting.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1061844181"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Barque_AfterMeeting" ID="{927F0811-51E8-43C4-A0E5-0E689C0CB751}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Barque_LostAFriend" ID="{3E068C6B-1E5C-42F2-90A4-5EF77E71237D}" ShortID="691480162">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Barque_LostAFriend" ID="{744B1762-E3ED-46BF-A770-86A79324C8FD}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Barque_LostAFriend.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1066618504"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Barque_LostAFriend" ID="{744B1762-E3ED-46BF-A770-86A79324C8FD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
-						<ActorMixer Name="MUS_Cale" ID="{29C6CBC1-E91E-4120-B0EE-B08D50B711A6}" ShortID="86611951">
+						<ActorMixer Name="MUS_TripReturn" ID="{29C6CBC1-E91E-4120-B0EE-B08D50B711A6}" ShortID="86611951">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -236,7 +302,7 @@
 								</Reference>
 							</ReferenceList>
 						</ActorMixer>
-						<ActorMixer Name="MUS_Eglise" ID="{EB337CBC-A699-4B3D-9C88-865C2FF42A36}" ShortID="432750967">
+						<ActorMixer Name="MUS_Trial" ID="{EB337CBC-A699-4B3D-9C88-865C2FF42A36}" ShortID="432750967">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -246,7 +312,7 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="MUS_Story_SC_Eglise_Intro" ID="{CB9952DC-2346-4BFB-B8C3-F0AF98581E87}" ShortID="465125219">
+								<Sound Name="MUS_Story_SC_Trial_Agathe" ID="{CB9952DC-2346-4BFB-B8C3-F0AF98581E87}" ShortID="465125219">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -374,27 +440,139 @@
 										<ActiveSource Name="MUS_Story_SC_SecretMeeting_Meubler" ID="{32F72CF1-0A45-46D8-9F57-19D96D6ABD22}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_ArleFirstEncounter" ID="{6D49BE6E-5EC6-414A-A0C3-817E51C80474}" ShortID="891787638">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_ArleFirstEncounter" ID="{605FCF2B-254E-4552-8636-F470B0A33A21}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_ArleFirstEncounter.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="275049971"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_ArleFirstEncounter" ID="{605FCF2B-254E-4552-8636-F470B0A33A21}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_ArleGivesName" ID="{1D3CF5D4-B4D2-4824-8061-2A4260E2B2C4}" ShortID="928847120">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_ArleGivesName" ID="{FD192A2E-0FC7-49FC-B134-9C8E166397D9}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_ArleGivesName.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="130684876"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_ArleGivesName" ID="{FD192A2E-0FC7-49FC-B134-9C8E166397D9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_ArleJoke" ID="{210AF2FB-1644-4EAE-9CF6-E25F80D28765}" ShortID="405454769">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_ArleJoke" ID="{F1104899-7635-49EB-80D6-B0B638405C91}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_ArleJoke.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="837252400"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_ArleJoke" ID="{F1104899-7635-49EB-80D6-B0B638405C91}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_Kill" ID="{3745EF04-6C73-466C-A2E0-52E1FB30C4F0}" ShortID="5788855">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_Kill" ID="{4051D991-0ED5-4ABA-ADAC-4949DFB4EB0D}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_Kill.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="138714862"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_Kill" ID="{4051D991-0ED5-4ABA-ADAC-4949DFB4EB0D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_PlayerAccepts" ID="{F94FB63E-18E2-4EE5-AE3A-DE7E754DDC8E}" ShortID="525844361">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_PlayerAccepts" ID="{524C0E44-3FFE-4E3D-B1BA-1DC43457E7F8}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_PlayerAccepts.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="57185521"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_PlayerAccepts" ID="{524C0E44-3FFE-4E3D-B1BA-1DC43457E7F8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_TheMission" ID="{3AD8CD38-93A0-4E14-85E9-C33223231B3F}" ShortID="10948454">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_TheMission" ID="{BF9A6B17-9024-46D4-879E-400482759093}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_TheMission.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1038603219"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_TheMission" ID="{BF9A6B17-9024-46D4-879E-400482759093}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
-						</ActorMixer>
-						<ActorMixer Name="MUS_Tribunal" ID="{A774FE64-F9C1-4034-8286-72901F60DD69}" ShortID="847664634">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-								</Reference>
-							</ReferenceList>
-						</ActorMixer>
-						<ActorMixer Name="MUS_Ventre" ID="{6941F1AA-CC48-4817-82EB-87AA978D3C02}" ShortID="358944533">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-								</Reference>
-							</ReferenceList>
 						</ActorMixer>
 					</ChildrenList>
 					<ObjectLists>

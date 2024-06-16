@@ -30,6 +30,7 @@
 #audience:debate
 #audience:silent
 // Le juge est encore seul sur scène
+#playsound:Play_MUS_Story_SC_Trial_Conclusion
 #audience:ovation
 #wait:5
 #audience:ovation

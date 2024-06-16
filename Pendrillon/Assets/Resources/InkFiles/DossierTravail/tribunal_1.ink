@@ -50,31 +50,31 @@ JUGE ERNEST: De celle-ci nous nous ferons les yeux, les oreilles et le cœur, co
 JUGE ERNEST: Silence ! J'exige le silence ! #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencejexige
 - JUGE ERNEST: L'homme est accusé, par ordre croissant de gravité... #playsound:VOX_Judge_lhommeestaccuse
 {
-    - is_accused_of("bribe guards"): JUGE ERNEST: ... De tentative de corruption à l'égard de représentants de l'autorité Royale... #playsound:VOX_Judge_corruption #box #audience:booing #screenshake
+    - is_accused_of("bribe guards"): JUGE ERNEST: ... De tentative de corruption à l'égard de représentants de l'autorité Royale... #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #playsound:VOX_Judge_corruption #box #audience:booing #screenshake
         ~ audience_judgement(-10)
 }
 {
-    - is_accused_of("attack guards"): JUGE ERNEST: ... De violence à l'encontre de représentants de l'autorité Royale... #playsound:VOX_Judge_violence #audience:laughter
+    - is_accused_of("attack guards"): JUGE ERNEST: ... De violence à l'encontre de représentants de l'autorité Royale... #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #playsound:VOX_Judge_violence #audience:laughter
         ~ audience_judgement(-10)
 }
 {
-    - is_accused_of("crown outrage"): JUGE ERNEST: ... D'outrage à la Couronne... #playsound:VOX_Judge_outragecouronne #box #audience:booing #screenshake
+    - is_accused_of("crown outrage"): JUGE ERNEST: ... D'outrage à la Couronne... #playsound:VOX_Judge_outragecouronne #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
         ~ audience_judgement(-10)
 }
 {
-    - is_accused_of("blasphemy"): JUGE ERNEST: ... De blasphème... #playsound:VOX_Judge_blaspheme #box #audience:booing #screenshake
+    - is_accused_of("blasphemy"): JUGE ERNEST: ... De blasphème... #playsound:VOX_Judge_blaspheme #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
         ~ audience_judgement(-10)
 }
 {
-    - is_accused_of("judge outrage"): JUGE ERNEST: ... D'outrage au Juge de droit divin, Ernest... #playsound:VOX_Judge_outragejuge #box #audience:choc #sreenshake
+    - is_accused_of("judge outrage"): JUGE ERNEST: ... D'outrage au Juge de droit divin, Ernest... #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #playsound:VOX_Judge_outragejuge #box #audience:choc #sreenshake
         ~ audience_judgement(-10)
 }
-- JUGE ERNEST: ... D'actes hérétiques... #playsound:VOX_Judge_heretique #box #audience:booing #screenshake
+- JUGE ERNEST: ... D'actes hérétiques... #playsound:VOX_Judge_heretique #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
     ~ audience_judgement(-10)
-- JUGE ERNEST: ... De Haute trahison... #playsound:VOX_Judge_hautetrahison #box #audience:booing #screenshake
+- JUGE ERNEST: ... De Haute trahison... #playsound:VOX_Judge_hautetrahison #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
     ~ audience_judgement(-10)
 - JUGE ERNEST: ... ainsi que, pour conclure... #playsound:VOX_Judge_pourconclure
-- JUGE ERNEST: ... D'amour impie. #playsound:VOX_Judge_amourimpie #box #audience:choc #screenshake
+- JUGE ERNEST: ... D'amour impie. #playsound:VOX_Judge_amourimpie #box #audience:choc #screenshake #playsound:Play_MUS_Story_SC_Trial_ChefAccusation
     ~ audience_judgement(-10)
 - JUGE ERNEST: Le Juge demande désormais à l'accusé de faire son entrée. #playsound:VOX_Judge_jugedemandeaccuseentre #audience:booing
 - JUGE ERNEST: Silence ! Silence ! #position:Player:10:1 #wait:5 #audience:booing #box #playsound:VOX_Judge_silencesilence2 #anim:Judge:bell #audience:silent
@@ -109,7 +109,7 @@ SOUFFLEUR: N'oublie pas : dans ce procès, c'est le public que tu dois convaincr
 
 // Witness Arle
 = witness_arle
-- JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle, la trublionne de la reine Constance. #position:Arle:8:10 #box #wait:8 #playsound:VOX_Judge_jugeappellearle #anim:Judge:bell #anim:Arle:bow #audience:ovation
+- JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle, la trublionne de la reine Constance. #playsound:Play_MUS_Story_SC_Trial_Arle #position:Arle:8:10 #box #wait:8 #playsound:VOX_Judge_jugeappellearle #anim:Judge:bell #anim:Arle:bow #audience:ovation
 JUGE ERNEST: Décrivez au jury votre rencontre avec l'accusé, je vous prie. #playsound:VOX_Judge_decrivezjuryarle
 ARLE: Votre Honneur, vous n'êtes pas sans ignorer que j'ai l'immense privilège d'occuper, au sein de la Couronne, un rôle de tout premier plan... #playsound:VOX_Arle_immenseprivilege
     * [Ne pas l'interrompre.]
@@ -157,11 +157,11 @@ JUGE ERNEST: Vraiment ? Accusé, qu'avez-vous à répondre ? #playsound:VOX_Judg
         ARLE: Mais bien sûr... Quel fieffé menteur ! #audience:debate #playsound:VOX_Arle_fieffementeur
         JUGE ERNEST: Silence ! le Juge exige le silence ! #playsound:VOX_Judge_silencelejugeexige2 #anim:Judge:bell
         {
-            - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre. #playsound:VOX_Judge_cetribunallumiere
-                JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle
+            - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre. #playsound:VOX_Judge_cetribunallumiere #playsound:Play_MUS_Story_SC_Trial_LaVerite1
+                JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle #playsound:Play_MUS_Story_SC_Trial_LaVerite2
                 ~ judge_explained_mask = true
         }
-        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask
+        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask #playsound:Play_MUS_Story_SC_Trial_LaVerite3
         {
             - t_1_accept_to_kill == true: JUGE ERNEST: « Tuer ne me dérange nullement. ». #playsound:VOX_Judge_playercitationtuer #audience:choc
                 ~ audience_judgement(-10)
@@ -220,11 +220,11 @@ JUGE ERNEST: Accusé, qu'avez-vous à répondre ? #playsound:VOX_Judge_accuseque
     * [C'est parfaitement faux !] PLAYER: Votre Honneur, je récuse cette accusation ! Elle ment ! #audience:debate
         JUGE ERNEST: Silence ! le Juge vous ordonne de vous taire ! #playsound:VOX_Judge_lejugevousordonnetaire #anim:judge:bell
         {
-            - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre. #playsound:VOX_Judge_cetribunallumiere
-                JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle
+            - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre. #playsound:VOX_Judge_cetribunallumiere #playsound:Play_MUS_Story_SC_Trial_LaVerite1
+                JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle #playsound:Play_MUS_Story_SC_Trial_LaVerite2
                 ~ judge_explained_mask = true
         }
-        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask
+        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #playsound:Play_MUS_Story_SC_Trial_LaVerite3 #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask 
         {
             - t_1_accept_mission_with_positivity: JUGE ERNEST: « Cela serait pour moi un véritable honneur de ramener le cœur du <b>Léviathan</b>. ». #playsound:VOX_Judge_playercitationhonneurramener
                 ~ audience_judgement(-10)
@@ -265,11 +265,11 @@ JUGE ERNEST: Accusé, qu'avez-vous à dire pour votre défense ? #playsound:VOX_
             ARLE: Menteur ! Menteur ! #playsound:VOX_Arle_menteurmenteur
             JUGE ERNEST: Silence ! Par <b>Irène</b>, je demande le silence ! #playsound:VOX_Judge_silenceparirene #anim:Judge:bell #audience:silent
             {
-                - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre. #playsound:VOX_Judge_cetribunallumiere
-                    JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle
+                - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre. #playsound:VOX_Judge_cetribunallumiere #playsound:Play_MUS_Story_SC_Trial_LaVerite1
+                    JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle #playsound:Play_MUS_Story_SC_Trial_LaVerite2
                     ~ judge_explained_mask = true
             }
-            JUGE ERNEST: <shake>La vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask
+            JUGE ERNEST: <shake>La vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask #playsound:Play_MUS_Story_SC_Trial_LaVerite3
             {
                 - t_1_respect_the_crown: JUGE ERNEST: « Je braverai tous les dangers pour notre bonne reine ! ». #playsound:VOX_Judge_playercitationjebraveraidangers #audience:ovation #anim:Arle:angry #anim:Player:bow
                     JUGE ERNEST: Témoin, que le Juge ne vous reprenne plus à mentir lors d'un procès divin. #playsound:VOX_Judge_temoinjugereprenneplus #anim:Arle:stressed #audience:booing
@@ -293,11 +293,11 @@ JUGE ERNEST: Est-ce vrai ? La déesse elle-même ? Répondez, Accusé. Et vite !
         ARLE: Un mensonge, un de plus ! #audience:debate #playsound:VOX_Arle_unmensongedepkus
         JUGE ERNEST: Silence ! Silence ! #playsound:VOX_Judge_silencesilence2 #anim:Judge:bell #audience:silent
         {
-            - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre. #playsound:VOX_Judge_cetribunallumiere
-                JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle
+            - judge_explained_mask == false: JUGE ERNEST: Ce tribunal est le lieu auprès duquel la lumière de la Vérité ne saurait produire nulle ombre. #playsound:VOX_Judge_cetribunallumiere #playsound:Play_MUS_Story_SC_Trial_LaVerite1
+                JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle #playsound:Play_MUS_Story_SC_Trial_LaVerite2
                 ~ judge_explained_mask = true
         }
-        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask
+        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask #playsound:Play_MUS_Story_SC_Trial_LaVerite3
         {
             - t_1_respect_irene: JUGE ERNEST: « J'honorerai la <b>Déesse</b>, j'en fais le serment ! ». #playsound:VOX_Judge_playercitationladeesehoneur #audience:ovation #anim:Arle:angry #anim:Player:bow
                 ~ audience_judgement(20)
@@ -314,7 +314,7 @@ JUGE ERNEST: Est-ce vrai ? La déesse elle-même ? Répondez, Accusé. Et vite !
 
 // Witnesses Capucine and marcello
 = witnesses_capucine_and_marcello
-- JUGE ERNEST: Capucine dite « {capucine_surname} », accompagnée de Marcello, alias « {marcello_surname} ». #position:Capucine:8:10 #position:Marcello:8:12 #box #wait:8 #playsound:VOX_Judge_LarbineMarcellogre #audience:ovation
+- JUGE ERNEST: Capucine dite « {capucine_surname} », accompagnée de Marcello, alias « {marcello_surname} ». #playsound:Play_MUS_Story_SC_Trial_Guards #position:Capucine:8:10 #position:Marcello:8:12 #box #wait:8 #playsound:VOX_Judge_LarbineMarcellogre #audience:ovation
 //PLAYSOUNDS ALTERNATIFS :  #playsound:VOX_Judge_LarbineMarcellotarie #playsound:VOX_Judge_LarbineMarcellocroupie #playsound:VOX_Judge_MarcassineMarcellogre #playsound:VOX_Judge_MarcassineMarcellotarie #playsound:VOX_Judge_MarcassineMarcellocroupie #playsound:VOX_Judge_TartineMarcellogre #playsound:VOX_Judge_TartineMarcellotarie #playsound:VOX_Judge_TartineMarcellocroupie
 CAPUCINE: Votre Honneur, avec tout mon respect... J'apprécierais d'être nommée simplement Capucine. #playsound:VOX_Capucine_avectoutmonrespect #anim:Capucine:angry #audience:laughter
 JUGE ERNEST: Bon, bon... Je tâcherais d'y penser. #playsound:VOX_Judge_bonbonjetacheraidypenser #anim:Capucine:bow
@@ -361,13 +361,13 @@ JUGE ERNEST: Lequel des deux témoins voulez-vous défier ? #playsound:VOX_Judge
     * [Défier Capucine à un duel de poirier.] 
         {
             - capucine_surname == "la larbine":
-                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defielarbine
+                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defielarbine #playsound:Play_MUS_Story_SC_Trial_Defi
             - capucine_surname == "la marcassine":
-                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defiemarcassine
+                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defiemarcassine #playsound:Play_MUS_Story_SC_Trial_Defi
             - capucine_surname == "la tartine":
-                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defietartine
+                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « {capucine_surname} » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defietartine #playsound:Play_MUS_Story_SC_Trial_Defi
             - else:
-                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « la larbine » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defielarbine
+                PLAYER: Votre Honneur, je souhaiterais défier Capucine dite « la larbine » à un duel... de poirier ! #audience:ovation #playsound:VOX_Player_defielarbine #playsound:Play_MUS_Story_SC_Trial_Defi
         }
         JUGE ERNEST: Un duel... de poirier ? #playsound:VOX_Judge_duelpoirier #audience:laughter
         JUGE ERNEST: Ab... absolument ! Comme l'exige la coutume, en effet... Témoin, acceptez-vous les conditions du duel ? #playsound:VOX_Judge_ababsolument #audience:debate
@@ -377,13 +377,13 @@ JUGE ERNEST: Lequel des deux témoins voulez-vous défier ? #playsound:VOX_Judge
     * [Défier Marcello à un concours de pompes.] 
         {
             - marcello_surname == "Marcellogre":
-                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellogre
+                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellogre #playsound:Play_MUS_Story_SC_Trial_Defi
             - marcello_surname == "Marcellotarie":
-                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellotarie
+                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellotarie #playsound:Play_MUS_Story_SC_Trial_Defi
             - marcello_surname == "Marcellocroupie":
-                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellocroupie
+                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « {marcello_surname} » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellocroupie #playsound:Play_MUS_Story_SC_Trial_Defi
             - else:
-                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « Marcellogre » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellogre
+                PLAYER: Votre Honneur, je souhaiterais défier Marcello, autrement nommé « Marcellogre » à un concours... de pompes ! #audience:ovation #playsound:VOX_Player_defiemarcellogre #playsound:Play_MUS_Story_SC_Trial_Defi
         }
         JUGE ERNEST: Un concours... de pompes ? #playsound:VOX_Judge_concourspompes #audience:laughter
         JUGE ERNEST: Ab... absolument ! Comme l'exige la coutume, en effet... Témoin, acceptez-vous les conditions du duel ? #playsound:VOX_Judge_ababsolument #audience:debate
@@ -395,7 +395,7 @@ JUGE ERNEST: Lequel des deux témoins voulez-vous défier ? #playsound:VOX_Judge
 = witness_agathe
 - JUGE ERNEST: Témoins, veuillez regagner l'assistance. #audience:applause #rope:Capucine #rope:Marcello #move:Player:13:5 #move:Player:10:5 #move:Player:10:1
 JUGE ERNEST: J'en appelle désormais à notre dernier témoin. #playsound:VOX_Judge_jenappellederniertemoin
-JUGE ERNEST: La respectable prêtresse Agathe ! #position:Agathe:8:10 #box #wait:8 #playsound:VOX_Judge_pretresseagathe #audience:ovation
+JUGE ERNEST: La respectable prêtresse Agathe ! #position:Agathe:8:10 #box #wait:8 #playsound:VOX_Judge_pretresseagathe #audience:ovation #playsound:Play_MUS_Story_SC_Trial_Agathe
 JUGE ERNEST: Prêtresse Agathe, nous vous remercions de quitter la demeure d'<b>Irène</b> afin de vous joindre à nous lors de ce procès. #playsound:VOX_Judge_quitterdemeureirene #audience:applause #anim:Agathe:bow
 JUGE ERNEST: Je vous en prie, veuillez nous raconter votre rencontre avec l'Accusé. #playsound:VOX_Judge_jevousprieracontezrencontre
 AGATHE: J'ai accueilli l'Accusé au sein de ma chapelle, par une nuit d'averse. #playsound:VOX_Agathe_accueilliaccuse
@@ -478,7 +478,7 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
         {sc(DEXT, dext_difficulty): -> round_against_capucine_S | -> defeat_against_capucine}
 - (next_round_against_capucine)
     ~ nb_turn_against_capucine += 1
-    JUGE ERNEST: Le témoin Capucine {tient bon elle aussi | parvient à tenir le bon bout | continue d'impressionner les jurés | tient encore le coup | réussit une nouvelle fois | parvient à tenir malgré la douleur } ! #audience:ovation #playsound:VOX_Judge_capucineholds1
+    JUGE ERNEST: Le témoin Capucine {tient bon elle aussi | parvient à tenir le bon bout | continue d'impressionner les jurés | tient encore le coup | réussit une nouvelle fois | parvient à tenir malgré la douleur } ! #audience:ovation #playsound:VOX_Judge_capucineholds1 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
     // #playsound:VOX_Judge_capucineholds2 #playsound:VOX_Judge_capucineholds3 #playsound:VOX_Judge_capucineholds4 #playsound:VOX_Judge_capucineholds5 #playsound:VOX_Judge_capucineholds6
     JUGE ERNEST: C'est désormais à l'Accusé de {ne pas s'effondrer | ne pas échouer lamentablement | ne pas décevoir les jurés | faire une nouvelle fois preuve de talent | tenir encore un peu | tenir toujours un peu plus }! #audience:ovation #playsound:VOX_Judge_accusetoholdpoirier1
     //#playsound:VOX_Judge_accusetoholdpoirier2 #playsound:VOX_Judge_accusetoholdpoirier3 #playsound:VOX_Judge_accusetoholdpoirier4 #playsound:VOX_Judge_accusetoholdpoirier5 #playsound:VOX_Judge_accusetoholdpoirier6 #playsound:VOX_Judge_accusetoholdpoirier7
@@ -487,18 +487,18 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
 - (round_against_capucine_S)
     ~ dext_difficulty -= 5
     ~ capucine_sc -= 5
-    JUGE ERNEST: L'Accusé {a tenu bon | a une nouvelle fois réussi | impressionne par ses talents au poirier | nous délivre une nouvelle fois une performance impressionnante |  semble désormais inarrêtable | réussit à nouveau }: qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #audience:ovation #playsound:VOX_Judge_accuseholdspoirier1
+    JUGE ERNEST: L'Accusé {a tenu bon | a une nouvelle fois réussi | impressionne par ses talents au poirier | nous délivre une nouvelle fois une performance impressionnante |  semble désormais inarrêtable | réussit à nouveau }: qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #audience:ovation #playsound:VOX_Judge_accuseholdspoirier1 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
     // #playsound:VOX_Judge_accuseholdspoirier2 #playsound:VOX_Judge_accuseholdspoirier3 #playsound:VOX_Judge_accuseholdspoirier4 #playsound:VOX_Judge_accuseholdspoirier5 #playsound:VOX_Judge_accuseholdspoirier6 #playsound:VOX_Judge_accuseholdspoirier7
     {roll_ai_sc(capucine_sc): -> next_round_against_capucine | -> victory_against_capucine}
     #audience:ovation
-- (defeat_against_capucine) JUGE ERNEST: Nous avons un vainqueur ! #playsound:VOX_Judge_nousavonsvainqueurpoirier
+- (defeat_against_capucine) JUGE ERNEST: Nous avons un vainqueur ! #playsound:VOX_Judge_nousavonsvainqueurpoirier #playsound:Play_MUS_Story_SC_Trial_UnVainqueur
     JUGE ERNEST: Après {nb_turn_against_capucine < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_capucine} tour{nb_turn_against_capucine > 1:s}, c'est le témoin Capucine qui remporte le duel ! #playsound:VOX_Judge_capucinewins
     ~ audience_judgement(-10)
     MARCELLO: Impressionnant, cheffe ! Vous n'avez la tête qui tourne ? #audience:laughter
     CAPUCINE: S.. si, un peu... Mets-la en veilleuse, tu veux ? #playsound:VOX_Capucine_tetequitourne #audience:laughter
     JUGE ERNEST: Ainsi en a jugé... euh la <b>Déesse</b> ! L'Accusé perd le duel ! #playsound:VOX_Judge_accuseloosCapu #audience:booing #screenshake
     -> witness_agathe
-- (victory_against_capucine) JUGE ERNEST: Nous avons un vainqueur ! #playsound:VOX_Judge_nousavonsvainqueurpoirier
+- (victory_against_capucine) JUGE ERNEST: Nous avons un vainqueur ! #playsound:VOX_Judge_nousavonsvainqueurpoirier #playsound:Play_MUS_Story_SC_Trial_UnVainqueur
     JUGE ERNEST: Après {nb_turn_against_capucine < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_capucine} tour{nb_turn_against_capucine > 1:s}, c'est l'Accusé qui remporte le duel ! #playsound:VOX_Judge_accusewinspoirier
     JUGE ERNEST: Ainsi en a jugé... euh la <b>Déesse</b> ! L'Accusé remporte le duel ! #playsound:VOX_Judge_accusewinsCapu #audience:ovation #screenshake
     ~ audience_judgement(30) 
@@ -523,7 +523,7 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
         {sc(STRE, stre_difficulty): -> round_against_marcello_S | -> defeat_against_marcello}
 - (next_round_against_marcello)
     ~ nb_turn_against_marcello += 1
-    JUGE ERNEST: Le témoin Marcello {tient bon lui aussi | parvient à tenir le bon bout | continue d'impressionner les jurés | tient encore le coup | réussit une nouvelle fois | parvient à tenir malgré la douleur } ! #playsound:VOX_Judge_marcelloholds1 #audience:ovation
+    JUGE ERNEST: Le témoin Marcello {tient bon lui aussi | parvient à tenir le bon bout | continue d'impressionner les jurés | tient encore le coup | réussit une nouvelle fois | parvient à tenir malgré la douleur } ! #playsound:VOX_Judge_marcelloholds1 #audience:ovation #playsound:Play_MUS_Story_SC_Trial_MarcelloHolds
     // #playsound:VOX_Judge_marcelloholds2 #playsound:VOX_Judge_marcelloholds3 #playsound:VOX_Judge_marcelloholds4 #playsound:VOX_Judge_marcelloholds5 #playsound:VOX_Judge_marcelloholds6
     JUGE ERNEST: C'est désormais à l'Accusé de {ne pas s'effondrer | ne pas échouer lamentablement | ne pas décevoir les jurés | faire une nouvelle fois preuve de talent | tenir encore un peu | tenir toujours un peu plus }! #audience:ovation #playsound:VOX_Judge_accusetoholdpompes1
     // #playsound:VOX_Judge_accusetoholdpompes2 #playsound:VOX_Judge_accusetoholdpompes3 #playsound:VOX_Judge_accusetoholdpompes4 #playsound:VOX_Judge_accusetoholdpompes5 #playsound:VOX_Judge_accusetoholdpompes6 #playsound:VOX_Judge_accusetoholdpompes7
@@ -532,18 +532,18 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
 - (round_against_marcello_S)
     ~ stre_difficulty -= 5
     ~ marcello_sc -= 5
-    JUGE ERNEST: L'Accusé {a tenu bon | a une nouvelle fois réussi | impressionne par ses talents | nous délivre une nouvelle fois une performance impressionnante |  semble désormais inarrêtable | réussit à nouveau }: qu'en sera-t-il de notre témoin ? ({marcello_sc}% que Marcello réussisse) #audience:ovation #playsound:VOX_Judge_accuseholdspompe1
+    JUGE ERNEST: L'Accusé {a tenu bon | a une nouvelle fois réussi | impressionne par ses talents | nous délivre une nouvelle fois une performance impressionnante |  semble désormais inarrêtable | réussit à nouveau }: qu'en sera-t-il de notre témoin ? ({marcello_sc}% que Marcello réussisse) #audience:ovation #playsound:VOX_Judge_accuseholdspompe1 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
     // #playsound:VOX_Judge_accuseholdspompe2 #playsound:VOX_Judge_accuseholdspompe3 #playsound:VOX_Judge_accuseholdspompe4 #playsound:VOX_Judge_accuseholdspompe5 #playsound:VOX_Judge_accuseholdspompe6 #playsound:VOX_Judge_accuseholdspompe7
     {roll_ai_sc(marcello_sc): -> next_round_against_marcello | -> victory_against_marcello}
     #audience:ovation
-- (defeat_against_marcello) JUGE ERNEST: Nous avons un vainqueur ! #playsound:VOX_Judge_nousavonsvainqueur
+- (defeat_against_marcello) JUGE ERNEST: Nous avons un vainqueur ! #playsound:VOX_Judge_nousavonsvainqueur #playsound:Play_MUS_Story_SC_Trial_UnVainqueur
     JUGE ERNEST: Après {nb_turn_against_marcello < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_marcello} pompe{nb_turn_against_marcello > 1:s}, c'est le témoin Marcello qui remporte le duel ! #playsound:VOX_Judge_temoinmarcellowins
     MARCELLO: Vous avez vu ça, cheffe ? #anim:Marcello:happy
     CAPUCINE: J'ai vu, j'ai vu... Mets-la en, veilleuse, tu veux ? #audience:laughter
     JUGE ERNEST: Ainsi en a jugé... euh la <b>Déesse</b> ! L'Accusé perd le duel ! #playsound:VOX_Judge_accuseloosCapu #audience:booing #screenshake
     ~ audience_judgement(-10)
     -> witness_agathe
-- (victory_against_marcello) JUGE ERNEST: Nous avons un vainqueur ! #playsound:VOX_Judge_nousavonsvainqueurpoirier2
+- (victory_against_marcello) JUGE ERNEST: Nous avons un vainqueur ! #playsound:VOX_Judge_nousavonsvainqueurpoirier2 #playsound:Play_MUS_Story_SC_Trial_UnVainqueur
     JUGE ERNEST: Après {nb_turn_against_marcello < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_marcello} pompe{nb_turn_against_marcello > 1:s}, c'est l'Accusé qui remporte le duel ! #playsound:VOX_Judge_accusewinspoirier
     JUGE ERNEST: Ainsi en a jugé... euh la <b>Déesse</b> ! L'Accusé remporte le duel ! #playsound:VOX_Judge_accusewinsCapu #audience:ovation #screenshake
     ~ audience_judgement(30)
