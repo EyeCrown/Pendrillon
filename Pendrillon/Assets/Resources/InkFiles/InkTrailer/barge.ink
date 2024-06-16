@@ -19,13 +19,15 @@
 #position:Passeur:4:3
 
 // Audience reaction
-#playsound:Play_AMB_SC_Theater_CrowdChatter
-#playsound:Play_MUS_Story_SC_Barque_Intro
+//#playsound:Play_AMB_SC_Theater_CrowdChatter
+//#playsound:Play_MUS_Story_SC_Barque_Intro
 //#anim:Player:kneeling
 //#look:Player:Passeur
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
+- PASSEUR:     
+- -> secret_meeting
 - PASSEUR: Eh, bien... #playsound:VOX_Ferryman_ehbien
 PASSEUR: J'ai connu des passagers plus loquaces... #playsound:VOX_Ferryman_passagersloquaces #box #audience:applause
     * [(Rester silencieux)]
@@ -94,10 +96,11 @@ SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! <i>Sh
 - PLAYER: Habituellement, une lettre de cette nature aurait fini au feu, mais un détail attira mon attention... #playsound:VOX_Player_unjour #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter1
     * [L'écriture.] PLAYER: La lettre était dotée d’une impeccable calligraphie. Ce détail ne pouvait signifier qu’une chose : notre expéditeur était du genre fortuné. #playsound:VOX_Player_lalettreecriture #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
     * [Le destinataire.] PLAYER: La lettre était destinée à un certain {p_name} Jehovah Banes. Or, la seule personne à m’appeler ainsi est ma mère, qui est absolument et irrémédiablement illettrée... #playsound:VOX_Player_lalettredestinataire{p_name} #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
-    * [L'odeur.] PLAYER: J’ai reçu bien des lettres dans ma vie, certaines avaient l’odeur du sel marin ou des impôts impayés, mais jamais une odeur si... délicate. L'odeur d'un expéditeur fortuné. #playsound:VOX_Player_lalettreodeur #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter2
+    * [L'odeur.] PLAYER: J’ai reçu bien des lettres dans ma vie, certaines avaient l’odeur du sel marin ou des impôts impayés, mais jamais une odeur si... délicate. L'odeur d'un expéditeur fortuné. #playsound:VOX_Player_lalettreodeur
 - PLAYER: La lettre me donnait rendez-vous pour une cause « de la plus haute importance ».
-PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous... #playsound:VOX_Player_transitionsecretmeeting  #playsound:Play_MUS_Story_SC_Barque_MysteriousLetter3
-    * [Le Bois aux Noyés.] PLAYER: Le Bois aux Noyés. #audience:choc
+PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rendez-vous... #playsound:VOX_Player_transitionsecretmeeting  
+    * [Le Bois aux Noyés.] PLAYER:    
+PLAYER:... #wait:60
 - -> secret_meeting
 
 // Scène 2

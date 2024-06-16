@@ -31,8 +31,8 @@ VAR t_2_against_law = false
 VAR t_2_against_crown = false
 VAR t_2_show_regrets = false
 VAR t_2_show_no_regrets = false
+VAR t_2_has_attacked_guards = false
 VAR t_2_bribe_guards = false
-VAR t_2_attack_guards = false
 //Debug TRIBUNAL
 // VAR t_2_lawfull = false
 // VAR t_2_lawless = true
@@ -129,7 +129,7 @@ VAR t_4_give_guards_surname = false
             ~ isAccused = t_2_bribe_guards
         - pFelony == "attack guards":
             {
-                -  t_2_attack_guards:
+                -  t_2_has_attacked_guards:
                     ~ isAccused = true
                 - else:
                     ~ isAccused = false
