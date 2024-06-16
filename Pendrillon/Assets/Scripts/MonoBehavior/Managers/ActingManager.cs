@@ -10,6 +10,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -684,6 +685,9 @@ namespace MonoBehavior.Managers
         {
             _choiceType = type;
             _historyText.text += $"     > {choice.text}\n";
+
+            PlaySoundChoiceButtonClicked();
+            
             GameManager.Instance._story.ChooseChoiceIndex(choice.index);
             Refresh();
         }
