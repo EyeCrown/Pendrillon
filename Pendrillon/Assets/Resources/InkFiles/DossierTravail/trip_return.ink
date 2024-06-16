@@ -254,23 +254,14 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
 // Attack Marcello with a bone
 = attack_marcello_with_bone
 {sc(STRE, 0): -> attack_marcello_bone_S | -> attack_marcello_bone_F}
-<<<<<<< Updated upstream
     ** (attack_marcello_bone_S) MARCELLO: Le navire est vide, cheffe. #playsound:VOX_Marcello_lenavirevide
-        MARCELLO: Aïe ! #anim:Player:throw #anim:Marcello:hurt #playsound:VOX_Marcello_aie #audience:laugh
-        CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
-        MARCELLO: Cet abruti m'a balancé une entrecôte sur le museau !
-        CAPUCINE: Ça m'en a tout l'air, en effet. #playsound:VOX_Capucine_camenatoutlair
-    ** (attack_marcello_bone_F) MARCELLO: Le navire est vide, cheffe. #playsound:VOX_Marcello_lenavirevide
-=======
-    ** (attack_marcello_bone_S) MARCELLO: Le navire est vide, cheffe.
-        MARCELLO: Aïe ! #anim:Player:throw #anim:Marcello:hurt #audience:laugh #trial
+        MARCELLO: Aïe ! #anim:Player:throw #anim:Marcello:hurt #playsound:VOX_Marcello_aie #audience:laugh #trial
         CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
         MARCELLO: Cet abruti m'a balancé une entrecôte sur le museau !
         CAPUCINE: Ça m'en a tout l'air, en effet. #playsound:VOX_Capucine_camenatoutlair
         ~ trial()
         ~ t_2_has_attacked_guards = true
-    ** (attack_marcello_bone_F) MARCELLO: Le navire est vide, cheffe.
->>>>>>> Stashed changes
+    ** (attack_marcello_bone_F) MARCELLO: Le navire est vide, cheffe. #playsound:VOX_Marcello_lenavirevide
         MARCELLO: Hein ? #anim:Player:throw #audience:booing
         CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
         MARCELLO: Ai-je la berlue ou est-ce qu'un gougnafier vient d'essayer de m'assommer en m'envoyant une entrecôte ? #audience:laugh #trial
@@ -283,33 +274,20 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
 // Attack Marcello with a coconut
 = attack_marcello_with_coconut
 {sc(DEXT, -10): -> attack_marcello_coconut_S | -> attack_marcello_coconut_F}
-<<<<<<< Updated upstream
     ** (attack_marcello_coconut_S) MARCELLO: Le navire est vide, cheffe. #playsound:VOX_Marcello_lenavirevide
-        MARCELLO: Aïe ! #anim:Player:throw #anim:Marcello:hurt #audience:laugh #playsound:VOX_Marcello_aie
-=======
-    ** (attack_marcello_coconut_S) MARCELLO: Le navire est vide, cheffe.
-        MARCELLO: Aïe ! #anim:Player:throw #anim:Marcello:hurt #audience:laugh #trial
->>>>>>> Stashed changes
+        MARCELLO: Aïe ! #anim:Player:throw #anim:Marcello:hurt #audience:laugh #playsound:VOX_Marcello_aie #trial
         CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
         MARCELLO: Cet abruti m'a envoyé une noix de coco en plein dans les narines ! #playsound:VOX_Marcello_abruticoco
         CAPUCINE: Ça m'en a tout l'air, en effet. #playsound:VOX_Capucine_camenatoutlair
-<<<<<<< Updated upstream
+        ~ trial()
+        ~ t_2_has_attacked_guards = true
     ** (attack_marcello_coconut_F) MARCELLO: Le navire est vide, cheffe. #playsound:VOX_Marcello_lenavirevide
         MARCELLO: Hein ? #anim:Player:throw #audience:booing
         CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
-        MARCELLO: Ai-je la berlue ou est-ce qu'un gougnafier vient d'essayer de m'envoyer une noix de coco dans la poire ? #audience:laugh #playsound:VOX_Marcello_gougnafiercoco
+        MARCELLO: Ai-je la berlue ou est-ce qu'un gougnafier vient d'essayer de m'envoyer une noix de coco dans la poire ? #audience:laugh #playsound:VOX_Marcello_gougnafiercoco #trial
+        ~ trial()
+        ~ t_2_has_attacked_guards = true
 - MARCELLO: Prends ça, pour la peine ! #playsound:VOX_Marcello_prendsca2
-=======
-        ~ trial()
-        ~ t_2_has_attacked_guards = true
-    ** (attack_marcello_coconut_F) MARCELLO: Le navire est vide, cheffe.
-        MARCELLO: Hein ? #anim:Player:throw #audience:booing
-        CAPUCINE: Pas aussi vide que tu ne le pensais, apparemment... #move:Player:5:3 #move:Player:11:3 #playsound:VOX_Capucine_pasaussivide #audience:laugh
-        MARCELLO: Ai-je la berlue ou est-ce qu'un gougnafier vient d'essayer de m'envoyer une noix de coco dans la poire ? #audience:laugh #trial
-        ~ trial()
-        ~ t_2_has_attacked_guards = true
-- MARCELLO: Prends ça, pour la peine !
->>>>>>> Stashed changes
     -> battle
 
 
@@ -319,13 +297,9 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
     * [Attaquer Marcello. {t(STRE, 25)}] #trial // 70%
         {sc(STRE, 25): -> attack_marcello_S | -> attack_marcello_F}
         ** (attack_marcello_S) PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #anim:Marcello:hurt #look:Player:front #trial 
-<<<<<<< Updated upstream
             MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête ! #playsound:VOX_Marcello_attaquerungarde
-=======
-            MARCELLO: Attaquer un garde de la Couronne ! Tu as perdu la tête !
             ~ trial()
             ~ t_2_has_attacked_guards = true
->>>>>>> Stashed changes
             -> combat_part_2
         ** (attack_marcello_F) PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #look:Player:front #trial 
             MARCELLO: Héhé... Loupé, minable.
@@ -334,19 +308,11 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
             -> combat_part_2
     * [Attaquer par derrière. {t(DEXT, 40)}] #trial // 80%
         {sc(DEXT, 40): -> sneaky_attack_marcello_S | -> sneaky_attack_marcello_F}
-<<<<<<< Updated upstream
-        ~ trial()
-        ~ t_2_attack_guards = true
         ** (sneaky_attack_marcello_S) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine #trial #playsound:VOX_Marcello_jepeuxrosser
             PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #anim:Marcello:hurt #look:Player:front #playsound:VOX_Player_prendsca
             MARCELLO: M'attaquer alors que j'ai le dos tourné ? Tu es un lâche ! #look:Marcello:front #playsound:VOX_Marcello_mattaquerdostourne
-=======
-        ** (sneaky_attack_marcello_S) MARCELLO: Je peux le rosser, cheffe ? #look:Marcello:Capucine #trial
-            PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #anim:Marcello:hurt #look:Player:front
-            MARCELLO: M'attaquer alors que j'ai le dos tourné ? Tu es un lâche ! #look:Marcello:front
             ~ trial()
             ~ t_2_has_attacked_guards = true
->>>>>>> Stashed changes
             *** [Et toi un crétin.] PLAYER: C'est toi qui es stupide, à tourner le dos à quelqu'un que tu viens de frapper. #audience:laughter
                 -> combat_part_2
             *** [C'est tout moi, en effet.] PLAYER: Je dirai plutôt que je sais saisir une opportunité quand je la vois... #audience:applause
@@ -354,13 +320,9 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
                 -> combat_part_2
         ** (sneaky_attack_marcello_F) MARCELLO: Je peux le rosser, cheffe ? #trial #look:Marcello:Capucine #playsound:VOX_Marcello_jepeuxrosser
             PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #look:Marcello:front #look:Player:front
-<<<<<<< Updated upstream
             MARCELLO: Tu te crois discret, abruti ? #look:Marcello:front #playsound:VOX_Marcello_tutecroisdiscret
-=======
-            MARCELLO: Tu te crois discret, abruti ? #look:Marcello:front
             ~ trial()
             ~ t_2_has_attacked_guards = true
->>>>>>> Stashed changes
             -> combat_part_2
     * [Calmer le jeu. {t(CHAR, 0)}] // 50%
         {sc(CHAR, 0): -> calm_marcello_S | -> calm_marcello_F}
