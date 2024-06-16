@@ -24617,6 +24617,28 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_TrialInView" ID="{D47FE531-5314-49CA-8B49-2EE84671C3D2}">
+									<ChildrenList>
+										<Action Name="" ID="{689798C3-48B6-4C21-94A6-C28CD4288008}" ShortID="711150038">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_TrialInView" ID="{A7F64850-3E30-4DAD-8961-8B5FD715AC5F}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_Treason" ID="{D134BAA6-129F-4E76-8E58-3F192743E29C}">
+									<ChildrenList>
+										<Action Name="" ID="{B1D0A07D-3A4D-4517-9F0C-F12F118A5046}" ShortID="858434441">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_Treason" ID="{6366DC04-B473-4FDA-8403-229AA2E11B3F}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="SC_Trial" ID="{27D3A6A8-36DE-43D1-AFB4-636A2D719ABC}" ShortID="815332630">
@@ -24627,6 +24649,235 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="MUS_Story_SC_Trial_Agathe" ID="{CB9952DC-2346-4BFB-B8C3-F0AF98581E87}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_Innocent" ID="{B14B9C1D-F621-4F95-9050-98EB13DD3168}">
+									<ChildrenList>
+										<Action Name="" ID="{763529C2-7C98-4FC6-9D89-1568F2A52DF4}" ShortID="840073572">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_Innocent" ID="{908005C1-2562-48CC-9A87-89BF288B14B6}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{99D7DF60-E281-4EB1-BD9D-4D55B18D5771}" ShortID="272579808">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="34"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_ResultRoll" ID="{54CFB3E8-697A-4E9F-A691-1C0F5F55C1C9}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_Coupable" ID="{CE515A58-5400-4648-BC8B-3505601C3649}">
+									<ChildrenList>
+										<Action Name="" ID="{DB149A98-C77B-4BC5-B4B9-5C14C479C76B}" ShortID="317536772">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_Coupable" ID="{E70235BF-5ECD-4818-890C-E9FC325F6675}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{9175D7FB-9006-4485-9D87-36A1949A3AA9}" ShortID="215929758">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="34"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_ResultRoll" ID="{54CFB3E8-697A-4E9F-A691-1C0F5F55C1C9}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_ResultRoll" ID="{65D9ADBA-5512-410D-9853-79CC5D596BD4}">
+									<ChildrenList>
+										<Action Name="" ID="{BBBEC6DC-0634-4506-973C-EDFC9D5963C4}" ShortID="204061516">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_ResultRoll" ID="{54CFB3E8-697A-4E9F-A691-1C0F5F55C1C9}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_CapucineHolds" ID="{37AF725F-9FFD-4264-AFBE-CAF15F43B4DD}">
+									<ChildrenList>
+										<Action Name="" ID="{9A53891C-F49E-448C-804A-EB17828B49C8}" ShortID="735782739">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_CapucineHolds" ID="{12FB57DA-188F-41BE-822F-31E436EC387D}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_MarcelloHolds" ID="{A0DD4BE6-C66B-4E59-8C84-D0D34CB18B55}">
+									<ChildrenList>
+										<Action Name="" ID="{F4CD7316-8504-46AA-99FF-9BC726FCDF7E}" ShortID="542614650">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_MarcelloHolds" ID="{F8D4876F-06C7-48D8-811A-6EFBBE580772}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_PlayerHolds" ID="{CBCA3303-459C-4F1C-BACF-A6F75A997E21}">
+									<ChildrenList>
+										<Action Name="" ID="{225B22F7-C682-43CC-81FB-E9185A83A48C}" ShortID="1045421902">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_PlayerHolds" ID="{1ABF11DE-B8B0-4AD3-91FD-166EBD626785}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_ChefAccusation" ID="{A074D8E7-6935-4E58-BEE0-7DA02C921217}">
+									<ChildrenList>
+										<Action Name="" ID="{F1D29F6F-71CA-4FC5-8FD6-B115BD6EE176}" ShortID="413710369">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_ChefAccusation" ID="{7D96DF1F-FB98-4223-AD80-7D3960B29870}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_Guards" ID="{811B98F4-84D5-41CB-977B-6363161D3322}">
+									<ChildrenList>
+										<Action Name="" ID="{71747E06-909C-4FCF-B7CE-C50E4B282E19}" ShortID="8257418">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_Guards" ID="{41FE1C22-319A-47A9-B393-61AC5F14905C}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_NaidaSpeech" ID="{2A00D66E-48A3-4DA5-9A61-2F14B4755A4D}">
+									<ChildrenList>
+										<Action Name="" ID="{651FA4A2-508A-4A5C-B0F1-C867B741E2B8}" ShortID="394172187">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_NaidaSpeech" ID="{D4FD6C8D-D044-4D40-A311-709B1C62F12F}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_LaVerite3" ID="{5097CAF4-C5BA-4B53-B3DC-D045E4624B1D}">
+									<ChildrenList>
+										<Action Name="" ID="{697A656C-D075-4E76-80BB-71478FF96322}" ShortID="130310818">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_LaVerite3" ID="{10712EF6-CB97-49C2-81F5-ECD90F5EF20A}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_LaVerite2" ID="{B666C044-F321-4A11-B7B7-474815A0E99C}">
+									<ChildrenList>
+										<Action Name="" ID="{267C14D4-DF02-40BF-8668-B4392362D9C3}" ShortID="909549288">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_LaVerite2" ID="{236E80E7-D0D0-4B5F-920C-47D7189DC760}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_Sireine" ID="{FCAD796E-C57D-4767-9FC3-0BB05BC267A4}">
+									<ChildrenList>
+										<Action Name="" ID="{0C68C18F-7322-4E4A-84BD-B4AD8A7B9579}" ShortID="783940715">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_Sireine" ID="{E8E4E880-86E6-4825-B568-5D734EFD2F19}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_Intro2" ID="{03D98AF2-C712-41BF-A439-C7345D882DCD}">
+									<ChildrenList>
+										<Action Name="" ID="{9120C8F3-F25B-4D22-9240-278781EA8824}" ShortID="706944858">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_Intro2" ID="{CEA65007-F0F1-4B5B-B48E-B308D19F3CD0}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_LaVerite1" ID="{B90C555B-B2C3-4AF9-8437-9D17D7E6A894}">
+									<ChildrenList>
+										<Action Name="" ID="{83A5B0FA-899A-4CF2-A315-F6CB2F9DCDDB}" ShortID="94331752">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_LaVerite1" ID="{A9FC4C8F-22B1-4D6B-A53F-8A6072AA4F54}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_UnVainqueur" ID="{BB4C7619-7274-4BD1-A43C-56BE4F57CC79}">
+									<ChildrenList>
+										<Action Name="" ID="{8A30A355-6CB2-4608-945B-92B9DCB1A445}" ShortID="782542904">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_UnVainqueur" ID="{8F429D6E-6431-4DD5-ADE9-7E52E0721DE7}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_Defi" ID="{CF6A918B-21B1-4874-9D94-4502C0052EFC}">
+									<ChildrenList>
+										<Action Name="" ID="{010E8ED2-4AFE-44E6-9431-0A9AF897086B}" ShortID="814291410">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_Defi" ID="{D262D322-B9FF-4968-8A7A-8B008B254DC3}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_Intro" ID="{A8605C72-F9EF-4C76-A642-4902B7F04BAC}">
+									<ChildrenList>
+										<Action Name="" ID="{75528B6C-F55F-4A5F-8D66-3F578D6A3011}" ShortID="607888453">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_Intro" ID="{9C2CB5E6-FC85-4C90-B401-EA0F9DA7C277}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_Arle" ID="{63E4F0D6-ADA3-4684-A322-EBE2401E3B02}">
+									<ChildrenList>
+										<Action Name="" ID="{BB370B8F-7CB9-4B7F-97E8-78E3A9606CEE}" ShortID="464034322">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_Arle" ID="{ADCBC2E7-602D-46E8-A920-98C40AD5DA65}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Trial_Conclusion" ID="{42FE2248-FFF8-470F-AB83-0D3ECC9C3206}">
+									<ChildrenList>
+										<Action Name="" ID="{588B5EB3-AA7A-4433-89D2-32BA43D7FCAA}" ShortID="429849030">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Trial_Conclusion" ID="{520FD7C2-48B0-4D48-8A11-95CCABDAB327}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -24733,6 +24984,87 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="MUS_Story_SC_SecretMeeting_TheMission" ID="{3AD8CD38-93A0-4E14-85E9-C33223231B3F}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
+						<Folder Name="SC_TripReturn" ID="{E4EC0507-E974-485E-A9BF-5B9C7B13BB69}" ShortID="704372852">
+							<ChildrenList>
+								<Event Name="Play_MUS_Story_SC_TripReturn_GuardsClose" ID="{CB3B8B2C-674A-42C5-B4B1-8AC6B8CAFE09}">
+									<ChildrenList>
+										<Action Name="" ID="{A47BF9CC-FC29-4614-9338-7B82F49E1A97}" ShortID="292181630">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_TripReturn_GuardsClose" ID="{0566675D-445D-4A53-B296-B5F701168907}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_TripReturn_GuardsFar" ID="{7756C849-9386-499D-9BF6-FD2A3ACED7EC}">
+									<ChildrenList>
+										<Action Name="" ID="{13AFF259-8220-42A7-8878-460082FA618D}" ShortID="470614663">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_TripReturn_GuardsFar" ID="{C4A70DA5-0756-4629-B877-5A12ACC3A659}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_TripReturn_GuardsHere" ID="{8100AA60-1EF5-4FD7-8810-D477A5E5D082}">
+									<ChildrenList>
+										<Action Name="" ID="{18536D9B-B018-4ECE-AA90-3D0E385D47C1}" ShortID="20133363">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_TripReturn_GuardsHere" ID="{56B392F0-4B9F-43DF-AE2C-0D159EEB7B08}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_TripReturn_Intro" ID="{FC0F0A45-0D00-4B23-80FE-B6265C032E5E}">
+									<ChildrenList>
+										<Action Name="" ID="{D1209E05-E6FA-4C7B-A3BB-70E276ADAEAF}" ShortID="434716367">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_TripReturn_Intro" ID="{2CC775F0-4A76-4892-A6A0-0A88EA3075F0}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_TripReturn_NaidaArrested" ID="{BF333335-668E-43D6-9FB4-B61C8F3EA42A}">
+									<ChildrenList>
+										<Action Name="" ID="{57915B3B-084A-44D3-9A3E-05EFE2DADF29}" ShortID="725714855">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_TripReturn_NaidaArrested" ID="{CBD11242-D2B7-4D94-A132-B52704AC01CF}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_TripReturn_NaidaSpeak" ID="{A03DA66E-2532-4DC5-A741-177581900CE9}">
+									<ChildrenList>
+										<Action Name="" ID="{3293C8DF-1495-4B98-98E0-3CAADE3B423B}" ShortID="933378692">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_TripReturn_NaidaSpeak" ID="{96E9DCBD-D2D8-418A-8E54-80D8748EBB82}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_TripReturn_ToBattle" ID="{E18427B5-4029-440E-AA83-69AAA6249322}">
+									<ChildrenList>
+										<Action Name="" ID="{71A9291D-C4FC-460E-ADB7-3EEFF01A3881}" ShortID="23275898">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_TripReturn_ToBattle" ID="{99DCAD66-0661-4310-85E9-A27EFF7FFF5E}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
