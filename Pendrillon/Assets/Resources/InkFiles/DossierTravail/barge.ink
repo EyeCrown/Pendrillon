@@ -32,44 +32,44 @@ PASSEUR: J'ai connu des passagers plus loquaces... #playsound:VOX_Ferryman_passa
     * [(Rester silencieux)]
 - PASSEUR: *Hum hum* #anim:Passeur:clear_voice #playsound:VOX_Ferryman_humhum
 - PASSEUR: J'ai dit : « J'ai connu des passagers plus loquaces... ». #box #audience:debate #playsound:VOX_Ferryman_jaidit
-- SOUFFLEUR: Psssst... Hé ! #playsound:VOX_Souffleur_pssthe
+- SOUFFLEUR: Psssst... Hé ! #playsound:VOX_Souffleur_pssthe1
 SOUFFLEUR: Par ici, l'ami. #anim:Souffleur:wavehand #playsound:VOX_Souffleur_parici
-SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #playsound:VOX_Souffleur_tracparalyse
+SOUFFLEUR: Je ne sais pas si c'est le trac qui te paralyse, mais... c'est à ton tour de donner la réplique ! #playsound:VOX_Souffleur_jenesaispas
     * [(Rester silencieux)]
 - #sleep:1 #audience:booing
-- SOUFFLEUR: Hé, qu'est-ce que tu fabriques ? Tu as oublié ton texte, c'est ça ? #wait:2 #playsound:VOX_Souffleur_oublietexeteQ
-SOUFFLEUR: Permets-moi de te rafraîchir la mémoire, l'ami. #playsound:VOX_NPC_Souffleur_rafraichirmemoire
-SOUFFLEUR: « Ma mère m'a toujours dit... ».
+- SOUFFLEUR: Hé, qu'est-ce que tu fabriques ? Tu as oublié ton texte, c'est ça ? #wait:2 #playsound:VOX_Souffleur_hequestceque
+SOUFFLEUR: Permets-moi de te rafraîchir la mémoire, l'ami. #playsound:VOX_Souffleur_permetsmoi
+SOUFFLEUR: « Ma mère m'a toujours dit... ». #playsound:VOX_Souffleur_mameretoujou
     * [Ma mère m'a toujours dit...] PLAYER: Ma mère m'a toujours dit... #anim:Player:talk #playsound:VOX_Player_meretoujoursdit #playsound:Play_MUS_Story_SC_Barque_BadViolin1 #audience:applause
-- SOUFFLEUR: « ... qu'enfant, déjà, je n'étais pas très bavard. ». #playsound:VOX_Souffleur_pasbavard
+- SOUFFLEUR: « ... qu'enfant, déjà, je n'étais pas très bavard. ». #playsound:VOX_Souffleur_enfantdeja
     * [... qu'enfant, déjà, je n'étais pas très bavard.] PLAYER: ... qu'enfant, déjà, je n'étais pas très bavard. #playsound:VOX_Player_pasbavard #playsound:Play_MUS_Story_SC_Barque_BadViolin2 #audience:applause
 PASSEUR: Vraiment ? J'ai pourtant ouï-dire qu'en matière de baratin, tu n'étais pas le dernier... #playsound:VOX_Ferryman_baratinpasdernier #audience:applause
-SOUFFLEUR: Psssst... Hé, l'ami ! #anim:Souffleur:angry #playsound:VOX_Souffleur_pssthecolere
-SOUFFLEUR: Quand je te souffle le texte, je n'y mets pas le ton...
-SOUFFLEUR: Ce n'est pas mon métier, tu piges ?
-SOUFFLEUR: Mais toi, tu es acteur, pas vrai ?
-SOUFFLEUR: Alors mets-y de l'émotion, l'ami !
-- SOUFFLEUR: Reprenons : « Il est vrai que j'ai ce talent-là, mais... ». #anim:Souffleur:deception
+SOUFFLEUR: Psssst... Hé, l'ami ! #anim:Souffleur:angry #playsound:VOX_Souffleur_pssthe2
+SOUFFLEUR: Quand je te souffle le texte, je n'y mets pas le ton... #playsound:VOX_Souffleur_quandjesouffle
+SOUFFLEUR: Ce n'est pas mon métier, tu piges ? #playsound:VOX_Souffleur_pasmonmetier
+SOUFFLEUR: Mais toi, tu es acteur, pas vrai ? #playsound:VOX_Souffleur_moitoiacteur
+SOUFFLEUR: Alors mets-y de l'émotion, l'ami ! #playsound:VOX_Souffleur_metsyemotion
+- SOUFFLEUR: Reprenons : « Il est vrai que j'ai ce talent-là, mais... ». #anim:Souffleur:deception #playsound:VOX_Souffleur_reprenons
     * [Il est vrai que j'ai ce talent-là, mais...] PLAYER: Il est vrai que j'ai ce talent-là, mais... #playsound:VOX_Player_ilestvraitalent
-- SOUFFLEUR: N'oublie pas d'incarner ton personnage, l'ami ! Souviens-toi : l'é-mo-tion ! #anim:Souffleur:angry
-- SOUFFLEUR: « Un talent est une ressource précieuse, aussi, je l'utilise à bon escient. ».
+- SOUFFLEUR: N'oublie pas d'incarner ton personnage, l'ami ! Souviens-toi : l'é-mo-tion ! #anim:Souffleur:angry #playsound:VOX_Souffleur_noubliepasincarner
+- SOUFFLEUR: « Un talent est une ressource précieuse, aussi, je l'utilise à bon escient. ». #playsound:VOX_Souffleur_untalentressource
     * [(Avec intensité) Un talent est une ressource précieuse...] PLAYER: Un talent est une ressource précieuse, aussi je l'utilise à bon escient. #wait:1 #audience:ovation #playsound:Play_MUS_Story_SC_Barque_AGoodActor #playsound:VOX_Player_talentressourceprecieuse
 - PASSEUR: Héhé, je vois, je vois... #anim:Passeur:laugh #playsound:VOX_Ferryman_hahajevois
 - PASSEUR: Tu sais, voyageur, ce n'est pas auprès de moi qu'il faudra se montrer éloquent. #playsound:VOX_Ferryman_detoutefacon #audience:ovation
-- SOUFFLEUR: C'est exaltant, pas vrai ? #anim:Souffleur:happy
-SOUFFLEUR: Le public réagit à tes répliques, mais aussi à ton jeu de scène ! Tu brûles littéralement les planches, l'ami ! #anim:Souffleur:happy #playsound:VOX_Souffleur_publicreagit
-SOUFFLEUR: Poursuivons : « Je ne suis pas un homme de mauvaise compagnie. ».
+- SOUFFLEUR: C'est exaltant, pas vrai ? #anim:Souffleur:happy #playsound:VOX_Souffleur_exaltant
+SOUFFLEUR: Le public réagit à tes répliques, mais aussi à ton jeu de scène ! Tu brûles littéralement les planches, l'ami ! #anim:Souffleur:happy #playsound:VOX_Souffleur_publicreagi
+SOUFFLEUR: Poursuivons : « Je ne suis pas un homme de mauvaise compagnie. ». #playsound:VOX_Souffleur_poursuivonsjene
     * [Je ne suis pas un homme de mauvaise compagnie.] PLAYER: Je ne suis pas un homme de mauvaise compagnie. #playsound:VOX_Player_pasmauvaisecompagnie
-- SOUFFLEUR: « De quoi souhaites-tu que l'on parle, Passeur ? ».
+- SOUFFLEUR: « De quoi souhaites-tu que l'on parle, Passeur ? ». #playsound:VOX_Souffleur_dequoisouhai
     * [De quoi souhaites-tu que l'on parle, Passeur ?] PLAYER: De quoi souhaites-tu que l'on parle, Passeur ? #anim:Player:question #playsound:VOX_Player_quoisouhaiteparle
 - PASSEUR: Commence par te présenter : qui es-tu ? #anim:Passeur:question #playsound:VOX_Ferryman_commencepresenter
 #audience:debate
-- SOUFFLEUR: Aïe ! C'est là qu'on va avoir un petit problème, l'ami.
-SOUFFLEUR: Le metteur en scène de cette pièce, le célèbre Jean Ornicar... son nom te dit sans doute quelque chose...
-SOUFFLEUR: Le respectable Ornicar a quitté la troupe. En assez mauvais termes, vois-tu.
-SOUFFLEUR: Là où le bât blesse... c'est qu'il n'a jamais terminé d'écrire tes répliques.
-SOUFFLEUR: On aurait dû te prévenir avant, navré l'ami...
-SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance, l'ami ! #anim:Player:stressed
+- SOUFFLEUR: Aïe ! C'est là qu'on va avoir un petit problème, l'ami. #playsound:VOX_Souffleur_aie
+SOUFFLEUR: Le metteur en scène de cette pièce, le célèbre Jean Ornicar... son nom te dit sans doute quelque chose... #playsound:VOX_Souffleur_ornicar
+SOUFFLEUR: Le respectable Ornicar a quitté la troupe. En assez mauvais termes, vois-tu. #playsound:VOX_Souffleur_quittelatroupe
+SOUFFLEUR: Là où le bât blesse... c'est qu'il n'a jamais terminé d'écrire tes répliques. #playsound:VOX_Souffleur_lebatblesse
+SOUFFLEUR: On aurait dû te prévenir avant, navré l'ami... #playsound:VOX_Souffleur_navrelami
+SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance, l'ami ! #anim:Player:stressed #playsound:VOX_Souffleur_bonnechance
 #audience:booing
 - PASSEUR: Peut-être ne m'as-tu pas entendu. Je disais : qui es-tu ? #playsound:VOX_Ferryman_quiestu
     * [Je suis Merlin...] PLAYER: Je réponds au doux nom de Merlin... #anim:Player:bow #playsound:VOX_Player_Merlin #playsound:Play_MUS_Story_SC_Barque_ANewName
@@ -79,7 +79,7 @@ SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance, l
     * [On m'appelle Octave...] PLAYER: Je réponds au doux nom d'Octave... #anim:Player:bow #playsound:VOX_Player_Octave #playsound:Play_MUS_Story_SC_Barque_ANewName
         ~ p_name = "Octave"
 - #audience:ovation
-SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! <i>Show must go on!</i>
+SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! <i>Show must go on!</i> #playsound:VOX_Souffleur_sacretalent
 {
     - p_name == "Merlin":
         PASSEUR: Désormais que je sais qui tu es, dis-moi : comment t'es-tu retrouvé ici, {p_name} ? #anim:Passeur:question #playsound:VOX_Ferryman_commentretrouveiciMerlin

@@ -30,6 +30,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	1719345792	UI_Volume			\Default Work Unit\Menu_VolumeSliders\UI_Volume	
 	2054307141	Environment_Volume			\Default Work Unit\Menu_VolumeSliders\Environment_Volume	
 	2312172015	Main_Volume			\Default Work Unit\Menu_VolumeSliders\Main_Volume	
+	3146209270	FullLineIsSpeaking			\Default Work Unit\System_RTPC\FullLineIsSpeaking	
 	3440409837	Voices_Volume			\Default Work Unit\Menu_VolumeSliders\Voices_Volume	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
@@ -39,9 +40,11 @@ Audio Bus	ID	Name			Wwise Object Path	Notes
 	603598863	Reverb_Environment_01			\Default Work Unit\Master Audio Bus\MainReverb\Reverb_Environment_01	
 	672170402	Dry_Crowd			\Default Work Unit\Master Audio Bus\MainDry\Dry_Environment\Dry_Crowd	
 	744331921	Reverb_SFX_01			\Default Work Unit\Master Audio Bus\MainReverb\Reverb_SFX_01	
+	906855355	Dry_Dialog			\Default Work Unit\Master Audio Bus\MainDry\Dry_Voices\Dry_Dialog	
 	1636724294	MainReverb			\Default Work Unit\Master Audio Bus\MainReverb	
 	2800544509	MainDry			\Default Work Unit\Master Audio Bus\MainDry	
 	3299242565	Reverb_Voices_01			\Default Work Unit\Master Audio Bus\MainReverb\Reverb_Voices_01	
+	3367604937	Dry_Emotions			\Default Work Unit\Master Audio Bus\MainDry\Dry_Voices\Dry_Emotions	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
 	3848410326	Dry_Environment			\Default Work Unit\Master Audio Bus\MainDry\Dry_Environment	
 	3852188084	MainHyperacusis			\Default Work Unit\Master Audio Bus\MainHyperacusis	
@@ -53,6 +56,7 @@ Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	1166417795	Reverb_Crowd			\Default Work Unit\Master Audio Bus\MainDry\Dry_Environment\Reverb_Crowd	
 
 Effect plug-ins	ID	Name	Type				Notes
+	798834842	Meter (Custom)	Wwise Meter			
 	1520064353	Hall_Medium_Bright	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes

@@ -32,54 +32,54 @@ VAR player_is_close_to_bush = false
 - #audience:debate #playsound:Play_MUS_Story_SC_SecretMeeting_Encore
     * [Attendre plus fort.]
 - #audience:booing
-- SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #playsound:VOX_Souffleur_partenairedescene
-SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes <b>talents</b> !
-SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance !
+- SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #playsound:VOX_Souffleur_lepublicsimpatiente
+SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes <b>talents</b> ! #playsound:VOX_Souffleur_jaiuneidee
+SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance ! #playsound:VOX_Souffleur_quetureussissesou
     * [Effectuer une danse. {t(DEXT, 40)}] // 80%
         {sc(DEXT, 40): -> dancing_S | -> dancing_F}
-        ** (dancing_S) SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:dance #audience:ovation
+        ** (dancing_S) SOUFFLEUR: Excellent ! Je ne te connaissais pas un talent de danseur ! Tu as le rythme dans la peau, l'ami ! #playsound:VOX_Souffleur_excellent #anim:Player:dance #audience:ovation 
             -> success_entertaining_audience
-        ** (dancing_F) SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami. #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:fail #audience:booing
-            SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance !
+        ** (dancing_F) SOUFFLEUR: L'idée n'était pas mauvaise, mais... Je ne crois pas que tu aies le rythme dans la peau, l'ami. #playsound:VOX_Souffleur_pasmauvaisidee #anim:Player:fall_down #audience:booing
+            SOUFFLEUR: Ce n'est pas grave. Parfois, faire appel à ses talents demande un coup de chance ! #playsound:VOX_Souffleur_pasgrave
             -> failure_entertaining_audience
     * [Faire des pompes. {t(STRE, 40)}] // 80%
         {sc(STRE, 40): -> do_pushups_S | -> do_pushups_F}
-        ** (do_pushups_S) SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami ! #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:pushup #audience:ovation
+        ** (do_pushups_S) SOUFFLEUR: Bien joué ! Tu ne seras pas allé à la salle pour rien, l'ami ! #playsound:VOX_Souffleur_bienjouetunesalle #anim:Player:pushup #audience:ovation
             -> success_entertaining_audience
-        ** (do_pushups_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:fail #audience:booing
-            SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, l'ami.
-            SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
+        ** (do_pushups_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:fall_down #audience:booing
+            SOUFFLEUR: Je comprends l'intention, mais les muscles ne suivent pas. Skill issue, l'ami. #playsound:VOX_Souffleur_comprensmaispasmuscles
+            SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance ! #playsound:VOX_Souffleur_biententequandmeme
             -> failure_entertaining_audience
     * [Hypnotiser le public. {t(CHAR, 40)}] // 80%
         {sc(CHAR, 40): -> hypnotise_S | -> hypnotise_F}
         ** (hypnotise_S) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:hypnose #audience:ovation
-            SOUFFLEUR: Wow...
-            SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal... Bien joué, l'ami !
+            SOUFFLEUR: Wow... #playsound:VOX_Souffleur_wowimpress
+            SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal... Bien joué, l'ami ! #playsound:VOX_Souffleur_paranormalgg
             -> success_entertaining_audience
         ** (hypnotise_F) #playsound:Play_MUS_Story_SC_SecretMeeting_Meubler #anim:Player:hypnose #audience:booing
-            SOUFFLEUR: Euh...
-            SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal...
-            SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance !
+            SOUFFLEUR: Euh... #playsound:VOX_Souffleur_euhpasimpress
+            SOUFFLEUR: Je n'avais encore jamais vu un acteur faire appel au... paranormal... #playsound:VOX_Souffleur_paranormalff
+            SOUFFLEUR: Bien tenté quand même ! Parfois, faire appel à ses talents demande un coup de chance ! #playsound:VOX_Souffleur_biententetalentschance
             -> failure_entertaining_audience
-            *** (success_entertaining_audience) VOIX CHUCHOTÉE: <i>(Psssst... Hé ! Cesse d'amuser la galerie, veux-tu ? Ne me vole pas la vedette !)</i> #playsound:VOX_Arle_nevolepasvedette
-            *** (failure_entertaining_audience) VOIX CHUCHOTÉE: <i>(Psssst... Hé ! Merci d'avoir tout loupé, camarade ! Ça me permettra de briller d'autant plus !)</i> #playsound:VOX_Arle_mercitoutloupe
+            *** (success_entertaining_audience) VOIX CHUCHOTÉE: <i>(Psssst... Hé ! Cesse d'amuser la galerie, veux-tu ? Ne me vole pas la vedette !)</i> #playsound:VOX_Arle_pssthecesse
+            *** (failure_entertaining_audience) VOIX CHUCHOTÉE: <i>(Psssst... Hé ! Merci d'avoir loupé, camarade ! Ça me permettra de briller d'autant plus !)</i> #playsound:VOX_Arle_pssthemerci
 -
     * [(Chuchoter) Qui me parle ?] PLAYER: <i>(Qui me parle, au juste ?)</i> #audience:debate #playsound:VOX_Player_quimeparle
-        VOIX CHUCHOTÉE: <i>(Celle qui va bientôt faire une entrée remarquée ! Héhé !)</i>
+        VOIX CHUCHOTÉE: <i>(Celle qui va bientôt faire une entrée remarquée ! Héhé !)</i> #playsound:VOX_Arle_cellequiva
     * [Ignorer la voix.] PLAYER: ... #audience:debate
 - // La scène continue
     * [(À l'actrice) Il est temps que tu me rejoignes.] PLAYER: <i>(Il serait <b>vraiment</b> temps que tu me rejoignes sur scène.)</i> #audience:booing #playsound:VOX_Player_VRAIMENTtemps
     * [(Au public) Il est temps que l'on me rejoigne.] PLAYER: Je crois <b>vraiment</b> qu'il est temps que mon interlocuteur secret daigne se montrer. #audience:laughter #playsound:VOX_Player_VRAIMENTtempspublic
-- VOIX CHUCHOTÉE: <i>(Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable !)</i> #playsound:VOX_Arle_laissonslesselanguir //#anim:Arle:get_up_a_bit
+- VOIX CHUCHOTÉE: <i>(Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable !)</i> #playsound:VOX_Arle_lessleslanguir //#anim:Arle:get_up_a_bit
     * [Attendre davantage.] #audience:booing
 - // On voit un bout de ARLE qui dépasse d'un buisson
     * [(À l'actrice) Tout le monde t'as vu...] PLAYER: <i>(Psssst... Hé ! Tout le monde t'as repéré, cachée derrière le buisson !)</i> #playsound:VOX_Player_toutlemondepeuttevoir
-        VOIX CHUCHOTÉE: <i>(Hé ! Ne me donne pas de leçon sur mon jeu de scène, compris ?)</i>
+        VOIX CHUCHOTÉE: <i>(Hé ! Ne me donne pas de leçon sur mon jeu de scène, compris ?)</i> #playsound:VOX_Arle_henemedonnepas
     * [(Au public) On dirait que je suis épié !] PLAYER: J'ai la sensation que je ne suis pas aussi seul que je le croyais... Quelqu'un m'épie ! Quelqu'un qui n'est pas très discret... #audience:laughter #playsound:VOX_Player_quelquunmepie
-        VOIX CHUCHOTÉE: <i>(Hé ! Arrête de me ridiculiser auprès du public, tu veux ?)</i>
+        VOIX CHUCHOTÉE: <i>(Hé ! Arrête de me ridiculiser auprès du public, tu veux ?)</i> #playsound:VOX_Arle_hearrete
 - #anim:Arle:get_down
     * [Raisonner l'actrice.] PLAYER: <i>(Le public n'attend que ton apparition ! C'est maintenant ou jamais !)</i> #anim:Player:chuchote #playsound:VOX_Player_lepublicattendapparition
-        VOIX CHUCHOTÉE: <i>(J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré.)</i> #playsound:VOX_Arle_jailimpressionpublic
+        VOIX CHUCHOTÉE: <i>(J'ai l'impression que tu cherches à me ridiculiser devant mon public adoré.)</i> #playsound:VOX_Arle_jailimpression
         PLAYER: <i>(Puisque tu refuses de coopérer...)</i> #audience:debate
         ** [Aller voir de plus près.] -> move_to_bush
     * [Examiner le buisson.] PLAYER: Ce buisson me semble... suspect... #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
@@ -92,12 +92,19 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
         ARLE: Mais qui voilà ?! N'est-ce pas moi ? #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila
 - #anim:Arle:greet #move:Player:8:2
     * [Que faisais-tu cachée ?] PLAYER: Que faisais-tu là, cachée tel un rat ? #anim:Player:question #playsound:VOX_Player_cacheerat
-        BOUFFONNE: J'apprenais à vous connaître, messire. Je vous observais...
+        BOUFFONNE: J'apprenais à vous connaître, messire. Je vous observais... #playsound:VOX_Arle_japprenais
         ** [Me connaître ?] PLAYER: Me connaître, moi ?
-            BOUFFONNE: Parfaitement, messire.
+            BOUFFONNE: Parfaitement, messire. #playsound:VOX_Arle_pargaitement
             *** [Échangeons nos noms.] PLAYER: Faisons un marché. Je t'échange mon nom contre le tien. Qu'en dis-tu ? N'est-ce pas là une honnête transaction ?
-                BOUFFONNE: J'ai bien peur, messire, de posséder déjà ce que vous proposez de m'offrir... #anim:Arle:deception
-                BOUFFONNE: {p_name}, si je ne m'abuse ? #anim:Arle:question
+                BOUFFONNE: J'ai bien peur, messire, de posséder déjà ce que vous proposez de m'offrir... #anim:Arle:deception #playsound:VOX_Arle_jaibienpeur
+                    {
+                        - p_name == "Merlin":
+                            BOUFFONNE: Merlin, si je ne m'abuse ? #anim:Arle:question #playsound:VOX_Arle_merlin
+                        - p_name == "Ambroise":
+                            BOUFFONNE: Ambroise, si je ne m'abuse ? #anim:Arle:question #playsound:VOX_Arle_ambroise
+                        - p_name == "Octave":
+                            BOUFFONNE: Octave, si je ne m'abuse ? #anim:Arle:question #playsound:VOX_Arle_octave
+                    }
                 **** [Et à qui {p_name} a-t-il l'honneur ?] PLAYER: Et avec qui ai-je le plaisir de m'entretenir ? #anim:Player:question
                     -> arle_presentation
                 **** [Refuses-tu d'annoncer qui tu es ?] PLAYER: Refuses-tu d'annoncer qui tu es...
@@ -106,29 +113,29 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
                     ***** [... malandrine ?] PLAYER: ... malandrine ? #anim:Player:question #anim:Arle:sad
                         -> arle_presentation
         ** [C'est toi que je veux connaître.] PLAYER: La politesse exige qu'on se présente le premier.
-            BOUFFONNE: Me présenter ? Cela, je sais le faire, et fort bien ! #anim:Arle:happy
+            BOUFFONNE: Me présenter ? Cela, je sais le faire, et fort bien ! #anim:Arle:happy #playsound:VOX_Arle_mepresenter
             --- (arle_presentation) BOUFFONNE: Je suis Arle, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle #audience:ovation
     * [Es-tu l'autrice de la lettre ?] PLAYER: Est-ce donc toi qui as écrit la lettre que j'ai reçue la veille ? #anim:Player:question #playsound:VOX_Player_toiecritlettre
-        BOUFFONNE: Je sais faire bien des choses, messire... #anim:Arle:happy
-        BOUFFONNE: Faire la belle... #anim:Arle:pretty_pose
-        BOUFFONNE: Faire le show... #anim:Arle:show_pose
-        BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter
+        BOUFFONNE: Je sais faire bien des choses, messire... #anim:Arle:happy #playsound:VOX_Arle_jesaisfaire
+        BOUFFONNE: Faire la belle... #anim:Arle:pretty_pose #playsound:VOX_Arle_fairelabelle
+        BOUFFONNE: Faire le show... #anim:Arle:show_pose #playsound:VOX_Arle_lewhow
+        BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter #playsound:VOX_Arle_maispointecrir
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question #playsound:VOX_Player_saisdirenom
             -> arle_presentation
         ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 30)}] // 70%
             {sc(CHAR, 30): -> mock_arle_S | -> mock_arle_F}
         *** (mock_arle_S) PLAYER: Tu es une authentique bouffonne... #anim:Arle:sad #audience:laughter #playsound:VOX_Player_tuesbouffonne
-                BOUFFONNE: Bouffonne est l'une de mes professions, mais ce n'est pas mon nom. #anim:Arle:stressed
+                BOUFFONNE: Bouffonne est l'une de mes professions, mais ce n'est pas mon nom. #anim:Arle:stressed #playsound:VOX_Arle_boufonne
                 -> arle_presentation
             *** (mock_arle_F) PLAYER: Une authentique bouffonne... #anim:Player:stressed #anim:Arle:happy #playsound:VOX_Player_authentiquebouffonne
-                BOUFFONNE: Je me plais à inspirer le rire, le bonheur... la félicité ! Vous plaisez-vous à inspirer la pitié ? #anim:Arle:happy #audience:laugther #anim:Player:sad
+                BOUFFONNE: Je me plais à inspirer le rire, le bonheur... la félicité ! Vous plaisez-vous à inspirer la pitié ? #anim:Arle:happy #audience:laugther #anim:Player:sad #playsound:VOX_Arle_jinspirelerire
                 -> arle_presentation
 -
     * [Qui t'envoie ?] PLAYER: Je présume que tu es au service de quelqu'un. Qui donc ? #anim:Player:question #playsound:VOX_Player_auservice
-        ARLE: Je suis au service, en cuisine et à la plonge, messire. Là où on me somme d'être. Quant à qui me commande... #anim:Arle:Bow
+        ARLE: Je suis au service, en cuisine et à la plonge, messire. Là où on me somme d'être. Quant à qui me commande... #anim:Arle:Bow #playsound:VOX_Arle_alaplonge
             ** [J'attends.] PLAYER: Alors ? #anim:Player:question #playsound:VOX_Player_alors
             ** [Qui ?] PLAYER: Qui ? #anim:Player:question #playsound:VOX_Player_qui
-            -- ARLE: Si je ne puis vous offrir son identité, je me dois tout de même de vous dire qu'il - ou elle - est très riche.
+            -- ARLE: Si je ne puis vous offrir son identité, je me dois tout de même de vous dire qu'il - ou elle - est très riche. #playsound:VOX_Arle_puisoffrirident
                 *** [C'est bon à savoir.] PLAYER: C'est là l'essentiel.
                 *** [Mais encore ?] PLAYER: C'est un bon début, mais où cela va-t-il nous mener ? #anim:Player:question
     * [Pourquoi tant de mystère ?] PLAYER: La lettre non signée, le rendez-vous secret... Pourquoi tant de mystère ? #anim:Player:question #playsound:VOX_Player_lettrenonsignee
@@ -136,90 +143,90 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - -> the_mission
 
 = the_mission
-- ARLE: La personne qui m'envoie souhaiterait vous offrir un travail. Disons plutôt : une mission. #playsound:VOX_Arle_raisonconvocation
+- ARLE: La personne qui m'envoie souhaiterait vous offrir un travail. Disons plutôt : une mission. #playsound:VOX_Arle_lapersonnetravail
     * [Continue.] -> what_is_the_mission
     * [Je t'écoute.]  -> what_is_the_mission
     * [Dépêche-toi !]  -> what_is_the_mission
 - (what_is_the_mission) PLAYER: Quelle est donc cette mission ? #anim:Player:question #playsound:VOX_Player_quelleestcettemission
-ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #playsound:VOX_Arle_quelrapporttuer #audience:choc
+ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #playsound:VOX_Arle_demandermessire #audience:choc
     * [Hors de question.] PLAYER: Ôter une vie n'est pas dans mes pratiques. #audience:ovation #trial #playsound:VOX_Player_oterviepratique
         ~ trial()
         ~ t_1_refuse_to_kill = true
         PLAYER: Je ne suis pas un tueur, mais un marin. Tout juste suis-je capable d'ôter la vie à un poisson... #anim:Player:non
-        ARLE: Il se trouve justement que c'est un poisson que l'on souhaiterait voir mort. Un gros poisson. #anim:Arle:happy #audience:debate
+        ARLE: Il se trouve justement que c'est un poisson que l'on souhaiterait voir mort. Un gros poisson. #anim:Arle:happy #audience:debate #playsound:VOX_Arle_ilsetrouve
         -- (big_fish)
         ** [Un gros poisson ?] PLAYER : Un gros poisson tu dis ? Gros comment ? #anim:Player:question
-            ARLE: Je n'ai pas les bras assez longs, messire. Gros comme le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
+            ARLE: Je n'ai pas les bras assez longs, messire. Gros comme le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca #playsound:VOX_Arle_pasbrasassez
         ** [Assez de mystère !] PLAYER: Il suffit ! J'en ai assez de tout ce mystère : parle maintenant ou permets-moi d'aller me recoucher. #anim:Player:angry
-            ARLE : Ce poisson est un très gros poisson, messire. Aussi gros que le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca
+            ARLE : Ce poisson est un très gros poisson, messire. Aussi gros que le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca #playsound:VOX_Arle_cepoisson
     * [Sans soucis.] PLAYER : Tuer ne me dérange nullement. #audience:choc #trial #playsound:VOX_Player_tuerderangenullement
         ~ trial()
         ~ t_1_accept_to_kill = true
         PLAYER: Dis-m'en plus : qui voulez-vous voir périr ? #audience:debate
-        ARLE: Un poisson, messire. Un gros poisson. #audience:debate
+        ARLE: Un poisson, messire. Un gros poisson. #audience:debate #playsound:VOX_Arle_unpoisson
         -> big_fish
 - ARLE: Prenez ceci, voulez-vous ? #playsound:VOX_Arle_prenezceci
     * [Qu'est-ce que c'est ?] PLAYER: Qu'est-ce donc ? #anim:Player:question #playsound:VOX_Player_questcedonc
-- ARLE: Un marin tel que vous ne reconnaît-il pas une carte quand il en voit une, messire ? #anim:Arle:bow #audience:laughter
+- ARLE: Un marin tel que vous ne reconnaît-il pas une carte quand il en voit une, messire ? #anim:Arle:bow #audience:laughter #playsound:VOX_Arle_unmarin
     * [Quel endroit indique t-elle ?] PLAYER: Quel endroit indique-t-elle ? #anim:Player:question
-        ARLE: En voilà une question intéressante... #anim:Arle:happy
+        ARLE: En voilà une question intéressante... #anim:Arle:happy #playsound:VOX_Arle_envoilaquestion
     * [Une carte, pourquoi donc ?] PLAYER: Pourquoi aurais-je besoin d'une carte ? #anim:Player:question
-        ARLE: Vous le saurez bien assez tôt... #anim:Arle:happy
+        ARLE: Vous le saurez bien assez tôt... #anim:Arle:happy #playsound:VOX_Arle_vouslesaurez
     * [Pas besoin de carte.] PLAYER: Je n'ai nul besoin de carte. Je puis déjà aller où je le désire...
-        ARLE: Prenez-là tout de même, faites-moi confiance, messire...
+        ARLE: Prenez-là tout de même, faites-moi confiance, messire... #playsound:VOX_Arle_prenezquandmeme
 ~ add_to_inventory(i_map_leviathan)
-- ARLE: Puis-je vous raconter une petite histoire, messire ? #anim:Arle:question
+- ARLE: Puis-je vous raconter une petite histoire, messire ? #anim:Arle:question #playsound:VOX_Arle_puisjehistroire
     * [J'adore les histoires !] PLAYER: Je t'en prie ! #playsound:VOX_Player_jetenprie
     * [Fais vite.] PLAYER: Je n'ai point ton temps, presse-toi. #anim:Player:angry #playsound:VOX_Player_pointtontemps
     * [Hors de question.] PLAYER: Non. #anim:Player:non #playsound:VOX_Player_non
-        ARLE: Si je ne le fais pas pour vous, messire...
-        ARLE: Je le ferai pour eux. #anim:Arle:point_audience #audience:applause
-- ARLE: Il était une fois... une terrible tempête. #audience:choc
-ARLE: Pas n'importe quelle tempête : celle-ci dura près d'un siècle. #audience:debate
-ARLE: Pour survivre, les Hommes durent bâtir un immense navire... #audsience:ovation
-ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poisson...
+        ARLE: Si je ne le fais pas pour vous, messire... #playsound:VOX_Arle_paspourvous
+        ARLE: Je le ferai pour eux. #anim:Arle:point_audience #audience:applause #playsound:VOX_Arle_poureux
+- ARLE: Il était une fois... une terrible tempête. #audience:choc #playsound:VOX_Arle_iletaitunefois
+ARLE: Pas n'importe quelle tempête : celle-ci dura près d'un siècle. #audience:debate #playsound:VOX_Arle_pasnimportequelle
+ARLE: Pour survivre, les Hommes durent bâtir un immense navire... #audsience:ovation #playsound:VOX_Arle_poursurvivre
+ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poisson... #playsound:VOX_Arle_avecmonteeeaux
 - #anim:Arle:monster #audience:choc
-- ARLE: Ce poisson, voyez-vous, était si gros qu'il aurait pu avaler une ville entière. #audience:choc
+- ARLE: Ce poisson, voyez-vous, était si gros qu'il aurait pu avaler une ville entière. #audience:choc #playsound:VOX_Arle_cepoissonvoyezvousgros
     * [Le Léviathan !] PLAYER: Le <b>Léviathan</b> ! #anim:Player:surprised #audience:choc #playsound:VOX_Player_leleviathan
-        ARLE: Le Léviathan, messire.
+        ARLE: Le Léviathan, messire. #playsound:VOX_Arle_levimessire
     * [Rester silencieux.]
-- ARLE: Plus d'une fois, il manqua d'engloutir les Hommes... Fort heureusement, la <b>Déesse Irène</b> nous sauva tous ! #audience:applause
-- ARLE: C'est pourquoi nous jouissons d'être en vie aujourd'hui, n'est-ce pas ?
-ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au <b>Déluge</b>... La créature, elle aussi, est en vie aujourd'hui. #audience:debate
+- ARLE: Plus d'une fois, il manqua d'engloutir les Hommes... Fort heureusement, la <b>Déesse Irène</b> nous sauva tous ! #audience:applause #playsound:VOX_Arle_plusdunefoisengloutir
+- ARLE: C'est pourquoi nous jouissons d'être en vie aujourd'hui, n'est-ce pas ? #playsound:VOX_Arle_cestpourquoi
+ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au <b>Déluge</b>... La créature, elle aussi, est en vie aujourd'hui. #audience:debate #playsound:VOX_Arle_malheureusement
     * [Moi, tuer le Léviathan ?] PLAYER: Suis-je en plein rêve, ou me demandes-tu vraiment d'aller tuer le <b>Léviathan</b> ? #anim:Player:question #audience:laugther #playsound:VOX_Player_enpleinreve
-        ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse. #audience:choc
+        ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse. #audience:choc #playsound:VOX_Arle_pointmatiere
     * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. #audience:laughter #anim:Player:laugh #playsound:VOX_Player_cestplaisanterie
-        ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse. #audience:choc
+        ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse. #audience:choc #playsound:VOX_Arle_pointmatiere2
     * [Il va falloir me payer grassement.] PLAYER: Si ton maître veut me faire courir un tel risque... Il a intérêt à me payer grassement ! #audience:laughter #playsound:VOX_Player_tonmaitredanger
-- ARLE: Si vous acceptez de ramener le cœur du terrible <b>Léviathan</b>, mon maître vous offrira le poids de votre navire en or.
+- ARLE: Si vous acceptez de ramener le cœur du terrible <b>Léviathan</b>, mon maître vous offrira le poids de votre navire en or. #playsound:VOX_Arle_sivousacceptez
     * [Une sacrée somme.] PLAYER: Une somme qui n'est pas à prendre à la légère... #anim:Player:joy
     * [(Négocier) Mon navire est léger. {t(CHAR, 10)}] // 50%
         {sc(CHAR, 10): -> negociate_S | -> negociate_F} 
             *** (negociate_S) PLAYER: Mon navire est fait d'un bois très léger, voyez-vous... #playsound:VOX_Player_boistresleger
-                ARLE: Vous êtes dur en affaire, messire. Alors disons le double ! #anim:Arle:angry
+                ARLE: Vous êtes dur en affaire, messire. Alors disons le double ! #anim:Arle:angry #playsound:VOX_Arle_vousetesdur
             *** (negociate_F) PLAYER: Mon navire, euh... est au régime. Il a perdu du poids, et... #anim:Player:stressed #playsound:VOX_Player_navireregime
-                ARLE: Messire, ces simagrées ne vous honorent pas. Notre position est ferme, j'en ai peur. #anim:Arle:deception
-- ARLE: Ramenez-nous le cœur de l'immonde <b>Léviathan</b>, sinon pour la gloire, pour l'intérêt de la Couronne.
+                ARLE: Messire, ces simagrées ne vous honorent pas. Notre position est ferme, j'en ai peur. #anim:Arle:deception #playsound:VOX_Arle_messireces
+- ARLE: Ramenez-nous le cœur de l'immonde <b>Léviathan</b>, sinon pour la gloire, pour l'intérêt de la Couronne. #playsound:VOX_Arle_ramenezlecoeur
     * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la Couronne qui t'envoie ? #anim:Player:question
-        -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:happy
+        -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:happy #playsound:VOX_Arle_seriezvousenclin
             ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour notre bonne reine ! #trial #playsound:VOX_Player_braveraidangersreine
                 ~ trial()
                 ~ t_1_respect_the_crown = true
             ** [La reine et sa Couronne m'indiffèrent.] PLAYER: Constance et son inconstance m'inspirent l'indifférence. #audience:laughter #trial #playsound:VOX_Player_constanceinconstance
                 ~ trial()
                 ~ t_1_disrespect_the_crown = true
-                ARLE: Ces petites rimes, messire, pourraient vous coûter cher. #anim:Arle:deception
+                ARLE: Ces petites rimes, messire, pourraient vous coûter cher. #anim:Arle:deception #playsound:VOX_Arle_cespetitesrimes
     * [Pour la reine Constance ?] PLAYER: Est-ce la reine elle-même qui demande mon renfort ? #anim:Player:question
-        ARLE: Nulle demande ne saurait provenir de la bouche de la reine, messire. Seulement des ordres...
+        ARLE: Nulle demande ne saurait provenir de la bouche de la reine, messire. Seulement des ordres... #playsound:VOX_Arle_nulledemande
         -> to_the_crown
-- ARLE: Puis-je ajouter, messire, que vaincre le <b>Léviathan</b> constituerait une offrande de taille à la <b>Déesse</b> Elle-même.
+- ARLE: Puis-je ajouter, messire, que vaincre le <b>Léviathan</b> constituerait une offrande de taille à la <b>Déesse</b> Elle-même. #playsound:VOX_Arle_puisjevaincrelevi
     * [Pour la Déesse !] PLAYER: J'honorerai la <b>Déesse</b>, j'en fais le serment ! #audience:ovation #trial #playsound:VOX_Player_honoreraideesse
         ~ trial()
         ~ t_1_respect_irene = true
     * [Je me fiche de la Déesse.] PLAYER: Je me fiche de la <b>Déesse Irène</b> comme du dernier crachin ! #anim:Player:disappointed#audience:booing #playsound:VOX_Player_fichedeesse #trial
         ~ trial()
         ~ t_1_disrespect_irene = true
-        ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix. #anim:Arle:deception
+        ARLE: Messire, ces paroles ne vous honorent pas. Peut-être n'aurais-je pas du vous laisser penser, en présentant ma requête, que vous aviez le choix. #anim:Arle:deception #playsound:VOX_Arle_messiceparoleshon
     * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la reine, ni pour la <b>Déesse</b>, mais pour mon seul profit. #playsound:VOX_Player_nidieunimaitre
         ~ trial()
         ~ t_1_gold_digger = true

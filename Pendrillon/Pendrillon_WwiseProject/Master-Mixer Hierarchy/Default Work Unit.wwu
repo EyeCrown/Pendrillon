@@ -159,6 +159,71 @@
 										<Property Name="Color" Type="int16" Value="19"/>
 										<Property Name="OverrideColor" Type="bool" Value="True"/>
 									</PropertyList>
+									<ChildrenList>
+										<Bus Name="Dry_Dialog" ID="{B46A9486-6E05-4D7A-B7B1-D9AB5BE6E48D}">
+											<ReferenceList>
+												<Reference Name="Effect0">
+													<Custom>
+														<Effect Name="Meter (Custom)" ID="{A822C90B-2DA2-4C8A-9DE5-AE3F825ACF6C}" ShortID="798834842" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">
+															<PropertyList>
+																<Property Name="AttackTime" Type="Real32" Value="0.01"/>
+																<Property Name="Min" Type="Real32" Value="-96.3"/>
+															</PropertyList>
+															<PluginData>
+	<GameParameter Name="FullLineIsSpeaking" ID="{01871AF0-8042-440C-82E1-948C3C103025}"/>
+</PluginData>
+														</Effect>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+										</Bus>
+										<Bus Name="Dry_Emotions" ID="{AED018D7-DA82-45C6-A370-AF6071093759}">
+											<ObjectLists>
+												<ObjectList Name="RTPC">
+													<Reference>
+														<Local>
+															<RTPC Name="" ID="{FE596CA1-5B7C-411D-BDD0-CFC7B23D7FC9}" ShortID="500882716">
+																<PropertyList>
+																	<Property Name="PropertyName" Type="string" Value="Volume"/>
+																</PropertyList>
+																<ReferenceList>
+																	<Reference Name="ControlInput">
+																		<ObjectRef Name="FullLineIsSpeaking" ID="{01871AF0-8042-440C-82E1-948C3C103025}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+																	</Reference>
+																	<Reference Name="Curve">
+																		<Custom>
+																			<Curve Name="" ID="{4D968157-933E-485B-A0EE-9F254580C422}">
+																				<PropertyList>
+																					<Property Name="Flags" Type="int32" Value="3"/>
+																				</PropertyList>
+																				<PointList>
+																					<Point>
+																						<XPos>-100</XPos>
+																						<YPos>0.18287</YPos>
+																						<Flags>5</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>-99.37788</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>0</Flags>
+																					</Point>
+																					<Point>
+																						<XPos>0</XPos>
+																						<YPos>-200</YPos>
+																						<Flags>37</Flags>
+																					</Point>
+																				</PointList>
+																			</Curve>
+																		</Custom>
+																	</Reference>
+																</ReferenceList>
+															</RTPC>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</Bus>
+									</ChildrenList>
 									<ObjectLists>
 										<ObjectList Name="RTPC">
 											<Reference>

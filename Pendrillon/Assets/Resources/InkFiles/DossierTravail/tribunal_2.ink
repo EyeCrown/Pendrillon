@@ -98,12 +98,12 @@ LA POISCAILLE: ... #audience:booing
                 JUGE ERNEST: Peuh... Si vous croyez m'attendrir, Accusé... Ce procès sera l'occasion de rebaptiser votre amie : <b>la poiscaille</b>. #playsound:VOX_Judge_peuhattendriraccuse #audience:ovation
                 ~ naida_name_on_text = "la poiscaille"
                 ~ audience_judgement(-10)
-- SOUFFLEUR: Je sais ce que tu penses, l'ami... 
-SOUFFLEUR: La pièce prend des tournures particulièrement sombres...
-SOUFFLEUR: Mais ainsi sont fait nos mythes, pas vrai ?
-SOUFFLEUR: Le moment risque d'être difficile pour le personnage de Naïda. Elle saura rester digne, ne t'en fais pas !
-SOUFFLEUR: Quand à toi, essaye de la défendre du mieux que tu le peux auprès du Juge, mais surtout du public !
-SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami !
+- SOUFFLEUR: Je sais ce que tu penses, l'ami... #playsound:VOX_Souffleur_jesaiscequetupenses
+SOUFFLEUR: La pièce prend des tournures particulièrement sombres... #playsound:VOX_Souffleur_lapieceprendtournuresombre
+SOUFFLEUR: Mais ainsi sont fait nos mythes, pas vrai ? #playsound:VOX_Souffleur_mythes
+SOUFFLEUR: Le moment risque d'être difficile pour le personnage de Naïda. Elle saura rester digne, ne t'en fais pas ! #playsound:VOX_Souffleur_difficilenaida
+SOUFFLEUR: Quand à toi, essaye de la défendre du mieux que tu le peux auprès du Juge, mais surtout du public ! #playsound:VOX_Souffleur_essaiededefendre
+SOUFFLEUR: Fais de ton mieux, entendu ? Bon courage, l'ami ! #playsound:VOX_Souffleur_faisdetonmieux
 - JUGE ERNEST: Commencez par nous raconter comment vous avez fait la rencontre de <b>{naida_name_on_text}</b>, voulez-vous ? #playsound:VOX_Judge_commencerencontrenaida #playsound:VOX_Judge_commencerrencontrepoiscaille
 - (player_and_naida_met)
     * [À l'intérieur du Léviathan.] PLAYER: Lorsque le <b>Léviathan</b> nous a avalé, mon équipage et moi-même... Nous nous sommes retrouvés à l'intérieur de son estomac. #audience:choc
@@ -289,20 +289,28 @@ JUGE ERNEST: ... Au fond des océans ! #playsound:VOX_Judge_aufonddesoceans #aud
 - -> naida_speech
 
 = naida_speech
-NAÏDA: Avant cela, si vous le permettez... #audience:choc
-NAÏDA: Je voudrais dire quelques mots. #audience:debate
-NAÏDA: Je resterai digne, et ferai montre de respect, car j'ai souffert de ne pas l'avoir obtenu de votre part à tous... #audience:silent
-NAÏDA: Que nos ancêtres aient été ou non des semblables, des frères... cela, pour moi, ne change rien. #audience:applause
-NAÏDA: Je voudrais simplement dire à quel point il est étrange, pour une créature telle que moi...
-NAÏDA: Une pauvre Sireine... Une poiscaille...
-NAÏDA: Combien il est étrange de constater que vous autres, humains, ayez donné à ce système, le nom de « Justice ». #audience:debate
+NAÏDA: Avant cela, si vous le permettez... #audience:choc #playsound:VOX_Naida_avantcelasi
+NAÏDA: Je voudrais dire quelques mots. #audience:debate #playsound:VOX_Naida_jevoudraisdiremo
+NAÏDA: Je resterai digne, et ferai montre de respect, car j'ai souffert de ne pas l'avoir obtenu de votre part à tous... #audience:silent #playsound:VOX_Naida_resteraidigne
+NAÏDA: Que nos ancêtres aient été ou non des semblables, des frères... cela, pour moi, ne change rien. #audience:applause #playsound:VOX_Naida_quenos
+NAÏDA: Je voudrais simplement dire à quel point il est étrange, pour une créature telle que moi... #playsound:VOX_Naida_jevoudraissimplement
+NAÏDA: Une pauvre Sireine... Une poiscaille... #playsound:VOX_Naida_unepauvresireine
+NAÏDA: Combien il est étrange de constater que vous autres, humains, ayez donné à ce système, le nom de « Justice ». #audience:debate #playsound:VOX_Naida_combienilestetrange
 {
-    - verdict_is_innocent: NAÏDA: Aujourd'hui, elle nous est favorable... L'aurait-elle été hier ? #audience:debate
-    - verdict_is_guilty: NAÏDA: Aujourd'hui, elle nous est défavorable... L'aurait-elle été demain ? #audience:debate
+    - verdict_is_innocent: NAÏDA: Aujourd'hui, elle nous est favorable...  L'aurait-elle été hier ? #audience:debate #playsound:VOX_Naida_aujourdhuifavorable
+    - verdict_is_guilty: NAÏDA: Aujourd'hui, elle nous est défavorable... L'aurait-elle été demain ? #audience:debate #playsound:VOX_Naida_aujourdhuidefavo
 }
-- NAÏDA: Je remercie {p_name} de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause
-NAÏDA: Car les noms, voyez-vous, sont le cœur battant de toute chose. Les noms sont importants. #audience:applause
-NAÏDA: Ainsi il m'apparaît, pour conclure notre histoire, qu'en donnant à un système partial et imparfait, le nom même d'une vertu... #audience:silent
-NAÏDA: En lui donnant le nom de « Justice »... #audience:debate
-NAÏDA: Vous autres humains ayez commis une erreur... cruelle. #anim:Naida:bow #audience:ovation
+
+{
+    - p_name == "Merlin":
+        NAÏDA: Je remercie Merlin de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause #playsound:VOX_Naida_remercieMerlin
+    - p_name == "Ambroise":
+        NAÏDA: Je remercie Ambroise de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause #playsound:VOX_Naida_remercieAmbroise
+    - p_name == "Octave":
+        NAÏDA: Je remercie Octave de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause #playsound:VOX_Naida_remercieOctave
+}
+- NAÏDA: Car les noms, voyez-vous, sont le cœur battant de toute chose. Les noms sont importants. #audience:applause #playsound:VOX_Naida_carlesnoms
+NAÏDA: Ainsi il m'apparaît, pour conclure notre histoire, qu'en donnant à un système partial et imparfait, le nom même d'une vertu... #audience:silent #playsound:VOX_Naida_ainsiilmapparait
+NAÏDA: En lui donnant le nom de « Justice »... #audience:debate #playsound:VOX_Naida_enluidonnantjustice
+NAÏDA: Vous autres humains ayez commis une erreur... cruelle. #anim:Naida:bow #audience:ovation #playsound:VOX_Naida_vousautreshumains
 - -> cast_salutation
