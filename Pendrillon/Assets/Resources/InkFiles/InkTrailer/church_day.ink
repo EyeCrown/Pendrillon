@@ -19,16 +19,18 @@ VAR marcello_surname = "Marcellogre"
 // Set the location
 #set:church_day
 // Set the actor's positions
-#position:Player:4:2
-#position:Agathe:4:13
-#position:Marcello:2:11
-#position:Capucine:3:6
+#position:Player:4:6
+#position:Agathe:4:8
+#position:Marcello:2:20
+#position:Capucine:3:20
 // Audience reaction
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
+//#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
+#wait:7
 
 // Start the scene
-#anim:Player:sleep
-MARCELLO: Et si on le réveillait avec une tape sur le museau, cheffe ?
+#anim:Player:tripping
+//#anim:Player:sleep
+MARCELLO: Et si on le réveillait avec une tape sur le museau, cheffe ? #wait:60
 CAPUCINE: Cet abruti dort comme un nourrisson... #playsound:VOX_Capucine_cetabrutidort
 #anim:Player:wake_up
 PLAYER: Vous, ici ?! #playsound:Play_MUS_Story_SC_Eglise_6oclockWakeUp

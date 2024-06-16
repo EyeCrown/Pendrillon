@@ -22,6 +22,7 @@
 // Start the scene
 #audience:ovation
 #move(Player)
+- -> boss_battle
 VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord.
     * [Sans doute le Léviathan !] PLAYER: Nul doute qu'il s'agit du Léviathan ! Nous sommes à l'endroit exact indiqué par la carte.
         #audience:surprised

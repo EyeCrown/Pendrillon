@@ -16,25 +16,31 @@ VAR has_fail = false
 // Set the location
 #set:forest
 // Set the actor's positions
-#position:Player:8:2
+#position:Player:6:2
 //#position:Arle:10:11
 //#position:Arle:3:17
-#position:Arle:2:10
+#position:Arle:4:10
 
 // Start the scene
 //#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
 // Audience reaction
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #anim:Arle:crawling #wait:60
+//#wait:0.5 #audience:applause #wait:4 #audience:ovation #anim:Arle:crawling #wait:3
+#anim:Arle:crawling #wait:3
+- ARLE:        
+- -> church_night
 
-- // On se trouve sur scène, seul.
-    * [Attendre son interlocuteur.]
-- -> trip_return
-- #audience:applause
-    * [Attendre encore.]
-- #audience:debate #playsound:Play_MUS_Story_SC_SecretMeeting_Encore
-    * [Attendre plus fort.]
-- #audience:booing
-- SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #playsound:VOX_Souffleur_partenairedescene
+ // On se trouve sur scène, seul.
+ //  * [Attendre son interlocuteur.]
+   //- ARLE:       
+//- -> trip_return
+//- ARLE:    
+//- ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence
+//   -  * [Attendre encore.]
+//- #audience:debate #playsound:Play_MUS_Story_SC_SecretMeeting_Encore
+ //   * [Attendre plus fort.]
+//- #audience:booing
+
+- SOUFFLEUR: Le public s'impatiente ! Si ta partenaire de scène ne daigne pas se montrer... Tu vas devoir meubler ! #wait:100
 SOUFFLEUR: J'ai une idée, l'ami ! Fais appel à l'un de tes <b>talents</b> !
 SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter ta chance !
     * [Effectuer une danse. {t(DEXT, 30)}]
