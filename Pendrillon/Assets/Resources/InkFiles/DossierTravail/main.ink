@@ -26,4 +26,4 @@ INCLUDE cast_salutation.ink
 
 // Start the game
 //-> intro
--> church_night
+-> church_day
