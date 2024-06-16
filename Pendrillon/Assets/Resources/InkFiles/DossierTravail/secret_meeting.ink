@@ -165,7 +165,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
         PLAYER: Dis-m'en plus : qui voulez-vous voir périr ? #audience:debate
         ARLE: Un poisson, messire. Un gros poisson. #audience:debate #playsound:VOX_Arle_unpoisson
         -> big_fish
-- ARLE: Prenez ceci, voulez-vous ? #playsound:VOX_Arle_prenezceci
+- ARLE: Prenez ceci, voulez-vous ? #move:Arle:8:4 #playsound:VOX_Arle_prenezceci
     * [Qu'est-ce que c'est ?] PLAYER: Qu'est-ce donc ? #anim:Player:question #playsound:VOX_Player_questcedonc
 - ARLE: Un marin tel que vous ne reconnaît-il pas une carte quand il en voit une, messire ? #anim:Arle:bow #audience:laughter #playsound:VOX_Arle_unmarin
     * [Quel endroit indique t-elle ?] PLAYER: Quel endroit indique-t-elle ? #anim:Player:question
@@ -181,7 +181,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
     * [Hors de question.] PLAYER: Non. #anim:Player:non #playsound:VOX_Player_non
         ARLE: Si je ne le fais pas pour vous, messire... #playsound:VOX_Arle_paspourvous
         ARLE: Je le ferai pour eux. #anim:Arle:point_audience #audience:applause #playsound:VOX_Arle_poureux
-- ARLE: Il était une fois... une terrible tempête. #audience:choc #playsound:VOX_Arle_iletaitunefois
+- ARLE: Il était une fois... une terrible tempête. #move:Arle:8:7 #audience:choc #playsound:VOX_Arle_iletaitunefois
 ARLE: Pas n'importe quelle tempête : celle-ci dura près d'un siècle. #audience:debate #playsound:VOX_Arle_pasnimportequelle
 ARLE: Pour survivre, les Hommes durent bâtir un immense navire... #audsience:ovation #playsound:VOX_Arle_poursurvivre
 ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poisson... #playsound:VOX_Arle_avecmonteeeaux

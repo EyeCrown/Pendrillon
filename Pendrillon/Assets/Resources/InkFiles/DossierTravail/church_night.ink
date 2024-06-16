@@ -16,17 +16,17 @@ VAR irene_torch_is_on = false
 // Set the location
 #set:church_night
 // Set the actor's positions
-#position:Player:4:1
-#position:Agathe:4:3
+#position:Player:8:25
+#position:Agathe:6:4
 // Audience reaction
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 #playsound:Play_MUS_Story_SC_Eglise_Intro
 // Player arrive dans l'Église puis avance jusqu'à la statue.
 // Après un moment.
-- UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit... #playsound:VOX_Agathe_ireneaccueille #wait:6
+- UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit... #move:player:6:10 #wait:1 #look:Agathe:Player #box #playsound:VOX_Agathe_ireneaccueille #look:Player:Agathe #wait:6
 // La voix vient d'hors-champ. Après un moment, une femme âgée arrive par la droite de la scène et entre dans le champ.
-- PRÊTRESSE AGATHE: ... quel qu'ils soient. #playsound:VOX_Agathe_quelsquils #character_presentation:Agathe
+- PRÊTRESSE AGATHE: ... quel qu'ils soient. #look:Agathe:front #playsound:VOX_Agathe_quelsquils #look:Player:front
     * [Bénie soit-elle.] PLAYER: Bénie soit-elle. #playsound:VOX_Player_beniesoitelle
         Agathe: Bénie entre toutes. Depuis le premier jour de sa vie, et jusqu'à ce que plus une seule d'entre nous ne la serve. #playsound:VOX_Agathe_benieentretoutes
         ** [ « Nous » ? Les prêtresses ?] PLAYER: Vous faites référence aux prêtresses d'<b>Irène</b> ? 

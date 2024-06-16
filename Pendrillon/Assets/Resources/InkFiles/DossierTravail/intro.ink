@@ -9,7 +9,7 @@
 // Define the actors of the scene
 #actor:Player:PLAYER:VOYAGEUR
 // Set the location
-#position:Player:4:1
+#position:Player:16:10
 
 // Audience reaction
 #playsound:Play_AMB_SC_Theater_CrowdChatter
