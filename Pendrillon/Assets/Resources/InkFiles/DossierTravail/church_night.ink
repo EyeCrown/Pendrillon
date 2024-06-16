@@ -21,7 +21,7 @@ VAR irene_torch_is_on = false
 // Audience reaction
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
-#playsound:Play_MUS_Story_SC_Eglise_Intro
+
 // Player arrive dans l'Église puis avance jusqu'à la statue.
 // Après un moment.
 - UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit... #move:player:6:10 #wait:1 #look:Agathe:Player #box #playsound:VOX_Agathe_ireneaccueille #look:Player:Agathe #wait:6

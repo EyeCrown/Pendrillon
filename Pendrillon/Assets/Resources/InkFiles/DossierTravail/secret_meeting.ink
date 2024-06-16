@@ -89,7 +89,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * (move_to_bush) PLAYER: Ce buisson me semble... suspect... #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
 - (pull_bush)
     * [Tirer le buisson.] #anim:Player:pull #audience:choc
-        ARLE: Mais qui voilà ?! N'est-ce pas moi ? #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila
+        ARLE: Mais qui voilà ?! N'est-ce pas moi ? #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila #playsound:Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter
 - #anim:Arle:greet #move:Player:8:2
     * [Que faisais-tu cachée ?] PLAYER: Que faisais-tu là, cachée tel un rat ? #anim:Player:question #playsound:VOX_Player_cacheerat
         BOUFFONNE: J'apprenais à vous connaître, messire. Je vous observais... #playsound:VOX_Arle_japprenais
@@ -114,12 +114,12 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
                         -> arle_presentation
         ** [C'est toi que je veux connaître.] PLAYER: La politesse exige qu'on se présente le premier.
             BOUFFONNE: Me présenter ? Cela, je sais le faire, et fort bien ! #anim:Arle:happy #playsound:VOX_Arle_mepresenter
-            --- (arle_presentation) BOUFFONNE: Je suis Arle, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle #audience:ovation
+            --- (arle_presentation) BOUFFONNE: Je suis Arle, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle #audience:ovation #playsound:Play_MUS_Story_SC_SecretMeeting_ArleGivesName
     * [Es-tu l'autrice de la lettre ?] PLAYER: Est-ce donc toi qui as écrit la lettre que j'ai reçue la veille ? #anim:Player:question #playsound:VOX_Player_toiecritlettre
         BOUFFONNE: Je sais faire bien des choses, messire... #anim:Arle:happy #playsound:VOX_Arle_jesaisfaire
         BOUFFONNE: Faire la belle... #anim:Arle:pretty_pose #playsound:VOX_Arle_fairelabelle
         BOUFFONNE: Faire le show... #anim:Arle:show_pose #playsound:VOX_Arle_lewhow
-        BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter #playsound:VOX_Arle_maispointecrir
+        BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter #playsound:VOX_Arle_maispointecrir #playsound:Play_MUS_Story_SC_SecretMeeting_ArleJoke
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question #playsound:VOX_Player_saisdirenom
             -> arle_presentation
         ** [(Se moquer) En voilà une plaisantine. {t(CHAR, 30)}] // 70%
@@ -143,13 +143,13 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - -> the_mission
 
 = the_mission
-- ARLE: La personne qui m'envoie souhaiterait vous offrir un travail. Disons plutôt : une mission. #playsound:VOX_Arle_lapersonnetravail
+- ARLE: La personne qui m'envoie souhaiterait vous offrir un travail. Disons plutôt : une mission. #playsound:VOX_Arle_lapersonnetravail #playsound:Play_MUS_Story_SC_SecretMeeting_TheMission
     * [Continue.] -> what_is_the_mission
     * [Je t'écoute.]  -> what_is_the_mission
     * [Dépêche-toi !]  -> what_is_the_mission
 - (what_is_the_mission) PLAYER: Quelle est donc cette mission ? #anim:Player:question #playsound:VOX_Player_quelleestcettemission
 ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #playsound:VOX_Arle_demandermessire #audience:choc
-    * [Hors de question.] PLAYER: Ôter une vie n'est pas dans mes pratiques. #audience:ovation #trial #playsound:VOX_Player_oterviepratique
+    * [Hors de question.] PLAYER: Ôter une vie n'est pas dans mes pratiques. #audience:ovation #trial #playsound:VOX_Player_oterviepratique #playsound:Play_MUS_Story_SC_SecretMeeting_Kill
         ~ trial()
         ~ t_1_refuse_to_kill = true
         PLAYER: Je ne suis pas un tueur, mais un marin. Tout juste suis-je capable d'ôter la vie à un poisson... #anim:Player:non
@@ -159,7 +159,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
             ARLE: Je n'ai pas les bras assez longs, messire. Gros comme le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca #playsound:VOX_Arle_pasbrasassez
         ** [Assez de mystère !] PLAYER: Il suffit ! J'en ai assez de tout ce mystère : parle maintenant ou permets-moi d'aller me recoucher. #anim:Player:angry
             ARLE : Ce poisson est un très gros poisson, messire. Aussi gros que le dédommagement que mon maître est prêt à vous offrir pour l'abattre. #anim:Arle:groscommeca #playsound:VOX_Arle_cepoisson
-    * [Sans soucis.] PLAYER : Tuer ne me dérange nullement. #audience:choc #trial #playsound:VOX_Player_tuerderangenullement
+    * [Sans soucis.] PLAYER : Tuer ne me dérange nullement. #audience:choc #trial #playsound:VOX_Player_tuerderangenullement #playsound:Play_MUS_Story_SC_SecretMeeting_Kill
         ~ trial()
         ~ t_1_accept_to_kill = true
         PLAYER: Dis-m'en plus : qui voulez-vous voir périr ? #audience:debate
@@ -230,7 +230,7 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au <b>Délug
     * [Seul m'intéresse le profit.] PLAYER: Si j'accepte, ce ne serait ni pour la reine, ni pour la <b>Déesse</b>, mais pour mon seul profit. #playsound:VOX_Player_nidieunimaitre
         ~ trial()
         ~ t_1_gold_digger = true
-- ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence
+- ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence #playsound:Play_MUS_Story_SC_SecretMeeting_PlayerAccepts
     * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur de ramener le cœur du <b>Léviathan</b>. #playsound:VOX_Player_celaseraitunhonneur
         ~ t_1_accept_mission_with_positivity = true
     * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du <b>Léviathan</b>. #playsound:VOX_Player_pointleloisirsoustraire

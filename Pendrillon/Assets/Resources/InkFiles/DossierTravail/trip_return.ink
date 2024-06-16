@@ -32,7 +32,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:2
 
 // Start the scene
-#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
+#playsound:Play_MUS_Story_SC_TripReturn_Intro
 - PERSONNAGE MASQUÉ: Ça sent mauvais là-dedans... #playsound:VOX_Naida_sentmauvais
     * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...
     * [Ça sent les ennuis...] PLAYER: Ça sent les ennuis !
@@ -57,7 +57,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
         ** [Certes.] PLAYER: C'est vrai, je l'admets. Mais ne dit-on pas que nul homme n'a à rougir d'une faute avouée ?
             PERSONNAGE MASQUÉ: Je n'ai jamais entendu cela, non. #playsound:VOX_Naida_jamaisentendu
             *** [Oubliez.] PLAYER: J'ai dû l'inventer, alors.
-- PERSONNAGE MASQUÉ: Et maintenant, que fait-on ? #playsound:VOX_Naida_etmaintenant
+- PERSONNAGE MASQUÉ: Et maintenant, que fait-on ? #playsound:VOX_Naida_etmaintenant #playsound:Play_MUS_Story_SC_TripReturn_NaidaSpeak
     * [Fouiller la caisse de devant. {t(DEXT, 40)}] #playsound:crate_search // 80%
         {sc(DEXT, 40): -> crate_front_search_S | -> crate_front_search_F}
         ** (crate_front_search_S) PLAYER: Une <b>noix de coco</b>. Ça pourrait être utile, qui sait. #move:Player:7:0 #playsound:VOX_Player_trouvenoixcoco
@@ -98,9 +98,9 @@ VAR player_won_battle = false // Define if the player won the battle or not
     * [(Tiraillé) Parfois...] PLAYER: Il est des jours où je crois être le plus vil des hommes... #trial
         ~ trial()
         ~ t_2_show_regrets = true
-- PERSONNAGE MASQUÉ: J'entends des bruits. Quelqu'un vient. #playsound:activity_far #playsound:VOX_Naida_jentendsdesbruits
+- PERSONNAGE MASQUÉ: J'entends des bruits. Quelqu'un vient. #playsound:activity_far #playsound:VOX_Naida_jentendsdesbruits #playsound:Play_MUS_Story_SC_TripReturn_GuardsFar
 * [Cachez-vous.] PLAYER: Il va falloir vous trouver une cachette, et en vitesse. #playsound:VOX_Player_trouverunecachette
-    -- (hide_sireine) PERSONNAGE MASQUÉ: Les bruits se rapprochent ! #playsound:activity_close #playsound:VOX_Naida_lesbruitsserapprochent
+    -- (hide_sireine) PERSONNAGE MASQUÉ: Les bruits se rapprochent ! #playsound:Play_MUS_Story_SC_TripReturn_GuardsClose #playsound:activity_close #playsound:VOX_Naida_lesbruitsserapprochent
         *** [Derrière le tonneau.] PLAYER: Derrière ce tonneau, vite ! #move:Naïda:-2:1 #move:Naïda:-2:-3 #playsound:VOX_Player_cetonneau
             ~ sireine_hideout = "barrel"
             ~ sireine_is_hidden = true
@@ -124,7 +124,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
 
 // The guards arrive
 = guards_arrive
-#playsound:guards_arrive
+#playsound:guards_arrive #playsound:Play_MUS_Story_SC_TripReturn_GuardsHere
 - MARCELLO: J'ai entendu du bruit dans la cale. #anim:Marcello:enter_scene #audience:ovation #playsound:VOX_Marcello_jaientendu
 CAPUCINE: Tu entends des voix, maintenant ? Peut-être la Déesse en personne qui te cause... #playsound:VOX_Capucine_tuentendsvoixQ #anim:Capucine:enter_scene #audience:laughter
 MARCELLO: Vous me croyez fou, cheffe ? #audience:laughter #move:Capucine:9:9 #move:Marcello:11:7 #audience:ovation #playsound:VOX_Marcello_mecroyezfou
@@ -293,7 +293,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
 
 // Battle (acting phase)
 = battle
-- #move:Marcello:11:5 #look:Marcello:Player #anim:Marcello:punch #anim:Player:hurt #look:Marcello:front 
+- #move:Marcello:11:5 #look:Marcello:Player #anim:Marcello:punch #anim:Player:hurt #look:Marcello:front #playsound:Play_MUS_Story_SC_TripReturn_ToBattle
     * [Attaquer Marcello. {t(STRE, 35)}] #trial // 70%
         {sc(STRE, 35): -> attack_marcello_S | -> attack_marcello_F}
         ** (attack_marcello_S) PLAYER: Prends ça ! #look:Player:Marcello #anim:Player:punch #anim:Marcello:hurt #look:Player:front #trial 
@@ -352,7 +352,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
 // Naida is arrested
 =arrest_naida
 #playsound:sounds_inside_the_crate
-CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans ! #playsound:VOX_Capucine_astuentenduquelquechoeabouge
+CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans ! #playsound:VOX_Capucine_astuentenduquelquechoeabouge #playsound:Play_MUS_Story_SC_TripReturn_NaidaArrested
 MARCELLO : Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang. #audience:laughter #playsound:VOX_Marcello_sansdouterat
 - CAPUCINE: Bloque-lui la route tandis que j'y jette un œil. #playsound:VOX_Capucine_bloqueluilaroute #audience:choc #look:Marcello:Player
 {

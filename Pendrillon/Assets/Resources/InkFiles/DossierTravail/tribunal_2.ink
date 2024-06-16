@@ -25,6 +25,7 @@ VAR verdict_is_guilty = false
 // Start the scene
 #open_curtains
 #audience:ovation
+#playsound:Play_MUS_Story_SC_Trial_Intro2
 #judge_bell
 #wait:5
 #audience:ovation
@@ -269,9 +270,15 @@ JUGE ERNEST: Qui vote... <shake>coupable</shake> ? #playsound:VOX_Judge_quicoupa
 JUGE ERNEST: Et maintenant... #playsound:VOX_Judge_etmaintenant #audience:debate
 JUGE ERNEST: Qui vote... <shake>innocent</shake> ? #playsound:VOX_Judge_quiinnocent #box #wait:1.4 #audience:ovation #anim:Player:bow
 ~ audience_judgement(100) // La balance penche complètement si innocent
-JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé. #playsound:VOX_Judge_verdictjuresprononce
-JUGE ERNEST: Le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_jugedeclareOctave #playsound:VOX_Judge_jugedeclareAmbroise #playsound:VOX_Judge_jugedeclareMerlin
-JUGE ERNEST: <b>INNOCENT</b> !!! #playsound:VOX_Judge_INNOCENT #audience:ovation
+{
+    - p_name == "Merlin":
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+    - p_name == "Ambroise":
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+    - p_name == "Octave":
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+}
+JUGE ERNEST: <b>INNOCENT</b> !!! #playsound:Play_MUS_Story_SC_Trial_Innocent #playsound:VOX_Judge_INNOCENT #audience:ovation
 JUGE ERNEST: L'Accusé, ainsi que Naïda la Sireine, peuvent retrouver leur liberté. #playsound:VOX_Judge_accuseetnaidelibres #audience:ovation
 - -> naida_speech
 
@@ -281,15 +288,22 @@ JUGE ERNEST: Mesdames et messieurs les jurés... #playsound:VOX_Judge_mesdamesma
 JUGE ERNEST: Qui vote... <shake>innocent</shake> ? #playsound:VOX_Judge_quivotemauvaisinnocent #box #wait:1 #audience:applause
 JUGE ERNEST: Et maintenant... #playsound:VOX_Judge_etmaintenantmauvais #audience:debate
 JUGE ERNEST: Qui vote... <shake>coupable</shake> ? #playsound:VOX_Judge_quicoupablemauvais #box #wait:1.4 #audience:ovation #anim:Player:bow
-JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise
-JUGE ERNEST: <b>COUPABLE</b> !!! #playsound:VOX_Judge_COUPABLE #audience:ovation
+{
+    - p_name == "Merlin":
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+    - p_name == "Ambroise":
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+    - p_name == "Octave":
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+}
+- JUGE ERNEST: <b>COUPABLE</b> !!! #playsound:Play_MUS_Story_SC_Trial_Coupable #playsound:VOX_Judge_COUPABLE #audience:ovation
 ~ audience_judgement(-100) // La balance penche complètement si coupable
 JUGE ERNEST: Coulez-le, ainsi que la Sireine, où la Déesse Elle-même ne saurait le trouver... #playsound:VOX_Judge_coulezle #audience:ovation
 JUGE ERNEST: ... Au fond des océans ! #playsound:VOX_Judge_aufonddesoceans #audience:ovation
 - -> naida_speech
 
 = naida_speech
-NAÏDA: Avant cela, si vous le permettez... #audience:choc #playsound:VOX_Naida_avantcelasi
+NAÏDA: Avant cela, si vous le permettez... #audience:choc #playsound:VOX_Naida_avantcelasi #playsound:Play_MUS_Story_SC_Trial_NaidaSpeech
 NAÏDA: Je voudrais dire quelques mots. #audience:debate #playsound:VOX_Naida_jevoudraisdiremo
 NAÏDA: Je resterai digne, et ferai montre de respect, car j'ai souffert de ne pas l'avoir obtenu de votre part à tous... #audience:silent #playsound:VOX_Naida_resteraidigne
 NAÏDA: Que nos ancêtres aient été ou non des semblables, des frères... cela, pour moi, ne change rien. #audience:applause #playsound:VOX_Naida_quenos
