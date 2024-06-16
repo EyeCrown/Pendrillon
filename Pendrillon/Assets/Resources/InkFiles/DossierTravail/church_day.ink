@@ -34,10 +34,10 @@ CAPUCINE: Cet abruti dort comme un nourrisson... #playsound:VOX_Capucine_cetabru
 PLAYER: Vous, ici ?! #playsound:VOX_Player_vousiciQQ #playsound:Play_MUS_Story_SC_Eglise_6oclockWakeUp
 CAPUCINE: Heureuse de constater que tu nous reconnais... #playsound:VOX_Capucine_heureusedeconstaterquetunousreconnais
 CAPUCINE: Remets-tu des noms sur nos visages, vermisseau ? #playsound:VOX_Capucine_remetstudesnoms
-SOUFFLEUR: Psssst... Hé, l'ami !
-SOUFFLEUR: Avec ces deux-là, pas besoin d'y aller mollo pour faire rire le public !
-SOUFFLEUR: Ils ont beau se disputer sur scène, sache qu'en dehors des planches, ils sont mari et femme !
-SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils adorent être ridiculisés !
+SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe4
+SOUFFLEUR: Avec ces deux-là, pas besoin d'y aller mollo pour faire rire le public ! #playsound:VOX_Souffleur_ces2la
+SOUFFLEUR: Ils ont beau se disputer sur scène, sache qu'en dehors des planches, ils sont mari et femme ! #playsound:VOX_Souffleur_marietfemme
+SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils adorent être ridiculisés ! #playsound:VOX_Souffleur_pasmechants
 - PLAYER: J'ai bien peur de vous reconnaître, en effet... vous êtes... #playsound:VOX_Player_bienpeurconnaitre
     * [Capucine la larbine...] PLAYER: Capucine la larbine... #audience:laughter #playsound:VOX_Player_lalarbine #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1 #trial
         ~ trial()
@@ -78,10 +78,10 @@ SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils adorent être ridiculis�
     * [(Au loin) Vous m'avez trahi...] PLAYER: Vous m'avez trahi. Je pensais pouvoir vous faire confiance... #playsound:VOX_Player_vousmaveztrahi
 - PLAYER: Approchez-vous... Contemplez le visage de celui que vous avez condamné... #playsound:VOX_Player_approchezcontemplez #audience:choc
 #move(Agathe)
-AGATHE: Ce lieu saint a abrité davantage de sauvageons que vous n'en avez croisé dans toute votre vie, mon enfant... #playsound:Play_MUS_Story_SC_Eglise_AgathesBetrayal
-AGATHE: Cependant aucun d'entre eux ne s'était rendu coupable d'un acte aussi grave que le vôtre... #audience:debate #anim:Agathe:contempt #anim:Player:ashamed
-AGATHE: Lorsque j’ai appris qui vous cachiez dans votre navire... #audience:debate
-AGATHE: J’ai su qu’il était de mon devoir, non envers la Couronne mais la Déesse elle-même, de vous dénoncer.#audience:choc #anim:Player:disappointed #anim:Capucine:laugh
+AGATHE: Ce lieu saint a abrité davantage de sauvageons que vous n'en avez croisé dans toute votre vie, mon enfant... #playsound:Play_MUS_Story_SC_Eglise_AgathesBetrayal #playsound:VOX_Agathe_sauvageons
+AGATHE: Cependant aucun d'entre eux ne s'était rendu coupable d'un acte aussi grave que le vôtre... #audience:debate #anim:Agathe:contempt #anim:Player:ashamed #playsound:VOX_Agathe_aucuncoupable
+AGATHE: Lorsque j’ai appris qui vous cachiez dans votre navire... #audience:debate #playsound:VOX_Agathe_cachieznavire
+AGATHE: J’ai su qu’il était de mon devoir, non envers la Couronne mais la Déesse elle-même, de vous dénoncer.#audience:choc #anim:Player:disappointed #anim:Capucine:laugh #playsound:VOX_Agathe_mondevoir
 {CAPUCINE}: Tout le monde t'abandonne à ton triste sort, marmot. #playsound:VOX_Capucine_toutlemondetabandonne
 {CAPUCINE}: Mais tu ne seras bientôt plus seul... Tu vas aller rejoindre ton affreuse amie, vermine ! #playsound:VOX_Capucine_maistuneserabientôtplusseul
 {CAPUCINE}: Marcello, attrape-le !! #playsound:VOX_Capucine_marcelloattrape

@@ -26,4 +26,5 @@ INCLUDE cast_salutation.ink
 
 // Start the game
 //-> intro
--> trip_return
+//-> trip_return
+-> church_night

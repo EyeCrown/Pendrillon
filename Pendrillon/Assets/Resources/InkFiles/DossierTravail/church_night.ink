@@ -24,50 +24,50 @@ VAR irene_torch_is_on = false
 #playsound:Play_MUS_Story_SC_Eglise_Intro
 // Player arrive dans l'Église puis avance jusqu'à la statue.
 // Après un moment.
-- UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit... #wait:60
+- UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit... #playsound:VOX_Agathe_ireneaccueille #wait:6
 // La voix vient d'hors-champ. Après un moment, une femme âgée arrive par la droite de la scène et entre dans le champ.
-- PRÊTRESSE AGATHE: ... quel qu'ils soient. #character_presentation:Agathe
+- PRÊTRESSE AGATHE: ... quel qu'ils soient. #playsound:VOX_Agathe_quelsquils #character_presentation:Agathe
     * [Bénie soit-elle.] PLAYER: Bénie soit-elle. #playsound:VOX_Player_beniesoitelle
-        Agathe: Bénie entre toutes. Depuis le premier jour de sa vie, et jusqu'à ce que plus une seule d'entre nous ne la serve.
+        Agathe: Bénie entre toutes. Depuis le premier jour de sa vie, et jusqu'à ce que plus une seule d'entre nous ne la serve. #playsound:VOX_Agathe_benieentretoutes
         ** [ « Nous » ? Les prêtresses ?] PLAYER: Vous faites référence aux prêtresses d'<b>Irène</b> ? 
             -> priestess
     * [Quelle hospitalité !] PLAYER: Vous savez faire preuve d'hospitalité. Merci. #playsound:VOX_Player_voussavezhospitalite
-        AGATHE: Diriez-vous d'un servant qu'il est hospitalier en vous accueillant dans la maison de son maître ?
+        AGATHE: Diriez-vous d'un servant qu'il est hospitalier en vous accueillant dans la maison de son maître ? #playsound:VOX_Agathe_diriezservant
         ** [N'êtes-vous pas chez vous ?] PLAYER: N'êtes-vous pas chez vous en ces lieux ?
-            AGATHE: « Invitée en son foyer, vaisseau en ce monde. ».
-            AGATHE: Nous sommes toutes de simples servantes, en ce lieu comme dans cette vie.
+            AGATHE: « Invitée en son foyer, vaisseau en ce monde. ». #playsound:VOX_Agathe_vaisseauencemonde
+            AGATHE: Nous sommes toutes de simples servantes, en ce lieu comme dans cette vie. #playsound:VOX_Agathe_sommessimplesservantes
             *** [Nous ?] PLAYER: Les prêtresses d'<b>Irène</b> ?
-                ---- (priestess) AGATHE: Nous autres prêtresses d'<b>Irène</b> vouons notre vie à la Pupille des eaux.
+                ---- (priestess) AGATHE: Nous autres prêtresses d'<b>Irène</b> vouons notre vie à la Pupille des eaux. #playsound:VOX_Agathe_pupilledeseaux
                 **** [Une noble cause.] PLAYER: La plus noble des causes...
                 **** [Vous n'êtes pas libres.] PLAYER: Ne préfèreriez-vous pas être libre, comme moi ?
                     ~ claim_to_be_free = true
-                    AGATHE: Vous êtes libre, et je suis assujettie. Pourtant, votre liberté vous a conduit au même endroit que moi, sous ce même toit par cette même nuit.
-                    AGATHE: Vous êtes ici parce que des gardes vous poursuivaient, je suis là parce que la <b>Déesse</b> m'a parlé. Qui de nous deux est réellement le plus libre ?
+                    AGATHE: Vous êtes libre, et je suis assujettie. Pourtant, votre liberté vous a conduit au même endroit que moi, sous ce même toit par cette même nuit. #playsound:VOX_Agathe_vouseteslibreironie
+                    AGATHE: Vous êtes ici parce que des gardes vous poursuivaient, je suis là parce que la <b>Déesse</b> m'a parlé. Qui de nous deux est réellement le plus libre ? #playsound:VOX_Agathe_lesgardesvouspoursuivaient
                     ***** [Touché.] PLAYER: J'imagine que vous avez raison...
                     ***** [Elle vous a parlé ?] PLAYER: <b>Irène</b> vous a parlé, à vous ?
-                        AGATHE: Parfaitement. Elle me parle en cet instant.
+                        AGATHE: Parfaitement. Elle me parle en cet instant. #playsound:VOX_Agathe_parfaitement
                         ****** [Que vous dit-elle ?] PLAYER: Et que vous murmure-t-elle ?
-                            AGATHE: Rien que vous ne sauriez entendre, mon enfant.
+                            AGATHE: Rien que vous ne sauriez entendre, mon enfant. #playsound:VOX_Agathe_rienquevousnesaurier
                         ****** [Elle ne me parle pas.] PLAYER: Elle ne m'a jamais parlé, à moi...
-                            AGATHE: Peut-être n'avez-vous pas su écouter...
+                            AGATHE: Peut-être n'avez-vous pas su écouter... #playsound:VOX_Agathe_peutetrepasecoute
                     ***** [Je peux m'en aller...] PLAYER: Je suis libre. Libre de m'en aller...
             *** [Acquiescer.]
         ** [Certes, non.] PLAYER: Probablement pas...
-            AGATHE: Il en va de même pour nous autres prêtresses...
+            AGATHE: Il en va de même pour nous autres prêtresses... #playsound:VOX_Agathe_demempournous
             *** [Les prêtresses d'Irène...] PLAYER: Les prêtresses d'<b>Irène</b>... 
                 -> priestess
         ** [Bien entendu.]
-            AGATHE: Ne confondez pas le Foyer et la braise.
+            AGATHE: Ne confondez pas le Foyer et la braise. #playsound:VOX_Agathe_foyerbraise
             *** [Le foyer et la braise ?] PLAYER: Le Foyer et la braise ?
-                AGATHE: Représentez-vous un feu. À chaque instant, une braise cesse d'être, consumée jusqu'à son extinction pour attiser les flammes.
+                AGATHE: Représentez-vous un feu. À chaque instant, une braise cesse d'être, consumée jusqu'à son extinction pour attiser les flammes. #playsound:VOX_Agathe_unfeu
                 **** [Les prêtresses...] PLAYER: La braise, ce sont les prêtresses ? Et le Foyer... -> priestess
             *** [Vous avez raison.] PLAYER: Vos paroles sont sages.
             *** [Je ne confonds personne.] PLAYER: Je sais ce que je dis.
-                AGATHE: J'en ai bien peur, en effet...
+                AGATHE: J'en ai bien peur, en effet... #playsound:VOX_Agathe_bienpeureneffet
     * [Rester silencieux.]
 // Bruits de gardes à l'extérieur
-- AGATHE: Rassurez-vous, vous êtes au seul endroit que les gardes de la Couronne ne viendront pas fouiller... #playsound:Play_SFX_Story_SC_Eglise_GuardsSearchingFar #playsound:Play_MUS_Story_SC_Eglise_GuardsSearching
-- AGATHE: Seule <b>Irène</b> est en droit de juger vos actes en ces lieux. #playsound:Play_MUS_Story_SC_Eglise_ImploreStatue #light:irene_statue
+- AGATHE: Rassurez-vous, vous êtes au seul endroit que les gardes de la Couronne ne viendront pas fouiller... #playsound:Play_SFX_Story_SC_Eglise_GuardsSearchingFar #playsound:Play_MUS_Story_SC_Eglise_GuardsSearching #playsound:VOX_Agathe_lesgardesneviendront
+- AGATHE: Seule <b>Irène</b> est en droit de juger vos actes en ces lieux. #playsound:Play_MUS_Story_SC_Eglise_ImploreStatue #light:irene_statue #playsound:VOX_Agathe_seuleirene
 // PLAYER se tourne vers la statue
     * [(Avec intensité) Implorer la statue. {t(CHAR, 25)}] // 75%
         {sc(CHAR, 25): -> implore_irene_S | -> implore_irene_F}
@@ -75,25 +75,30 @@ VAR irene_torch_is_on = false
             ~ trial()
             ~ t_3_implore_irene = true
             *** [...de la folie des Hommes.] PLAYER: ...des Hommes et de leur folie ! #playsound:VOX_Player_deshommesetfolie #audience:ovation
-                AGATHE: <b>Irène</b> a eu à souffrir elle aussi de leurs aliénations.
+                AGATHE: <b>Irène</b> a eu à souffrir elle aussi de leurs aliénations. #playsound:VOX_Agathe_elleaussialienations
             *** [...de ma propre convoitise.] PLAYER: ...de mes propres désirs ! #playsound:VOX_Player_mespropresdesirs #audience:debate
-                AGATHE: Au moins avez-vous le courage de reconnaître vos fautes.
+                AGATHE: Au moins avez-vous le courage de reconnaître vos fautes. #playsound:VOX_Agathe_aucouragefaute
             *** [...du plus funeste destin.] PLAYER: ...d'un destin des plus tragiques ! #playsound:VOX_Player_destintragique #audience:choc
-                AGATHE: Soyez reconnaissant des épreuves que la <b>Déesse</b> dresse sur votre chemin, car dans ces adversités se cachent des trésors de sagesse.
+                AGATHE: Soyez reconnaissant des épreuves que la <b>Déesse</b> dresse sur votre chemin, car dans ces adversités se cachent des trésors de sagesse. #playsound:VOX_Agathe_lesepreuvesdeesse
         ** (implore_irene_F) PLAYER: C'est de votre faute à vous, là-haut ! #playsound:VOX_Player_votrefautelahaut #trial
             ~ trial()
             ~ t_3_blame_irene = true
-            AGATHE: {claim_to_be_free: N'était-ce pas vous qui, un instant plus tôt, prétendiez être libre, dans vos pensées comme dans vos actes ? | Blâmer notre Sauveuse pour vos malheurs est insensé et cruel.}
+            {
+                - claim_to_be_free == true :
+                    AGATHE: N'était-ce pas vous qui, un instant plus tôt, prétendiez être libre, dans vos pensées comme dans vos actes ? #playsound:VOX_Agathe_vousquipretendiez
+                - claim_to_be_free == false :
+                    AGATHE: Blâmer notre Sauveuse pour vos malheurs est insensé et cruel. #playsound:VOX_Agathe_blamernotresauveuse
+            }
     * [Elle ressemble à la proue d'un navire.] PLAYER: Elle est pareille à la figure de proue d'un navire.
-        AGATHE: Cette statue représente <b>Irène</b> guidant l'humanité vers la terre promise. Après des nuits entières à veiller sur le pont du bateau...
-        AGATHE: ... <b>Irène</b> fut découverte un matin, transfigurée en figure de proue.
+        AGATHE: Cette statue représente <b>Irène</b> guidant l'humanité vers la terre promise. Après des nuits entières à veiller sur le pont du bateau... #playsound:VOX_Agathe_cettestatuereprésente
+        AGATHE: ... <b>Irène</b> fut découverte un matin, transfigurée en figure de proue. #playsound:VOX_Agathe_irenefutdecouverte
     * [Parlez-moi d'elle.] PLAYER: Parlez-moi d'<b>Irène</b>. Qu'aurait-elle fait à ma place ?
-        AGATHE: Plutôt que de me demander à moi... Peut-être pourriez-vous vous adresser à Elle ?
-- AGATHE: Voyez-vous la lampe qui se tient dans sa main ? Faites-en briller la flamme, si vous souhaitez prier la <b>Déesse</b>.
+        AGATHE: Plutôt que de me demander à moi... Peut-être pourriez-vous vous adresser à Elle ? #playsound:VOX_Agathe_plutotquedemanderamoi
+- AGATHE: Voyez-vous la lampe qui se tient dans sa main ? Faites-en briller la flamme, si vous souhaitez prier la <b>Déesse</b>. #playsound:VOX_Agathe_lalampequitientdanssamain
     * [Allumer la lampe d'Irène.] #playsound:Play_SFX_Story_SC_Eglise_LightIreneLamp #playsound:Play_MUS_Story_SC_Eglise_LightOn #anim_event:light_on_irene_lamp
         ~ trial()
         ~ t_3_light_on_irene_torch = true
-        AGATHE: Désormais que sa flamme berce ces lieux, n'hésitez plus : parlez-lui. #trial
+        AGATHE: Désormais que sa flamme berce ces lieux, n'hésitez plus : parlez-lui. #trial #playsound:VOX_Agathe_saflamebercesesyeux
         ** [Se confesser.] PLAYER: J'ai ramené de mon voyage... #playsound:VOX_Player_jairamenevoyage
             ~ irene_torch_is_on = true
             *** [...un trésor interdit.] PLAYER: ...un trésor qui m'était interdit. #playsound:VOX_Player_untresorinterdit
@@ -108,12 +113,13 @@ VAR irene_torch_is_on = false
             ~ trial()
             ~ t_3_no_light_on_irene_torch = true
             -> lamp_off
-        -- AGATHE: <b>Irène</b> saura entendre vos prières, mon enfant. Sachez, à votre tour, entendre son récit.
+        -- AGATHE: <b>Irène</b> saura entendre vos prières, mon enfant. Sachez, à votre tour, entendre son récit. #playsound:VOX_Agathe_ireneentendrapriere
     * [Laisser la lampe éteinte.] PLAYER: Elle restera éteinte, j'en ai peur. #playsound:VOX_Player_elleresteraeteinte #trial
         ~ trial()
         ~ t_3_no_light_on_irene_torch = true
-        -- (lamp_off) AGATHE: Savez-vous seulement ce que symbolise cette torche, mon, enfant ?
-- AGATHE: Cette église, voyez-vous, n'a pas pour seule vocation de prier la <b>Déesse</b>. Elle fut aussi dressée pour témoigner de son histoire. -> stained_glass
+        -- (lamp_off) AGATHE: Savez-vous seulement ce que symbolise cette torche, mon, enfant ? #playsound:VOX_Agathe_savezvoussymbole
+- AGATHE: Cette église, voyez-vous, n'a pas pour seule vocation de prier la <b>Déesse</b>. Elle fut aussi dressée pour témoigner de son histoire. #playsound:VOX_Agathe_cetteeglisevitraux
+-> stained_glass
 
 
 // Ask about the different stained glass illustrations
@@ -134,7 +140,7 @@ VAR irene_torch_is_on = false
             #anim:Player:go_to_sleep_on_bench
             -> barge.scene_4
         - else:
-            AGATHE: Êtes-vous certain de ne pas vouloir poursuivre notre discussion, mon enfant ?
+            AGATHE: Êtes-vous certain de ne pas vouloir poursuivre notre discussion, mon enfant ? #playsound:VOX_Agathe_certainpascontinuer
                 + [J'ai changé d'avis.] PLAYER: Sans doute ne souffrirais-je pas d'entendre encore un peu parler votre sagesse...
                     -> stained_glass
                 + [Je souhaite me reposer...] PLAYER: Veuillez me pardonner, prêtresse. Le sommeil m'emporte déjà... #playsound:VOX_Player_veuillezpardonner
@@ -284,43 +290,43 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
     * [La lune est pleine.] PLAYER: La pleine lune...
         AGATHE: Une lune incandescente, annonçant le <b>Déluge</b>.
 - AGATHE: Connaissez-vous la comptine, mon enfant ?
-- AGATHE: « Quand le ciel fût sombre, et la lune fût levée... <b>Irène</b>, Fille des eaux...
+- AGATHE: « Quand le ciel fût sombre, et la lune fût levée... <b>Irène</b>, Fille des eaux... #playsound:VOX_Agathe_comptine1
     * [... ouït le Déluge gronder.] PLAYER: ... ouït le <b>Déluge</b> gronder. ». 
     * [... vit le monde sombrer.] PLAYER: ... vit le monde sombrer. ».
     * [... sentit la Vie cesser.] PLAYER: ... sentit la Vie cesser. ».
-- AGATHE: « Près du phare, cette nuit, l'océan lui parla... Puis elle n'eut qu'une seule cause...
+- AGATHE: « Près du phare, cette nuit, l'océan lui parla... Puis elle n'eut qu'une seule cause... #playsound:VOX_Agathe_comptine2
     * [... sauver qui elle pourra.] PLAYER: ... sauver qui le pourra. ».
     * [... instruire qui la croira.] PLAYER: ... instruire qui la croira. ».
     * [... bénir qui l'aidera.] PLAYER: ... bénir qui l'aidera. ».
-- AGATHE: « Elle monta à la ville, et cria sous chaque toit. Annonçant le péril...
+- AGATHE: « Elle monta à la ville, et cria sous chaque toit. Annonçant le péril... #playsound:VOX_Agathe_comptine3
     * [... on la fit hors-la-loi.] PLAYER: ... on la fit hors-la-loi. ».
     * [... de folle on la traita.] PLAYER: ... de folle on la traita. ».
     * [... de vice on l'accusa.] PLAYER: ... de vice on l'accusa. ».
-- AGATHE: « Seul son père la crut, acquis à sa pureté. Ce qu'il vit en elle fut...
+- AGATHE: « Seul son père la crut, acquis à sa pureté. Ce qu'il vit en elle fut... #playsound:VOX_Agathe_comptine4
     * [... une Sauveuse née.] PLAYER: ... une Sauveuse née. ».
     * [... une Sainteté.] PLAYER: ... une Sainteté.». 
     * [... une âme Sacrée.] PLAYER: ... une âme Sacrée.». 
-- AGATHE: « <b>Irène</b> lui jura que pour dompter les eaux... Ils devaient s'atteler...
+- AGATHE: « <b>Irène</b> lui jura que pour dompter les eaux... Ils devaient s'atteler... #playsound:VOX_Agathe_comptine5
     * [... à construire un bateau.] PLAYER: ... à construire un bateau. ».
     * [... à bâtir un paquebot.] PLAYER: ... à bâtir un paquebot. ».
     * [... à créer un vaisseau.] PLAYER: ... à créer un vaisseau. ».
-- AGATHE: « L'édifice prenant forme, ceux-là qui l'accusaient... Voyant qu'elle disait vrai...
+- AGATHE: « L'édifice prenant forme, ceux-là qui l'accusaient... Voyant qu'elle disait vrai... #playsound:VOX_Agathe_comptine6
     * [... proposèrent de l'aider.] PLAYER: ... proposèrent de l'aider. ».
     * [... firent preuve de piété.] PLAYER: ... firent preuve de piété. ».
     * [... se montrèrent dévoués.] PLAYER: ... se montrèrent dévoués. ».
-- AGATHE: « Quand la Couronne eut vent qu'un Messie existait. Elle envoya des gardes...
+- AGATHE: « Quand la Couronne eut vent qu'un Messie existait. Elle envoya des gardes... #playsound:VOX_Agathe_comptine7
     * [... le faire exécuter.] PLAYER: ... le faire exécuter. ».
     * [... afin de le châtier.] PLAYER: ... afin de le châtier. ».
     * [... en faire un prisonnier.] PLAYER: ... en faire un prisonnier. ».
-- AGATHE: « Mais le père dévoué à sa fille bien-aimée, n'écoutant que son cœur...
+- AGATHE: « Mais le père dévoué à sa fille bien-aimée, n'écoutant que son cœur... #playsound:VOX_Agathe_comptine8
     * [... pour le Messie, se fit passer.] PLAYER: ... pour le Messie, se fit passer. ».
     * [... se sacrifia pour la sauver.] PLAYER: ... se sacrifia pour la sauver. ».
     * [... à sa place, fut enfermé.] PLAYER: ... à sa place, fut enfermé. ».
-- AGATHE: « Son supplice, désormais, nulle âme ne l'ignore. Enchaîné à une roue...
+- AGATHE: « Son supplice, désormais, nulle âme ne l'ignore. Enchaîné à une roue... #playsound:VOX_Agathe_comptine9
     * [... on le laissa pour mort.] PLAYER: ... on le laissa pour mort. ».
     * [... on y scella son sort.] PLAYER: ... on y scella son sort. ».
     * [... on déforma son corps.] PLAYER: ... on déforma son corps. ».
-- AGATHE: « Et par son sacrifice, il permit à sa fille, et à ceux qu'elle choisit...
+- AGATHE: « Et par son sacrifice, il permit à sa fille, et à ceux qu'elle choisit... #playsound:VOX_Agathe_comptine10
     * [... d'entamer leur exil.] PLAYER: ... d'entamer leur exil. ».
     * [... d'éviter leur péril.] PLAYER: ... d'éviter leur péril. ».
     * [... de fuire ces terres hostiles.] PLAYER: ... de fuire ces terres hostiles. ».

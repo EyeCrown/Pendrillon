@@ -21,16 +21,16 @@
 // Start the scene
 #audience:ovation
 #move(Player)
-VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord.
+VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. #playsound:VOX_Vigie_captaine
     * [Sans doute le Léviathan !] PLAYER: Nul doute qu'il s'agit du <b>Léviathan</b> ! Nous sommes à l'endroit exact indiqué par la carte. #playsound:VOX_Player_nuldoutelevi
         #audience:surprised
-        VIGIE: Si vous l'dites, cap'taine !
+        VIGIE: Si vous l'dites, cap'taine ! #playsound:VOX_Vigie_sivouldites
     * [On appelle cela des vagues.] PLAYER: N'as-tu jamais vu des vagues auparavant, matelot ? #playsound:VOX_Player_jamaisvudevague
         #audience:laugh
-        VIGIE: Quelques-unes, cap'taine, mais jamais de si hautes ! 
+        VIGIE: Quelques-unes, cap'taine, mais jamais de si hautes ! #playsound:VOX_Vigie_quelquesunes
     * [Concentrons-nous sur la tempête.] PLAYER: Ce n'est pas le plus important. Une telle tempête requiert toute notre attention, matelot ! #playsound:VOX_Player_tempetetouteattention
         #audience:applause
-        VIGIE: Bien compris, cap'taine !
+        VIGIE: Bien compris, cap'taine ! #playsound:VOX_Vigie_biencompris
 - PLAYER: Quant à moi, je devrais me charger de...
     * [Baisser la voile {t(STRE, lower_sail_mod)}] // 90%
         {sc(STRE, lower_sail_mod): -> lower_sail_S | -> about_tempest}
@@ -65,14 +65,14 @@ VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord.
         {sc(DEXT, load_harpoon_mod): -> load_harpoon_S | -> mouvement_approaching}
         ** (load_harpoon_S) #anim:Player:load_harpoon
             ~ b_harpoon_is_loaded = true
-- (mouvement_approaching) VIGIE: Cap'taine ! Cap'taine ! Le mouvement se rapproche !
+- (mouvement_approaching) VIGIE: Cap'taine ! Cap'taine ! Le mouvement se rapproche ! #playsound:VOX_Vigie_captaine2
 - PLAYER : Le mouvement... se rapproche ? #playsound:VOX_Player_mouvementrapporche
     * [Que veux-tu dire ?] PLAYER: Que veux-tu dire, matelot ? #playsound:VOX_Player_queveuxtudire
-        VIGIE: Le mouvement dont je parlais : il se rapproche à toute hâte, cap'taine !
+        VIGIE: Le mouvement dont je parlais : il se rapproche à toute hâte, cap'taine ! #playsound:VOX_Vigie_mouvement
     * [Qu'il vienne, nous l'attendons !] PLAYER: Un mouvement, tu dis ? Qu'il vienne nous chercher ! Nous l'attendons ! #playsound:VOX_Player_unmouvementtudis
-        VIGIE : Nous n'attendrons pas longtemps, cap'taine ! Il se rapproche à toute hâte !
+        VIGIE : Nous n'attendrons pas longtemps, cap'taine ! Il se rapproche à toute hâte ! #playsound:VOX_Vigie_nattendronspas
     * [Le mouvement... des vagues ?] PLAYER: Moussaillon, as-tu jamais connu une tempête ? Le mouvement des vagues ne se rapproche pas, il est partout ! #playsound:VOX_Player_moussaillonjamaistempete
-        VIGIE: Sauf votre respect, mon cap'taine... Ce ne sont pas des vagues qui se rapprochent à toute hâte !
+        VIGIE: Sauf votre respect, mon cap'taine... Ce ne sont pas des vagues qui se rapprochent à toute hâte ! #playsound:VOX_Vigie_saufvotrespect
 #creature_apparition
 #audience:shock
 #audience:ovation
