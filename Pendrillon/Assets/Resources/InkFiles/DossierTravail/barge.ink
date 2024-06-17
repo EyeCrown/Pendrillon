@@ -222,7 +222,7 @@ PLAYER: ... Et c'est au port de <b>Miraterre</b>, de retour de notre voyage, que
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
-- PASSEUR: En fin de compte... Notre voyage fut des plus captivants. #playsound:VOX_Ferryman_voyagecaptivant #playsound:Play_MUS_Story_SC_Barque_TrialInView
+- PASSEUR: En fin de compte... Notre voyage fut des plus captivants. #playsound:VOX_Ferryman_voyagecaptivant
 PASSEUR: Toutefois... #audience:ovation #playsound:VOX_Ferryman_toutefois
 PASSEUR: ... Il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView #audience:debate
     * [Que va t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, Passeur... et ne me ménage pas. #anim:Player:stressed #playsound:VOX_Player_quevapasserparlepasseur #audience:debate
