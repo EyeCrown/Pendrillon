@@ -206,9 +206,9 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au <b>Délug
                 ARLE: Vous êtes dur en affaire, messire. Alors disons le double ! #anim:Arle:angry #playsound:VOX_Arle_vousetesdur
             *** (negociate_F) PLAYER: Mon navire, euh... est au régime. Il a perdu du poids, et... #anim:Player:stressed #playsound:VOX_Player_navireregime
                 ARLE: Messire, ces simagrées ne vous honorent pas. Notre position est ferme, j'en ai peur. #anim:Arle:deception #playsound:VOX_Arle_messireces
-- ARLE: Ramenez-nous le cœur de l'immonde <b>Léviathan</b>, sinon pour la gloire, pour l'intérêt de la Couronne. #playsound:VOX_Arle_ramenezlecoeur
-    * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la Couronne qui t'envoie ? #anim:Player:question
-        -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la Couronne elle-même ? #anim:Arle:happy #playsound:VOX_Arle_seriezvousenclin
+- ARLE: Ramenez-nous le cœur de l'immonde <b>Léviathan</b>, sinon pour la gloire, pour l'intérêt de la <b>Couronne</b>. #playsound:VOX_Arle_ramenezlecoeur
+    * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la <b>Couronne</b> qui t'envoie ? #anim:Player:question
+        -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la <b>Couronne</b> elle-même ? #anim:Arle:happy #playsound:VOX_Arle_seriezvousenclin
             ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour notre bonne reine ! #trial #playsound:VOX_Player_braveraidangersreine
                 ~ trial()
                 ~ t_1_respect_the_crown = true

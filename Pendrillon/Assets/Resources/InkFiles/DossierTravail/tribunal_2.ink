@@ -18,8 +18,7 @@ VAR verdict_is_guilty = false
 // Set the location
 #set:trial
 // Set the actor's positions
-#position:Player:8:2
-//#position:Judge:0:5
+#position:Player:10:1
 #position:Naïda:4:20
 
 // Start the scene
@@ -37,7 +36,7 @@ VAR verdict_is_guilty = false
 JUGE ERNEST: Ainsi, vous avez véritablement affronté une créature marine ? #playsound:VOX_Judge_ainsiavezvousveritablecreature
     * [Pour Irène !] PLAYER: Je l'ai fait. Pour nul autre qu'<b>Irène</b>, <i>Votre Honneur</i>. #audience:ovation #playsound:VOX_Player_jelaifaitirene
         ~ audience_judgement(20)
-    * [Pour la Couronne !] PLAYER: Je l'ai fait. Pour nul autre que la Couronne, <i>Votre Honneur</i>. #audience:ovation #playsound:VOX_Player_jelaifaitcouronne
+    * [Pour la Couronne !] PLAYER: Je l'ai fait. Pour nul autre que la <b>Couronne</b>, <i>Votre Honneur</i>. #audience:ovation #playsound:VOX_Player_jelaifaitcouronne
         ~ audience_judgement(10)
     * [Je n'avais pas le choix...] PLAYER: Je l'ai fait. Je n'avais pas le choix, <i>Votre Honneur</i>... C'était elle ou nous. #audience:ovation #playsound:VOX_Player_jelaifaitoblige
         ~ audience_judgement(10)
@@ -66,13 +65,15 @@ JUGE ERNEST: Je veux bien entendu parler... de votre histoire d'amour avec une <
     * [Laisser le silence retomber.]
 - JUGE ERNEST: Mesdames et messieurs les jurés, je vous demande de garder votre calme. #playsound:VOX_Judge_gardezcalmejures #audienc:silent
 JUGE ERNEST: Vous savez l'importance de la tâche qui vous incombe. Sachez vous en montrer digne. #playsound:VOX_Judge_savezimportancetache
-JUGE ERNEST: J'appelle à la barre... la <b>Sireine</b>. #playsound:VOX_Judge_appellesireinebarre #anim:Judge:bell #audience:choc #move(Naida)
+JUGE ERNEST: J'appelle à la barre... la <b>Sireine</b>. #box #playsound:VOX_Judge_appellesireinebarre #position:Naïda:8:10 #wait:4 #anim:Judge:bell #audience:choc #audience:booing
 JUGE ERNEST: Avant toute chose : je demande à la créature de ne pas prendre la parole. #playsound:VOX_Judge_creaturepasparole #audience:booing
 JUGE ERNEST: Si tant est qu'elle soit capable de s'exprimer... #playsound:VOX_Judge_sitantestexprimer #audience:laughter
 JUGE ERNEST: En effet, ce lieu saint ne saurait accueillir la voix d'une affreuse <b>Sireine</b> ! #playsound:VOX_Judge_eneffetlieusacre #audience:booing
 L'AFFREUSE SIREINE: ... #audience:boing
     * [Vous allez regretter ces paroles !] PLAYER: Retirez ces sales paroles, maudit Juge ! Naïda vaut plus que vous tous réunis ! #playsound:VOX_Player_retirezsalesparoles #audience:choc
+        ~ audience_judgement(-20)
     * [Elle possède un nom.] PLAYER: L'affreuse <b>Sireine</b>, comme vous dites, possède un nom. Naïda. #playsound:VOX_Player_affreusesireine
+        ~ audience_judgement(5)
 - JUGE ERNEST: Ainsi, la poiscaille possède un nom ? #playsound:VOX_Judge_poiscalleaunnomq #audience:debate
 LA POISCAILLE: ... #audience:booing
     * [(Menaçant) Appelez-la par son nom. {t(STRE, -30)}] // 30%
@@ -277,6 +278,8 @@ JUGE ERNEST: Qui vote... <shake>innocent</shake> ? #playsound:VOX_Judge_quiinnoc
         JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise #playsound:Play_MUS_Story_SC_Trial_ResultRoll
     - p_name == "Octave":
         JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+    - else:
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le Juge déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:Play_MUS_Story_SC_Trial_ResultRoll
 }
 JUGE ERNEST: <b>INNOCENT</b> !!! #playsound:Play_MUS_Story_SC_Trial_Innocent #playsound:VOX_Judge_INNOCENT #audience:ovation
 JUGE ERNEST: L'Accusé, ainsi que Naïda la <b>Sireine</b>, peuvent retrouver leur liberté. #playsound:VOX_Judge_accuseetnaidelibres #audience:ovation
@@ -298,7 +301,7 @@ JUGE ERNEST: Qui vote... <shake>coupable</shake> ? #playsound:VOX_Judge_quicoupa
 }
 - JUGE ERNEST: <b>COUPABLE</b> !!! #playsound:Play_MUS_Story_SC_Trial_Coupable #playsound:VOX_Judge_COUPABLE #audience:ovation
 ~ audience_judgement(-100) // La balance penche complètement si coupable
-JUGE ERNEST: Coulez-le, ainsi que la <b>Sireine</b>, où la Déesse Elle-même ne saurait le trouver... #playsound:VOX_Judge_coulezle #audience:ovation
+JUGE ERNEST: Coulez-le, ainsi que la <b>Sireine</b>, où la <b>Déesse</b> ne saurait le trouver... #playsound:VOX_Judge_coulezle #audience:ovation
 JUGE ERNEST: ... Au fond des océans ! #playsound:VOX_Judge_aufonddesoceans #audience:ovation
 - -> naida_speech
 
@@ -322,9 +325,11 @@ NAÏDA: Combien il est étrange de constater que vous autres, humains, ayez donn
         NAÏDA: Je remercie Ambroise de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause #playsound:VOX_Naida_remercieAmbroise
     - p_name == "Octave":
         NAÏDA: Je remercie Octave de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause #playsound:VOX_Naida_remercieOctave
+    - else:
+        NAÏDA: Je remercie Merlin de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause #playsound:VOX_Naida_remercieMerlin
 }
 - NAÏDA: Car les noms, voyez-vous, sont le cœur battant de toute chose. Les noms sont importants. #audience:applause #playsound:VOX_Naida_carlesnoms
 NAÏDA: Ainsi il m'apparaît, pour conclure notre histoire, qu'en donnant à un système partial et imparfait, le nom même d'une vertu... #audience:silent #playsound:VOX_Naida_ainsiilmapparait
 NAÏDA: En lui donnant le nom de « Justice »... #audience:debate #playsound:VOX_Naida_enluidonnantjustice
-NAÏDA: Vous autres humains ayez commis une erreur... cruelle. #anim:Naida:bow #audience:ovation #playsound:VOX_Naida_vousautreshumains
+NAÏDA: Vous autres humains ayez commis une erreur... cruelle. #anim:Naida:bow #box #audience:ovation #playsound:VOX_Naida_vousautreshumains #curtains:close #wait:10 #audience:ovation
 - -> cast_salutation

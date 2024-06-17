@@ -66,7 +66,7 @@ VAR irene_torch_is_on = false
                 AGATHE: J'en ai bien peur, en effet... #playsound:VOX_Agathe_bienpeureneffet
     * [Rester silencieux.]
 // Bruits de gardes à l'extérieur
-- AGATHE: Rassurez-vous, vous êtes au seul endroit que les gardes de la Couronne ne viendront pas fouiller... #playsound:Play_SFX_Story_SC_Eglise_GuardsSearchingFar #playsound:Play_MUS_Story_SC_Eglise_GuardsSearching #playsound:VOX_Agathe_lesgardesneviendront
+- AGATHE: Rassurez-vous, vous êtes au seul endroit que les gardes de la <b>Couronne</b> ne viendront pas fouiller... #playsound:Play_SFX_Story_SC_Eglise_GuardsSearchingFar #playsound:Play_MUS_Story_SC_Eglise_GuardsSearching #playsound:VOX_Agathe_lesgardesneviendront
 - AGATHE: Seule <b>Irène</b> est en droit de juger vos actes en ces lieux. #playsound:Play_MUS_Story_SC_Eglise_ImploreStatue #light:irene_statue #playsound:VOX_Agathe_seuleirene
 // PLAYER se tourne vers la statue
     * [(Avec intensité) Implorer la statue. {t(CHAR, 25)}] // 75%
@@ -314,7 +314,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
     * [... proposèrent de l'aider.] PLAYER: ... proposèrent de l'aider. ».
     * [... firent preuve de piété.] PLAYER: ... firent preuve de piété. ».
     * [... se montrèrent dévoués.] PLAYER: ... se montrèrent dévoués. ».
-- AGATHE: « Quand la Couronne eut vent qu'un Messie existait. Elle envoya des gardes... #playsound:VOX_Agathe_comptine7
+- AGATHE: « Quand la <b>Couronne</b> eut vent qu'un Messie existait. Elle envoya des gardes... #playsound:VOX_Agathe_comptine7
     * [... le faire exécuter.] PLAYER: ... le faire exécuter. ».
     * [... afin de le châtier.] PLAYER: ... afin de le châtier. ».
     * [... en faire un prisonnier.] PLAYER: ... en faire un prisonnier. ».
@@ -350,7 +350,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
 = man_tied_to_a_wheel
 #playsound:Play_MUS_Story_SC_Eglise_StainedGlassHim
 AGATHE: C'est <b>Lui</b>, en effet. L'homme a souffert pour sauver sa fille, et notre peuple tout entier. #look:Player:front
-AGATHE: Quand les gardes de la Couronne vinrent arrêter le Messie, c'est lui qu'ils emmenèrent.
+AGATHE: Quand les gardes de la <b>Couronne</b> vinrent arrêter le Messie, c'est lui qu'ils emmenèrent.
     * [Nous lui devons tant.] PLAYER: Notre dette à son égard est immense. #trial
         ~ trial()
         ~ t_3_show_judge_respect = true

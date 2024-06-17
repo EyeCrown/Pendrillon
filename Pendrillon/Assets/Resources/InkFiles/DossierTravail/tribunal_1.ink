@@ -37,7 +37,7 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 // DEBUG TEST DUEL
 - JUGE ERNEST: Test duel. #position:Player:10:1
 - -> witnesses_capucine_and_marcello
-//
+
 - JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencesilence
 {
     - p_name == "Merlin":
@@ -62,7 +62,7 @@ JUGE ERNEST: Silence ! J'exige le silence ! #anim:Judge:bell #audience:silent #p
         ~ audience_judgement(-10)
 }
 {
-    - is_accused_of("crown outrage"): JUGE ERNEST: ... D'outrage à la Couronne... #playsound:VOX_Judge_outragecouronne #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
+    - is_accused_of("crown outrage"): JUGE ERNEST: ... D'outrage à la <b>Couronne</b>... #playsound:VOX_Judge_outragecouronne #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
         ~ audience_judgement(-10)
 }
 {
@@ -115,7 +115,7 @@ SOUFFLEUR: N'oublie pas : dans ce procès, c'est le public que tu dois convaincr
 = witness_arle
 - JUGE ERNEST: Le Juge appelle désormais à la barre le premier témoin de ce procès : Arle, la trublionne de la reine Constance. #playsound:Play_MUS_Story_SC_Trial_Arle #position:Arle:8:10 #box #wait:8 #playsound:VOX_Judge_jugeappellearle #anim:Judge:bell #anim:Arle:bow #audience:ovation
 JUGE ERNEST: Décrivez au jury votre rencontre avec l'accusé, je vous prie. #playsound:VOX_Judge_decrivezjuryarle
-ARLE: <i>Votre Honneur</i>, vous n'êtes pas sans ignorer que j'ai l'immense privilège d'occuper, au sein de la Couronne, un rôle de tout premier plan... #playsound:VOX_Arle_immenseprivilege
+ARLE: <i>Votre Honneur</i>, vous n'êtes pas sans ignorer que j'ai l'immense privilège d'occuper, au sein de la <b>Couronne</b>, un rôle de tout premier plan... #playsound:VOX_Arle_immenseprivilege
     * [Ne pas l'interrompre.]
     * [(Se moquer) Contrairement à cette pièce.] PLAYER: Ce qui n'est pas le cas de ton rôle dans cette pièce... #audience:laughter #playsound:VOX_Player_cequinestpastoncasrolepiece #anim:Arle:angry
         ~ audience_judgement(5)
@@ -149,7 +149,7 @@ ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à 
         JUGE ERNEST: Silence ! Le Juge exige le silence ! #playsound:VOX_Judge_silencelejugeexige #anim:Judge:bell #audience:silent
         JUGE ERNEST: Ce procès n'est pas une fanfaronnade ! Membres du jury, soyez dignes de la tâche qui vous incombe ! #playsound:VOX_Judge_ceprocesfanfaronnade
         JUGE ERNEST: Quant à vous, cessez d'objecter quand la parole ne vous a pas été donnée par le Juge en personne ! #playsound:VOX_Judge_quantavous
-        JUGE ERNEST: Témoin, vous mentionniez une mission confiée à l'accusé par la Couronne. #playsound:VOX_Judge_temoinmentionniez
+        JUGE ERNEST: Témoin, vous mentionniez une mission confiée à l'accusé par la <b>Couronne</b>. #playsound:VOX_Judge_temoinmentionniez
 - JUGE ERNEST: Précisez quelle était la nature de cette mission, je vous prie. #playsound:VOX_Judge_precisezlanature #anim:Arle:bow
 ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme accusé, était de tuer le <b>Léviathan</b>, et d'en ramener l'organe vital. #audience:choc #playsound:VOX_Arle_lamissiondelareine
 ARLE: Je veux bien entendu parler de son cœur, <i>Votre Honneur</i>. #audience:laughter #anim:Judge:bell #anim:Arle:bow #playsound:VOX_Arle_jeveuxparlercoeur
@@ -328,7 +328,7 @@ CAPUCINE: <i>Votre Honneur</i>, veuillez excuser ce fieffé personnage. Sa place
 JUGE ERNEST: Silence ! Silence ! #playsound:VOX_Judge_silencesilence #anim:Judge:bell #audience:silent
 JUGE ERNEST: Veuillez raconter aux jurés votre rencontre avec l'accusé. Et soyez brefs, voulez-vous ? #playsound:VOX_Judge_raconterjuresrencontre
 CAPUCINE: Je vous remercie, <i>Votre Honneur</i>. #playsound:VOX_Capucine_jevousremercie #anim:Capucine:bow
-CAPUCINE: Vous n'êtes pas sans savoir, <i>Votre Honneur</i>, que tout navire qui arrive à <b>Miraterre</b> doit être fouillé par des gardes de la Couronne. #playsound:VOX_Capucine_vousnetespassanssavoir
+CAPUCINE: Vous n'êtes pas sans savoir, <i>Votre Honneur</i>, que tout navire qui arrive à <b>Miraterre</b> doit être fouillé par des gardes de la <b>Couronne</b>. #playsound:VOX_Capucine_vousnetespassanssavoir
 CAPUCINE: Aussi mon camarade et moi avons-nous pénétré sur le rafiot du vil personnage pour y faire notre inspection. #playsound:VOX_Capucine_aussimoncamarade
 MARCELLO: J'avais entendu du bruit dans la cale, <i>Vot' Horreur</i>.
 CAPUCINE: Ferme-là, tu veux ? C'est à moi de raconter. #anim:Capucine:angry #playsound:VOX_Capucine_fermelatuveux #audience:laughter
@@ -645,7 +645,7 @@ JUGE ERNEST: Et qu'a eu à dire l'Accusé au sujet du Juge ? #playsound:VOX_Judg
 - JUGE ERNEST: Ainsi se clôt votre témoignage, prêtresse. #playsound:VOX_Judge_ainsiclottemoingnagepre #audience:applause
 JUGE ERNEST: Chacun vous remercie pour votre dévouement. #playsound:VOX_Judge_chacunremerciedevouement #audience:ovation #rope:Agathe
 JUGE ERNEST: Accusé, nous nous devons désormais d'aborder le sujet du <b>Léviathan</b>. #playsound:VOX_Judge_accusesujetleviathan #audience:debate
-JUGE ERNEST: En effet, vous fûtes missionné par la Couronne, afin de vous rendre en mer... #playsound:VOX_Judge_eneffetmissonnecouronne
+JUGE ERNEST: En effet, vous fûtes missionné par la <b>Couronne</b>, afin de vous rendre en mer... #playsound:VOX_Judge_eneffetmissonnecouronne
 JUGE ERNEST: ... et d'y terrasser le terrible <b>Léviathan</b>. #playsound:VOX_Judge_terrasserleviathan #audience:choc
 JUGE ERNEST: Avez-vous tenu parole, Accusé ? Avez-vous, oui ou non, ramené le cœur de la créature ? #playsound:VOX_Judge_aveznvousdtenuparole #audience:ovation
     * [Je l'ai fait !] PLAYER: Bien entendu, <i>Votre Honneur</i> ! #playsound:VOX_Player_bienentenduvotrehonneur #audience:applause
@@ -653,7 +653,7 @@ JUGE ERNEST: Avez-vous tenu parole, Accusé ? Avez-vous, oui ou non, ramené le 
         JUGE ERNEST: Assez de ces mensonges ! Nous savons que cela est faux. #playsound:VOX_Judge_assezmensongessavonsfaux
         ~ audience_judgement(-20)
     * [Bien sûr que non.] PLAYER: Je n'ai pu accomplir cette mission, <i>Votre Honneur</i>. #playsound:VOX_Player_jenaipuaccomplir
-        JUGE ERNEST: Ainsi, vous pensez pouvoir vous soustraire à vos engagements à l'égard de la Couronne. #playsound:VOX_Judge_ainsipensezsoustraire
+        JUGE ERNEST: Ainsi, vous pensez pouvoir vous soustraire à vos engagements à l'égard de la <b>Couronne</b>. #playsound:VOX_Judge_ainsipensezsoustraire
         ~ audience_judgement(-10)
     * [J'ai eu un léger contretemps...] PLAYER: <i>Votre Honneur</i>, c'était mon souhait le plus cher, mais nous avons subi un contretemps. #playsound:VOX_Player_votrehonneurmonsouhaitcher
         JUGE ERNEST: Un contretemps, vous dites ? #playsound:VOX_Judge_uncontratempsq
