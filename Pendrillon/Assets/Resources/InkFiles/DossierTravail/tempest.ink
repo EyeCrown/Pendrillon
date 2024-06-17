@@ -20,7 +20,10 @@
 
 // Start the scene
 #audience:ovation
-#move(Player)
+- PLAYER: Ceci est un <shake a=0.5>Test du shake</shake>.
+- PLAYER: Ceci est un <wiggle a=0.1>Test du wiggle</wiggle>.
+- PLAYER: Ceci est un <bounce a=0.05>Test du bounce</bounce>.
+- PLAYER: Ceci est un <fade a=0.5>Test du fade</fade>.
 VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. #playsound:VOX_Vigie_captaine
     * [Sans doute le Léviathan !] PLAYER: Nul doute qu'il s'agit du <b>Léviathan</b> ! Nous sommes à l'endroit exact indiqué par la carte. #playsound:VOX_Player_nuldoutelevi
         #audience:surprised
