@@ -49,7 +49,7 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
     ~ temp threshold = ((stat*10)+pDifficulty+modifier)
     // Min difficulty is 90%
     {
-        - threshold <= 90:
+        - threshold >= 90:
             ~ threshold = 90
     }
     ~ temp result = true
@@ -100,6 +100,11 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
             ~ full_stat = "Dexterity"
     }
     ~ temp threshold = ((stat*10)+pDifficulty+modifier)
+    // Min difficulty is 90%
+    {
+        - threshold >= 90:
+            ~ threshold = 90
+    }
     // Print the percentage
     {export_mode == false: ({full_stat} {threshold}%)}
 
@@ -160,44 +165,15 @@ CONST APPLAUSEMETER_ROTTEN_TOMATOES_FAILURE_MULT = -0
             {
                 - pStat == "char":
                     ~ p_char += 1
-                    Vous avez level up ! Votre {pStat} est maintenant de {p_char}.
+                    // Vous avez level up ! Votre {pStat} est maintenant de {p_char}.
                 - pStat == "stre":
                     ~ p_stre += 1
-                    Vous avez level up ! Votre {pStat} est maintenant de {p_stre}.
+                    // Vous avez level up ! Votre {pStat} est maintenant de {p_stre}.
                 - pStat == "dext":
                     ~ p_dext += 1
-                    Vous avez level up ! Votre {pStat} est maintenant de {p_dext}.
+                    // Vous avez level up ! Votre {pStat} est maintenant de {p_dext}.
             }
     }
-
-// Get the XP Threshold at a given level
-=== function get_XP_threshold(pLevel)
-    ~ temp result = 0
-    {
-        - pLevel == 1:
-            ~ result = 0.45
-        - pLevel == 2:
-            ~ result = 2.5
-        - pLevel == 3:
-            ~ result = 6.5
-        - pLevel == 4:
-            ~ result = 13.5
-        - pLevel == 5:
-            ~ result = 24
-        - pLevel == 6:
-            ~ result = 37.5
-        - pLevel == 7:
-            ~ result = 55.5
-        - pLevel == 8:
-            ~ result = 77
-        - pLevel == 9:
-            ~ result = 104
-        - pLevel == 10:
-            ~ result = 135
-        - pLevel == 11:
-            ~ result = 9999 // Evite d'éventuels bugs
-    }
-    ~ return result
 
 // Return the square root of a predetermined number
 === function sqrt(pNumber)
