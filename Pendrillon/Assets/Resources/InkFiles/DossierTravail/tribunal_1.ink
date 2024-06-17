@@ -33,9 +33,6 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #audience:ovation
 #wait:5
 #audience:ovation
-// DEBUG TEST DUEL
-// - JUGE ERNEST: Test duel. #position:Player:10:1
-// - -> witnesses_capucine_and_marcello
 
 - JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencesilence
 {
@@ -513,28 +510,28 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
 - (next_round_against_capucine)
     {
         - nb_turn_against_capucine == 1:
-            JUGE ERNEST: Le témoin <b>Capucine</b> tient bon elle aussi ! #anim:Capucine:poirier2 #audience:ovation #playsound:VOX_Judge_capucineholds1 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
+            JUGE ERNEST: Le témoin <b>Capucine</b> tient bon elle aussi ! #anim:Capucine:poirier #audience:ovation #playsound:VOX_Judge_capucineholds1 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
             JUGE ERNEST: C'est désormais à l'<b>Accusé</b> de ne pas s'effondrer ! #audience:ovation #playsound:VOX_Judge_accusetoholdpoirier1
         - nb_turn_against_capucine == 2:
-            JUGE ERNEST: Le témoin <b>Capucine</b> parvient à tenir le bon bout ! anim:Capucine:poirier2 #audience:ovation #playsound:VOX_Judge_capucineholds2 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
+            JUGE ERNEST: Le témoin <b>Capucine</b> parvient à tenir le bon bout ! #anim:Capucine:poirier #audience:ovation #playsound:VOX_Judge_capucineholds2 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
             JUGE ERNEST: C'est désormais à l'<b>Accusé</b> de ne pas échouer lamentablement! #audience:ovation #playsound:VOX_Judge_accusetoholdpoirier2
         - nb_turn_against_capucine == 3:
-            JUGE ERNEST: Le témoin <b>Capucine</b> continue d'impressionner les jurés ! #anim:Capucine:poirier2 #audience:ovation #playsound:VOX_Judge_capucineholds3 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
+            JUGE ERNEST: Le témoin <b>Capucine</b> continue d'impressionner les jurés ! #anim:Capucine:poirier #audience:ovation #playsound:VOX_Judge_capucineholds3 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
             JUGE ERNEST: C'est désormais à l'<b>Accusé</b> de ne pas décevoir les jurés ! #audience:ovation #playsound:VOX_Judge_accusetoholdpoirier3
         - nb_turn_against_capucine == 4:
-            JUGE ERNEST: Le témoin <b>Capucine</b> tient encore le coup ! #anim:Capucine:poirier2 #audience:ovation #playsound:VOX_Judge_capucineholds4 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
+            JUGE ERNEST: Le témoin <b>Capucine</b> tient encore le coup ! #anim:Capucine:poirier #audience:ovation #playsound:VOX_Judge_capucineholds4 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
             JUGE ERNEST: C'est désormais à l'<b>Accusé</b> de faire une nouvelle fois preuve de talent ! #audience:ovation #playsound:VOX_Judge_accusetoholdpoirier4
         - nb_turn_against_capucine == 5:
-            JUGE ERNEST: Le témoin <b>Capucine</b> réussit une nouvelle fois ! #anim:Capucine:poirier2 #audience:ovation #playsound:VOX_Judge_capucineholds5 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
+            JUGE ERNEST: Le témoin <b>Capucine</b> réussit une nouvelle fois ! #anim:Capucine:poirier #audience:ovation #playsound:VOX_Judge_capucineholds5 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
             JUGE ERNEST: C'est désormais à l'<b>Accusé</b> de tenir encore un peu ! #audience:ovation #playsound:VOX_Judge_accusetoholdpoirier5
         - nb_turn_against_capucine == 6:
-            JUGE ERNEST: Le témoin <b>Capucine</b> parvient à tenir malgré la douleur ! #anim:Capucine:poirier2 #audience:ovation #playsound:VOX_Judge_capucineholds6 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
+            JUGE ERNEST: Le témoin <b>Capucine</b> parvient à tenir malgré la douleur ! #anim:Capucine:poirier #audience:ovation #playsound:VOX_Judge_capucineholds6 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
             JUGE ERNEST: C'est désormais à l'<b>Accusé</b> de tenir toujours un peu plus ! #audience:ovation #playsound:VOX_Judge_accusetoholdpoirier6
         - nb_turn_against_capucine >= 7:
-            JUGE ERNEST: Le témoin <b>Capucine</b> tient bon elle aussi ! #anim:Capucine:poirier2 #audience:ovation #playsound:VOX_Judge_capucineholds1 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
+            JUGE ERNEST: Le témoin <b>Capucine</b> tient bon elle aussi ! #anim:Capucine:poirier #audience:ovation #playsound:VOX_Judge_capucineholds1 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
             JUGE ERNEST: C'est désormais à l'<b>Accusé</b> de tenir toujours un peu plus ! #audience:ovation #playsound:VOX_Judge_accusetoholdpoirier6
         - else:
-            JUGE ERNEST: Le témoin <b>Capucine</b> tient bon elle aussi ! #anim:Capucine:poirier2 #audience:ovation #playsound:VOX_Judge_capucineholds1 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
+            JUGE ERNEST: Le témoin <b>Capucine</b> tient bon elle aussi ! #anim:Capucine:poirier #audience:ovation #playsound:VOX_Judge_capucineholds1 #playsound:Play_MUS_Story_SC_Trial_CapucineHolds
             JUGE ERNEST: C'est désormais à l'<b>Accusé</b> de tenir toujours un peu plus ! #audience:ovation #playsound:VOX_Judge_accusetoholdpoirier6
     }
     ~ nb_turn_against_capucine += 1
@@ -545,19 +542,19 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
     ~ capucine_sc -= 5
     {
         - nb_turn_against_capucine == 1:
-            JUGE ERNEST: L'<b>Accusé</b> a tenu bon : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier2 #audience:ovation #playsound:VOX_Judge_accuseholdspoirier1 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
+            JUGE ERNEST: L'<b>Accusé</b> a tenu bon : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier #audience:ovation #playsound:VOX_Judge_accuseholdspoirier1 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
         - nb_turn_against_capucine == 2:
-            JUGE ERNEST: L'<b>Accusé</b> a une nouvelle fois réussi : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier2 #audience:ovation #playsound:VOX_Judge_accuseholdspoirier2 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
+            JUGE ERNEST: L'<b>Accusé</b> a une nouvelle fois réussi : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier #audience:ovation #playsound:VOX_Judge_accuseholdspoirier2 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
         - nb_turn_against_capucine == 3:
-            JUGE ERNEST: L'<b>Accusé</b> impressionne par ses talents au poirier : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier2 #audience:ovation #playsound:VOX_Judge_accuseholdspoirier3 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
+            JUGE ERNEST: L'<b>Accusé</b> impressionne par ses talents au poirier : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier #audience:ovation #playsound:VOX_Judge_accuseholdspoirier3 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
         - nb_turn_against_capucine == 4:
-            JUGE ERNEST: L'<b>Accusé</b> nous délivre une nouvelle fois une performance impressionnante : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier2 #audience:ovation #playsound:VOX_Judge_accuseholdspoirier4 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
+            JUGE ERNEST: L'<b>Accusé</b> nous délivre une nouvelle fois une performance impressionnante : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier #audience:ovation #playsound:VOX_Judge_accuseholdspoirier4 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
         - nb_turn_against_capucine == 5:
-            JUGE ERNEST: L'<b>Accusé</b> semble désormais inarrêtable : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier2 #audience:ovation #playsound:VOX_Judge_accuseholdspoirier5 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
+            JUGE ERNEST: L'<b>Accusé</b> semble désormais inarrêtable : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier #audience:ovation #playsound:VOX_Judge_accuseholdspoirier5 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
         - nb_turn_against_capucine >= 6:
-            JUGE ERNEST: L'<b>Accusé</b> réussit à nouveau : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier2 #audience:ovation #playsound:VOX_Judge_accuseholdspoirier6 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
+            JUGE ERNEST: L'<b>Accusé</b> réussit à nouveau : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier #audience:ovation #playsound:VOX_Judge_accuseholdspoirier6 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
         - else:
-            JUGE ERNEST: L'<b>Accusé</b> réussit à nouveau : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier2 #audience:ovation #playsound:VOX_Judge_accuseholdspoirier6 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
+            JUGE ERNEST: L'<b>Accusé</b> réussit à nouveau : qu'en sera-t-il de notre témoin ? ({capucine_sc}% que Capucine réussisse) #anim:Player:poirier #audience:ovation #playsound:VOX_Judge_accuseholdspoirier6 #playsound:Play_MUS_Story_SC_Trial_PlayerHolds
     }
     {roll_ai_sc(capucine_sc): -> next_round_against_capucine | -> victory_against_capucine}
     #audience:ovation

@@ -207,7 +207,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
             --- AGATHE: Je vous demande pardon, mon enfant ?
                 PLAYER: Nul ne devrait tourner au croisement d'une ruelle sans retenir un frisson de terreur pour <shake>Edgar le Traquenard</shake>. #anim:Player:stressed
                 AGATHE: ...
-                PLAYER: (Les yeux fous) Il nous attend peut-être de l'autre côté d'une ruelle, prêt à nous suriner !
+                PLAYER: (Les yeux fous) Il nous attend peut-être, <fade a=0.5>caché</fade> de l'autre côté d'une ruelle, prêt à nous suriner !
                 AGATHE: ... Euh...
                 AGATHE: L'homme auquel je faisais en réalité allusion est Ernest, la <b>Déesse</b> le bénisse.
 - AGATHE: Ernest, le gardien du phare.
