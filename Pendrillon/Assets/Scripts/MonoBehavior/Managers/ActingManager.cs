@@ -129,7 +129,7 @@ namespace MonoBehavior.Managers
         bool _isActionDone = false;
         bool _dialogueAlreadyHandle = false;
 
-        readonly Dictionary<string, Vector3> _directions = new Dictionary<string, Vector3>();
+        readonly public Dictionary<string, Vector3> _directions = new Dictionary<string, Vector3>();
 
         public bool _allowScreenshake { private get; set; }
 
