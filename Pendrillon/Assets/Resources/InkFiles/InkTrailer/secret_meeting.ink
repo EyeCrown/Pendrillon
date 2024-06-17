@@ -22,12 +22,13 @@ VAR has_fail = false
 #position:Arle:2:10
 
 // Start the scene
-#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
+//#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
 // Audience reaction
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #anim:Arle:crawling #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #anim:Arle:crawling #wait:60
 
 - // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
+- -> trip_return
 - #audience:applause
     * [Attendre encore.]
 - #audience:debate #playsound:Play_MUS_Story_SC_SecretMeeting_Encore

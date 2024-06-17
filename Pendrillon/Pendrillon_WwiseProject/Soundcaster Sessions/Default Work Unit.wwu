@@ -95,6 +95,10 @@
 							<Value>50</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="FullLineIsSpeaking" ID="{01871AF0-8042-440C-82E1-948C3C103025}"/>
+							<Value>-100</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="AmbianceFatigue" ID="{D7454268-6505-48E5-AFDE-47F4443C6058}"/>
 							<Value>0</Value>
 						</RTPCValue>
@@ -205,6 +209,26 @@
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true"/>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Dialog Emotions" ID="{7065B4E8-4566-4998-8D92-68E7D57F1C5A}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_VOX_Capucine_Emotion_disappointed" ID="{20950A55-6392-4BD7-82DD-F79482B3E4A1}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="VOX_Agathe_comptine5" ID="{2BD7B643-18F0-41FB-A2D5-100926287944}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true">
+						<RTPCValue>
+							<GameParameterRef Name="FullLineIsSpeaking" ID="{01871AF0-8042-440C-82E1-948C3C103025}"/>
+							<Value>-100</Value>
+						</RTPCValue>
+					</RTPCValueList>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>

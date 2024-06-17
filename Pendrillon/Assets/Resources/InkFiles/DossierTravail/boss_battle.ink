@@ -13,19 +13,19 @@ VAR canon_damages = 20
 VAR explosive_barrel_on_mouth_damages = 40
 VAR angel_jump_damages = 25
 // Player moovepool
-VAR load_harpoon_mod = 40 // 90%
-VAR aim_harpoon_mod = 35 // 85%
-VAR shoot_harpoon_mod_default = 15 // 65% (90% si on vise)
-VAR shoot_harpoon_mod = 15 // 65% (90% si on vise)
-VAR load_canon_mod = 30 // 80%
-VAR aim_canon_mod = 35 // 85%
-VAR shoot_canon_mod_default = 0 // 50% (75% si on vise)
-VAR shoot_canon_mod = 0 // 50%
-VAR load_barrel_mod = 40 // 90%
-VAR throw_barrel_mod = 25 // 75%
-VAR climb_mast_mod = 25 // 75%
-VAR lower_sail_mod = 40 // 90%
-VAR angel_jump_mod = 10 // 60%
+VAR load_harpoon_mod = 30 // 90%
+VAR aim_harpoon_mod = 25 // 85%
+VAR shoot_harpoon_mod_default = 5 // 65% (90% si on vise)
+VAR shoot_harpoon_mod = 5 // 65% (90% si on vise)
+VAR load_canon_mod = 20 // 80%
+VAR aim_canon_mod = 25 // 85%
+VAR shoot_canon_mod_default = -10 // 50% (75% si on vise)
+VAR shoot_canon_mod = -10 // 50%
+VAR load_barrel_mod = 30 // 90%
+VAR throw_barrel_mod = 15 // 75%
+VAR climb_mast_mod = 15 // 75%
+VAR lower_sail_mod = 30 // 90%
+VAR angel_jump_mod = 0 // 60%
 VAR aim_bonus_mod = 25
 // Souffleur variables
 VAR souffleur_explained_AP = false
@@ -74,28 +74,26 @@ VAR b_boss_special_attack_power = 9
 - -> start
 
 = start
-// Set the location : A SUPPRIMER PLUS TARD CAR LE DECORS EST DEJA SET PAR LA SCENE D'AVANT !!!!
-- #set:tempest
 
 // Start the scene
 #audience:ovation
-- SOUFFLEUR: Psssst... Hé, l'ami !
-SOUFFLEUR: Cette scène nous coûte une fortune en effets spéciaux à chaque spectacle...
-SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en terme de chorégraphie, matériel, main-d'oeuvre...
-SOUFFLEUR: Sans parler des <shake>coûts d'entretiens</shake> !
-SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami ?
+- SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe7
+SOUFFLEUR: Cette scène nous coûte une fortune en effets spéciaux à chaque spectacle... #playsound:VOX_Souffleur_fortuneeffetsspecias
+SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en terme de chorégraphie, matériel, main-d'oeuvre... #playsound:VOX_Souffleur_budget
+SOUFFLEUR: Sans parler des <shake>coûts d'entretien</shake> ! #playsound:VOX_Souffleur_coutentretien
+SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami ? #playsound:VOX_Souffleur_pleinlesyeux
 - -> player_moovepool
 
 // Souffleur explain action points
 = souffleur_explain_action_points
-- SOUFFLEUR: Psssst... Hé, l'ami !
-SOUFFLEUR: Tu viens de faire une action nécessitant un <b>talent</b>, pas vrai l'ami ?
-SOUFFLEUR: Sache que lors d'un combat, tu peux effectuer <b>plusieurs actions</b> de ce type lors d'un <b>même tour</b>.
-SOUFFLEUR: Le nombre de <b>talents</b> que tu peux utiliser avant que ton tour ne se termine est affiché au-dessus.
-SOUFFLEUR: On appelle ça des <shake>points d'action™</shake>. Enfin... c'est <i>moi</i> qui les appelle comme ça.
-SOUFFLEUR: Une dernière chose : tu peux <b>passer ton tour</b> si tu le souhaites.
-SOUFFLEUR: Tes <b>points d'action</b> seront <b>mis de coté</b> pour le tour suivant.
-SOUFFLEUR: Bonne chance, l'ami !
+- SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe4
+SOUFFLEUR: Tu viens de faire une action nécessitant un <b>talent</b>, pas vrai l'ami ? #playsound:VOX_Souffleur_bref
+SOUFFLEUR: Sache que lors d'un combat, tu peux effectuer <b>plusieurs actions</b> de ce type lors d'un <b>même tour</b>. #playsound:VOX_Souffleur_plusieursactions
+SOUFFLEUR: Le nombre de <b>talents</b> que tu peux utiliser avant que ton tour ne se termine est affiché au-dessus. #playsound:VOX_Souffleur_talentesecritdessus
+SOUFFLEUR: On appelle ça des <shake>points d'action™</shake>. Enfin... c'est <i>moi</i> qui les appelle comme ça. #playsound:VOX_Souffleur_pa
+SOUFFLEUR: Une dernière chose : tu peux <b>passer ton tour</b> si tu le souhaites. #playsound:VOX_Souffleur_passersontour
+SOUFFLEUR: Tes <b>points d'action</b> seront <b>mis de coté</b> pour le tour suivant. #playsound:VOX_Souffleur_pastored
+SOUFFLEUR: Bonne chance, l'ami ! #playsound:VOX_Souffleur_glhf
 ~ souffleur_explained_AP = true
 {
     - b_player_is_on_top_of_mast:
@@ -115,10 +113,10 @@ SOUFFLEUR: Bonne chance, l'ami !
             -> player_moovepool
     }
 }
-- SOUFFLEUR: Psssst... Hé, l'ami !
-SOUFFLEUR: Lors d'une tempête, un marin devrait toujours <b>baisser les voiles</b> de son navire.
-SOUFFLEUR: C'est un petit conseil d'ami, fais-en ce que tu veux...
-SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami !
+- SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe12
+SOUFFLEUR: Lors d'une tempête, un marin devrait toujours <b>baisser les voiles</b> de son navire. #playsound:VOX_Souffleur_lorsdunetempete
+SOUFFLEUR: C'est un petit conseil d'ami, fais-en ce que tu veux... #playsound:VOX_Souffleur_petitconseilcequrtu
+SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami ! #playsound:VOX_Souffleur_pasdirepasprevenu
 ~ souffleur_explained_sail_down = true
 {
     - b_player_is_on_top_of_mast:
@@ -374,10 +372,10 @@ Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} H
 }
 {
     - b_boss_attack == 4 && souffleur_explained_mast == false:
-        SOUFFLEUR: Psssst... Hé, l'ami !
-        SOUFFLEUR: L'attaque que vient de faire le Léviathan est dévastatrice, pas vrai ?
-        SOUFFLEUR: Un conseil d'ami : si tu parviens à monter au mât avant que le monstre ne fasse cette attaque...
-        SOUFFLEUR: Tu éviteras de te blesser inutilement !
+        SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe12
+        SOUFFLEUR: L'attaque que vient de faire le Léviathan est dévastatrice, pas vrai ? #playsound:VOX_Souffleur_lataquedevastatrice
+        SOUFFLEUR: Un conseil d'ami : si tu parviens à monter au mât avant que le monstre ne fasse cette attaque... #playsound:VOX_Souffleur_conseilmat
+        SOUFFLEUR: Tu éviteras de te blesser inutilement ! #playsound:VOX_Souffleur_blesserinutile
         ~ souffleur_explained_mast = true
 }
 
@@ -403,17 +401,17 @@ Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} H
 }
 {
     - souffleur_told_mid_life == false && b_boss_hp <= (b_boss_max_hp/2):
-        SOUFFLEUR: Psssst... Hé, l'ami !
-        SOUFFLEUR: Ce combat est un moment fort de la pièce...
-        SOUFFLEUR: Mais la troupe ne veut pas non plus qu'il dure trop longtemps, tu comprends ?
-        SOUFFLEUR: Le Léviathan en est environ à <b>la moitié</b> de son espérance de vie, si tu vois ce que je veux dire...
-        SOUFFLEUR: Bon courage, l'ami !
+        SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe4
+        SOUFFLEUR: Ce combat est un moment fort de la pièce... #playsound:VOX_Souffleur_combatfort
+        SOUFFLEUR: Mais la troupe ne veut pas non plus qu'il dure trop longtemps, tu comprends ? #playsound:VOX_Souffleur_troupepastroplongtemps
+        SOUFFLEUR: Le Léviathan en est environ à <b>la moitié</b> de son espérance de vie, si tu vois ce que je veux dire... #playsound:VOX_Souffleur_lelevihalflife
+        SOUFFLEUR: Bon courage, l'ami ! #playsound:VOX_Souffleur_boncouragelami1
         ~ souffleur_told_mid_life = true
     - souffleur_told_about_to_die == false && b_boss_hp <= (b_boss_max_hp/5):
-        SOUFFLEUR: Psssst... Hé, l'ami !
-        SOUFFLEUR: Je crois que le Léviathan est sur le point de <b>flancher</b> !
-        SOUFFLEUR: Tu as un vrai talent pour la bagarre, l'ami !
-        SOUFFLEUR: Que tu gagnes ou que tu perdes, cette scène aura été un franc succès : le public est conquis !
+        SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe2
+        SOUFFLEUR: Je crois que le Léviathan est sur le point de <b>flancher</b> ! #playsound:VOX_Souffleur_leviathansoondead
+        SOUFFLEUR: Tu as un vrai talent pour la bagarre, l'ami ! #playsound:VOX_Souffleur_talentpourlabagarre
+        SOUFFLEUR: Que tu gagnes ou que tu perdes, cette scène aura été un franc succès : le public est conquis ! #playsound:VOX_Souffleur_lepublicconquis
         ~ souffleur_told_about_to_die = true
 }
 
