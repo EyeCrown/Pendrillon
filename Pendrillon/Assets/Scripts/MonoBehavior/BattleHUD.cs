@@ -2,6 +2,7 @@ using System.Collections;
 using MonoBehavior.Managers;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class BattleHUD : MonoBehaviour
@@ -23,7 +24,8 @@ public class BattleHUD : MonoBehaviour
 
     #region Events
 
-    
+    public UnityEvent BattleBegin;
+    public UnityEvent BattleEnded;
 
     #endregion
 
@@ -50,6 +52,10 @@ public class BattleHUD : MonoBehaviour
 
     void ConnectAttributes()
     {
+        // Events
+        BattleBegin.AddListener(OnBattleBegin);
+        BattleEnded.AddListener(OnBattleEnded);
+        
         _anim = GetComponent<Animator>();
 
         _actionPointsPanel = transform.Find("ActionPointsPanel").gameObject;
@@ -103,6 +109,20 @@ public class BattleHUD : MonoBehaviour
         StartCoroutine(SliderTakeDamage(_hpBoss, _maxHpBoss, newValue));
     }
     
+    #endregion
+
+    #region Event Handlers
+
+    void OnBattleBegin()
+    {
+        _anim.SetBool("InOut", true);
+    }
+
+    void OnBattleEnded()
+    {
+        _anim.SetBool("InOut", false);
+    }
+
     #endregion
 
     #region Coroutines

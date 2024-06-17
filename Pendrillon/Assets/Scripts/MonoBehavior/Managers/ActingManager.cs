@@ -95,6 +95,9 @@ namespace MonoBehavior.Managers
         [Header("=== Map ===")] 
         public Map _map;
 
+        [Header("=== Battle HUD ===")]
+        public BattleHUD _battleHUD;
+        
         #region Introduction
 
         [Header("=== Intro ===")] 
@@ -422,6 +425,7 @@ namespace MonoBehavior.Managers
             _map        = GameObject.Find("Map").GetComponent<Map>();
             _curtains   = GameObject.Find("MainCurtains").GetComponent<Curtains>();
             _statsUI    = GameObject.Find("Canvas/PLAYER_STATS").GetComponent<StatsUI>();
+            _battleHUD  = GameObject.Find("Canvas/BATTLE_HUD").GetComponent<BattleHUD>();
         }
 
         void ConnectEvents()
@@ -1424,7 +1428,7 @@ namespace MonoBehavior.Managers
             Debug.Log($"Can start execute Tags: {_tagMethods.Count} methods");
             foreach (var tagAction in _tagMethods)
             {
-                Debug.Log($"{tagAction.Method.Name}");
+                //Debug.Log($"{tagAction.Method.Name}");
                 _isActionDone = false;
                 tagAction();
                 while (!_isActionDone)
