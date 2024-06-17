@@ -87,8 +87,8 @@ VAR player_won_battle = false // Define if the player won the battle or not
         PLAYER: Votre simple présence enfreint une <b>Loi capitale</b>, j'en ai peur. #audience:debate #trial #playsound:VOX_Player_loicapitale
             ~ trial()
             ~ t_2_lawfull = true
-- PERSONNAGE MASQUÉ: N'éprouvez-vous jamais aucun regret ? Si la Loi et la Foi l'interdisent... #playsound:VOX_Naida_neprouvezvousaucun
-    * [Sans foi ni loi.] PLAYER: Je me fiche de la Loi comme de la Foi. #trial #playsound:VOX_Player_fichedelaloicommefoi
+- PERSONNAGE MASQUÉ: N'éprouvez-vous jamais aucun regret ? Si la <b>Loi</b> et la <b>Foi</b> l'interdisent... #playsound:VOX_Naida_neprouvezvousaucun
+    * [Sans foi ni loi.] PLAYER: Je me fiche de la <b>Loi</b> comme de la <b>Foi</b>. #trial #playsound:VOX_Player_fichedelaloicommefoi
         ~ trial()
         ~ t_2_against_law = true
         ~ t_2_against_crown = true
@@ -199,8 +199,8 @@ MARCELLO: Il n'y a personne, cheffe. #playsound:VOX_Marcello_yapersonne
             CAPUCINE: Cet abruti se fiche de nous. Mais il ne va pas rire longtemps... #playsound:VOX_Capucine_abrutifiche
                 -> confronted_about_fugitive
         ** [Que faites-vous sur mon navire ?] PLAYER: Puis-je vous demander ce que vous faites ici, mes braves ?
-            MARCELLO: Tous les bateaux qui arrivent au port royal doivent être fouillés, c'est la loi. #playsound:VOX_Marcello_laloi
-            CAPUCINE: Et nul ne doit ignorer la loi... Caches-tu quelque chose ? #playsound:VOX_Capucine_nulignorerloi
+            MARCELLO: Tous les bateaux qui arrivent au port royal doivent être fouillés, c'est la <b>Loi</b>. #playsound:VOX_Marcello_laloi
+            CAPUCINE: Et nul ne doit ignorer la <b>Loi</b>... Caches-tu quelque chose ? #playsound:VOX_Capucine_nulignorerloi
 - (confronted_about_fugitive) CAPUCINE: Quelqu'un qui sortait de la cale nous a dit qu'un fugitif se cachait ici. #playsound:VOX_Capucine_quelqunsortait
 MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marcello_alorsreponds
     * [Baratiner. {t(CHAR, 0)}] // 50%
@@ -238,13 +238,13 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
         ~ t_2_bribe_guards = true
         ** (bribe_guards_S) CAPUCINE: Laisse-moi te débarrasser de ces pièces...
             *** [Donner les pièces.] PLAYER: Voilà pour toi, mon amie. #playsound:gold_coins
-                CAPUCINE: Nous allons maintenant t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde, quadruple forban. #playsound:VOX_Capucine_quadrupleforbandangerssoudoyer
+                CAPUCINE: Nous allons maintenant t'apprendre les mérites de respecter la <b>Loi</b>, et les dangers de tenter de soudoyer un garde, quadruple forban. #playsound:VOX_Capucine_quadrupleforbandangerssoudoyer
                 MARCELLO: C'est là que je le frappe, cheffe ? #playsound:VOX_Marcello_cestlafrappe
                 CAPUCINE: En effet, Marcello. C'est là que tu le frappes. #playsound:VOX_Capucine_eneffetfrappes
                 MARCELLO: Compris, cheffe ! #playsound:VOX_Marcello_compris2
                     -> battle
             *** [Assommer Marcello.] -> attack_marcello_S
-        ** (bribe_guards_F) CAPUCINE: À qui penses-tu avoir affaire, quadruple forban ? Nous allons t'apprendre les mérites de respecter la Loi, et les dangers de tenter de soudoyer un garde ! #playsound:VOX_Capucine_aquiquadrupleforban
+        ** (bribe_guards_F) CAPUCINE: À qui penses-tu avoir affaire, quadruple forban ? Nous allons t'apprendre les mérites de respecter la <b>Loi</b>, et les dangers de tenter de soudoyer un garde ! #playsound:VOX_Capucine_aquiquadrupleforban
             MARCELLO: C'est là que je le frappe, cheffe ? #playsound:VOX_Marcello_cestlafrappe
             CAPUCINE: En effet, Marcello. C'est là que tu le frappes. #playsound:VOX_Capucine_eneffetfrappes
             MARCELLO: Compris, cheffe ! #playsound:VOX_Marcello_compris2
