@@ -26,7 +26,7 @@ VAR irene_torch_is_on = false
 // Après un moment.
 - UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit... #look:Agathe:Player #move:player:8:9 #look:Player:Agathe #audience:ovation #wait:1 #box #playsound:VOX_Agathe_ireneaccueille #wait:6
 // La voix vient d'hors-champ. Après un moment, une femme âgée arrive par la droite de la scène et entre dans le champ.
-- PRÊTRESSE AGATHE: ... quel qu'ils soient. #look:Agathe:front #playsound:VOX_Agathe_quelsquils #look:Player:front
+- PRÊTRESSE: ... quel qu'ils soient. #look:Agathe:front #playsound:VOX_Agathe_quelsquils #look:Player:front
     * [Bénie soit-elle.] PLAYER: Bénie soit-elle. #playsound:VOX_Player_beniesoitelle
         Agathe: Bénie entre toutes. Depuis le premier jour de sa vie, et jusqu'à ce que plus une seule d'entre nous ne la serve. #playsound:VOX_Agathe_benieentretoutes
         ** [ « Nous » ? Les prêtresses ?] PLAYER: Vous faites référence aux <b>prêtresses d'Irène</b> ? 
@@ -131,7 +131,7 @@ VAR irene_torch_is_on = false
 * {t_3_stained_glass_2_talk == false} [À propos du  vitrail d'Irène regardant l'océan.] PLAYER: <b>Irène</b>, près du phare, contemplant l'océan. Je me demande quelles pensées la traversaient. #move:player:8:9 #look:Player:back #playsound:VOX_Player_irenepresduphare
     ~ t_3_stained_glass_2_talk = true
     -> irene_next_to_the_lighthouse
-* {t_3_stained_glass_3_talk == false} [À propos du  vitrail de l'homme écartelé sur sa roue.] PLAYER: L'homme attaché à la roue... c'est <b>Lui</b> n'est-ce pas ? #move:player:8:13 #look:Player:back #playsound:VOX_Player_lhommeattachealaroue
+* {t_3_stained_glass_3_talk == false} [À propos du  vitrail de l'homme écartelé sur sa roue.] PLAYER: L'homme attaché à la roue... c'est <shake a=0.5><b>Lui</b></shake> n'est-ce pas ? #move:player:8:13 #look:Player:back #playsound:VOX_Player_lhommeattachealaroue
     ~ t_3_stained_glass_3_talk = true
     -> man_tied_to_a_wheel
 + {t_3_stained_glass_1_talk or t_3_stained_glass_2_talk or t_3_stained_glass_3_talk} [(Conclure) Passer la nuit.] PLAYER: J'aimerais me reposer, prêtresse. #playsound:VOX_Player_jaimeraismereposer
@@ -205,9 +205,9 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
                 ~ trial()
                 ~ t_3_rant_about_edgar_the_traquenard = true
             --- AGATHE: Je vous demande pardon, mon enfant ?
-                PLAYER: Nul ne devrait tourner au croisement d'une ruelle sans retenir un frisson de terreur pour <shake>Edgar le Traquenard</shake>. #anim:Player:stressed
+                PLAYER: Nul ne devrait tourner au croisement d'une ruelle sans retenir un frisson de terreur pour <wiggle a=0.1>Edgar le Traquenard</wiggle>. #anim:Player:stressed
                 AGATHE: ...
-                PLAYER: (Les yeux fous) Il nous attend peut-être, <fade a=0.5>caché</fade> de l'autre côté d'une ruelle, prêt à nous suriner !
+                PLAYER: <wiggle a=0.1>(Les yeux fous)</wiggle> Il nous attend peut-être, <fade a=0.5>caché</fade> de l'autre côté d'une ruelle, prêt à nous suriner !
                 AGATHE: ... Euh...
                 AGATHE: L'homme auquel je faisais en réalité allusion est Ernest, la <b>Déesse</b> le bénisse.
 - AGATHE: Ernest, le gardien du phare.
@@ -274,7 +274,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
     * [Un père a peur de perdre sa fille.] PLAYER: Un père effrayé à l'idée de voir sa fille disparaître. Rien de plus naturel.
     * [Certains disent qu'Irène y est née.] PLAYER: Certains prétendent que l'océan était son berceau...
         AGATHE: Ce à quoi vous faites référence, en réalité, est un abominable blasphème.
-        AGATHE: Quiconque prétend qu'<b>Irène</b> est de cette engeance, périront noyés par le <b>Juste</b>.
+        AGATHE: Quiconque prétend qu'<b>Irène</b> est de cette engeance, périront noyés par le <shake a=0.5><b>Juste</b></shake>.
         ** [Que l'océan les avale.] PLAYER: Que l'océan soit leur tombeau ! #audience:ovation
         ** [Ont-ils vraiment tort ?] PLAYER: Pourtant, cela expliquerait certains détails des Écrits, ne pensez-vous pas ? #audience:debate #trial
             ~ trial()
@@ -349,7 +349,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
 // Stained glass of a man tied to a wheel, about to be sentenced to death
 = man_tied_to_a_wheel
 #playsound:Play_MUS_Story_SC_Eglise_StainedGlassHim
-AGATHE: C'est <b>Lui</b>, en effet. L'homme a souffert pour sauver sa fille, et notre peuple tout entier. #look:Player:front
+AGATHE: C'est <shake a=0.5><b>Lui</b></shake>, en effet. L'homme a souffert pour sauver sa fille, et notre peuple tout entier. #look:Player:front
 AGATHE: Quand les gardes de la <b>Couronne</b> vinrent arrêter le Messie, c'est lui qu'ils emmenèrent.
     * [Nous lui devons tant.] PLAYER: Notre dette à son égard est immense. #trial
         ~ trial()

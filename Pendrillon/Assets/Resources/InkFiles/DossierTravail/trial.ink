@@ -103,18 +103,17 @@ VAR t_4_give_guards_surname = false
 
 // Let the trial register a player choice by changing the given variable to true
 === function trial() ===
--
     {
         - t_souffleur_explanations_bell == false:
             SOUFFLEUR: Psssst... Hé, l'ami ! Tu as entendu ? #playsound:VOX_Souffleur_pssthe8
-            SOUFFLEUR: C'est la <shake>Cloche du Destin™</shake> ! #playsound:VOX_Souffleur_clochedudestin
+            SOUFFLEUR: C'est la <shake a=0.5><b>Cloche du Destin™</b></shake> ! #playsound:VOX_Souffleur_clochedudestin
             SOUFFLEUR: Enfin, c'est comme ça que <i>moi</i> je l'appelle. #playsound:VOX_Souffleur_moijelappelle
-            SOUFFLEUR: Tu l'entendras sonner lorsque tu feras un choix qui modifie le scénario de la pièce. #playsound:VOX_Souffleur_scenariodelapiece
-            SOUFFLEUR: Cela signifie que ton choix aura des conséquences <b>majeures</b> sur la suite de l’histoire ! #playsound:VOX_Souffleur_consequencesmajeures
+            SOUFFLEUR: Tu l'entendras sonner lorsque tu feras un choix qui <b>modifie le scénario de la pièce</b>. #playsound:VOX_Souffleur_scenariodelapiece
+            SOUFFLEUR: Cela signifie que ton choix aura des <b>conséquences majeures</b> sur la suite de l’histoire ! #playsound:VOX_Souffleur_consequencesmajeures
             SOUFFLEUR: Ne t’en fais pas, même si c'est imprévu, les autres acteurs aussi savent improviser ! #playsound:VOX_Souffleur_memeimprevu
             ~ t_souffleur_explanations_bell = true
     }
-
+    
 // Return if player is accused of the given felony
 === function is_accused_of(pFelony) ===
     ~ temp isAccused = false

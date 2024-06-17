@@ -365,12 +365,3 @@ CAPUCINE: Allons-nous-en avec notre trouvaille. #playsound:VOX_Capucine_allonsno
 CAPUCINE: Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts... #playsound:VOX_Capucine_ilfinira1 #audience:debate
 CAPUCINE: Il finira sa triste vie au cachot, comme son amie. #playsound:VOX_Capucine_ilfinira2 #audience:ovation
     -> barge.scene_3
-
-= end_playtest_demo
-- SOUFFLEUR: Psssst... Hé, l'ami !
-SOUFFLEUR: C'est la fin de la démo de <wiggle>PENDRILLONS</wiggle> !
-SOUFFLEUR: Toute l'équipe ainsi que la troupe te remercient d'avoir participé aux playtests du jeu !
-SOUFFLEUR: Nous avons encore un peu de travail, alors on te laisse l'ami !
-SOUFFLEUR: N'oublie pas de répondre au questionnaire que nous allons te transmettre !
-SOUFFLEUR: À la prochaine, l'ami !
--> END

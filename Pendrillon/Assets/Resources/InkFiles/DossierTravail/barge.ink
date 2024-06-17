@@ -121,12 +121,12 @@ PASSEUR: Dis-moi, voyageur : pourquoi avoir accepté une mission si périlleuse 
     * [Pour la gloire !] PLAYER: Pour la gloire, cela va sans dire ! #anim:Player:gloire #playsound:VOX_Player_pourlagloire #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
     * [Pour l'aventure !] PLAYER: Pour l'aventure bien entendu ! #anim:Player:gloire #playsound:VOX_Player_pourlaventure #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
 - #audience:applause
-- PASSEUR: Tout de même... Te confronter à une créature mythique telle que le <b>Léviathan</b>... #playsound:VOX_Ferryman_toutdememe
+- PASSEUR: Tout de même... Te confronter à une créature mythique telle que le <shake a=0.5><b>Léviathan</b></shake>... #playsound:VOX_Ferryman_toutdememe
 PLAYER: À dire vrai...
     * [Je ne crois pas au Léviathan.] PLAYER: Je ne crois pas à ces histoires à dormir debout... 
         PLAYER: Je prévoyais de faire le voyage, prétendre avoir tué le monstre et retourner à bon port. #audience:laughter
         PASSEUR: Tu as pourtant promis de ramener le cœur de la bête. #playsound:VOX_Ferryman_coeurbete
-            ** [J'avais un plan.] PLAYER: Personne n'a jamais vu le <b>Léviathan</b> de près : un cœur de baleine aurait suffi à faire illusion... #audience:laughter
+            ** [J'avais un plan.] PLAYER: Personne n'a jamais vu le <shake a=0.5><b>Léviathan</b></shake> de près : un cœur de baleine aurait suffi à faire illusion... #audience:laughter
             ** [Je n'avais pas pensé à ça.] PLAYER: Je suis un homme de l'improvisation. J'aurai trouvé quelque chose... #audience:applause
     * [Je rêvais de le voir.] PLAYER: Je rêve de l'apercevoir, depuis petit. Ma mère me racontait des récits de marins l'ayant aperçu, au loin.
         PASSEUR: N'étais-tu pas effrayé ? #anim:Passeur:question #playsound:VOX_Ferryman_paseffrayeq
@@ -140,7 +140,7 @@ PLAYER: Bien, bien... Si tu insistes, <b>Passeur</b>. #playsound:VOX_Player_bien
 PLAYER: Notre voyage dura... #playsound:VOX_Player_notrevoyagedura
     * [Près d'une année.] PLAYER: ... près d'une année, en tout. #map:departure #playsound:VOX_Player_presduneanne
     * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté. #map:Travel:departure #playsound:VOX_Player_beaucouptroplongtemps
-- PLAYER: Je garderai <b>secret</b> ce qu'il se passa lorsque nous atteignîmes le répère du <b>Léviathan</b>.
+- PLAYER: Je garderai <b>secret</b> ce qu'il se passa lorsque nous atteignîmes le répère du <shake a=0.5><b>Léviathan</b></shake>.
 PLAYER: Après moult péripéties, nous revînmes à <b>Miraterre</b>... #playsound:VOX_Player_apresmoultper #map:arrival
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreuxqua playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
@@ -231,7 +231,7 @@ PASSEUR: ... Il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_doo
         PASSEUR: Il te mène à <b>Lui</b>, voyageur. #audience:choc #playsound:VOX_Ferryman_menealui
     * [(Rester silencieux).]
 - PASSEUR: Attendons un instant. #playsound:VOX_Ferryman_attendonsuninstant
-PASSEUR: Si la <shake>Cloche du Destin</shake> sonne, alors nous serons tenus de passer... #playsound:VOX_Ferryman_silacloche #audience:debate
+PASSEUR: Si la <shake a=0.5><b>Cloche du Destin</b></shake> sonne, alors nous serons tenus de passer... #playsound:VOX_Ferryman_silacloche #audience:debate
 PASSEUR: ...
 PLAYER: ...
     * [Faire face à son destin.]
@@ -245,5 +245,5 @@ PASSEUR: Tu vas devoir affronter ton destin, désormais. #audience:ovation #play
         PASSEUR: ... Je comprends. #playsound:VOX_Ferryman_jecomprends #audience:applause
 - #anim:open_trial_doors #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
 PASSEUR: C'est ici que nos chemins se séparent, voyageur... #playsound:VOX_Ferryman_voistuporte2 #audience:choc 
-PASSEUR: Ainsi en a décidé la <shake>Cloche du Destin</shake>.  #box #playsound:VOX_Ferryman_ainsienadecide #audience:ovation #curtains:close #wait:4
+PASSEUR: Ainsi en a décidé la <shake a=0.5><b>Cloche du Destin</b></shake>.  #box #playsound:VOX_Ferryman_ainsienadecide #audience:ovation #curtains:close #wait:4
 - -> tribunal_1

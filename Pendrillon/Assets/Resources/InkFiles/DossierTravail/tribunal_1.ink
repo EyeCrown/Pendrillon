@@ -147,7 +147,7 @@ ARLE: Je disais, donc, que sa Majesté Constance m'a chargée de transmettre à 
         JUGE ERNEST: Quant à vous, cessez d'objecter quand la parole ne vous a pas été donnée par le <b>Juge</b> en personne ! #playsound:VOX_Judge_quantavous
         JUGE ERNEST: Témoin, vous mentionniez une mission confiée à l'<b>Accusé</b> par la <b>Couronne</b>. #playsound:VOX_Judge_temoinmentionniez
 - JUGE ERNEST: Précisez quelle était la nature de cette mission, je vous prie. #playsound:VOX_Judge_precisezlanature #anim:Arle:bow
-ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme <b>Accusé</b>, était de tuer le <b>Léviathan</b>, et d'en ramener l'organe vital. #audience:choc #playsound:VOX_Arle_lamissiondelareine
+ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messire l'infâme <b>Accusé</b>, était de tuer le <shake a=0.5><b>Léviathan</b></shake>, et d'en ramener l'organe vital. #audience:choc #playsound:VOX_Arle_lamissiondelareine
 ARLE: Je veux bien entendu parler de son cœur, <i>Votre Honneur</i>. #audience:laughter #anim:Judge:bell #anim:Arle:bow #playsound:VOX_Arle_jeveuxparlercoeur
 JUGE ERNEST: Bien, bien... Ensuite ? #playsound:VOX_Judge_biebienensuite
 - ARLE: Je voudrais, <i>Votre Honneur</i>, témoigner du fait que, lorsque j'abordais avec le détestable messire, le sujet du meurtre... #playsound:VOX_Arle_jevoudraistemoigner
@@ -161,7 +161,7 @@ JUGE ERNEST: Vraiment ? <b>Accusé</b>, qu'avez-vous à répondre ? #playsound:V
                 JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle #playsound:Play_MUS_Story_SC_Trial_LaVerite2
                 ~ judge_explained_mask = true
         }
-        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask #playsound:Play_MUS_Story_SC_Trial_LaVerite3
+        JUGE ERNEST: <shake a=0.5>La Vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask #playsound:Play_MUS_Story_SC_Trial_LaVerite3
         {
             - t_1_accept_to_kill == true: JUGE ERNEST: « Tuer ne me dérange nullement. ». #playsound:VOX_Judge_playercitationtuer #audience:choc
                 ~ audience_judgement(-10)
@@ -208,7 +208,7 @@ ARLE: Mon cœur me fit comprendre que l'effroyable messire était bien loin d'ê
             ** [Je retire mon accusation.] PLAYER: J'en suis malheureusement incapable, <i>Votre Honneur</i>. Je retire mon accusation. #audience:booing #anim:Arle:laughter
                 ~ audience_judgement(-10)
     * [(Se moquer) Ma mission est à ma hauteur, et toi...] PLAYER: Je n'ai rien à objecter, <i>Votre Honneur</i>, sinon à remarquer que la reine confie à chacun une mission à la hauteur de son talent. #playsound:VOX_Player_rienaobjecter
-        PLAYER: À moi, elle confia la lourde tâche de tuer le <b>Léviathan</b>. À elle, la mission toute aussi difficile de m'apporter une carte... #audience:laugh #playsound:VOX_Player_lourdetachetuerlevi #anim:Judge:bell
+        PLAYER: À moi, elle confia la lourde tâche de tuer le <shake a=0.5><b>Léviathan</b></shake>. À elle, la mission toute aussi difficile de m'apporter une carte... #audience:laugh #playsound:VOX_Player_lourdetachetuerlevi #anim:Judge:bell
         ~ audience_judgement(5)
         {make_arle_angry(): -> arle_leaves_stage}
         ARLE: <i>Votre Honneur</i> ! Vous voyez bien que le saligaud essaye de décrédibiliser ma perfor... je veux dire, mon témoignage ! #playsound:VOX_Arle_vothsaligaud #audience:laughter
@@ -224,11 +224,11 @@ JUGE ERNEST: <b>Accusé</b>, qu'avez-vous à répondre ? #playsound:VOX_Judge_ac
                 JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle #playsound:Play_MUS_Story_SC_Trial_LaVerite2
                 ~ judge_explained_mask = true
         }
-        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #playsound:Play_MUS_Story_SC_Trial_LaVerite3 #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask 
+        JUGE ERNEST: <shake a=0.5>La Vérité sort de la bouche du Juge.</shake> #playsound:Play_MUS_Story_SC_Trial_LaVerite3 #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask 
         {
-            - t_1_accept_mission_with_positivity: JUGE ERNEST: « Cela serait pour moi un véritable honneur de ramener le cœur du <b>Léviathan</b>. ». #playsound:VOX_Judge_playercitationhonneurramener
+            - t_1_accept_mission_with_positivity: JUGE ERNEST: « Cela serait pour moi un véritable honneur de ramener le cœur du <shake a=0.5><b>Léviathan</b></shake>. ». #playsound:VOX_Judge_playercitationhonneurramener
                 ~ audience_judgement(-10)
-            - t_1_accept_mission_with_negativity: JUGE ERNEST: « Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du <b>Léviathan</b>. ». #playsound:VOX_Judge_playercitationpointloisirtache
+            - t_1_accept_mission_with_negativity: JUGE ERNEST: « Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du <shake a=0.5><b>Léviathan</b></shake>. ». #playsound:VOX_Judge_playercitationpointloisirtache
                 ~ audience_judgement(-10)
         }
     * [C'est vrai.] PLAYER: C'est vrai, bien entendu. Qui, dans cette salle, aurait accepté de courir un tel risque ? #audience:debate
@@ -237,7 +237,7 @@ JUGE ERNEST: <b>Accusé</b>, qu'avez-vous à répondre ? #playsound:VOX_Judge_ac
         PLAYER: En arrivant en retard, elle pensait faire languir le public... #playsound:VOX_Player_languirpublicenretard
         PLAYER: Mais en réalité le faisait-elle fuir de la salle à toutes jambes ! #audience:laughter #anim:Player:bow #playsound:VOX_Player_fuirsalletoutejambes
         ~ audience_judgement(5)
-        ARLE: Moi ? La <shake>vedette</shake> de cette pièce ? Faire fuir le public ?! #playsound:VOX_Arle_vedettepiece
+        ARLE: Moi ? La <wiggle a=0.1>vedette</wiggle> de cette pièce ? Faire fuir le public ?! #playsound:VOX_Arle_vedettepiece
         {make_arle_angry(): -> arle_leaves_stage}
 - (accusation_of_disrespecting_queen) JUGE ERNEST: Poursuivons, poursuivons... #playsound:VOX_Judge_poursuivonsx2
 JUGE ERNEST: Témoin, avez-vous une autre révélation à faire ? #playsound:VOX_Judge_temoinautrerevelation
@@ -269,7 +269,7 @@ JUGE ERNEST: <b>Accusé</b>, qu'avez-vous à dire pour votre défense ? #playsou
                     JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle #playsound:Play_MUS_Story_SC_Trial_LaVerite2
                     ~ judge_explained_mask = true
             }
-            JUGE ERNEST: <shake>La vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask #playsound:Play_MUS_Story_SC_Trial_LaVerite3
+            JUGE ERNEST: <shake a=0.5>La vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask #playsound:Play_MUS_Story_SC_Trial_LaVerite3
             {
                 - t_1_respect_the_crown: JUGE ERNEST: « Je braverai tous les dangers pour notre bonne reine ! ». #playsound:VOX_Judge_playercitationjebraveraidangers #audience:ovation #anim:Arle:angry #anim:Player:bow
                     JUGE ERNEST: Témoin, que le <b>Juge</b> ne vous reprenne plus à mentir lors d'un procès divin. #playsound:VOX_Judge_temoinjugereprenneplus #anim:Arle:stressed #audience:booing
@@ -301,7 +301,7 @@ JUGE ERNEST: Est-ce vrai ? La <b>Déesse</b> elle-même ? Répondez, <b>Accusé<
                 JUGE ERNEST: Cessez de parler, car désormais, c'est la Vérité elle-même qui va prendre la parole. #playsound:VOX_Judge_cessezlaveriteparle #playsound:Play_MUS_Story_SC_Trial_LaVerite2
                 ~ judge_explained_mask = true
         }
-        JUGE ERNEST: <shake>La Vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask #playsound:Play_MUS_Story_SC_Trial_LaVerite3
+        JUGE ERNEST: <shake a=0.5>La Vérité sort de la bouche du Juge.</shake> #playsound:VOX_Judge_laveritesort #audience:ovation #anim:Juge:mask #playsound:Play_MUS_Story_SC_Trial_LaVerite3
         {
             - t_1_respect_irene: JUGE ERNEST: « J'honorerai la <b>Déesse</b>, j'en fais le serment ! ». #playsound:VOX_Judge_playercitationladeesehoneur #audience:ovation #anim:Arle:angry #anim:Player:bow
                 ~ audience_judgement(20)
@@ -743,9 +743,9 @@ JUGE ERNEST: Et qu'a eu à dire l'<b>Accusé</b> au sujet du <b>Juge</b> ? #play
 = judge_proceed_to_mention_the_leviathan
 - JUGE ERNEST: Ainsi se clôt votre témoignage, prêtresse. #playsound:VOX_Judge_ainsiclottemoingnagepre #audience:applause
 JUGE ERNEST: Chacun vous remercie pour votre dévouement. #playsound:VOX_Judge_chacunremerciedevouement #audience:ovation #rope:Agathe
-JUGE ERNEST: <b>Accusé</b>, nous nous devons désormais d'aborder le sujet du <b>Léviathan</b>. #playsound:VOX_Judge_accusesujetleviathan #audience:debate
+JUGE ERNEST: <b>Accusé</b>, nous nous devons désormais d'aborder le sujet du <shake a=0.5><b>Léviathan</b></shake>. #playsound:VOX_Judge_accusesujetleviathan #audience:debate
 JUGE ERNEST: En effet, vous fûtes missionné par la <b>Couronne</b>, afin de vous rendre en mer... #playsound:VOX_Judge_eneffetmissonnecouronne
-JUGE ERNEST: ... et d'y terrasser le terrible <b>Léviathan</b>. #playsound:VOX_Judge_terrasserleviathan #audience:choc
+JUGE ERNEST: ... et d'y terrasser le terrible <shake a=0.5><b>Léviathan</b></shake>. #playsound:VOX_Judge_terrasserleviathan #audience:choc
 JUGE ERNEST: Avez-vous tenu parole, <b>Accusé</b> ? Avez-vous, oui ou non, ramené le cœur de la créature ? #playsound:VOX_Judge_aveznvousdtenuparole #audience:ovation
     * [Je l'ai fait !] PLAYER: Bien entendu, <i>Votre Honneur</i> ! #playsound:VOX_Player_bienentenduvotrehonneur #audience:applause
         ~ audience_judgement(10)

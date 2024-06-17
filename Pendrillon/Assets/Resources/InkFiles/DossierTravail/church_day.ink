@@ -28,7 +28,7 @@ VAR marcello_surname = "Marcellogre"
 
 // Start the scene
 MARCELLO: Et si on le réveillait avec une tape sur le museau, cheffe ?
-CAPUCINE: Cet abruti dort comme un nourrisson... #playsound:VOX_Capucine_cetabrutidort
+CAPUCINE: Cet abruti dort comme un <wiggle a=0.1>nourrisson</wiggle>... #playsound:VOX_Capucine_cetabrutidort
 PLAYER: Vous, ici ?! #anim:Player:wakeup #wait:2 #playsound:VOX_Player_vousiciQQ #playsound:Play_MUS_Story_SC_Eglise_6oclockWakeUp
 CAPUCINE: Heureuse de constater que tu nous reconnais... #playsound:VOX_Capucine_heureusedeconstaterquetunousreconnais
 CAPUCINE: Remets-tu des noms sur nos visages, vermisseau ? #playsound:VOX_Capucine_remetstudesnoms
@@ -37,33 +37,33 @@ SOUFFLEUR: Avec ces deux-là, pas besoin d'y aller mollo pour faire rire le publ
 SOUFFLEUR: Ils ont beau se disputer sur scène, sache qu'en dehors des planches, ils sont mari et femme ! #playsound:VOX_Souffleur_marietfemme
 SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils adorent être ridiculisés ! #playsound:VOX_Souffleur_pasmechants
 - PLAYER: J'ai bien peur de vous reconnaître, en effet... vous êtes... #playsound:VOX_Player_bienpeurconnaitre
-    * [Capucine la larbine...] PLAYER: <b>Capucine la larbine</b>... #audience:laughter #playsound:VOX_Player_lalarbine #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1 #trial
+    * [Capucine la larbine...] PLAYER: <b>Capucine la <bounce a=0.05>larbine</bounce></b>... #audience:laughter #playsound:VOX_Player_lalarbine #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1 #trial
         ~ trial()
         ~ t_4_give_guards_surname = true
         ~ CAPUCINE = "CAPUCINE LA LARBINE"
         ~ capucine_surname = "la larbine"
-    * [Capucine la marcassine...] PLAYER: <b>Capucine la marcassine</b>... #audience:laughter #playsound:VOX_Player_lamarcassine #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1 #trial
+    * [Capucine la marcassine...] PLAYER: <b>Capucine la <bounce a=0.05>marcassine</bounce></b>... #audience:laughter #playsound:VOX_Player_lamarcassine #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1 #trial
         ~ trial()
         ~ t_4_give_guards_surname = true
         ~ CAPUCINE = "CAPUCINE LA MARCASSINE"
         ~ capucine_surname = "la marcassine"
-    * [Capucine la tartine...] PLAYER: <b>Capucine la tartine</b>... #audience:laughter #playsound:VOX_Player_latartine #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1 #trial
+    * [Capucine la tartine...] PLAYER: <b>Capucine la <bounce a=0.05>tartine</bounce></b>... #audience:laughter #playsound:VOX_Player_latartine #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1 #trial
         ~ trial()
         ~ t_4_give_guards_surname = true
         ~ CAPUCINE = "CAPUCINE LA TARTINE"
         ~ capucine_surname = "la tartine"
 - PLAYER: ... accompagnée de son affreux sbire... #playsound:VOX_Player_sonaffreuxsbire
-    * [Marcellogre...] PLAYER: ... <b>Marcellogre</b> ! #audience:laughter #playsound:VOX_Player_marcellogre #anim:Capucine:applause #anim:Marcello:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname2 #trial
+    * [Marcellogre...] PLAYER: ... <bounce a=0.05><b>Marcellogre</b></bounce> ! #audience:laughter #playsound:VOX_Player_marcellogre #anim:Capucine:applause #anim:Marcello:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname2 #trial
         ~ trial()
         ~ t_4_give_guards_surname = true
         ~ MARCELLO = "MARCELLOGRE"
         ~ marcello_surname = "Marcellogre"
-    * [Marcellotarie...] PLAYER: ... <b>Marcellotarie</b> ! #audience:laughter #playsound:VOX_Player_marcellotarie #anim:Capucine:applause #anim:Marcello:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname2 #trial
+    * [Marcellotarie...] PLAYER: ... <bounce a=0.05><b>Marcellotarie</b></bounce> ! #audience:laughter #playsound:VOX_Player_marcellotarie #anim:Capucine:applause #anim:Marcello:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname2 #trial
         ~ trial()
         ~ t_4_give_guards_surname = true
         ~ MARCELLO = "MARCELLOTARIE"
         ~ marcello_surname = "Marcellotarie"
-    * [Marcellocroupie...] PLAYER: ... <b>Marcellocroupie</b> ! #audience:laughter #playsound:VOX_Player_marcellocroupie #anim:Capucine:applause #anim:Marcello:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname2 #trial
+    * [Marcellocroupie...] PLAYER: ... <bounce a=0.05><b>Marcellocroupie</b></bounce> ! #audience:laughter #playsound:VOX_Player_marcellocroupie #anim:Capucine:applause #anim:Marcello:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname2 #trial
         ~ trial()
         ~ t_4_give_guards_surname = true
         ~ MARCELLO = "MARCELLOCROUPIE"

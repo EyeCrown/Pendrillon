@@ -187,18 +187,18 @@ ARLE: Pour survivre, les Hommes durent bâtir un immense navire... #audsience:ov
 ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poisson... #playsound:VOX_Arle_avecmonteeeaux
 - #anim:Arle:monster #audience:choc
 - ARLE: Ce poisson, voyez-vous, était si gros qu'il aurait pu avaler une ville entière. #audience:choc #playsound:VOX_Arle_cepoissonvoyezvousgros
-    * [Le Léviathan !] PLAYER: Le <b>Léviathan</b> ! #anim:Player:surprised #audience:choc #playsound:VOX_Player_leleviathan
-        ARLE: Le Léviathan, messire. #playsound:VOX_Arle_levimessire
+    * [Le Léviathan !] PLAYER: Le <shake a=0.5><b>Léviathan</b></shake> ! #anim:Player:surprised #audience:choc #playsound:VOX_Player_leleviathan
+        ARLE: Le <shake a=0.5><b>Léviathan</b></shake>, messire. #playsound:VOX_Arle_levimessire
     * [Rester silencieux.]
 - ARLE: Plus d'une fois, il manqua d'engloutir les Hommes... Fort heureusement, la <b>Déesse Irène</b> nous sauva tous ! #audience:applause #playsound:VOX_Arle_plusdunefoisengloutir
 - ARLE: C'est pourquoi nous jouissons d'être en vie aujourd'hui, n'est-ce pas ? #playsound:VOX_Arle_cestpourquoi
 ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au <b>Déluge</b>... La créature, elle aussi, est en vie aujourd'hui. #audience:debate #playsound:VOX_Arle_malheureusement
-    * [Moi, tuer le Léviathan ?] PLAYER: Suis-je en plein rêve, ou me demandes-tu vraiment d'aller tuer le <b>Léviathan</b> ? #anim:Player:question #audience:laugther #playsound:VOX_Player_enpleinreve
+    * [Moi, tuer le Léviathan ?] PLAYER: Suis-je en plein rêve, ou me demandes-tu vraiment d'aller tuer le <shake a=0.5><b>Léviathan</b></shake> ? #anim:Player:question #audience:laugther #playsound:VOX_Player_enpleinreve
         ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse. #audience:choc #playsound:VOX_Arle_pointmatiere
     * [C'est une plaisanterie ?] PLAYER: Si c'est une plaisanterie, elle est de mauvais goût. #audience:laughter #anim:Player:laugh #playsound:VOX_Player_cestplaisanterie
         ARLE: Il n'y a point matière à rire... Cette entreprise est tout à fait sérieuse. #audience:choc #playsound:VOX_Arle_pointmatiere2
     * [Il va falloir me payer grassement.] PLAYER: Si ton maître veut me faire courir un tel risque... Il a intérêt à me payer grassement ! #audience:laughter #playsound:VOX_Player_tonmaitredanger
-- ARLE: Si vous acceptez de ramener le cœur du terrible <b>Léviathan</b>, mon maître vous offrira le poids de votre navire en or. #playsound:VOX_Arle_sivousacceptez
+- ARLE: Si vous acceptez de ramener le cœur du terrible <shake a=0.5><b>Léviathan</b></shake>, mon maître vous offrira le poids de votre navire en or. #playsound:VOX_Arle_sivousacceptez
     * [Une sacrée somme.] PLAYER: Une somme qui n'est pas à prendre à la légère... #anim:Player:joy
     * [(Négocier) Mon navire est léger. {t(CHAR, 10)}] // 50%
         {sc(CHAR, 10): -> negociate_S | -> negociate_F} 
@@ -206,7 +206,7 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au <b>Délug
                 ARLE: Vous êtes dur en affaire, messire. Alors disons le double ! #anim:Arle:angry #playsound:VOX_Arle_vousetesdur
             *** (negociate_F) PLAYER: Mon navire, euh... est au régime. Il a perdu du poids, et... #anim:Player:stressed #playsound:VOX_Player_navireregime
                 ARLE: Messire, ces simagrées ne vous honorent pas. Notre position est ferme, j'en ai peur. #anim:Arle:deception #playsound:VOX_Arle_messireces
-- ARLE: Ramenez-nous le cœur de l'immonde <b>Léviathan</b>, sinon pour la gloire, pour l'intérêt de la <b>Couronne</b>. #playsound:VOX_Arle_ramenezlecoeur
+- ARLE: Ramenez-nous le cœur de l'immonde <shake a=0.5><b>Léviathan</b></shake>, sinon pour la gloire, pour l'intérêt de la <b>Couronne</b>. #playsound:VOX_Arle_ramenezlecoeur
     * [Est-ce la Couronne qui t'envoie ?] PLAYER: Que veux-tu dire ? Est-ce donc la <b>Couronne</b> qui t'envoie ? #anim:Player:question
         -- (to_the_crown) ARLE: Seriez-vous plus enclin à rendre ce service s'il était au profit de la <b>Couronne</b> elle-même ? #anim:Arle:happy #playsound:VOX_Arle_seriezvousenclin
             ** [Je ferai tout pour Elle !] PLAYER: Je braverai tous les dangers pour notre bonne reine ! #trial #playsound:VOX_Player_braveraidangersreine
@@ -219,7 +219,7 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au <b>Délug
     * [Pour la reine Constance ?] PLAYER: Est-ce la reine elle-même qui demande mon renfort ? #anim:Player:question
         ARLE: Nulle demande ne saurait provenir de la bouche de la reine, messire. Seulement des ordres... #playsound:VOX_Arle_nulledemande
         -> to_the_crown
-- ARLE: Puis-je ajouter, messire, que vaincre le <b>Léviathan</b> constituerait une offrande de taille à la <b>Déesse</b> Elle-même. #playsound:VOX_Arle_puisjevaincrelevi
+- ARLE: Puis-je ajouter, messire, que vaincre le <shake a=0.5><b>Léviathan</b></shake> constituerait une offrande de taille à la <b>Déesse</b> Elle-même. #playsound:VOX_Arle_puisjevaincrelevi
     * [Pour la Déesse !] PLAYER: J'honorerai la <b>Déesse</b>, j'en fais le serment ! #audience:ovation #trial #playsound:VOX_Player_honoreraideesse
         ~ trial()
         ~ t_1_respect_irene = true
@@ -231,9 +231,9 @@ ARLE: Malheureusement, il n'y a pas que les Hommes qui survécurent au <b>Délug
         ~ trial()
         ~ t_1_gold_digger = true
 - ARLE: Le jour commence à poindre, messire. Acceptez-vous de ramener le cœur de l'abjecte créature ? #anim:Arle:question #playsound:VOX_Arle_lejourcommence #playsound:Play_MUS_Story_SC_SecretMeeting_PlayerAccepts
-    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur de ramener le cœur du <b>Léviathan</b>. #playsound:VOX_Player_celaseraitunhonneur
+    * [J'en serai honoré.] PLAYER: Cela serait pour moi un véritable honneur de ramener le cœur du <shake a=0.5><b>Léviathan</b></shake>. #playsound:VOX_Player_celaseraitunhonneur
         ~ t_1_accept_mission_with_positivity = true
-    * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du <b>Léviathan</b>. #playsound:VOX_Player_pointleloisirsoustraire
+    * [Je n'ai le choix.] PLAYER: Puisque je n'ai point le loisir de me soustraire à la tâche... J'accepte de ramener le cœur du <shake a=0.5><b>Léviathan</b></shake>. #playsound:VOX_Player_pointleloisirsoustraire
         ~ t_1_accept_mission_with_negativity = true
 - #audience:ovation
 - -> barge.scene_2
