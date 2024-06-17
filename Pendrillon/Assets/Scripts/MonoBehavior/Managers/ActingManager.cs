@@ -61,6 +61,7 @@ namespace MonoBehavior.Managers
         TextMeshProUGUI _speakerText;   // Text box
         GameObject _historyBox;     // History box
         GameObject _masks;
+        GameObject _nameBoxes;
         private string _playerName;
         
         // UI - ParticuleSystems
@@ -306,7 +307,7 @@ namespace MonoBehavior.Managers
                     return;
                 }
                 
-                speaker = "ERROR";
+                speaker = string.Empty;
                 dialogue = _currentDialogue;
             }
             else
@@ -343,6 +344,7 @@ namespace MonoBehavior.Managers
                     {
                         character.DialogueUpdate.Invoke(dialogue);
                         _masks.transform.Find(character.name.ToLower())?.gameObject.SetActive(true);
+                        _nameBoxes.transform.Find("NameBox_" + character.name).gameObject.SetActive(true);
                     }
 
                         
@@ -399,6 +401,7 @@ namespace MonoBehavior.Managers
             _dialogueText   = _dialogueBox.transform.Find("DialogueText").GetComponent<TextMeshProUGUI>();
             _speakerText    = _dialogueBox.transform.Find("SpeakerText").GetComponent<TextMeshProUGUI>();
             _masks          = _dialogueBox.transform.Find("Masks").gameObject;
+            _nameBoxes      = _dialogueBox.transform.Find("NameBoxes").gameObject;
             
             _dialogueTypewriter = _dialogueText.GetComponent<TypewriterCore>();
             
@@ -945,6 +948,8 @@ namespace MonoBehavior.Managers
             // Clear masks
             foreach (Transform mask in _masks.transform)
                 mask.gameObject.SetActive(false);
+            foreach (Transform nameBox in _nameBoxes.transform)
+                nameBox.gameObject.SetActive(false);
         }
         
 
