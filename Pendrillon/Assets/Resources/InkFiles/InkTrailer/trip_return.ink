@@ -24,16 +24,31 @@ VAR player_won_battle = false // Define if the player won the battle or not
 // Set the location
 #set:cale
 // Set the actor's positions
-#position:Player:11:2
-#position:Naïda:11:9
-#position:Marcello:3:20
-#position:Capucine:5:20
+#position:Player:11:8
+#position:Naïda:11:20
+#position:Marcello:11:10
+#position:Capucine:11:20
 // Audience reaction
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:4
+//#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:4
+#wait:10
 
 // Start the scene
-#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
-- PERSONNAGE MASQUÉ: Ça sent mauvais là-dedans...
+//#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
+- MARCELLO: Tiens, la voilà ! #look:Player:right #look:Marcello:Player #anim:Player:punch #anim:Marcello:hurt #look:Marcello:front #wait:120
+- MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marcello_alorsreponds
+    * [Baratiner. {t(CHAR, -10)}]
+        {sc(CHAR, -10): -> lie_about_fugitive_S | -> lie_about_fugitive_F}
+    * [Intimider. {t(STRE, -20)}]
+        {sc(STRE, -20): -> intimidate_guards_S | -> intimidate_guards_F}
+    * [Soudoyer. {t(DEXT, -10)}]
+        ~ trial()
+        ~ t_2_bribe_guards = true
+        {sc(DEXT, -10): -> bribe_guards_S | -> bribe_guards_F}
+
+
+- PERSONNAGE MASQUÉ: Ça sent mauvais là-dedans... #wait:3
+- PERSONNAGE MASQUÉ: Que fera-t-on s'ils me trouvent ? #playsound:VOX_Naida_queferaton #wait:10
+-> church_night
     * [Du poisson plus très frais.] PLAYER: Certaines caisses sont remplies de poisson. Et la pêche ne date pas de la veille...
     * [Ça sent les ennuis...] PLAYER: Ça sent les ennuis !
     * [L'odeur de la liberté !] PLAYER: Le poisson pas frais et le sel marin : l'odeur de la liberté !
@@ -199,7 +214,7 @@ MARCELLO: Il n'y a personne, cheffe.
             CAPUCINE: Cet abruti se fiche de nous. Mais il ne va pas rire longtemps... #playsound:VOX_Capucine_abrutifiche
                 -> confronted_about_fugitive
         ** [Que faites-vous sur mon navire ?] PLAYER: Puis-je vous demander ce que vous faites ici, mes braves ?
-            MARCELLO: Tous les bateaux qui arrivent au port royal doivent être fouillés, c'est la loi.
+            MARCELLO: Tous les bateaux qui arrivent au port royal doivent être fouillés, c'est la loi. #playsound:VOX_Marcello_laloi
             CAPUCINE: Et nul ne doit ignorer la loi... Caches-tu quelque chose ? #playsound:VOX_Capucine_nulignorerloi
 - (confronted_about_fugitive) CAPUCINE: Quelqu'un qui sortait de la cale nous a dit qu'un fugitif se cachait ici. #playsound:VOX_Capucine_quelqunsortait
 MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?

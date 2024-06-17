@@ -10,6 +10,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -94,6 +95,9 @@ namespace MonoBehavior.Managers
         [Header("=== Map ===")] 
         public Map _map;
 
+        [Header("=== Battle HUD ===")]
+        public BattleHUD _battleHUD;
+        
         #region Introduction
 
         [Header("=== Intro ===")] 
@@ -421,6 +425,7 @@ namespace MonoBehavior.Managers
             _map        = GameObject.Find("Map").GetComponent<Map>();
             _curtains   = GameObject.Find("MainCurtains").GetComponent<Curtains>();
             _statsUI    = GameObject.Find("Canvas/PLAYER_STATS").GetComponent<StatsUI>();
+            _battleHUD  = GameObject.Find("Canvas/BATTLE_HUD").GetComponent<BattleHUD>();
         }
 
         void ConnectEvents()
@@ -687,6 +692,9 @@ namespace MonoBehavior.Managers
         {
             _choiceType = type;
             _historyText.text += $"     > {choice.text}\n";
+
+            PlaySoundChoiceButtonClicked();
+            
             GameManager.Instance._story.ChooseChoiceIndex(choice.index);
             Refresh();
         }
@@ -1286,6 +1294,16 @@ namespace MonoBehavior.Managers
             HandleTagWait("0.5");
             HandleTagAudience(Constants.ReactChoc);
             
+            foreach (var character in GameManager.Instance._characters)
+            {
+                if (character._onStage)
+                {
+                    Debug.Log($"{character.name} > is on stage");
+                    StartCoroutine(character.PlayAnimCoroutine("surprised", TagActionOver));
+                }
+            }
+            StartCoroutine(GameManager.Instance.GetPlayer().PlayAnimCoroutine("surprised", TagActionOver));
+            
         }
         
         
@@ -1410,7 +1428,7 @@ namespace MonoBehavior.Managers
             Debug.Log($"Can start execute Tags: {_tagMethods.Count} methods");
             foreach (var tagAction in _tagMethods)
             {
-                Debug.Log($"{tagAction.Method.Name}");
+                //Debug.Log($"{tagAction.Method.Name}");
                 _isActionDone = false;
                 tagAction();
                 while (!_isActionDone)

@@ -160,6 +160,7 @@ VAR t_4_give_guards_surname = false
 
 // Audience judgment system
 === function audience_judgement(pScore) ===
+    #trial
     ~ t_audience_judgement += pScore
     {
         - t_audience_judgement <= 0:
@@ -193,7 +194,7 @@ VAR t_4_give_guards_surname = false
             ARLE: Et vous, public « adoré », vous ne me méritez pas ! Cessez de rire ! #audience:debate #playsound:VOX_Arle_publicadorelahonte
             ARLE: Auriez-vous le millième de mon talent, vous seriez sur scène plutôt que de l'autre côté ! #audience:choc #playsound:VOX_Arle_milliemedemontalent
             ARLE: Bande de ploucs ! Vous pensez qu'avoir payé votre ticket vous donne tous les droits ?! #audience:booing #playsound:VOX_Arle_bandedeploucs
-            ARLE: Hé ! Laisse-moi ! Laisse-moi j'ai dit ! #rope:Arle #box #wait:2 #audience:laughter #playsound:VOX_Arle_helaissemoijaidit
+            ARLE: Hé ! Laissez-moi ! Laissez-moi j'ai dit ! #rope:Arle #box #wait:2 #audience:laughter #playsound:VOX_Arle_helaissemoijaidit
             SOUFFLEUR: Oula, oula, oula... #playsound:VOX_Souffleur_oulaoula #wait:1 
             SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer ! #playsound:VOX_Souffleur_entenfaispas
             SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs ! #playsound:VOX_Souffleur_accro

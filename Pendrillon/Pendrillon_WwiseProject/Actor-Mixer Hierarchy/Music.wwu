@@ -224,19 +224,75 @@
 										<ActiveSource Name="MUS_Story_SC_Barque_MysteriousLetter2" ID="{78BFE421-B70B-4A34-96DC-0A50845AA96B}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="MUS_Story_SC_Barque_AFairReward" ID="{D716B2F7-9AD3-48D1-84D4-CC48443A0974}" ShortID="628461721">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Barque_AFairReward" ID="{01E884D3-2958-45F8-92ED-1FA55A182D0B}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Barque_AFairReward.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="693610198"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Barque_AFairReward" ID="{01E884D3-2958-45F8-92ED-1FA55A182D0B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Barque_AfterMeeting" ID="{021A6C94-97ED-47E1-A246-A0CE96181623}" ShortID="160673209">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Barque_AfterMeeting" ID="{927F0811-51E8-43C4-A0E5-0E689C0CB751}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Barque_AfterMeeting.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1061844181"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Barque_AfterMeeting" ID="{927F0811-51E8-43C4-A0E5-0E689C0CB751}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Barque_LostAFriend" ID="{3E068C6B-1E5C-42F2-90A4-5EF77E71237D}" ShortID="691480162">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Barque_LostAFriend" ID="{744B1762-E3ED-46BF-A770-86A79324C8FD}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Barque_LostAFriend.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1066618504"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Barque_LostAFriend" ID="{744B1762-E3ED-46BF-A770-86A79324C8FD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
-						<ActorMixer Name="MUS_Cale" ID="{29C6CBC1-E91E-4120-B0EE-B08D50B711A6}" ShortID="86611951">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-								</Reference>
-							</ReferenceList>
-						</ActorMixer>
-						<ActorMixer Name="MUS_Eglise" ID="{EB337CBC-A699-4B3D-9C88-865C2FF42A36}" ShortID="432750967">
+						<ActorMixer Name="MUS_TripReturn" ID="{29C6CBC1-E91E-4120-B0EE-B08D50B711A6}" ShortID="86611951">
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -246,7 +302,173 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="MUS_Story_SC_Eglise_Intro" ID="{CB9952DC-2346-4BFB-B8C3-F0AF98581E87}" ShortID="465125219">
+								<Sound Name="MUS_Story_SC_TripReturn_GuardsClose" ID="{0566675D-445D-4A53-B296-B5F701168907}" ShortID="796234581">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_TripReturn_GuardsClose" ID="{30C0360D-7EA7-427A-85EE-251F3D2516B1}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_TripReturn_GuardsClose.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="73838642"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_TripReturn_GuardsClose" ID="{30C0360D-7EA7-427A-85EE-251F3D2516B1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_TripReturn_GuardsFar" ID="{C4A70DA5-0756-4629-B877-5A12ACC3A659}" ShortID="644771964">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_TripReturn_GuardsFar" ID="{178D2DF4-5AB0-463A-9FD8-F7C6ABC9F7F6}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_TripReturn_GuardsFar.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="738621416"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_TripReturn_GuardsFar" ID="{178D2DF4-5AB0-463A-9FD8-F7C6ABC9F7F6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_TripReturn_GuardsHere" ID="{56B392F0-4B9F-43DF-AE2C-0D159EEB7B08}" ShortID="970241657">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_TripReturn_GuardsHere" ID="{6DB9844A-C2B9-4A8C-AF6F-B5AAB6EC819C}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_TripReturn_GuardsHere.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="359358850"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_TripReturn_GuardsHere" ID="{6DB9844A-C2B9-4A8C-AF6F-B5AAB6EC819C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_TripReturn_Intro" ID="{2CC775F0-4A76-4892-A6A0-0A88EA3075F0}" ShortID="561889450">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_TripReturn_Intro" ID="{0091C7BE-CB82-4885-8708-19DF5334F81C}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_TripReturn_Intro.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="275934052"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_TripReturn_Intro" ID="{0091C7BE-CB82-4885-8708-19DF5334F81C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_TripReturn_NaidaArrested" ID="{CBD11242-D2B7-4D94-A132-B52704AC01CF}" ShortID="566615082">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_TripReturn_NaidaArrested" ID="{84C1DBDE-85EB-4746-8624-01137A9C8866}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_TripReturn_NaidaArrested.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="101333597"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_TripReturn_NaidaArrested" ID="{84C1DBDE-85EB-4746-8624-01137A9C8866}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_TripReturn_NaidaSpeak" ID="{96E9DCBD-D2D8-418A-8E54-80D8748EBB82}" ShortID="130140386">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_TripReturn_NaidaSpeak" ID="{A5821A1C-DD15-4F0E-A5E5-F55D101355DF}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_TripReturn_NaidaSpeak.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="821014575"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_TripReturn_NaidaSpeak" ID="{A5821A1C-DD15-4F0E-A5E5-F55D101355DF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_TripReturn_ToBattle" ID="{99DCAD66-0661-4310-85E9-A27EFF7FFF5E}" ShortID="78753508">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_TripReturn_ToBattle" ID="{1B732A82-9A9B-4FBC-BFDE-15E2FB5BB172}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_TripReturn_ToBattle.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="433338545"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_TripReturn_ToBattle" ID="{1B732A82-9A9B-4FBC-BFDE-15E2FB5BB172}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</ActorMixer>
+						<ActorMixer Name="MUS_Trial" ID="{EB337CBC-A699-4B3D-9C88-865C2FF42A36}" ShortID="432750967">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="MUS_Story_SC_Trial_Agathe" ID="{CB9952DC-2346-4BFB-B8C3-F0AF98581E87}" ShortID="465125219">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -266,6 +488,1170 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="MUS_Story_SC_Eglise_Intro" ID="{6A2B0865-7785-44E1-BBC9-73165CE4B5DA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="MUS_Story_SC_Trial_CapucineHolds" ID="{12FB57DA-188F-41BE-822F-31E436EC387D}" ShortID="10929884">
+									<PropertyList>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+										<Property Name="RestartBeginningOrBackward" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="MUS_Story_SC_Trial_CapucineHolds_01" ID="{D1890AC8-6CD9-4EE7-A562-6ED904B241A6}" ShortID="940525390">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_CapucineHolds_01" ID="{F07F4E8B-D4E9-4879-A04E-E55B42DC01CA}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_CapucineHolds_01.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="753619935"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_CapucineHolds_01" ID="{F07F4E8B-D4E9-4879-A04E-E55B42DC01CA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_CapucineHolds_02" ID="{61058A7E-BF4A-4160-9A46-CD1578EFECF2}" ShortID="359264024">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_CapucineHolds_02" ID="{8FD92747-97E7-44EA-8ADF-74630ECCBF12}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_CapucineHolds_02.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="76686650"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_CapucineHolds_02" ID="{8FD92747-97E7-44EA-8ADF-74630ECCBF12}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_CapucineHolds_03" ID="{E6E8DBC9-15B4-4FCC-A197-94BF64BDE260}" ShortID="725323141">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_CapucineHolds_03" ID="{0A4ED9D9-EBAC-4C6D-8FB1-EB6C1D349588}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_CapucineHolds_03.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="271664277"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_CapucineHolds_03" ID="{0A4ED9D9-EBAC-4C6D-8FB1-EB6C1D349588}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_CapucineHolds_04" ID="{B8B869E5-489D-4857-9DDC-DD1BB1164E6D}" ShortID="389526378">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_CapucineHolds_04" ID="{0EE23DE4-0C28-4C19-A591-06DEC83D3F4C}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_CapucineHolds_04.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="411943524"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_CapucineHolds_04" ID="{0EE23DE4-0C28-4C19-A591-06DEC83D3F4C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_CapucineHolds_05" ID="{7CB46D2D-BE00-4C9C-A3A1-8080F848DBF3}" ShortID="653358526">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_CapucineHolds_05" ID="{BA595085-65D4-4F3B-B3C3-30E85F87AC3A}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_CapucineHolds_05.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="927353835"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_CapucineHolds_05" ID="{BA595085-65D4-4F3B-B3C3-30E85F87AC3A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_CapucineHolds_06" ID="{62F09221-0A15-438C-9DB7-F52B555E85B9}" ShortID="118001770">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_CapucineHolds_06" ID="{91E3E050-05D1-444C-9D7E-F777D14645C0}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_CapucineHolds_06.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="824528847"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_CapucineHolds_06" ID="{91E3E050-05D1-444C-9D7E-F777D14645C0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_CapucineHolds_07" ID="{9ED63141-613A-4E10-B46B-8903FE303B14}" ShortID="217893755">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_CapucineHolds_07" ID="{9523C452-E0C9-4A42-B004-22CED8997107}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_CapucineHolds_07.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="491877291"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_CapucineHolds_07" ID="{9523C452-E0C9-4A42-B004-22CED8997107}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="MUS_Story_SC_Trial_CapucineHolds_01" ID="{D1890AC8-6CD9-4EE7-A562-6ED904B241A6}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_CapucineHolds_02" ID="{61058A7E-BF4A-4160-9A46-CD1578EFECF2}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_CapucineHolds_03" ID="{E6E8DBC9-15B4-4FCC-A197-94BF64BDE260}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_CapucineHolds_04" ID="{B8B869E5-489D-4857-9DDC-DD1BB1164E6D}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_CapucineHolds_05" ID="{7CB46D2D-BE00-4C9C-A3A1-8080F848DBF3}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_CapucineHolds_06" ID="{62F09221-0A15-438C-9DB7-F52B555E85B9}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_CapucineHolds_07" ID="{9ED63141-613A-4E10-B46B-8903FE303B14}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="MUS_Story_SC_Trial_MarcelloHolds" ID="{F8D4876F-06C7-48D8-811A-6EFBBE580772}" ShortID="1036798002">
+									<PropertyList>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+										<Property Name="RestartBeginningOrBackward" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="MUS_Story_SC_Trial_MarcelloHolds_08" ID="{A817E527-7575-4518-A854-61CAAA17FB69}" ShortID="913337703">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_MarcelloHolds_08" ID="{BC7791C9-F6F1-4EC0-85B1-7D47EB3E825E}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_MarcelloHolds_08.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="713769856"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_MarcelloHolds_08" ID="{BC7791C9-F6F1-4EC0-85B1-7D47EB3E825E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_MarcelloHolds_09" ID="{DD5C5EE5-905A-4C8F-955A-D2E00B521E4E}" ShortID="442397843">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_MarcelloHolds_09" ID="{73ADD7D2-D9C3-4720-A2F7-2E2BA98CDC36}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_MarcelloHolds_09.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1036484496"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_MarcelloHolds_09" ID="{73ADD7D2-D9C3-4720-A2F7-2E2BA98CDC36}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_MarcelloHolds_10" ID="{4D0A71C2-580D-4E2B-8B9E-9626E6072759}" ShortID="11130481">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_MarcelloHolds_10" ID="{08DB9F5F-BB31-406E-8E6C-AC34B82941B7}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_MarcelloHolds_10.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="699275997"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_MarcelloHolds_10" ID="{08DB9F5F-BB31-406E-8E6C-AC34B82941B7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_MarcelloHolds_11" ID="{DBC723FA-6D02-4508-B33E-F807FE62512A}" ShortID="57877711">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_MarcelloHolds_11" ID="{CDFA0FB1-332C-4286-83C4-C906EB63C6A0}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_MarcelloHolds_11.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="379825788"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_MarcelloHolds_11" ID="{CDFA0FB1-332C-4286-83C4-C906EB63C6A0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_MarcelloHolds_12" ID="{F607C7BD-C0A0-4F7D-8360-C3133A53DA69}" ShortID="653550041">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_MarcelloHolds_12" ID="{7D69FCE2-C265-42E1-95FA-9D76E8B40457}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_MarcelloHolds_12.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="141592024"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_MarcelloHolds_12" ID="{7D69FCE2-C265-42E1-95FA-9D76E8B40457}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_MarcelloHolds_13" ID="{B1EF824D-A89D-478F-A477-F5F7869D74BF}" ShortID="776145064">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_MarcelloHolds_13" ID="{8BC05B67-6E03-4715-BDE6-3930D214475D}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_MarcelloHolds_13.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="879816419"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_MarcelloHolds_13" ID="{8BC05B67-6E03-4715-BDE6-3930D214475D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_MarcelloHolds_14" ID="{1F4AC238-2E8D-4F1F-A35E-41BAF20DD1D9}" ShortID="380415396">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_MarcelloHolds_14" ID="{2EBFAED4-23E5-4BD0-9A07-C67E1C597CEE}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_MarcelloHolds_14.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="410345145"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_MarcelloHolds_14" ID="{2EBFAED4-23E5-4BD0-9A07-C67E1C597CEE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="MUS_Story_SC_Trial_MarcelloHolds_08" ID="{A817E527-7575-4518-A854-61CAAA17FB69}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_MarcelloHolds_09" ID="{DD5C5EE5-905A-4C8F-955A-D2E00B521E4E}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_MarcelloHolds_10" ID="{4D0A71C2-580D-4E2B-8B9E-9626E6072759}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_MarcelloHolds_11" ID="{DBC723FA-6D02-4508-B33E-F807FE62512A}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_MarcelloHolds_12" ID="{F607C7BD-C0A0-4F7D-8360-C3133A53DA69}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_MarcelloHolds_13" ID="{B1EF824D-A89D-478F-A477-F5F7869D74BF}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_MarcelloHolds_14" ID="{1F4AC238-2E8D-4F1F-A35E-41BAF20DD1D9}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="MUS_Story_SC_Trial_PlayerHolds" ID="{1ABF11DE-B8B0-4AD3-91FD-166EBD626785}" ShortID="958680113">
+									<PropertyList>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+										<Property Name="RestartBeginningOrBackward" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="MUS_Story_SC_Trial_PlayerHolds_15" ID="{40A10ADB-3B14-474A-985C-4439D1C9F437}" ShortID="599990162">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_PlayerHolds_15" ID="{D0F177B1-93D7-4CA5-8616-B8975A4F490D}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_PlayerHolds_15.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1005893004"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_PlayerHolds_15" ID="{D0F177B1-93D7-4CA5-8616-B8975A4F490D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_PlayerHolds_16" ID="{A922E7A9-FFC6-4C2A-947C-26D723FEC472}" ShortID="117148189">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_PlayerHolds_16" ID="{5482FD93-242F-4829-8FAE-6A49100D6F5B}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_PlayerHolds_16.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1010711353"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_PlayerHolds_16" ID="{5482FD93-242F-4829-8FAE-6A49100D6F5B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_PlayerHolds_17" ID="{11B3D1B3-A817-4014-BE99-6DE1D4AAB8F7}" ShortID="657488657">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_PlayerHolds_17" ID="{143E1691-2131-4316-A3AE-245FC3CFA0CE}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_PlayerHolds_17.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="194342810"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_PlayerHolds_17" ID="{143E1691-2131-4316-A3AE-245FC3CFA0CE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_PlayerHolds_18" ID="{96CD6A50-896A-4D10-A5E6-ED4EA37FEB27}" ShortID="463421079">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_PlayerHolds_18" ID="{987B68EC-BC38-4E3D-AF9D-DE7C7456C812}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_PlayerHolds_18.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="788823180"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_PlayerHolds_18" ID="{987B68EC-BC38-4E3D-AF9D-DE7C7456C812}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_PlayerHolds_19" ID="{89DEB43D-538D-44AE-B486-704A7AE119E3}" ShortID="841644729">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_PlayerHolds_19" ID="{32A9824E-50C6-41B9-8C66-B1ACA3930BBA}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_PlayerHolds_19.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="467109623"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_PlayerHolds_19" ID="{32A9824E-50C6-41B9-8C66-B1ACA3930BBA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_PlayerHolds_20" ID="{902FB9F4-CAFB-4458-B7D7-548E7CB0CDDF}" ShortID="354447246">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_PlayerHolds_20" ID="{04BF270A-9FC0-4530-836C-5F4C625FAC37}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_PlayerHolds_20.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="909786961"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_PlayerHolds_20" ID="{04BF270A-9FC0-4530-836C-5F4C625FAC37}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_PlayerHolds_21" ID="{080FE266-7373-4EF5-8B19-44367BBE7DC8}" ShortID="707638402">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_PlayerHolds_21" ID="{CFD4E59C-EEB0-48D5-9FDD-D103F49656CD}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_PlayerHolds_21.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="225547477"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_PlayerHolds_21" ID="{CFD4E59C-EEB0-48D5-9FDD-D103F49656CD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="MUS_Story_SC_Trial_PlayerHolds_15" ID="{40A10ADB-3B14-474A-985C-4439D1C9F437}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_PlayerHolds_16" ID="{A922E7A9-FFC6-4C2A-947C-26D723FEC472}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_PlayerHolds_17" ID="{11B3D1B3-A817-4014-BE99-6DE1D4AAB8F7}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_PlayerHolds_18" ID="{96CD6A50-896A-4D10-A5E6-ED4EA37FEB27}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_PlayerHolds_19" ID="{89DEB43D-538D-44AE-B486-704A7AE119E3}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_PlayerHolds_20" ID="{902FB9F4-CAFB-4458-B7D7-548E7CB0CDDF}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_PlayerHolds_21" ID="{080FE266-7373-4EF5-8B19-44367BBE7DC8}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="MUS_Story_SC_Trial_ResultRoll" ID="{54CFB3E8-697A-4E9F-A691-1C0F5F55C1C9}" ShortID="278753176">
+									<PropertyList>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="RollHit1" ID="{8B79A5E5-1A99-41E7-AC50-11A3A361789C}" ShortID="755264611">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="RollHit1" ID="{06C8D159-F7E2-4412-9FC9-32A263EADB5A}">
+													<Language>SFX</Language>
+													<AudioFile>RollHit1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="572947616"/>
+													</MediaIDList>
+												</AudioFileSource>
+												<AudioFileSource Name="RollHit2" ID="{536FEE42-2B7E-4FBF-A983-CC81883229B2}">
+													<Language>SFX</Language>
+													<AudioFile>RollHit2.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="715686218"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="RollHit2" ID="{536FEE42-2B7E-4FBF-A983-CC81883229B2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="RollHit1" ID="{8B79A5E5-1A99-41E7-AC50-11A3A361789C}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<Sound Name="MUS_Story_SC_Trial_Coupable" ID="{E70235BF-5ECD-4818-890C-E9FC325F6675}" ShortID="557506593">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_Coupable" ID="{741F43E6-7797-4866-97A6-EC735101D374}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_Coupable.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="50665373"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_Coupable" ID="{741F43E6-7797-4866-97A6-EC735101D374}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_Innocent" ID="{908005C1-2562-48CC-9A87-89BF288B14B6}" ShortID="80058572">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_Innocent" ID="{D35D26C0-7611-4CD4-AB42-93D270B375EB}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_Innocent.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="773191495"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_Innocent" ID="{D35D26C0-7611-4CD4-AB42-93D270B375EB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="MUS_Story_SC_Trial_ChefAccusation" ID="{7D96DF1F-FB98-4223-AD80-7D3960B29870}" ShortID="1058267824">
+									<PropertyList>
+										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="MUS_Story_SC_Trial_ChefAccusation-001" ID="{2EBDC8C8-4732-4584-9D8F-83A739345564}" ShortID="748932538">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_ChefAccusation-001" ID="{0C9D0D23-82D4-41CF-8AFE-E76FFC0CDDEC}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_ChefAccusation-001.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="805296210"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_ChefAccusation-001" ID="{0C9D0D23-82D4-41CF-8AFE-E76FFC0CDDEC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_ChefAccusation-002" ID="{26961E28-5916-43D4-9765-BD602B78E814}" ShortID="187117942">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_ChefAccusation-002" ID="{1BFBF566-A54A-4553-9AFE-DF7620DAA15F}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_ChefAccusation-002.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="580850499"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_ChefAccusation-002" ID="{1BFBF566-A54A-4553-9AFE-DF7620DAA15F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_ChefAccusation-003" ID="{6BEEBF0B-D711-4125-A592-7C61C95B4BC1}" ShortID="874090742">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_ChefAccusation-003" ID="{F1C91547-D788-43DD-A622-95B2352EF5C9}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_ChefAccusation-003.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="379407399"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_ChefAccusation-003" ID="{F1C91547-D788-43DD-A622-95B2352EF5C9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_ChefAccusation-004" ID="{70B8D6E7-8786-4493-9FE1-C794D31A72EC}" ShortID="393104730">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_ChefAccusation-004" ID="{F57BC499-1B9B-42D1-A4A6-2B54B4352E95}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_ChefAccusation-004.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="995782955"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_ChefAccusation-004" ID="{F57BC499-1B9B-42D1-A4A6-2B54B4352E95}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_ChefAccusation-005" ID="{089E5E4E-41BC-486E-B743-CB9B0A1BF479}" ShortID="783391084">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_ChefAccusation-005" ID="{B5CC3EC5-C9C1-40E7-9DB7-AC8855C92559}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_ChefAccusation-005.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="441997865"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_ChefAccusation-005" ID="{B5CC3EC5-C9C1-40E7-9DB7-AC8855C92559}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_ChefAccusation-006" ID="{8A34E3BD-D8B5-485E-8DB1-073393A892D6}" ShortID="667953698">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_ChefAccusation-006" ID="{38542C04-5B5F-435C-BFD1-2219769300A9}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_ChefAccusation-006.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="49456543"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_ChefAccusation-006" ID="{38542C04-5B5F-435C-BFD1-2219769300A9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_ChefAccusation-007" ID="{54F377AA-C6AB-468F-8BBD-E1CDCC6A6B7C}" ShortID="943620571">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_ChefAccusation-007" ID="{F4410E17-075C-4B73-9BD0-D115C4ACE62E}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_ChefAccusation-007.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="679661170"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_ChefAccusation-007" ID="{F4410E17-075C-4B73-9BD0-D115C4ACE62E}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_ChefAccusation-008" ID="{84D1EE11-6DAC-451F-9772-980EC692E5D9}" ShortID="716860217">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_ChefAccusation-008" ID="{0799B3A7-03F6-4528-9595-A1161B838966}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_ChefAccusation-008.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1048611062"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_ChefAccusation-008" ID="{0799B3A7-03F6-4528-9595-A1161B838966}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="MUS_Story_SC_Trial_ChefAccusation-009" ID="{753992BB-E49B-4E42-9FBB-6E6C34CAA68C}" ShortID="922159613">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_Music" ID="{852BDB6B-C0E1-4BD7-8D68-3F6DC81933C5}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="MUS_Story_SC_Trial_ChefAccusation-009" ID="{076FD1B5-5260-4C15-8547-9289ACBD06B2}">
+													<Language>SFX</Language>
+													<AudioFile>MUS_Story_SC_Trial_ChefAccusation-009.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="36812543"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="MUS_Story_SC_Trial_ChefAccusation-009" ID="{076FD1B5-5260-4C15-8547-9289ACBD06B2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+									<Playlist>
+										<ItemRef Name="MUS_Story_SC_Trial_ChefAccusation-001" ID="{2EBDC8C8-4732-4584-9D8F-83A739345564}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_ChefAccusation-002" ID="{26961E28-5916-43D4-9765-BD602B78E814}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_ChefAccusation-003" ID="{6BEEBF0B-D711-4125-A592-7C61C95B4BC1}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_ChefAccusation-004" ID="{70B8D6E7-8786-4493-9FE1-C794D31A72EC}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_ChefAccusation-005" ID="{089E5E4E-41BC-486E-B743-CB9B0A1BF479}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_ChefAccusation-006" ID="{8A34E3BD-D8B5-485E-8DB1-073393A892D6}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_ChefAccusation-007" ID="{54F377AA-C6AB-468F-8BBD-E1CDCC6A6B7C}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_ChefAccusation-008" ID="{84D1EE11-6DAC-451F-9772-980EC692E5D9}"/>
+										<ItemRef Name="MUS_Story_SC_Trial_ChefAccusation-009" ID="{753992BB-E49B-4E42-9FBB-6E6C34CAA68C}"/>
+									</Playlist>
+								</RandomSequenceContainer>
+								<Sound Name="MUS_Story_SC_Trial_Arle" ID="{ADCBC2E7-602D-46E8-A920-98C40AD5DA65}" ShortID="922450334">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_Arle" ID="{1BBB8064-1CB4-4FED-9B4A-EC9ED9A6B38C}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_Arle.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="594256436"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_Arle" ID="{1BBB8064-1CB4-4FED-9B4A-EC9ED9A6B38C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_Defi" ID="{D262D322-B9FF-4968-8A7A-8B008B254DC3}" ShortID="753156327">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_Defi" ID="{2DF2AE9F-2B0E-48CA-929D-681C32190348}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_Defi.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="233692308"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_Defi" ID="{2DF2AE9F-2B0E-48CA-929D-681C32190348}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_Guards" ID="{41FE1C22-319A-47A9-B393-61AC5F14905C}" ShortID="353646058">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_Guards" ID="{95B1CE68-BBF5-4248-88FA-8E71482F773D}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_Guards.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="91378607"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_Guards" ID="{95B1CE68-BBF5-4248-88FA-8E71482F773D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_Intro2" ID="{CEA65007-F0F1-4B5B-B48E-B308D19F3CD0}" ShortID="216272480">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_Intro2" ID="{3E65016A-115B-4E5E-9604-1F8047F5F81A}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_Intro2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="729886882"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_Intro2" ID="{3E65016A-115B-4E5E-9604-1F8047F5F81A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_Intro" ID="{9C2CB5E6-FC85-4C90-B401-EA0F9DA7C277}" ShortID="172079723">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_Intro" ID="{91F5A954-D1C6-4177-8E85-9283D252455B}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_Intro.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="251672337"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_Intro" ID="{91F5A954-D1C6-4177-8E85-9283D252455B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_LaVerite1" ID="{A9FC4C8F-22B1-4D6B-A53F-8A6072AA4F54}" ShortID="791919142">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_LaVerite1" ID="{5D84C1B8-541B-4C20-8106-D41A882C2F1B}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_LaVerite1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="518254858"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_LaVerite1" ID="{5D84C1B8-541B-4C20-8106-D41A882C2F1B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_LaVerite2" ID="{236E80E7-D0D0-4B5F-920C-47D7189DC760}" ShortID="483455495">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_LaVerite2" ID="{C24AFEA3-1B2F-4D69-ABC9-1F36FF2AB227}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_LaVerite2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="186055799"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_LaVerite2" ID="{C24AFEA3-1B2F-4D69-ABC9-1F36FF2AB227}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_LaVerite3" ID="{10712EF6-CB97-49C2-81F5-ECD90F5EF20A}" ShortID="201810588">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_LaVerite3" ID="{074C77F6-F1F5-44C0-A6A9-C91AC3D61DC0}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_LaVerite3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="417152865"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_LaVerite3" ID="{074C77F6-F1F5-44C0-A6A9-C91AC3D61DC0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_NaidaSpeech" ID="{D4FD6C8D-D044-4D40-A311-709B1C62F12F}" ShortID="86430715">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_NaidaSpeech" ID="{1E08B452-7E9C-4BE5-9DFC-72B5B644139D}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_NaidaSpeech.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="543216292"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_NaidaSpeech" ID="{1E08B452-7E9C-4BE5-9DFC-72B5B644139D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_Sireine" ID="{E8E4E880-86E6-4825-B568-5D734EFD2F19}" ShortID="767327769">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_Sireine" ID="{9D95EDF3-9964-45A6-9FEC-3886437228F8}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_Sireine.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="215648317"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_Sireine" ID="{9D95EDF3-9964-45A6-9FEC-3886437228F8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_UnVainqueur" ID="{8F429D6E-6431-4DD5-ADE9-7E52E0721DE7}" ShortID="139084076">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_UnVainqueur" ID="{7B3C07E0-3008-4A79-87C9-E7D5288433C7}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_UnVainqueur.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="322189294"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_UnVainqueur" ID="{7B3C07E0-3008-4A79-87C9-E7D5288433C7}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Trial_Conclusion" ID="{520FD7C2-48B0-4D48-8A11-95CCABDAB327}" ShortID="1071484264">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Trial_Conclusion" ID="{CF4150A5-838D-4D50-B507-0DDFA8BB2E08}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Trial_Conclusion.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="212153315"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Trial_Conclusion" ID="{CF4150A5-838D-4D50-B507-0DDFA8BB2E08}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Barque_TrialInView" ID="{A7F64850-3E30-4DAD-8961-8B5FD715AC5F}" ShortID="222516702">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Barque_TrialInView" ID="{C862F24E-8F47-40E9-A182-DB54DE5FE6A4}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Barque_TrialInView.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="722902401"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Barque_TrialInView" ID="{C862F24E-8F47-40E9-A182-DB54DE5FE6A4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_Barque_Treason" ID="{6366DC04-B473-4FDA-8403-229AA2E11B3F}" ShortID="837996994">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_Barque_Treason" ID="{51C23139-5640-4F92-9EC4-A1F51FDD0522}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_Barque_Treason.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="964088711"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_Barque_Treason" ID="{51C23139-5640-4F92-9EC4-A1F51FDD0522}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -374,27 +1760,139 @@
 										<ActiveSource Name="MUS_Story_SC_SecretMeeting_Meubler" ID="{32F72CF1-0A45-46D8-9F57-19D96D6ABD22}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_ArleFirstEncounter" ID="{6D49BE6E-5EC6-414A-A0C3-817E51C80474}" ShortID="891787638">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_ArleFirstEncounter" ID="{605FCF2B-254E-4552-8636-F470B0A33A21}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_ArleFirstEncounter.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="275049971"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_ArleFirstEncounter" ID="{605FCF2B-254E-4552-8636-F470B0A33A21}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_ArleGivesName" ID="{1D3CF5D4-B4D2-4824-8061-2A4260E2B2C4}" ShortID="928847120">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_ArleGivesName" ID="{FD192A2E-0FC7-49FC-B134-9C8E166397D9}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_ArleGivesName.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="130684876"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_ArleGivesName" ID="{FD192A2E-0FC7-49FC-B134-9C8E166397D9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_ArleJoke" ID="{210AF2FB-1644-4EAE-9CF6-E25F80D28765}" ShortID="405454769">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_ArleJoke" ID="{F1104899-7635-49EB-80D6-B0B638405C91}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_ArleJoke.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="837252400"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_ArleJoke" ID="{F1104899-7635-49EB-80D6-B0B638405C91}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_Kill" ID="{3745EF04-6C73-466C-A2E0-52E1FB30C4F0}" ShortID="5788855">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_Kill" ID="{4051D991-0ED5-4ABA-ADAC-4949DFB4EB0D}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_Kill.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="138714862"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_Kill" ID="{4051D991-0ED5-4ABA-ADAC-4949DFB4EB0D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_PlayerAccepts" ID="{F94FB63E-18E2-4EE5-AE3A-DE7E754DDC8E}" ShortID="525844361">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_PlayerAccepts" ID="{524C0E44-3FFE-4E3D-B1BA-1DC43457E7F8}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_PlayerAccepts.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="57185521"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_PlayerAccepts" ID="{524C0E44-3FFE-4E3D-B1BA-1DC43457E7F8}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="MUS_Story_SC_SecretMeeting_TheMission" ID="{3AD8CD38-93A0-4E14-85E9-C33223231B3F}" ShortID="10948454">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="MUS_Story_SC_SecretMeeting_TheMission" ID="{BF9A6B17-9024-46D4-879E-400482759093}">
+											<Language>SFX</Language>
+											<AudioFile>MUS_Story_SC_SecretMeeting_TheMission.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1038603219"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="MUS_Story_SC_SecretMeeting_TheMission" ID="{BF9A6B17-9024-46D4-879E-400482759093}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
-						</ActorMixer>
-						<ActorMixer Name="MUS_Tribunal" ID="{A774FE64-F9C1-4034-8286-72901F60DD69}" ShortID="847664634">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-								</Reference>
-							</ReferenceList>
-						</ActorMixer>
-						<ActorMixer Name="MUS_Ventre" ID="{6941F1AA-CC48-4817-82EB-87AA978D3C02}" ShortID="358944533">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-								</Reference>
-							</ReferenceList>
 						</ActorMixer>
 					</ChildrenList>
 					<ObjectLists>

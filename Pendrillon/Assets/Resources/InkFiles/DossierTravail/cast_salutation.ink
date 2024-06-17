@@ -14,30 +14,31 @@
 #actor:Marcello:MARCELLO
 #actor:Arle:ARLE // Arle, toujours pendue à la corde ?
 // Set the location
-#set:forest // Réfléchir décors
+//#set:trial
 // Set the actor's positions
-#position:Player:4:2
+#position:Passeur:4:2
 #position:Naïda:4:3
-#position:Passeur:4:4
-#position:Agathe:4:5
+#position:Player:4:4
 #position:Judge:4:6
-#position:Capucine:4:7
-#position:Marcello:4:8
-#position:Arle:4:9
+#position:Agathe:4:8
+#position:Capucine:4:9
+#position:Marcello:4:10
+#position:Arle:4:11
 
-// Start the scene
-//#open_curtains
-#audience:debate
-#audience:silent
 // Le juge est encore seul sur scène
-#audience:ovation
-#wait:5
-#audience:ovation
-#wait:4
-- #curtains:open // Scripter l'avancée des acteurs, puis leur salut, puis recul, puis avancent à nouveau, puis dernier salut -> rideaux qui se ferment
+#playsound:Play_MUS_Story_SC_Trial_Conclusion
+// Start the scene
+- #wait:5
+- #audience:ovation
+- #wait:5
+- #audience:ovation
+- #wait:4
+- #curtains:open #wait:5 #audience:ovation #wait:2 #audience:ovation #wait:3 #audience:ovation #wait:1
+- #audience:ovation
+- #wait:10
+- #anim:Player:bow #anim:Naïda:bow #anim:Agathe:bow #anim:Judge:bow #anim:Capucine:bow #anim:Marcello:bow #anim:Arle:bow 
+//- #curtains:close
 - #audience:ovation #wait:5
-- #audience:ovation #wait:5
-- #curtains:close
 - -> end_of_the_show
 
 = end_of_the_show

@@ -115,7 +115,7 @@ PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rend
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
-- PASSEUR: ...
+- PASSEUR: ... #playsound:Play_MUS_Story_SC_Barque_AfterMeeting
 PASSEUR: Dis-moi, voyageur : pourquoi avoir accepté une mission si périlleuse ? #anim:Passeur:question #playsound:VOX_Ferryman_pourquoimission
     * [Pour la fortune !] PLAYER: Pour la fortune, évidemment ! #anim:Player:gloire #playsound:VOX_Player_pourlafortune #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
     * [Pour la gloire !] PLAYER: Pour la gloire, cela va sans dire ! #anim:Player:gloire #playsound:VOX_Player_pourlagloire #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
@@ -171,7 +171,7 @@ PLAYER: ... Et c'est au port de <b>Miraterre</b>, de retour de notre voyage, que
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
-- PASSEUR: Ainsi, ton ami s'est fait arrêter par les gardes... #playsound:VOX_Ferryman_ainsitonami
+- PASSEUR: Ainsi, ton ami s'est fait arrêter par les gardes... #playsound:VOX_Ferryman_ainsitonami #playsound:Play_MUS_Story_SC_Barque_LostAFriend
     * [Je la retrouverai.] PLAYER: Je la retrouverai. Par tous les moyens, la Déesse m'en soit témoin ! #playsound:VOX_Player_jelaretrouverai #audience:ovation
         PASSEUR: Ainsi, ton ami est <i>une</i> amie. Je vois... #playsound:VOX_Ferryman_tonamie
     * [Rester silencieux.]
@@ -179,7 +179,7 @@ PLAYER: ... Et c'est au port de <b>Miraterre</b>, de retour de notre voyage, que
     * [Tous les gardes en avaient après moi...] PLAYER: Tous les gardes de la ville étaient à mes trousses.
         PLAYER: Mais il est un lieu où ils ne pénètrent jamais... #playsound:VOX_Player_touslesgardes #playsound:Play_MUS_Story_SC_Barque_ToChurch
     * [J'ai trouvé un refuge...] PLAYER: J'ai trouvé un endroit pour passer la nuit. 
-        PLAYER: Un endroit où les gardes n'auraient pas idée de me chercher... #playsound:Play_MUS_Story_SC_Barque_ToChurch
+        PLAYER: Un endroit où les gardes n'auraient pas idée de me chercher... 
 - -> church_night
 
 // Scène 4
@@ -202,7 +202,7 @@ PLAYER: ... Et c'est au port de <b>Miraterre</b>, de retour de notre voyage, que
     * [C'est ce que je pensais.] PLAYER: La même pensée me traversait l'esprit, alors que je m'endormais... Toutefois... #playsound:VOX_Player_lamemepenseeesprit
 - #audience:debate
 - PASSEUR: Parle, je t'en prie. #playsound:VOX_Ferryman_parlejetenprie
-- PLAYER: À mon réveil... #playsound:VOX_Player_amonreveil
+- PLAYER: À mon réveil... #playsound:VOX_Player_amonreveil #playsound:Play_MUS_Story_SC_Barque_Treason
     * [Une mauvaise surprise m'attendait.] PLAYER: ... une surprise des plus désagréables m'attendait... #playsound:VOX_Player_unesurprisedesagreable
     * [Je m'apprêtais à en découdre.] PLAYER: ... j'allais devoir livrer bataille... #playsound:VOX_Player_devoirlivrerbataille
     * [Je fus trahi.] PLAYER: ... je fus malheureux de constater qu'on m'avait trahi... #playsound:VOX_Player_malheureuxconstatertrahi
@@ -236,14 +236,14 @@ PASSEUR: ...
 PLAYER: ...
     * [Faire face à son destin.]
 - #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #audience:choc
-PASSEUR: Tu vas devoir affronter ton destin, désormais. #audience:ovation #playsound:VOX_Ferryman_affrontetondestin
+PASSEUR: Tu vas devoir affronter ton destin, désormais. #audience:ovation #playsound:VOX_Ferryman_affrontetondestin #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
     * [Qui m'y oblige ?] PLAYER: Qui m'y contraint, Passeur ? #anim:Player:question  #playsound:VOX_Player_quimycontraint #audience:debate
-        PASSEUR: La Loi. #playsound:VOX_Ferryman_laloi #audience:choc
+        PASSEUR: La <b>Loi</b>. #playsound:VOX_Ferryman_laloi #audience:choc
     * [Faisons demi-tour.] PLAYER: Faisons demi-tour, je t'en prie. #playsound:VOX_Player_faisonsdemitour #audience:booing
         PASSEUR: Je regrette, ce n'est pas à moi d'en décider. #playsound:VOX_Ferryman_jeregrettepasmadecision #audience:debate
     * [J'ai peur...] PLAYER: J'ai si peur... #anim:Player:stressed #playsound:VOX_Player_jaisipeur #audience:debate
         PASSEUR: ... Je comprends. #playsound:VOX_Ferryman_jecomprends #audience:applause
 - #anim:open_trial_doors #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
-PASSEUR: C'est ici que nos chemins se séparent, voyageur... #playsound:VOX_Ferryman_voistuporte2 #audience:choc
+PASSEUR: C'est ici que nos chemins se séparent, voyageur... #playsound:VOX_Ferryman_voistuporte2 #audience:choc 
 PASSEUR: Ainsi en a décidé la <shake>Cloche du Destin</shake>.  #box #playsound:VOX_Ferryman_ainsienadecide #audience:ovation #curtains:close #wait:4
 - -> tribunal_1

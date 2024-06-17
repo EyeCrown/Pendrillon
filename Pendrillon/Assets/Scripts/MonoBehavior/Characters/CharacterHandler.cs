@@ -163,7 +163,7 @@ public class CharacterHandler : MonoBehaviour
     public void SetJudgePosition()
     {
         var judgePos = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(2, 9));
-        transform.position = new Vector3(judgePos.x, 2.75f, judgePos.z);
+        transform.position = new Vector3(judgePos.x, 0.0f, judgePos.z);
         _rope.SetActive(false);
         _onStage = true;
     }
@@ -205,7 +205,7 @@ public class CharacterHandler : MonoBehaviour
             callbackOnFinish();
             yield break;
         }
-        
+        _playAnim = true;
         //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation {triggerName} start");
         
         _anim.SetTrigger(triggerName);
@@ -266,7 +266,7 @@ public class CharacterHandler : MonoBehaviour
             transform.rotation = Quaternion.Slerp(startRotation, targetRotation, time/duration);
             time += Time.deltaTime;
             
-            Debug.Log($"{name} > {transform.rotation.eulerAngles}");
+            //Debug.Log($"{name} > {transform.rotation.eulerAngles}");
             yield return null;
         }
         //Debug.Log($"{name} > Rotation done");
