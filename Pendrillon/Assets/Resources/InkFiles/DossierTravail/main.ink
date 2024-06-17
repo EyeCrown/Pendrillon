@@ -25,6 +25,4 @@ INCLUDE cast_salutation.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
-//-> church_day
--> tribunal_1
-//-> intro
+-> intro
