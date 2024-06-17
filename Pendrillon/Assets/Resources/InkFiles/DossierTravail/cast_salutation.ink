@@ -27,12 +27,14 @@
 
 // Le juge est encore seul sur scène
 #playsound:Play_MUS_Story_SC_Trial_Conclusion
+#playsound:Play_CrowdReaction_applauseinfinite
 // Start the scene
 - #wait:5
 - #audience:ovation
 - #wait:5
 - #audience:ovation
 - #wait:4
+- #playsound:Play_CrowdReaction_applauseinfinite
 - #curtains:open #wait:5 #audience:ovation #wait:2 #audience:ovation #wait:3 #audience:ovation #wait:1
 - #audience:ovation
 - #wait:10

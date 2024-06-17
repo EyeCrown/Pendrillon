@@ -21,6 +21,10 @@ VAR has_fail = false
 //#position:Arle:3:17
 #position:Arle:4:10
 
+- SOUFFLEUR: Que tu gagnes ou que tu perdes, cette scène aura été un franc succès : le public est conquis ! #playsound:VOX_Souffleur_lepublicconquis
+- ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec l'acte de tuer ? #playsound:VOX_Arle_demandermessire #audience:choc
+- MARCELLO: Tous les bateaux qui arrivent au port royal doivent être fouillés, c'est la <b>Loi</b>. #playsound:VOX_Marcello_laloi
+- [(Au loin) Vous m'avez trahi...] PLAYER: Vous m'avez trahi. Je pensais pouvoir vous faire confiance... #playsound:VOX_Player_vousmaveztrahi #audience:debate
 // Start the scene
 //#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
 // Audience reaction

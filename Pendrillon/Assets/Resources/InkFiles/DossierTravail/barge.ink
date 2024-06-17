@@ -61,7 +61,7 @@ SOUFFLEUR: Le public réagit à tes répliques, mais aussi à ton jeu de scène 
 SOUFFLEUR: Poursuivons : « Je ne suis pas un homme de mauvaise compagnie. ». #playsound:VOX_Souffleur_poursuivonsjene
     * [Je ne suis pas un homme de mauvaise compagnie.] PLAYER: Je ne suis pas un homme de mauvaise compagnie. #playsound:VOX_Player_pasmauvaisecompagnie
 - SOUFFLEUR: « De quoi souhaites-tu que l'on parle, Passeur ? ». #playsound:VOX_Souffleur_dequoisouhai
-    * [De quoi souhaites-tu que l'on parle, Passeur ?] PLAYER: De quoi souhaites-tu que l'on parle, Passeur ? #anim:Player:question #playsound:VOX_Player_quoisouhaiteparle
+    * [De quoi souhaites-tu que l'on parle, Passeur ?] PLAYER: De quoi souhaites-tu que l'on parle, <b>Passeur</b> ? #anim:Player:question #playsound:VOX_Player_quoisouhaiteparle
 - PASSEUR: Commence par te présenter : qui es-tu ? #anim:Passeur:question #playsound:VOX_Ferryman_commencepresenter
 #audience:debate
 - SOUFFLEUR: Aïe ! C'est là qu'on va avoir un petit problème, l'ami. #playsound:VOX_Souffleur_aie
@@ -72,11 +72,11 @@ SOUFFLEUR: On aurait dû te prévenir avant, navré l'ami... #playsound:VOX_Souf
 SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance, l'ami ! #anim:Player:stressed #playsound:VOX_Souffleur_bonnechance
 #audience:booing
 - PASSEUR: Peut-être ne m'as-tu pas entendu. Je disais : qui es-tu ? #playsound:VOX_Ferryman_quiestu
-    * [Je suis Merlin...] PLAYER: Je réponds au doux nom de Merlin... #anim:Player:bow #playsound:VOX_Player_Merlin #playsound:Play_MUS_Story_SC_Barque_ANewName
+    * [Je suis Merlin...] PLAYER: Je réponds au doux nom de <b>Merlin</b>... #anim:Player:bow #playsound:VOX_Player_Merlin #playsound:Play_MUS_Story_SC_Barque_ANewName
         ~ p_name = "Merlin"
-    * [Mon nom est Ambroise...] PLAYER: Je réponds au doux nom d'Ambroise... #anim:Player:bow #playsound:VOX_Player_Ambroise #playsound:Play_MUS_Story_SC_Barque_ANewName
+    * [Mon nom est Ambroise...] PLAYER: Je réponds au doux nom d'<b>Ambroise</b>... #anim:Player:bow #playsound:VOX_Player_Ambroise #playsound:Play_MUS_Story_SC_Barque_ANewName
         ~ p_name = "Ambroise"
-    * [On m'appelle Octave...] PLAYER: Je réponds au doux nom d'Octave... #anim:Player:bow #playsound:VOX_Player_Octave #playsound:Play_MUS_Story_SC_Barque_ANewName
+    * [On m'appelle Octave...] PLAYER: Je réponds au doux nom d'<b>Octave</b>... #anim:Player:bow #playsound:VOX_Player_Octave #playsound:Play_MUS_Story_SC_Barque_ANewName
         ~ p_name = "Octave"
 - #audience:ovation
 SOUFFLEUR: Sacré talent d'improvisation l'ami ! Tu es sur la bonne voie ! <i>Show must go on!</i> #playsound:VOX_Souffleur_sacretalent
@@ -136,7 +136,7 @@ PLAYER: À dire vrai...
     * [(Mentir) J'ai tué le monstre.] PLAYER: J'ai trouvé le monstre à l'endroit indiqué par la carte, et je l'ai tué, avec l'aide de mon équipage. Quelle bataille avons-nous livrée ! #anim:Player:happy
     * [(Éluder la question) Rien...] PLAYER: Je me suis rendu sur place, je n'ai trouvé aucune créature, bien entendu... et je suis rentré. Fin de l'histoire.
 - PASSEUR: Pourquoi ne pas me dire ce qu'il s'est réellement passé ? Ton âme s'en verra peut-être allégée... #playsound:VOX_Ferryman_pourquoidireverite
-PLAYER: Bien, bien... Si tu insistes, Passeur. #playsound:VOX_Player_bienbiensituinsistes #map:down
+PLAYER: Bien, bien... Si tu insistes, <b>Passeur</b>. #playsound:VOX_Player_bienbiensituinsistes #map:down
 PLAYER: Notre voyage dura... #playsound:VOX_Player_notrevoyagedura
     * [Près d'une année.] PLAYER: ... près d'une année, en tout. #map:departure #playsound:VOX_Player_presduneanne
     * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté. #map:Travel:departure #playsound:VOX_Player_beaucouptroplongtemps
@@ -172,7 +172,7 @@ PLAYER: ... Et c'est au port de <b>Miraterre</b>, de retour de notre voyage, que
 
 // Start the scene
 - PASSEUR: Ainsi, ton ami s'est fait arrêter par les gardes... #playsound:VOX_Ferryman_ainsitonami #playsound:Play_MUS_Story_SC_Barque_LostAFriend
-    * [Je la retrouverai.] PLAYER: Je la retrouverai. Par tous les moyens, la Déesse m'en soit témoin ! #playsound:VOX_Player_jelaretrouverai #audience:ovation
+    * [Je la retrouverai.] PLAYER: Je la retrouverai. Par tous les moyens, la <b>Déesse</b> m'en soit témoin ! #playsound:VOX_Player_jelaretrouverai #audience:ovation
         PASSEUR: Ainsi, ton ami est <i>une</i> amie. Je vois... #playsound:VOX_Ferryman_tonamie
     * [Rester silencieux.]
 - PASSEUR: Dis-moi plutôt : où t'es-tu rendu, après cela ? #playsound:VOX_Ferryman_outurendu
@@ -196,7 +196,7 @@ PLAYER: ... Et c'est au port de <b>Miraterre</b>, de retour de notre voyage, que
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
-- PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la Déesse... #playsound:VOX_Ferryman_pretressehonneur
+- PASSEUR: Cette prêtresse fit honneur à l'hospitalité de la <b>Déesse</b>... #playsound:VOX_Ferryman_pretressehonneur
     * [Tout à fait, mais...] PLAYER: Jamais n'a-t-on vu âme plus accueillante. Cependant... #playsound:VOX_Player_jamaisameplusaccueillante
     * [En un sens...] PLAYER: D'une certaine manière, j'en conviens... Mais... #playsound:VOX_Player_dunecertainemaniere
     * [C'est ce que je pensais.] PLAYER: La même pensée me traversait l'esprit, alors que je m'endormais... Toutefois... #playsound:VOX_Player_lamemepenseeesprit
@@ -225,10 +225,10 @@ PLAYER: ... Et c'est au port de <b>Miraterre</b>, de retour de notre voyage, que
 - PASSEUR: En fin de compte... Notre voyage fut des plus captivants. #playsound:VOX_Ferryman_voyagecaptivant
 PASSEUR: Toutefois... #audience:ovation #playsound:VOX_Ferryman_toutefois
 PASSEUR: ... Il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView #audience:debate
-    * [Que va t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, Passeur... et ne me ménage pas. #anim:Player:stressed #playsound:VOX_Player_quevapasserparlepasseur #audience:debate
+    * [Que va t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, <b>Passeur</b>... et ne me ménage pas. #anim:Player:stressed #playsound:VOX_Player_quevapasserparlepasseur #audience:debate
         PASSEUR: Cela, je ne puis te le dire, voyageur. Je connais ton passé, mais j'ignore tout de ton avenir. #playsound:VOX_Ferryman_jenepuisteledire #audience:applause
-    * [Où mène ce chemin ?] PLAYER: Où mène ce chemin, Passeur ? #anim:Player:stressed #playsound:VOX_Player_oumenecheminpasseur #audience:debate
-        PASSEUR: Il te mène à Lui, voyageur. #audience:choc #playsound:VOX_Ferryman_menealui
+    * [Où mène ce chemin ?] PLAYER: Où mène ce chemin, <b>Passeur</b> ? #anim:Player:stressed #playsound:VOX_Player_oumenecheminpasseur #audience:debate
+        PASSEUR: Il te mène à <b>Lui</b>, voyageur. #audience:choc #playsound:VOX_Ferryman_menealui
     * [(Rester silencieux).]
 - PASSEUR: Attendons un instant. #playsound:VOX_Ferryman_attendonsuninstant
 PASSEUR: Si la <shake>Cloche du Destin</shake> sonne, alors nous serons tenus de passer... #playsound:VOX_Ferryman_silacloche #audience:debate
@@ -237,7 +237,7 @@ PLAYER: ...
     * [Faire face à son destin.]
 - #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #audience:choc
 PASSEUR: Tu vas devoir affronter ton destin, désormais. #audience:ovation #playsound:VOX_Ferryman_affrontetondestin #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
-    * [Qui m'y oblige ?] PLAYER: Qui m'y contraint, Passeur ? #anim:Player:question  #playsound:VOX_Player_quimycontraint #audience:debate
+    * [Qui m'y oblige ?] PLAYER: Qui m'y contraint, <b>Passeur</b> ? #anim:Player:question  #playsound:VOX_Player_quimycontraint #audience:debate
         PASSEUR: La <b>Loi</b>. #playsound:VOX_Ferryman_laloi #audience:choc
     * [Faisons demi-tour.] PLAYER: Faisons demi-tour, je t'en prie. #playsound:VOX_Player_faisonsdemitour #audience:booing
         PASSEUR: Je regrette, ce n'est pas à moi d'en décider. #playsound:VOX_Ferryman_jeregrettepasmadecision #audience:debate

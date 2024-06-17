@@ -198,7 +198,7 @@ VAR t_4_give_guards_surname = false
             SOUFFLEUR: Oula, oula, oula... #playsound:VOX_Souffleur_oulaoula #wait:1 
             SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer ! #playsound:VOX_Souffleur_entenfaispas
             SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs ! #playsound:VOX_Souffleur_accro
-            SOUFFLEUR: Quoi qu'il en soit: <i>« Show must go on! »</i>, l'ami ! #playsound:VOX_Souffleur_show
+            SOUFFLEUR: Quoi qu'il en soit: <i> Show must go on</i>, l'ami ! #playsound:VOX_Souffleur_show
             ~ arle_leaves_the_stage = true
     }
     ~ return arle_leaves_the_stage
