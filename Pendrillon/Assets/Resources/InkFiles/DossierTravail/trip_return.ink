@@ -126,7 +126,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
 = guards_arrive
 #playsound:guards_arrive #playsound:Play_MUS_Story_SC_TripReturn_GuardsHere
 - MARCELLO: J'ai entendu du bruit dans la cale. #anim:Marcello:enter_scene #audience:ovation #playsound:VOX_Marcello_jaientendu
-CAPUCINE: Tu entends des voix, maintenant ? Peut-être la Déesse en personne qui te cause... #playsound:VOX_Capucine_tuentendsvoixQ #anim:Capucine:enter_scene #audience:laughter
+CAPUCINE: Tu entends des voix, maintenant ? Peut-être la <b>Déesse</b> en personne qui te cause... #playsound:VOX_Capucine_tuentendsvoixQ #anim:Capucine:enter_scene #audience:laughter
 MARCELLO: Vous me croyez fou, cheffe ? #audience:laughter #move:Capucine:9:9 #move:Marcello:11:7 #audience:ovation #playsound:VOX_Marcello_mecroyezfou
 CAPUCINE: Que tu sois cinglé ou non... Nous devons <i>fouiller</i> tous les navires qui <i>arrivent au port</i>. #playsound:VOX_Capucine_soiscinglenon #audience:applause
 - {player_is_hidden: -> player_hidden | -> player_greet_guards}
@@ -332,7 +332,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
             CAPUCINE: Allons, allons, Marcello... Le monsieur est raisonnable, alors soyons-le à notre tour. #playsound:VOX_Capucine_allonsallonsmarecello #audience:applause
             -> arrest
         ** (calm_marcello_F) PLAYER: Je vous propose d'en rester là, messires. Je ne suis point homme à rosser un garde de la <b>Couronne</b>. #playsound:VOX_Player_pointhommerosser
-            CAPUCINE: En voilà une parole raisonnable. Mon ami, en revanche, apprécierait de t'en claquer une sur le museau. Pas vrai, Marcello ? #playsound:VOX_Capucine_envoilaenrevanche
+            CAPUCINE: En voilà une parole raisonnable. Mon ami, en revanche, apprécierait de t'en claquer une sur le museau. Pas vrai, <b>Marcello</b> ? #playsound:VOX_Capucine_envoilaenrevanche
             MARCELLO: Je confirme. #audience:laughter #playsound:VOX_Marcello_jeconfirme
             MARCELLO: Tiens, la voilà ! #look:Marcello:Player #anim:Marcello:punch #anim:Player:hurt #look:Marcello:front #playsound:VOX_Marcello_tienlavoila
             -> combat_part_2
@@ -353,7 +353,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
 =arrest_naida
 #playsound:sounds_inside_the_crate
 CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans ! #playsound:VOX_Capucine_astuentenduquelquechoeabouge #playsound:Play_MUS_Story_SC_TripReturn_NaidaArrested
-MARCELLO : Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang. #audience:laughter #playsound:VOX_Marcello_sansdouterat
+MARCELLO: Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang. #audience:laughter #playsound:VOX_Marcello_sansdouterat
 - CAPUCINE: Bloque-lui la route tandis que j'y jette un œil. #playsound:VOX_Capucine_bloqueluilaroute #audience:choc #look:Marcello:Player
 {
     - sireine_hideout == "barrel": CAPUCINE: Tiens donc... Mais qui voilà ? #move:Capucine:-2:-1 #playsound:VOX_Capucine_tiensdoncmaisquivouila #audience:choc #look:Capucine:Naïda
