@@ -154,6 +154,16 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{8EC4F963-95C9-4E91-9422-9DE93B83FC36}" ShortID="147321934">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="ResetEmotionDucking" ID="{B632B6AE-263D-4A80-96F6-03F997181767}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_UI_HUD_SpeechBubbleSkip" ID="{1FC8680D-3559-4F51-A6D3-713809817F4A}">
@@ -172,6 +182,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Stop_VOX_ALL" ID="{EF3C2373-FA8A-48E1-8CB4-0FEDAC8399F8}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{99B9A7CA-E4F5-4313-A7D7-4D1DE267BB9B}" ShortID="148564287">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="ResetEmotionDucking" ID="{B632B6AE-263D-4A80-96F6-03F997181767}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -2432,6 +2452,21 @@
 										</Event>
 									</ChildrenList>
 								</Folder>
+								<Event Name="ResetEmotionDucking" ID="{B632B6AE-263D-4A80-96F6-03F997181767}">
+									<ChildrenList>
+										<Action Name="" ID="{FEDE3939-8B10-43FE-AFCC-7252AD99931E}" ShortID="503234427">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="-100"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FullLineIsSpeaking" ID="{01871AF0-8042-440C-82E1-948C3C103025}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="FullText" ID="{D379FA9D-1349-43E0-B1BB-12F867206AD1}" ShortID="474508692">
