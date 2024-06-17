@@ -183,7 +183,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
         ARLE: Je le ferai pour eux. #anim:Arle:point_audience #audience:applause #playsound:VOX_Arle_poureux
 - ARLE: Il était une fois... une terrible tempête. #move:Arle:8:7 #audience:choc #playsound:VOX_Arle_iletaitunefois
 ARLE: Pas n'importe quelle tempête : celle-ci dura près d'un siècle. #audience:debate #playsound:VOX_Arle_pasnimportequelle
-ARLE: Pour survivre, les Hommes durent bâtir un immense navire... #audsience:ovation #playsound:VOX_Arle_poursurvivre
+ARLE: Pour survivre, les Hommes durent bâtir un immense navire... #audience:ovation #playsound:VOX_Arle_poursurvivre
 ARLE: Avec la montée des eaux vint d'autres fléaux. L'un d'eux était un poisson... #playsound:VOX_Arle_avecmonteeeaux
 - #anim:Arle:monster #audience:choc
 - ARLE: Ce poisson, voyez-vous, était si gros qu'il aurait pu avaler une ville entière. #audience:choc #playsound:VOX_Arle_cepoissonvoyezvousgros
