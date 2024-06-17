@@ -339,7 +339,20 @@ namespace MonoBehavior.Managers
                     var character = GameManager.Instance.GetCharacter(speaker);
                         
                     if (character == null)
-                        Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > Unknown speaker | {speaker} |");
+                    {
+                        switch (speaker)
+                        {
+                            case "VIGIE" :
+                                _nameBoxes.transform.Find("NameBox_Marcello").gameObject.SetActive(true);
+                                break;
+                            case "MOUSSAILLON" :
+                                _nameBoxes.transform.Find("NameBox_Capucine").gameObject.SetActive(true);
+                                break;
+                            default:
+                                Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > Unknown speaker | {speaker} |");
+                                break;
+                        }
+                    }                    
                     else
                     {
                         character.DialogueUpdate.Invoke(dialogue);
