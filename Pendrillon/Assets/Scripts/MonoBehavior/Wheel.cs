@@ -170,7 +170,7 @@ public class Wheel : MonoBehaviour
         var startPos = _positionOutsideStage;
         var endPos = _positionOnStage;
         
-        Debug.Log($"Wheel.SpinningCoroutine > Start rotate anim + move down");
+        //Debug.Log($"Wheel.SpinningCoroutine > Start rotate anim + move down");
         while (time < duration)
         {
             transform.position = Vector3.Lerp(_positionOutsideStage, _positionOnStage, 
@@ -178,7 +178,7 @@ public class Wheel : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        Debug.Log($"Wheel.SpinningCoroutine > Rotate anim is done + Is on stage");
+        //Debug.Log($"Wheel.SpinningCoroutine > Rotate anim is done + Is on stage");
         UpdateText(score, mustObtain, type);
 
         StartCoroutine(DisplayScoreCoroutine(handleDialogueText));
@@ -190,7 +190,7 @@ public class Wheel : MonoBehaviour
         float time = 0.0f, duration = 0.5f;
         _uiBox.SetActive(true);
         // Scale from 0 to 1
-        Debug.Log($"Wheel.DisplayScoreCoroutine > Begin display");
+        //Debug.Log($"Wheel.DisplayScoreCoroutine > Begin display");
         while (time < duration)
         {
             var size = time / duration;
@@ -198,7 +198,7 @@ public class Wheel : MonoBehaviour
             time += Time.deltaTime;
             yield return null;
         }
-        Debug.Log($"Wheel.DisplayScoreCoroutine > End display");
+        //Debug.Log($"Wheel.DisplayScoreCoroutine > End display");
         GameManager.Instance._playerInput.Player.Interact.performed += ActingManager.Instance.OnClickCloseSkillcheck;
         handleDialogueText();
     }
@@ -208,7 +208,7 @@ public class Wheel : MonoBehaviour
         StopCoroutine(_spinCoroutine);
         StopCoroutine(DisplayScoreCoroutine());
         
-        Debug.Log("Wheel.CloseScoreCoroutine > Start");
+        //Debug.Log("Wheel.CloseScoreCoroutine > Start");
         
         _light.gameObject.SetActive(false);
 
@@ -232,7 +232,7 @@ public class Wheel : MonoBehaviour
         }
         _uiBox.SetActive(false);
         
-        Debug.Log("Wheel.CloseScoreCoroutine > End");
+        //Debug.Log("Wheel.CloseScoreCoroutine > End");
 
     }
 
