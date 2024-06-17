@@ -24,6 +24,7 @@ public static class Constants
     public const string TagMap          = "map";            // #map:Travel                  Travel: nom du voyage (voir TravelNames region)
     public const string TagTrial        = "trial";          // #trial               Effectue les actions de trial
     public const string TagCurtains     = "curtains";       // #curtains:State              State:état des rideaux
+    public const string TagBattle       = "battle";         // #battle:State                State:état du combat de boss
     
     #endregion
 
@@ -164,5 +165,14 @@ public static class Constants
     public const string StateCurtainsClose = "close";
 
     #endregion
+
+    #region Battle States
+
+    public const string BattleBegin = "begin";
+    public const string BattleEnd   = "end";
+
+
+    #endregion
+    
     
 }
