@@ -43,6 +43,14 @@ namespace MonoBehavior.Managers
         private GameObject _currentSet;
 
         private Curtains _curtains;
+
+        private Animator _tempestCanonAnimator;
+        private Animator _tempestHarpoonAnimator;
+        private Animator _tempestBarrelAnimator;
+        private Animator _tempestMastAnimator;
+        private Animator _tempestLeviathanAnimator;
+
+        private string _lastBossState;
         
         #endregion
 
@@ -187,7 +195,8 @@ namespace MonoBehavior.Managers
         public void Refresh()
         {
             ClearUI.Invoke();
-
+            Debug.Log((bool) GameManager.Instance._story.variablesState["b_harpoon_is_loaded"]);
+            
             AkSoundEngine.PostEvent("Stop_VOX_ALL", gameObject); //Stoppe toutes les voix en cours de lecture
 
             _dialogueAlreadyHandle = false;
@@ -355,7 +364,7 @@ namespace MonoBehavior.Managers
             {
                 foreach (var tagName in GameManager.Instance._story.currentTags)
                 {
-                    Debug.Log("Tag: " + tagName);
+                    //Debug.Log("Tag: " + tagName);
                     string[] words = tagName.Split(Constants.Separator);
                     //foreach (var word in words) Debug.Log("Tag: " + word);
                     CheckTag(words);
@@ -426,6 +435,15 @@ namespace MonoBehavior.Managers
             _curtains   = GameObject.Find("MainCurtains").GetComponent<Curtains>();
             _statsUI    = GameObject.Find("Canvas/PLAYER_STATS").GetComponent<StatsUI>();
             _battleHUD  = GameObject.Find("Canvas/BATTLE_HUD").GetComponent<BattleHUD>();
+            
+            // Tempest Animators
+            string tempestAddressAnimators = "AnimatorObjects/", tempestBaseName = "Mesh_Sc_Tempete_";
+            string tempestName = tempestAddressAnimators + tempestBaseName;
+            _tempestCanonAnimator = _setTempest.transform.Find($"{tempestName}Canon").GetComponent<Animator>();
+            _tempestHarpoonAnimator = _setTempest.transform.Find($"{tempestName}Harpon").GetComponent<Animator>();
+            _tempestBarrelAnimator = _setTempest.transform.Find($"{tempestName}BarilExplosif").GetComponent<Animator>();
+            _tempestMastAnimator = _setTempest.transform.Find($"{tempestName}MatPart01").GetComponent<Animator>();
+            _tempestLeviathanAnimator = _setTempest.transform.Find($"{tempestName}Leviathan").GetComponent<Animator>();
         }
 
         void ConnectEvents()
@@ -447,11 +465,14 @@ namespace MonoBehavior.Managers
             _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
         }
 
+        #region Observables
+
         void SetTrialObservable()
         {
             GameManager.Instance._story.ObserveVariable ("t_audience_judgement", 
                 (string varName, object newValue) => ModifyTrialValue(newValue));
         }
+        
         
         void ModifyTrialValue(object valueObj)
         {
@@ -463,6 +484,150 @@ namespace MonoBehavior.Managers
             _setTrial.transform.Find("Mesh_Sc_Tribunal_Balance")
                 .GetComponent<Animator>().SetFloat("balance", value); 
         }
+        
+        void SetTempestObservable()
+        {
+            Debug.Log($"AM.SetTempestObservable");
+            _lastBossState = (string) GameManager.Instance._story.variablesState["b_boss_state"];
+            
+            GameManager.Instance._story.ObserveVariable ("b_player_won", 
+                (string varName, object newValue) => ResultBossBattle(newValue));
+            
+            // Harpoon
+            GameManager.Instance._story.ObserveVariable ("b_harpoon_is_loaded", 
+                (string varName, object newValue) => ChangeHarpoonState(newValue));
+            // Canon
+            GameManager.Instance._story.ObserveVariable ("b_canon_is_loaded", 
+                (string varName, object newValue) => ChangeCanonState(newValue));
+            
+            // TODO: Connect barrel
+            
+            // Mast
+            GameManager.Instance._story.ObserveVariable ("b_sail_is_down", 
+                (string varName, object newValue) => ChangeMastSailState(newValue));
+            GameManager.Instance._story.ObserveVariable ("b_mast_is_cracked", 
+                (string varName, object newValue) => ChangeMastCrackedState(newValue));
+            GameManager.Instance._story.ObserveVariable ("b_mast_is_broken", 
+                (string varName, object newValue) => ChangeMastBrokenState(newValue));
+            
+            // Boss
+            GameManager.Instance._story.ObserveVariable ("b_boss_state", 
+                (string varName, object newValue) => ChangeBossState(newValue));
+            GameManager.Instance._story.ObserveVariable ("b_player_AP", 
+                (string varName, object newValue) => LauchBossAttack((int) newValue));
+        }
+
+        void ResultBossBattle(object state)
+        {
+            Debug.Log($"Boss new state: {(bool) state}");
+
+            // If player won then play boss death anim
+            if ((bool) state)
+                _tempestLeviathanAnimator.SetTrigger("death");
+        }
+
+        void ChangeHarpoonState(object state)
+        {
+            Debug.Log($"Harpon new state: {(bool) state}");
+            if ((bool)state)
+            {
+                _tempestHarpoonAnimator.SetBool("charged", true);
+            }
+            else
+            {
+                _tempestHarpoonAnimator.SetTrigger("shoot");
+                _tempestHarpoonAnimator.SetBool("charged", false);
+            }
+        }
+
+        void ChangeCanonState(object state)
+        {
+            Debug.Log($"Canon new state: {(bool) state}");
+            if ((bool)state)
+            {
+                _tempestCanonAnimator.SetBool("charged", true);
+            }
+            else
+            {
+                _tempestCanonAnimator.SetTrigger("shoot");
+                _tempestCanonAnimator.SetBool("charged", false);
+            }
+        }
+        
+        // TODO: Connect Barrel
+        
+        void ChangeMastSailState(object state)
+        {
+            Debug.Log($"Sail is down new state: {(bool)state}");
+            if((bool) state)
+                _tempestMastAnimator.SetTrigger("voileoff");
+        }
+
+        void ChangeMastCrackedState(object state)
+        {
+            Debug.Log($"Mast cracked new state: {(bool)state}");
+            if((bool) state)
+                _tempestMastAnimator.SetTrigger("startbroke");
+        }
+        
+        void ChangeMastBrokenState(object state)
+        {
+            Debug.Log($"Mast broken new state: {(bool)state}");
+            if((bool) state)   
+                _tempestMastAnimator.SetTrigger("broke");
+
+        }
+
+        // Boss Observables
+        void ChangeBossState(object state)
+        {
+            switch ((string) state)
+            {
+                case Constants.BossDefault :
+                    break;
+                case Constants.BossOpenMouth : 
+                    _tempestLeviathanAnimator.SetTrigger("openmouth");
+                    break;
+                case Constants.BossOnBoat : 
+                    _tempestLeviathanAnimator.SetTrigger("onboat");
+                    break;
+                case Constants.BossUnderwater : 
+                    _tempestLeviathanAnimator.SetTrigger("underwater");
+                    break;
+                default: Debug.LogError($"AM.ChangeBossState > Error: Unknown boss state [{(string) state}]");
+                    return;
+            }
+            _lastBossState = (string)state;
+        }
+
+        void LauchBossAttack(int actionPoints)
+        {
+            if (actionPoints > 0)
+                return;
+            
+            // Player took damage so
+            switch (_lastBossState)
+            {
+                case Constants.BossDefault :
+                    _tempestLeviathanAnimator.SetTrigger("attack");
+                    break;
+                case Constants.BossOpenMouth : 
+                    _tempestLeviathanAnimator.SetTrigger("openmouth_attack");
+                    break;
+                case Constants.BossOnBoat : 
+                    _tempestLeviathanAnimator.SetTrigger("onboat_attack");
+                    break;
+                case Constants.BossUnderwater : 
+                    _tempestLeviathanAnimator.SetTrigger("underwater_attack");
+
+                    break;
+                default: Debug.LogError($"LauchBossAttack > Error: this is not supposed to happen [{_lastBossState}]");
+                    break;
+            }
+            
+        }
+        
+        #endregion
         
         #endregion
 
@@ -733,6 +898,7 @@ namespace MonoBehavior.Managers
                 SetIntro();
             
             SetTrialObservable();
+            SetTempestObservable();
             
             GameManager.Instance.GetPlayer()._character.charisma.SetupBase((int)GameManager.Instance._story.variablesState["p_char"]);
             GameManager.Instance.GetPlayer()._character.strength.SetupBase((int)GameManager.Instance._story.variablesState["p_stre"]);
@@ -751,7 +917,7 @@ namespace MonoBehavior.Managers
             GameManager.Instance._story.ObserveVariable("p_name", (variableName, value) => 
                 ChangePlayerName((string) value));
             
-            Debug.Log($"AM.OnPhaseStart > Start story | Refresh call ");
+            //Debug.Log($"AM.OnPhaseStart > Start story | Refresh call ");
             Refresh();
         }
         
@@ -825,7 +991,8 @@ namespace MonoBehavior.Managers
                 case Constants.TagRope:     HandleTagRope(words[1]);                        break;
                 case Constants.TagMap:      HandleTagMap(words[1]);                         break;
                 case Constants.TagTrial:    HandleTagTrial();                               break;
-                case Constants.TagCurtains: HandleTagCurtains(words[1]);                            break;
+                case Constants.TagCurtains: HandleTagCurtains(words[1]);                    break;
+                case Constants.TagBattle:   HandleTagBattle(words[1]);                      break;
                 default: Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag."); break;
             }
         }
@@ -867,7 +1034,7 @@ namespace MonoBehavior.Managers
         
         void HandleTagSet(string location)
         {
-            Debug.Log($"AM.HandleTagSet > Change from {_stage} to {location}");
+            //Debug.Log($"AM.HandleTagSet > Change from {_stage} to {location}");
             _stage = location;
             
             if (GameManager.Instance._intro)
@@ -889,18 +1056,16 @@ namespace MonoBehavior.Managers
                 var animator = _currentSet.GetComponent<Animator>();
                 if (animator != null)
                     animator.SetBool("InOut",false);
+                if (_currentSet == _setTempest)
+                {
+                    _tempestCanonAnimator.SetBool("InOut", false);
+                    _tempestHarpoonAnimator.SetBool("InOut", false);
+                    _tempestBarrelAnimator.SetBool("InOut", false);
+                    _tempestMastAnimator.SetBool("InOut", false);
+                }
             }
 
             GameManager.Instance.ClearStageCharacters();
-            
-            //_setBarge.SetActive(false);
-            //_setCale.SetActive(false);
-            //_setPort.SetActive(false);
-            // _setChurchNight.SetActive(false);
-            // _setChurchDay.SetActive(false);
-            //_setTrial.SetActive(false);
-            //_setTempest.SetActive(false);
-            //_setForest.SetActive(false);
             
             GameManager.Instance.SetGridHeight();
             
@@ -937,6 +1102,13 @@ namespace MonoBehavior.Managers
                 case Constants.SetTempest:
                     _setTempest.SetActive(true);
                     _setTempest.GetComponent<Animator>().SetBool("InOut",true);
+                    
+                    // Props anims
+                    _tempestCanonAnimator.SetBool("InOut", true);
+                    _tempestHarpoonAnimator.SetBool("InOut", true);
+                    _tempestBarrelAnimator.SetBool("InOut", true);
+                    _tempestMastAnimator.SetBool("InOut", true);
+                    
                     _currentSet = _setTempest;
                     break;
                 case Constants.SetForest:
@@ -1026,7 +1198,7 @@ namespace MonoBehavior.Managers
                 AkSoundEngine.PostEvent(soundToPlay, gameObject);
                 if (soundToPlay.Contains("VOX"))
                 {
-                    Debug.Log("Stopped Emotion Sound FX");
+                    //Debug.Log("Stopped Emotion Sound FX");
                     AkSoundEngine.PostEvent("Stop_VOX_Emotions", gameObject);
                 }
                 TagActionOver();
@@ -1314,7 +1486,31 @@ namespace MonoBehavior.Managers
            _curtains.Call.Invoke(state);
 
         }
-        
+
+
+        void HandleTagBattle(string state)
+        {
+            switch (state)
+            {
+                case Constants.BattleBegin:
+                    Debug.Log($"AM.HandleTagBattle > Battle begin");
+                    _battleHUD.BattleBegin.Invoke();
+                    _tempestLeviathanAnimator.SetBool("InOut", true);
+                    break;
+                case Constants.BattleEnd:
+                    Debug.Log($"AM.HandleTagBattle > Battle end");
+                    _battleHUD.BattleEnded.Invoke();
+                    _tempestLeviathanAnimator.SetTrigger("underwater");
+                    _tempestLeviathanAnimator.SetBool("InOut", false);
+
+                    break;
+                default:
+                    Debug.LogError($"AM.HandleTagBattle > Error: Unknown battle state [{state}]");
+                    break;
+                
+            }
+        }
+         
         #endregion
 
         //Le code pour le son :) par Romain
@@ -1425,7 +1621,7 @@ namespace MonoBehavior.Managers
                 //Debug.Log("Wait to display text");
                 yield return null;
             }
-            Debug.Log($"Can start execute Tags: {_tagMethods.Count} methods");
+            //Debug.Log($"Can start execute Tags: {_tagMethods.Count} methods");
             foreach (var tagAction in _tagMethods)
             {
                 //Debug.Log($"{tagAction.Method.Name}");

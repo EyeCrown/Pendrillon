@@ -9,10 +9,7 @@
 // Define the actors of the scene
 #actor:Player:PLAYER:VOYAGEUR
 // Set the location
-//#set:barge /!\ PAS DE TAG SET DANS L'INTRO
-// Set the actor's positions
 #position:Player:4:1
-#position:Passeur:4:3
 
 // Audience reaction
 #playsound:Play_AMB_SC_Theater_CrowdChatter
