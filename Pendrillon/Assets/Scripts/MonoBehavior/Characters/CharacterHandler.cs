@@ -205,7 +205,7 @@ public class CharacterHandler : MonoBehaviour
             callbackOnFinish();
             yield break;
         }
-        
+        _playAnim = true;
         //Debug.Log($"{_character.name}.{MethodBase.GetCurrentMethod()?.Name} > Animation {triggerName} start");
         
         _anim.SetTrigger(triggerName);

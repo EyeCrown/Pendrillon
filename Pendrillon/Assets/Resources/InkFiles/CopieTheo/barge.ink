@@ -14,7 +14,7 @@
 #actor:Passeur:PASSEUR
 // Set the location
 #set:barge
-#curtains
+#curtains:open
 // Set the actor's positions
 #position:Player:4:1
 #position:Passeur:4:3
