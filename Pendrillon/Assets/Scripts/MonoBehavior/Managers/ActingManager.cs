@@ -49,6 +49,8 @@ namespace MonoBehavior.Managers
         private Animator _tempestBarrelAnimator;
         private Animator _tempestMastAnimator;
         private Animator _tempestLeviathanAnimator;
+
+        private string _lastBossState;
         
         #endregion
 
@@ -486,6 +488,8 @@ namespace MonoBehavior.Managers
         void SetTempestObservable()
         {
             Debug.Log($"AM.SetTempestObservable");
+            _lastBossState = (string) GameManager.Instance._story.variablesState["b_boss_state"];
+            
             GameManager.Instance._story.ObserveVariable ("b_player_won", 
                 (string varName, object newValue) => ResultBossBattle(newValue));
             
@@ -505,6 +509,12 @@ namespace MonoBehavior.Managers
                 (string varName, object newValue) => ChangeMastCrackedState(newValue));
             GameManager.Instance._story.ObserveVariable ("b_mast_is_broken", 
                 (string varName, object newValue) => ChangeMastBrokenState(newValue));
+            
+            // Boss
+            GameManager.Instance._story.ObserveVariable ("b_boss_state", 
+                (string varName, object newValue) => ChangeBossState(newValue));
+            GameManager.Instance._story.ObserveVariable ("b_player_AP", 
+                (string varName, object newValue) => LauchBossAttack((int) newValue));
         }
 
         void ResultBossBattle(object state)
@@ -544,6 +554,8 @@ namespace MonoBehavior.Managers
             }
         }
         
+        // TODO: Connect Barrel
+        
         void ChangeMastSailState(object state)
         {
             Debug.Log($"Sail is down new state: {(bool)state}");
@@ -564,6 +576,55 @@ namespace MonoBehavior.Managers
             if((bool) state)   
                 _tempestMastAnimator.SetTrigger("broke");
 
+        }
+
+        // Boss Observables
+        void ChangeBossState(object state)
+        {
+            switch ((string) state)
+            {
+                case Constants.BossDefault :
+                    break;
+                case Constants.BossOpenMouth : 
+                    _tempestLeviathanAnimator.SetTrigger("openmouth");
+                    break;
+                case Constants.BossOnBoat : 
+                    _tempestLeviathanAnimator.SetTrigger("onboat");
+                    break;
+                case Constants.BossUnderwater : 
+                    _tempestLeviathanAnimator.SetTrigger("underwater");
+                    break;
+                default: Debug.LogError($"AM.ChangeBossState > Error: Unknown boss state [{(string) state}]");
+                    return;
+            }
+            _lastBossState = (string)state;
+        }
+
+        void LauchBossAttack(int actionPoints)
+        {
+            if (actionPoints > 0)
+                return;
+            
+            // Player took damage so
+            switch (_lastBossState)
+            {
+                case Constants.BossDefault :
+                    _tempestLeviathanAnimator.SetTrigger("attack");
+                    break;
+                case Constants.BossOpenMouth : 
+                    _tempestLeviathanAnimator.SetTrigger("openmouth_attack");
+                    break;
+                case Constants.BossOnBoat : 
+                    _tempestLeviathanAnimator.SetTrigger("onboat_attack");
+                    break;
+                case Constants.BossUnderwater : 
+                    _tempestLeviathanAnimator.SetTrigger("underwater_attack");
+
+                    break;
+                default: Debug.LogError($"LauchBossAttack > Error: this is not supposed to happen [{_lastBossState}]");
+                    break;
+            }
+            
         }
         
         #endregion

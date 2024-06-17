@@ -170,9 +170,15 @@ public static class Constants
 
     public const string BattleBegin = "begin";
     public const string BattleEnd   = "end";
-
-
+    
     #endregion
     
+    #region Boss States
+
+    public const string BossDefault     = "default";
+    public const string BossOpenMouth   = "open mouth";
+    public const string BossOnBoat      = "on boat";
+    public const string BossUnderwater  = "under water";
     
+    #endregion
 }
