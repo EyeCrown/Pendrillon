@@ -27,8 +27,8 @@ INCLUDE cast_salutation.ink
 // Start the game
 //-> barge
 //-> boss_battle
--> secret_meeting
+//-> secret_meeting
 //-> trip_return 
-//-> church_night 
+-> church_night 
 //-> tempest 
 //-> church_day

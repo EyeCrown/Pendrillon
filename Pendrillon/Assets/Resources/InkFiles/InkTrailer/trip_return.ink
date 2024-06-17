@@ -214,7 +214,7 @@ MARCELLO: Il n'y a personne, cheffe.
             CAPUCINE: Cet abruti se fiche de nous. Mais il ne va pas rire longtemps... #playsound:VOX_Capucine_abrutifiche
                 -> confronted_about_fugitive
         ** [Que faites-vous sur mon navire ?] PLAYER: Puis-je vous demander ce que vous faites ici, mes braves ?
-            MARCELLO: Tous les bateaux qui arrivent au port royal doivent être fouillés, c'est la loi.
+            MARCELLO: Tous les bateaux qui arrivent au port royal doivent être fouillés, c'est la loi. #playsound:VOX_Marcello_laloi
             CAPUCINE: Et nul ne doit ignorer la loi... Caches-tu quelque chose ? #playsound:VOX_Capucine_nulignorerloi
 - (confronted_about_fugitive) CAPUCINE: Quelqu'un qui sortait de la cale nous a dit qu'un fugitif se cachait ici. #playsound:VOX_Capucine_quelqunsortait
 MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ?

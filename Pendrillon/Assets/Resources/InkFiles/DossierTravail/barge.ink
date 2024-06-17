@@ -238,7 +238,7 @@ PLAYER: ...
 - #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #audience:choc
 PASSEUR: Tu vas devoir affronter ton destin, désormais. #audience:ovation #playsound:VOX_Ferryman_affrontetondestin #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
     * [Qui m'y oblige ?] PLAYER: Qui m'y contraint, Passeur ? #anim:Player:question  #playsound:VOX_Player_quimycontraint #audience:debate
-        PASSEUR: La Loi. #playsound:VOX_Ferryman_laloi #audience:choc
+        PASSEUR: La <b>Loi</b>. #playsound:VOX_Ferryman_laloi #audience:choc
     * [Faisons demi-tour.] PLAYER: Faisons demi-tour, je t'en prie. #playsound:VOX_Player_faisonsdemitour #audience:booing
         PASSEUR: Je regrette, ce n'est pas à moi d'en décider. #playsound:VOX_Ferryman_jeregrettepasmadecision #audience:debate
     * [J'ai peur...] PLAYER: J'ai si peur... #anim:Player:stressed #playsound:VOX_Player_jaisipeur #audience:debate
