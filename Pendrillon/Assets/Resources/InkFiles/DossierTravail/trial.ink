@@ -14,13 +14,13 @@ VAR t_1_gold_digger = false
 VAR t_1_accept_mission_with_positivity = false
 VAR t_1_accept_mission_with_negativity = false
 // DEBUG TRIBUNAL
-// VAR t_1_accept_to_kill = true
-// VAR t_1_refuse_to_kill = false
+// VAR t_1_accept_to_kill = false
+// VAR t_1_refuse_to_kill = true
 // VAR t_1_disrespect_the_crown = true
 // VAR t_1_respect_the_crown = false
-// VAR t_1_disrespect_irene = true
-// VAR t_1_respect_irene = false
-// VAR t_1_gold_digger = true
+// VAR t_1_disrespect_irene = false
+// VAR t_1_respect_irene = true
+// VAR t_1_gold_digger = false
 // VAR t_1_accept_mission_with_positivity = false
 // VAR t_1_accept_mission_with_negativity = true
 
@@ -33,7 +33,7 @@ VAR t_2_show_regrets = false
 VAR t_2_show_no_regrets = false
 VAR t_2_has_attacked_guards = false
 VAR t_2_bribe_guards = false
-//Debug TRIBUNAL
+// DEBUG TRIBUNAL
 // VAR t_2_lawfull = false
 // VAR t_2_lawless = true
 // VAR t_2_against_law = true
@@ -41,7 +41,7 @@ VAR t_2_bribe_guards = false
 // VAR t_2_show_regrets = false
 // VAR t_2_show_no_regrets = true
 // VAR t_2_bribe_guards = true
-// VAR t_2_attack_guards = true
+// VAR t_2_has_attacked_guards = true
 
 // CHURCH NIGHT SCENE
 VAR t_3_implore_irene = false
@@ -70,10 +70,10 @@ VAR t_3_criticise_irene_coldness = false
 VAR t_3_stained_glass_1_talk = false
 VAR t_3_stained_glass_2_talk = false
 VAR t_3_stained_glass_3_talk = false
-//DEBUG TRIBUNAL
+// DEBUG TRIBUNAL
 // VAR t_3_implore_irene = false
 // VAR t_3_blame_irene = true
-// VAR t_3_no_light_on_irene_torch = true
+// VAR t_3_no_light_on_irene_torch = false
 // VAR t_3_light_on_irene_torch = true
 // VAR t_3_doubt_about_irene_cryings = true
 // VAR t_3_is_with_irene_saviors = false
@@ -168,9 +168,9 @@ VAR t_4_give_guards_surname = false
             ~ t_audience_judgement = 100
     }
     // Debug
-    {
-        - print_debug_trial: <> AP = {t_audience_judgement}
-    }
+    // {
+    //     - print_debug_trial: <> AP = {t_audience_judgement}
+    // }
 
 // Makes Arle angry until she leaves stage
 === function make_arle_angry() ===
