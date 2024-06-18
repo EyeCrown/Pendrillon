@@ -268,6 +268,7 @@ public class CharacterHandler : MonoBehaviour
         }
         transform.position = targetPosition;
         transform.LookAt(Camera.main.transform);
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         _anim.SetBool("walking", false);
         callbackOnFinish();
     }
