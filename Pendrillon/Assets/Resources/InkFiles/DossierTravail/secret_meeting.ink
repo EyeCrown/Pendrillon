@@ -73,7 +73,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - VOIX CHUCHOTÉE: <i>(Laissons-les se languir encore un peu... Ça ne rendra mon entrée en scène que plus mémorable !)</i> #playsound:VOX_Arle_lessleslanguir //#anim:Arle:get_up_a_bit
     * [Attendre davantage.] #audience:booing
 - // On voit un bout de ARLE qui dépasse d'un buisson
-    * [(À l'actrice) Tout le monde t'as vu...] PLAYER: <i>(Psssst... Hé ! Tout le monde t'as repéré, cachée derrière le buisson !)</i> #playsound:VOX_Player_toutlemondepeuttevoir
+    * [(À l'actrice) Tout le monde t'as vu...] PLAYER: <i>(Psssst... Hé ! Tout le monde t'a repéré, cachée derrière le buisson !)</i> #playsound:VOX_Player_toutlemondepeuttevoir
         VOIX CHUCHOTÉE: <i>(Hé ! Ne me donne pas de leçon sur mon jeu de scène, compris ?)</i> #playsound:VOX_Arle_henemedonnepas
     * [(Au public) On dirait que je suis épié !] PLAYER: J'ai la sensation que je ne suis pas aussi seul que je le croyais... Quelqu'un m'épie ! Quelqu'un qui n'est pas très discret... #audience:laughter #playsound:VOX_Player_quelquunmepie
         VOIX CHUCHOTÉE: <i>(Hé ! Arrête de me ridiculiser auprès du public, tu veux ?)</i> #playsound:VOX_Arle_hearrete
@@ -168,7 +168,7 @@ ARLE: D'abord dois-je vous demander, messire : quel rapport entretenez-vous avec
 - ARLE: Prenez ceci, voulez-vous ? #move:Arle:8:4 #playsound:VOX_Arle_prenezceci
     * [Qu'est-ce que c'est ?] PLAYER: Qu'est-ce donc ? #anim:Player:question #playsound:VOX_Player_questcedonc
 - ARLE: Un marin tel que vous ne reconnaît-il pas une carte quand il en voit une, messire ? #anim:Arle:bow #audience:laughter #playsound:VOX_Arle_unmarin
-    * [Quel endroit indique t-elle ?] PLAYER: Quel endroit indique-t-elle ? #anim:Player:question
+    * [Quel endroit indique-t-elle ?] PLAYER: Quel endroit indique-t-elle ? #anim:Player:question
         ARLE: En voilà une question intéressante... #anim:Arle:happy #playsound:VOX_Arle_envoilaquestion
     * [Une carte, pourquoi donc ?] PLAYER: Pourquoi aurais-je besoin d'une carte ? #anim:Player:question
         ARLE: Vous le saurez bien assez tôt... #anim:Arle:happy #playsound:VOX_Arle_vouslesaurez

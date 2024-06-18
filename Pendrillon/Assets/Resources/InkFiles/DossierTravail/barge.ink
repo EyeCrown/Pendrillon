@@ -43,7 +43,7 @@ SOUFFLEUR: « Ma mère m'a toujours dit... ». #playsound:VOX_Souffleur_mamereto
     * [Ma mère m'a toujours dit...] PLAYER: Ma mère m'a toujours dit... #anim:Player:talk #playsound:VOX_Player_meretoujoursdit #playsound:Play_MUS_Story_SC_Barque_BadViolin1 #audience:applause
 - SOUFFLEUR: « ... qu'enfant, déjà, je n'étais pas très bavard. ». #playsound:VOX_Souffleur_enfantdeja
     * [... qu'enfant, déjà, je n'étais pas très bavard.] PLAYER: ... qu'enfant, déjà, je n'étais pas très bavard. #playsound:VOX_Player_pasbavard #playsound:Play_MUS_Story_SC_Barque_BadViolin2 #audience:applause
-PASSEUR: Vraiment ? J'ai pourtant ouï-dire qu'en matière de baratin, tu n'étais pas le dernier... #playsound:VOX_Ferryman_baratinpasdernier #audience:applause
+PASSEUR: Vraiment ? J'ai pourtant ouï dire qu'en matière de baratin, tu n'étais pas le dernier... #playsound:VOX_Ferryman_baratinpasdernier #audience:applause
 SOUFFLEUR: Psssst... Hé, l'ami ! #anim:Souffleur:angry #playsound:VOX_Souffleur_pssthe2
 SOUFFLEUR: Quand je te souffle le texte, je n'y mets pas le ton... #playsound:VOX_Souffleur_quandjesouffle
 SOUFFLEUR: Ce n'est pas mon métier, tu piges ? #playsound:VOX_Souffleur_pasmonmetier
@@ -127,7 +127,7 @@ PLAYER: À dire vrai...
         PLAYER: Je prévoyais de faire le voyage, prétendre avoir tué le monstre et retourner à bon port. #audience:laughter
         PASSEUR: Tu as pourtant promis de ramener le cœur de la bête. #playsound:VOX_Ferryman_coeurbete
             ** [J'avais un plan.] PLAYER: Personne n'a jamais vu le <shake a=0.5><b>Léviathan</b></shake> de près : un cœur de baleine aurait suffi à faire illusion... #audience:laughter
-            ** [Je n'avais pas pensé à ça.] PLAYER: Je suis un homme de l'improvisation. J'aurai trouvé quelque chose... #audience:applause
+            ** [Je n'avais pas pensé à ça.] PLAYER: Je suis un homme de l'improvisation. J'aurais trouvé quelque chose... #audience:applause
     * [Je rêvais de le voir.] PLAYER: Je rêve de l'apercevoir, depuis petit. Ma mère me racontait des récits de marins l'ayant aperçu, au loin.
         PASSEUR: N'étais-tu pas effrayé ? #anim:Passeur:question #playsound:VOX_Ferryman_paseffrayeq
             ** [Si, mais tout de même...] PLAYER: Seul un idiot ne le serait pas. Mais ce sont ces histoires de créatures mythiques qui ont fait de moi le marin que je suis, alors... #anim:Player:stressed
@@ -140,7 +140,7 @@ PLAYER: Bien, bien... Si tu insistes, <b>Passeur</b>. #playsound:VOX_Player_bien
 PLAYER: Notre voyage dura... #playsound:VOX_Player_notrevoyagedura
     * [Près d'une année.] PLAYER: ... près d'une année, en tout. #map:departure #playsound:VOX_Player_presduneanne
     * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté. #map:Travel:departure #playsound:VOX_Player_beaucouptroplongtemps
-- PLAYER: Je garderai <b>secret</b> ce qu'il se passa lorsque nous atteignîmes le répère du <shake a=0.5><b>Léviathan</b></shake>.
+- PLAYER: Je garderai <b>secret</b> ce qu'il se passa lorsque nous atteignîmes le repère du <shake a=0.5><b>Léviathan</b></shake>.
 PLAYER: Après moult péripéties, nous revînmes à <b>Miraterre</b>... #playsound:VOX_Player_apresmoultper #map:arrival
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreuxqua playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
@@ -152,7 +152,7 @@ PLAYER: Après moult péripéties, nous revînmes à <b>Miraterre</b>... #playso
         PASSEUR: Tragi-comique, tu dis ? #playsound:VOX_Ferryman_tragicomique
     * [Inattendu.] PLAYER: ... des plus <i>inattendus</i>. #playsound:VOX_Player_innattendus
         PASSEUR: Inattendu, tu dis ? #playsound:VOX_Ferryman_innatendu
-- PLAYER: Constatez par vous-même : nous avons bravé une tempête, affronté un monstre marin... #playsound:VOX_Player_constatezparvousmemenousavons
+- PLAYER: Constatez par vous-même, mon ami : nous avons bravé une tempête, affronté un monstre marin... #playsound:VOX_Player_constatezparvousmemenousavons
 PLAYER: ... Et c'est au port de <b>Miraterre</b>, de retour de notre voyage, que notre heure sonna... #map:up #playsound:VOX_Player_auportdeMiraterre
 - #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #wait:1
 - -> trip_return 
@@ -225,7 +225,7 @@ PLAYER: ... Et c'est au port de <b>Miraterre</b>, de retour de notre voyage, que
 - PASSEUR: En fin de compte... Notre voyage fut des plus captivants. #playsound:VOX_Ferryman_voyagecaptivant
 PASSEUR: Toutefois... #audience:ovation #playsound:VOX_Ferryman_toutefois
 PASSEUR: ... Il arrive déjà à son terme, j'en ai peur. #anim:Passeur:show_door #playsound:VOX_Ferryman_voyagecaptivant2 #playsound:Play_MUS_Story_SC_Barque_TrialInView #audience:debate
-    * [Que va t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, <b>Passeur</b>... et ne me ménage pas. #anim:Player:stressed #playsound:VOX_Player_quevapasserparlepasseur #audience:debate
+    * [Que va-t-il se passer ?] PLAYER: Que va-t-il se passer ? Parle donc, <b>Passeur</b>... et ne me ménage pas. #anim:Player:stressed #playsound:VOX_Player_quevapasserparlepasseur #audience:debate
         PASSEUR: Cela, je ne puis te le dire, voyageur. Je connais ton passé, mais j'ignore tout de ton avenir. #playsound:VOX_Ferryman_jenepuisteledire #audience:applause
     * [Où mène ce chemin ?] PLAYER: Où mène ce chemin, <b>Passeur</b> ? #anim:Player:stressed #playsound:VOX_Player_oumenecheminpasseur #audience:debate
         PASSEUR: Il te mène à <b>Lui</b>, voyageur. #audience:choc #playsound:VOX_Ferryman_menealui

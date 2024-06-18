@@ -79,7 +79,7 @@ VAR b_boss_special_attack_power = 9
 #audience:ovation #battle:begin
 - SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe7
 SOUFFLEUR: Cette scène nous coûte une fortune en effets spéciaux à chaque spectacle... #playsound:VOX_Souffleur_fortuneeffetsspecias
-SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en terme de chorégraphie, matériel, main-d'oeuvre... #playsound:VOX_Souffleur_budget
+SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en termes de chorégraphie, matériel, main-d'œuvre... #playsound:VOX_Souffleur_budget
 SOUFFLEUR: Sans parler des <shake>coûts d'entretien</shake> ! #playsound:VOX_Souffleur_coutentretien
 SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami ? #playsound:VOX_Souffleur_pleinlesyeux
 - -> player_moovepool
@@ -92,7 +92,7 @@ SOUFFLEUR: Sache que lors d'un combat, tu peux effectuer <b>plusieurs actions</b
 SOUFFLEUR: Le nombre de <b>talents</b> que tu peux utiliser avant que ton tour ne se termine est affiché au-dessus. #playsound:VOX_Souffleur_talentesecritdessus
 SOUFFLEUR: On appelle ça des <shake>points d'action™</shake>. Enfin... c'est <i>moi</i> qui les appelle comme ça. #playsound:VOX_Souffleur_pa
 SOUFFLEUR: Une dernière chose : tu peux <b>passer ton tour</b> si tu le souhaites. #playsound:VOX_Souffleur_passersontour
-SOUFFLEUR: Tes <b>points d'action</b> seront <b>mis de coté</b> pour le tour suivant. #playsound:VOX_Souffleur_pastored
+SOUFFLEUR: Tes <b>points d'action</b> seront <b>mis de côté</b> pour le tour suivant. #playsound:VOX_Souffleur_pastored
 SOUFFLEUR: Bonne chance, l'ami ! #playsound:VOX_Souffleur_glhf
 ~ souffleur_explained_AP = true
 {
@@ -667,6 +667,6 @@ Le mât du navire est fissuré suite à l'attaque du Léviathan.
 }
 Le mât du navire est brisé.
 - SOUFFLEUR: Wow ! Impressionnant ! Rien de cassé, l'ami ?
-SOUFFLEUR: La bataille va être bien plus hardue maintenant que le mât est brisé...
+SOUFFLEUR: La bataille va être bien plus ardue maintenant que le mât est brisé...
 SOUFFLEUR: C'est pour ça qu'un marin doit toujours <b>baisser les voiles</b> en cas de tempête.
 SOUFFLEUR: Bon courage l'ami !

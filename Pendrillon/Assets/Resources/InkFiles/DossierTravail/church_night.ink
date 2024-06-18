@@ -128,10 +128,10 @@ VAR irene_torch_is_on = false
 * {t_3_stained_glass_1_talk == false} [À propos du vitrail du bébé au milieu de la tempête.] PLAYER: Ce bébé, au milieu de la tempête... c'est Elle ? #move:player:8:4 #look:Player:back #playsound:VOX_Player_cebebecestelle
     ~ t_3_stained_glass_1_talk = true
     -> baby_in_the_middle_of_a_tempest
-* {t_3_stained_glass_2_talk == false} [À propos du  vitrail d'Irène regardant l'océan.] PLAYER: <b>Irène</b>, près du phare, contemplant l'océan. Je me demande quelles pensées la traversaient. #move:player:8:9 #look:Player:back #playsound:VOX_Player_irenepresduphare
+* {t_3_stained_glass_2_talk == false} [À propos du vitrail d'Irène regardant l'océan.] PLAYER: <b>Irène</b>, près du phare, contemplant l'océan. Je me demande quelles pensées la traversaient. #move:player:8:9 #look:Player:back #playsound:VOX_Player_irenepresduphare
     ~ t_3_stained_glass_2_talk = true
     -> irene_next_to_the_lighthouse
-* {t_3_stained_glass_3_talk == false} [À propos du  vitrail de l'homme écartelé sur sa roue.] PLAYER: L'homme attaché à la roue... c'est <shake a=0.5><b>Lui</b></shake> n'est-ce pas ? #move:player:8:13 #look:Player:back #playsound:VOX_Player_lhommeattachealaroue
+* {t_3_stained_glass_3_talk == false} [À propos du vitrail de l'homme écartelé sur sa roue.] PLAYER: L'homme attaché à la roue... c'est <shake a=0.5><b>Lui</b></shake> n'est-ce pas ? #move:player:8:13 #look:Player:back #playsound:VOX_Player_lhommeattachealaroue
     ~ t_3_stained_glass_3_talk = true
     -> man_tied_to_a_wheel
 + {t_3_stained_glass_1_talk or t_3_stained_glass_2_talk or t_3_stained_glass_3_talk} [(Conclure) Passer la nuit.] PLAYER: J'aimerais me reposer, prêtresse. #playsound:VOX_Player_jaimeraismereposer
@@ -256,7 +256,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
         AGATHE: Les Écrits nous renseignent à ce sujet, mon enfant.
         ** [Que disent les Écrits ?] PLAYER: Et que disent-ils à ce sujet, prêtresse ?
             --- (irene_obsessed_with_ocean) AGATHE: Que la <b>Déesse Irène</b> passait ses journées à observer l'océan, comme fascinée par le mouvement des vagues. Ensorcelée.
-        ** [Encore faut-il y croire...] PLAYER: Ces Écrits soit-disant sacrés sont des mythes... #trial
+        ** [Encore faut-il y croire...] PLAYER: Ces Écrits soi-disant sacrés sont des mythes... #trial
             ~trial()
             ~ t_3_does_not_believe_the_sacred_writings = true
             AGATHE: Mon enfant, il est des récits qui doivent être entendus avec le cœur, non avec la raison.
@@ -290,7 +290,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
     * [La lune est pleine.] PLAYER: La pleine lune...
         AGATHE: Une lune incandescente, annonçant le <b>Déluge</b>.
 - AGATHE: Connaissez-vous la comptine, mon enfant ?
-- AGATHE: « Quand le ciel fût sombre, et la lune fût levée... <b>Irène</b>, Fille des eaux... #playsound:VOX_Agathe_comptine1
+- AGATHE: « Quand le ciel fut sombre, et la lune fut levée... <b>Irène</b>, Fille des eaux... #playsound:VOX_Agathe_comptine1
     * [... ouït le Déluge gronder.] PLAYER: ... ouït le <b>Déluge</b> gronder. ». 
     * [... vit le monde sombrer.] PLAYER: ... vit le monde sombrer. ».
     * [... sentit la Vie cesser.] PLAYER: ... sentit la Vie cesser. ».
@@ -304,8 +304,8 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
     * [... de vice on l'accusa.] PLAYER: ... de vice on l'accusa. ».
 - AGATHE: « Seul son père la crut, acquis à sa pureté. Ce qu'il vit en elle fut... #playsound:VOX_Agathe_comptine4
     * [... une Sauveuse née.] PLAYER: ... une Sauveuse née. ».
-    * [... une Sainteté.] PLAYER: ... une Sainteté.». 
-    * [... une âme Sacrée.] PLAYER: ... une âme Sacrée.». 
+    * [... une Sainteté.] PLAYER: ... une Sainteté. ». 
+    * [... une âme Sacrée.] PLAYER: ... une âme Sacrée. ». 
 - AGATHE: « <b>Irène</b> lui jura que pour dompter les eaux... Ils devaient s'atteler... #playsound:VOX_Agathe_comptine5
     * [... à construire un bateau.] PLAYER: ... à construire un bateau. ».
     * [... à bâtir un paquebot.] PLAYER: ... à bâtir un paquebot. ».
@@ -334,7 +334,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
     * [Louons son sacrifice.] PLAYER: Nous ne pouvons, nous autres mortels, que louer son sacrifice. #trial
         ~ trial()
         ~ t_3_show_judge_respect = true
-        AGATHE: La tâche que nos aïeux lui ont confiée lorsqu'il fût libéré est à la hauteur de notre respect à son égard... #playsound:Play_SFX_Story_JudgeBellFar #wait:0.5 #audience:choc
+        AGATHE: La tâche que nos aïeux lui ont confiée lorsqu'il fut libéré est à la hauteur de notre respect à son égard... #playsound:Play_SFX_Story_JudgeBellFar #wait:0.5 #audience:choc
     * [Ce qu'il est devenu après...] PLAYER: Certains disent qu'il aurait dû être sanctifié, plutôt que...
         AGATHE: ... plutôt que voué à une tâche si grave ? #playsound:Play_SFX_Story_JudgeBellFar #wait:0.5 #audience:choc
         ** [Peut-être...] PLAYER: J'ose le dire, en effet. Son sacrifice fut salvateur pour nos ancêtres, mais au lieu de lui faire atteindre la béatitude, cela l'a... consumé... #trial

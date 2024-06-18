@@ -245,11 +245,11 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du <b>Déluge</
                 ~ audience_judgement(-10)
     * [Pas maudites mais bénies. {t(DEXT, -10)}] // 60%
         {sc(DEXT, -10): -> sireine_are_blessed_S | -> sireine_are_blessed_F}
-        ** (sireine_are_blessed_S) PLAYER: <b>Votre Honneur</b>, si un peuple, avalé par les Eaux lors du <b>Déluge</b>, a pu survivre jusqu'à aujourdhui... #audience:debate #playsound:VOX_Player_lepeupleasurvecu
+        ** (sireine_are_blessed_S) PLAYER: <b>Votre Honneur</b>, si un peuple, avalé par les Eaux lors du <b>Déluge</b>, a pu survivre jusqu'à aujourd'hui... #audience:debate #playsound:VOX_Player_lepeupleasurvecu
             PLAYER: Ne pensez-vous pas qu'il en va de la volonté de la <b>Déesse</b> elle-même ? #audience:debate #playsound:VOX_Player_cestladeesequilavoulu
             PLAYER: Le peuple des <b>Sireines</b> est béni ! Béni de la <b>Déesse</b> ! #audience:ovation #playsound:VOX_Player_bravoladeesse
             ~ audience_judgement(20)
-        ** (sireine_are_blessed_F) PLAYER: <b>Votre Honneur</b>, si un peuple, avalé par les Eaux lors du <b>Déluge</b>, a pu survivre jusqu'à aujourdhui... #audience:debate #playsound:VOX_Player_lepeupleasurvecu
+        ** (sireine_are_blessed_F) PLAYER: <b>Votre Honneur</b>, si un peuple, avalé par les Eaux lors du <b>Déluge</b>, a pu survivre jusqu'à aujourd'hui... #audience:debate #playsound:VOX_Player_lepeupleasurvecu
             PLAYER: Ne pensez-vous pas qu'il en va de la volonté de la <b>Déesse</b> elle-même ? #audience:debate #playsound:VOX_Player_cestladeesequilavoulu
             PLAYER: Le peuple des <b>Sireines</b> est béni ! Béni de la <b>Déesse</b> ! #audience:booing #playsound:VOX_Player_bravoladeesse
             ~ audience_judgement(-10)

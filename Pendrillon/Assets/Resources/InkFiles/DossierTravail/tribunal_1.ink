@@ -151,7 +151,7 @@ ARLE: La mission que la reine Constance me fit l'honneur de transmettre à messi
 ARLE: Je veux bien entendu parler de son cœur, <b>Votre Honneur</b>. #audience:laughter #anim:Judge:bell #anim:Arle:bow #playsound:VOX_Arle_jeveuxparlercoeur
 JUGE ERNEST: Bien, bien... Ensuite ? #playsound:VOX_Judge_biebienensuite
 - ARLE: Je voudrais, <b>Votre Honneur</b>, témoigner du fait que, lorsque j'abordais avec le détestable messire, le sujet du meurtre... #playsound:VOX_Arle_jevoudraistemoigner
-ARLE: ... celui-ci n'eût aucun scruple à accepter d'ôter une vie. #audience:choc #playsound:VOX_Arle_cuicineutaucun
+ARLE: ... celui-ci n'eût aucun scrupule à accepter d'ôter une vie. #audience:choc #playsound:VOX_Arle_cuicineutaucun
 JUGE ERNEST: Vraiment ? <b>Accusé</b>, qu'avez-vous à répondre ? #playsound:VOX_Judge_vraimentaccuserepondre
     * [J'ai refusé de tuer !] PLAYER: J'ai toujours refusé de tuer, <b>Votre Honneur</b> ! #playsound:VOX_Player_toujoursrefusedetuer #audience:debate
         ARLE: Mais bien sûr... Quel fieffé menteur ! #audience:debate #playsound:VOX_Arle_fieffementeur

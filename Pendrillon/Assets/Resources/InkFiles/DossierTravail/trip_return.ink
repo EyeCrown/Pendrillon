@@ -42,7 +42,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
         {sc(STRE, 20): -> protect_S | -> protect_F}
         ** (protect_S) PLAYER: Je braverai les dangers pour vous protéger ! #playsound:VOX_Player_braveraidangers
             PERSONNAGE MASQUÉ: Espérons que l'on n'en arrive pas là. #playsound:VOX_Naida_esperonsque
-        ** (protect_F) PLAYER: Euh.. Je.. Je vous défendrai ? #playsound:VOX_Player_euhjedefendrai
+        ** (protect_F) PLAYER: Euh... Je... Je vous défendrai ? #playsound:VOX_Player_euhjedefendrai
             PERSONNAGE MASQUÉ: Ne le prenez pas mal, mais... vous n'êtes pas très convaincant. #playsound:VOX_Naida_neleprenez
     * [On improvisera.] PLAYER: On improvisera, comme j'en ai l'habitude. #playsound:VOX_Player_onimprovisera
         PERSONNAGE MASQUÉ: Ce n'est pas la première fois que vous avez des ennuis avec la <b>Couronne</b>, n'est-ce pas ? #playsound:VOX_Naida_paspremierefois
@@ -162,7 +162,7 @@ MARCELLO: Il n'y a personne, cheffe. #playsound:VOX_Marcello_yapersonne
             SOUFFLEUR: SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe3
             SOUFFLEUR: En fouillant la caisse pleine de poisson pourri, l'odeur s'est incrustée à ton costume... #playsound:VOX_Souffleur_enfouillantpoisson
             SOUFFLEUR: Ce doit être pour ça que tu t'es fait repérer. #playsound:VOX_Souffleur_tureperer
-            SOUFFLEUR: Interagir avec le décors entraîne parfois des conséquences inattendues, l'ami ! #playsound:VOX_Souffleur_interagir
+            SOUFFLEUR: Interagir avec le décor entraîne parfois des conséquences inattendues, l'ami ! #playsound:VOX_Souffleur_interagir
     }
     -> player_stop_hiding
 
