@@ -289,108 +289,6 @@
 						</Folder>
 						<Folder Name="NPC" ID="{B86A02B6-3B66-4C70-A5D1-A0A82B080DCD}" ShortID="965421228">
 							<ChildrenList>
-								<Folder Name="Leviathan" ID="{91DC85CF-B327-40DC-9638-5E849D09CFAE}" ShortID="797778391">
-									<ChildrenList>
-										<Event Name="Play_SFX_NPC_Leviathan_AttackTail" ID="{2C611244-EC64-4072-941D-51E9E5EEDCD2}">
-											<ChildrenList>
-												<Action Name="" ID="{4EE3B0E0-3D53-4334-8D85-941773D5C956}" ShortID="203689571">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_NPC_Leviathan_AttackTail" ID="{33146712-828E-4770-871F-4FC931049191}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_SFX_NPC_Leviathan_Hurt" ID="{042A3936-AFB1-49AE-A3E6-3710542566C6}">
-											<ChildrenList>
-												<Action Name="" ID="{7AC51DA8-AD33-48A7-A429-9CA184765166}" ShortID="266213868">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_NPC_Leviathan_Hurt" ID="{2570FD7F-B6F5-4594-8C21-D889F4CF3910}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_SFX_NPC_Leviathan_Spawn" ID="{D3E9710B-F1DA-4230-9F44-9ED91AC3A965}">
-											<ChildrenList>
-												<Action Name="" ID="{46587C49-6CB5-4547-9ED4-DA9101BE3CB9}" ShortID="628437251">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_NPC_Leviathan_Spawn" ID="{6960BD20-9B80-454B-80C9-24118E73D53F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_SFX_NPC_Leviathan_TurnStart" ID="{F79BD5DB-4545-4DD4-9377-0AD1F0B96D68}">
-											<ChildrenList>
-												<Action Name="" ID="{04F4F899-7C35-4D76-B33D-F9CF8A7DDC65}" ShortID="1069335221">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_NPC_Leviathan_TurnStart" ID="{ACD9B789-46B1-4066-8A09-1835389F86D2}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_SFX_NPC_Leviathan_Underwater" ID="{1FC47171-B938-4AB8-9A21-44E3D8766915}">
-											<ChildrenList>
-												<Action Name="" ID="{41641F9E-A63A-4E00-B499-86835BCB0273}" ShortID="560269545">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_NPC_Leviathan_Underwater" ID="{D50211A4-3815-4811-92FD-F88AF0505D9E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_VOX_NPC_Leviathan_Defeated" ID="{29769FB5-F649-4755-AF31-5E3CA6E65AAF}">
-											<ChildrenList>
-												<Action Name="" ID="{8DB09D00-BD58-4158-9187-6D8441FBB18A}" ShortID="1052030013">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_NPC_Leviathan_Defeated" ID="{7FD7CEBD-F902-4AFE-9A75-84AA6BB12F0A}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_VOX_NPC_Leviathan_Scream" ID="{A0E1EB1B-69FB-45FD-8706-1837909E4572}">
-											<ChildrenList>
-												<Action Name="" ID="{609B19BC-67D4-498A-A699-0EDA1C0EF96B}" ShortID="964744008">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_NPC_Leviathan_Scream" ID="{7875C7FE-E0E2-4857-AEB2-A1696495F582}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-										<Event Name="Play_SFX_NPC_Leviathan_AttackJaw" ID="{DF43C24A-0C88-4D00-A0ED-D13BB5CB9D9F}">
-											<ChildrenList>
-												<Action Name="" ID="{62798591-E918-4C30-A62F-DEEC434A0339}" ShortID="562928944">
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="VOX_NPC_Leviathan_AttackJaw" ID="{FFBE6772-D361-4258-AA99-84D2387B405D}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-												<Action Name="" ID="{0DC44F8A-79F4-4A14-9CBC-707CD37429A6}" ShortID="582487232">
-													<PropertyList>
-														<Property Name="Delay" Type="Real64" Value="1"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Target">
-															<ObjectRef Name="SFX_NPC_Leviathan_AttackJaw" ID="{DE4222E6-6F39-4844-A057-DE8D92CEA203}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
-														</Reference>
-													</ReferenceList>
-												</Action>
-											</ChildrenList>
-										</Event>
-									</ChildrenList>
-								</Folder>
 								<Folder Name="Bouffon" ID="{FD9932AA-38AA-4348-81A2-1698E4EB3933}" ShortID="96306302">
 									<ChildrenList>
 										<Event Name="Play_SFX_Combat_NPC_Bouffon_Attack1" ID="{C34F17A9-5B2C-41A9-B770-57FFA798BADF}">
@@ -787,6 +685,108 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Folder Name="Leviathan" ID="{91DC85CF-B327-40DC-9638-5E849D09CFAE}" ShortID="797778391">
+							<ChildrenList>
+								<Event Name="Play_SFX_NPC_Leviathan_AttackTail" ID="{2C611244-EC64-4072-941D-51E9E5EEDCD2}">
+									<ChildrenList>
+										<Action Name="" ID="{4EE3B0E0-3D53-4334-8D85-941773D5C956}" ShortID="203689571">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Leviathan_AttackTail" ID="{33146712-828E-4770-871F-4FC931049191}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_NPC_Leviathan_Hurt" ID="{042A3936-AFB1-49AE-A3E6-3710542566C6}">
+									<ChildrenList>
+										<Action Name="" ID="{7AC51DA8-AD33-48A7-A429-9CA184765166}" ShortID="266213868">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Leviathan_Hurt" ID="{2570FD7F-B6F5-4594-8C21-D889F4CF3910}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_NPC_Leviathan_Spawn" ID="{D3E9710B-F1DA-4230-9F44-9ED91AC3A965}">
+									<ChildrenList>
+										<Action Name="" ID="{46587C49-6CB5-4547-9ED4-DA9101BE3CB9}" ShortID="628437251">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Leviathan_Spawn" ID="{6960BD20-9B80-454B-80C9-24118E73D53F}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_NPC_Leviathan_TurnStart" ID="{F79BD5DB-4545-4DD4-9377-0AD1F0B96D68}">
+									<ChildrenList>
+										<Action Name="" ID="{04F4F899-7C35-4D76-B33D-F9CF8A7DDC65}" ShortID="1069335221">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Leviathan_TurnStart" ID="{ACD9B789-46B1-4066-8A09-1835389F86D2}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_NPC_Leviathan_Underwater" ID="{1FC47171-B938-4AB8-9A21-44E3D8766915}">
+									<ChildrenList>
+										<Action Name="" ID="{41641F9E-A63A-4E00-B499-86835BCB0273}" ShortID="560269545">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Leviathan_Underwater" ID="{D50211A4-3815-4811-92FD-F88AF0505D9E}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_NPC_Leviathan_Defeated" ID="{29769FB5-F649-4755-AF31-5E3CA6E65AAF}">
+									<ChildrenList>
+										<Action Name="" ID="{8DB09D00-BD58-4158-9187-6D8441FBB18A}" ShortID="1052030013">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Leviathan_Defeated" ID="{7FD7CEBD-F902-4AFE-9A75-84AA6BB12F0A}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_NPC_Leviathan_Scream" ID="{A0E1EB1B-69FB-45FD-8706-1837909E4572}">
+									<ChildrenList>
+										<Action Name="" ID="{609B19BC-67D4-498A-A699-0EDA1C0EF96B}" ShortID="964744008">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Leviathan_Scream" ID="{7875C7FE-E0E2-4857-AEB2-A1696495F582}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_NPC_Leviathan_AttackJaw" ID="{DF43C24A-0C88-4D00-A0ED-D13BB5CB9D9F}">
+									<ChildrenList>
+										<Action Name="" ID="{62798591-E918-4C30-A62F-DEEC434A0339}" ShortID="562928944">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Leviathan_AttackJaw" ID="{FFBE6772-D361-4258-AA99-84D2387B405D}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{0DC44F8A-79F4-4A14-9CBC-707CD37429A6}" ShortID="582487232">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_NPC_Leviathan_AttackJaw" ID="{DE4222E6-6F39-4844-A057-DE8D92CEA203}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Ambiances" ID="{E1349A6F-D7D5-4836-9241-1895A9830AEA}" ShortID="389265221">
@@ -1033,7 +1033,7 @@
 									<ChildrenList>
 										<Action Name="" ID="{0EE9542D-C815-4529-979A-27E97ECD18B1}" ShortID="215050270">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
 												<Property Name="FadeInCurve" Type="int16" Value="1"/>
 												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 											</PropertyList>
@@ -1049,7 +1049,7 @@
 									<ChildrenList>
 										<Action Name="" ID="{BA056D7A-2FC8-424A-8FF8-5A5529E56C1A}" ShortID="319523909">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -1063,7 +1063,7 @@
 									<ChildrenList>
 										<Action Name="" ID="{9F6D7FF3-5B7C-45D5-A21E-2B4567BAF42E}" ShortID="765964429">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -1078,7 +1078,7 @@
 										<Action Name="" ID="{9A296F66-1F1E-4654-925E-58898EF5B04B}" ShortID="562409606">
 											<PropertyList>
 												<Property Name="ActionType" Type="int16" Value="38"/>
-												<Property Name="Delay" Type="Real64" Value="0.7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
 												<Property Name="GameParameterValue" Type="Real64" Value="1"/>
 											</PropertyList>
 											<ReferenceList>
@@ -1113,7 +1113,7 @@
 									<ChildrenList>
 										<Action Name="" ID="{8287A286-3EED-4ECD-BCE9-ACEFFC4E39E7}" ShortID="119207021">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -1137,7 +1137,7 @@
 									<ChildrenList>
 										<Action Name="" ID="{C5D56ACB-AF2A-4260-9B19-22C10F77B67C}" ShortID="844120970">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -1213,7 +1213,7 @@
 									<ChildrenList>
 										<Action Name="" ID="{9546F26B-ACDE-47E5-8BBE-A850BC487959}" ShortID="754282486">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -1227,7 +1227,7 @@
 									<ChildrenList>
 										<Action Name="" ID="{AAB4E133-8AF1-42C7-8152-83F438C4B4F8}" ShortID="288496776">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -1266,7 +1266,7 @@
 									<ChildrenList>
 										<Action Name="" ID="{2911FFFF-A3CE-4184-A453-AF67ED68242C}" ShortID="609726184">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -1280,7 +1280,7 @@
 									<ChildrenList>
 										<Action Name="" ID="{B1BE3EC1-FB4A-4E32-B1C1-2DD3C616BD5D}" ShortID="267924611">
 											<PropertyList>
-												<Property Name="Delay" Type="Real64" Value="0.7"/>
+												<Property Name="Delay" Type="Real64" Value="1.5"/>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
@@ -24336,6 +24336,149 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="SFX_Story_JudgeBellFar" ID="{0136B741-CE42-4E9B-94CE-C2D24623CD4E}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_Marcello_Emotion_punch" ID="{BCDF804F-0482-497F-958B-747864C29426}">
+									<ChildrenList>
+										<Action Name="" ID="{FA176919-29D7-43AB-BBF1-6FB239897D64}" ShortID="935685085">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Marcello_AttackBark" ID="{88447653-DAF7-4B3C-8166-D06059951E14}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{55E5975C-2BD5-4AC2-80FC-CF5A1D4E2459}" ShortID="308911596">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Punch" ID="{4694D6A6-322A-4841-9CAA-C971F22EC797}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_Marcello_Emotion_hurt" ID="{F211F6A4-DB88-4E0F-886D-3219B856A3B4}">
+									<ChildrenList>
+										<Action Name="" ID="{89BE0EC7-F1AA-4673-8A2E-29F5116A16AD}" ShortID="1017806693">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Marcello_Hurt" ID="{6BB05A4B-ABA6-4F2A-936C-8348F613F6FA}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_Player_Emotion_punch" ID="{1BA2AEFC-DE48-424F-9E6D-08AEFFFAA573}">
+									<ChildrenList>
+										<Action Name="" ID="{A30A2F91-E82E-4B70-B172-F7ADEF71FEB4}" ShortID="673740225">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Attack" ID="{EC2C7156-E60D-460A-8F87-AB629E731790}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{78A6E2BF-433F-494C-A6AB-F10F56C53E66}" ShortID="570850841">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Punch" ID="{4694D6A6-322A-4841-9CAA-C971F22EC797}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_Player_Emotion_poirier" ID="{1D1B3073-8752-47AB-920F-FCC783FD39B9}">
+									<ChildrenList>
+										<Action Name="" ID="{551EC08C-31BD-4491-A20F-DE8565C5174E}" ShortID="693476391">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Poirier" ID="{F6B40976-3593-426D-A88A-CAA3DE5011AB}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_Player_Emotion_pushup" ID="{A28A5F06-5758-463A-8B63-DC76B9B6C2D0}">
+									<ChildrenList>
+										<Action Name="" ID="{F0F1CEBA-1B59-4F8C-B272-049E0C43AD67}" ShortID="834875836">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Pompes" ID="{7772BC73-F6BA-49B1-89B5-3164772AEC07}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_Player_Emotion_use" ID="{2EDAF48F-E8C4-44B2-8F3A-1EF4BB00F620}">
+									<ChildrenList>
+										<Action Name="" ID="{966B7AA3-B6D0-4042-87C3-0A9775AADB4D}" ShortID="915018016">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_Emotion_ChargeHarpoon" ID="{3FC649CC-3468-4CBE-A5CF-3FD47EE008F2}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_Player_Emotion_throw_barrel" ID="{29EDF343-FCD1-4A33-A1B2-5A5F3BD4D0AE}">
+									<ChildrenList>
+										<Action Name="" ID="{86AF3ABD-97CD-4005-B447-D864FFBAD8D8}" ShortID="955508132">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_LaunchBaril" ID="{B4B1E3FD-AA3D-42F4-9296-52B9E421BF86}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_Player_Emotion_load_barrel" ID="{1687C09D-5682-4BD4-A73D-715F46E9D8EB}">
+									<ChildrenList>
+										<Action Name="" ID="{FAABA112-EFE8-4322-98DC-27C313C11199}" ShortID="344074496">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_Emotion_ChargeHarpoon" ID="{3FC649CC-3468-4CBE-A5CF-3FD47EE008F2}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_VOX_Player_Emotion_throw" ID="{CAD70723-9CF1-4AAA-B305-EF9C24B8DD12}">
+									<ChildrenList>
+										<Action Name="" ID="{92577605-24FF-4639-AA30-CF5FCDB6262D}" ShortID="892652845">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Attack" ID="{EC2C7156-E60D-460A-8F87-AB629E731790}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{4E662B44-70CF-4C15-B386-B9B0947F9874}" ShortID="311021061">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Throw" ID="{4984FF66-DE1B-4877-8101-5661AA5D9A46}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{A31FC799-3D5A-4B5A-9E9B-CA232A004948}" ShortID="691542018">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.65"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Thrown_Impact" ID="{ED716FA6-72FC-44E3-A65B-26C06410594C}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{90DC1DAD-B6B7-4EFF-B6C8-1C91964965AE}" ShortID="501648619">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.7"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Marcello_Hurt" ID="{6BB05A4B-ABA6-4F2A-936C-8348F613F6FA}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
