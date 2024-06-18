@@ -349,7 +349,7 @@ JUGE ERNEST: Est-ce vrai ? La <b>Déesse</b> elle-même ? Répondez, <b>Accusé<
 }
 - CAPUCINE: <b>Votre Honneur</b>, avec tout mon respect... J'apprécierais d'être nommée simplement <b>Capucine</b>. #wait:3 #playsound:VOX_Capucine_avectoutmonrespect #anim:Capucine:angry #audience:laughter
 JUGE ERNEST: Bon, bon... Je tâcherais d'y penser. #playsound:VOX_Judge_bonbonjetacheraidypenser #anim:Capucine:bow
-MARCELLO: <i>Votre Horreur</i>, moi aussi je voudrais être nommé <b>Capucine</b>... Euh... je veux dire <b>Marcello</b>, <i>Vot' Horreur</i>. #audience:laughter
+MARCELLO: <i>Votre Horreur</i>, moi aussi je voudrais être nommé <b>Capucine</b>... Euh... je veux dire <b>Marcello</b>, <i>Vot' Horreur</i>. #playsound:VOX_Marcello_vothorreur #audience:laughter
 CAPUCINE: Ferme-la, tu veux ? N'en demande pas trop à <i>Son Honneur</i>. #playsound:VOX_Capucine_fermelaveuxtu
 CAPUCINE: <b>Votre Honneur</b>, veuillez excuser ce fieffé personnage. Sa place est dans une taverne... ou même une étable. #playsound:VOX_Capucine_veuillezexcuser #audience:laughter
 JUGE ERNEST: Silence ! Silence ! #playsound:VOX_Judge_silencesilence #anim:Judge:bell #audience:silent
@@ -357,10 +357,10 @@ JUGE ERNEST: Veuillez raconter aux jurés votre rencontre avec l'<b>Accusé</b>.
 CAPUCINE: Je vous remercie, <b>Votre Honneur</b>. #playsound:VOX_Capucine_jevousremercie #anim:Capucine:bow
 CAPUCINE: Vous n'êtes pas sans savoir, <b>Votre Honneur</b>, que tout navire qui arrive à <b>Miraterre</b> doit être fouillé par des gardes de la <b>Couronne</b>. #playsound:VOX_Capucine_vousnetespassanssavoir
 CAPUCINE: Aussi mon camarade et moi avons-nous pénétré sur le rafiot du vil personnage pour y faire notre inspection. #playsound:VOX_Capucine_aussimoncamarade
-MARCELLO: J'avais entendu du bruit dans la cale, <i>Vot' Horreur</i>.
+MARCELLO: J'avais entendu du bruit dans la cale, <i>Vot' Horreur</i>. #playsound:VOX_Marcello_dubruitvothorreur
 CAPUCINE: Ferme-là, tu veux ? C'est à moi de raconter. #anim:Capucine:angry #playsound:VOX_Capucine_fermelatuveux #audience:laughter
 CAPUCINE: Mon camarade a effectivement entendu du bruit, et moi j'ai eu l'idée d'aller voir de plus près. #playsound:VOX_Capucine_moncamarade
-MARCELLO: Parle-lui de l'odeur, cheffe ! #audience:laughter
+MARCELLO: Parle-lui de l'odeur, cheffe ! #playsound:VOX_Marcello_parleluiodeur #audience:laughter
 CAPUCINE: La ferme, j'ai dit ! #anim:Capucine:angry #playsound:VOX_Capucine_lafermejaidit #audience:laughter
 CAPUCINE: Mon camarade n'a pas tort, cependant : l'odeur du rafiot était épouvantable... À l'image du fieffé gredin à ma gauche. #playsound:VOX_Capucine_lodeurepouvantable
     * [À ta droite, pas ta gauche.] PLAYER: À ta droite, pas ta gauche. Quoique, à bien y réfléchir... #audience:laughter #anim:Capucine:bow #playsound:VOX_Player_atadroitepastagauche
@@ -418,7 +418,7 @@ JUGE ERNEST: Lequel des deux témoins voulez-vous défier ? #playsound:VOX_Judge
         }
         JUGE ERNEST: Un concours... de pompes ? #playsound:VOX_Judge_concourspompes #audience:laughter
         JUGE ERNEST: Ab... absolument ! Comme l'exige la coutume, en effet... Témoin, acceptez-vous les conditions du duel ? #playsound:VOX_Judge_ababsolument #audience:debate
-        MARCELLO: J'accepte, <i>Vot' Horreur</i> ! #audience:ovation #anim:Marcello:happy #anim:Capucine:laugh
+        MARCELLO: J'accepte, <i>Vot' Horreur</i> ! #playsound:VOX_Marcello_jaccepte #audience:ovation #anim:Marcello:happy #anim:Capucine:laugh
         JUGE ERNEST: Ainsi l'issue de cette confrontation entre le témoin et l'<b>Accusé</b> sera décidée par le droit de la Lame ! #playsound:VOX_Judge_ainsiconfontationtemoinaccuse #audience:ovation #anim:Judge:bell #anim:Capucine:applause
         -> duel_against_marcello
 
@@ -561,7 +561,7 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
 - (defeat_against_capucine) JUGE ERNEST: Nous avons un vainqueur ! #anim:Player:fail #playsound:VOX_Judge_nousavonsvainqueurpoirier #playsound:Play_MUS_Story_SC_Trial_UnVainqueur
     JUGE ERNEST: Après {nb_turn_against_capucine < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_capucine} tour{nb_turn_against_capucine > 1:s}, c'est le témoin <b>Capucine</b> qui remporte le duel ! #anim:Player:angry #anim:Capucine:happy #playsound:VOX_Judge_capucinewins
     ~ audience_judgement(-10)
-    MARCELLO: Impressionnant, cheffe ! Vous n'avez la tête qui tourne ? #audience:laughter
+    MARCELLO: Impressionnant, cheffe ! Vous n'avez la tête qui tourne ? #audience:laughter #playsound:VOX_Marcello_impressionnant
     CAPUCINE: S.. si, un peu... Mets-la en veilleuse, tu veux ? #playsound:VOX_Capucine_tetequitourne #audience:laughter
     JUGE ERNEST: Ainsi en a jugé... euh la <b>Déesse</b> ! L'<b>Accusé</b> perd le duel ! #playsound:VOX_Judge_accuseloosCapu #audience:booing #screenshake
     -> witness_agathe
@@ -569,7 +569,7 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
     JUGE ERNEST: Après {nb_turn_against_capucine < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_capucine} tour{nb_turn_against_capucine > 1:s}, c'est l'<b>Accusé</b> qui remporte le duel ! #anim:Player:happy #anim:Capucine:angry #playsound:VOX_Judge_accusewinspoirier
     JUGE ERNEST: Ainsi en a jugé... euh la <b>Déesse</b> ! L'<b>Accusé</b> remporte le duel ! #playsound:VOX_Judge_accusewinsCapu #audience:ovation #trial
     ~ audience_judgement(30) 
-    MARCELLO: L'important, c'est de participer, cheffe ! #anim:Marcello:applause
+    MARCELLO: L'important, c'est de participer, cheffe ! #playsound:VOX_Marcello_importantpar #anim:Marcello:applause
     CAPUCINE: La ferme, tu veux ? #anim:Capucine:angry #audience:laughter #playsound:VOX_Capucine_lafermetuveux
     -> witness_agathe
     
@@ -641,7 +641,7 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
     #audience:ovation
 - (defeat_against_marcello) JUGE ERNEST: Nous avons un vainqueur ! #anim:Player:fail #playsound:VOX_Judge_nousavonsvainqueur #playsound:Play_MUS_Story_SC_Trial_UnVainqueur
     JUGE ERNEST: Après {nb_turn_against_marcello < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_marcello} pompe{nb_turn_against_marcello > 1:s}, c'est le témoin <b>Marcello</b> qui remporte le duel ! #anim:Player:angry #anim:Marcello:happy #playsound:VOX_Judge_temoinmarcellowins
-    MARCELLO: Vous avez vu ça, cheffe ? #anim:Marcello:happy
+    MARCELLO: Vous avez vu ça, cheffe ? #playsound:VOX_Marcello_vousavezcvucacheffe #anim:Marcello:happy
     CAPUCINE: J'ai vu, j'ai vu... Mets-la en, veilleuse, tu veux ? #audience:laughter
     JUGE ERNEST: Ainsi en a jugé... euh la <b>Déesse</b> ! L'<b>Accusé</b> perd le duel ! #playsound:VOX_Judge_accuseloosCapu #audience:booing #trial
     ~ audience_judgement(-10)
@@ -650,7 +650,7 @@ JUGE ERNEST: ... partez ! #playsound:VOX_Judge_partez #anim:Judge:bell #audience
     JUGE ERNEST: Après {nb_turn_against_marcello < 2: un total ridicule de | un total impressionnant de} {nb_turn_against_marcello} pompe{nb_turn_against_marcello > 1:s}, c'est l'<b>Accusé</b> qui remporte le duel ! #anim:Player:happy #anim:Marcello:angry #playsound:VOX_Judge_accusewinspoirier
     JUGE ERNEST: Ainsi en a jugé... euh la <b>Déesse</b> ! L'<b>Accusé</b> remporte le duel ! #playsound:VOX_Judge_accusewinsCapu #audience:ovation #screenshake
     ~ audience_judgement(30)
-    MARCELLO: L'important c'est de participer pas vrai cheffe ? #anim:Marcello:applause
+    MARCELLO: L'important c'est de participer pas vrai cheffe ? #playsound:VOX_Marcello_importantpar2 #anim:Marcello:applause
     CAPUCINE : Pas du tout, abruti. #audience:laughter
     CAPUCINE: Tu viens de te faire ridiculiser par l'autre minable ! #audience:laughter
     -> witness_agathe
