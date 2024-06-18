@@ -196,7 +196,6 @@ namespace MonoBehavior.Managers
         public void Refresh()
         {
             ClearUI.Invoke();
-            Debug.Log((bool) GameManager.Instance._story.variablesState["b_harpoon_is_loaded"]);
             
             AkSoundEngine.PostEvent("Stop_VOX_ALL", gameObject); //Stoppe toutes les voix en cours de lecture
 
@@ -222,7 +221,7 @@ namespace MonoBehavior.Managers
                 HandleDialogue();
                 //HandleChoices();
 
-                if (IsCurrentDialogueNotValid() && !GameManager.Instance._story.currentChoices.Any())
+                if (IsCurrentDialogueNotValid() && !GameManager.Instance._story.currentChoices.Any() && !_tagMethods.Any())
                 {
                     Debug.Log($"AM.Refresh > RECURSIVE CALL");
                     Refresh();
@@ -389,7 +388,6 @@ namespace MonoBehavior.Managers
 
         void HandleChoices()
         {
-            //Debug.Log("Click += DisplayText");
             GameManager.Instance._playerInput.Player.Interact.performed += OnClickDisplayText;
             
             if (GameManager.Instance._story.currentChoices.Any())
@@ -400,7 +398,13 @@ namespace MonoBehavior.Managers
             }
             else 
             {
-                //Debug.Log("No choices, so click can display text");
+                Debug.Log("No choices, so click can display text");
+
+                if (IsCurrentDialogueNotValid())
+                {
+                    Debug.LogWarning("Invalid dialogue > call Refresh()");
+                    Refresh();
+                }
             }
         }
 
@@ -574,21 +578,21 @@ namespace MonoBehavior.Managers
         
         void ChangeMastSailState(object state)
         {
-            Debug.Log($"Sail is down new state: {(bool)state}");
+            //Debug.Log($"Sail is down new state: {(bool)state}");
             if((bool) state)
                 _tempestMastAnimator.SetTrigger("voileoff");
         }
 
         void ChangeMastCrackedState(object state)
         {
-            Debug.Log($"Mast cracked new state: {(bool)state}");
+            //Debug.Log($"Mast cracked new state: {(bool)state}");
             if((bool) state)
                 _tempestMastAnimator.SetTrigger("startbroke");
         }
         
         void ChangeMastBrokenState(object state)
         {
-            Debug.Log($"Mast broken new state: {(bool)state}");
+            //Debug.Log($"Mast broken new state: {(bool)state}");
             if((bool) state)   
                 _tempestMastAnimator.SetTrigger("broke");
 
@@ -803,7 +807,7 @@ namespace MonoBehavior.Managers
 
         void DialogueTextFinished()
         {
-            Debug.Log("Dialogue Text is finished");
+            //Debug.Log("Dialogue Text is finished");
 
             if (GameManager.Instance._story.canContinue)
             {
@@ -815,7 +819,7 @@ namespace MonoBehavior.Managers
 
         void PrompterTextFinished()
         {
-            Debug.Log("Prompter Text is finished");
+            //Debug.Log("Prompter Text is finished");
             
             if (GameManager.Instance._story.canContinue)
             {
@@ -1011,6 +1015,7 @@ namespace MonoBehavior.Managers
                 case Constants.TagTrial:    HandleTagTrial();                               break;
                 case Constants.TagCurtains: HandleTagCurtains(words[1]);                    break;
                 case Constants.TagBattle:   HandleTagBattle(words[1]);                      break;
+                case Constants.TagHeight:   HandleTagHeight(words.Skip(1).ToArray());       break;
                 default: Debug.LogError($"AM.CheckTag > Error: {words[0]} is an unkwown tag."); break;
             }
         }
@@ -1319,7 +1324,7 @@ namespace MonoBehavior.Managers
 
         void HandleTagLook(string[] data)
         {
-            Debug.Log($"AM.HandleTagLook > {data[0]} must look to {data[1]}");
+            //Debug.Log($"AM.HandleTagLook > {data[0]} must look to {data[1]}");
             var character = GameManager.Instance.GetCharacter(data[0]);
             if (character == null)
             {
@@ -1528,6 +1533,49 @@ namespace MonoBehavior.Managers
                 
             }
         }
+
+
+        void HandleTagHeight(string[] data)
+        {
+            if (data.Length != 2)
+            {
+                Debug.LogError($"AM.HandleTagHeight > Error: invalid number of parameters [{data.Length}]");
+                return;
+            }
+
+            var character = GameManager.Instance.GetCharacter(data[0]);
+            if (character == null)
+            {
+                Debug.LogError($"AM.HandleTagHeight > Error: invalid character [{data[0]}]");
+                return;
+            }
+
+            float height = float.MaxValue;
+            try {
+                height = float.Parse(data[1], CultureInfo.InvariantCulture);
+            }
+            catch (FormatException) {
+                Debug.LogError($"AM.HandleTagHeight > Error: '{data[1]}' is not in a valid format.");
+                return;
+            }
+            catch (OverflowException) {
+                Debug.LogError($"AM.HandleTagHeight > Error: {data[1]} is outside the range of a Single.");
+                return;
+            }
+
+            if (height == float.MaxValue || height == 0)
+            {
+                Debug.LogWarning($"AM.HandleTagHeight > Warning: height == 0 or is invalid [{data[0]}]");
+                return;
+            }
+            
+            void HeightAction()
+            {
+                StartCoroutine(character.MoveHeightPositionCoroutine(height, TagActionOver));
+            }
+            
+            _tagMethods.Add(HeightAction);
+        }
          
         #endregion
 
@@ -1642,7 +1690,7 @@ namespace MonoBehavior.Managers
             //Debug.Log($"Can start execute Tags: {_tagMethods.Count} methods");
             foreach (var tagAction in _tagMethods)
             {
-                //Debug.Log($"{tagAction.Method.Name}");
+                Debug.Log($"{tagAction.Method.Name}");
                 _isActionDone = false;
                 tagAction();
                 while (!_isActionDone)

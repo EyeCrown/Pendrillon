@@ -25,6 +25,7 @@ public static class Constants
     public const string TagTrial        = "trial";          // #trial               Effectue les actions de trial
     public const string TagCurtains     = "curtains";       // #curtains:State              State:état des rideaux
     public const string TagBattle       = "battle";         // #battle:State                State:état du combat de boss
+    public const string TagHeight       = "height";         // #height:Yoffset              Yoffset: valeur de décalage en hauteur
     
     #endregion
 
