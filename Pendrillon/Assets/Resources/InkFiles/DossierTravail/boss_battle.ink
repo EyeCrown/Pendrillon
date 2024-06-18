@@ -604,7 +604,7 @@ Vous descendez du mât. #look:Player:front #height:Player:-6
 
 // Lower the sail
 === function lower_sail()
-Vous descendez la voile. #look:Player:front #height:Player:-6 //#anim:Player:lower_sail
+Vous descendez la voile. //#anim:Player:lower_sail
     ~ b_sail_is_down = true
     ~ use_action_point()
 
