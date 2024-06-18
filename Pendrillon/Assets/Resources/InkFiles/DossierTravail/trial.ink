@@ -14,13 +14,13 @@ VAR t_1_gold_digger = false
 VAR t_1_accept_mission_with_positivity = false
 VAR t_1_accept_mission_with_negativity = false
 // DEBUG TRIBUNAL
-// VAR t_1_accept_to_kill = true
-// VAR t_1_refuse_to_kill = false
+// VAR t_1_accept_to_kill = false
+// VAR t_1_refuse_to_kill = true
 // VAR t_1_disrespect_the_crown = true
 // VAR t_1_respect_the_crown = false
-// VAR t_1_disrespect_irene = true
-// VAR t_1_respect_irene = false
-// VAR t_1_gold_digger = true
+// VAR t_1_disrespect_irene = false
+// VAR t_1_respect_irene = true
+// VAR t_1_gold_digger = false
 // VAR t_1_accept_mission_with_positivity = false
 // VAR t_1_accept_mission_with_negativity = true
 
@@ -33,7 +33,7 @@ VAR t_2_show_regrets = false
 VAR t_2_show_no_regrets = false
 VAR t_2_has_attacked_guards = false
 VAR t_2_bribe_guards = false
-//Debug TRIBUNAL
+// DEBUG TRIBUNAL
 // VAR t_2_lawfull = false
 // VAR t_2_lawless = true
 // VAR t_2_against_law = true
@@ -41,7 +41,7 @@ VAR t_2_bribe_guards = false
 // VAR t_2_show_regrets = false
 // VAR t_2_show_no_regrets = true
 // VAR t_2_bribe_guards = true
-// VAR t_2_attack_guards = true
+// VAR t_2_has_attacked_guards = true
 
 // CHURCH NIGHT SCENE
 VAR t_3_implore_irene = false
@@ -70,10 +70,10 @@ VAR t_3_criticise_irene_coldness = false
 VAR t_3_stained_glass_1_talk = false
 VAR t_3_stained_glass_2_talk = false
 VAR t_3_stained_glass_3_talk = false
-//DEBUG TRIBUNAL
+// DEBUG TRIBUNAL
 // VAR t_3_implore_irene = false
 // VAR t_3_blame_irene = true
-// VAR t_3_no_light_on_irene_torch = true
+// VAR t_3_no_light_on_irene_torch = false
 // VAR t_3_light_on_irene_torch = true
 // VAR t_3_doubt_about_irene_cryings = true
 // VAR t_3_is_with_irene_saviors = false
@@ -103,18 +103,17 @@ VAR t_4_give_guards_surname = false
 
 // Let the trial register a player choice by changing the given variable to true
 === function trial() ===
--
     {
         - t_souffleur_explanations_bell == false:
             SOUFFLEUR: Psssst... Hé, l'ami ! Tu as entendu ? #playsound:VOX_Souffleur_pssthe8
-            SOUFFLEUR: C'est la <shake>Cloche du Destin™</shake> ! #playsound:VOX_Souffleur_clochedudestin
+            SOUFFLEUR: C'est la <shake a=0.5><b>Cloche du Destin™</b></shake> ! #playsound:VOX_Souffleur_clochedudestin
             SOUFFLEUR: Enfin, c'est comme ça que <i>moi</i> je l'appelle. #playsound:VOX_Souffleur_moijelappelle
-            SOUFFLEUR: Tu l'entendras sonner lorsque tu feras un choix qui modifie le scénario de la pièce. #playsound:VOX_Souffleur_scenariodelapiece
-            SOUFFLEUR: Cela signifie que ton choix aura des conséquences <b>majeures</b> sur la suite de l’histoire ! #playsound:VOX_Souffleur_consequencesmajeures
+            SOUFFLEUR: Tu l'entendras sonner lorsque tu feras un choix qui <b>modifie le scénario de la pièce</b>. #playsound:VOX_Souffleur_scenariodelapiece
+            SOUFFLEUR: Cela signifie que ton choix aura des <b>conséquences majeures</b> sur la suite de l’histoire ! #playsound:VOX_Souffleur_consequencesmajeures
             SOUFFLEUR: Ne t’en fais pas, même si c'est imprévu, les autres acteurs aussi savent improviser ! #playsound:VOX_Souffleur_memeimprevu
             ~ t_souffleur_explanations_bell = true
     }
-
+    
 // Return if player is accused of the given felony
 === function is_accused_of(pFelony) ===
     ~ temp isAccused = false
@@ -160,6 +159,7 @@ VAR t_4_give_guards_surname = false
 
 // Audience judgment system
 === function audience_judgement(pScore) ===
+    #trial
     ~ t_audience_judgement += pScore
     {
         - t_audience_judgement <= 0:
@@ -168,9 +168,9 @@ VAR t_4_give_guards_surname = false
             ~ t_audience_judgement = 100
     }
     // Debug
-    {
-        - print_debug_trial: <> AP = {t_audience_judgement}
-    }
+    // {
+    //     - print_debug_trial: <> AP = {t_audience_judgement}
+    // }
 
 // Makes Arle angry until she leaves stage
 === function make_arle_angry() ===
@@ -193,11 +193,11 @@ VAR t_4_give_guards_surname = false
             ARLE: Et vous, public « adoré », vous ne me méritez pas ! Cessez de rire ! #audience:debate #playsound:VOX_Arle_publicadorelahonte
             ARLE: Auriez-vous le millième de mon talent, vous seriez sur scène plutôt que de l'autre côté ! #audience:choc #playsound:VOX_Arle_milliemedemontalent
             ARLE: Bande de ploucs ! Vous pensez qu'avoir payé votre ticket vous donne tous les droits ?! #audience:booing #playsound:VOX_Arle_bandedeploucs
-            ARLE: Hé ! Laisse-moi ! Laisse-moi j'ai dit ! #rope:Arle #box #wait:2 #audience:laughter #playsound:VOX_Arle_helaissemoijaidit
+            ARLE: Hé ! Laissez-moi ! Laissez-moi j'ai dit ! #rope:Arle #box #wait:2 #audience:laughter #playsound:VOX_Arle_helaissemoijaidit
             SOUFFLEUR: Oula, oula, oula... #playsound:VOX_Souffleur_oulaoula #wait:1 
             SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer ! #playsound:VOX_Souffleur_entenfaispas
             SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs ! #playsound:VOX_Souffleur_accro
-            SOUFFLEUR: Quoi qu'il en soit: <i>« Show must go on! »</i>, l'ami ! #playsound:VOX_Souffleur_show
+            SOUFFLEUR: Quoi qu'il en soit: <i> Show must go on</i>, l'ami ! #playsound:VOX_Souffleur_show
             ~ arle_leaves_the_stage = true
     }
     ~ return arle_leaves_the_stage

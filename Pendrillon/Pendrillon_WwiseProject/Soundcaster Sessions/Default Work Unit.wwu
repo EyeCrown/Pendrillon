@@ -85,8 +85,20 @@
 							<Position X="2" Y="0"/>
 						</Module>
 						<Module>
+							<ObjectRef Name="Play_MUS_Story_SC_Trial_ResultRoll" ID="{65D9ADBA-5512-410D-9853-79CC5D596BD4}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="2" Y="2"/>
+						</Module>
+						<Module>
 							<ObjectRef Name="Play_UI_HUD_SpeechBubble_Appears" ID="{9FD67083-E0A1-4160-9B63-6743D08F0F21}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_MUS_Story_SC_Trial_Innocent" ID="{B14B9C1D-F621-4F95-9050-98EB13DD3168}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="3" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_MUS_Story_SC_Trial_Coupable" ID="{CE515A58-5400-4648-BC8B-3505601C3649}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="3" Y="3"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">
@@ -196,8 +208,12 @@
 							<Position X="1" Y="0"/>
 						</Module>
 						<Module>
-							<ObjectRef Name="Play_SFX_SC_Theater_TransitionTochurch" ID="{34E2245A-2BC9-4937-AC09-53C4C435596F}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<ObjectRef Name="Play_SFX_SC_Theater_TransitionTochurch_night" ID="{34E2245A-2BC9-4937-AC09-53C4C435596F}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_SC_Theater_TransitionTochurch_day" ID="{893978D9-DBDD-4359-B9FC-CD7AF7CB2CBB}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="2" Y="1"/>
 						</Module>
 						<Module>
 							<ObjectRef Name="Play_SFX_SC_Theater_TransitionToforest" ID="{71378AAE-DE24-426A-A30B-B13A3BE7BE56}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
@@ -221,6 +237,10 @@
 						<Module>
 							<ObjectRef Name="VOX_Agathe_comptine5" ID="{2BD7B643-18F0-41FB-A2D5-100926287944}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="ResetEmotionDucking" ID="{B632B6AE-263D-4A80-96F6-03F997181767}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="1" Y="0"/>
 						</Module>
 					</ModuleList>
 					<RTPCValueList ShowAll="true">

@@ -26,4 +26,3 @@ INCLUDE cast_salutation.ink
 
 // Start the game
 -> intro
-//-> secret_meeting

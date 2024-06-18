@@ -158,6 +158,26 @@ public class CharacterHandler : MonoBehaviour
         }
     }
 
+    void SetCanvasPosition()
+    {
+        var left = ActingManager.Instance._directions[Constants.StageGarden];
+        var right = ActingManager.Instance._directions[Constants.StageCourtyard];
+        Vector3 direction = (transform.position.z < Camera.main.transform.position.z) ? right - left : left - right;
+        direction.Normalize();
+        direction *= 1.2f;
+        Vector3 offset = new Vector3(0, 4.0f, 0f);
+
+        _canvas.transform.LookAt(Camera.main.transform);
+        
+        _canvas.transform.position = transform.position + direction + offset;
+        
+        if (_canvas.transform.position.z < transform.position.z)
+            _canvas.transform.rotation = Quaternion.Euler(
+                _canvas.transform.rotation.eulerAngles.x,
+                _canvas.transform.rotation.eulerAngles.y - 180,
+                _canvas.transform.rotation.eulerAngles.z);
+    }
+
     #region Jugde Functions
 
     public void SetJudgePosition()
@@ -186,6 +206,7 @@ public class CharacterHandler : MonoBehaviour
     {
         //Debug.Log($"CharacterHandler.OnDialogueUpdate > {_character.name}:{text}");
         _uiActing.SetActive(true);
+        SetCanvasPosition();
         
         // play neutral anim
         if (!_playAnim)
@@ -267,7 +288,7 @@ public class CharacterHandler : MonoBehaviour
             transform.rotation = Quaternion.Slerp(startRotation, targetRotation, time/duration);
             time += Time.deltaTime;
             
-            Debug.Log($"{name} > {transform.rotation.eulerAngles}");
+            //Debug.Log($"{name} > {transform.rotation.eulerAngles}");
             yield return null;
         }
         //Debug.Log($"{name} > Rotation done");

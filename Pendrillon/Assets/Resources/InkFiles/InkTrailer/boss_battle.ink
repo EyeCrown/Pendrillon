@@ -93,7 +93,7 @@ VAR b_boss_special_attack_power = 8
 
 // Start the scene
 #audience:ovation
-- SOUFFLEUR: Psssst... Hé, l'ami !
+- SOUFFLEUR: Psssst... Hé, l'ami ! #wait:120
 SOUFFLEUR: Cette scène nous coûte une fortune en effets spéciaux à chaque spectacle...
 SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en terme de chorégraphie, matériel, main-d'oeuvre...
 SOUFFLEUR: Sans parler des <shake>coûts d'entretiens</shake> !

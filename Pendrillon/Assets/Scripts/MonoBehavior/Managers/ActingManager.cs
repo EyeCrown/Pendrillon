@@ -61,6 +61,7 @@ namespace MonoBehavior.Managers
         TextMeshProUGUI _speakerText;   // Text box
         GameObject _historyBox;     // History box
         GameObject _masks;
+        GameObject _nameBoxes;
         private string _playerName;
         
         // UI - ParticuleSystems
@@ -129,7 +130,7 @@ namespace MonoBehavior.Managers
         bool _isActionDone = false;
         bool _dialogueAlreadyHandle = false;
 
-        readonly Dictionary<string, Vector3> _directions = new Dictionary<string, Vector3>();
+        readonly public Dictionary<string, Vector3> _directions = new Dictionary<string, Vector3>();
 
         public bool _allowScreenshake { private get; set; }
 
@@ -306,7 +307,7 @@ namespace MonoBehavior.Managers
                     return;
                 }
                 
-                speaker = "ERROR";
+                speaker = string.Empty;
                 dialogue = _currentDialogue;
             }
             else
@@ -338,11 +339,25 @@ namespace MonoBehavior.Managers
                     var character = GameManager.Instance.GetCharacter(speaker);
                         
                     if (character == null)
-                        Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > Unknown speaker | {speaker} |");
+                    {
+                        switch (speaker)
+                        {
+                            case "VIGIE" :
+                                _nameBoxes.transform.Find("NameBox_Marcello").gameObject.SetActive(true);
+                                break;
+                            case "MOUSSAILLON" :
+                                _nameBoxes.transform.Find("NameBox_Capucine").gameObject.SetActive(true);
+                                break;
+                            default:
+                                Debug.LogError($"AM.{MethodBase.GetCurrentMethod()?.Name} > Unknown speaker | {speaker} |");
+                                break;
+                        }
+                    }                    
                     else
                     {
                         character.DialogueUpdate.Invoke(dialogue);
                         _masks.transform.Find(character.name.ToLower())?.gameObject.SetActive(true);
+                        _nameBoxes.transform.Find("NameBox_" + character.name).gameObject.SetActive(true);
                     }
 
                         
@@ -399,6 +414,7 @@ namespace MonoBehavior.Managers
             _dialogueText   = _dialogueBox.transform.Find("DialogueText").GetComponent<TextMeshProUGUI>();
             _speakerText    = _dialogueBox.transform.Find("SpeakerText").GetComponent<TextMeshProUGUI>();
             _masks          = _dialogueBox.transform.Find("Masks").gameObject;
+            _nameBoxes      = _dialogueBox.transform.Find("NameBoxes").gameObject;
             
             _dialogueTypewriter = _dialogueText.GetComponent<TypewriterCore>();
             
@@ -945,6 +961,8 @@ namespace MonoBehavior.Managers
             // Clear masks
             foreach (Transform mask in _masks.transform)
                 mask.gameObject.SetActive(false);
+            foreach (Transform nameBox in _nameBoxes.transform)
+                nameBox.gameObject.SetActive(false);
         }
         
 
