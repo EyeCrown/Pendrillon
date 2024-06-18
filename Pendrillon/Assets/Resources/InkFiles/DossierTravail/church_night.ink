@@ -10,11 +10,13 @@ VAR irene_torch_is_on = false
 -> start
 
 = start
+#curtains:close
 // Define the actors
 #actor:Player:PLAYER
 #actor:Agathe:UNE VOIX:PRÊTRESSE AGATHE:AGATHE:PRÊTRESSE
 // Set the location
 #set:church_night
+#curtains:open
 // Set the actor's positions
 #position:Player:8:25
 #position:Agathe:4:5
@@ -99,6 +101,7 @@ VAR irene_torch_is_on = false
         AGATHE: Désormais que sa flamme berce ces lieux, n'hésitez plus : parlez-lui. #move:Player:8:3 #look:player:left #playsound:Play_SFX_Story_SC_Eglise_LightIreneLamp #playsound:Play_MUS_Story_SC_Eglise_LightOn #anim_event:light_on_irene_lamp #trial #audience:ovation #playsound:VOX_Agathe_saflamebercesesyeux
         ~ trial()
         ~ t_3_light_on_irene_torch = true
+        ~ irene_torch_is_on = true
         ** [Se confesser.] PLAYER: J'ai ramené de mon voyage... #playsound:VOX_Player_jairamenevoyage
             ~ irene_torch_is_on = true
             *** [...un trésor interdit.] PLAYER: ...un trésor qui m'était interdit. #playsound:VOX_Player_untresorinterdit
