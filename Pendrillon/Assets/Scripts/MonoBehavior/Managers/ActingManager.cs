@@ -48,11 +48,9 @@ namespace MonoBehavior.Managers
 
         // Forest
         private Animator _forestBushAnimator;
-
         
         // Church
         private Animator _churchNightTorchAnimator;
-
         
         // Tempest
         private Animator _tempestCanonAnimator;
@@ -96,7 +94,6 @@ namespace MonoBehavior.Managers
         
         // UI - Stats panel
         private StatsUI _statsUI;
-         
         
         #endregion
 
@@ -554,6 +551,15 @@ namespace MonoBehavior.Managers
         {
             GameManager.Instance._story.ObserveVariable ("irene_torch_is_on", 
                 (string varName, object newValue) => ChangeChurchNightLights(newValue));
+            
+            GameManager.Instance._story.ObserveVariable ("t_3_stained_glass_1_talk", 
+                (string varName, object newValue) => SetStainedGlassLight("1", newValue));
+            
+            GameManager.Instance._story.ObserveVariable ("t_3_stained_glass_2_talk", 
+                (string varName, object newValue) => SetStainedGlassLight("2", newValue));
+            
+            GameManager.Instance._story.ObserveVariable ("t_3_stained_glass_3_talk", 
+                (string varName, object newValue) => SetStainedGlassLight("3", newValue));
         }
 
         void ChangeChurchNightLights(object newValue)
@@ -561,6 +567,12 @@ namespace MonoBehavior.Managers
             _churchNightTorchAnimator.SetBool("lightOn", (bool) newValue);
         }
 
+        void SetStainedGlassLight(string indexText, object newValue)
+        {
+            if ((bool) newValue)
+                _setChurchNight.GetComponent<Animator>().SetTrigger("light"+indexText);
+        }
+        
         void SetChurchNightPropsOnStage(bool inOut) { }
         
         #endregion
@@ -1407,7 +1419,7 @@ namespace MonoBehavior.Managers
             {
                 //target = other.transform.position;
                 target = GameManager.Instance._gridScene.GetWorldPositon(other._coordsOnStatge);
-                Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Target: {target}");
+                //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Target: {target}");
             }
             else
             {
