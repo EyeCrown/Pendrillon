@@ -81,7 +81,7 @@ VAR b_boss_special_attack_power = 9
 SOUFFLEUR: Cette scène nous coûte une fortune en effets spéciaux à chaque spectacle... #playsound:VOX_Souffleur_fortuneeffetsspecias
 SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en terme de chorégraphie, matériel, main-d'oeuvre... #playsound:VOX_Souffleur_budget
 SOUFFLEUR: Sans parler des <shake>coûts d'entretien</shake> ! #playsound:VOX_Souffleur_coutentretien
-SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami ? #playsound:VOX_Souffleur_pleinlesyeux #battle:end
+SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami ? #playsound:VOX_Souffleur_pleinlesyeux
 - -> player_moovepool
 
 // Souffleur explain action points
