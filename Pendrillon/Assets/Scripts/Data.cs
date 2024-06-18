@@ -31,11 +31,11 @@ public static class Constants
     #region MovementSpeed
 
     public const string SlowName    = "slow";
-    public const float  SlowSpeed   = 2.0f;
+    public const float  SlowSpeed   = 3.0f;
     public const string NormalName  = "walk";
-    public const float  NormalSpeed = 4.0f;
+    public const float  NormalSpeed = 6.0f;
     public const string QuickName   = "run";
-    public const float  QuickSpeed  = 6.0f;
+    public const float  QuickSpeed  = 8.0f;
 
     #endregion
 
