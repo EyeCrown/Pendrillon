@@ -42,7 +42,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
         {sc(STRE, 20): -> protect_S | -> protect_F}
         ** (protect_S) PLAYER: Je braverai les dangers pour vous protéger ! #playsound:VOX_Player_braveraidangers
             PERSONNAGE MASQUÉ: Espérons que l'on n'en arrive pas là. #playsound:VOX_Naida_esperonsque
-        ** (protect_F) PLAYER: Euh.. Je.. Je vous défendrai ? #playsound:VOX_Player_euhjedefendrai
+        ** (protect_F) PLAYER: Euh... Je... Je vous défendrai ? #playsound:VOX_Player_euhjedefendrai
             PERSONNAGE MASQUÉ: Ne le prenez pas mal, mais... vous n'êtes pas très convaincant. #playsound:VOX_Naida_neleprenez
     * [On improvisera.] PLAYER: On improvisera, comme j'en ai l'habitude. #playsound:VOX_Player_onimprovisera
         PERSONNAGE MASQUÉ: Ce n'est pas la première fois que vous avez des ennuis avec la <b>Couronne</b>, n'est-ce pas ? #playsound:VOX_Naida_paspremierefois
@@ -162,7 +162,7 @@ MARCELLO: Il n'y a personne, cheffe. #playsound:VOX_Marcello_yapersonne
             SOUFFLEUR: SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe3
             SOUFFLEUR: En fouillant la caisse pleine de poisson pourri, l'odeur s'est incrustée à ton costume... #playsound:VOX_Souffleur_enfouillantpoisson
             SOUFFLEUR: Ce doit être pour ça que tu t'es fait repérer. #playsound:VOX_Souffleur_tureperer
-            SOUFFLEUR: Interagir avec le décors entraîne parfois des conséquences inattendues, l'ami ! #playsound:VOX_Souffleur_interagir
+            SOUFFLEUR: Interagir avec le décor entraîne parfois des conséquences inattendues, l'ami ! #playsound:VOX_Souffleur_interagir
     }
     -> player_stop_hiding
 
@@ -352,7 +352,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
 // Naida is arrested
 =arrest_naida
 #playsound:sounds_inside_the_crate
-CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans ! #playsound:VOX_Capucine_astuentenduquelquechoeabouge #playsound:Play_MUS_Story_SC_TripReturn_NaidaArrested
+CAPUCINE: As-tu entendu ? <b>Quelque chose</b> a bougé là-dedans ! #playsound:VOX_Capucine_astuentenduquelquechoeabouge #playsound:Play_MUS_Story_SC_TripReturn_NaidaArrested
 MARCELLO: Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang. #audience:laughter #playsound:VOX_Marcello_sansdouterat
 - CAPUCINE: Bloque-lui la route tandis que j'y jette un œil. #playsound:VOX_Capucine_bloqueluilaroute #audience:choc #look:Marcello:Player
 {
@@ -363,5 +363,5 @@ MARCELLO: Sans doute un rat. Cette tête de pipe prend aussi peu soin de son nav
 CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la. #playsound:VOX_Capucine_cestdonccela
 CAPUCINE: Allons-nous-en avec notre trouvaille. #playsound:VOX_Capucine_allonsnousen
 CAPUCINE: Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts... #playsound:VOX_Capucine_ilfinira1 #audience:debate
-CAPUCINE: Il finira sa triste vie au cachot, comme son amie. #playsound:VOX_Capucine_ilfinira2 #audience:ovation
+CAPUCINE: Il finira sa triste vie <b>au cachot</b>, comme son amie. #playsound:VOX_Capucine_ilfinira2 #audience:ovation
     -> barge.scene_3

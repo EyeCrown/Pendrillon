@@ -159,7 +159,7 @@ VAR t_4_give_guards_surname = false
 
 // Audience judgment system
 === function audience_judgement(pScore) ===
-    #trial
+    #playsound:Play_SFX_Story_JudgeBellFarTrial
     ~ t_audience_judgement += pScore
     {
         - t_audience_judgement <= 0:
@@ -179,23 +179,23 @@ VAR t_4_give_guards_surname = false
     {
         - t_arle_patience == 4:
             SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe9
-            SOUFFLEUR: Je ne devrais pas te dire ça, mais... Notre amie n'aime pas trop qu'on se moque d'elle sur scène. #playsound:VOX_Souffleur_semoquer
+            SOUFFLEUR: Je ne devrais pas te dire ça, mais... Notre amie n'aime pas trop qu'on <b>se moque d'elle</b> sur scène. #playsound:VOX_Souffleur_semoquer
             SOUFFLEUR: Elle dit que ça « l'empêche d'atteindre les sommets », tu piges ? #playsound:VOX_Souffleur_atteindresommets
-            SOUFFLEUR: Si tu continues, je ne serai pas étonné qu'elle sorte de son personnage. #playsound:VOX_Souffleur_continuessorte
+            SOUFFLEUR: Si tu continues, je ne serai pas étonné qu'elle <b>sorte de son personnage</b>. #playsound:VOX_Souffleur_continuessorte
             SOUFFLEUR: À bon entendeur, l'ami ! #playsound:VOX_Souffleur_abonentendeud
         - t_arle_patience == 2:
             SOUFFLEUR: Psssst... Hé, l'ami ! C'est encore moi ! #playsound:VOX_Souffleur_pssthe10
-            SOUFFLEUR: Je crois que tu es sur le point de la mettre hors d'elle, avec toutes tes moqueries... #playsound:VOX_Souffleur_jedroishorsdelle
+            SOUFFLEUR: Je crois que tu es sur le point de la <b>mettre hors d'elle</b>, avec toutes tes <b>moqueries</b>... #playsound:VOX_Souffleur_jedroishorsdelle
             SOUFFLEUR: Cela dit, le public semble apprécier... #playsound:VOX_Souffleur_lepublicaime
             SOUFFLEUR: Peut-être que le spectacle n'en serait que plus amusant ? À toi d'en juger, l'ami ! #playsound:VOX_Souffleur_peutetrespectacle
         - t_arle_patience <= 0:
             ARLE: Il suffit ! Assez de moqueries ! Ferme-la !! #audience:silent #playsound:VOX_Arle_suffitdemoqueries
             ARLE: Et vous, public « adoré », vous ne me méritez pas ! Cessez de rire ! #audience:debate #playsound:VOX_Arle_publicadorelahonte
             ARLE: Auriez-vous le millième de mon talent, vous seriez sur scène plutôt que de l'autre côté ! #audience:choc #playsound:VOX_Arle_milliemedemontalent
-            ARLE: Bande de ploucs ! Vous pensez qu'avoir payé votre ticket vous donne tous les droits ?! #audience:booing #playsound:VOX_Arle_bandedeploucs
-            ARLE: Hé ! Laissez-moi ! Laissez-moi j'ai dit ! #rope:Arle #box #wait:2 #audience:laughter #playsound:VOX_Arle_helaissemoijaidit
+            ARLE: <shake a=0.5><b>Bande de ploucs</b></shake> ! Vous pensez qu'avoir payé votre ticket vous donne <b>tous les droits</b> ?! #audience:booing #playsound:VOX_Arle_bandedeploucs
+            ARLE: Hé ! <b>Laissez-moi</b> ! <b><shake a=0.5>Laissez-moi</shake></b> j'ai dit ! #rope:Arle #box #wait:2 #audience:laughter #playsound:VOX_Arle_helaissemoijaidit
             SOUFFLEUR: Oula, oula, oula... #playsound:VOX_Souffleur_oulaoula #wait:1 
-            SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit la faire évacuer ! #playsound:VOX_Souffleur_entenfaispas
+            SOUFFLEUR: Ne t'en fais pas, l'ami : ce n'est pas la première fois qu'on doit <b>la faire évacuer</b> ! #playsound:VOX_Souffleur_entenfaispas
             SOUFFLEUR: Elle reviendra vite... Elle est accro au feu des projecteurs ! #playsound:VOX_Souffleur_accro
             SOUFFLEUR: Quoi qu'il en soit: <i> Show must go on</i>, l'ami ! #playsound:VOX_Souffleur_show
             ~ arle_leaves_the_stage = true
@@ -207,12 +207,12 @@ VAR t_4_give_guards_surname = false
     {
         - souffleur_speech_about_not_mocking_agath_done == false:
         SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe11
-        SOUFFLEUR: Je connais bien le public, et ton approche risque de faire des étincelles ! #playsound:VOX_Souffleur_jeconnaislepublic
-        SOUFFLEUR: Si tu veux avoir une chance de gagner ce procès, il va falloir tenir sa langue... #playsound:VOX_Souffleur_unechanceproces
-        SOUFFLEUR: Se moquer d'Agathe ne fonctionnera pas, car le public l'apprécie énormément... #playsound:VOX_Souffleur_agathe
-        SOUFFLEUR: On ne dirait pas comme ça, mais l'actrice qui l'incarne est un véritable monument ! #playsound:VOX_Souffleur_unmonument
+        SOUFFLEUR: Je connais bien le public, et ton approche risque de faire des <b>étincelles</b> ! #playsound:VOX_Souffleur_jeconnaislepublic
+        SOUFFLEUR: Si tu veux avoir une chance de gagner ce procès, il va falloir <b>tenir sa langue</b>... #playsound:VOX_Souffleur_unechanceproces
+        SOUFFLEUR: Se moquer d'Agathe ne fonctionnera pas, car <b>le public l'apprécie énormément</b>... #playsound:VOX_Souffleur_agathe
+        SOUFFLEUR: On ne dirait pas comme ça, mais l'actrice qui l'incarne est un <b>véritable monument</b> ! #playsound:VOX_Souffleur_unmonument
         SOUFFLEUR: Pour ne rien arranger, une bonne partie d'entre eux sont favorables aux enseignements d'Irène... #playsound:VOX_Souffleur_enseignementsirene
-        SOUFFLEUR: Prends ton mal en patience et laisse Agathe témoigner, elle se contentera de dire la stricte vérité. #playsound:VOX_Souffleur_agathe2
+        SOUFFLEUR: Prends ton mal en patience et laisse Agathe témoigner, elle se contentera de dire la <b>stricte vérité</b>. #playsound:VOX_Souffleur_agathe2
         SOUFFLEUR: Espérons que tu pourras t'en défendre une fois son témoignage terminé, entendu l'ami ? #playsound:VOX_Souffleur_temoignagetermien
     }
     ~ souffleur_speech_about_not_mocking_agath_done = true

@@ -24,9 +24,10 @@ VAR marcello_surname = "Marcellogre"
 #position:Marcello:9:9
 #position:Capucine:10:3
 // Audience reaction
-#anim:Player:sleep #look:Marcello:left #look:Capucine:right #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 
 // Start the scene
+- #anim:Player:sleep #look:Marcello:left #look:Capucine:right 
 MARCELLO: Et si on le réveillait avec une tape sur le museau, cheffe ?
 CAPUCINE: Cet abruti dort comme un <wiggle a=0.1>nourrisson</wiggle>... #playsound:VOX_Capucine_cetabrutidort
 PLAYER: Vous, ici ?! #anim:Player:wakeup #wait:2 #playsound:VOX_Player_vousiciQQ #playsound:Play_MUS_Story_SC_Eglise_6oclockWakeUp
@@ -34,8 +35,8 @@ CAPUCINE: Heureuse de constater que tu nous reconnais... #playsound:VOX_Capucine
 CAPUCINE: Remets-tu des noms sur nos visages, vermisseau ? #playsound:VOX_Capucine_remetstudesnoms
 SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe4
 SOUFFLEUR: Avec ces deux-là, pas besoin d'y aller mollo pour faire rire le public ! #playsound:VOX_Souffleur_ces2la
-SOUFFLEUR: Ils ont beau se disputer sur scène, sache qu'en dehors des planches, ils sont mari et femme ! #playsound:VOX_Souffleur_marietfemme
-SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils adorent être ridiculisés ! #playsound:VOX_Souffleur_pasmechants
+SOUFFLEUR: Ils ont beau se disputer sur scène, sache qu'en dehors des planches, ils sont <b>mari et femme</b> ! #playsound:VOX_Souffleur_marietfemme
+SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils <b>adorent</b> être ridiculisés ! #playsound:VOX_Souffleur_pasmechants
 - PLAYER: J'ai bien peur de vous reconnaître, en effet... vous êtes... #playsound:VOX_Player_bienpeurconnaitre
     * [Capucine la larbine...] PLAYER: <b>Capucine la <bounce a=0.05>larbine</bounce></b>... #audience:laughter #playsound:VOX_Player_lalarbine #anim:Capucine:shameful #playsound:Play_MUS_Story_SC_Eglise_ChildishNickname1 #trial
         ~ trial()
@@ -76,8 +77,8 @@ SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils adorent être ridiculis�
     * [(Au loin) Vous m'avez trahi...] PLAYER: Vous m'avez trahi. Je pensais pouvoir vous faire confiance... #playsound:VOX_Player_vousmaveztrahi #audience:debate
 - PLAYER: Approchez-vous... Contemplez le visage de celui que vous avez condamné... #look:Player:right #box #playsound:VOX_Player_approchezcontemplez #move:Agathe:8:13 #wait:3 #audience:choc
 AGATHE: Ce lieu saint a abrité davantage de sauvageons que vous n'en avez croisé dans toute votre vie, mon enfant... #look:Agathe:Player #playsound:Play_MUS_Story_SC_Eglise_AgathesBetrayal #playsound:VOX_Agathe_sauvageons
-AGATHE: Cependant aucun d'entre eux ne s'était rendu coupable d'un acte aussi grave que le vôtre... #audience:debate #anim:Agathe:contempt #anim:Player:ashamed #playsound:VOX_Agathe_aucuncoupable
-AGATHE: Lorsque j’ai appris qui vous cachiez dans votre navire... #audience:debate #playsound:VOX_Agathe_cachieznavire
+AGATHE: Cependant aucun d'entre eux ne s'était rendu coupable d'un acte <b>aussi grave</b> que le vôtre... #audience:debate #anim:Agathe:contempt #anim:Player:ashamed #playsound:VOX_Agathe_aucuncoupable
+AGATHE: Lorsque j’ai appris <b>qui vous cachiez dans votre navire... #audience:debate #playsound:VOX_Agathe_cachieznavire
 AGATHE: J’ai su qu’il était de mon devoir, non envers la <b>Couronne</b> mais la <b>Déesse</b> elle-même, de vous dénoncer. #look:Agathe:front #audience:choc #anim:Player:disappointed #anim:Capucine:laugh #playsound:VOX_Agathe_mondevoir #look:Player:front #look:Agathe:front
 {CAPUCINE}: Tout le monde t'abandonne à ton triste sort, marmot. #playsound:VOX_Capucine_toutlemondetabandonne
 {CAPUCINE}: Mais tu ne seras bientôt plus seul... Tu vas aller rejoindre ton affreuse amie, vermine ! #playsound:VOX_Capucine_maistuneserabientôtplusseul
