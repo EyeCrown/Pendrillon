@@ -101,7 +101,7 @@ LA POISCAILLE: ... #audience:booing
                 ~ naida_name_on_text = "la poiscaille"
                 ~ audience_judgement(-10)
 - SOUFFLEUR: Je sais ce que tu penses, l'ami... #playsound:VOX_Souffleur_jesaiscequetupenses
-SOUFFLEUR: La pièce prend des tournures particulièrement sombres... #playsound:VOX_Souffleur_lapieceprendtournuresombre
+SOUFFLEUR: La pièce prend des tournures <b>particulièrement sombres</b>... #playsound:VOX_Souffleur_lapieceprendtournuresombre
 SOUFFLEUR: Mais ainsi sont fait nos mythes, pas vrai ? #playsound:VOX_Souffleur_mythes
 SOUFFLEUR: Le moment risque d'être difficile pour le personnage de <b>Naïda</b>. Elle saura rester digne, ne t'en fais pas ! #playsound:VOX_Souffleur_difficilenaida
 SOUFFLEUR: Quand à toi, essaye de la défendre du mieux que tu le peux auprès du <b>Juge</b>, mais surtout du public ! #playsound:VOX_Souffleur_essaiededefendre
@@ -182,13 +182,13 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du <b>Déluge</
             PLAYER: Lorsque <b>Miraterre</b> sombra, certains de nos ancêtres furent sauvés du <b>Déluge</b>, sauvés par la <b>Déesse</b>... #audience:debate #playsound:VOX_Player_miraterresombra
             PLAYER: D'autres n'eurent pas cette chance... Fort heureusement, ils échappèrent à la noyade, eux aussi... #audience:debate #playsound:VOX_Player_dautrespascettechance
             PLAYER: Sauvés par le <shake a=0.5><b>Léviathan</b></shake>. #audience:choc #playsound:VOX_Player_sauvesparleleviathan
-            PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un même peuple. #audience:ovation #playsound:VOX_Player_deuxfacettesmemepiece
+            PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un <b>même peuple</b>. #audience:ovation #playsound:VOX_Player_deuxfacettesmemepiece
             ~ audience_judgement(20)
         ** (we_have_same_ancesters_F) PLAYER: <b>Votre Honneur</b>, nos ancêtres et ceux des <b>Sireines</b> sont les mêmes. #audience:choc #playsound:VOX_Player_memesancetres
             PLAYER: Lorsque <b>Miraterre</b> sombra, certains de nos ancêtres furent sauvés du <b>Déluge</b>, sauvés par la <b>Déesse</b>... #audience:debate #playsound:VOX_Player_miraterresombra
             PLAYER: D'autres n'eurent pas cette chance... Fort heureusement, ils échappèrent à la noyade, eux aussi... #audience:debate #playsound:VOX_Player_dautrespascettechance
             PLAYER: Sauvés par le <shake a=0.5><b>Léviathan</b></shake>. #audience:choc #playsound:VOX_Player_sauvesparleleviathan
-            PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un même peuple. #audience:booing #playsound:VOX_Player_deuxfacettesmemepiece
+            PLAYER: Les deux facettes d'une même pièce... Les deux destins d'un <b>même peuple</b>. #audience:booing #playsound:VOX_Player_deuxfacettesmemepiece
             ~ audience_judgement(-10)
     * [Nous pourrions nous unir. {t(CHAR, 0)}] // 70%
         {sc(CHAR, 0): -> we_could_unify_S | -> we_could_unify_F}
@@ -203,7 +203,7 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du <b>Déluge</
     * [Rester silencieux.] JUGE ERNEST: Vous préférez garder le silence... #playsound:VOX_Judge_preferezgardersilencepointpointp #audience:debate
         ~ audience_judgement(-10)
         -> are_sireine_doomed
-- JUGE ERNEST: Insinuez-vous que l'infâme créature... Le <shake a=0.5><b>Léviathan</b></shake> lui-même, aurait sauvé ces gens ? #playsound:VOX_Judge_insinuezcreatureinfame
+- JUGE ERNEST: Insinuez-vous que l'infâme créature... Le <shake a=0.5><b>Léviathan</b></shake> lui-même, aurait <b>sauvé</b> ces gens ? #playsound:VOX_Judge_insinuezcreatureinfame
     * [Ma présence en est la preuve. {t(CHAR, 10)}] // 80%
         {sc(CHAR, 10): -> i_am_the_proof_S | -> i_am_the_proof_F}
         ** (i_am_the_proof_S) PLAYER: <b>Votre Honneur</b>, ma présence en ces lieux devrait répondre à votre interrogation... #audience:debate #playsound:VOX_Player_mapresencerepond
@@ -256,8 +256,8 @@ JUGE ERNEST: Comment avez-vous pu tomber amoureux d'une engeance du <b>Déluge</
     * [Rester silencieux.] JUGE ERNEST: Vous préférez garder le silence ? Passons... #playsound:VOX_Judge_preferezgardersilence2 #audience:debate
         ~ audience_judgement(-10)
 - JUGE ERNEST: Ces paroles seront vos dernières, <b>Accusé</b>. #playsound:VOX_Judge_parolesdernieresaccuse
-JUGE ERNEST: Ainsi ce procès arrive à sa conclusion... #playsound:VOX_Judge_procesconclusiono
-JUGE ERNEST: Je demande désormais solennellement aux jurés de bien vouloir rendre leur verdict... #playsound:VOX_Judge_demandejuresverdict #audience:ovation
+JUGE ERNEST: Ainsi ce procès arrive à sa <b>conclusion</b>... #playsound:VOX_Judge_procesconclusiono
+JUGE ERNEST: Je demande désormais solennellement aux jurés de bien vouloir rendre leur <b>verdict</b>... #playsound:VOX_Judge_demandejuresverdict #audience:ovation
 - -> trial_verdict
 
 // Trial verdict
@@ -274,51 +274,51 @@ JUGE ERNEST: Je demande désormais solennellement aux jurés de bien vouloir ren
 // Player is innocent
 = player_is_innocent
 JUGE ERNEST: Mesdames et messieurs les jurés... #playsound:VOX_Judge_mesdamesmessieursjures
-JUGE ERNEST: Qui vote... <shake a=0.5>coupable</shake> ? #playsound:VOX_Judge_quicoupable #box #wait:1 #audience:applause
+JUGE ERNEST: Qui vote... <shake a=0.5><b>coupable</b></shake> ? #playsound:VOX_Judge_quicoupable #box #wait:1 #audience:applause
 JUGE ERNEST: Et maintenant... #playsound:VOX_Judge_etmaintenant #audience:debate
-JUGE ERNEST: Qui vote... <shake a=0.5>innocent</shake> ? #playsound:VOX_Judge_quiinnocent #box #wait:1.4 #audience:ovation #anim:Player:bow
+JUGE ERNEST: Qui vote... <shake a=0.5><b>innocent</b></shake> ? #playsound:VOX_Judge_quiinnocent #box #wait:1.4 #audience:ovation #anim:Player:bow
 ~ audience_judgement(100) // La balance penche complètement si innocent
 {
     - p_name == "Merlin":
-        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire <b>{p_name} Jehovah Banes</b>, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:Play_MUS_Story_SC_Trial_ResultRoll
     - p_name == "Ambroise":
-        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire <b>{p_name} Jehovah Banes</b>, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise #playsound:Play_MUS_Story_SC_Trial_ResultRoll
     - p_name == "Octave":
-        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire <b>{p_name} Jehovah Banes</b>, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:Play_MUS_Story_SC_Trial_ResultRoll
     - else:
-        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire <b>{p_name} Jehovah Banes</b>, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:Play_MUS_Story_SC_Trial_ResultRoll
 }
-JUGE ERNEST: <shake a=0.5><b>INNOCENT</b></shake> !!! #playsound:Play_MUS_Story_SC_Trial_Innocent #playsound:VOX_Judge_INNOCENT #audience:ovation
-JUGE ERNEST: L'<b>Accusé</b>, ainsi que <b>Naïda la Sireine</b>, peuvent retrouver leur liberté. #playsound:VOX_Judge_accuseetnaidelibres #audience:ovation
+JUGE ERNEST: <shake a=0.5><b>INNOCENT</b></shake> !!! #playsound:Play_MUS_Story_SC_Trial_Innocent #playsound:VOX_Judge_INNOCENT #audience:ovation #anim:Judge:bell
+JUGE ERNEST: L'<b>Accusé</b>, ainsi que <b>Naïda la Sireine</b>, peuvent retrouver leur liberté. #playsound:VOX_Judge_accuseetnaidelibres #audience:ovation #anim:Judge:bell
 - -> naida_speech
 
 // Player is guilty
 = player_is_guilty
 JUGE ERNEST: Mesdames et messieurs les jurés... #playsound:VOX_Judge_mesdamesmauvais
-JUGE ERNEST: Qui vote... <shake a=0.5>innocent</shake> ? #playsound:VOX_Judge_quivotemauvaisinnocent #box #wait:1 #audience:applause
+JUGE ERNEST: Qui vote... <shake a=0.5><b>innocent</b></shake> ? #playsound:VOX_Judge_quivotemauvaisinnocent #box #wait:1 #audience:applause
 JUGE ERNEST: Et maintenant... #playsound:VOX_Judge_etmaintenantmauvais #audience:debate
-JUGE ERNEST: Qui vote... <shake a=0.5>coupable</shake> ? #playsound:VOX_Judge_quicoupablemauvais #box #wait:1.4 #audience:ovation #anim:Player:bow
+JUGE ERNEST: Qui vote... <shake a=0.5><b>coupable</b></shake> ? #playsound:VOX_Judge_quicoupablemauvais #box #wait:1.4 #audience:ovation #anim:Player:bow
 {
     - p_name == "Merlin":
-        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire <b>{p_name} Jehovah Banes</b>, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisMerlin #playsound:Play_MUS_Story_SC_Trial_ResultRoll
     - p_name == "Ambroise":
-        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire <b>{p_name} Jehovah Banes</b>, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisAmbroise #playsound:Play_MUS_Story_SC_Trial_ResultRoll
     - p_name == "Octave":
-        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:Play_MUS_Story_SC_Trial_ResultRoll
+        JUGE ERNEST: Ainsi le verdict des jurés est-il prononcé : le <b>Juge</b> déclare solennellement Messire <b>{p_name} Jehovah Banes</b>, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé... #playsound:VOX_Judge_ainsiverdictmauvaisOctave #playsound:Play_MUS_Story_SC_Trial_ResultRoll
 }
-- JUGE ERNEST: <shake a=0.5><b>COUPABLE</b></shake> !!! #playsound:Play_MUS_Story_SC_Trial_Coupable #playsound:VOX_Judge_COUPABLE #audience:ovation
+- JUGE ERNEST: <shake a=0.5><b>COUPABLE</b></shake> !!! #playsound:Play_MUS_Story_SC_Trial_Coupable #playsound:VOX_Judge_COUPABLE #audience:ovation #anim:Judge:bell
 ~ audience_judgement(-100) // La balance penche complètement si coupable
-JUGE ERNEST: Coulez-le, ainsi que <b>l'affreuse Sireine</b>, où la <b>Déesse</b> ne saurait le trouver... #playsound:VOX_Judge_coulezle #audience:ovation
-JUGE ERNEST: ... Au fond des océans ! #playsound:VOX_Judge_aufonddesoceans #audience:ovation
+JUGE ERNEST: Coulez-le, ainsi que <b>l'affreuse Sireine</b>, où la <b>Déesse</b> ne saurait le trouver... #playsound:VOX_Judge_coulezle #audience:ovation 
+JUGE ERNEST: ... Au fond des océans ! #playsound:VOX_Judge_aufonddesoceans #audience:ovation #anim:Judge:bell
 - -> naida_speech
 
 = naida_speech
 NAÏDA: Avant cela, si vous le permettez... #audience:choc #playsound:VOX_Naida_avantcelasi #playsound:Play_MUS_Story_SC_Trial_NaidaSpeech
 NAÏDA: Je voudrais dire quelques mots. #audience:debate #playsound:VOX_Naida_jevoudraisdiremo
-NAÏDA: Je resterai digne, et ferai montre de respect, car j'ai souffert de ne pas l'avoir obtenu de votre part à tous... #audience:silent #playsound:VOX_Naida_resteraidigne
+NAÏDA: Je resterai digne, et ferai montre de respect, car j'ai souffert de ne pas l'avoir obtenu de votre part à tous... #audience:silent #playsound:VOX_Naida_resteraidigne #audience:empathy
 NAÏDA: Que nos ancêtres aient été ou non des semblables, des frères... cela, pour moi, ne change rien. #audience:applause #playsound:VOX_Naida_quenos
 NAÏDA: Je voudrais simplement dire à quel point il est étrange, pour une créature telle que moi... #playsound:VOX_Naida_jevoudraissimplement
-NAÏDA: Une pauvre <b>Sireine</b>... Une poiscaille... #playsound:VOX_Naida_unepauvresireine
+NAÏDA: Une pauvre <b>Sireine</b>... Une poiscaille... #playsound:VOX_Naida_unepauvresireine #audience:empathy
 NAÏDA: Combien il est étrange de constater que vous autres, humains, ayez donné à ce système, le nom de « Justice ». #audience:debate #playsound:VOX_Naida_combienilestetrange
 {
     - verdict_is_innocent: NAÏDA: Aujourd'hui, elle nous est favorable...  L'aurait-elle été hier ? #audience:debate #playsound:VOX_Naida_aujourdhuifavorable
@@ -326,16 +326,16 @@ NAÏDA: Combien il est étrange de constater que vous autres, humains, ayez donn
 }
 {
     - p_name == "Merlin":
-        NAÏDA: Je remercie Merlin de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause #playsound:VOX_Naida_remercieMerlin
+        NAÏDA: Je remercie <b>Merlin</b> de s'être battu pour qu'on me nomma bien, par <b>mon nom</b>. #audience:applause #playsound:VOX_Naida_remercieMerlin
     - p_name == "Ambroise":
-        NAÏDA: Je remercie Ambroise de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause #playsound:VOX_Naida_remercieAmbroise
+        NAÏDA: Je remercie <b>Ambroise</b> de s'être battu pour qu'on me nomma bien, par <b>mon nom</b>. #audience:applause #playsound:VOX_Naida_remercieAmbroise
     - p_name == "Octave":
-        NAÏDA: Je remercie Octave de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause #playsound:VOX_Naida_remercieOctave
+        NAÏDA: Je remercie <b>Octave</b> de s'être battu pour qu'on me nomma bien, par <b>mon nom</b>. #audience:applause #playsound:VOX_Naida_remercieOctave
     - else:
-        NAÏDA: Je remercie Merlin de s'être battu pour qu'on me nomma bien, par mon nom. #audience:applause #playsound:VOX_Naida_remercieMerlin
+        NAÏDA: Je remercie <b>Merlin</b> de s'être battu pour qu'on me nomma bien, par <b>mon nom</b>. #audience:applause #playsound:VOX_Naida_remercieMerlin
 }
-- NAÏDA: Car les noms, voyez-vous, sont le cœur battant de toute chose. Les noms sont importants. #audience:applause #playsound:VOX_Naida_carlesnoms
+- NAÏDA: Car <b>les noms</b>, voyez-vous, sont le <b>cœur battant</b> de toute chose. Les noms sont <b>importants</b>. #audience:applause #playsound:VOX_Naida_carlesnoms
 NAÏDA: Ainsi il m'apparaît, pour conclure notre histoire, qu'en donnant à un système partial et imparfait, le nom même d'une vertu... #audience:silent #playsound:VOX_Naida_ainsiilmapparait
-NAÏDA: En lui donnant le nom de « Justice »... #audience:debate #playsound:VOX_Naida_enluidonnantjustice
-NAÏDA: Vous autres humains ayez commis une erreur... cruelle. #anim:Naida:bow #box #audience:ovation #playsound:VOX_Naida_vousautreshumains #curtains:close #wait:10 #audience:ovation
+NAÏDA: En lui donnant le nom de <b>« Justice »</b>... #audience:debate #playsound:VOX_Naida_enluidonnantjustice
+NAÏDA: Vous autres humains ayez commis une erreur... <shake a=0.5><b>cruelle</b></shake>. #anim:Naida:bow #box #audience:ovation #playsound:VOX_Naida_vousautreshumains #curtains:close #wait:10 #audience:ovation
 - -> cast_salutation

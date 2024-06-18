@@ -12,7 +12,7 @@ VAR irene_torch_is_on = false
 = start
 // Define the actors
 #actor:Player:PLAYER
-#actor:Agathe:UNE VOIX:PRÊTRESSE AGATHE:AGATHE
+#actor:Agathe:UNE VOIX:PRÊTRESSE AGATHE:AGATHE:PRÊTRESSE
 // Set the location
 #set:church_night
 // Set the actor's positions
@@ -93,10 +93,10 @@ VAR irene_torch_is_on = false
         AGATHE: Cette statue représente <b>Irène</b> guidant l'humanité vers la terre promise. Après des nuits entières à veiller sur le pont du bateau... #playsound:VOX_Agathe_cettestatuereprésente
         AGATHE: ... <b>Irène</b> fut découverte un matin, transfigurée en figure de proue. #playsound:VOX_Agathe_irenefutdecouverte
     * [Parlez-moi d'elle.] PLAYER: Parlez-moi d'<b>Irène</b>. Qu'aurait-elle fait à ma place ?
-        AGATHE: Plutôt que de me demander à moi... Peut-être pourriez-vous vous adresser à Elle ? #playsound:VOX_Agathe_plutotquedemanderamoi
+        AGATHE: Plutôt que de me demander à moi... Peut-être pourriez-vous vous adresser à <b>Elle</b> ? #playsound:VOX_Agathe_plutotquedemanderamoi
 - AGATHE: Voyez-vous la lampe qui se tient dans sa main ? Faites-en briller la flamme, si vous souhaitez prier la <b>Déesse</b>. #playsound:VOX_Agathe_lalampequitientdanssamain
     * [Allumer la lampe d'Irène.]
-        AGATHE: Désormais que sa flamme berce ces lieux, n'hésitez plus : parlez-lui. #move:Player:8:3 #look:player:left #playsound:Play_SFX_Story_SC_Eglise_LightIreneLamp #playsound:Play_MUS_Story_SC_Eglise_LightOn #anim_event:light_on_irene_lamp #trial #playsound:VOX_Agathe_saflamebercesesyeux
+        AGATHE: Désormais que sa flamme berce ces lieux, n'hésitez plus : parlez-lui. #move:Player:8:3 #look:player:left #playsound:Play_SFX_Story_SC_Eglise_LightIreneLamp #playsound:Play_MUS_Story_SC_Eglise_LightOn #anim_event:light_on_irene_lamp #trial #audience:ovation #playsound:VOX_Agathe_saflamebercesesyeux
         ~ trial()
         ~ t_3_light_on_irene_torch = true
         ** [Se confesser.] PLAYER: J'ai ramené de mon voyage... #playsound:VOX_Player_jairamenevoyage
@@ -131,7 +131,7 @@ VAR irene_torch_is_on = false
 * {t_3_stained_glass_2_talk == false} [À propos du vitrail d'Irène regardant l'océan.] PLAYER: <b>Irène</b>, près du phare, contemplant l'océan. Je me demande quelles pensées la traversaient. #move:player:8:9 #look:Player:back #playsound:VOX_Player_irenepresduphare
     ~ t_3_stained_glass_2_talk = true
     -> irene_next_to_the_lighthouse
-* {t_3_stained_glass_3_talk == false} [À propos du vitrail de l'homme écartelé sur sa roue.] PLAYER: L'homme attaché à la roue... c'est <shake a=0.5><b>Lui</b></shake> n'est-ce pas ? #move:player:8:13 #look:Player:back #playsound:VOX_Player_lhommeattachealaroue
+* {t_3_stained_glass_3_talk == false} [À propos du vitrail de l'homme écartelé sur sa roue.] PLAYER: L'homme attaché à la roue... c'est <fade a=0.5><shake a=0.5><b>Lui</b></shake></fade> n'est-ce pas ? #move:player:8:13 #look:Player:back #playsound:VOX_Player_lhommeattachealaroue
     ~ t_3_stained_glass_3_talk = true
     -> man_tied_to_a_wheel
 + {t_3_stained_glass_1_talk or t_3_stained_glass_2_talk or t_3_stained_glass_3_talk} [(Conclure) Passer la nuit.] PLAYER: J'aimerais me reposer, prêtresse. #playsound:VOX_Player_jaimeraismereposer
@@ -192,38 +192,38 @@ AGATHE: En plein affrontement avec les vagues furieuses... Ils entendirent des p
 AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du nom de...
 - (ernest)
     * [... Eugène, sans nul doute.] PLAYER: Vous parlez sans l'ombre d'un doute du célèbre Eugène.
-        AGATHE: Je n'ai aucune idée de qui donc est cet Eugène. L'homme que je mentionne n'est autre qu'Ernest.
-    * [... Ernest, cela va sans dire.] PLAYER: Vous faites sans doute allusion au pieu Ernest.
+        AGATHE: Je n'ai aucune idée de qui donc est cet Eugène. L'homme que je mentionne n'est autre qu'<b>Ernest</b>.
+    * [... Ernest, cela va sans dire.] PLAYER: Vous faites sans doute allusion au pieu <b>Ernest</b>.
         AGATHE: La <b>Déesse</b> le bénisse, entre tous les hommes.
     * [(Avec certitude) Je connais son nom. {t(CHAR, -20)}] // 30%
         {sc(CHAR, -20): -> player_knows_ernest_S | -> player_knows_ernest_F}
-        ** (player_knows_ernest_S) PLAYER: Vous faites sans doute allusion au pieu Ernest.
+        ** (player_knows_ernest_S) PLAYER: Vous faites sans doute allusion au pieu <b>Ernest</b>.
             AGATHE: Absolument
-        ** (player_knows_ernest_F) PLAYER: Vous parlez sans l'ombre d'un doute du célèbre Edgar.
-            AGATHE: Edgar, vous dites ?
-            *** [Edgar le Traquenard.] PLAYER: Edgar le Traquenard, bien sûr ! On raconte qu'il est capable de détrousser mille hommes par nuit ! #trial
+        ** (player_knows_ernest_F) PLAYER: Vous parlez sans l'ombre d'un doute du célèbre <b>Edgar</b>. #audience:debate
+            AGATHE: <b>Edgar</b>, vous dites ?
+            *** [Edgar le Traquenard.] PLAYER: <b><wiggle a=0.1>Edgar le Traquenard</wiggle></b>, bien sûr ! On raconte qu'il est capable de détrousser mille hommes par nuit ! #trial #audience:hush
                 ~ trial()
                 ~ t_3_rant_about_edgar_the_traquenard = true
             --- AGATHE: Je vous demande pardon, mon enfant ?
-                PLAYER: Nul ne devrait tourner au croisement d'une ruelle sans retenir un frisson de terreur pour <wiggle a=0.1>Edgar le Traquenard</wiggle>. #anim:Player:stressed
-                AGATHE: ...
-                PLAYER: <wiggle a=0.1>(Les yeux fous)</wiggle> Il nous attend peut-être, <fade a=0.5>caché</fade> de l'autre côté d'une ruelle, prêt à nous suriner !
+                PLAYER: Nul ne devrait tourner au croisement d'une ruelle sans retenir un frisson de terreur pour <b><wiggle a=0.1>Edgar le Traquenard</wiggle></b>. #anim:Player:stressed #audience:laughter
+                AGATHE: ... #audience:debate
+                PLAYER: <wiggle a=0.1>(Les yeux fous)</wiggle> Il nous attend peut-être, <fade a=0.5>caché</fade> de l'autre côté d'une ruelle, prêt à nous suriner ! #audience:choc
                 AGATHE: ... Euh...
-                AGATHE: L'homme auquel je faisais en réalité allusion est Ernest, la <b>Déesse</b> le bénisse.
-- AGATHE: Ernest, le gardien du phare.
+                AGATHE: L'homme auquel je faisais en réalité allusion est <b>Ernest</b>, la <b>Déesse</b> le bénisse. #audience:applause
+- AGATHE: <b>Ernest</b>, le gardien du phare.
     * [Qu'a-t-il donc fait ?] PLAYER: Qu'a-t-il fait pour les aider ?
-        AGATHE: Cette nuit-là, Ernest dormait dans son phare, usé par une journée de labeur.
-        AGATHE: Cependant, au plus profond de son sommeil, il entendit une voix...
-    * [Qui est-il ?] PLAYER: Nul n'ignore le nom d'Ernest, mais qui est-il vraiment ?
+        AGATHE: Cette nuit-là, <b>Ernest</b> dormait dans son phare, usé par une journée de labeur.
+        AGATHE: Cependant, au plus profond de son sommeil, il entendit une <wiggle a=0.1>voix</wiggle>...
+    * [Qui est-il ?] PLAYER: Nul n'ignore le nom d'<b>Ernest</b>, mais qui est-il vraiment ?
         AGATHE: Un brave homme, vivant à l'écart des siens, dans son phare.
-        -- AGATHE: Cette nuit-là, au plus profond de son sommeil, il entendit une voix.
+        -- AGATHE: Cette nuit-là, au plus profond de son sommeil, il entendit une <wiggle a=0.1>voix</wiggle>.
     * [Écouter la suite.]
-        AGATHE: Cette nuit-là, Ernest dormait dans son phare, usé par une journée de labeur. 
-        AGATHE: Cependant, au plus profond de son sommeil, il entendit une voix...
+        AGATHE: Cette nuit-là, <b>Ernest</b> dormait dans son phare, usé par une journée de labeur. 
+        AGATHE: Cependant, au plus profond de son sommeil, il entendit une <wiggle a=0.1>voix</wiggle>...
 - AGATHE: Les pleurs d'un enfant.
 - AGATHE: Il gravit l'échelle qui menait au phare, et éclaira la nuit de sa divine lueur.
     * [Les pêcheurs purent la voir ?] PLAYER: Ainsi, les pêcheurs purent regagner le rivage ?
-    * [(Avec emphase) Louée soit la lumière !] PLAYER: Louée soit la lumière qui sauva les pêcheurs et l'enfant d'une mort certaine ! #anim:Player:pray
+    * [(Avec emphase) Louée soit la lumière !] PLAYER: <b>Louée soit la lumière</b> qui sauva les pêcheurs et l'enfant d'une mort certaine ! #anim:Player:pray
 - AGATHE: Après des efforts considérables, les braves hommes purent regagner la terre ferme sains et saufs.
     * [(Avec émotion) Magnifique.] PLAYER: S'il est des histoires qui émeuvent un marin, c'est bien celle d'un équipage qui regagne les siens. #trial #anim:Player:happy
         ~ trial()
@@ -232,7 +232,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
         ~ trial()
         ~ t_3_does_not_believe_in_lighthouse_sacred_light = true
         AGATHE: Cher enfant, vous semblez confondre le tonnage d'un mortel et l'étoffe d'une Sainte.
-- AGATHE: Savez-vous seulement ce que les pêcheurs firent pour remercier Ernest ?
+- AGATHE: Savez-vous seulement ce que les pêcheurs firent pour remercier <b>Ernest</b> ?
     * [Ils s'en prirent à lui.] PLAYER: Je connais les Hommes, et leur cœur impur. Ils s'en prirent à leur sauveur, n'est-ce pas ?
         AGATHE: Ces pêcheurs risquèrent leur vie pour sauver une pauvre âme de la noyade. Ils ne firent rien de cela, et confièrent plutôt l'enfant sacré à leur sauveur.
     * [Ils lui offrirent l'enfant.] PLAYER: Ils lui confièrent la garde de l'enfant sacré.
@@ -253,10 +253,10 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
 #playsound:Play_MUS_Story_SC_Eglise_StainedGlassLookingOcean
 - AGATHE: Savez-vous ce que disait l'homme qui éleva la <b>Déesse</b> comme sa fille ? #look:Player:front
     * [Qui pourrait le prétendre ?] PLAYER: J'aimerais bien connaître celui qui le prétend.
-        AGATHE: Les Écrits nous renseignent à ce sujet, mon enfant.
+        AGATHE: Les <b>Écrits</b> nous renseignent à ce sujet, mon enfant.
         ** [Que disent les Écrits ?] PLAYER: Et que disent-ils à ce sujet, prêtresse ?
             --- (irene_obsessed_with_ocean) AGATHE: Que la <b>Déesse Irène</b> passait ses journées à observer l'océan, comme fascinée par le mouvement des vagues. Ensorcelée.
-        ** [Encore faut-il y croire...] PLAYER: Ces Écrits soi-disant sacrés sont des mythes... #trial
+        ** [Encore faut-il y croire...] PLAYER: Ces <b>Écrits</b> soi-disant sacrés sont des mythes... #trial
             ~trial()
             ~ t_3_does_not_believe_the_sacred_writings = true
             AGATHE: Mon enfant, il est des récits qui doivent être entendus avec le cœur, non avec la raison.
@@ -265,7 +265,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
         -> irene_obsessed_with_ocean
 - AGATHE: Cela effrayait son père.
     * [Pourquoi donc ?] PLAYER: Pour quelle raison ?
-        -- (afraid_irene_swim_back) AGATHE: Il avait peur que sa fille adoptive, venue des Eaux y retourne.
+        -- (afraid_irene_swim_back) AGATHE: Il avait peur que sa fille adoptive, venue des <b>Eaux</b> y retourne.
     * [Un froussard.] PLAYER: Certains bravent des tempêtes... quand d'autres s'émeuvent de la houle.
         AGATHE: Vous faites fausse route. Ce n'est pas de l'océan dont le brave homme avait peur.
             -> afraid_irene_swim_back
@@ -273,13 +273,13 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
 - AGATHE: Comprenez-vous son trouble, mon enfant ?
     * [Un père a peur de perdre sa fille.] PLAYER: Un père effrayé à l'idée de voir sa fille disparaître. Rien de plus naturel.
     * [Certains disent qu'Irène y est née.] PLAYER: Certains prétendent que l'océan était son berceau...
-        AGATHE: Ce à quoi vous faites référence, en réalité, est un abominable blasphème.
-        AGATHE: Quiconque prétend qu'<b>Irène</b> est de cette engeance, périront noyés par le <shake a=0.5><b>Juste</b></shake>.
+        AGATHE: Ce à quoi vous faites référence, en réalité, est un <shake a=0.5><b>abominable blasphème</b></shake>.
+        AGATHE: Quiconque prétend qu'<b>Irène</b> est de cette engeance, périront noyés par le <fade a=0.5><shake a=0.5><b>Juste</b></shake></fade>.
         ** [Que l'océan les avale.] PLAYER: Que l'océan soit leur tombeau ! #audience:ovation
-        ** [Ont-ils vraiment tort ?] PLAYER: Pourtant, cela expliquerait certains détails des Écrits, ne pensez-vous pas ? #audience:debate #trial
+        ** [Ont-ils vraiment tort ?] PLAYER: Pourtant, cela expliquerait certains détails des <b>Écrits</b>, ne pensez-vous pas ? #audience:debate #trial
             ~ trial()
             ~ t_3_question_if_irene_is_a_sireine = true
-            AGATHE: Il est des prêtresses qui étudient les Écrits leur vie durant pour tenter d'en percer ses mystères... 
+            AGATHE: Il est des prêtresses qui étudient les <b>Écrits</b> leur vie durant pour tenter d'en percer ses mystères... 
             AGATHE: Préférez laisser ces zones d'ombres intactes...
             AGATHE: ... à l'idée de les éclairer d'une lumière impie.
 - AGATHE: Observez davantage le vitrail, mon enfant. Qu'y voyez-vous d'autre ?
@@ -289,7 +289,7 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
         AGATHE: Une tempête, vous dites ? Le <b>Déluge</b>, mon enfant.
     * [La lune est pleine.] PLAYER: La pleine lune...
         AGATHE: Une lune incandescente, annonçant le <b>Déluge</b>.
-- AGATHE: Connaissez-vous la comptine, mon enfant ?
+- AGATHE: Connaissez-vous la <b>comptine</b>, mon enfant ?
 - AGATHE: « Quand le ciel fut sombre, et la lune fut levée... <b>Irène</b>, Fille des eaux... #playsound:VOX_Agathe_comptine1
     * [... ouït le Déluge gronder.] PLAYER: ... ouït le <b>Déluge</b> gronder. ». 
     * [... vit le monde sombrer.] PLAYER: ... vit le monde sombrer. ».
@@ -327,10 +327,10 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
     * [... on y scella son sort.] PLAYER: ... on y scella son sort. ».
     * [... on déforma son corps.] PLAYER: ... on déforma son corps. ».
 - AGATHE: « Et par son sacrifice, il permit à sa fille, et à ceux qu'elle choisit... #playsound:VOX_Agathe_comptine10
-    * [... d'entamer leur exil.] PLAYER: ... d'entamer leur exil. ».
-    * [... d'éviter leur péril.] PLAYER: ... d'éviter leur péril. ».
-    * [... de fuire ces terres hostiles.] PLAYER: ... de fuire ces terres hostiles. ».
-- AGATHE: Ce que cet homme a fait pour sa fille... pour notre peuple tout entier...
+    * [... d'entamer leur exil.] PLAYER: ... d'entamer leur exil. ». #audience:ovation
+    * [... d'éviter leur péril.] PLAYER: ... d'éviter leur péril. ». #audience:ovation
+    * [... de fuire ces terres hostiles.] PLAYER: ... de fuire ces terres hostiles. ». #audience:ovation
+- AGATHE: Ce que cet homme a fait pour sa fille... pour notre peuple tout entier... #audience:ovation
     * [Louons son sacrifice.] PLAYER: Nous ne pouvons, nous autres mortels, que louer son sacrifice. #trial
         ~ trial()
         ~ t_3_show_judge_respect = true
@@ -349,24 +349,24 @@ AGATHE: Jamais ils n'auraient eu la moindre chance, sans l'aide d'un homme du no
 // Stained glass of a man tied to a wheel, about to be sentenced to death
 = man_tied_to_a_wheel
 #playsound:Play_MUS_Story_SC_Eglise_StainedGlassHim
-AGATHE: C'est <shake a=0.5><b>Lui</b></shake>, en effet. L'homme a souffert pour sauver sa fille, et notre peuple tout entier. #look:Player:front
-AGATHE: Quand les gardes de la <b>Couronne</b> vinrent arrêter le Messie, c'est lui qu'ils emmenèrent.
-    * [Nous lui devons tant.] PLAYER: Notre dette à son égard est immense. #trial
+AGATHE: C'est <fade a=0.5><shake a=0.5><b>Lui</b></shake></fade>, en effet. L'homme a souffert pour sauver sa fille, et notre peuple tout entier. #look:Player:front #audience:hush
+AGATHE: Quand les gardes de la <b>Couronne</b> vinrent arrêter le Messie, c'est lui qu'ils emmenèrent. #audience:hush
+    * [Nous lui devons tant.] PLAYER: Notre dette à son égard est immense. #trial #audience:debate
         ~ trial()
         ~ t_3_show_judge_respect = true
-    * [Irène l'a-t-elle su ?] PLAYER: Sait-on si <b>Irène</b> a su quel sacrifice son père avait fait ?
-        AGATHE: Elle l'apprit le soir même, mais il était trop tard. Les gardes s'en étaient allé depuis longtemps déjà.
+    * [Irène l'a-t-elle su ?] PLAYER: Sait-on si <b>Irène</b> a su quel sacrifice son père avait fait ? #audience:debate
+        AGATHE: Elle l'apprit le soir même, mais il était trop tard. Les gardes s'en étaient allé depuis longtemps déjà. #audience:empathy
     * [Devrions-nous le craindre ?] PLAYER: Serait-on avisé de le craindre, désormais ? Ou bien pensez-vous que la cloche ne sonne pas pour le juste ? #audience:debate
-        AGATHE: À tort ou à raison, tous les habitants de <b>Miraterre</b> le craignent...
-- AGATHE: Lorsque nos ancêtres revinrent à <b>Miraterre</b>, ils le trouvèrent enchaîné à sa roue. Vivant. Intact.
-AGATHE: Durant un siècle entier, il avait souffert sans jamais mourir.
-AGATHE: Pourquoi donc, d'après vous ?
+        AGATHE: À tort ou à raison, tous les habitants de <b>Miraterre</b> le craignent... #audience:hush
+- AGATHE: Lorsque nos ancêtres revinrent à <b>Miraterre</b>, ils le trouvèrent enchaîné à sa roue. Vivant. Intact. #audience:choc
+AGATHE: Durant un siècle entier, il avait souffert sans jamais mourir. #audience:empathy
+AGATHE: Pourquoi donc, d'après vous ? #audience:debate
     * [Le savez-vous vous-même ?] PLAYER: Le savez-vous vous-même, prêtresse ?
-        AGATHE: Je crois que quelque chose l'a empêché de mourir. Quelque chose de l'ordre du Divin, mon enfant...
+        AGATHE: Je crois que quelque chose l'a empêché de mourir. Quelque chose de l'ordre du Divin, mon enfant... #audience:hush
     * [Qui peut le dire ?] PLAYER: On ne peut que supputer...
-        AGATHE: Assurément. Je crois que quelque chose l'a empêché de mourir. Quelque chose de l'ordre du Divin, mon enfant...
+        AGATHE: Assurément. Je crois que quelque chose l'a empêché de mourir. Quelque chose de l'ordre du Divin, mon enfant... #audience:hush
     * [Pourquoi cette question ?] PLAYER: Pourquoi cette question, prêtresse ?
-        AGATHE: Je crois que quelque chose l'a empêché de mourir. Quelque chose de l'ordre du Divin, mon enfant...
+        AGATHE: Je crois que quelque chose l'a empêché de mourir. Quelque chose de l'ordre du Divin, mon enfant... #audience:hush
 - AGATHE: Prenez le temps d'observer à nouveau le vitrail... Voyez ses détails...
     * [Regarder de plus près. {t(STRE, 10)}] // 50
         {sc(STRE, 10): -> watch_judge_closer_S | -> watch_judge_closer_F}

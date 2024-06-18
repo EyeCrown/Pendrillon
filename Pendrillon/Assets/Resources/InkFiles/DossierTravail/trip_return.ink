@@ -352,7 +352,7 @@ MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marce
 // Naida is arrested
 =arrest_naida
 #playsound:sounds_inside_the_crate
-CAPUCINE: As-tu entendu ? Quelque chose a bougé là-dedans ! #playsound:VOX_Capucine_astuentenduquelquechoeabouge #playsound:Play_MUS_Story_SC_TripReturn_NaidaArrested
+CAPUCINE: As-tu entendu ? <b>Quelque chose</b> a bougé là-dedans ! #playsound:VOX_Capucine_astuentenduquelquechoeabouge #playsound:Play_MUS_Story_SC_TripReturn_NaidaArrested
 MARCELLO: Sans doute un rat. Cette tête de pipe prend aussi peu soin de son navire qu'un crapaud de son étang. #audience:laughter #playsound:VOX_Marcello_sansdouterat
 - CAPUCINE: Bloque-lui la route tandis que j'y jette un œil. #playsound:VOX_Capucine_bloqueluilaroute #audience:choc #look:Marcello:Player
 {
@@ -363,5 +363,5 @@ MARCELLO: Sans doute un rat. Cette tête de pipe prend aussi peu soin de son nav
 CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la. #playsound:VOX_Capucine_cestdonccela
 CAPUCINE: Allons-nous-en avec notre trouvaille. #playsound:VOX_Capucine_allonsnousen
 CAPUCINE: Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts... #playsound:VOX_Capucine_ilfinira1 #audience:debate
-CAPUCINE: Il finira sa triste vie au cachot, comme son amie. #playsound:VOX_Capucine_ilfinira2 #audience:ovation
+CAPUCINE: Il finira sa triste vie <b>au cachot</b>, comme son amie. #playsound:VOX_Capucine_ilfinira2 #audience:ovation
     -> barge.scene_3
