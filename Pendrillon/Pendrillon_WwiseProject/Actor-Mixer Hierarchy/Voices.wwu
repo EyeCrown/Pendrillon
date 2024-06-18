@@ -135,6 +135,13 @@
 									</ReferenceList>
 								</ActorMixer>
 								<ActorMixer Name="Leviathan" ID="{30B9E990-6F29-454C-883D-65EC70754522}" ShortID="941877923">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -521,113 +528,6 @@
 												</Sound>
 											</ChildrenList>
 										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="VOX_NPC_Leviathan_Scream" ID="{7875C7FE-E0E2-4857-AEB2-A1696495F582}" ShortID="699577403">
-											<PropertyList>
-												<Property Name="MakeUpGain" Type="Real64">
-													<ValueList>
-														<Value>-3</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="VOX_NPC_Leviathan_Scream_1" ID="{1CA6E26F-1AA3-40DC-BDE8-8C84976A8E3F}" ShortID="98782226">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_NPC_Leviathan_Scream_1" ID="{D062260F-34BC-488D-9F6F-10326EBC098C}">
-															<Language>SFX</Language>
-															<AudioFile>VOX_NPC_Leviathan_Scream_1.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="279408314"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_NPC_Leviathan_Scream_1" ID="{D062260F-34BC-488D-9F6F-10326EBC098C}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="VOX_NPC_Leviathan_Scream_2" ID="{9D2A8972-047A-4734-92F2-3E4045D68E31}" ShortID="47401684">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_NPC_Leviathan_Scream_2" ID="{D0C9BA7F-F80F-477F-87E3-813FE1F5CC48}">
-															<Language>SFX</Language>
-															<AudioFile>VOX_NPC_Leviathan_Scream_2.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="455376796"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_NPC_Leviathan_Scream_2" ID="{D0C9BA7F-F80F-477F-87E3-813FE1F5CC48}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="VOX_NPC_Leviathan_Scream_3" ID="{849CD5A8-572D-4494-8425-7FA140578960}" ShortID="649914388">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_NPC_Leviathan_Scream_3" ID="{3702BD1F-4D70-4355-BFB6-1320F3F0CA80}">
-															<Language>SFX</Language>
-															<AudioFile>VOX_NPC_Leviathan_Scream_3.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="198347337"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_NPC_Leviathan_Scream_3" ID="{3702BD1F-4D70-4355-BFB6-1320F3F0CA80}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="VOX_NPC_Leviathan_Scream_4" ID="{02D0BAED-FD43-4922-9C75-97A146C04A06}" ShortID="536439412">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_NPC_Leviathan_Scream_4" ID="{E801D0D0-E58A-48E0-9B83-3A513952F484}">
-															<Language>SFX</Language>
-															<AudioFile>VOX_NPC_Leviathan_Scream_4.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="338660528"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_NPC_Leviathan_Scream_4" ID="{E801D0D0-E58A-48E0-9B83-3A513952F484}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
 										<Sound Name="VOX_NPC_Leviathan_Map" ID="{70320253-4D50-4689-82A8-09457663D0E4}" ShortID="612806958">
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -650,6 +550,153 @@
 												<ActiveSource Name="VOX_NPC_Leviathan_Spawn" ID="{DD5B2049-B2E8-4335-A251-39483DC33C4B}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<RandomSequenceContainer Name="VOX_NPC_Levi_ScreamSequence" ID="{F9C6592F-4993-48AB-A6F4-C9124EB23644}" ShortID="639414718">
+											<PropertyList>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="VOX_NPC_Leviathan_Scream" ID="{7875C7FE-E0E2-4857-AEB2-A1696495F582}" ShortID="699577403">
+													<PropertyList>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="VOX_NPC_Leviathan_Scream_1" ID="{1CA6E26F-1AA3-40DC-BDE8-8C84976A8E3F}" ShortID="98782226">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_NPC_Leviathan_Scream_1" ID="{D062260F-34BC-488D-9F6F-10326EBC098C}">
+																	<Language>SFX</Language>
+																	<AudioFile>VOX_NPC_Leviathan_Scream_1.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="279408314"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_NPC_Leviathan_Scream_1" ID="{D062260F-34BC-488D-9F6F-10326EBC098C}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_NPC_Leviathan_Scream_2" ID="{9D2A8972-047A-4734-92F2-3E4045D68E31}" ShortID="47401684">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_NPC_Leviathan_Scream_2" ID="{D0C9BA7F-F80F-477F-87E3-813FE1F5CC48}">
+																	<Language>SFX</Language>
+																	<AudioFile>VOX_NPC_Leviathan_Scream_2.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="455376796"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_NPC_Leviathan_Scream_2" ID="{D0C9BA7F-F80F-477F-87E3-813FE1F5CC48}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_NPC_Leviathan_Scream_3" ID="{849CD5A8-572D-4494-8425-7FA140578960}" ShortID="649914388">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_NPC_Leviathan_Scream_3" ID="{3702BD1F-4D70-4355-BFB6-1320F3F0CA80}">
+																	<Language>SFX</Language>
+																	<AudioFile>VOX_NPC_Leviathan_Scream_3.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="198347337"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_NPC_Leviathan_Scream_3" ID="{3702BD1F-4D70-4355-BFB6-1320F3F0CA80}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_NPC_Leviathan_Scream_4" ID="{02D0BAED-FD43-4922-9C75-97A146C04A06}" ShortID="536439412">
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_NPC_Leviathan_Scream_4" ID="{E801D0D0-E58A-48E0-9B83-3A513952F484}">
+																	<Language>SFX</Language>
+																	<AudioFile>VOX_NPC_Leviathan_Scream_4.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="338660528"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_NPC_Leviathan_Scream_4" ID="{E801D0D0-E58A-48E0-9B83-3A513952F484}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+												<Sound Name="Silence" ID="{6670691B-A32E-44AE-A4FA-9A014390FBD4}" ShortID="996045333">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<SourcePlugin Name="Silence" ID="{9EAD3788-5A58-46F9-864E-83FD71B154D0}" ShortID="392278705" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+															<PropertyList>
+																<Property Name="Length" Type="Real32" Value="3.5"/>
+															</PropertyList>
+															<Language>SFX</Language>
+														</SourcePlugin>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Silence" ID="{9EAD3788-5A58-46F9-864E-83FD71B154D0}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="VOX_NPC_Leviathan_Scream" ID="{7875C7FE-E0E2-4857-AEB2-A1696495F582}"/>
+												<ItemRef Name="Silence" ID="{6670691B-A32E-44AE-A4FA-9A014390FBD4}"/>
+											</Playlist>
+										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="Marcello" ID="{32FA3DB8-4CD4-4E80-A97A-116A3436368F}" ShortID="127229914">
@@ -1056,218 +1103,6 @@
 													</ChildrenList>
 													<ActiveSourceList>
 														<ActiveSource Name="VOX_Player_Emotion_attack-003" ID="{0C9A18B8-FAC0-4BA2-A20A-9959E10FD0D2}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="Player_Effort" ID="{DD04CAFD-2467-410F-8B06-63D6B8D091F9}" ShortID="496569550">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="VOX_Player_Emotion_Effort Bruitage-001" ID="{2261CDE2-6029-4D7F-A807-7113AB5A1C54}" ShortID="689617190">
-													<PropertyList>
-														<Property Name="IsVoice" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-001" ID="{FA04CD6D-20F7-4452-93D3-F8061B9717C2}">
-															<Language>French(FR)</Language>
-															<AudioFile>VOX_Player_Emotion_Effort Bruitage-001.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="476216013"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-001" ID="{FA04CD6D-20F7-4452-93D3-F8061B9717C2}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="VOX_Player_Emotion_Effort Bruitage-002" ID="{A9CB39E8-14F6-4F04-A8AD-9C54300140FB}" ShortID="432382574">
-													<PropertyList>
-														<Property Name="IsVoice" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-002" ID="{36D5C029-CF7A-4590-A18E-B167C5511A9B}">
-															<Language>French(FR)</Language>
-															<AudioFile>VOX_Player_Emotion_Effort Bruitage-002.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="956624212"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-002" ID="{36D5C029-CF7A-4590-A18E-B167C5511A9B}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="VOX_Player_Emotion_Effort Bruitage-003" ID="{3C441030-32D9-4983-9605-24BE6A334BA7}" ShortID="226780307">
-													<PropertyList>
-														<Property Name="IsVoice" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-003" ID="{588D7D5E-C4CF-44B9-9B40-4D6184076187}">
-															<Language>French(FR)</Language>
-															<AudioFile>VOX_Player_Emotion_Effort Bruitage-003.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="169871929"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-003" ID="{588D7D5E-C4CF-44B9-9B40-4D6184076187}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="VOX_Player_Emotion_Effort Bruitage-004" ID="{28517561-F610-4E87-89A1-A37E8CDAEC9F}" ShortID="404722174">
-													<PropertyList>
-														<Property Name="IsVoice" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-004" ID="{3A94B1CF-72B1-452F-BB5A-23180757FF1B}">
-															<Language>French(FR)</Language>
-															<AudioFile>VOX_Player_Emotion_Effort Bruitage-004.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="389486527"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-004" ID="{3A94B1CF-72B1-452F-BB5A-23180757FF1B}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="VOX_Player_Emotion_Effort Bruitage-005" ID="{2E43E11B-58E5-4367-9944-6E16FA953D1B}" ShortID="893797491">
-													<PropertyList>
-														<Property Name="IsVoice" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-005" ID="{6CA6B08E-E477-45FF-B147-60F93BC05954}">
-															<Language>French(FR)</Language>
-															<AudioFile>VOX_Player_Emotion_Effort Bruitage-005.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="934694586"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-005" ID="{6CA6B08E-E477-45FF-B147-60F93BC05954}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="VOX_Player_Emotion_Effort Bruitage-006" ID="{58026ECF-C0F4-4455-9715-CA774CFE8248}" ShortID="785908009">
-													<PropertyList>
-														<Property Name="IsVoice" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-006" ID="{85B9B42A-6845-4EE3-9A92-EC1E4B201159}">
-															<Language>French(FR)</Language>
-															<AudioFile>VOX_Player_Emotion_Effort Bruitage-006.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="214611566"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-006" ID="{85B9B42A-6845-4EE3-9A92-EC1E4B201159}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="VOX_Player_Emotion_Effort Bruitage-007" ID="{69244B06-8262-4CFA-9DC4-F2655F189D39}" ShortID="745339035">
-													<PropertyList>
-														<Property Name="IsVoice" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-007" ID="{A60C1EB9-12ED-4926-AE44-28118DC47DF7}">
-															<Language>French(FR)</Language>
-															<AudioFile>VOX_Player_Emotion_Effort Bruitage-007.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="971997439"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-007" ID="{A60C1EB9-12ED-4926-AE44-28118DC47DF7}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="VOX_Player_Emotion_Effort Bruitage-008" ID="{95BC8CA5-8AF3-4C0C-AEB8-F0F6E7002D3F}" ShortID="958493011">
-													<PropertyList>
-														<Property Name="IsVoice" Type="bool" Value="True"/>
-													</PropertyList>
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-008" ID="{9D76B7F0-C690-4A1F-BA85-A544FE4767C9}">
-															<Language>French(FR)</Language>
-															<AudioFile>VOX_Player_Emotion_Effort Bruitage-008.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="845530259"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-008" ID="{9D76B7F0-C690-4A1F-BA85-A544FE4767C9}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
@@ -1831,6 +1666,242 @@
 													</ActiveSourceList>
 												</Sound>
 											</ChildrenList>
+										</RandomSequenceContainer>
+										<RandomSequenceContainer Name="Player_Climb" ID="{CD07ACD9-80AA-44ED-BED2-2FEAB115723B}" ShortID="794037928">
+											<PropertyList>
+												<Property Name="PlayMechanismInfiniteOrNumberOfLoops" Type="int16" Value="0"/>
+												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismLoopCount" Type="int32" Value="4"/>
+												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
+												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<RandomSequenceContainer Name="Player_Effort" ID="{DD04CAFD-2467-410F-8B06-63D6B8D091F9}" ShortID="496569550">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<Sound Name="VOX_Player_Emotion_Effort Bruitage-001" ID="{2261CDE2-6029-4D7F-A807-7113AB5A1C54}" ShortID="689617190">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-001" ID="{FA04CD6D-20F7-4452-93D3-F8061B9717C2}">
+																	<Language>French(FR)</Language>
+																	<AudioFile>VOX_Player_Emotion_Effort Bruitage-001.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="476216013"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-001" ID="{FA04CD6D-20F7-4452-93D3-F8061B9717C2}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_Player_Emotion_Effort Bruitage-002" ID="{A9CB39E8-14F6-4F04-A8AD-9C54300140FB}" ShortID="432382574">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-002" ID="{36D5C029-CF7A-4590-A18E-B167C5511A9B}">
+																	<Language>French(FR)</Language>
+																	<AudioFile>VOX_Player_Emotion_Effort Bruitage-002.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="956624212"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-002" ID="{36D5C029-CF7A-4590-A18E-B167C5511A9B}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_Player_Emotion_Effort Bruitage-003" ID="{3C441030-32D9-4983-9605-24BE6A334BA7}" ShortID="226780307">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-003" ID="{588D7D5E-C4CF-44B9-9B40-4D6184076187}">
+																	<Language>French(FR)</Language>
+																	<AudioFile>VOX_Player_Emotion_Effort Bruitage-003.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="169871929"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-003" ID="{588D7D5E-C4CF-44B9-9B40-4D6184076187}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_Player_Emotion_Effort Bruitage-004" ID="{28517561-F610-4E87-89A1-A37E8CDAEC9F}" ShortID="404722174">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-004" ID="{3A94B1CF-72B1-452F-BB5A-23180757FF1B}">
+																	<Language>French(FR)</Language>
+																	<AudioFile>VOX_Player_Emotion_Effort Bruitage-004.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="389486527"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-004" ID="{3A94B1CF-72B1-452F-BB5A-23180757FF1B}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_Player_Emotion_Effort Bruitage-005" ID="{2E43E11B-58E5-4367-9944-6E16FA953D1B}" ShortID="893797491">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-005" ID="{6CA6B08E-E477-45FF-B147-60F93BC05954}">
+																	<Language>French(FR)</Language>
+																	<AudioFile>VOX_Player_Emotion_Effort Bruitage-005.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="934694586"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-005" ID="{6CA6B08E-E477-45FF-B147-60F93BC05954}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_Player_Emotion_Effort Bruitage-006" ID="{58026ECF-C0F4-4455-9715-CA774CFE8248}" ShortID="785908009">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-006" ID="{85B9B42A-6845-4EE3-9A92-EC1E4B201159}">
+																	<Language>French(FR)</Language>
+																	<AudioFile>VOX_Player_Emotion_Effort Bruitage-006.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="214611566"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-006" ID="{85B9B42A-6845-4EE3-9A92-EC1E4B201159}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_Player_Emotion_Effort Bruitage-007" ID="{69244B06-8262-4CFA-9DC4-F2655F189D39}" ShortID="745339035">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-007" ID="{A60C1EB9-12ED-4926-AE44-28118DC47DF7}">
+																	<Language>French(FR)</Language>
+																	<AudioFile>VOX_Player_Emotion_Effort Bruitage-007.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="971997439"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-007" ID="{A60C1EB9-12ED-4926-AE44-28118DC47DF7}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+														<Sound Name="VOX_Player_Emotion_Effort Bruitage-008" ID="{95BC8CA5-8AF3-4C0C-AEB8-F0F6E7002D3F}" ShortID="958493011">
+															<PropertyList>
+																<Property Name="IsVoice" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Conversion">
+																	<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+																</Reference>
+																<Reference Name="OutputBus">
+																	<ObjectRef Name="Dry_Voices" ID="{3796B1C5-7053-4533-8F3C-D0F0C59C8CC6}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+																</Reference>
+															</ReferenceList>
+															<ChildrenList>
+																<AudioFileSource Name="VOX_Player_Emotion_Effort Bruitage-008" ID="{9D76B7F0-C690-4A1F-BA85-A544FE4767C9}">
+																	<Language>French(FR)</Language>
+																	<AudioFile>VOX_Player_Emotion_Effort Bruitage-008.wav</AudioFile>
+																	<MediaIDList>
+																		<MediaID ID="845530259"/>
+																	</MediaIDList>
+																</AudioFileSource>
+															</ChildrenList>
+															<ActiveSourceList>
+																<ActiveSource Name="VOX_Player_Emotion_Effort Bruitage-008" ID="{9D76B7F0-C690-4A1F-BA85-A544FE4767C9}" Platform="Linked"/>
+															</ActiveSourceList>
+														</Sound>
+													</ChildrenList>
+												</RandomSequenceContainer>
+											</ChildrenList>
+											<Playlist>
+												<ItemRef Name="Player_Effort" ID="{DD04CAFD-2467-410F-8B06-63D6B8D091F9}"/>
+											</Playlist>
 										</RandomSequenceContainer>
 									</ChildrenList>
 								</ActorMixer>

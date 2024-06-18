@@ -13,8 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CRATE_SEARCH = 1434421713U;
         static const AkUniqueID CROWDBOREDOMDOWN = 4288856718U;
         static const AkUniqueID GAMESTART = 4058101365U;
+        static const AkUniqueID GOLD_COINS = 368455772U;
         static const AkUniqueID MUTEMUSIC = 2316563647U;
         static const AkUniqueID PLAY_AMB_SC_BARQUE_AMBIANCE = 2018964231U;
         static const AkUniqueID PLAY_AMB_SC_CALE_AMBIANCE = 4168969102U;
@@ -88,6 +90,7 @@ namespace AK
         static const AkUniqueID PLAY_MUS_STORY_SC_TRIPRETURN_NAIDAARRESTED = 392594526U;
         static const AkUniqueID PLAY_MUS_STORY_SC_TRIPRETURN_NAIDASPEAK = 1806188604U;
         static const AkUniqueID PLAY_MUS_STORY_SC_TRIPRETURN_TOBATTLE = 1938067292U;
+        static const AkUniqueID PLAY_SFX_BOAT_HIT = 4226378662U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_BOUFFON_ATTACK1 = 3286192894U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_BOUFFON_HURT = 1514626058U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_ROYALGUARD_ATTACK1 = 37105197U;
@@ -123,6 +126,7 @@ namespace AK
         static const AkUniqueID PLAY_UI_HUD_CHOICEBUBBLE_APPEARS = 3153536941U;
         static const AkUniqueID PLAY_UI_HUD_CHOICEBUBBLE_BURST3APPEARS = 785419406U;
         static const AkUniqueID PLAY_UI_HUD_CHOICEBUBBLE_CLICK = 651765207U;
+        static const AkUniqueID PLAY_UI_HUD_LEVELUP = 4153154706U;
         static const AkUniqueID PLAY_UI_HUD_SKILLCHECK_FAILED = 635201916U;
         static const AkUniqueID PLAY_UI_HUD_SKILLCHECK_ROLL = 3067094186U;
         static const AkUniqueID PLAY_UI_HUD_SKILLCHECK_SUCCESS = 3116772656U;
@@ -220,12 +224,14 @@ namespace AK
         static const AkUniqueID PLAY_VOX_PASSEUR_EMOTION_TALK = 2310432332U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_ANGRY = 3286548331U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_CHUCHOTE = 547863859U;
+        static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_CLIMB = 584877227U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_DANCE = 2101223489U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_DISAPPOINTED = 4214572388U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_HAPPY = 507472470U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_HYPNOSE = 935268518U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_LAUGH = 3062709895U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_LOAD_BARREL = 2796476739U;
+        static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_MAST_ATTACK = 3879406338U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_NEUTRAL = 2821434313U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_NON = 1074244837U;
         static const AkUniqueID PLAY_VOX_PLAYER_EMOTION_POIRIER = 382798786U;
@@ -249,10 +255,12 @@ namespace AK
         static const AkUniqueID PLAY_VOX_SOUFFLEUR_EMOTION_STRESSED = 192490067U;
         static const AkUniqueID PLAY_VOX_SOUFFLEUR_EMOTION_SURPRISED = 740057819U;
         static const AkUniqueID PLAY_VOX_SOUFFLEUR_EMOTION_TALK = 134080830U;
+        static const AkUniqueID PLAY_VOX_VIGIE_SIVOULDITES = 1149071556U;
         static const AkUniqueID RESETEMOTIONDUCKING = 4191271398U;
         static const AkUniqueID SETALLVOLUMESTO75 = 902787362U;
         static const AkUniqueID SETHYPERACUSISOFF = 3797495750U;
         static const AkUniqueID SETHYPERACUSISON = 3794163176U;
+        static const AkUniqueID SOUNDS_INSIDE_THE_CRATE = 617660408U;
         static const AkUniqueID STOP_AMB_ALL = 1051898308U;
         static const AkUniqueID STOP_AMB_SC_BARQUE_AMBIANCE = 248367681U;
         static const AkUniqueID STOP_AMB_SC_CALE_AMBIANCE = 1268519836U;

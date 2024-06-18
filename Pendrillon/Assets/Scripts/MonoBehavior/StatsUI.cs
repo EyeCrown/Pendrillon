@@ -142,6 +142,7 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnPointerEnter(PointerEventData eventData)
     {
         _anim.SetBool("InOut", true);
+        AkSoundEngine.PostEvent("Play_UI_HUD_ChoiceBubble_Appears", gameObject);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -157,7 +158,8 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         var animName = "LvlUp"+"Strength";
         _anim.SetTrigger(animName);
-        
+        AkSoundEngine.PostEvent("Play_UI_HUD_LevelUp", gameObject);
+
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(animName))
             yield return null;
         
@@ -172,7 +174,8 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         var animName = "LvlUp"+"Dexterity";
         _anim.SetTrigger(animName);
-        
+        AkSoundEngine.PostEvent("Play_UI_HUD_LevelUp", gameObject);
+
         Debug.Log("Start lvl up");
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(animName))
             yield return null;
@@ -192,7 +195,8 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {
         var animName = "LvlUp"+"Charisma";
         _anim.SetTrigger(animName);
-        
+        AkSoundEngine.PostEvent("Play_UI_HUD_LevelUp", gameObject);
+
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(animName))
             yield return null;
         

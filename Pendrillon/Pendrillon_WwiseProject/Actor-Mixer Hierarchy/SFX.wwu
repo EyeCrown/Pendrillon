@@ -229,6 +229,11 @@
 															</ReferenceList>
 															<ChildrenList>
 																<AudioFileSource Name="SFX_NPC_Leviathan_AttackJaw_1" ID="{DDB84AD9-30BE-43CC-89A1-E873F9FABE89}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0988698869410569"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.447941120426829"/>
+																	</PropertyList>
 																	<Language>SFX</Language>
 																	<AudioFile>SFX_NPC_Leviathan_AttackJaw_1.wav</AudioFile>
 																	<MediaIDList>
@@ -251,6 +256,13 @@
 															</ReferenceList>
 															<ChildrenList>
 																<AudioFileSource Name="SFX_NPC_Leviathan_AttackJaw_2" ID="{BB52758F-87C5-4BAC-97A1-6979E2CC5645}">
+																	<PropertyList>
+																		<Property Name="FadeInDuration" Type="Real64" Value="0.0910411585365854"/>
+																		<Property Name="FadeOutDuration" Type="Real64" Value="0.064487487296748"/>
+																		<Property Name="LoopBegin" Type="Real64" Value="0.489346227134146"/>
+																		<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+																		<Property Name="TrimBegin" Type="Real64" Value="0.453309101880081"/>
+																	</PropertyList>
 																	<Language>SFX</Language>
 																	<AudioFile>SFX_NPC_Leviathan_AttackJaw_2.wav</AudioFile>
 																	<MediaIDList>
@@ -380,6 +392,120 @@
 										</Sound>
 									</ChildrenList>
 								</ActorMixer>
+								<RandomSequenceContainer Name="Boat_Hit" ID="{144A1638-EFAB-440C-9561-C6316ECEFDBF}" ShortID="788038283">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="BOAT_Hit-001" ID="{924670A5-E261-4A7A-8733-2C4D024AEE1F}" ShortID="163786496">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_SFX" ID="{9118350E-6F0A-4D09-AEE6-B4D0F7345336}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BOAT_Hit-001" ID="{609F31B9-16EF-46AD-976B-90FC6831A1ED}">
+													<Language>SFX</Language>
+													<AudioFile>BOAT_Hit-001.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="21502422"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BOAT_Hit-001" ID="{609F31B9-16EF-46AD-976B-90FC6831A1ED}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="BOAT_Hit-002" ID="{F99D4318-92BD-466B-946A-A7D4C122EC80}" ShortID="455730752">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_SFX" ID="{9118350E-6F0A-4D09-AEE6-B4D0F7345336}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BOAT_Hit-002" ID="{F5B1581D-A325-4730-9A7C-699F9F2FFF06}">
+													<Language>SFX</Language>
+													<AudioFile>BOAT_Hit-002.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="794213684"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BOAT_Hit-002" ID="{F5B1581D-A325-4730-9A7C-699F9F2FFF06}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="BOAT_Hit-003" ID="{C9ECCAB9-F9B2-4B8B-8B65-2286FDA49365}" ShortID="670499525">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_SFX" ID="{9118350E-6F0A-4D09-AEE6-B4D0F7345336}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="BOAT_Hit-003" ID="{CC5007C8-7B62-46BB-A480-9731280F17B2}">
+													<Language>SFX</Language>
+													<AudioFile>BOAT_Hit-003.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="181051294"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="BOAT_Hit-003" ID="{CC5007C8-7B62-46BB-A480-9731280F17B2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<Sound Name="BoatCrash" ID="{0C818AD4-BC90-45CD-BF61-8F4483E78B32}" ShortID="197829759">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BoatCrash" ID="{881C6A21-551B-418D-B0DD-42A77C4DD3BA}">
+											<Language>SFX</Language>
+											<AudioFile>BoatCrash.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="312525370"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="BoatCrash" ID="{881C6A21-551B-418D-B0DD-42A77C4DD3BA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="SFX_Story" ID="{62395B2B-C332-426F-95BD-C107D39793F4}" ShortID="767056309">
@@ -396,7 +522,7 @@
 									<PropertyList>
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
-												<Value>8</Value>
+												<Value>12</Value>
 											</ValueList>
 										</Property>
 										<Property Name="MaxSoundPerInstance" Type="int16">
@@ -450,6 +576,66 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="gold_coins" ID="{81EF1FE7-FE35-450E-BEFD-260247173F5B}" ShortID="312533611">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>9</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="gold_coins" ID="{4F395652-3C29-40D0-BEFA-4C1EA53BF7EA}">
+													<Language>SFX</Language>
+													<AudioFile>gold_coins.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="727148442"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="gold_coins" ID="{4F395652-3C29-40D0-BEFA-4C1EA53BF7EA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SearchCrate" ID="{577448D3-6BC8-48AC-8C82-1CD42748BAE1}" ShortID="438993799">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>8</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SearchCrate" ID="{A06DA64C-5EE7-4235-A1FF-D5E764E5A51B}">
+													<Language>SFX</Language>
+													<AudioFile>SearchCrate.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="520863620"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SearchCrate" ID="{A06DA64C-5EE7-4235-A1FF-D5E764E5A51B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="SC_Eglise" ID="{95D2A942-5F33-403B-BAE9-F9BDE0AA459F}" ShortID="293436799">
 									<ReferenceList>
@@ -463,6 +649,11 @@
 									<ChildrenList>
 										<RandomSequenceContainer Name="SFX_Story_SC_Eglise_Bed_Story_LampOn" ID="{28D441F6-5AF3-4205-BB64-93493EAA72E7}" ShortID="452109551">
 											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>8</Value>
+													</ValueList>
+												</Property>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="3"/>
 												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="0.5"/>
@@ -547,7 +738,7 @@
 											<PropertyList>
 												<Property Name="MakeUpGain" Type="Real64">
 													<ValueList>
-														<Value>3</Value>
+														<Value>9</Value>
 													</ValueList>
 												</Property>
 												<Property Name="RandomOrSequence" Type="int16" Value="0"/>
@@ -652,6 +843,37 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Reload" ID="{F1918ADF-D2B0-430F-B855-2623C2BCD4BF}" ShortID="510370422">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Reload" ID="{DFFDA62E-8A19-40D0-8284-D976504D073F}">
+													<Language>SFX</Language>
+													<AudioFile>Reload.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="259209422"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Reload" ID="{DFFDA62E-8A19-40D0-8284-D976504D073F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="SC_Port" ID="{BF993862-3024-4464-8514-72E1C68B4E18}" ShortID="144797092">
 									<ReferenceList>
