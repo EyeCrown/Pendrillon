@@ -54,8 +54,8 @@ SOUFFLEUR: Alors mets-y de l'émotion, l'ami ! #playsound:VOX_Souffleur_metsyemo
 - SOUFFLEUR: N'oublie pas d'incarner ton personnage, l'ami ! Souviens-toi : l'é-mo-tion ! #anim:Souffleur:angry #playsound:VOX_Souffleur_noubliepasincarner
 - SOUFFLEUR: « Un talent est une ressource précieuse, aussi, je l'utilise à bon escient. ». #playsound:VOX_Souffleur_untalentressource
     * [(Avec intensité) Un talent est une ressource précieuse...] PLAYER: Un talent est une ressource précieuse, aussi je l'utilise à bon escient. #wait:1 #audience:ovation #playsound:Play_MUS_Story_SC_Barque_AGoodActor #playsound:VOX_Player_talentressourceprecieuse
-- PASSEUR: Héhé, je vois, je vois... #anim:Passeur:laugh #playsound:VOX_Ferryman_hahajevois
-- PASSEUR: Tu sais, voyageur, ce n'est pas auprès de moi qu'il faudra se montrer éloquent. #playsound:VOX_Ferryman_detoutefacon #audience:ovation
+// - PASSEUR: Héhé, je vois... #anim:Passeur:laugh #playsound:VOX_Ferryman_hahajevois
+// - PASSEUR: Tu sais, voyageur, ce n'est pas auprès de moi qu'il faudra se montrer éloquent. #playsound:VOX_Ferryman_detoutefacon #audience:ovation
 - SOUFFLEUR: C'est exaltant, pas vrai ? #anim:Souffleur:happy #playsound:VOX_Souffleur_exaltant
 SOUFFLEUR: Le public réagit à tes répliques, mais aussi à ton jeu de scène ! Tu brûles littéralement les planches, l'ami ! #anim:Souffleur:happy #playsound:VOX_Souffleur_publicreagi
 SOUFFLEUR: Poursuivons : « Je ne suis pas un homme de mauvaise compagnie. ». #playsound:VOX_Souffleur_poursuivonsjene
@@ -70,7 +70,7 @@ SOUFFLEUR: Le respectable Ornicar a quitté la troupe. En assez mauvais termes, 
 SOUFFLEUR: Là où le bât blesse... c'est qu'il n'a jamais terminé d'écrire tes répliques. #playsound:VOX_Souffleur_lebatblesse
 SOUFFLEUR: On aurait dû te prévenir avant, navré l'ami... #playsound:VOX_Souffleur_navrelami
 SOUFFLEUR: À partir de maintenant... tu vas devoir improviser ! Bonne chance, l'ami ! #anim:Player:stressed #playsound:VOX_Souffleur_bonnechance
-#audience:booing
+#audience:debate
 - PASSEUR: Peut-être ne m'as-tu pas entendu. Je disais : qui es-tu ? #playsound:VOX_Ferryman_quiestu
     * [Je suis Merlin...] PLAYER: Je réponds au doux nom de <b>Merlin</b>... #anim:Player:bow #playsound:VOX_Player_Merlin #playsound:Play_MUS_Story_SC_Barque_ANewName
         ~ p_name = "Merlin"
@@ -117,13 +117,13 @@ PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rend
 // Start the scene
 - PASSEUR: ... #playsound:Play_MUS_Story_SC_Barque_AfterMeeting
 PASSEUR: Dis-moi, voyageur : pourquoi avoir accepté une mission si périlleuse ? #anim:Passeur:question #playsound:VOX_Ferryman_pourquoimission
-    * [Pour la fortune !] PLAYER: Pour la fortune, évidemment ! #anim:Player:gloire #playsound:VOX_Player_pourlafortune #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
-    * [Pour la gloire !] PLAYER: Pour la gloire, cela va sans dire ! #anim:Player:gloire #playsound:VOX_Player_pourlagloire #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
-    * [Pour l'aventure !] PLAYER: Pour l'aventure bien entendu ! #anim:Player:gloire #playsound:VOX_Player_pourlaventure #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward
+    * [Pour la fortune !] PLAYER: Pour la fortune, évidemment ! #anim:Player:gloire #playsound:VOX_Player_pourlafortune #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward #audience:ovation
+    * [Pour la gloire !] PLAYER: Pour la gloire, cela va sans dire ! #anim:Player:gloire #playsound:VOX_Player_pourlagloire #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward #audience:ovation
+    * [Pour l'aventure !] PLAYER: Pour l'aventure bien entendu ! #anim:Player:gloire #playsound:VOX_Player_pourlaventure #light:Player #playsound:Play_MUS_Story_SC_Barque_AFairReward #audience:ovation
 - #audience:applause
 - PASSEUR: Tout de même... Te confronter à une créature mythique telle que le <shake a=0.5><b>Léviathan</b></shake>... #playsound:VOX_Ferryman_toutdememe
 PLAYER: À dire vrai...
-    * [Je ne crois pas au Léviathan.] PLAYER: Je ne crois pas à ces histoires à dormir debout... 
+    * [Je ne crois pas au Léviathan.] PLAYER: Je ne crois pas à ces histoires à dormir debout... #audience:debate
         PLAYER: Je prévoyais de faire le voyage, prétendre avoir tué le monstre et retourner à bon port. #audience:laughter
         PASSEUR: Tu as pourtant promis de ramener le cœur de la bête. #playsound:VOX_Ferryman_coeurbete
             ** [J'avais un plan.] PLAYER: Personne n'a jamais vu le <shake a=0.5><b>Léviathan</b></shake> de près : un cœur de baleine aurait suffi à faire illusion... #audience:laughter
@@ -135,16 +135,16 @@ PLAYER: À dire vrai...
 - PASSEUR: As-tu trouvé le monstre à l'endroit indiqué par la carte ? #playsound:VOX_Ferryman_etqueensuite
     * [(Mentir) J'ai tué le monstre.] PLAYER: J'ai trouvé le monstre à l'endroit indiqué par la carte, et je l'ai tué, avec l'aide de mon équipage. Quelle bataille avons-nous livrée ! #anim:Player:happy
     * [(Éluder la question) Rien...] PLAYER: Je me suis rendu sur place, je n'ai trouvé aucune créature, bien entendu... et je suis rentré. Fin de l'histoire.
-- PASSEUR: Pourquoi ne pas me dire ce qu'il s'est réellement passé ? Ton âme s'en verra peut-être allégée... #playsound:VOX_Ferryman_pourquoidireverite
+- PASSEUR: Pourquoi ne pas me dire ce qu'il s'est <i>réellement</i> passé ? Ton âme s'en verra peut-être allégée... #playsound:VOX_Ferryman_pourquoidireverite
 PLAYER: Bien, bien... Si tu insistes, <b>Passeur</b>. #playsound:VOX_Player_bienbiensituinsistes #map:down
 PLAYER: Notre voyage dura... #playsound:VOX_Player_notrevoyagedura
     * [Près d'une année.] PLAYER: ... près d'une année, en tout. #map:departure #playsound:VOX_Player_presduneanne
     * [Bien trop longtemps.] PLAYER: ... beaucoup trop longtemps pour être raconté. #map:Travel:departure #playsound:VOX_Player_beaucouptroplongtemps
-- PLAYER: Je garderai <b>secret</b> ce qu'il se passa lorsque nous atteignîmes le repère du <shake a=0.5><b>Léviathan</b></shake>.
+- PLAYER: Je garderai <fade a=0.5><b>secret</b></fade> ce qu'il se passa lorsque nous atteignîmes le repère du <shake a=0.5><b>Léviathan</b></shake>.
 PLAYER: Après moult péripéties, nous revînmes à <b>Miraterre</b>... #playsound:VOX_Player_apresmoultper #map:arrival
     * [Plus chargés que prévu.] PLAYER: ... plus chargés que prévu, disons. #playsound:VOX_Player_pluscharges #playsound:Play_MUS_Story_SC_Barque_ANewFriend
     * [Plus nombreux qu'à l'aller] PLAYER: ... plus nombreux qu'à l'aller, pour ainsi dire. #playsound:VOX_Player_plusnombreuxqua playsound:Stop_AMB_SC_Barque_Ambiance #playsound:Play_MUS_Story_SC_Barque_ANewFriend
-- PASSEUR: Ainsi, c'est à votre retour à <b>Miraterre</b> que les problèmes ont commencé ? #playsound:VOX_Ferryman_retourmiraterre
+- PASSEUR: Ainsi, c'est à votre <b>retour à Miraterre</b> que les problèmes ont commencé ? #playsound:VOX_Ferryman_retourmiraterre
 - PLAYER: En effet. Un dénouement... #playsound:VOX_Player_eneffetundenouement
     * [Ironique.] PLAYER: ... des plus <i>ironiques</i>. #playsound:VOX_Player_desplusironiques
         PASSEUR: Ironique, tu dis ? #playsound:VOX_Ferryman_ironique

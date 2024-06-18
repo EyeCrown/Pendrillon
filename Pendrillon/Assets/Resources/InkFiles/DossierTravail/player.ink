@@ -12,14 +12,14 @@ CONST p_coeff_xp = 0.4 // Le coefficient de courbe d'XP
 CONST p_xp_max = 135 // Le score d'XP max d'une stat (au lvl 10)
 
 // Stats
-VAR p_char = 4 // Player's charisma stat
+VAR p_char = 3 // Player's charisma stat
 VAR p_stre = 3 // Player's strength stat
 VAR p_dext = 3 // Player's dexterity stat
 VAR p_comp = 1 // Player's composition stat
 VAR p_luck = 1 // Player's luck stat
 
 // XP Points
-VAR p_char_xp = 13.5 // Player's charisma XP points
+VAR p_char_xp = 6.5 // Player's charisma XP points
 VAR p_stre_xp = 6.5 // Player's strength XP points
 VAR p_dext_xp = 6.5 // Player's decterity XP points
 
