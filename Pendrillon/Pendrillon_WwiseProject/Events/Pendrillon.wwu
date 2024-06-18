@@ -24327,6 +24327,20 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_VOX_Judge_Emotion_bell" ID="{1BD9F96C-3A7E-4308-9BD5-F872F37BDB3E}">
+									<ChildrenList>
+										<Action Name="" ID="{2A170D24-341B-42EF-9A7D-959E88B8F354}" ShortID="308188081">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Story_JudgeBellFar" ID="{0136B741-CE42-4E9B-94CE-C2D24623CD4E}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
