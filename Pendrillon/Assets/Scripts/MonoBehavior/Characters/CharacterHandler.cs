@@ -165,7 +165,6 @@ public class CharacterHandler : MonoBehaviour
         Vector3 direction = (transform.position.z < Camera.main.transform.position.z) ? right - left : left - right;
         direction.Normalize();
         direction *= 1.2f * transform.localScale.y;
-        Debug.Log(direction);
         Vector3 offset = new Vector3(0.7f, 4.0f, 0.0f);
 
         if (_character.name == "Judge")
