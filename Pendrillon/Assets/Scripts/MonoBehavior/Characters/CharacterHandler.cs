@@ -353,6 +353,7 @@ public class CharacterHandler : MonoBehaviour
             yield return null;
         }
         _anim.SetBool("falling", false);
+        transform.rotation = Quaternion.Euler(0, 90.0f, 0);
         _onStage = false;
         _leaveCoroutine = false;
     }
@@ -365,6 +366,8 @@ public class CharacterHandler : MonoBehaviour
         while (_leaveCoroutine)
             yield return null;
         
+        transform.rotation = Quaternion.Euler(0, 90.0f, 0);
+
         // Make player goes down
         _charaRig.transform.localPosition = Vector3.zero;
         _anim.SetBool("falling", true);

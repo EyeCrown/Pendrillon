@@ -52,6 +52,10 @@ namespace MonoBehavior.Managers
         // Church
         private Animator _churchNightTorchAnimator;
         
+        // Trial
+        private Animator _trialBellAnimator;
+        private Animator _trialBalanceAnimator;
+        
         // Tempest
         private Animator _tempestCanonAnimator;
         private Animator _tempestHarpoonAnimator;
@@ -243,6 +247,7 @@ namespace MonoBehavior.Managers
             else
             {
                 Debug.Log("Story cannot continue.");
+                // Invoke PhaseEnd -> End game
             }
         }
 
@@ -474,6 +479,11 @@ namespace MonoBehavior.Managers
             var lightAnimatorAddress = "Mesh_Sc_Eglise_Statue/lampe/FlammesOnOff";
             _churchNightTorchAnimator = _setChurchNight.transform.Find(lightAnimatorAddress).GetComponent<Animator>();
             
+            // Trial Animator
+            var trialBaseName = "Mesh_Sc_Tribunal_";
+            _trialBellAnimator = _setTrial.transform.Find(trialBaseName + "Cloche").GetComponent<Animator>();
+            _trialBalanceAnimator = _setTrial.transform.Find(trialBaseName + "Balance").GetComponent<Animator>();
+            
             // Tempest Animators
             string tempestAddressAnimators = "AnimatorObjects/", tempestBaseName = "Mesh_Sc_Tempete_";
             string tempestName = tempestAddressAnimators + tempestBaseName;
@@ -505,6 +515,8 @@ namespace MonoBehavior.Managers
 
         #region Observables
 
+        #region Trial Observables
+
         void SetTrialObservable()
         {
             GameManager.Instance._story.ObserveVariable ("t_audience_judgement", 
@@ -522,6 +534,14 @@ namespace MonoBehavior.Managers
             _setTrial.transform.Find("Mesh_Sc_Tribunal_Balance")
                 .GetComponent<Animator>().SetFloat("balance", value); 
         }
+
+        void SetTrialPropsOnStage(bool inOut)
+        {
+            _trialBellAnimator.SetBool("InOut", inOut);
+            _trialBalanceAnimator.SetBool("InOut", inOut);
+        }
+
+        #endregion
 
         #region Forest Observables
 
@@ -1171,6 +1191,8 @@ namespace MonoBehavior.Managers
                     SetChurchNightPropsOnStage(false);
                 if (_currentSet == _setForest)
                     SetForestPropsOnStage(false);
+                if (_currentSet == _setTrial)
+                    SetTrialPropsOnStage(false);
             }
 
             GameManager.Instance.ClearStageCharacters();
@@ -1203,6 +1225,7 @@ namespace MonoBehavior.Managers
                 case Constants.SetTrial:
                     _setTrial.SetActive(true);
                     _setTrial.GetComponent<Animator>().SetBool("InOut",true);
+                    SetTrialPropsOnStage(true);
                     _currentSet = _setTrial;
                     // Judge set position
                     GameManager.Instance.GetCharacter("Judge").SetJudgePosition();
@@ -1218,6 +1241,8 @@ namespace MonoBehavior.Managers
                     _setForest.GetComponent<Animator>().SetBool("InOut",true);
                     SetForestPropsOnStage(true);
                     _currentSet = _setForest;
+                    break;
+                case Constants.SetEmpty:
                     break;
                 default:
                     Debug.LogError($"AM.HandleTagSet > Unknown location | {_stage} |");

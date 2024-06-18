@@ -84,7 +84,6 @@ public class Curtains : MonoBehaviour
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(stateName))
             yield return null;
         
-
         _isOpen = state;
         callbackOnFinish();
     }
