@@ -165,7 +165,6 @@ public class CharacterHandler : MonoBehaviour
         Vector3 direction = (transform.position.z < Camera.main.transform.position.z) ? right - left : left - right;
         direction.Normalize();
         direction *= 1.2f * transform.localScale.y;
-        Debug.Log(direction);
         Vector3 offset = new Vector3(0.7f, 4.0f, 0.0f);
 
         if (_character.name == "Judge")
@@ -295,6 +294,8 @@ public class CharacterHandler : MonoBehaviour
             //Debug.Log($"{name} > {transform.rotation.eulerAngles}");
             yield return null;
         }
+        
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         //Debug.Log($"{name} > Rotation done");
         callbackOnFinish();
     }
@@ -396,6 +397,37 @@ public class CharacterHandler : MonoBehaviour
         _onStage = true;
         _arriveCoroutine = false;
     }
+
+
+    public IEnumerator MoveHeightPositionCoroutine(float height, Action callbackOnFinish)
+    {
+        float time = 0.0f, duration = (height < 0) ? 1.0f : 3.0f;
+
+        Vector3 startPos = transform.position;
+        Vector3 endPos = startPos + new Vector3(0, height, 0);
+        
+        if (height < 0) // Player is falling
+            _anim.SetBool("falling", true);
+        else
+            _anim.SetBool("climbing", true);
+
+        
+        while (time < duration)
+        {
+            transform.position = Vector3.Lerp(startPos, endPos, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        
+        if (height < 0) // Player is falling
+            _anim.SetBool("falling", false);
+        else
+            _anim.SetBool("climbing", false);
+
+        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+        callbackOnFinish();
+    }
+    
     
     /*public IEnumerator OldArriveOnStage(float duration = 8.0f)
     {

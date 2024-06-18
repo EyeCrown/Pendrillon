@@ -25,17 +25,18 @@ public static class Constants
     public const string TagTrial        = "trial";          // #trial               Effectue les actions de trial
     public const string TagCurtains     = "curtains";       // #curtains:State              State:état des rideaux
     public const string TagBattle       = "battle";         // #battle:State                State:état du combat de boss
+    public const string TagHeight       = "height";         // #height:Yoffset              Yoffset: valeur de décalage en hauteur
     
     #endregion
 
     #region MovementSpeed
 
     public const string SlowName    = "slow";
-    public const float  SlowSpeed   = 2.0f;
+    public const float  SlowSpeed   = 3.0f;
     public const string NormalName  = "walk";
-    public const float  NormalSpeed = 4.0f;
+    public const float  NormalSpeed = 6.0f;
     public const string QuickName   = "run";
-    public const float  QuickSpeed  = 6.0f;
+    public const float  QuickSpeed  = 8.0f;
 
     #endregion
 

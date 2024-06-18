@@ -161,22 +161,22 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
                 -> kill_boss
             - b_player_is_dead:
                 -> kill_player
-        }
-        ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == false} [Remonter le harpon. {t(DEXT, load_harpoon_mod)}] // 90%
+        } #move:Player:6:4:run
+        ++ {b_player_AP > 0 && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == false} [Remonter le harpon. {t(DEXT, load_harpoon_mod)}] #look:Player:back #anim:Player:use // 90%
             {
                 - sc(DEXT, load_harpoon_mod):
                     ~ load_harpoon()
                 - else:
                     ~ use_action_point()
             }
-        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == true && b_harpoon_is_aimed == false} [Viser avec le harpon. {t(DEXT, aim_harpoon_mod)}] // 85%
+        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == true && b_harpoon_is_aimed == false} [Viser avec le harpon. {t(DEXT, aim_harpoon_mod)}] #look:Player:back #anim:Player:use // 85%
             {
                 - sc(DEXT, aim_harpoon_mod): 
                     ~ aim_harpoon()
                 - else:
                     ~ use_action_point()
             }
-        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == true} [Tirer avec le harpon. {t(DEXT, shoot_harpoon_mod)}] // 65% (90% si on vise)
+        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_player_is_on_top_of_mast == false && b_harpoon_is_loaded == true} [Tirer avec le harpon. {t(DEXT, shoot_harpoon_mod)}] #look:Player:back #anim:Player:use // 65% (90% si on vise)
             {
                 - sc(DEXT, shoot_harpoon_mod): 
                     ~ shoot_harpoon()
@@ -194,22 +194,22 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
                 -> kill_boss
             - b_player_is_dead:
                 -> kill_player
-        }
-        ++ {b_player_AP > 0 && b_canon_is_loaded == false && b_nb_canon_bullet_left > 0} [Charger le canon. {t(STRE, load_canon_mod)}] // 80%
+        } #move:Player:6:10:run
+        ++ {b_player_AP > 0 && b_canon_is_loaded == false && b_nb_canon_bullet_left > 0} [Charger le canon. {t(STRE, load_canon_mod)}] #look:Player:back #anim:Player:use // 80%
             {
                 - sc(STRE, load_canon_mod): 
                     ~ load_canon()
                 - else:
                     ~ use_action_point()
             }
-        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_canon_is_loaded == true && b_canon_is_aimed == false} [Viser avec le canon. {t(DEXT, aim_canon_mod)}] // 85%
+        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_canon_is_loaded == true && b_canon_is_aimed == false} [Viser avec le canon. {t(DEXT, aim_canon_mod)}] #look:Player:back #anim:Player:use // 85%
             {
                 - sc(STRE, aim_canon_mod): 
                     ~ aim_canon()
                 - else:
                     ~ use_action_point()
             }
-        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_canon_is_loaded == true} [Tirer avec le canon. {t(STRE, shoot_canon_mod)}] // 50% (75% si on vise)
+        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_canon_is_loaded == true} [Tirer avec le canon. {t(STRE, shoot_canon_mod)}] #look:Player:back #anim:Player:use // 50% (75% si on vise)
             {
                 - sc(STRE, shoot_canon_mod): 
                     ~ shoot_canon()
@@ -227,15 +227,15 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
                 -> kill_boss
             - b_player_is_dead:
                 -> kill_player
-        }
-        ++ {b_player_AP > 0 && b_explosive_barrel_is_used == false && b_explosive_barrel_is_loaded == false} [Charger le tonneau d'explosifs. {t(STRE, load_barrel_mod)}] // 90%
+        } #move:Player:8:2:run
+        ++ {b_player_AP > 0 && b_explosive_barrel_is_used == false && b_explosive_barrel_is_loaded == false} [Charger le tonneau d'explosifs. {t(STRE, load_barrel_mod)}] #look:Player:left #anim:Player:use // 90%
             {
                 - sc(STRE, load_barrel_mod): 
                     ~ load_barrel()
                 - else:
                     ~ use_action_point()
             }
-        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_is_used == false && b_explosive_barrel_is_loaded == true && b_boss_state == "open mouth"} [Lancer le tonneau explosif. {t(STRE, throw_barrel_mod)}] // 75%
+        ++ {b_player_AP > 0 && b_boss_state != "under water" && b_explosive_barrel_is_used == false && b_explosive_barrel_is_loaded == true && b_boss_state == "open mouth"} [Lancer le tonneau explosif. {t(STRE, throw_barrel_mod)}] #look:Player:back #anim:Player:throw // 75%
             {
                 - sc(STRE, throw_barrel_mod): 
                     ~ throw_barrel()
@@ -246,7 +246,7 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
             -> player_moovepool
         -- {souffleur_explain_action_points == false: -> souffleur_explain_action_points}
         -- {b_player_AP>0: -> use_barrels | -> end_turn}
-    + (on_top_of_mast) {b_mast_is_broken == false} [Monter au mât. {t(DEXT, climb_mast_mod)}] // 75%
+    + (on_top_of_mast) {b_mast_is_broken == false} [Monter au mât. {t(DEXT, climb_mast_mod)}] #move:Player:8:12 #look:Player:back // 75%
         {b_player_AP<=0: -> end_turn}
         {
             - b_player_is_on_top_of_mast == false:
@@ -591,32 +591,32 @@ Vous ratez votre tir.
 === function climb_up_mast()
 {
     - b_player_is_on_top_of_mast == false:
-        Vous montez au mât.
+        Vous montez au mât. #height:Player:6
         ~ b_player_is_on_top_of_mast = true
         ~ use_action_point()
 }
 
 // Climb down the sail
 === function climb_down_mast()
-Vous descendez du mât.
+Vous descendez du mât. #look:Player:front #height:Player:-6
     ~ b_player_is_on_top_of_mast = false
 
 // Lower the sail
 === function lower_sail()
-Vous descendez la voile. #anim:Player:lower_sail
+Vous descendez la voile. #look:Player:front #height:Player:-6 //#anim:Player:lower_sail
     ~ b_sail_is_down = true
     ~ use_action_point()
 
 // Do an angel jump
 === function angel_jump()
-Vous sautez depuis le mât et attaquez. #anim:Player:mast_attack
+Vous sautez depuis le mât et attaquez. #look:Player:front #height:Player:-6 //#anim:Player:mast_attack
     ~ attack_boss("angel jump")
     ~ b_player_is_on_top_of_mast = false
     ~ use_action_point()
 
 // Do an angel jump and fail
 === function angel_jump_fail()
-Vous ratez votre saut de l'ange.
+Vous ratez votre saut de l'ange. #look:Player:front #height:Player:-6
     ~ b_player_is_on_top_of_mast = false
     ~ use_action_point()
 
@@ -624,7 +624,7 @@ Vous ratez votre saut de l'ange.
 === function fall_out_of_mast_when_it_breaks()
     ~ hurt_player(b_fall_out_of_mast_damages)
     Vous êtes tombé du mât car il a rompu. Vous avez perdu {b_fall_out_of_mast_damages} HP.
-    Il vous reste {b_player_hp} HP. #anim:Player:fall_out_of_mast
+    Il vous reste {b_player_hp} HP. #look:Player:front #height:Player:-6 //#anim:Player:fall_out_of_mast
 
 // Load the canon
 === function load_canon()
