@@ -984,7 +984,7 @@ namespace MonoBehavior.Managers
             _uiParent.SetActive(true);
 
             if (GameManager.Instance._beginCurtainsOpen)
-                _curtains.Call.Invoke(Constants.StateCurtainsOpen);
+                _curtains.Call.Invoke(Constants.StateCurtainsOpen, null);
             
             if (GameManager.Instance._intro)
                 SetIntro();
@@ -1574,8 +1574,11 @@ namespace MonoBehavior.Managers
         {
            Debug.Log($"AM.HandleTagCurtains > Curtains must be {state}");
 
-           _curtains.Call.Invoke(state);
-
+            _tagMethods.Add(() =>
+            {
+                _curtains.Call.Invoke(state, TagActionOver);
+                
+            });
         }
 
 
