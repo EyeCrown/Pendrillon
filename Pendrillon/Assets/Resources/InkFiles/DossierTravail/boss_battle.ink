@@ -77,8 +77,8 @@ VAR b_boss_special_attack_power = 9
 = start
 
 // Start the scene
-#audience:ovation #battle:begin
-- SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe7
+- #audience:ovation #battle:begin #screenshake
+- SOUFFLEUR: Psssst... Hé, l'ami ! #screenshake #wait:8 #playsound:VOX_Souffleur_pssthe7 #audience:ovation
 SOUFFLEUR: Cette scène nous coûte <b>une fortune</b> en effets spéciaux à chaque spectacle... #playsound:VOX_Souffleur_fortuneeffetsspecias
 SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en termes de chorégraphie, matériel, main-d'œuvre... #playsound:VOX_Souffleur_budget
 SOUFFLEUR: Sans parler des <b><shake a=0.5>coûts d'entretien</shake></b> ! #playsound:VOX_Souffleur_coutentretien
@@ -327,7 +327,8 @@ Fin du tour.
 
 // End of the battle
 = end_battle
-Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat. #battle:end
+- #curtains:close #wait:5 #battle:end
+Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
 {
     - b_player_won:
         Il vous restait {b_player_hp} HP.

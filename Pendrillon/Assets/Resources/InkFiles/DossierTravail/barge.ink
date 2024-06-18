@@ -245,5 +245,5 @@ PASSEUR: Tu vas devoir <b>affronter ton destin</b>, désormais. #audience:ovatio
         PASSEUR: ... Je comprends. #playsound:VOX_Ferryman_jecomprends #audience:applause
 - #anim:open_trial_doors #playsound:Play_MUS_Story_SC_Barque_TrialDoorsOpen
 PASSEUR: C'est ici que nos chemins se séparent, voyageur... #playsound:VOX_Ferryman_voistuporte2 #audience:choc 
-PASSEUR: Ainsi en a décidé la <shake a=0.5><b>Cloche du Destin</b></shake>.  #box #playsound:VOX_Ferryman_ainsienadecide #audience:ovation #curtains:close #wait:4
+PASSEUR: Ainsi en a décidé la <shake a=0.5><b>Cloche du Destin</b></shake>. #box #playsound:VOX_Ferryman_ainsienadecide #audience:ovation #curtains:close #wait:8
 - -> tribunal_1

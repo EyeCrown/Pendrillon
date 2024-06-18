@@ -101,10 +101,10 @@ VAR player_won_battle = false // Define if the player won the battle or not
 - PERSONNAGE MASQUÉ: J'entends des bruits. Quelqu'un vient. #playsound:activity_far #playsound:VOX_Naida_jentendsdesbruits #playsound:Play_MUS_Story_SC_TripReturn_GuardsFar
 * [Cachez-vous.] PLAYER: Il va falloir vous trouver une cachette, et en vitesse. #playsound:VOX_Player_trouverunecachette
     -- (hide_sireine) PERSONNAGE MASQUÉ: Les bruits se rapprochent ! #playsound:Play_MUS_Story_SC_TripReturn_GuardsClose #playsound:activity_close #playsound:VOX_Naida_lesbruitsserapprochent
-        *** [Derrière le tonneau.] PLAYER: Derrière ce tonneau, vite ! #move:Naïda:-2:1 #move:Naïda:-2:-3 #playsound:VOX_Player_cetonneau
+        *** [Derrière le tonneau.] PLAYER: Derrière ce tonneau, vite ! #playsound:VOX_Player_cetonneau #box #move:Naïda:-2:1 #move:Naïda:-2:-3 
             ~ sireine_hideout = "barrel"
             ~ sireine_is_hidden = true
-        *** [Dans la caisse du fond.] PLAYER: Cette caisse, au fond ! Vite ! #move:Naïda:-2:7 #move:Naïda:-2:10 #playsound:VOX_Player_cettecaisseaufond
+        *** [Dans la caisse du fond.] PLAYER: Cette caisse, au fond ! Vite ! #playsound:VOX_Player_cettecaisseaufond #box #move:Naïda:-2:7 #move:Naïda:-2:10 
             ~ sireine_hideout = "crate_back"
             ~ sireine_is_hidden = true
 * [Attendons.] PLAYER: Pas le temps de se cacher ! #playsound:VOX_Player_pasletempsdecacher
@@ -363,5 +363,5 @@ MARCELLO: Sans doute un rat. Cette tête de pipe prend aussi peu soin de son nav
 CAPUCINE: C'est donc cela que tu cachais... Marcello, embarquons-la. #playsound:VOX_Capucine_cestdonccela
 CAPUCINE: Allons-nous-en avec notre trouvaille. #playsound:VOX_Capucine_allonsnousen
 CAPUCINE: Si ce maraud se trouve encore sur son navire quand nous reviendrons avec des renforts... #playsound:VOX_Capucine_ilfinira1 #audience:debate
-CAPUCINE: Il finira sa triste vie <b>au cachot</b>, comme son amie. #playsound:VOX_Capucine_ilfinira2 #audience:ovation
+CAPUCINE: Il finira sa triste vie <b>au cachot</b>, comme son amie. #playsound:VOX_Capucine_ilfinira2 #audience:ovation #look:Naïda:front
     -> barge.scene_3
