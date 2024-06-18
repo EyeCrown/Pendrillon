@@ -88,9 +88,9 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
 - {player_is_close_to_bush == false: -> move_to_bush | -> pull_bush}
     * (move_to_bush) PLAYER: Ce buisson me semble... suspect... #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
 - (pull_bush)
-    * [Tirer le buisson.] #anim:Player:pull #audience:choc
-        ARLE: Mais qui voilà ?! N'est-ce pas <bounce a=0.05>moi</bounce> ? #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila #playsound:Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter
-- #anim:Arle:greet #move:Player:8:2
+    * [Tirer le buisson.] 
+        ARLE: Mais qui voilà ?! N'est-ce pas <bounce a=0.05>moi</bounce> ? #anim:Player:pull #audience:choc #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila #playsound:Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter #anim:Arle:greet #move:Player:8:2
+-
     * [Que faisais-tu cachée ?] PLAYER: Que faisais-tu là, cachée tel un rat ? #anim:Player:question #playsound:VOX_Player_cacheerat
         BOUFFONNE: J'apprenais à vous connaître, messire. Je vous observais... #playsound:VOX_Arle_japprenais
         ** [Me connaître ?] PLAYER: Me connaître, moi ?

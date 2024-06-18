@@ -386,11 +386,11 @@ AGATHE: Pourquoi donc, d'après vous ? #audience:debate
         -- (not_watch_judge) AGATHE: Vous détournez votre regard, mon enfant... #look:Player:back #wait:1 #look:Player:front #anim:Player:stressed #trial
             ~ trial()
             ~ t_3_look_away_judge_stained_glass = true
-            ** [Suis-je un couard ?] PLAYER: Cela fait-il de moi un couard ? #anim:Player:sad
+            ** [Suis-je un couard ?] PLAYER: Cela fait-il de moi un couard ? #look:Player:front #anim:Player:sad
                 --- (you_are_right_to_be_afraid) AGATHE: J'ai vu tant de fois ce vitrail. Je crois y être devenue presque insensible. Au fond, c'est sans doute vous qui avez raison...
             ** [Ne rien dire.] -> you_are_right_to_be_afraid
 // Return to the stained glass conversation
-- AGATHE: <b>Irène</b> nous observe avec bonté... Son père, <b>Lui</b>, nous juge pour nos péchés. #playsound:Play_SFX_Story_JudgeBellFar
+- AGATHE: <b>Irène</b> nous observe avec bonté... Son père, <b>Lui</b>, nous juge pour nos péchés. #look:Player:front #playsound:Play_SFX_Story_JudgeBellFar
 - -> stained_glass
         
 // Return to the stained glass conversation
