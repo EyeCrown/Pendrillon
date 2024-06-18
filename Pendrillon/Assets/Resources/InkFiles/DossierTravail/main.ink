@@ -25,4 +25,4 @@ INCLUDE cast_salutation.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
--> barge.scene_3
+-> secret_meeting
