@@ -164,9 +164,13 @@ public class CharacterHandler : MonoBehaviour
         var right = ActingManager.Instance._directions[Constants.StageCourtyard];
         Vector3 direction = (transform.position.z < Camera.main.transform.position.z) ? right - left : left - right;
         direction.Normalize();
-        direction *= 1.2f;
-        Vector3 offset = new Vector3(0, 4.0f, 0f);
+        direction *= 1.2f * transform.localScale.y;
+        Debug.Log(direction);
+        Vector3 offset = new Vector3(0.7f, 4.0f, 0.0f);
 
+        if (_character.name == "Judge")
+            offset = new Vector3(0.7f, 3.3f, 0.0f) * transform.localScale.y; // * 2.0f actually
+        
         _canvas.transform.LookAt(Camera.main.transform);
         
         _canvas.transform.position = transform.position + direction + offset;
