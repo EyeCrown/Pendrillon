@@ -23,8 +23,7 @@ VAR player_is_close_to_bush = false
 // Start the scene
 #playsound:Play_MUS_Story_SC_SecretMeeting_Intro
 // Audience reaction
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
-#move:Arle:8:8 #move:Arle:2:2 #move:Arle:8:8 #move:Arle:2:2
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #anim:Arle:crawling #wait:3
 - // On se trouve sur scène, seul.
     * [Attendre son interlocuteur.]
 - #audience:applause
