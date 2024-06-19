@@ -40,6 +40,7 @@ namespace MonoBehavior.Managers
         public GameObject _setTrial;
         public GameObject _setTempest;
         public GameObject _setForest;
+        public GameObject _setEmpty;
         private GameObject _currentSet;
 
         private Curtains _curtains;
@@ -511,6 +512,7 @@ namespace MonoBehavior.Managers
             _setTrial   = Instantiate(_setTrial,    GameObject.Find("Environment").transform);
             _setTempest = Instantiate(_setTempest,  GameObject.Find("Environment").transform);
             _setForest  = Instantiate(_setForest,   GameObject.Find("Environment").transform);
+            _setEmpty  = Instantiate(_setEmpty,   GameObject.Find("Environment").transform);
         }
 
         #region Observables
@@ -1253,6 +1255,8 @@ namespace MonoBehavior.Managers
                     _currentSet = _setForest;
                     break;
                 case Constants.SetEmpty:
+                    _setEmpty.SetActive(true);
+                    _setEmpty.GetComponent<Animator>().SetBool("InOut",true);
                     break;
                 default:
                     Debug.LogError($"AM.HandleTagSet > Unknown location | {_stage} |");

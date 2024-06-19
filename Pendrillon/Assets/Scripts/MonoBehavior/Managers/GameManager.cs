@@ -71,7 +71,7 @@ namespace MonoBehavior.Managers
 
         [HideInInspector] public PlayerInputs _playerInput = null;
 
-        [HideInInspector] public TMP_FontAsset _currentFont;
+        public TMP_FontAsset _currentFont;
         
         
         [Header("=== Timers ===")] 
@@ -119,7 +119,6 @@ namespace MonoBehavior.Managers
                 .GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
 
             _playerInput = new PlayerInputs();
-            
             
             // Connect Events
             StartGame.AddListener(OnStartGame);
