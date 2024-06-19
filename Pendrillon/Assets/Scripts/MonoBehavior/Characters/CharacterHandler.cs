@@ -439,7 +439,7 @@ public class CharacterHandler : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
         
         var judgePos = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(2, 9));
-        transform.position = new Vector3(judgePos.x, 0.0f, judgePos.z);
+        transform.position = new Vector3(judgePos.x, 0.4f, judgePos.z);
         _rope.SetActive(false);
         _onStage = true;
     }

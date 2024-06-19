@@ -391,6 +391,7 @@ namespace MonoBehavior.Managers
     
         void HandleTags()
         {
+            Debug.Log("CLEAR _tagMethods");
             _tagMethods.Clear();
             if (GameManager.Instance._story.currentTags.Count > 0)
             {
@@ -469,7 +470,7 @@ namespace MonoBehavior.Managers
         void AssignElements()
         {
             _wheel      = GameObject.Find("WheelSupport").GetComponent<Wheel>();
-            _map        = GameObject.Find("Map").GetComponent<Map>();
+            _map        = GameObject.Find("Map/Map").GetComponent<Map>();
             _curtains   = GameObject.Find("MainCurtains").GetComponent<Curtains>();
             _statsUI    = GameObject.Find("Canvas/PLAYER_STATS").GetComponent<StatsUI>();
             _battleHUD  = GameObject.Find("Canvas/BATTLE_HUD").GetComponent<BattleHUD>();
@@ -982,7 +983,7 @@ namespace MonoBehavior.Managers
 
         public void OnClickDisplayText(InputAction.CallbackContext context)
         {
-            //Debug.Log($"DisplayText > End the typewriter");
+            Debug.Log($"DisplayText > End the typewriter");
 
             if (_dialogueTypewriter.isShowingText)
             {
@@ -1616,8 +1617,10 @@ namespace MonoBehavior.Managers
             void MapAction()
             {
                 //Debug.Log("MapAction");
+                // if (travel != string.Empty)
+                //     _map.DisplayTravel(travel);
                 if (travel != string.Empty)
-                    _map.DisplayTravel(travel);
+                    _map.GetComponent<Animator>().SetTrigger(travel);
                 
                 TagActionOver();
             }
@@ -1656,7 +1659,6 @@ namespace MonoBehavior.Managers
             _tagMethods.Add(() =>
             {
                 _curtains.Call.Invoke(state, TagActionOver);
-                
             });
         }
 
@@ -1837,7 +1839,7 @@ namespace MonoBehavior.Managers
                 //Debug.Log("Wait to display text");
                 yield return null;
             }
-            //Debug.Log($"Can start execute Tags: {_tagMethods.Count} methods");
+            Debug.Log($"AM.ExecuteTagMethods > Can start execute Tags: {_tagMethods.Count} methods");
             foreach (var tagAction in _tagMethods)
             {
                 Debug.Log($"{tagAction.Method.Name}");
@@ -1846,7 +1848,8 @@ namespace MonoBehavior.Managers
                 while (!_isActionDone)
                     yield return null;
             }
-            
+            Debug.Log($"AM.ExecuteTagMethods > finish executing Tags");
+
             HandleChoices();
         }
 

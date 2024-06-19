@@ -119,8 +119,8 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             --- (arle_presentation) BOUFFONNE: Je suis <b>Arle</b>, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle #audience:ovation #playsound:Play_MUS_Story_SC_SecretMeeting_ArleGivesName
     * [Es-tu l'autrice de la lettre ?] PLAYER: Est-ce donc toi qui as écrit la lettre que j'ai reçue la veille ? #anim:Player:question #playsound:VOX_Player_toiecritlettre
         BOUFFONNE: Je sais faire bien des choses, messire... #anim:Arle:happy #playsound:VOX_Arle_jesaisfaire
-        BOUFFONNE: Faire la belle... #anim:Arle:pretty_pose #playsound:VOX_Arle_fairelabelle
-        BOUFFONNE: Faire le show... #anim:Arle:show_pose #playsound:VOX_Arle_lewhow
+        BOUFFONNE: Faire la belle... #playsound:VOX_Arle_fairelabelle
+        BOUFFONNE: Faire le show... #playsound:VOX_Arle_lewhow
         BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter #playsound:VOX_Arle_maispointecrir #playsound:Play_MUS_Story_SC_SecretMeeting_ArleJoke
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question #playsound:VOX_Player_saisdirenom
             -> arle_presentation

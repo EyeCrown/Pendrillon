@@ -44,20 +44,6 @@ public class Map : MonoBehaviour
         _light.SetActive(false);
         _cursor.transform.localPosition = _placeMiraterre;
     }
-
-    void Update()
-    {
-        float xOffset = (Mathf.PingPong(Time.time, 2) - 1) * multiplier;
-        float zOffset = (Mathf.PingPong(Time.time, 2) - 1) * -multiplier;
-
-        _positionOutsideStage.x += xOffset;
-        _positionOnStage.x += xOffset;
-        
-        _positionOutsideStage.z += zOffset;
-        _positionOnStage.z += zOffset;
-        
-        transform.position += new Vector3(xOffset, 0, zOffset);
-    }
     
     #endregion
 
