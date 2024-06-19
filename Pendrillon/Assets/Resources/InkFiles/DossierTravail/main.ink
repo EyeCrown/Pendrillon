@@ -26,3 +26,4 @@ INCLUDE cast_salutation.ink
 
 // Start the game
 -> tempest
+
