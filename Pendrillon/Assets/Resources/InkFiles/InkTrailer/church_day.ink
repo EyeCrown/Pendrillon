@@ -1,4 +1,4 @@
-// CHURCH DAY SCENE
+ // CHURCH DAY SCENE
 
 // Variables
 VAR CAPUCINE = ""
@@ -20,15 +20,23 @@ VAR marcello_surname = "Marcellogre"
 #set:church_day
 // Set the actor's positions
 #position:Player:4:6
-#position:Agathe:4:8
+#position:Agathe:4:20
+#position:Naïda:7:10
 #position:Marcello:2:20
 #position:Capucine:3:20
 // Audience reaction
 //#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 #wait:7
-
+- #look:Naïda:left
+//- #look:Player:right 
+- #look:Player:Naïda 
+//- #look:Naïda:PLAYER
+#wait:10
+- PLAYER: Vous m'avez <b>trahi</b>. Je pensais pouvoir vous faire <shake a=0.5><b>confiance</b></shake>... #playsound:VOX_Player_vousmaveztrahi
+- rien #wait:1400
+- PLAYER: Vous m'avez trahi. Je pensais pouvoir vous faire confiance... #playsound:VOX_Player_vousmaveztrahi
 // Start the scene
-#anim:Player:tripping
+//#anim:Player:tripping
 //#anim:Player:sleep
 MARCELLO: Et si on le réveillait avec une tape sur le museau, cheffe ? #wait:60
 CAPUCINE: Cet abruti dort comme un nourrisson... #playsound:VOX_Capucine_cetabrutidort
