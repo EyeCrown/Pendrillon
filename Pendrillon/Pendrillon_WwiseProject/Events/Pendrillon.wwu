@@ -1676,9 +1676,12 @@
 								<Event Name="Play_AMB_SC_Trial_Ambiance" ID="{5C0F714F-FC3A-4DF7-B195-15F8C9AC041F}">
 									<ChildrenList>
 										<Action Name="" ID="{D6CCB269-9753-4176-BFF4-B500E61147AB}" ShortID="246988937">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="AMC_SC_Eglise_Ambiance" ID="{16AED275-433D-4BA2-AD15-4F6366409748}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+													<ObjectRef Name="AMB_SC_Trial" ID="{709F9580-5161-4D5C-B36A-272584C33C6C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -1687,6 +1690,9 @@
 								<Event Name="Play_AMC_SC_Eglise_Jour_Ambiance" ID="{86347CFC-1BF2-4EF0-99E7-A9A6B8BB5912}">
 									<ChildrenList>
 										<Action Name="" ID="{111C46B3-0B64-46FB-876A-BCD9CEF7A151}" ShortID="615314753">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="AMC_SC_Eglise_Ambiance" ID="{157D9C18-13FC-4A61-9C65-0AA9B59AD7BF}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
