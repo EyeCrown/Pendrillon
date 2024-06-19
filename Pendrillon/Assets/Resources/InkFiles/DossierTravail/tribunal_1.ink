@@ -315,11 +315,17 @@ JUGE ERNEST: Est-ce vrai ? La <b>Déesse</b> elle-même ? Répondez, <b>Accusé<
         JUGE ERNEST: <b>Accusé</b>, ces paroles sont insoutenables, et par la <b>Loi</b> ainsi que la <b>Foi</b>, elles seront punies. #playsound:VOX_Judge_accusecesparolsinsoutenables #audience:booing
         JUGE ERNEST: Témoin, la <b>Déesse</b> vous remercie pour votre témoignage. Vous pouvez quitter ce tribunal, désormais... #playsound:VOX_Judge_temoindeesseremercietemoignage #audience:ovation
     - arle_lied_again == true:
-        JUGE ERNEST: <b>Accusé</b>, je remercie la <b>Déesse</b> que vous n'ayez pas profané son nom comme le témoin le prétendait. #playsound:VOX_Judge_accuseceremercieladeessepasprofane #audience:ovation #rope:Arle
-        JUGE ERNEST: Témoin, profaner de tels mensonges à l'égard de l'<b>Accusé</b> est un acte grave ! La <b>Déesse</b> vous couvre de honte ! Hors de ma vue ! #playsound:VOX_Judge_temoindprofanerdeessecouvrehonte #audience:booing #rope:Arle
+        JUGE ERNEST: <b>Accusé</b>, je remercie la <b>Déesse</b> que vous n'ayez pas profané son nom comme le témoin le prétendait. #playsound:VOX_Judge_accuseceremercieladeessepasprofane #audience:ovation
+        JUGE ERNEST: Témoin, profaner de tels mensonges à l'égard de l'<b>Accusé</b> est un acte grave ! La <b>Déesse</b> vous couvre de honte ! Hors de ma vue ! #playsound:VOX_Judge_temoindprofanerdeessecouvrehonte #audience:booing
 }
-- JUGE ERNEST: J'appelle à la barre nos deux prochains témoins. #playsound:VOX_Judge_jappellebarreCapuMa
-    -> witnesses_capucine_and_marcello
+-
+{
+    - arle_leaves_the_stage == false:
+        JUGE ERNEST: J'appelle à la barre nos deux prochains témoins. #playsound:VOX_Judge_jappellebarreCapuMa #rope:Arle
+    - else:
+        JUGE ERNEST: J'appelle à la barre nos deux prochains témoins. #playsound:VOX_Judge_jappellebarreCapuMa
+}
+- -> witnesses_capucine_and_marcello
 
 // Witnesses Capucine and marcello
 = witnesses_capucine_and_marcello

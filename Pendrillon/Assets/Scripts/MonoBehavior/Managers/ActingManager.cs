@@ -665,6 +665,7 @@ namespace MonoBehavior.Managers
             else
             {
                 _tempestHarpoonAnimator.SetTrigger("shoot");
+                // play figth sound
                 _tempestHarpoonAnimator.SetBool("charged", false);
             }
         }
@@ -679,6 +680,7 @@ namespace MonoBehavior.Managers
             else
             {
                 _tempestCanonAnimator.SetTrigger("shoot");
+                // play figth sound
                 _tempestCanonAnimator.SetBool("charged", false);
             }
         }

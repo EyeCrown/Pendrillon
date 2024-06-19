@@ -2,6 +2,7 @@
 VAR t_audience_judgement = 50 // Compris entre 0 et 100
 VAR t_arle_patience = 5 // Patience de Arle (0 = Arle pète un câble)
 VAR t_souffleur_explanations_bell = false
+VAR arle_leaves_the_stage = false
 
 // SECRET MEETING
 VAR t_1_accept_to_kill = false
@@ -174,7 +175,8 @@ VAR t_4_give_guards_surname = false
 
 // Makes Arle angry until she leaves stage
 === function make_arle_angry() ===
-    ~ temp arle_leaves_the_stage = false
+    // ~ temp arle_leaves_the_stage = false
+    ~ arle_leaves_the_stage = false
     ~ t_arle_patience -= 1
     {
         - t_arle_patience == 4:
