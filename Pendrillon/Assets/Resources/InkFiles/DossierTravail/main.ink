@@ -25,5 +25,5 @@ INCLUDE cast_salutation.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
--> tempest
+-> intro
 

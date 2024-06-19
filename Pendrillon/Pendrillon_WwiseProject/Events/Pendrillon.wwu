@@ -297,6 +297,28 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Play_SFX_Combat_Cannon_shot" ID="{E3F1F14C-6861-4045-B13F-26188B3DB228}">
+											<ChildrenList>
+												<Action Name="" ID="{23CF2889-90EA-410B-B891-7D31A66C636A}" ShortID="420278251">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Cannon_shot" ID="{0C302091-6840-443B-B1C3-2DBEC9FBEADE}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_Combat_Harpoon_shot" ID="{E91C2A7B-FF99-4D27-921B-D1E91E923C2A}">
+											<ChildrenList>
+												<Action Name="" ID="{9A530A73-1D99-4015-A731-E39AD4EE6AD4}" ShortID="878624756">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Harpoon_shot" ID="{DB0B10A6-9EAA-402B-BB88-84F6072159FB}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 							</ChildrenList>
@@ -1050,6 +1072,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="BoatCrash_RedLeviathan" ID="{1B7E118D-47EC-4981-B315-8CCB3EFD94E3}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{902C1705-613B-4E6D-86BE-D21DE6505415}" ShortID="727726640">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+												<Property Name="Delay" Type="Real64" Value="2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_BossMusic" ID="{72020E52-5B5F-42AD-968C-1C56CE5F34BB}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

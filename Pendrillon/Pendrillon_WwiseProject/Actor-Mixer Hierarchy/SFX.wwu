@@ -535,6 +535,64 @@
 										<ActiveSource Name="BoatCrash" ID="{62CE33FF-B3D3-4570-BD80-267B2949F70D}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="Cannon_shot" ID="{0C302091-6840-443B-B1C3-2DBEC9FBEADE}" ShortID="574060859">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Cannon_shot" ID="{25B722F6-CDD6-44D0-BE97-279FE95AD516}">
+											<Language>SFX</Language>
+											<AudioFile>Cannon_shot.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="476501378"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Cannon_shot" ID="{25B722F6-CDD6-44D0-BE97-279FE95AD516}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Harpoon_shot" ID="{DB0B10A6-9EAA-402B-BB88-84F6072159FB}" ShortID="1059394755">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-9</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Harpoon_shot" ID="{3ACF02CA-0A13-4AF3-9D4D-253A98935FBB}">
+											<Language>SFX</Language>
+											<AudioFile>Harpoon_shot.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="732103239"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Harpoon_shot" ID="{3ACF02CA-0A13-4AF3-9D4D-253A98935FBB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="SFX_Story" ID="{62395B2B-C332-426F-95BD-C107D39793F4}" ShortID="767056309">
