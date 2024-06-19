@@ -49,31 +49,31 @@ JUGE ERNEST: De celle-ci nous nous ferons les yeux, les oreilles et le cœur, co
 JUGE ERNEST: Silence ! J'exige le silence ! #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencejexige
 - JUGE ERNEST: L'homme est <b>accusé</b>, par ordre croissant de <b>gravité</b>... #playsound:VOX_Judge_lhommeestaccuse
 {
-    - is_accused_of("bribe guards"): JUGE ERNEST: ... De tentative de corruption à l'égard de représentants de l'autorité Royale... #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #playsound:VOX_Judge_corruption #box #audience:booing #screenshake
+    - is_accused_of("bribe guards"): JUGE ERNEST: ... De <shake a=0.5><b>tentative de corruption</b></shake> à l'égard de représentants de l'autorité Royale... #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #playsound:VOX_Judge_corruption #box #audience:booing #screenshake
         ~ audience_judgement(-10)
 }
 {
-    - is_accused_of("attack guards"): JUGE ERNEST: ... De violence à l'encontre de représentants de l'autorité Royale... #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #playsound:VOX_Judge_violence #audience:laughter
+    - is_accused_of("attack guards"): JUGE ERNEST: ... De <shake a=0.5><b>violence</b></shake> à l'encontre de représentants de l'autorité Royale... #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #playsound:VOX_Judge_violence #audience:laughter
         ~ audience_judgement(-10)
 }
 {
-    - is_accused_of("crown outrage"): JUGE ERNEST: ... D'outrage à la <b>Couronne</b>... #playsound:VOX_Judge_outragecouronne #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
+    - is_accused_of("crown outrage"): JUGE ERNEST: ... D'<shake a=0.5><b>outrage</b> à la <b>Couronne</b></shake>... #playsound:VOX_Judge_outragecouronne #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
         ~ audience_judgement(-10)
 }
 {
-    - is_accused_of("blasphemy"): JUGE ERNEST: ... De blasphème... #playsound:VOX_Judge_blaspheme #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
+    - is_accused_of("blasphemy"): JUGE ERNEST: ... De <shake a=0.5><b>blasphème</b></shake>... #playsound:VOX_Judge_blaspheme #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
         ~ audience_judgement(-10)
 }
 {
-    - is_accused_of("judge outrage"): JUGE ERNEST: ... D'outrage au <b>Juge</b> de droit divin, Ernest... #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #playsound:VOX_Judge_outragejuge #box #audience:choc #sreenshake
+    - is_accused_of("judge outrage"): JUGE ERNEST: ... D'<shake a=0.5><b>outrage</b> au <b>Juge</b></shake> de droit divin, Ernest... #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #playsound:VOX_Judge_outragejuge #box #audience:choc #sreenshake
         ~ audience_judgement(-10)
 }
-- JUGE ERNEST: ... D'actes hérétiques... #playsound:VOX_Judge_heretique #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
+- JUGE ERNEST: ... D'<shake a=0.5><b>actes hérétiques</b></shake>... #playsound:VOX_Judge_heretique #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
     ~ audience_judgement(-10)
-- JUGE ERNEST: ... De Haute trahison... #playsound:VOX_Judge_hautetrahison #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
+- JUGE ERNEST: ... De <shake a=0.5><b>Haute trahison</b></shake>... #playsound:VOX_Judge_hautetrahison #playsound:Play_MUS_Story_SC_Trial_ChefAccusation #box #audience:booing #screenshake
     ~ audience_judgement(-10)
 - JUGE ERNEST: ... ainsi que, pour conclure... #playsound:VOX_Judge_pourconclure
-- JUGE ERNEST: ... D'amour impie. #playsound:VOX_Judge_amourimpie #box #audience:choc #screenshake #playsound:Play_MUS_Story_SC_Trial_ChefAccusation
+- JUGE ERNEST: ... D'<shake a=0.5><b>amour impie</b></shake>. #playsound:VOX_Judge_amourimpie #box #audience:choc #screenshake #playsound:Play_MUS_Story_SC_Trial_ChefAccusation
     ~ audience_judgement(-10)
 - JUGE ERNEST: Le <b>Juge</b> demande désormais à l'<b>Accusé</b> de faire son entrée. #playsound:VOX_Judge_jugedemandeaccuseentre #audience:booing
 - JUGE ERNEST: Silence ! Silence ! #position:Player:10:1 #wait:5 #audience:booing #box #playsound:VOX_Judge_silencesilence2 #anim:Judge:bell #audience:silent
@@ -195,7 +195,7 @@ ARLE: Mon cœur me fit comprendre que l'<shake a=0.5><b>effroyable</b></shake> m
     * [Je me suis montré à la hauteur.] PLAYER: <b>Votre Honneur</b>, messieurs les jurés...
         PLAYER: J'espère que ce procès sera l'occasion de démontrer que j'ai bel et bien été à la hauteur de cette tâche. #anim:Player:bow #audience:applause
         -> accusation_of_disrespecting_queen
-    * [Arle vient d'insulter notre reine.] PLAYER: Je crois, <b>Votre Honneur</b>, et mesdames et messieurs les jurés, qu'Arle a trahit son manque de respect pour la reine <b>Constance</b>. #audience:debate
+    * [Arle vient d'insulter notre reine.] PLAYER: Je crois, <b>Votre Honneur</b>, et mesdames et messieurs les jurés, qu'<b>Arle</b> a trahit son manque de respect pour la reine <b>Constance</b>. #audience:debate
         ~ accuse_arle_to_disrespect_queen = true
         ARLE: Objection ! L'<shake a=0.5><b>immonde</b></shake> messire raconte des balivernes ! #playsound:VOX_Arle_objection
         JUGE ERNEST: Silence, témoin ! Je ne vous ai pas donné la parole ! #playsound:VOX_Judge_silencetemoinjeneevousaipas #anim:Arle:sad #anim:Judge:bell #audience:silent

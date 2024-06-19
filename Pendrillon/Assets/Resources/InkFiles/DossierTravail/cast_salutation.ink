@@ -62,7 +62,7 @@ SOUFFLEUR: Dans le rôle de l'<b>UX/UI designer</b> : <shake a=0.5><b>Lud.e Chat
 SOUFFLEUR: Dans le rôle du <b>programmeur</b> : <shake a=0.5><b>Théo(phile) Carrasco</b></shake> ! #audience:ovation
 SOUFFLEUR: Et dans le rôle du <b>game & narrative designer</b> : <shake a=0.5><b>Maxence Martiniani</b></shake> ! #audience:ovation
 SOUFFLEUR: Merci pour votre accueil, <b>cher public</b> ! À la prochaine !
-- #curtains:close #audience:ovation #playsound:Stop_CrowdReaction_applauseinfinite #wait:5
+- #curtains:close #audience:ovation #playsound:Play_CrowdReaction_stopapplauseinfinite #wait:5
 - -> end_of_the_show
 
 = end_of_the_show
