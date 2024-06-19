@@ -16,12 +16,23 @@ VAR irene_torch_is_on = false
 // Set the location
 #set:church_night
 // Set the actor's positions
-#position:Player:7:8
-#position:Agathe:7:6
+#position:Player:7:3
+#position:Agathe:7:5
 // Audience reaction
 //#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
+// - #wait:1
+// - #map:down 
+// - #wait:2
+// - #map:departure
+// - #wait:10
+// - #map:arrival
 #wait:10
-- #anim:Agathe:pray #anim:Player:pray
+#anim_event:light_on_irene_lamp
+- PLAYER: J'ai ramené de <b>mon voyage</b>... #playsound:VOX_Player_jairamenevoyage
+- PLAYER: ... un <b>trésor</b> qui m'était <shake a=0.5><b>interdit</b></shake>. #playsound:VOX_Player_untresorinterdit
+
+
+//- #anim:Agathe:pray #anim:Player:pray
 //#playsound:Play_MUS_Story_SC_Eglise_Intro
 // Player arrive dans l'Église puis avance jusqu'à la statue.
 // Après un moment.

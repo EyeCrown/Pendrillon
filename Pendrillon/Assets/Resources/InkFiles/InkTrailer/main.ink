@@ -25,10 +25,10 @@ INCLUDE cast_salutation.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
-//-> barge
+-> barge
 //-> boss_battle
 //-> secret_meeting
 //-> trip_return 
--> church_night 
+//-> church_night 
 //-> tempest 
-//-> church_day
+//-> church_day 
