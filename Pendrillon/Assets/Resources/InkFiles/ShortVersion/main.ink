@@ -23,4 +23,4 @@ INCLUDE cast_salutation.ink
 //~ SEED_RANDOM(666)
 
 // Start the game
--> tribunal_1.naida_speech
+-> intro

@@ -90,7 +90,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * (move_to_bush) PLAYER: Ce buisson me semble... suspect... #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
 - (pull_bush)
     * [Tirer le buisson.] 
-        ARLE: Mais qui voilà ?! N'est-ce pas <bounce a=0.05>moi</bounce> ? #look:Player:right #anim:Player:pull #audience:choc #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila #playsound:Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter #move:Player:8:2
+        ARLE: Mais qui voilà ?! N'est-ce pas <bounce a=0.05>moi</bounce> ? #look:Player:right #audience:choc #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila #playsound:Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter #move:Player:8:2
         ~ bush_moved = true
 -
     * [Que faisais-tu cachée ?] PLAYER: Que faisais-tu là, cachée tel un rat ? #anim:Player:question #playsound:VOX_Player_cacheerat

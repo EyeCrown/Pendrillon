@@ -90,7 +90,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
     * (move_to_bush) PLAYER: Ce buisson me semble... suspect... #audience:laughter #playsound:VOX_Player_buissonsuspect #move:Player:8:7
 - (pull_bush)
     * [Tirer le buisson.] 
-        ARLE: Mais qui voilà ?! N'est-ce pas <bounce a=0.05>moi</bounce> ? #look:Player:right #anim:Player:pull #audience:choc #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila #playsound:Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter #move:Player:8:2
+        ARLE: Mais qui voilà ?! N'est-ce pas <bounce a=0.05>moi</bounce> ? #look:Player:right #audience:choc #anim:Arle:get_up #audience:ovation #playsound:VOX_Arle_maisquivoila #playsound:Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter #move:Player:8:2
         ~ bush_moved = true
 -
     * [Que faisais-tu cachée ?] PLAYER: Que faisais-tu là, cachée tel un rat ? #anim:Player:question #playsound:VOX_Player_cacheerat
@@ -119,8 +119,8 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
             --- (arle_presentation) BOUFFONNE: Je suis <b>Arle</b>, pour vous servir, messire. #anim:Arle:bow #playsound:VOX_Arle_jesuisarle #audience:ovation #playsound:Play_MUS_Story_SC_SecretMeeting_ArleGivesName
     * [Es-tu l'autrice de la lettre ?] PLAYER: Est-ce donc toi qui as écrit la lettre que j'ai reçue la veille ? #anim:Player:question #playsound:VOX_Player_toiecritlettre
         BOUFFONNE: Je sais faire bien des choses, messire... #anim:Arle:happy #playsound:VOX_Arle_jesaisfaire
-        BOUFFONNE: Faire la belle... #anim:Arle:pretty_pose #playsound:VOX_Arle_fairelabelle
-        BOUFFONNE: Faire le show... #anim:Arle:show_pose #playsound:VOX_Arle_lewhow
+        BOUFFONNE: Faire la belle... #playsound:VOX_Arle_fairelabelle
+        BOUFFONNE: Faire le show... #playsound:VOX_Arle_lewhow
         BOUFFONNE: ... Mais je ne sais point écrire ! #anim:Arle:sad #audience:laughter #playsound:VOX_Arle_maispointecrir #playsound:Play_MUS_Story_SC_SecretMeeting_ArleJoke
         ** [Qui es-tu ?] PLAYER: Sais-tu au moins dire ton nom ? #anim:Player:question #playsound:VOX_Player_saisdirenom
             -> arle_presentation
@@ -130,7 +130,7 @@ SOUFFLEUR: Que tu réussisses ou que tu échoues... ça vaut le coup de tenter t
                 BOUFFONNE: <bounce a=0.05>Bouffonne</bounce> est l'une de mes professions, mais ce n'est pas mon nom. #anim:Arle:stressed #playsound:VOX_Arle_boufonne
                 -> arle_presentation
             *** (mock_arle_F) PLAYER: Une authentique <bounce a=0.05>bouffonne</bounce>... #anim:Player:stressed #anim:Arle:happy #playsound:VOX_Player_authentiquebouffonne
-                BOUFFONNE: Je me plais à inspirer le rire, le bonheur... la félicité ! Vous plaisez-vous à inspirer la pitié ? #anim:Arle:happy #audience:laugther #anim:Player:sad #playsound:VOX_Arle_jinspirelerire
+                BOUFFONNE: Je me plais à inspirer le rire, le bonheur... la félicité ! Vous plaisez-vous à inspirer la pitié ? #anim:Arle:happy #playsound:VOX_Arle_jinspirelerire #audience:laugther
                 -> arle_presentation
 -
     * [Qui t'envoie ?] PLAYER: Je présume que tu es au service de quelqu'un. Qui donc ? #anim:Player:question #playsound:VOX_Player_auservice

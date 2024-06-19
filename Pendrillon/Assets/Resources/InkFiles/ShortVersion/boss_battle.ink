@@ -9,9 +9,9 @@ VAR b_player_AP_by_turn = 2
 VAR b_player_is_on_top_of_mast = false
 // Player attacks damages
 VAR harpoon_damages = 15
-VAR canon_damages = 20
-VAR explosive_barrel_on_mouth_damages = 40
-VAR angel_jump_damages = 25
+VAR canon_damages = 22
+VAR explosive_barrel_on_mouth_damages = 42
+VAR angel_jump_damages = 27
 // Player moovepool
 VAR load_harpoon_mod = 40 // 90%
 VAR aim_harpoon_mod = 35 // 85%
@@ -23,9 +23,9 @@ VAR shoot_canon_mod_default = 0 // 50% (75% si on vise)
 VAR shoot_canon_mod = 0 // 50%
 VAR load_barrel_mod = 40 // 90%
 VAR throw_barrel_mod = 25 // 75%
-VAR climb_mast_mod = 25 // 75%
+VAR climb_mast_mod = 35 // 75%
 VAR lower_sail_mod = 40 // 90%
-VAR angel_jump_mod = 10 // 60%
+VAR angel_jump_mod = 25 // 60%
 VAR aim_bonus_mod = 35
 // Souffleur variables
 VAR souffleur_explained_AP = false
@@ -69,7 +69,7 @@ VAR b_boss_open_mouth_attack_probability = 80
 VAR b_boss_on_boat_attack_power = 3
 VAR b_boss_on_boat_attack_probability = 80
 // [4: special attack]
-VAR b_boss_special_attack_power = 9
+VAR b_boss_special_attack_power = 6
 
 // Scene
 === boss_battle ===
@@ -92,7 +92,7 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
 SOUFFLEUR: Tu viens de faire une action nécessitant un <b>talent</b>, pas vrai l'ami ? #playsound:VOX_Souffleur_bref
 SOUFFLEUR: Sache que lors d'un combat, tu peux effectuer <b>plusieurs actions</b> de ce type lors d'un <b>même tour</b>. #playsound:VOX_Souffleur_plusieursactions
 SOUFFLEUR: Le nombre de <b>talents</b> que tu peux utiliser avant que ton tour ne se termine est <b>inscrit au-dessus</b>. #playsound:VOX_Souffleur_talentesecritdessus
-SOUFFLEUR: On appelle ça des <shake a=0.5>points d'action™</shake>. Enfin... c'est <i>moi</i> qui les appelle comme ça. #playsound:VOX_Souffleur_pa
+SOUFFLEUR: On appelle ça des <shake a=0.5><b>points d'action™</b></shake>. Enfin... c'est <i>moi</i> qui les appelle comme ça. #playsound:VOX_Souffleur_pa
 SOUFFLEUR: Une dernière chose : tu peux <b>passer ton tour</b> si tu le souhaites. #playsound:VOX_Souffleur_passersontour
 SOUFFLEUR: Tes <b>points d'action</b> seront <b>mis de côté</b> pour le <b>tour suivant</b>. #playsound:VOX_Souffleur_pastored
 SOUFFLEUR: Bonne chance, l'ami ! #playsound:VOX_Souffleur_glhf

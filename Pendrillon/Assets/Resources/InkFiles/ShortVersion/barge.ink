@@ -139,7 +139,7 @@ PLAYER: Curieux, je décidais de me rendre à minuit au lieu du mystérieux rend
 // Audience reaction
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
 - PASSEUR: {b_player_won: Ainsi, tu es parvenu à <b>vaincre</b> cette créature gigantesque, voyageur... | Bien que tu ne sois pas parvenu à vaincre la créature... Je suis impressionné que tu sois <b>encore de ce monde</b>, voyageur.} #audience:ovation
-- PLAYER: Il s'est avéré que ce n'était pas le <shake a=0.5><b>Léviathan</b></shake> que j'affontais... #audience:debate
+- PLAYER: Il s'est avéré que ce n'était pas le <shake a=0.5><b>Léviathan</b></shake> que j'affrontais... #audience:debate
 PLAYER: Le <shake a=0.5><b>Léviathan</b></shake> nous <b>avala tous</b> : notre bateau ainsi que le monstre. #audience:choc
 PASSEUR: Que s'est-il passé ensuite, voyageur ?
 PLAYER: ...
