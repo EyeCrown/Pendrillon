@@ -26,6 +26,7 @@ VAR verdict_is_guilty = false
 #set:trial
 // Set the actor's positions
 // Start the scene
+#curtains:open
 #audience:debate
 #audience:silent
 // Le juge est encore seul sur scène
@@ -33,7 +34,7 @@ VAR verdict_is_guilty = false
 #wait:5
 #audience:ovation
 
-- JUGE ERNEST: Silence ! Silence ! #curtains:open #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencesilence
+- JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencesilence
 {
     - p_name == "Merlin":
         JUGE ERNEST: Les <b>Portes du Tribunal</b> se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribMerlin

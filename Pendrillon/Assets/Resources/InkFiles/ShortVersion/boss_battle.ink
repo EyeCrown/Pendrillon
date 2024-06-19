@@ -330,7 +330,7 @@ C'est à votre tour.
 
 // End of the battle
 = end_battle
-- #curtains:close #wait:5 #battle:end
+- #wait:5 #battle:end
     -> barge.scene_3
 
 
