@@ -615,6 +615,8 @@ namespace MonoBehavior.Managers
                 (string varName, object newValue) => ChangeCanonState(newValue));
             
             // TODO: Connect barrel
+            GameManager.Instance._story.ObserveVariable ("b_explosive_barrel_is_used", 
+                (string varName, object newValue) => ChangeBarrelState(newValue));
             
             // Mast
             GameManager.Instance._story.ObserveVariable ("b_sail_is_down", 
@@ -676,7 +678,14 @@ namespace MonoBehavior.Managers
             }
         }
         
-        // TODO: Connect Barrel
+        void ChangeBarrelState(object state)
+        {
+            Debug.Log($"Barrel is used: {(bool) state}");
+            if ((bool)state)
+            {
+                _tempestBarrelAnimator.SetBool("Used", true);
+            }
+        }
         
         void ChangeMastSailState(object state)
         {
@@ -1228,7 +1237,7 @@ namespace MonoBehavior.Managers
                     SetTrialPropsOnStage(true);
                     _currentSet = _setTrial;
                     // Judge set position
-                    GameManager.Instance.GetCharacter("Judge").SetJudgePosition();
+                    StartCoroutine(GameManager.Instance.GetCharacter("Judge").SetJudgePositionCoroutine());
                     break;
                 case Constants.SetTempest:
                     _setTempest.SetActive(true);
