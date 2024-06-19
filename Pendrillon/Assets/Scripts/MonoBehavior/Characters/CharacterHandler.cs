@@ -216,6 +216,8 @@ public class CharacterHandler : MonoBehaviour
             StartCoroutine(PlayAnimCoroutine(Constants.AnimTalk));
     }
 
+    
+
     #endregion
 
     

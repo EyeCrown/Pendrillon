@@ -416,6 +416,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArlePrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 8241601096825971287, guid: ccd96b02024c5d84e8f7827595be9ea3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -528,6 +533,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1092970705183278147, guid: d09da91e4231a714abc7ed12de5d7500,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1092970705183278147, guid: d09da91e4231a714abc7ed12de5d7500,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3046941292229188056, guid: d09da91e4231a714abc7ed12de5d7500,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: ed96be99be341f84283f1d56f1efac39, type: 2}
+    - target: {fileID: 4527212837649914123, guid: d09da91e4231a714abc7ed12de5d7500,
+        type: 3}
+      propertyPath: m_Name
+      value: Mesh_Sc_Tempete_Leviathan2
+      objectReference: {fileID: 0}
     - target: {fileID: 5905083358906494889, guid: d09da91e4231a714abc7ed12de5d7500,
         type: 3}
       propertyPath: m_Name
@@ -536,7 +561,7 @@ PrefabInstance:
     - target: {fileID: 5905083358906494889, guid: d09da91e4231a714abc7ed12de5d7500,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8300588572102689297, guid: d09da91e4231a714abc7ed12de5d7500,
         type: 3}
@@ -1072,7 +1097,7 @@ PrefabInstance:
     - target: {fileID: 7731381328192955328, guid: 66787cae3f399b74b958f9175f2faaea,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1188,7 +1213,7 @@ PrefabInstance:
     - target: {fileID: 3098295769141173580, guid: 850ebcbbb65b50042b14ad1503befbd0,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5749971218428598681, guid: 850ebcbbb65b50042b14ad1503befbd0,
         type: 3}
