@@ -171,6 +171,7 @@ namespace MonoBehavior.Managers
         [HideInInspector] public UnityEvent NextDialogue;
         [HideInInspector] public UnityEvent ClearUI;
         [HideInInspector] public UnityEvent IntroEnded;
+        [HideInInspector] public UnityEvent RingBell;
     
         #endregion
     
@@ -521,6 +522,8 @@ namespace MonoBehavior.Managers
 
         void SetTrialObservable()
         {
+            RingBell.AddListener(OnRingBell);
+            
             GameManager.Instance._story.ObserveVariable ("t_audience_judgement", 
                 (string varName, object newValue) => ModifyTrialValue(newValue));
         }
@@ -1104,6 +1107,12 @@ namespace MonoBehavior.Managers
 
             ConnectAttributes();
             ClearUI.Invoke();
+        }
+
+        void OnRingBell()
+        {
+            _trialBellAnimator.SetTrigger("bell_use");
+            AkSoundEngine.PostEvent("Play_SFX_Story_JudgeBellFarTrial", gameObject);
         }
         
         #endregion
