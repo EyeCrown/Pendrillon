@@ -523,13 +523,13 @@ L'attaque spéciale a été esquivée car vous êtes sur le mât.
     ~ b_boss_state = pState
 {
     - b_boss_state == "default":
-        Le boss est en état {b_boss_state}.
+        Le boss est en état {b_boss_state}. #playsound:Play_SFX_NPC_Leviathan_TurnStart
     - b_boss_state == "open mouth":
-        Le boss est en état {b_boss_state}.
+        Le boss est en état {b_boss_state}. #playsound:Play_SFX_NPC_Leviathan_TurnStart
     - b_boss_state == "on boat":
-        Le boss est en état {b_boss_state}.
+        Le boss est en état {b_boss_state}. #playsound:Play_SFX_NPC_Leviathan_TurnStart
     - b_boss_state == "under water":
-        Le boss est en état {b_boss_state}.
+        Le boss est en état {b_boss_state}. #playsound:Play_SFX_NPC_Leviathan_Underwater
 }
 
 // Roll the boss attack
@@ -591,7 +591,7 @@ Vous ratez votre tir.
 === function climb_up_mast()
 {
     - b_player_is_on_top_of_mast == false:
-        Vous montez au mât. #height:Player:6
+        Vous montez au mât. #height:Player:6 #playsound:VOX_Player_Emotion_climb
         ~ b_player_is_on_top_of_mast = true
         ~ use_action_point()
 }
