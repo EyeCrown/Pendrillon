@@ -16,8 +16,7 @@ public class Options : MonoBehaviour
     #region Parameters
 
     [Header("=== Fonts ===")] 
-    [SerializeField] private TMP_FontAsset _originalFont;
-    [SerializeField] private TMP_FontAsset _secondFont;  
+    [SerializeField] private TMP_FontAsset _defaultFont; 
     [SerializeField] private TMP_FontAsset _openDyslexicFont;  
 
     #endregion
@@ -48,9 +47,8 @@ public class Options : MonoBehaviour
 
     
     //      Fonts 
-    private Toggle _originalFontToggle;
-    private Toggle _secondFontToggle;
-    private Toggle _thirdFontToggle;
+    private Toggle _defaultFontToggle;
+    private Toggle _dyslexicFontToggle;
 
     #endregion
     
@@ -77,7 +75,7 @@ public class Options : MonoBehaviour
     {
         ActingManager.Instance.PhaseStart.AddListener(() => { _openMenuButton.gameObject.SetActive(true);});
 
-        _originalFontToggle.isOn = true;
+        _defaultFontToggle.isOn = true;
         _screenShakeToggle.isOn = true;
         _openMenuButton.gameObject.SetActive(false);
         _panel.SetActive(false);
@@ -104,9 +102,8 @@ public class Options : MonoBehaviour
         
         // Font toggle
         var fontLocation = "FontsParameters/";
-        _originalFontToggle = _panel.transform.Find(fontLocation + "OriginalFont").GetComponent<Toggle>();
-        _secondFontToggle   = _panel.transform.Find(fontLocation + "SecondFont").GetComponent<Toggle>();
-        _thirdFontToggle    = _panel.transform.Find(fontLocation + "ThirdFont").GetComponent<Toggle>();
+        _defaultFontToggle = _panel.transform.Find(fontLocation + "DefaultFont").GetComponent<Toggle>();
+        _dyslexicFontToggle   = _panel.transform.Find(fontLocation + "DyslexicFont").GetComponent<Toggle>();
         
         // RTPC
         var soundLocation = "SoundParameters/";
@@ -140,11 +137,9 @@ public class Options : MonoBehaviour
         _closeMenuButton.onClick.AddListener(OnClickCloseButton);
         
         // Toggles
-        _originalFontToggle.onValueChanged.AddListener( 
-            delegate { ChangeFont(_originalFont); });
-        _secondFontToggle.onValueChanged.AddListener(   
-            delegate { ChangeFont(_secondFont); });
-        _thirdFontToggle.onValueChanged.AddListener(   
+        _defaultFontToggle.onValueChanged.AddListener( 
+            delegate { ChangeFont(_defaultFont); });
+        _dyslexicFontToggle.onValueChanged.AddListener(   
             delegate { ChangeFont(_openDyslexicFont); });
         
         _screenShakeToggle.onValueChanged.AddListener(
@@ -224,6 +219,12 @@ public class Options : MonoBehaviour
     public void OnClickMainMenuButton() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     
     void UpdateRTPC(string parameterName, float value) => AkSoundEngine.SetRTPCValue(parameterName, value);
+
+    private void OnEnable()
+    {
+        foreach (var textMeshObject in FindObjectsByType(typeof(TextMeshProUGUI), FindObjectsSortMode.None))
+            ((TextMeshProUGUI)textMeshObject).font = GameManager.Instance._currentFont;
+    }
 
     #endregion
 }
