@@ -567,7 +567,7 @@
 													<PropertyList>
 														<Property Name="MakeUpGain" Type="Real64">
 															<ValueList>
-																<Value>-3</Value>
+																<Value>-6</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -691,10 +691,54 @@
 														<ActiveSource Name="Silence" ID="{9EAD3788-5A58-46F9-864E-83FD71B154D0}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
+												<Sound Name="Silence_01" ID="{1D993E9B-CC8C-477C-9783-6862310CEF18}" ShortID="489575618">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<SourcePlugin Name="Silence" ID="{9594ED53-F857-4748-8A4F-C12FAB467544}" ShortID="373619564" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+															<PropertyList>
+																<Property Name="Length" Type="Real32" Value="3.5"/>
+															</PropertyList>
+															<Language>SFX</Language>
+														</SourcePlugin>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Silence" ID="{9594ED53-F857-4748-8A4F-C12FAB467544}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Silence_02" ID="{3D5A7353-9914-4F42-8F6E-B87FC06AC4E7}" ShortID="530553903">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<SourcePlugin Name="Silence" ID="{5CFD65AE-D9C1-4E5F-9E6E-8E7DDC2A5276}" ShortID="242014624" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+															<PropertyList>
+																<Property Name="Length" Type="Real32" Value="3.5"/>
+															</PropertyList>
+															<Language>SFX</Language>
+														</SourcePlugin>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Silence" ID="{5CFD65AE-D9C1-4E5F-9E6E-8E7DDC2A5276}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
 											</ChildrenList>
 											<Playlist>
 												<ItemRef Name="VOX_NPC_Leviathan_Scream" ID="{7875C7FE-E0E2-4857-AEB2-A1696495F582}"/>
 												<ItemRef Name="Silence" ID="{6670691B-A32E-44AE-A4FA-9A014390FBD4}"/>
+												<ItemRef Name="Silence_01" ID="{1D993E9B-CC8C-477C-9783-6862310CEF18}"/>
+												<ItemRef Name="Silence_02" ID="{3D5A7353-9914-4F42-8F6E-B87FC06AC4E7}"/>
 											</Playlist>
 										</RandomSequenceContainer>
 									</ChildrenList>

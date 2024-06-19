@@ -104,7 +104,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{97D755CA-3A00-DED8-0E8E-E472D77A7F4D}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{1270553F-001E-1E53-3EE8-D7B2803C0843}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -6777,7 +6777,9 @@
 			<Plugins>
 				<Custom>
 					<Plugin Id="185346133" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+					<Plugin Id="242014624" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="302264514" Name="Sine" LibName="Wwise Sine" LibId="6553602"/>
+					<Plugin Id="373619564" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="392278705" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="455678034" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 				</Custom>
@@ -7834,6 +7836,8 @@
 					</MediaRefs>
 					<PluginRefs>
 						<Custom>
+							<PluginRef Id="242014624"/>
+							<PluginRef Id="373619564"/>
 							<PluginRef Id="392278705"/>
 						</Custom>
 					</PluginRefs>
@@ -8516,6 +8520,8 @@
 					</MediaRefs>
 					<PluginRefs>
 						<Custom>
+							<PluginRef Id="242014624"/>
+							<PluginRef Id="373619564"/>
 							<PluginRef Id="392278705"/>
 						</Custom>
 					</PluginRefs>
@@ -14005,7 +14011,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{318B2569-9316-CC42-1EC5-042926F3D581}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{71B6A6FC-5975-DD8F-061E-1059098EAFE9}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -20678,7 +20684,9 @@
 			<Plugins>
 				<Custom>
 					<Plugin Id="185346133" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+					<Plugin Id="242014624" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="302264514" Name="Sine" LibName="Wwise Sine" LibId="6553602"/>
+					<Plugin Id="373619564" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="392278705" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="455678034" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 				</Custom>
@@ -21735,6 +21743,8 @@
 					</MediaRefs>
 					<PluginRefs>
 						<Custom>
+							<PluginRef Id="242014624"/>
+							<PluginRef Id="373619564"/>
 							<PluginRef Id="392278705"/>
 						</Custom>
 					</PluginRefs>
@@ -22417,6 +22427,8 @@
 					</MediaRefs>
 					<PluginRefs>
 						<Custom>
+							<PluginRef Id="242014624"/>
+							<PluginRef Id="373619564"/>
 							<PluginRef Id="392278705"/>
 						</Custom>
 					</PluginRefs>
@@ -27907,5 +27919,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A9B9055A-4D5B-5931-EC3A-02A4B291B9BF}</FileHash>
+	<FileHash>{514F80A7-F98A-6B38-23C6-92E45129D5C0}</FileHash>
 </SoundBanksInfo>
