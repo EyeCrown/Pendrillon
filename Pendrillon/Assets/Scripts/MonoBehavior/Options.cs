@@ -222,8 +222,8 @@ public class Options : MonoBehaviour
 
     private void OnEnable()
     {
-        foreach (var textMeshObject in FindObjectsByType(typeof(TextMeshProUGUI), FindObjectsSortMode.None))
-            ((TextMeshProUGUI)textMeshObject).font = GameManager.Instance._currentFont;
+        // foreach (var textMeshObject in FindObjectsByType(typeof(TextMeshProUGUI), FindObjectsSortMode.None))
+        //     ((TextMeshProUGUI)textMeshObject).font = GameManager.Instance._currentFont;
     }
 
     #endregion

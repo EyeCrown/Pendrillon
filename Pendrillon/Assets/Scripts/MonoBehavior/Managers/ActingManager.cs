@@ -629,8 +629,8 @@ namespace MonoBehavior.Managers
             // Boss
             GameManager.Instance._story.ObserveVariable ("b_boss_state", 
                 (string varName, object newValue) => ChangeBossState(newValue));
-            GameManager.Instance._story.ObserveVariable ("b_player_AP", 
-                (string varName, object newValue) => LauchBossAttack((int) newValue));
+            GameManager.Instance._story.ObserveVariable ("boss_is_attacking", 
+                (string varName, object newValue) => LauchBossAttack((bool) newValue));
         }
 
         void SetTempestPropsOnStage(bool inOut)
@@ -643,7 +643,7 @@ namespace MonoBehavior.Managers
         
         void ResultBossBattle(object state)
         {
-            Debug.Log($"Boss new state: {(bool) state}");
+            //Debug.Log($"Boss new state: {(bool) state}");
 
             // If player won then play boss death anim
             if ((bool) state)
@@ -652,7 +652,7 @@ namespace MonoBehavior.Managers
 
         void ChangeHarpoonState(object state)
         {
-            Debug.Log($"Harpon new state: {(bool) state}");
+            //Debug.Log($"Harpon new state: {(bool) state}");
             if ((bool)state)
             {
                 _tempestHarpoonAnimator.SetBool("charged", true);
@@ -666,7 +666,7 @@ namespace MonoBehavior.Managers
 
         void ChangeCanonState(object state)
         {
-            Debug.Log($"Canon new state: {(bool) state}");
+            //Debug.Log($"Canon new state: {(bool) state}");
             if ((bool)state)
             {
                 _tempestCanonAnimator.SetBool("charged", true);
@@ -680,7 +680,7 @@ namespace MonoBehavior.Managers
         
         void ChangeBarrelState(object state)
         {
-            Debug.Log($"Barrel is used: {(bool) state}");
+            //Debug.Log($"Barrel is used: {(bool) state}");
             if ((bool)state)
             {
                 _tempestBarrelAnimator.SetBool("Used", true);
@@ -731,9 +731,11 @@ namespace MonoBehavior.Managers
             _lastBossState = (string)state;
         }
 
-        void LauchBossAttack(int actionPoints)
+        void LauchBossAttack(object isAttacking)
         {
-            if (actionPoints > 0)
+            //Debug.Log($"Boss is attacking: {(bool) isAttacking}");
+
+            if (!(bool) isAttacking)
                 return;
             
             // Player took damage so
@@ -750,7 +752,6 @@ namespace MonoBehavior.Managers
                     break;
                 case Constants.BossUnderwater : 
                     _tempestLeviathanAnimator.SetTrigger("underwater_attack");
-
                     break;
                 default: Debug.LogError($"LauchBossAttack > Error: this is not supposed to happen [{_lastBossState}]");
                     break;

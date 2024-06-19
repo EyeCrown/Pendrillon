@@ -53,6 +53,7 @@ VAR b_fall_out_of_mast_damages = 2
 // Base
 VAR b_boss_is_dead = false
 VAR b_boss_state = "default"
+VAR boss_is_attacking = false
 VAR b_boss_attack = 1
 VAR b_tail_attack = false
 VAR b_boss_max_hp = 120 // Doit être le même nombre que b_boss_hp
@@ -144,6 +145,7 @@ SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami ! #playsoun
 = player_moovepool
 // Player turn
 C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
+~ boss_is_attacking = false
 // Checks if boss or player is dead
 {
     - b_boss_is_dead:
@@ -342,6 +344,7 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
 // Boss attack
 === function boss_attack()
 // Roll boss attack
+~ boss_is_attacking = true
 ~ roll_boss_attack()
 // Body attack
 {
