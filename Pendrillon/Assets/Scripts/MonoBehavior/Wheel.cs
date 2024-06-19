@@ -38,8 +38,8 @@ public class Wheel : MonoBehaviour
     
     public AnimationCurve _movementCurve;
 
-    private Color _successColor = new Color(0.08f, 0.7f, 0);
-    private Color _failColor = new Color(0.75f, 0, 0);
+    private Color _successColor = new Color(0.76f, 0.77f, 0.31f);
+    private Color _failColor = new Color(0.8f, 0.27f, 0.27f);
 
     [Header("=== Positions ===")] 
     [SerializeField] [Range(0, -10)] private float _yOffset;
