@@ -77,9 +77,9 @@ VAR b_boss_special_attack_power = 9
 
 = start
 
-// Start the scene
+// Start the scene 
 - #audience:ovation #battle:begin #screenshake
-- SOUFFLEUR: Psssst... Hé, l'ami ! #screenshake #wait:8 #playsound:VOX_Souffleur_pssthe7 #audience:ovation
+- SOUFFLEUR: Psssst... Hé, l'ami ! #screenshake #wait:7 #playsound:VOX_Souffleur_pssthe7 #audience:ovation
 SOUFFLEUR: Cette scène nous coûte <b>une fortune</b> en effets spéciaux à chaque spectacle... #playsound:VOX_Souffleur_fortuneeffetsspecias
 SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en termes de chorégraphie, matériel, main-d'œuvre... #playsound:VOX_Souffleur_budget
 SOUFFLEUR: Sans parler des <b><shake a=0.5>coûts d'entretien</shake></b> ! #playsound:VOX_Souffleur_coutentretien
@@ -144,7 +144,7 @@ SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami ! #playsoun
 // Player mooves
 = player_moovepool
 // Player turn
-C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
+// C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
 ~ boss_is_attacking = false
 // Checks if boss or player is dead
 {
@@ -298,7 +298,8 @@ C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
 
 // End the current turn
 = end_turn
-Fin du tour.
+-
+// Fin du tour.
 // Boss attack
 ~ boss_attack()
 {
@@ -320,22 +321,22 @@ Fin du tour.
 // Kill the boss
 = kill_boss
 ~ b_player_won = true
--> end_battle
+    -> end_battle
 
 // Kill the player
 = kill_player
 ~ b_player_won = false
--> end_battle
+    -> end_battle
 
 // End of the battle
 = end_battle
 - #curtains:close #wait:5 #battle:end
-Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
-{
-    - b_player_won:
-        Il vous restait {b_player_hp} HP.
-}
--> tribunal_2
+// Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
+// {
+//     - b_player_won:
+//         Il vous restait {b_player_hp} HP.
+// }
+    -> tribunal_2
 
 
 /////////////////////////////////////////
@@ -379,7 +380,7 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
                 ~ souffleur_reaction_about_sail_down = true
         }
 }
-Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} HP.
+// Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} HP.
 
 // Hurt player
 === function hurt_player(pDamages)
@@ -414,8 +415,8 @@ Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} H
         {
             - b_boss_state == "on boat":
                 ~ hurt_boss(angel_jump_damages)
-            - else:
-                Pas possible de faire un saut de l'ange si le boss n'est pas dans l'état on boat.
+            // - else:
+            //     Pas possible de faire un saut de l'ange si le boss n'est pas dans l'état on boat.
         }
 }
 {
@@ -442,7 +443,7 @@ Le boss a attaqué avec l'attaque {b_boss_attack}. Il vous reste {b_player_hp} H
         ~ b_boss_hp = 0
         ~ b_boss_is_dead = true
 }
-Le boss a perdu {pDamages} HP. Il lui reste {b_boss_hp} HP.
+// Le boss a perdu {pDamages} HP. Il lui reste {b_boss_hp} HP.
 
 === function boss_attack_check(pPrecision)
     ~ temp result = true
@@ -457,16 +458,18 @@ Le boss a perdu {pDamages} HP. Il lui reste {b_boss_hp} HP.
 
 // Fail boss attack
 === function fail_boss_attack()
-Le boss a raté son attaque.
+-
+// Le boss a raté son attaque.
 
 // Fail boss special attack
 === function fail_boss_special_attack()
-L'attaque spéciale a été esquivée car vous êtes sur le mât.
+-
+// L'attaque spéciale a été esquivée car vous êtes sur le mât.
 
 // Use one action point
 == function use_action_point()
     ~ b_player_AP -= 1
-    Il vous reste {b_player_AP} AP.
+    // Il vous reste {b_player_AP} AP.
 
 // Roll boss state
 === function roll_boss_state()
@@ -527,13 +530,13 @@ L'attaque spéciale a été esquivée car vous êtes sur le mât.
     ~ b_boss_state = pState
 {
     - b_boss_state == "default":
-        Le boss est en état {b_boss_state}. #playsound:Play_SFX_NPC_Leviathan_TurnStart
+        #playsound:Play_SFX_NPC_Leviathan_TurnStart
     - b_boss_state == "open mouth":
-        Le boss est en état {b_boss_state}. #playsound:Play_SFX_NPC_Leviathan_TurnStart
+        #playsound:Play_SFX_NPC_Leviathan_TurnStart
     - b_boss_state == "on boat":
-        Le boss est en état {b_boss_state}. #playsound:Play_SFX_NPC_Leviathan_TurnStart
+        #playsound:Play_SFX_NPC_Leviathan_TurnStart
     - b_boss_state == "under water":
-        Le boss est en état {b_boss_state}. #playsound:Play_SFX_NPC_Leviathan_Underwater
+        #playsound:Play_SFX_NPC_Leviathan_Underwater
 }
 
 // Roll the boss attack
@@ -563,20 +566,23 @@ L'attaque spéciale a été esquivée car vous êtes sur le mât.
 
 // Load the harpoon
 === function load_harpoon()
-Vous remontez le harpon. #anim:Player:load_harpoon
+- #anim:Player:load_harpoon
+// Vous remontez le harpon. #anim:Player:load_harpoon
     ~ b_harpoon_is_loaded = true
     ~ use_action_point()
 
 // Aim with the grabble
 === function aim_harpoon()
-Vous visez avec le harpon. #anim:Player:aim_harpoon
+- #anim:Player:aim_harpoon
+// Vous visez avec le harpon. #anim:Player:aim_harpoon
     ~ b_harpoon_is_aimed = true
     ~ shoot_harpoon_mod += aim_bonus_mod
     ~ use_action_point()
 
 // Shoot with the grabble
 === function shoot_harpoon()
-Vous tirez avec le harpon. #anim:Player:shoot_harpoon
+- #anim:Player:shoot_harpoon
+// Vous tirez avec le harpon. #anim:Player:shoot_harpoon
     ~ b_harpoon_is_loaded = false
     ~ b_harpoon_is_aimed = false
     ~ attack_boss("harpoon")
@@ -585,7 +591,8 @@ Vous tirez avec le harpon. #anim:Player:shoot_harpoon
 
 // Shoot with the grabble and fail
 === function shoot_harpoon_fail()
-Vous ratez votre tir.
+-
+// Vous ratez votre tir.
     ~ b_harpoon_is_loaded = false
     ~ b_harpoon_is_aimed = false
     ~ use_action_point()
@@ -595,57 +602,66 @@ Vous ratez votre tir.
 === function climb_up_mast()
 {
     - b_player_is_on_top_of_mast == false:
-        Vous montez au mât. #height:Player:6 #playsound:VOX_Player_Emotion_climb
-        ~ b_player_is_on_top_of_mast = true
+        #height:Player:6 #playsound:VOX_Player_Emotion_climb
+        // Vous montez au mât. #height:Player:6 #playsound:VOX_Player_Emotion_climb
+        ~ b_player_is_on_top_of_mast = true 
         ~ use_action_point()
 }
 
 // Climb down the sail
 === function climb_down_mast()
-Vous descendez du mât. #look:Player:front #height:Player:-6
+-
+// Vous descendez du mât. #look:Player:front #height:Player:-6
     ~ b_player_is_on_top_of_mast = false
 
 // Lower the sail
 === function lower_sail()
-Vous descendez la voile. //#anim:Player:lower_sail
+- 
+// Vous descendez la voile. //#anim:Player:lower_sail
     ~ b_sail_is_down = true
     ~ use_action_point()
 
 // Do an angel jump
 === function angel_jump()
-Vous sautez depuis le mât et attaquez. #look:Player:front #height:Player:-6 //#anim:Player:mast_attack
+- #look:Player:front #height:Player:-6 //#anim:Player:mast_attack
+// Vous sautez depuis le mât et attaquez. #look:Player:front #height:Player:-6 //#anim:Player:mast_attack
     ~ attack_boss("angel jump")
     ~ b_player_is_on_top_of_mast = false
     ~ use_action_point()
 
 // Do an angel jump and fail
 === function angel_jump_fail()
-Vous ratez votre saut de l'ange. #look:Player:front #height:Player:-6
+- #look:Player:front #height:Player:-6
+// Vous ratez votre saut de l'ange. #look:Player:front #height:Player:-6
     ~ b_player_is_on_top_of_mast = false
     ~ use_action_point()
 
 // Fall out of mast when it break
 === function fall_out_of_mast_when_it_breaks()
     ~ hurt_player(b_fall_out_of_mast_damages)
-    Vous êtes tombé du mât car il a rompu. Vous avez perdu {b_fall_out_of_mast_damages} HP.
-    Il vous reste {b_player_hp} HP. #look:Player:front #height:Player:-6 //#anim:Player:fall_out_of_mast
+    - #look:Player:front #height:Player:-6 //#anim:Player:fall_out_of_mast
+    // Vous êtes tombé du mât car il a rompu. Vous avez perdu {b_fall_out_of_mast_damages} HP.
+    // Il vous reste {b_player_hp} HP. #look:Player:front #height:Player:-6 //#anim:Player:fall_out_of_mast
 
 // Load the canon
 === function load_canon()
-Vous remontez le canon. #anim:Player:load_canon
+- #anim:Player:load_canon
+// Vous remontez le canon. #anim:Player:load_canon
     ~ b_canon_is_loaded = true
     ~ use_action_point()
 
 // Aim with the canon
 === function aim_canon()
-Vous visez avec le canon. #anim:Player:aim_canon
+- #anim:Player:aim_canon
+// Vous visez avec le canon. #anim:Player:aim_canon
     ~ b_canon_is_aimed = true
     ~ shoot_canon_mod += aim_bonus_mod
     ~ use_action_point()
 
 // Shoot with the canon
 === function shoot_canon()
-Vous tirez avec le canon. #anim:Player:shoot_canon
+- #anim:Player:shoot_canon
+// Vous tirez avec le canon. #anim:Player:shoot_canon
     ~ b_canon_is_loaded = false
     ~ b_canon_is_aimed = false
     ~ b_nb_canon_bullet_left -= 1
@@ -655,7 +671,8 @@ Vous tirez avec le canon. #anim:Player:shoot_canon
 
 // Shoot with the canon and fail
 === function shoot_canon_fail()
-Vous ratez votre tir.
+-
+// Vous ratez votre tir.
     ~ b_canon_is_loaded = false
     ~ b_canon_is_aimed = false
     ~ b_nb_canon_bullet_left -= 1
@@ -664,36 +681,41 @@ Vous ratez votre tir.
 
 // Load the barrel
 === function load_barrel()
-Vous chargez le tonneau explosif. #anim:Player:load_barrel
+- #anim:Player:load_barrel
+// Vous chargez le tonneau explosif. #anim:Player:load_barrel
     ~ b_explosive_barrel_is_loaded = true
     ~ use_action_point()
 
 // Throw the barrel
 === function throw_barrel()
-Vous lancez le tonneau explosif. #anim:Player:throw_barrel
+- #anim:Player:throw_barrel
+// Vous lancez le tonneau explosif. #anim:Player:throw_barrel
     ~ b_explosive_barrel_is_used = true
     ~ attack_boss("explosive barrel")
     ~ use_action_point()
 
 // Throw the barrel and fail
 === function throw_barrel_fail()
-Vous ratez votre lancé.
+-
+// Vous ratez votre lancé.
     ~ b_explosive_barrel_is_used = true
     ~ use_action_point()
 
 // Crack the mast
 === function crack_mast()
+-
 ~ b_mast_is_cracked = true
-Le mât du navire est fissuré suite à l'attaque du Léviathan.
+// Le mât du navire est fissuré suite à l'attaque du Léviathan.
 
 // Break the mast
 === function break_mast()
+-
 ~ b_mast_is_broken = true
 {
     - b_player_is_on_top_of_mast:
         ~ fall_out_of_mast_when_it_breaks()
 }
-Le mât du navire est brisé.
+// Le mât du navire est brisé.
 - SOUFFLEUR: Wow ! Impressionnant ! Rien de cassé, l'ami ?
 SOUFFLEUR: La bataille va être bien plus ardue maintenant que le mât est brisé...
 SOUFFLEUR: C'est pour ça qu'un marin doit toujours <b>baisser les voiles</b> en cas de tempête.

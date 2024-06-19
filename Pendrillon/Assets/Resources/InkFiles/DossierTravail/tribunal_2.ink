@@ -335,7 +335,7 @@ NAÏDA: Combien il est étrange de constater que vous autres, humains, ayez donn
         NAÏDA: Je remercie <b>Merlin</b> de s'être battu pour qu'on me nomma bien, par <b>mon nom</b>. #audience:applause #playsound:VOX_Naida_remercieMerlin
 }
 - NAÏDA: Car <b>les noms</b>, voyez-vous, sont le <b>cœur battant</b> de toute chose. Les noms sont <b>importants</b>. #audience:applause #playsound:VOX_Naida_carlesnoms
-NAÏDA: Ainsi il m'apparaît, pour conclure notre histoire, qu'en donnant à un système partial et imparfait, le nom même d'une vertu... #audience:silent #playsound:VOX_Naida_ainsiilmapparait
+NAÏDA: Ainsi il m'apparaît, pour conclure notre histoire, qu'en donnant à un système partial et imparfait, le nom même d'une <b>vertu</b>... #audience:silent #playsound:VOX_Naida_ainsiilmapparait
 NAÏDA: En lui donnant le nom de <b>« Justice »</b>... #audience:debate #playsound:VOX_Naida_enluidonnantjustice
 NAÏDA: Vous autres humains ayez commis une erreur... <shake a=0.5><b>cruelle</b></shake>. #anim:Naida:bow #box #audience:ovation #playsound:VOX_Naida_vousautreshumains #curtains:close #wait:10 #audience:ovation
 - -> cast_salutation
