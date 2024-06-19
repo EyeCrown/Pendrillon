@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BREAK_AMB_SC_THEATER_CROWDCHATTER = 1977883155U;
         static const AkUniqueID CRATE_SEARCH = 1434421713U;
         static const AkUniqueID CROWDBOREDOMDOWN = 4288856718U;
         static const AkUniqueID GAMESTART = 4058101365U;
@@ -270,6 +271,7 @@ namespace AK
         static const AkUniqueID STOP_AMB_SC_THEATER_CROWDCHATTER = 2638164736U;
         static const AkUniqueID STOP_AMB_SC_TRIAL_AMBIANCE = 2391403843U;
         static const AkUniqueID STOP_AMC_SC_EGLISE_JOUR_AMBIANCE = 1361922702U;
+        static const AkUniqueID STOP_BOSSMUSIC = 656877296U;
         static const AkUniqueID STOP_VOX_ALL = 139643743U;
         static const AkUniqueID STOP_VOX_EMOTIONS = 4268385224U;
         static const AkUniqueID VOX_AGATHE_ACCUEILLIACCUSE = 2408301271U;
@@ -1310,6 +1312,7 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID AMBIANCEFATIGUE = 1006055004U;
+        static const AkUniqueID BOSSMUSICVOLUME = 488808781U;
         static const AkUniqueID CROWDBOREDOM = 2888587878U;
         static const AkUniqueID CROWDREACTION = 2134499837U;
         static const AkUniqueID ENVIRONMENT_VOLUME = 2054307141U;

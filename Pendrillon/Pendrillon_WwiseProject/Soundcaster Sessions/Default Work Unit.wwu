@@ -107,6 +107,10 @@
 							<Value>50</Value>
 						</RTPCValue>
 						<RTPCValue>
+							<GameParameterRef Name="BossMusicVolume" ID="{6D3B492A-11C9-41CD-8875-3BCEB20E7015}"/>
+							<Value>100</Value>
+						</RTPCValue>
+						<RTPCValue>
 							<GameParameterRef Name="FullLineIsSpeaking" ID="{01871AF0-8042-440C-82E1-948C3C103025}"/>
 							<Value>-100</Value>
 						</RTPCValue>
@@ -249,6 +253,49 @@
 							<Value>-100</Value>
 						</RTPCValue>
 					</RTPCValueList>
+					<CurrentStateList ShowAll="true"/>
+					<CurrentSwitchList ShowAll="true"/>
+				</SoundcasterSession>
+				<SoundcasterSession Name="Boss Fight" ID="{119E1FE5-6BD6-4F78-A3DC-DEC57DB58B32}">
+					<ModuleList>
+						<Module>
+							<ObjectRef Name="Play_SFX_NPC_Leviathan_AttackJaw" ID="{DF43C24A-0C88-4D00-A0ED-D13BB5CB9D9F}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_NPC_Leviathan_TurnStart" ID="{F79BD5DB-4545-4DD4-9377-0AD1F0B96D68}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="0" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_NPC_Leviathan_AttackTail" ID="{2C611244-EC64-4072-941D-51E9E5EEDCD2}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="1" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_NPC_Leviathan_Underwater" ID="{1FC47171-B938-4AB8-9A21-44E3D8766915}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="1" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_AMB_SC_Tempest_Ambiance" ID="{04DEBB85-E569-4C98-90A1-616560225229}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="1" Y="2"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_NPC_Leviathan_Hurt" ID="{042A3936-AFB1-49AE-A3E6-3710542566C6}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="2" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_VOX_NPC_Leviathan_Defeated" ID="{29769FB5-F649-4755-AF31-5E3CA6E65AAF}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="2" Y="1"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_SFX_NPC_Leviathan_Spawn" ID="{D3E9710B-F1DA-4230-9F44-9ED91AC3A965}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="3" Y="0"/>
+						</Module>
+						<Module>
+							<ObjectRef Name="Play_VOX_NPC_Leviathan_Scream" ID="{A0E1EB1B-69FB-45FD-8706-1837909E4572}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+							<Position X="3" Y="1"/>
+						</Module>
+					</ModuleList>
+					<RTPCValueList ShowAll="true"/>
 					<CurrentStateList ShowAll="true"/>
 					<CurrentSwitchList ShowAll="true"/>
 				</SoundcasterSession>
