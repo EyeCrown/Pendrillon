@@ -712,9 +712,20 @@
 								</ActorMixer>
 								<Sound Name="LevelUp" ID="{CF2D79C9-A11B-4F66-8935-72ABE346D507}" ShortID="66710666">
 									<PropertyList>
+										<Property Name="IgnoreParentMaxSoundInstance" Type="bool" Value="True"/>
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
 												<Value>-8</Value>
+											</ValueList>
+										</Property>
+										<Property Name="MaxSoundPerInstance" Type="int16">
+											<ValueList>
+												<Value>1</Value>
+											</ValueList>
+										</Property>
+										<Property Name="UseMaxSoundPerInstance" Type="bool">
+											<ValueList>
+												<Value>True</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
