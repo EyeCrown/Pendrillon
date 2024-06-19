@@ -432,6 +432,17 @@ public class CharacterHandler : MonoBehaviour
     }
     
     
+    public IEnumerator SetJudgePositionCoroutine()
+    {
+        yield return new WaitForSeconds(3.0f);
+        
+        var judgePos = GameManager.Instance._gridScene.GetWorldPositon(new Vector2Int(2, 9));
+        transform.position = new Vector3(judgePos.x, 0.0f, judgePos.z);
+        _rope.SetActive(false);
+        _onStage = true;
+    }
+    
+    
     /*public IEnumerator OldArriveOnStage(float duration = 8.0f)
     {
         _arriveCoroutine = true;
