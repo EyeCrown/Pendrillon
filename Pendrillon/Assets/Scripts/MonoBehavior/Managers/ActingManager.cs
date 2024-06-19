@@ -63,6 +63,7 @@ namespace MonoBehavior.Managers
         private Animator _tempestBarrelAnimator;
         private Animator _tempestMastAnimator;
         private Animator _tempestLeviathanAnimator;
+        private Animator _tempestRedLeviathanAnimator;
         
         #endregion
 
@@ -494,6 +495,7 @@ namespace MonoBehavior.Managers
             _tempestBarrelAnimator  = _setTempest.transform.Find($"{tempestName}BarilExplosif").GetComponent<Animator>();
             _tempestMastAnimator    = _setTempest.transform.Find($"{tempestName}MatPart01").GetComponent<Animator>();
             _tempestLeviathanAnimator = _setTempest.transform.Find($"{tempestName}Leviathan").GetComponent<Animator>();
+            _tempestRedLeviathanAnimator = _setTempest.transform.Find($"{tempestBaseName}RedLeviathan").GetComponent<Animator>();
         }
 
         void ConnectEvents()
@@ -1673,7 +1675,7 @@ namespace MonoBehavior.Managers
                     _battleHUD.BattleEnded.Invoke();
                     _tempestLeviathanAnimator.SetTrigger("underwater");
                     _tempestLeviathanAnimator.SetBool("InOut", false);
-
+                    _tempestRedLeviathanAnimator.SetTrigger("endBattle");
                     break;
                 default:
                     Debug.LogError($"AM.HandleTagBattle > Error: Unknown battle state [{state}]");
