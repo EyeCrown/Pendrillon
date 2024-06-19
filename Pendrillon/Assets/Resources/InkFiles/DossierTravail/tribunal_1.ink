@@ -21,7 +21,6 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #actor:Marcello:MARCELLO:MARCELLOGRE:MARCELLOTARIE:MARCELLOCROUPIE
 #actor:Agathe:AGATHE
 // Set the location
-#curtains:open
 #set:trial
 // Set the actor's positions
 
@@ -34,7 +33,7 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #wait:5
 #audience:ovation
 
-- JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencesilence
+- JUGE ERNEST: Silence ! Silence ! #curtains:open #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencesilence
 {
     - p_name == "Merlin":
         JUGE ERNEST: Les <b>Portes du Tribunal</b> se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribMerlin
