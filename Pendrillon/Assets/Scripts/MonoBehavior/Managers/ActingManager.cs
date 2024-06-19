@@ -44,11 +44,24 @@ namespace MonoBehavior.Managers
 
         private Curtains _curtains;
 
+        #region Set Object Animators
+
+        // Forest
+        private Animator _forestBushAnimator;
+
+        
+        // Church
+        private Animator _churchNightTorchAnimator;
+
+        
+        // Tempest
         private Animator _tempestCanonAnimator;
         private Animator _tempestHarpoonAnimator;
         private Animator _tempestBarrelAnimator;
         private Animator _tempestMastAnimator;
         private Animator _tempestLeviathanAnimator;
+        
+        #endregion
 
         private string _lastBossState;
         
@@ -456,13 +469,21 @@ namespace MonoBehavior.Managers
             _statsUI    = GameObject.Find("Canvas/PLAYER_STATS").GetComponent<StatsUI>();
             _battleHUD  = GameObject.Find("Canvas/BATTLE_HUD").GetComponent<BattleHUD>();
             
+            // Forest Animator
+            var _bushAnimatorAddress = "Mesh_Sc_Foret_Move";
+            _forestBushAnimator = _setForest.transform.Find(_bushAnimatorAddress).GetComponent<Animator>();
+            
+            // Church Animator
+            var lightAnimatorAddress = "Mesh_Sc_Eglise_Statue/lampe/FlammesOnOff";
+            _churchNightTorchAnimator = _setChurchNight.transform.Find(lightAnimatorAddress).GetComponent<Animator>();
+            
             // Tempest Animators
             string tempestAddressAnimators = "AnimatorObjects/", tempestBaseName = "Mesh_Sc_Tempete_";
             string tempestName = tempestAddressAnimators + tempestBaseName;
-            _tempestCanonAnimator = _setTempest.transform.Find($"{tempestName}Canon").GetComponent<Animator>();
+            _tempestCanonAnimator   = _setTempest.transform.Find($"{tempestName}Canon").GetComponent<Animator>();
             _tempestHarpoonAnimator = _setTempest.transform.Find($"{tempestName}Harpon").GetComponent<Animator>();
-            _tempestBarrelAnimator = _setTempest.transform.Find($"{tempestName}BarilExplosif").GetComponent<Animator>();
-            _tempestMastAnimator = _setTempest.transform.Find($"{tempestName}MatPart01").GetComponent<Animator>();
+            _tempestBarrelAnimator  = _setTempest.transform.Find($"{tempestName}BarilExplosif").GetComponent<Animator>();
+            _tempestMastAnimator    = _setTempest.transform.Find($"{tempestName}MatPart01").GetComponent<Animator>();
             _tempestLeviathanAnimator = _setTempest.transform.Find($"{tempestName}Leviathan").GetComponent<Animator>();
         }
 
@@ -504,10 +525,51 @@ namespace MonoBehavior.Managers
             _setTrial.transform.Find("Mesh_Sc_Tribunal_Balance")
                 .GetComponent<Animator>().SetFloat("balance", value); 
         }
+
+        #region Forest Observables
+
+        void SetForestObservable()
+        {
+            GameManager.Instance._story.ObserveVariable ("bush_moved", 
+                (string varName, object newValue) => MoveForestBush(newValue));
+        }
+
+        void MoveForestBush(object newValue)
+        {
+            if ((bool) newValue)
+                _forestBushAnimator.SetTrigger("pull");
+        }
         
+        void SetForestPropsOnStage(bool inOut)
+        {
+            _forestBushAnimator.SetBool("InOut", inOut);
+        }
+        
+        #endregion
+        
+        
+        #region Chruch Night Observables
+
+        void SetChruchObservable()
+        {
+            GameManager.Instance._story.ObserveVariable ("irene_torch_is_on", 
+                (string varName, object newValue) => ChangeChurchNightLights(newValue));
+        }
+
+        void ChangeChurchNightLights(object newValue)
+        {
+            _churchNightTorchAnimator.SetBool("lightOn", (bool) newValue);
+        }
+
+        void SetChurchNightPropsOnStage(bool inOut) { }
+        
+        #endregion
+
+        #region Tempest Observables
+
         void SetTempestObservable()
         {
-            Debug.Log($"AM.SetTempestObservable");
+            
             _lastBossState = (string) GameManager.Instance._story.variablesState["b_boss_state"];
             
             GameManager.Instance._story.ObserveVariable ("b_player_won", 
@@ -537,6 +599,14 @@ namespace MonoBehavior.Managers
                 (string varName, object newValue) => LauchBossAttack((int) newValue));
         }
 
+        void SetTempestPropsOnStage(bool inOut)
+        {
+            _tempestCanonAnimator.SetBool("InOut", inOut);
+            _tempestHarpoonAnimator.SetBool("InOut", inOut);
+            _tempestBarrelAnimator.SetBool("InOut", inOut);
+            _tempestMastAnimator.SetBool("InOut", inOut);
+        }
+        
         void ResultBossBattle(object state)
         {
             Debug.Log($"Boss new state: {(bool) state}");
@@ -646,6 +716,8 @@ namespace MonoBehavior.Managers
             }
             
         }
+
+        #endregion
         
         #endregion
         
@@ -917,6 +989,8 @@ namespace MonoBehavior.Managers
             if (GameManager.Instance._intro)
                 SetIntro();
             
+            SetChruchObservable();
+            SetForestObservable();
             SetTrialObservable();
             SetTempestObservable();
             
@@ -1080,12 +1154,11 @@ namespace MonoBehavior.Managers
                 if (animator != null)
                     animator.SetBool("InOut",false);
                 if (_currentSet == _setTempest)
-                {
-                    _tempestCanonAnimator.SetBool("InOut", false);
-                    _tempestHarpoonAnimator.SetBool("InOut", false);
-                    _tempestBarrelAnimator.SetBool("InOut", false);
-                    _tempestMastAnimator.SetBool("InOut", false);
-                }
+                    SetTempestPropsOnStage(false);
+                if (_currentSet == _setChurchNight)
+                    SetChurchNightPropsOnStage(false);
+                if (_currentSet == _setForest)
+                    SetForestPropsOnStage(false);
             }
 
             GameManager.Instance.ClearStageCharacters();
@@ -1107,6 +1180,7 @@ namespace MonoBehavior.Managers
                 case Constants.SetChuchNight:
                     _setChurchNight.SetActive(true);
                     _setChurchNight.GetComponent<Animator>().SetBool("InOut",true);
+                    SetChurchNightPropsOnStage(true);
                     _currentSet = _setChurchNight;
                     break;
                 case Constants.SetChuchDay:
@@ -1120,23 +1194,17 @@ namespace MonoBehavior.Managers
                     _currentSet = _setTrial;
                     // Judge set position
                     GameManager.Instance.GetCharacter("Judge").SetJudgePosition();
-                    
                     break;
                 case Constants.SetTempest:
                     _setTempest.SetActive(true);
                     _setTempest.GetComponent<Animator>().SetBool("InOut",true);
-                    
-                    // Props anims
-                    _tempestCanonAnimator.SetBool("InOut", true);
-                    _tempestHarpoonAnimator.SetBool("InOut", true);
-                    _tempestBarrelAnimator.SetBool("InOut", true);
-                    _tempestMastAnimator.SetBool("InOut", true);
-                    
+                    SetTempestPropsOnStage(true);
                     _currentSet = _setTempest;
                     break;
                 case Constants.SetForest:
                     _setForest.SetActive(true);
                     _setForest.GetComponent<Animator>().SetBool("InOut",true);
+                    SetForestPropsOnStage(true);
                     _currentSet = _setForest;
                     break;
                 default:
