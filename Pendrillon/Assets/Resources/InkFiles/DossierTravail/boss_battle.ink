@@ -77,9 +77,9 @@ VAR b_boss_special_attack_power = 9
 
 = start
 
-// Start the scene 
+// Start the scene
 - #audience:ovation #battle:begin #screenshake
-- SOUFFLEUR: Psssst... Hé, l'ami ! #screenshake #wait:7 #playsound:VOX_Souffleur_pssthe7 #audience:ovation
+- SOUFFLEUR: Psssst... Hé, l'ami ! #screenshake #wait:8 #playsound:VOX_Souffleur_pssthe7 #audience:ovation
 SOUFFLEUR: Cette scène nous coûte <b>une fortune</b> en effets spéciaux à chaque spectacle... #playsound:VOX_Souffleur_fortuneeffetsspecias
 SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en termes de chorégraphie, matériel, main-d'œuvre... #playsound:VOX_Souffleur_budget
 SOUFFLEUR: Sans parler des <b><shake a=0.5>coûts d'entretien</shake></b> ! #playsound:VOX_Souffleur_coutentretien
@@ -144,7 +144,7 @@ SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami ! #playsoun
 // Player mooves
 = player_moovepool
 // Player turn
-// C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
+C'est à votre tour. 
 ~ boss_is_attacking = false
 // Checks if boss or player is dead
 {
@@ -298,10 +298,10 @@ SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami ! #playsoun
 
 // End the current turn
 = end_turn
--
-// Fin du tour.
+//- Fin du tour.
 // Boss attack
 ~ boss_attack()
+~ boss_is_attacking = true
 {
     - b_mast_is_broken && b_player_is_on_top_of_mast:
         ~ b_player_is_on_top_of_mast = false
@@ -321,17 +321,17 @@ SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami ! #playsoun
 // Kill the boss
 = kill_boss
 ~ b_player_won = true
-    -> end_battle
+-> end_battle
 
 // Kill the player
 = kill_player
 ~ b_player_won = false
-    -> end_battle
+-> end_battle
 
 // End of the battle
 = end_battle
 - #curtains:close #wait:5 #battle:end
-// Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
+Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
 // {
 //     - b_player_won:
 //         Il vous restait {b_player_hp} HP.
@@ -345,7 +345,6 @@ SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami ! #playsoun
 // Boss attack
 === function boss_attack()
 // Roll boss attack
-~ boss_is_attacking = true
 ~ roll_boss_attack()
 // Body attack
 {
@@ -602,46 +601,41 @@ SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami ! #playsoun
 === function climb_up_mast()
 {
     - b_player_is_on_top_of_mast == false:
-        #height:Player:6 #playsound:VOX_Player_Emotion_climb
-        // Vous montez au mât. #height:Player:6 #playsound:VOX_Player_Emotion_climb
-        ~ b_player_is_on_top_of_mast = true 
+        Vous montez au mât.  #playsound:VOX_Player_Emotion_climb
+        ~ b_player_is_on_top_of_mast = true
         ~ use_action_point()
 }
 
 // Climb down the sail
 === function climb_down_mast()
--
-// Vous descendez du mât. #look:Player:front #height:Player:-6
+Vous descendez du mât. #look:Player:front 
     ~ b_player_is_on_top_of_mast = false
 
 // Lower the sail
 === function lower_sail()
-- 
-// Vous descendez la voile. //#anim:Player:lower_sail
+Vous descendez la voile. //#anim:Player:lower_sail
     ~ b_sail_is_down = true
     ~ use_action_point()
 
 // Do an angel jump
 === function angel_jump()
-- #look:Player:front #height:Player:-6 //#anim:Player:mast_attack
-// Vous sautez depuis le mât et attaquez. #look:Player:front #height:Player:-6 //#anim:Player:mast_attack
+Vous sautez depuis le mât et attaquez. #look:Player:front  //#anim:Player:mast_attack
     ~ attack_boss("angel jump")
     ~ b_player_is_on_top_of_mast = false
     ~ use_action_point()
 
 // Do an angel jump and fail
 === function angel_jump_fail()
-- #look:Player:front #height:Player:-6
-// Vous ratez votre saut de l'ange. #look:Player:front #height:Player:-6
+Vous ratez votre saut de l'ange. #look:Player:front 
     ~ b_player_is_on_top_of_mast = false
     ~ use_action_point()
 
 // Fall out of mast when it break
 === function fall_out_of_mast_when_it_breaks()
+    ~ b_player_is_on_top_of_mast = false
     ~ hurt_player(b_fall_out_of_mast_damages)
-    - #look:Player:front #height:Player:-6 //#anim:Player:fall_out_of_mast
-    // Vous êtes tombé du mât car il a rompu. Vous avez perdu {b_fall_out_of_mast_damages} HP.
-    // Il vous reste {b_player_hp} HP. #look:Player:front #height:Player:-6 //#anim:Player:fall_out_of_mast
+    Vous êtes tombé du mât car il a rompu. Vous avez perdu {b_fall_out_of_mast_damages} HP.
+    Il vous reste {b_player_hp} HP. #look:Player:front  //#anim:Player:fall_out_of_mast
 
 // Load the canon
 === function load_canon()
