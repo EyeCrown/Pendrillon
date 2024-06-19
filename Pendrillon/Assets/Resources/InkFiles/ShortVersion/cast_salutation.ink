@@ -14,13 +14,16 @@
 #actor:Marcello:MARCELLO
 #actor:Arle:ARLE // Arle, toujours pendue à la corde ?
 // Set the location
-//#set:trial
+#set:empty
 // Set the actor's positions
 #position:Passeur:4:2
-#position:Arle:4:3
-#position:Judge:4:5
-#position:Player:4:7
-#position:Naïda:4:8
+#position:Naïda:4:3
+#position:Player:4:4
+#position:Judge:4:6
+#position:Agathe:4:8
+#position:Capucine:4:9
+#position:Marcello:4:10
+#position:Arle:4:11
 
 // Le juge est encore seul sur scène
 #playsound:Play_MUS_Story_SC_Trial_Conclusion
@@ -35,7 +38,7 @@
 - #curtains:open #wait:5 #audience:ovation #wait:2 #audience:ovation #wait:3 #audience:ovation #wait:1
 - #audience:ovation
 - #wait:10
-- #anim:Passeur:bow #anim:Player:bow #anim:Naïda:bow #anim:Judge:bow #anim:Arle:bow
+- #anim:Player:bow #anim:Naïda:bow #anim:Agathe:bow #anim:Judge:bow #anim:Capucine:bow #anim:Marcello:bow #anim:Arle:bow 
 //- #curtains:close
 - #audience:ovation #wait:5
 - -> end_of_the_show

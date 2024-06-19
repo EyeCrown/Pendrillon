@@ -144,7 +144,7 @@ SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami ! #playsoun
 // Player mooves
 = player_moovepool
 // Player turn
-// C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
+C'est à votre tour.
 ~ boss_is_attacking = false
 // Checks if boss or player is dead
 {
