@@ -5,6 +5,11 @@
 			<ChildrenList>
 				<Bus Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}">
 					<PropertyList>
+						<Property Name="BypassEffect0" Type="bool">
+							<ValueList>
+								<Value>True</Value>
+							</ValueList>
+						</Property>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
 								<Value>4</Value>
@@ -14,6 +19,15 @@
 					<ReferenceList>
 						<Reference Name="AudioDevice" PluginName="System" CompanyID="0" PluginID="174" PluginType="7">
 							<ObjectRef Name="System" ID="{229366BA-1C41-4F81-B667-101C0285A4D3}" WorkUnitID="{A934EB87-A1C8-4FAB-8762-33DA7D3B83CA}"/>
+						</Reference>
+						<Reference Name="Effect0">
+							<Custom>
+								<Effect Name="Recorder (Custom)" ID="{C3ED594E-934C-4C7C-A8F6-D97FD3B25E1F}" ShortID="1046791854" PluginName="Wwise Recorder" CompanyID="0" PluginID="132" PluginType="3">
+									<PropertyList>
+										<Property Name="AuthoringFilename" Type="string" Value="C:\AAA\Cours\Master\_PENDRILLON\Wwise Recorded Audio\Record2.wav"/>
+									</PropertyList>
+								</Effect>
+							</Custom>
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>

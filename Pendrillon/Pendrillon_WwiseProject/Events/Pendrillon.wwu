@@ -1370,6 +1370,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_CrowdReaction_booing" ID="{BCD924EB-FC0B-46B4-87D4-7EED32261CA3}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="6"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{BA056D7A-2FC8-424A-8FF8-5A5529E56C1A}" ShortID="319523909">
 											<PropertyList>
@@ -1384,6 +1388,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_CrowdReaction_choc" ID="{47EFA13E-9B6A-43C1-9540-EBBE82D03F4E}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="6"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{9F6D7FF3-5B7C-45D5-A21E-2B4567BAF42E}" ShortID="765964429">
 											<PropertyList>
@@ -1434,6 +1442,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_CrowdReaction_applause" ID="{F45BEE56-65B2-4BB0-956C-B7898C5503A4}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="6"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{8287A286-3EED-4ECD-BCE9-ACEFFC4E39E7}" ShortID="119207021">
 											<PropertyList>
@@ -1458,6 +1470,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_CrowdReaction_debate" ID="{A6FDDC92-DBEF-46A2-85A5-F400AA78DE1D}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="6"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{C5D56ACB-AF2A-4260-9B19-22C10F77B67C}" ShortID="844120970">
 											<PropertyList>
@@ -24937,6 +24953,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_VOX_Player_Emotion_pull" ID="{58921D75-6160-4D8B-9D90-A72E55619102}">
+									<ChildrenList>
+										<Action Name="" ID="{E0DCEC98-649A-4E23-8EA5-2D4A43E670E2}" ShortID="458729555">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Poirier" ID="{F6B40976-3593-426D-A88A-CAA3DE5011AB}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
@@ -25073,6 +25100,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="MUS_Story_SC_Barque_Treason" ID="{6366DC04-B473-4FDA-8403-229AA2E11B3F}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_MUS_Story_SC_Barque_ANewFriend" ID="{5EF1C13F-A2D4-425F-B20E-A45D035862F9}">
+									<ChildrenList>
+										<Action Name="" ID="{31B080C3-4BDB-4E08-A8F8-3263D9E35E2C}" ShortID="234722333">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MUS_Story_SC_Barque_AFairReward" ID="{D716B2F7-9AD3-48D1-84D4-CC48443A0974}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

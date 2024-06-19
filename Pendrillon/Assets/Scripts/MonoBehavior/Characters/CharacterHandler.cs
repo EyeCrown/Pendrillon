@@ -556,7 +556,14 @@ public class CharacterHandler : MonoBehaviour
     void PlayEmotionSoundsVFX(string emotionName, string characterName)
     {
         //Debug.Log("playing sound Play_VOX_" + characterName + "_Emotion_" + emotionName);
-        AkSoundEngine.PostEvent("Play_VOX_" + characterName + "_Emotion_" + emotionName, gameObject);
+        if (characterName == "Naïda")
+        {
+            AkSoundEngine.PostEvent("Play_VOX_Naida_Emotion_" + emotionName, gameObject);
+        }
+        else
+        {
+            AkSoundEngine.PostEvent("Play_VOX_" + characterName + "_Emotion_" + emotionName, gameObject);
+        }
     }
 
     #region Gizmos

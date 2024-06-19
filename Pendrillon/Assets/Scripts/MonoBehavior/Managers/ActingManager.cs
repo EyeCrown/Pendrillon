@@ -1550,6 +1550,14 @@ namespace MonoBehavior.Managers
                     break;
                 case Constants.ReactLaughter:
                     break;
+                case Constants.ReactDisgust:
+                    break;
+                case Constants.ReactEmpathy:
+                    break;
+                case Constants.ReactHush:
+                    break;
+                case Constants.ReactSilent:
+                    break;
                 default:
                     Debug.LogError($"AM.HandleTagAudience > Unkwonw reaction | {reaction} |");
                     return;
