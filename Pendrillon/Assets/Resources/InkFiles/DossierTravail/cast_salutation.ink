@@ -14,7 +14,7 @@
 #actor:Marcello:MARCELLO
 #actor:Arle:ARLE // Arle, toujours pendue à la corde ?
 // Set the location
-//#set:trial
+#set:empty
 // Set the actor's positions
 #position:Passeur:4:2
 #position:Naïda:4:3

@@ -53,6 +53,7 @@ VAR b_fall_out_of_mast_damages = 2
 // Base
 VAR b_boss_is_dead = false
 VAR b_boss_state = "default"
+VAR boss_is_attacking = false
 VAR b_boss_attack = 1
 VAR b_tail_attack = false
 VAR b_boss_max_hp = 120 // Doit être le même nombre que b_boss_hp
@@ -77,8 +78,8 @@ VAR b_boss_special_attack_power = 9
 = start
 
 // Start the scene
-#audience:ovation #battle:begin
-- SOUFFLEUR: Psssst... Hé, l'ami ! #playsound:VOX_Souffleur_pssthe7
+- #audience:ovation #battle:begin #screenshake
+- SOUFFLEUR: Psssst... Hé, l'ami ! #screenshake #wait:8 #playsound:VOX_Souffleur_pssthe7 #audience:ovation
 SOUFFLEUR: Cette scène nous coûte <b>une fortune</b> en effets spéciaux à chaque spectacle... #playsound:VOX_Souffleur_fortuneeffetsspecias
 SOUFFLEUR: Tu n'imagines pas le budget que ça représente, en termes de chorégraphie, matériel, main-d'œuvre... #playsound:VOX_Souffleur_budget
 SOUFFLEUR: Sans parler des <b><shake a=0.5>coûts d'entretien</shake></b> ! #playsound:VOX_Souffleur_coutentretien
@@ -144,6 +145,7 @@ SOUFFLEUR: Tu ne pourras pas dire que je ne t'ai pas prévenu, l'ami ! #playsoun
 = player_moovepool
 // Player turn
 C'est à votre tour. Vous avez {b_player_AP} AP et {b_player_hp} HP.
+~ boss_is_attacking = false
 // Checks if boss or player is dead
 {
     - b_boss_is_dead:
@@ -327,7 +329,8 @@ Fin du tour.
 
 // End of the battle
 = end_battle
-Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat. #battle:end
+- #curtains:close #wait:5 #battle:end
+Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
 {
     - b_player_won:
         Il vous restait {b_player_hp} HP.
@@ -341,6 +344,7 @@ Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat. #battle:end
 // Boss attack
 === function boss_attack()
 // Roll boss attack
+~ boss_is_attacking = true
 ~ roll_boss_attack()
 // Body attack
 {

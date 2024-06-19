@@ -105,6 +105,7 @@ public static class Constants
     public const string SetTrial   = "trial";
     public const string SetTempest = "tempest";
     public const string SetForest  = "forest";
+    public const string SetEmpty   = "empty";
     
     #endregion
 

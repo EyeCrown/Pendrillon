@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using MonoBehavior.Managers;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,6 +47,8 @@ public class MainMenu : MonoBehaviour
     void OnClickCreditButton()
     {
         _creditPanel.SetActive(true);
+        foreach (var textMeshObject in FindObjectsByType(typeof(TextMeshProUGUI), FindObjectsSortMode.None))
+            ((TextMeshProUGUI)textMeshObject).font = GameManager.Instance._currentFont;
     }
     
     void OnClickQuitButton()

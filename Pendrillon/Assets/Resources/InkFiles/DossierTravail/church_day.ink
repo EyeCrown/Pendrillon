@@ -82,5 +82,5 @@ AGATHE: Lorsque j’ai appris <b>qui vous cachiez dans votre navire... #audience
 AGATHE: J’ai su qu’il était de mon devoir, non envers la <b>Couronne</b> mais la <b>Déesse</b> elle-même, de vous dénoncer. #look:Agathe:front #audience:choc #anim:Player:disappointed #anim:Capucine:laugh #playsound:VOX_Agathe_mondevoir #look:Player:front #look:Agathe:front
 {CAPUCINE}: Tout le monde t'abandonne à ton triste sort, marmot. #playsound:VOX_Capucine_toutlemondetabandonne
 {CAPUCINE}: Mais tu ne seras bientôt plus seul... Tu vas aller rejoindre ton affreuse amie, vermine ! #playsound:VOX_Capucine_maistuneserabientôtplusseul
-{CAPUCINE}: <b>Marcello</b>, attrape-le !! #playsound:VOX_Capucine_marcelloattrape #move:Marcello:9:7 #anim:Marcello:punch
+{CAPUCINE}: <b>Marcello</b>, attrape-le !! #playsound:VOX_Capucine_marcelloattrape #move:Marcello:9:7 #anim:Marcello:punch #look:Player:front #look:Marcello:front #look:Capucine:front #look:Agathe:front
 - -> barge.scene_5

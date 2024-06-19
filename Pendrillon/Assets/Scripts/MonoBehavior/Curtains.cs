@@ -16,7 +16,7 @@ public class Curtains : MonoBehaviour
 
     #region Events
 
-    public UnityEvent<string> Call;
+    public UnityEvent<string, Action> Call;
 
     #endregion
 
@@ -45,9 +45,9 @@ public class Curtains : MonoBehaviour
 
     #region Event Handlers
 
-    void OnCall(string stateText)
+    void OnCall(string stateText, Action callbackOnFinish = null)
     {                
-        //Debug.Log($"Curtains.OnCall > State [{stateText}]"); 
+        Debug.Log($"Curtains.OnCall > State [{stateText}]"); 
         
         bool state;
         switch (stateText)
@@ -62,11 +62,31 @@ public class Curtains : MonoBehaviour
         }
 
         if (state == _isOpen)
+        {
+            callbackOnFinish();
             return;
-        
-        SetCurtains(state);
+        }
+
+        StartCoroutine(SetCurtainsCoroutine(state, callbackOnFinish));
     }
 
     #endregion
-    
+
+
+    #region Coroutines
+
+    IEnumerator SetCurtainsCoroutine(bool state, Action callbackOnFinish = null)
+    {
+        _anim.SetBool("curtainopen", state);
+
+        var stateName = "curtains" + (state ? "open" : "closed");
+        
+        while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(stateName))
+            yield return null;
+        
+        _isOpen = state;
+        callbackOnFinish();
+    }
+
+    #endregion
 }

@@ -21,7 +21,6 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #actor:Marcello:MARCELLO:MARCELLOGRE:MARCELLOTARIE:MARCELLOCROUPIE
 #actor:Agathe:AGATHE
 // Set the location
-#curtains:open
 #set:trial
 // Set the actor's positions
 
@@ -34,7 +33,7 @@ VAR souffleur_speech_about_not_mocking_agath_done = false
 #wait:5
 #audience:ovation
 
-- JUGE ERNEST: Silence ! Silence ! #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencesilence
+- JUGE ERNEST: Silence ! Silence ! #curtains:open #anim:Judge:bell #audience:silent #playsound:VOX_Judge_silencesilence
 {
     - p_name == "Merlin":
         JUGE ERNEST: Les <b>Portes du Tribunal</b> se sont ouvertes pour un homme du nom de {p_name} Jehovah Banes, citoyen de plein droit de <b>Miraterre</b>, et descendant du peuple qui fut sauvé. #playsound:VOX_Judge_lesportesdutribMerlin
@@ -758,10 +757,11 @@ JUGE ERNEST: Avez-vous tenu parole, <b>Accusé</b> ? Avez-vous, oui ou non, rame
         JUGE ERNEST: Un contretemps, vous dites ? #playsound:VOX_Judge_uncontratempsq
         ~ audience_judgement(-10)
 - JUGE ERNEST: Un tel sujet ne doit pas être abordé avec légèreté, <b>Accusé</b>... #playsound:VOX_Judge_telsujetpaslegere
-JUGE ERNEST: Veuillez raconter aux jurés ainsi qu'au <b>Juge</b> ce qu'il s'est passé lorsque vous avez trouvé l'emplacement indiqué par la carte. #playsound:VOX_Judge_racontersceneleviathan
-    * [Une tempête déchirait les eaux...] PLAYER: Une terrible tempête déchirait l'océan... #playsound:VOX_Player_unetemperedechirait
-    * [Je livrai une bataille contre l'océan...] PLAYER: Je livrai une véritable bataille contre l'océan... #playsound:VOX_Player_jelivraiunebataillecontre
-    * [Je me démenai pour sauver mon équipage...] PLAYER: Je faisais tout ce qui était en mon pouvoir pour sauver mon équipage d'une mort certaine... #playsound:VOX_Player_toutmonpouvoirequipage
+JUGE ERNEST: Veuillez raconter aux jurés ainsi qu'au <b>Juge</b> ce qu'il s'est passé lorsque vous avez trouvé l'emplacement indiqué par la carte. #playsound:VOX_Judge_racontersceneleviathan 
+    * [Une tempête déchirait les eaux...] PLAYER: Une terrible tempête déchirait l'océan... #playsound:VOX_Player_unetemperedechirait #box #curtains:close #wait:8
+    * [Je livrai une bataille contre l'océan...] PLAYER: Je livrai une véritable bataille contre l'océan... #playsound:VOX_Player_jelivraiunebataillecontre #box #curtains:close #wait:8
+    * [Je me démenai pour sauver mon équipage...] PLAYER: Je faisais tout ce qui était en mon pouvoir pour sauver mon équipage d'une mort certaine... #playsound:VOX_Player_toutmonpouvoirequipage #box #curtains:close #wait:8
 // Player va raconter la tempête (flashback)
+- #audience:ovation
 - (tempest_flashback)
     -> tempest

@@ -48,11 +48,13 @@ namespace MonoBehavior.Managers
 
         // Forest
         private Animator _forestBushAnimator;
-
         
         // Church
         private Animator _churchNightTorchAnimator;
-
+        
+        // Trial
+        private Animator _trialBellAnimator;
+        private Animator _trialBalanceAnimator;
         
         // Tempest
         private Animator _tempestCanonAnimator;
@@ -96,7 +98,6 @@ namespace MonoBehavior.Managers
         
         // UI - Stats panel
         private StatsUI _statsUI;
-         
         
         #endregion
 
@@ -246,6 +247,7 @@ namespace MonoBehavior.Managers
             else
             {
                 Debug.Log("Story cannot continue.");
+                // Invoke PhaseEnd -> End game
             }
         }
 
@@ -477,6 +479,11 @@ namespace MonoBehavior.Managers
             var lightAnimatorAddress = "Mesh_Sc_Eglise_Statue/lampe/FlammesOnOff";
             _churchNightTorchAnimator = _setChurchNight.transform.Find(lightAnimatorAddress).GetComponent<Animator>();
             
+            // Trial Animator
+            var trialBaseName = "Mesh_Sc_Tribunal_";
+            _trialBellAnimator = _setTrial.transform.Find(trialBaseName + "Cloche").GetComponent<Animator>();
+            _trialBalanceAnimator = _setTrial.transform.Find(trialBaseName + "Balance").GetComponent<Animator>();
+            
             // Tempest Animators
             string tempestAddressAnimators = "AnimatorObjects/", tempestBaseName = "Mesh_Sc_Tempete_";
             string tempestName = tempestAddressAnimators + tempestBaseName;
@@ -508,6 +515,8 @@ namespace MonoBehavior.Managers
 
         #region Observables
 
+        #region Trial Observables
+
         void SetTrialObservable()
         {
             GameManager.Instance._story.ObserveVariable ("t_audience_judgement", 
@@ -525,6 +534,14 @@ namespace MonoBehavior.Managers
             _setTrial.transform.Find("Mesh_Sc_Tribunal_Balance")
                 .GetComponent<Animator>().SetFloat("balance", value); 
         }
+
+        void SetTrialPropsOnStage(bool inOut)
+        {
+            _trialBellAnimator.SetBool("InOut", inOut);
+            _trialBalanceAnimator.SetBool("InOut", inOut);
+        }
+
+        #endregion
 
         #region Forest Observables
 
@@ -554,6 +571,15 @@ namespace MonoBehavior.Managers
         {
             GameManager.Instance._story.ObserveVariable ("irene_torch_is_on", 
                 (string varName, object newValue) => ChangeChurchNightLights(newValue));
+            
+            GameManager.Instance._story.ObserveVariable ("t_3_stained_glass_1_talk", 
+                (string varName, object newValue) => SetStainedGlassLight("1", newValue));
+            
+            GameManager.Instance._story.ObserveVariable ("t_3_stained_glass_2_talk", 
+                (string varName, object newValue) => SetStainedGlassLight("2", newValue));
+            
+            GameManager.Instance._story.ObserveVariable ("t_3_stained_glass_3_talk", 
+                (string varName, object newValue) => SetStainedGlassLight("3", newValue));
         }
 
         void ChangeChurchNightLights(object newValue)
@@ -561,6 +587,12 @@ namespace MonoBehavior.Managers
             _churchNightTorchAnimator.SetBool("lightOn", (bool) newValue);
         }
 
+        void SetStainedGlassLight(string indexText, object newValue)
+        {
+            if ((bool) newValue)
+                _setChurchNight.GetComponent<Animator>().SetTrigger("light"+indexText);
+        }
+        
         void SetChurchNightPropsOnStage(bool inOut) { }
         
         #endregion
@@ -583,6 +615,8 @@ namespace MonoBehavior.Managers
                 (string varName, object newValue) => ChangeCanonState(newValue));
             
             // TODO: Connect barrel
+            GameManager.Instance._story.ObserveVariable ("b_explosive_barrel_is_used", 
+                (string varName, object newValue) => ChangeBarrelState(newValue));
             
             // Mast
             GameManager.Instance._story.ObserveVariable ("b_sail_is_down", 
@@ -595,8 +629,8 @@ namespace MonoBehavior.Managers
             // Boss
             GameManager.Instance._story.ObserveVariable ("b_boss_state", 
                 (string varName, object newValue) => ChangeBossState(newValue));
-            GameManager.Instance._story.ObserveVariable ("b_player_AP", 
-                (string varName, object newValue) => LauchBossAttack((int) newValue));
+            GameManager.Instance._story.ObserveVariable ("boss_is_attacking", 
+                (string varName, object newValue) => LauchBossAttack((bool) newValue));
         }
 
         void SetTempestPropsOnStage(bool inOut)
@@ -609,7 +643,7 @@ namespace MonoBehavior.Managers
         
         void ResultBossBattle(object state)
         {
-            Debug.Log($"Boss new state: {(bool) state}");
+            //Debug.Log($"Boss new state: {(bool) state}");
 
             // If player won then play boss death anim
             if ((bool) state)
@@ -618,7 +652,7 @@ namespace MonoBehavior.Managers
 
         void ChangeHarpoonState(object state)
         {
-            Debug.Log($"Harpon new state: {(bool) state}");
+            //Debug.Log($"Harpon new state: {(bool) state}");
             if ((bool)state)
             {
                 _tempestHarpoonAnimator.SetBool("charged", true);
@@ -632,7 +666,7 @@ namespace MonoBehavior.Managers
 
         void ChangeCanonState(object state)
         {
-            Debug.Log($"Canon new state: {(bool) state}");
+            //Debug.Log($"Canon new state: {(bool) state}");
             if ((bool)state)
             {
                 _tempestCanonAnimator.SetBool("charged", true);
@@ -644,7 +678,14 @@ namespace MonoBehavior.Managers
             }
         }
         
-        // TODO: Connect Barrel
+        void ChangeBarrelState(object state)
+        {
+            //Debug.Log($"Barrel is used: {(bool) state}");
+            if ((bool)state)
+            {
+                _tempestBarrelAnimator.SetBool("Used", true);
+            }
+        }
         
         void ChangeMastSailState(object state)
         {
@@ -690,9 +731,11 @@ namespace MonoBehavior.Managers
             _lastBossState = (string)state;
         }
 
-        void LauchBossAttack(int actionPoints)
+        void LauchBossAttack(object isAttacking)
         {
-            if (actionPoints > 0)
+            //Debug.Log($"Boss is attacking: {(bool) isAttacking}");
+
+            if (!(bool) isAttacking)
                 return;
             
             // Player took damage so
@@ -709,7 +752,6 @@ namespace MonoBehavior.Managers
                     break;
                 case Constants.BossUnderwater : 
                     _tempestLeviathanAnimator.SetTrigger("underwater_attack");
-
                     break;
                 default: Debug.LogError($"LauchBossAttack > Error: this is not supposed to happen [{_lastBossState}]");
                     break;
@@ -984,7 +1026,7 @@ namespace MonoBehavior.Managers
             _uiParent.SetActive(true);
 
             if (GameManager.Instance._beginCurtainsOpen)
-                _curtains.Call.Invoke(Constants.StateCurtainsOpen);
+                _curtains.Call.Invoke(Constants.StateCurtainsOpen, null);
             
             if (GameManager.Instance._intro)
                 SetIntro();
@@ -1159,6 +1201,8 @@ namespace MonoBehavior.Managers
                     SetChurchNightPropsOnStage(false);
                 if (_currentSet == _setForest)
                     SetForestPropsOnStage(false);
+                if (_currentSet == _setTrial)
+                    SetTrialPropsOnStage(false);
             }
 
             GameManager.Instance.ClearStageCharacters();
@@ -1191,9 +1235,10 @@ namespace MonoBehavior.Managers
                 case Constants.SetTrial:
                     _setTrial.SetActive(true);
                     _setTrial.GetComponent<Animator>().SetBool("InOut",true);
+                    SetTrialPropsOnStage(true);
                     _currentSet = _setTrial;
                     // Judge set position
-                    GameManager.Instance.GetCharacter("Judge").SetJudgePosition();
+                    StartCoroutine(GameManager.Instance.GetCharacter("Judge").SetJudgePositionCoroutine());
                     break;
                 case Constants.SetTempest:
                     _setTempest.SetActive(true);
@@ -1206,6 +1251,8 @@ namespace MonoBehavior.Managers
                     _setForest.GetComponent<Animator>().SetBool("InOut",true);
                     SetForestPropsOnStage(true);
                     _currentSet = _setForest;
+                    break;
+                case Constants.SetEmpty:
                     break;
                 default:
                     Debug.LogError($"AM.HandleTagSet > Unknown location | {_stage} |");
@@ -1407,7 +1454,7 @@ namespace MonoBehavior.Managers
             {
                 //target = other.transform.position;
                 target = GameManager.Instance._gridScene.GetWorldPositon(other._coordsOnStatge);
-                Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Target: {target}");
+                //Debug.Log($"AM.{MethodBase.GetCurrentMethod()?.Name} > Target: {target}");
             }
             else
             {
@@ -1574,8 +1621,11 @@ namespace MonoBehavior.Managers
         {
            Debug.Log($"AM.HandleTagCurtains > Curtains must be {state}");
 
-           _curtains.Call.Invoke(state);
-
+            _tagMethods.Add(() =>
+            {
+                _curtains.Call.Invoke(state, TagActionOver);
+                
+            });
         }
 
 
