@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{00D5C924-A7B1-C830-1970-7AD42B2F0CE3}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{F607DDF4-1F36-73A1-1D9F-FA69303097DD}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -59,6 +59,7 @@
 				</AuxBus>
 			</AuxBusses>
 			<GameParameters>
+				<GameParameter Id="488808781" Name="BossMusicVolume"/>
 				<GameParameter Id="1006055004" Name="AmbianceFatigue"/>
 				<GameParameter Id="1006694123" Name="Music_Volume"/>
 				<GameParameter Id="1564184899" Name="SFX_Volume"/>
@@ -96,7 +97,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{41C45A5F-BAD7-5A5A-BDAC-08B203A5A11F}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{ED5AA4D7-108E-605B-4A80-84AB4B8D6FFA}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -1303,6 +1304,10 @@
 				<File Id="190627613" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Arle_ultimeacte.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Arle_ultimeacte_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="192272369" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Story_SC_Eglise_GuardsSearchingFar_1.wav</ShortName>
+					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_1_0F8DEA6F.wem</CachePath>
 				</File>
 				<File Id="192352510" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_4.wav</ShortName>
@@ -2534,7 +2539,7 @@
 				</File>
 				<File Id="383381705" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_NPC_Leviathan_AttackJaw_1.wav</ShortName>
-					<CachePath>SFX/SFX_NPC_Leviathan_AttackJaw_1_EC7C8C3A.wem</CachePath>
+					<CachePath>SFX/SFX_NPC_Leviathan_AttackJaw_1_BC264201.wem</CachePath>
 				</File>
 				<File Id="385425393" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Capucine_lodeurepouvantable.wav</ShortName>
@@ -3172,6 +3177,11 @@
 					<ShortName>VOX_Player_levotreestmort.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_levotreestmort_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="493471525" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>Intro.wav</ShortName>
+					<Path>Media/493471525.wem</Path>
+					<CachePath>SFX/Intro_0D05F8D2.wem</CachePath>
+				</File>
 				<File Id="494103653" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Applause_Moyen_Loop-009.wav</ShortName>
 					<CachePath>SFX/Applause_Moyen_Loop-009_3F75BDB9.wem</CachePath>
@@ -3363,6 +3373,10 @@
 				<File Id="527527116" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Naida_etmaintenant.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Naida_etmaintenant_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="527692396" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Story_SC_Eglise_GuardsSearchingFar_3.wav</ShortName>
+					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_3_7B8DBF15.wem</CachePath>
 				</File>
 				<File Id="529127242" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Agathe_Emotion_disappointed-002.wav</ShortName>
@@ -4376,6 +4390,12 @@
 					<ShortName>AMB_SC_SecretMeeting_RND_Owl_5.wav</ShortName>
 					<CachePath>SFX/AMB_SC_SecretMeeting_RND_Owl_5_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="704618176" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>Loop2.wav</ShortName>
+					<Path>Media/704618176.wem</Path>
+					<CachePath>SFX/Loop2_9EDFC787.wem</CachePath>
+					<PrefetchSize>4199</PrefetchSize>
+				</File>
 				<File Id="705128432" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_Emotion_ChargeHarpoon.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_Emotion_ChargeHarpoon_3F75BDB9.wem</CachePath>
@@ -5324,6 +5344,10 @@
 					<ShortName>VOX_Naida_ainsiilmapparait.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Naida_ainsiilmapparait_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="850604022" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NaidaHurtCale.wav</ShortName>
+					<CachePath>SFX/NaidaHurtCale_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="851903222" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>booing enerve-001.wav</ShortName>
 					<CachePath>SFX/booing enerve-001_3F75BDB9.wem</CachePath>
@@ -5607,6 +5631,12 @@
 				<File Id="892671571" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_SelectAttack_1_v2.wav</ShortName>
 					<CachePath>SFX/UI_Combat_SelectAttack_1_v2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="893778873" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>Loop1.wav</ShortName>
+					<Path>Media/893778873.wem</Path>
+					<CachePath>SFX/Loop1_9EDFC787.wem</CachePath>
+					<PrefetchSize>4674</PrefetchSize>
 				</File>
 				<File Id="893934226" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Marcello_parleluiodeur.wav</ShortName>
@@ -6244,6 +6274,10 @@
 					<ShortName>Whispers_Start-001.wav</ShortName>
 					<CachePath>SFX/Whispers_Start-001_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1004180969" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RealLeviathan.wav</ShortName>
+					<CachePath>SFX/RealLeviathan_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1004789353" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Judge_precisezlanature.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Judge_precisezlanature_3F75BDB9.wem</CachePath>
@@ -6446,7 +6480,7 @@
 				</File>
 				<File Id="1038087885" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_NPC_Leviathan_AttackJaw_2.wav</ShortName>
-					<CachePath>SFX/SFX_NPC_Leviathan_AttackJaw_2_12354AB4.wem</CachePath>
+					<CachePath>SFX/SFX_NPC_Leviathan_AttackJaw_2_27CB7A0F.wem</CachePath>
 				</File>
 				<File Id="1038603219" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_SecretMeeting_TheMission.wav</ShortName>
@@ -6725,6 +6759,65 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
+				<Event Id="2769513971" Name="activity_close" DurationType="OneShot" DurationMin="5.499126" DurationMax="5.499126">
+					<MediaRefs>
+						<MediaRef Id="527692396"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2205320216" Name="activity_far" DurationType="OneShot" DurationMin="5.735292" DurationMax="5.735292">
+					<MediaRefs>
+						<MediaRef Id="192272369"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1977883155" Name="Break_AMB_SC_Theater_CrowdChatter" DurationType="OneShot" DurationMin="3.2802708" DurationMax="4.849875">
+					<MediaRefs>
+						<MediaRef Id="308911"/>
+						<MediaRef Id="59127582"/>
+						<MediaRef Id="83276523"/>
+						<MediaRef Id="90365696"/>
+						<MediaRef Id="91511088"/>
+						<MediaRef Id="145942901"/>
+						<MediaRef Id="161036481"/>
+						<MediaRef Id="171699714"/>
+						<MediaRef Id="206908110"/>
+						<MediaRef Id="314417557"/>
+						<MediaRef Id="321388247"/>
+						<MediaRef Id="354553982"/>
+						<MediaRef Id="476461882"/>
+						<MediaRef Id="491568240"/>
+						<MediaRef Id="516352244"/>
+						<MediaRef Id="535455236"/>
+						<MediaRef Id="572201610"/>
+						<MediaRef Id="582994312"/>
+						<MediaRef Id="604627892"/>
+						<MediaRef Id="612462630"/>
+						<MediaRef Id="613887687"/>
+						<MediaRef Id="627224201"/>
+						<MediaRef Id="659389947"/>
+						<MediaRef Id="668040117"/>
+						<MediaRef Id="722675419"/>
+						<MediaRef Id="750486872"/>
+						<MediaRef Id="787674042"/>
+						<MediaRef Id="819742608"/>
+						<MediaRef Id="824347013"/>
+						<MediaRef Id="825670896"/>
+						<MediaRef Id="918792658"/>
+						<MediaRef Id="921097647"/>
+						<MediaRef Id="965666241"/>
+						<MediaRef Id="1012804336"/>
+						<MediaRef Id="1054717103"/>
+						<MediaRef Id="1063459142"/>
+						<MediaRef Id="1068553587"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
 				<Event Id="1434421713" Name="crate_search" DurationType="OneShot" DurationMin="3.4586563" DurationMax="3.4586563">
 					<MediaRefs>
 						<MediaRef Id="520863620"/>
@@ -7599,6 +7692,11 @@
 						<MediaRef Id="433338545"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3397818400" Name="Play_RealLeviathan" DurationType="OneShot" DurationMin="6.650146" DurationMax="6.650146">
+					<MediaRefs>
+						<MediaRef Id="1004180969"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4226378662" Name="Play_SFX_Boat_Hit" DurationType="OneShot" DurationMin="4.2308125" DurationMax="4.2308125">
 					<MediaRefs>
 						<MediaRef Id="21502422"/>
@@ -7663,9 +7761,12 @@
 						<MediaRef Id="953067962"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3734683120" Name="Play_SFX_NPC_Leviathan_Spawn" DurationType="OneShot" DurationMin="6.910084" DurationMax="6.910084">
+				<Event Id="3734683120" Name="Play_SFX_NPC_Leviathan_Spawn" DurationType="Infinite">
 					<MediaRefs>
+						<MediaRef Id="493471525"/>
 						<MediaRef Id="557710724"/>
+						<MediaRef Id="704618176"/>
+						<MediaRef Id="893778873"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1526748126" Name="Play_SFX_NPC_Leviathan_TurnStart" DurationType="OneShot" DurationMin="1.2156979" DurationMax="1.2156979">
@@ -7690,6 +7791,7 @@
 						<MediaRef Id="778142643"/>
 					</MediaRefs>
 					<ActionPostEvent>
+						<ActionPostEventEntry Id="656877296" Name="Stop_BossMusic"/>
 						<ActionPostEventEntry Id="1051898308" Name="Stop_AMB_ALL"/>
 						<ActionPostEventEntry Id="2018964231" Name="Play_AMB_SC_Barque_Ambiance"/>
 					</ActionPostEvent>
@@ -7744,6 +7846,7 @@
 						<MediaRef Id="232089343"/>
 					</MediaRefs>
 					<ActionPostEvent>
+						<ActionPostEventEntry Id="656877296" Name="Stop_BossMusic"/>
 						<ActionPostEventEntry Id="1051898308" Name="Stop_AMB_ALL"/>
 						<ActionPostEventEntry Id="1105680401" Name="Play_AMB_SC_Trial_Ambiance"/>
 					</ActionPostEvent>
@@ -8586,7 +8689,11 @@
 						<ActionSetStateEntry GroupId="1672502660" Id="435094263" Name="HyperacusisModeOn"/>
 					</ActionSetState>
 				</Event>
-				<Event Id="617660408" Name="sounds_inside_the_crate" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="617660408" Name="sounds_inside_the_crate" DurationType="OneShot" DurationMin="3.3470416" DurationMax="3.3470416">
+					<MediaRefs>
+						<MediaRef Id="850604022"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1051898308" Name="Stop_AMB_ALL" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<ActionPostEvent>
 						<ActionPostEventEntry Id="248367681" Name="Stop_AMB_SC_Barque_Ambiance"/>
@@ -8775,6 +8882,7 @@
 						<MediaRef Id="852967546"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="656877296" Name="Stop_BossMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="139643743" Name="Stop_VOX_ALL" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4268385224" Name="Stop_VOX_Emotions" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2408301271" Name="VOX_Agathe_accueilliaccuse" DurationType="OneShot" DurationMin="4.3614793" DurationMax="4.3614793">
@@ -13757,6 +13865,7 @@
 				</Event>
 			</Events>
 			<GameParameters>
+				<GameParameter Id="488808781" Name="BossMusicVolume"/>
 				<GameParameter Id="1006694123" Name="Music_Volume"/>
 				<GameParameter Id="1564184899" Name="SFX_Volume"/>
 				<GameParameter Id="1719345792" Name="UI_Volume"/>
@@ -13791,7 +13900,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{21267BA2-EC8E-17A8-8530-587A64661729}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{B1733847-672F-EA4A-AE47-C62C6CC9681B}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -14998,6 +15107,10 @@
 				<File Id="190627613" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Arle_ultimeacte.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Arle_ultimeacte_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="192272369" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Story_SC_Eglise_GuardsSearchingFar_1.wav</ShortName>
+					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_1_0F8DEA6F.wem</CachePath>
 				</File>
 				<File Id="192352510" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_4.wav</ShortName>
@@ -16229,7 +16342,7 @@
 				</File>
 				<File Id="383381705" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_NPC_Leviathan_AttackJaw_1.wav</ShortName>
-					<CachePath>SFX/SFX_NPC_Leviathan_AttackJaw_1_EC7C8C3A.wem</CachePath>
+					<CachePath>SFX/SFX_NPC_Leviathan_AttackJaw_1_BC264201.wem</CachePath>
 				</File>
 				<File Id="385425393" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Capucine_lodeurepouvantable.wav</ShortName>
@@ -16867,6 +16980,11 @@
 					<ShortName>VOX_Player_levotreestmort.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_levotreestmort_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="493471525" Language="SFX" Streaming="true" Location="Loose">
+					<ShortName>Intro.wav</ShortName>
+					<Path>Media/493471525.wem</Path>
+					<CachePath>SFX/Intro_0D05F8D2.wem</CachePath>
+				</File>
 				<File Id="494103653" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Applause_Moyen_Loop-009.wav</ShortName>
 					<CachePath>SFX/Applause_Moyen_Loop-009_3F75BDB9.wem</CachePath>
@@ -17058,6 +17176,10 @@
 				<File Id="527527116" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Naida_etmaintenant.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Naida_etmaintenant_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="527692396" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SFX_Story_SC_Eglise_GuardsSearchingFar_3.wav</ShortName>
+					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_3_7B8DBF15.wem</CachePath>
 				</File>
 				<File Id="529127242" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Agathe_Emotion_disappointed-002.wav</ShortName>
@@ -18071,6 +18193,12 @@
 					<ShortName>AMB_SC_SecretMeeting_RND_Owl_5.wav</ShortName>
 					<CachePath>SFX/AMB_SC_SecretMeeting_RND_Owl_5_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="704618176" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>Loop2.wav</ShortName>
+					<Path>Media/704618176.wem</Path>
+					<CachePath>SFX/Loop2_9EDFC787.wem</CachePath>
+					<PrefetchSize>4199</PrefetchSize>
+				</File>
 				<File Id="705128432" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_Emotion_ChargeHarpoon.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_Emotion_ChargeHarpoon_3F75BDB9.wem</CachePath>
@@ -19019,6 +19147,10 @@
 					<ShortName>VOX_Naida_ainsiilmapparait.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Naida_ainsiilmapparait_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="850604022" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NaidaHurtCale.wav</ShortName>
+					<CachePath>SFX/NaidaHurtCale_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="851903222" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>booing enerve-001.wav</ShortName>
 					<CachePath>SFX/booing enerve-001_3F75BDB9.wem</CachePath>
@@ -19302,6 +19434,12 @@
 				<File Id="892671571" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>UI_Combat_SelectAttack_1_v2.wav</ShortName>
 					<CachePath>SFX/UI_Combat_SelectAttack_1_v2_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="893778873" Language="SFX" Streaming="true" Location="Memory">
+					<ShortName>Loop1.wav</ShortName>
+					<Path>Media/893778873.wem</Path>
+					<CachePath>SFX/Loop1_9EDFC787.wem</CachePath>
+					<PrefetchSize>4674</PrefetchSize>
 				</File>
 				<File Id="893934226" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Marcello_parleluiodeur.wav</ShortName>
@@ -19939,6 +20077,10 @@
 					<ShortName>Whispers_Start-001.wav</ShortName>
 					<CachePath>SFX/Whispers_Start-001_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="1004180969" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RealLeviathan.wav</ShortName>
+					<CachePath>SFX/RealLeviathan_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="1004789353" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Judge_precisezlanature.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Judge_precisezlanature_3F75BDB9.wem</CachePath>
@@ -20141,7 +20283,7 @@
 				</File>
 				<File Id="1038087885" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_NPC_Leviathan_AttackJaw_2.wav</ShortName>
-					<CachePath>SFX/SFX_NPC_Leviathan_AttackJaw_2_12354AB4.wem</CachePath>
+					<CachePath>SFX/SFX_NPC_Leviathan_AttackJaw_2_27CB7A0F.wem</CachePath>
 				</File>
 				<File Id="1038603219" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_SecretMeeting_TheMission.wav</ShortName>
@@ -20420,6 +20562,65 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
+				<Event Id="2769513971" Name="activity_close" DurationType="OneShot" DurationMin="5.499126" DurationMax="5.499126">
+					<MediaRefs>
+						<MediaRef Id="527692396"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2205320216" Name="activity_far" DurationType="OneShot" DurationMin="5.735292" DurationMax="5.735292">
+					<MediaRefs>
+						<MediaRef Id="192272369"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1977883155" Name="Break_AMB_SC_Theater_CrowdChatter" DurationType="OneShot" DurationMin="3.2802708" DurationMax="4.849875">
+					<MediaRefs>
+						<MediaRef Id="308911"/>
+						<MediaRef Id="59127582"/>
+						<MediaRef Id="83276523"/>
+						<MediaRef Id="90365696"/>
+						<MediaRef Id="91511088"/>
+						<MediaRef Id="145942901"/>
+						<MediaRef Id="161036481"/>
+						<MediaRef Id="171699714"/>
+						<MediaRef Id="206908110"/>
+						<MediaRef Id="314417557"/>
+						<MediaRef Id="321388247"/>
+						<MediaRef Id="354553982"/>
+						<MediaRef Id="476461882"/>
+						<MediaRef Id="491568240"/>
+						<MediaRef Id="516352244"/>
+						<MediaRef Id="535455236"/>
+						<MediaRef Id="572201610"/>
+						<MediaRef Id="582994312"/>
+						<MediaRef Id="604627892"/>
+						<MediaRef Id="612462630"/>
+						<MediaRef Id="613887687"/>
+						<MediaRef Id="627224201"/>
+						<MediaRef Id="659389947"/>
+						<MediaRef Id="668040117"/>
+						<MediaRef Id="722675419"/>
+						<MediaRef Id="750486872"/>
+						<MediaRef Id="787674042"/>
+						<MediaRef Id="819742608"/>
+						<MediaRef Id="824347013"/>
+						<MediaRef Id="825670896"/>
+						<MediaRef Id="918792658"/>
+						<MediaRef Id="921097647"/>
+						<MediaRef Id="965666241"/>
+						<MediaRef Id="1012804336"/>
+						<MediaRef Id="1054717103"/>
+						<MediaRef Id="1063459142"/>
+						<MediaRef Id="1068553587"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
 				<Event Id="1434421713" Name="crate_search" DurationType="OneShot" DurationMin="3.4586563" DurationMax="3.4586563">
 					<MediaRefs>
 						<MediaRef Id="520863620"/>
@@ -21294,6 +21495,11 @@
 						<MediaRef Id="433338545"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3397818400" Name="Play_RealLeviathan" DurationType="OneShot" DurationMin="6.650146" DurationMax="6.650146">
+					<MediaRefs>
+						<MediaRef Id="1004180969"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4226378662" Name="Play_SFX_Boat_Hit" DurationType="OneShot" DurationMin="4.2308125" DurationMax="4.2308125">
 					<MediaRefs>
 						<MediaRef Id="21502422"/>
@@ -21358,9 +21564,12 @@
 						<MediaRef Id="953067962"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="3734683120" Name="Play_SFX_NPC_Leviathan_Spawn" DurationType="OneShot" DurationMin="6.910084" DurationMax="6.910084">
+				<Event Id="3734683120" Name="Play_SFX_NPC_Leviathan_Spawn" DurationType="Infinite">
 					<MediaRefs>
+						<MediaRef Id="493471525"/>
 						<MediaRef Id="557710724"/>
+						<MediaRef Id="704618176"/>
+						<MediaRef Id="893778873"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1526748126" Name="Play_SFX_NPC_Leviathan_TurnStart" DurationType="OneShot" DurationMin="1.2156979" DurationMax="1.2156979">
@@ -21385,6 +21594,7 @@
 						<MediaRef Id="778142643"/>
 					</MediaRefs>
 					<ActionPostEvent>
+						<ActionPostEventEntry Id="656877296" Name="Stop_BossMusic"/>
 						<ActionPostEventEntry Id="1051898308" Name="Stop_AMB_ALL"/>
 						<ActionPostEventEntry Id="2018964231" Name="Play_AMB_SC_Barque_Ambiance"/>
 					</ActionPostEvent>
@@ -21439,6 +21649,7 @@
 						<MediaRef Id="232089343"/>
 					</MediaRefs>
 					<ActionPostEvent>
+						<ActionPostEventEntry Id="656877296" Name="Stop_BossMusic"/>
 						<ActionPostEventEntry Id="1051898308" Name="Stop_AMB_ALL"/>
 						<ActionPostEventEntry Id="1105680401" Name="Play_AMB_SC_Trial_Ambiance"/>
 					</ActionPostEvent>
@@ -22281,7 +22492,11 @@
 						<ActionSetStateEntry GroupId="1672502660" Id="435094263" Name="HyperacusisModeOn"/>
 					</ActionSetState>
 				</Event>
-				<Event Id="617660408" Name="sounds_inside_the_crate" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="617660408" Name="sounds_inside_the_crate" DurationType="OneShot" DurationMin="3.3470416" DurationMax="3.3470416">
+					<MediaRefs>
+						<MediaRef Id="850604022"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1051898308" Name="Stop_AMB_ALL" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<ActionPostEvent>
 						<ActionPostEventEntry Id="248367681" Name="Stop_AMB_SC_Barque_Ambiance"/>
@@ -22470,6 +22685,7 @@
 						<MediaRef Id="852967546"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="656877296" Name="Stop_BossMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="139643743" Name="Stop_VOX_ALL" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4268385224" Name="Stop_VOX_Emotions" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2408301271" Name="VOX_Agathe_accueilliaccuse" DurationType="OneShot" DurationMin="4.3614793" DurationMax="4.3614793">
@@ -27452,6 +27668,7 @@
 				</Event>
 			</Events>
 			<GameParameters>
+				<GameParameter Id="488808781" Name="BossMusicVolume"/>
 				<GameParameter Id="1006694123" Name="Music_Volume"/>
 				<GameParameter Id="1564184899" Name="SFX_Volume"/>
 				<GameParameter Id="1719345792" Name="UI_Volume"/>
@@ -27487,5 +27704,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{74D222AC-09C6-F44B-D0D4-26D7EAD4BBE2}</FileHash>
+	<FileHash>{7A82B5D9-7153-B428-1240-036634657802}</FileHash>
 </SoundBanksInfo>
