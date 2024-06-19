@@ -306,6 +306,17 @@
 														</Reference>
 													</ReferenceList>
 												</Action>
+												<Action Name="" ID="{59A65177-74BC-41DC-8F9E-5D76D7954E73}" ShortID="80054378">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="41"/>
+														<Property Name="Delay" Type="Real64" Value="0.6"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Play_SFX_NPC_Leviathan_Hurt" ID="{042A3936-AFB1-49AE-A3E6-3710542566C6}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
 											</ChildrenList>
 										</Event>
 										<Event Name="Play_SFX_Combat_Harpoon_shot" ID="{E91C2A7B-FF99-4D27-921B-D1E91E923C2A}">
@@ -314,6 +325,42 @@
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="Harpoon_shot" ID="{DB0B10A6-9EAA-402B-BB88-84F6072159FB}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{11EEB2DD-0330-4F0D-9EC8-EEA2A49A6294}" ShortID="157242064">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="41"/>
+														<Property Name="Delay" Type="Real64" Value="0.8"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Play_SFX_NPC_Leviathan_Hurt" ID="{042A3936-AFB1-49AE-A3E6-3710542566C6}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
+										<Event Name="Play_SFX_Combat_BarrelExplosion" ID="{AA4A0BB5-47E6-4BBE-819E-CE5AFB84D915}">
+											<ChildrenList>
+												<Action Name="" ID="{4AFC42CE-2F74-4D0C-B693-8F568CFFF43F}" ShortID="964385122">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="BarrelExplode" ID="{E30F080E-40BA-4E32-A49F-E42EAF7656D0}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+												<Action Name="" ID="{80CE2240-4D81-4A81-A169-B0CEAF855D43}" ShortID="584389495">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="41"/>
+														<Property Name="Delay" Type="Real64" Value="1.8"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Play_SFX_NPC_Leviathan_Hurt" ID="{042A3936-AFB1-49AE-A3E6-3710542566C6}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 														</Reference>
 													</ReferenceList>
 												</Action>
@@ -1088,6 +1135,64 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_SFX_NPC_Leviathan_Scream" ID="{E6CDD9D0-2DB7-490D-A47E-2236AE92DFE9}">
+									<ChildrenList>
+										<Action Name="" ID="{549F1B93-AAD0-41F8-8AAC-567FC6EF3AFE}" ShortID="783145495">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Levi_ScreamSequence" ID="{F9C6592F-4993-48AB-A6F4-C9124EB23644}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_SFX_NPC_Leviathan_Defeated" ID="{1723FCB4-3B7F-41B3-9CA4-64FD348D0BBF}">
+									<ChildrenList>
+										<Action Name="" ID="{05F3F416-8AC6-48C8-8D04-C6EC34AFB09F}" ShortID="287553705">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_NPC_Leviathan_Defeated" ID="{7FD7CEBD-F902-4AFE-9A75-84AA6BB12F0A}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{DA0374A6-A23F-4F3B-BD99-8F366E706722}" ShortID="407532402">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="Delay" Type="Real64" Value="3"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="100"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BossMusicVolume" ID="{6D3B492A-11C9-41CD-8875-3BCEB20E7015}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{88D8F840-F997-44EB-9E81-628092480F11}" ShortID="820524068">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="38"/>
+												<Property Name="FadeTime" Type="Real64" Value="0.2"/>
+												<Property Name="GameParameterValue" Type="Real64" Value="50"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BossMusicVolume" ID="{6D3B492A-11C9-41CD-8875-3BCEB20E7015}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{7CA8C4C1-D98E-4697-B29D-6E952970EA5B}" ShortID="191073950">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="2"/>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="BossMusic" ID="{7E6F8A6B-BF02-45CB-A50D-346A20936FFB}" WorkUnitID="{6732B68F-5DEC-48F1-83AD-B6CC5E71BAA9}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Event Name="Play_SFX_Boat_Hit" ID="{C5353544-B1A1-4F55-876F-28CCA81ACD64}">
@@ -1547,6 +1652,20 @@
 												</Action>
 											</ChildrenList>
 										</Event>
+										<Event Name="Stop_CrowdReaction_applauseinfinite" ID="{92088F14-E4E4-4910-AD35-AFF1554C9EF1}">
+											<ChildrenList>
+												<Action Name="" ID="{618E0C1E-E2DF-479F-9870-E4E549A4D9A6}" ShortID="32165665">
+													<PropertyList>
+														<Property Name="ActionType" Type="int16" Value="34"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="ApplauseFortStartLoopINF" ID="{50CE2A59-3493-4272-A792-FD02342C3958}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
+											</ChildrenList>
+										</Event>
 									</ChildrenList>
 								</Folder>
 								<Event Name="Play_CrowdReaction_silent" ID="{358EAD39-AB47-4878-987B-ADBBA307B205}">
@@ -1617,6 +1736,10 @@
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_CrowdReaction_disgust" ID="{8E54CBC1-9ECC-4F12-BA89-799C175EC397}">
+									<PropertyList>
+										<Property Name="Color" Type="int16" Value="2"/>
+										<Property Name="OverrideColor" Type="bool" Value="True"/>
+									</PropertyList>
 									<ChildrenList>
 										<Action Name="" ID="{B1BE3EC1-FB4A-4E32-B1C1-2DD3C616BD5D}" ShortID="267924611">
 											<PropertyList>

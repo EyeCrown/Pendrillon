@@ -709,6 +709,7 @@ namespace MonoBehavior.Managers
             if ((bool)state)
             {
                 _tempestBarrelAnimator.SetBool("Used", true);
+                AkSoundEngine.PostEvent("Play_SFX_Combat_BarrelExplosion", gameObject);
             }
         }
         

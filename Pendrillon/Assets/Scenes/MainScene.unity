@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.00001884083, g: 0.000000035712404, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.000018840807, g: 0.000000035712404, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,29 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &97394423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 910669610865043335, guid: aa2cab16bc6d7934a8b8f829d19871b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6570719104046897833}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &97394429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 97394423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e292af709774e934498fa5254f857ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  WwiseSound:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: da4019bd4ee4e724bb5f18a1c370cadc,
+      type: 2}
 --- !u!1001 &98030031
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2552,7 +2575,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25d55737fa8555546935354e51274d96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerList: ae8d9d44
+  triggerList: f7e1664c
   useOtherObject: 0
   actionOnEventType: 0
   curveInterpolation: 4
@@ -4112,6 +4135,41 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 2599598537867326548, guid: aa2cab16bc6d7934a8b8f829d19871b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599598537867326548, guid: aa2cab16bc6d7934a8b8f829d19871b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599598537867326548, guid: aa2cab16bc6d7934a8b8f829d19871b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 97394429}
+    - target: {fileID: 2599598537867326548, guid: aa2cab16bc6d7934a8b8f829d19871b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599598537867326548, guid: aa2cab16bc6d7934a8b8f829d19871b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaySound
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599598537867326548, guid: aa2cab16bc6d7934a8b8f829d19871b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: wwisePlaySound, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2599598537867326548, guid: aa2cab16bc6d7934a8b8f829d19871b8,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 2847436911216429146, guid: aa2cab16bc6d7934a8b8f829d19871b8,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -4423,7 +4481,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 910669610865043335, guid: aa2cab16bc6d7934a8b8f829d19871b8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 97394429}
   m_SourcePrefab: {fileID: 100100000, guid: aa2cab16bc6d7934a8b8f829d19871b8, type: 3}
 --- !u!1001 &6672567195393603980
 PrefabInstance:

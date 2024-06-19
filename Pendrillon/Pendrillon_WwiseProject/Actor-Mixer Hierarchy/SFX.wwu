@@ -593,6 +593,35 @@
 										<ActiveSource Name="Harpoon_shot" ID="{3ACF02CA-0A13-4AF3-9D4D-253A98935FBB}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="BarrelExplode" ID="{E30F080E-40BA-4E32-A49F-E42EAF7656D0}" ShortID="20984268">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>-4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BarrelExplode_shot" ID="{57F9EDFB-5D85-414C-BB91-F1F5D8E48508}">
+											<Language>SFX</Language>
+											<AudioFile>BarrelExplode_shot.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="293263580"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="BarrelExplode_shot" ID="{57F9EDFB-5D85-414C-BB91-F1F5D8E48508}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</ActorMixer>
 						<ActorMixer Name="SFX_Story" ID="{62395B2B-C332-426F-95BD-C107D39793F4}" ShortID="767056309">
