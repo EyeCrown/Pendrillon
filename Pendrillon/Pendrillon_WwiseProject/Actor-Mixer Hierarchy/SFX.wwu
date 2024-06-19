@@ -635,6 +635,103 @@
 												<ActiveSource Name="SearchCrate" ID="{A06DA64C-5EE7-4235-A1FF-D5E764E5A51B}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
+										<Sound Name="SFX_Story_SC_Eglise_GuardsSearchingFar_1" ID="{C26BCF3A-8F2F-4A39-B1E9-2AD2416A98CF}" ShortID="874690198">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_SFX" ID="{9118350E-6F0A-4D09-AEE6-B4D0F7345336}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Story_SC_Eglise_GuardsSearchingFar_1" ID="{6285D1DE-7B92-40C8-A6A9-9549A0B29AA8}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.455449667553191"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.19290580673759"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>SFX_Story_SC_Eglise_GuardsSearchingFar_1.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="192272369"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Story_SC_Eglise_GuardsSearchingFar_1" ID="{6285D1DE-7B92-40C8-A6A9-9549A0B29AA8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="SFX_Story_SC_Eglise_GuardsSearchingFar_3" ID="{2176A8C4-1D7D-4CF1-9E6C-86EE1E2FD39D}" ShortID="344074235">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>14</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Dry_SFX" ID="{9118350E-6F0A-4D09-AEE6-B4D0F7345336}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="SFX_Story_SC_Eglise_GuardsSearchingFar_3" ID="{643F9281-C63F-4B04-AEAB-66BE251FE1E3}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.472317553191489"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.42906170212766"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>SFX_Story_SC_Eglise_GuardsSearchingFar_3.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="527692396"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="SFX_Story_SC_Eglise_GuardsSearchingFar_3" ID="{643F9281-C63F-4B04-AEAB-66BE251FE1E3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="NaidaHurtCale" ID="{02144C87-CF25-4063-855D-ED4448626E85}" ShortID="261509424">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="NaidaHurtCale" ID="{7B6E2C77-7ADF-4B71-AD12-7930D6A53027}">
+													<Language>SFX</Language>
+													<AudioFile>NaidaHurtCale.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="850604022"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="NaidaHurtCale" ID="{7B6E2C77-7ADF-4B71-AD12-7930D6A53027}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
 									</ChildrenList>
 								</ActorMixer>
 								<ActorMixer Name="SC_Eglise" ID="{95D2A942-5F33-403B-BAE9-F9BDE0AA459F}" ShortID="293436799">
@@ -1726,6 +1823,35 @@
 								</Sound>
 							</ChildrenList>
 						</ActorMixer>
+						<Sound Name="RealLeviathan" ID="{74F7F584-2D14-42A8-BF8E-9746FF40A54E}" ShortID="1047735762">
+							<PropertyList>
+								<Property Name="MakeUpGain" Type="Real64">
+									<ValueList>
+										<Value>10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="RealLeviathan" ID="{7AB037E9-2689-4FE8-B2A8-DC731A4832AA}">
+									<Language>SFX</Language>
+									<AudioFile>RealLeviathan.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="1004180969"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="RealLeviathan" ID="{7AB037E9-2689-4FE8-B2A8-DC731A4832AA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
 					</ChildrenList>
 					<ObjectLists>
 						<ObjectList Name="RTPC">

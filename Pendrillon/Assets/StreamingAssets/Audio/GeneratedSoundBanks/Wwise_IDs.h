@@ -13,6 +13,8 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID ACTIVITY_CLOSE = 2769513971U;
+        static const AkUniqueID ACTIVITY_FAR = 2205320216U;
         static const AkUniqueID BREAK_AMB_SC_THEATER_CROWDCHATTER = 1977883155U;
         static const AkUniqueID CRATE_SEARCH = 1434421713U;
         static const AkUniqueID CROWDBOREDOMDOWN = 4288856718U;
@@ -91,6 +93,7 @@ namespace AK
         static const AkUniqueID PLAY_MUS_STORY_SC_TRIPRETURN_NAIDAARRESTED = 392594526U;
         static const AkUniqueID PLAY_MUS_STORY_SC_TRIPRETURN_NAIDASPEAK = 1806188604U;
         static const AkUniqueID PLAY_MUS_STORY_SC_TRIPRETURN_TOBATTLE = 1938067292U;
+        static const AkUniqueID PLAY_REALLEVIATHAN = 3397818400U;
         static const AkUniqueID PLAY_SFX_BOAT_HIT = 4226378662U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_BOUFFON_ATTACK1 = 3286192894U;
         static const AkUniqueID PLAY_SFX_COMBAT_NPC_BOUFFON_HURT = 1514626058U;

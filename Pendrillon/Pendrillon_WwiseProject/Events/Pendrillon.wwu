@@ -447,13 +447,45 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="sounds_inside_the_crate" ID="{0768637D-0A1F-4F71-9156-F0FC5A6B797E}"/>
+								<Event Name="sounds_inside_the_crate" ID="{0768637D-0A1F-4F71-9156-F0FC5A6B797E}">
+									<ChildrenList>
+										<Action Name="" ID="{E902DE58-0EFD-4139-9FA4-5FA20ABFEE55}" ShortID="161417378">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="NaidaHurtCale" ID="{02144C87-CF25-4063-855D-ED4448626E85}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 								<Event Name="crate_search" ID="{E9E76E4A-FDF7-4F67-9697-F9A7E79F3C51}">
 									<ChildrenList>
 										<Action Name="" ID="{49A2FE61-BEB1-41C8-BA9C-E1FB6C5F5537}" ShortID="980943217">
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="SearchCrate" ID="{577448D3-6BC8-48AC-8C82-1CD42748BAE1}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="activity_close" ID="{BFB50957-4A85-4CC6-83B4-C8ED86204401}">
+									<ChildrenList>
+										<Action Name="" ID="{61168649-892F-4673-8CA4-25EBC0D1D43E}" ShortID="526363792">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Story_SC_Eglise_GuardsSearchingFar_3" ID="{2176A8C4-1D7D-4CF1-9E6C-86EE1E2FD39D}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="activity_far" ID="{31C398D6-F237-4AA4-B571-02103B04120F}">
+									<ChildrenList>
+										<Action Name="" ID="{A569CFE3-9EC1-4F70-BD72-46384E96271C}" ShortID="1043017218">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="SFX_Story_SC_Eglise_GuardsSearchingFar_1" ID="{C26BCF3A-8F2F-4A39-B1E9-2AD2416A98CF}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -493,6 +525,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Play_AMB_SC_Barque_Ambiance" ID="{A4F67341-F783-426C-8CD2-FB5F40ECA153}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{97E3EF95-ADEA-4541-B580-0839E35E7C25}" ShortID="186603184">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_BossMusic" ID="{72020E52-5B5F-42AD-968C-1C56CE5F34BB}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -669,6 +711,16 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Play_AMB_SC_Trial_Ambiance" ID="{5C0F714F-FC3A-4DF7-B195-15F8C9AC041F}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{35B0CAC0-85FE-4813-9B0C-3554D5DC0E10}" ShortID="121653326">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="41"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Stop_BossMusic" ID="{72020E52-5B5F-42AD-968C-1C56CE5F34BB}" WorkUnitID="{F081D849-9317-4319-991B-441C94EE4362}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -977,6 +1029,17 @@
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="BossMusicVolume" ID="{6D3B492A-11C9-41CD-8875-3BCEB20E7015}" WorkUnitID="{3144A32B-FCB3-4C74-897D-A50BBF588497}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Play_RealLeviathan" ID="{E170719F-91B6-46AE-B82A-E80DC4A28153}">
+									<ChildrenList>
+										<Action Name="" ID="{2BD9A3DC-94F8-4A71-9D6E-6AA3D16C2815}" ShortID="577083819">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RealLeviathan" ID="{74F7F584-2D14-42A8-BF8E-9746FF40A54E}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
