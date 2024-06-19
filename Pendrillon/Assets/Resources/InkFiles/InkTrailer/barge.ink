@@ -23,12 +23,14 @@
 //#playsound:Play_MUS_Story_SC_Barque_Intro
 //#anim:Player:kneeling
 //#look:Player:Passeur
-#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:60
-- #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #audience:choc
+#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:5
+//- #playsound:Play_SFX_Story_JudgeBellFarTrial #screenshake #audience:choc
 
 // Start the scene
-- SOUFFLEUR: Je sais ce que tu penses, l'ami... #wait:100
-SOUFFLEUR: La pièce prend des tournures particulièrement sombres... #playsound:VOX_Souffleur_lapieceprendtournuresombre
+- #wait:10
+- rien #wait:1000
+- SOUFFLEUR: Je sais ce que tu penses, l'ami... 
+SOUFFLEUR: <b>La pièce</b> prend des tournures particulièrement <shake a=0.5><b>sombres</b></shake>... #playsound:VOX_Souffleur_lapieceprendtournuresombre
 SOUFFLEUR: Mais ainsi sont fait nos mythes, pas vrai ? #playsound:VOX_Souffleur_mythes
 SOUFFLEUR: Le moment risque d'être difficile pour le personnage de Naïda. Elle saura rester digne, ne t'en fais pas ! #playsound:VOX_Souffleur_difficilenaida
 SOUFFLEUR: Quand à toi, essaye de la défendre du mieux que tu le peux auprès du Juge, mais surtout du public ! #playsound:VOX_Souffleur_essaiededefendre

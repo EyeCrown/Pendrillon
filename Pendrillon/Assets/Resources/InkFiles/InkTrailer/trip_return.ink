@@ -24,16 +24,22 @@ VAR player_won_battle = false // Define if the player won the battle or not
 // Set the location
 #set:cale
 // Set the actor's positions
-#position:Player:11:8
-#position:Naïda:11:20
-#position:Marcello:11:10
-#position:Capucine:11:20
+#position:Player:10:4
+#position:Naïda:10:20
+#position:Marcello:10:8
+#position:Capucine:9:10
 // Audience reaction
 //#wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:4
-#wait:10
+#wait:5
+- #look:Player:right
+- #look:Marcello:PLAYER
+- #look:Capucine:PLAYER
+- #wait:5
+- MARCELLO: Tous les <b>bateaux</b> qui arrivent au <b>port royal</b> doivent être <b>fouillés</b>, c'est la <shake a=0.5><b>Loi</b></shake>. #playsound:VOX_Marcello_laloi
 
 // Start the scene
 //#playsound:Play_MUS_Story_SC_SecretMeeting_Intro
+- rien #wait:1400
 - MARCELLO: Tiens, la voilà ! #look:Player:right #look:Marcello:Player #anim:Player:punch #anim:Marcello:hurt #look:Marcello:front #wait:120
 - MARCELLO: Alors, qu'as-tu à répondre, marin d'eau douce ? #playsound:VOX_Marcello_alorsreponds
     * [Baratiner. {t(CHAR, -10)}]
