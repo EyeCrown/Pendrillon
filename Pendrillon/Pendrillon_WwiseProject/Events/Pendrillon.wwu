@@ -1133,6 +1133,13 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{3E83F412-F100-434E-8F3E-B7093622BC0D}" ShortID="945139794">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="VOX_Player_Emotion_Cri Leviathan" ID="{7AEE22DA-685F-41DE-9CE3-C6D717969028}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Play_SFX_NPC_Leviathan_Scream" ID="{E6CDD9D0-2DB7-490D-A47E-2236AE92DFE9}">
@@ -1417,7 +1424,7 @@
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="AMB_SC_Pont" ID="{90386080-2AA8-4D81-B8F1-639920457433}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
+													<ObjectRef Name="AMB_SC_Trial" ID="{709F9580-5161-4D5C-B36A-272584C33C6C}" WorkUnitID="{21A3E9C5-90C5-45D9-9AA7-677D2300010F}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -10521,6 +10528,13 @@
 														</Reference>
 													</ReferenceList>
 												</Action>
+												<Action Name="" ID="{9C261A26-A515-4809-997C-DF88207AF02A}" ShortID="268171665">
+													<ReferenceList>
+														<Reference Name="Target">
+															<ObjectRef Name="Wood_Scrape" ID="{99AAE1AE-C85F-4528-8FD1-D137C950452D}" WorkUnitID="{12FF185C-0FD0-4E3C-8D35-578105937F5D}"/>
+														</Reference>
+													</ReferenceList>
+												</Action>
 											</ChildrenList>
 										</Event>
 										<Event Name="VOX_Arle_malheureusement" ID="{863B4B59-1B23-4610-A05D-06912D0787B2}">
@@ -13541,6 +13555,9 @@
 										<Event Name="VOX_Agathe_mondevoir" ID="{F2E7052E-8FAE-48CA-BB4C-69DDA70DC8BB}">
 											<ChildrenList>
 												<Action Name="" ID="{98CB08E6-3EE9-4760-B4C0-BFE1DD4BF9D6}" ShortID="54038921">
+													<PropertyList>
+														<Property Name="Delay" Type="Real64" Value="1"/>
+													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Target">
 															<ObjectRef Name="VOX_Agathe_mondevoir" ID="{299FE1B6-3D12-498F-A7AE-EEE7AE76C6F3}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
@@ -25087,6 +25104,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="Play_VOX_Player_Emotion_wakeup" ID="{B3DF00A0-278C-4668-90F8-4AEB11ED79F7}">
+									<ChildrenList>
+										<Action Name="" ID="{9A7AF8C1-797D-456C-B0E1-53943703909F}" ShortID="583203">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Player_Surprised" ID="{4070EBEE-6884-44CC-B9C6-485D59F911CC}" WorkUnitID="{15B4596D-5628-412A-8FD0-0AD8F4FED272}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
@@ -25683,6 +25711,17 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="BossMusic" ID="{7E6F8A6B-BF02-45CB-A50D-346A20936FFB}" WorkUnitID="{6732B68F-5DEC-48F1-83AD-B6CC5E71BAA9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_MUS_Story_SC_Church_Agathe" ID="{D23AB32C-D166-4E0B-BE02-570090BE38C0}">
+							<ChildrenList>
+								<Action Name="" ID="{C469F3D2-EAAA-434D-B8B3-F74D1912B6DC}" ShortID="716191253">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="MUS_Story_SC_Trial_Agathe" ID="{CB9952DC-2346-4BFB-B8C3-F0AF98581E87}" WorkUnitID="{63D84830-8773-4A3B-97D5-512B7A746A30}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

@@ -22,11 +22,11 @@ VAR irene_torch_is_on = false
 #position:Agathe:4:5
 // Audience reaction
 #wait:0.5 #audience:applause #wait:4 #audience:ovation #wait:3
-
+#playsound:Play_MUS_Story_SC_Church_Agathe
 
 // Player arrive dans l'Église puis avance jusqu'à la statue.
 // Après un moment.
-- UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit... #look:Agathe:Player #move:player:8:9 #look:Player:Agathe #look:Agathe:Player #audience:ovation #wait:1 #box #playsound:VOX_Agathe_ireneaccueille #wait:6
+- UNE VOIX: <b>Irène</b> accueille en sa demeure tous ceux qui ont besoin d'un toit...  #look:Agathe:Player #move:player:8:9 #look:Player:Agathe #look:Agathe:Player #audience:ovation #wait:1 #box #playsound:VOX_Agathe_ireneaccueille #wait:6
 // La voix vient d'hors-champ. Après un moment, une femme âgée arrive par la droite de la scène et entre dans le champ.
 - PRÊTRESSE: ... quel qu'ils soient. #look:Agathe:front #playsound:VOX_Agathe_quelsquils #look:Player:front #audience:applause
     * [Bénie soit-elle.] PLAYER: Bénie soit-elle. #playsound:VOX_Player_beniesoitelle #audience:applause

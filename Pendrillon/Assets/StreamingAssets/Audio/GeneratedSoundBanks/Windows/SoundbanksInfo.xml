@@ -104,7 +104,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{1270553F-001E-1E53-3EE8-D7B2803C0843}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{A1A95F1D-0E14-0784-733E-93C9CC67F577}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -1503,6 +1503,10 @@
 				<File Id="217534582" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Judge_decrivezjuryarle.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Judge_decrivezjuryarle_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="218168832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Wood_Scrape.wav</ShortName>
+					<CachePath>SFX/Wood_Scrape_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="218361401" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Passeur_Emotion_happy-001.wav</ShortName>
@@ -3916,6 +3920,10 @@
 				<File Id="616893402" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_amonreveil.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_amonreveil_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="617295212" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
+					<ShortName>VOX_Player_Emotion_Cri Leviathan.wav</ShortName>
+					<CachePath>Voices/French(FR)/VOX_Player_Emotion_Cri Leviathan_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="617952202" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Surprise_Faible_surprise-001.wav</ShortName>
@@ -7524,6 +7532,11 @@
 						<MediaRef Id="722902401"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="60887761" Name="Play_MUS_Story_SC_Church_Agathe" DurationType="OneShot" DurationMin="16.543282" DurationMax="16.543282">
+					<MediaRefs>
+						<MediaRef Id="326270977"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1018783602" Name="Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter" DurationType="OneShot" DurationMin="9.588031" DurationMax="9.588031">
 					<MediaRefs>
 						<MediaRef Id="275049971"/>
@@ -7728,6 +7741,7 @@
 				<Event Id="3397818400" Name="Play_RealLeviathan" DurationType="OneShot" DurationMin="6.650146" DurationMax="6.650146">
 					<MediaRefs>
 						<MediaRef Id="312525370"/>
+						<MediaRef Id="617295212"/>
 						<MediaRef Id="1004180969"/>
 					</MediaRefs>
 					<ActionPostEvent>
@@ -8753,6 +8767,13 @@
 						<MediaRef Id="705128432"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2514854683" Name="Play_VOX_Player_Emotion_wakeup" DurationType="OneShot" DurationMin="1.2566875" DurationMax="1.5845833">
+					<MediaRefs>
+						<MediaRef Id="535603911"/>
+						<MediaRef Id="589780016"/>
+						<MediaRef Id="902325376"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="849245499" Name="Play_VOX_Souffleur_Emotion_angry" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="413007764" Name="Play_VOX_Souffleur_Emotion_disappointed" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2892689798" Name="Play_VOX_Souffleur_Emotion_happy" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -8931,35 +8952,20 @@
 				</Event>
 				<Event Id="2391403843" Name="Stop_AMB_SC_Trial_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
-						<MediaRef Id="52455275"/>
-						<MediaRef Id="58096542"/>
-						<MediaRef Id="71742877"/>
-						<MediaRef Id="78346071"/>
-						<MediaRef Id="92586305"/>
-						<MediaRef Id="99871185"/>
-						<MediaRef Id="192352510"/>
-						<MediaRef Id="208400254"/>
-						<MediaRef Id="208442806"/>
-						<MediaRef Id="212733977"/>
-						<MediaRef Id="232733815"/>
-						<MediaRef Id="335360850"/>
-						<MediaRef Id="367750095"/>
-						<MediaRef Id="389552647"/>
-						<MediaRef Id="489405462"/>
-						<MediaRef Id="519832428"/>
-						<MediaRef Id="590551012"/>
-						<MediaRef Id="636157940"/>
-						<MediaRef Id="657140677"/>
-						<MediaRef Id="683766544"/>
-						<MediaRef Id="756338795"/>
-						<MediaRef Id="789280311"/>
-						<MediaRef Id="810016171"/>
-						<MediaRef Id="821980279"/>
-						<MediaRef Id="859404060"/>
-						<MediaRef Id="874406933"/>
-						<MediaRef Id="914931857"/>
-						<MediaRef Id="947545656"/>
-						<MediaRef Id="1005052698"/>
+						<MediaRef Id="4491730"/>
+						<MediaRef Id="28965928"/>
+						<MediaRef Id="241125822"/>
+						<MediaRef Id="267449001"/>
+						<MediaRef Id="286381006"/>
+						<MediaRef Id="326595460"/>
+						<MediaRef Id="359339323"/>
+						<MediaRef Id="429151901"/>
+						<MediaRef Id="590653695"/>
+						<MediaRef Id="780001480"/>
+						<MediaRef Id="799810638"/>
+						<MediaRef Id="888645981"/>
+						<MediaRef Id="928569971"/>
+						<MediaRef Id="988007069"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1361922702" Name="Stop_AMC_SC_Eglise_Jour_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
@@ -9271,7 +9277,7 @@
 						<MediaRef Id="801487580"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2478899275" Name="VOX_Agathe_mondevoir" DurationType="OneShot" DurationMin="6.4683957" DurationMax="6.4683957">
+				<Event Id="2478899275" Name="VOX_Agathe_mondevoir" DurationType="OneShot" DurationMin="7.4683957" DurationMax="7.4683957">
 					<MediaRefs>
 						<MediaRef Id="245076705"/>
 					</MediaRefs>
@@ -9653,6 +9659,7 @@
 				</Event>
 				<Event Id="1383555470" Name="VOX_Arle_maisquivoila" DurationType="OneShot" DurationMin="4.1966667" DurationMax="4.1966667">
 					<MediaRefs>
+						<MediaRef Id="218168832"/>
 						<MediaRef Id="422040244"/>
 					</MediaRefs>
 				</Event>
@@ -14011,7 +14018,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{71B6A6FC-5975-DD8F-061E-1059098EAFE9}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{15078CD5-437F-D90F-5C34-29645A28DD34}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -15410,6 +15417,10 @@
 				<File Id="217534582" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Judge_decrivezjuryarle.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Judge_decrivezjuryarle_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="218168832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Wood_Scrape.wav</ShortName>
+					<CachePath>SFX/Wood_Scrape_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="218361401" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Passeur_Emotion_happy-001.wav</ShortName>
@@ -17823,6 +17834,10 @@
 				<File Id="616893402" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_amonreveil.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_amonreveil_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="617295212" Language="French(FR)" Streaming="false" Location="Memory">
+					<ShortName>VOX_Player_Emotion_Cri Leviathan.wav</ShortName>
+					<CachePath>Voices/French(FR)/VOX_Player_Emotion_Cri Leviathan_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="617952202" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Surprise_Faible_surprise-001.wav</ShortName>
@@ -21431,6 +21446,11 @@
 						<MediaRef Id="722902401"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="60887761" Name="Play_MUS_Story_SC_Church_Agathe" DurationType="OneShot" DurationMin="16.543282" DurationMax="16.543282">
+					<MediaRefs>
+						<MediaRef Id="326270977"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1018783602" Name="Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter" DurationType="OneShot" DurationMin="9.588031" DurationMax="9.588031">
 					<MediaRefs>
 						<MediaRef Id="275049971"/>
@@ -21635,6 +21655,7 @@
 				<Event Id="3397818400" Name="Play_RealLeviathan" DurationType="OneShot" DurationMin="6.650146" DurationMax="6.650146">
 					<MediaRefs>
 						<MediaRef Id="312525370"/>
+						<MediaRef Id="617295212"/>
 						<MediaRef Id="1004180969"/>
 					</MediaRefs>
 					<ActionPostEvent>
@@ -22660,6 +22681,13 @@
 						<MediaRef Id="705128432"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2514854683" Name="Play_VOX_Player_Emotion_wakeup" DurationType="OneShot" DurationMin="1.2566875" DurationMax="1.5845833">
+					<MediaRefs>
+						<MediaRef Id="535603911"/>
+						<MediaRef Id="589780016"/>
+						<MediaRef Id="902325376"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="849245499" Name="Play_VOX_Souffleur_Emotion_angry" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="413007764" Name="Play_VOX_Souffleur_Emotion_disappointed" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2892689798" Name="Play_VOX_Souffleur_Emotion_happy" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -22838,35 +22866,20 @@
 				</Event>
 				<Event Id="2391403843" Name="Stop_AMB_SC_Trial_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
-						<MediaRef Id="52455275"/>
-						<MediaRef Id="58096542"/>
-						<MediaRef Id="71742877"/>
-						<MediaRef Id="78346071"/>
-						<MediaRef Id="92586305"/>
-						<MediaRef Id="99871185"/>
-						<MediaRef Id="192352510"/>
-						<MediaRef Id="208400254"/>
-						<MediaRef Id="208442806"/>
-						<MediaRef Id="212733977"/>
-						<MediaRef Id="232733815"/>
-						<MediaRef Id="335360850"/>
-						<MediaRef Id="367750095"/>
-						<MediaRef Id="389552647"/>
-						<MediaRef Id="489405462"/>
-						<MediaRef Id="519832428"/>
-						<MediaRef Id="590551012"/>
-						<MediaRef Id="636157940"/>
-						<MediaRef Id="657140677"/>
-						<MediaRef Id="683766544"/>
-						<MediaRef Id="756338795"/>
-						<MediaRef Id="789280311"/>
-						<MediaRef Id="810016171"/>
-						<MediaRef Id="821980279"/>
-						<MediaRef Id="859404060"/>
-						<MediaRef Id="874406933"/>
-						<MediaRef Id="914931857"/>
-						<MediaRef Id="947545656"/>
-						<MediaRef Id="1005052698"/>
+						<MediaRef Id="4491730"/>
+						<MediaRef Id="28965928"/>
+						<MediaRef Id="241125822"/>
+						<MediaRef Id="267449001"/>
+						<MediaRef Id="286381006"/>
+						<MediaRef Id="326595460"/>
+						<MediaRef Id="359339323"/>
+						<MediaRef Id="429151901"/>
+						<MediaRef Id="590653695"/>
+						<MediaRef Id="780001480"/>
+						<MediaRef Id="799810638"/>
+						<MediaRef Id="888645981"/>
+						<MediaRef Id="928569971"/>
+						<MediaRef Id="988007069"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1361922702" Name="Stop_AMC_SC_Eglise_Jour_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
@@ -23178,7 +23191,7 @@
 						<MediaRef Id="801487580"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2478899275" Name="VOX_Agathe_mondevoir" DurationType="OneShot" DurationMin="6.4683957" DurationMax="6.4683957">
+				<Event Id="2478899275" Name="VOX_Agathe_mondevoir" DurationType="OneShot" DurationMin="7.4683957" DurationMax="7.4683957">
 					<MediaRefs>
 						<MediaRef Id="245076705"/>
 					</MediaRefs>
@@ -23560,6 +23573,7 @@
 				</Event>
 				<Event Id="1383555470" Name="VOX_Arle_maisquivoila" DurationType="OneShot" DurationMin="4.1966667" DurationMax="4.1966667">
 					<MediaRefs>
+						<MediaRef Id="218168832"/>
 						<MediaRef Id="422040244"/>
 					</MediaRefs>
 				</Event>
@@ -27919,5 +27933,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{514F80A7-F98A-6B38-23C6-92E45129D5C0}</FileHash>
+	<FileHash>{20566235-D94B-D2B3-BFA0-38C465105A21}</FileHash>
 </SoundBanksInfo>

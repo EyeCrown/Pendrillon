@@ -28,7 +28,7 @@ VAR marcello_surname = "Marcellogre"
 
 // Start the scene
 - #anim:Player:sleep #look:Marcello:left #look:Capucine:right 
-MARCELLO: Et si on le réveillait avec une tape sur le museau, cheffe ?
+MARCELLO: Et si on le réveillait avec une tape sur le museau, cheffe ? #playsound:VOX_Marcello_etsitape
 CAPUCINE: Cet abruti dort comme un <wiggle a=0.1>nourrisson</wiggle>... #playsound:VOX_Capucine_cetabrutidort
 PLAYER: Vous, ici ?! #anim:Player:wakeup #wait:2 #playsound:VOX_Player_vousiciQQ #playsound:Play_MUS_Story_SC_Eglise_6oclockWakeUp
 CAPUCINE: Heureuse de constater que tu nous reconnais... #playsound:VOX_Capucine_heureusedeconstaterquetunousreconnais
@@ -71,7 +71,7 @@ SOUFFLEUR: Je sais qu'ils ont l'air méchants, mais ils <b>adorent</b> être rid
         ~ marcello_surname = "Marcellocroupie"
 - #anim:Marcello:shameful
 - {CAPUCINE}: Tu... Tu te crois malin, abruti ? #anim:Capucine:angry #playsound:VOX_Capucine_tututecrois
-- {MARCELLO}: Il se prend pour notre mère, à nous donner des sobriquets pareils ? #anim:Marcello:angry
+- {MARCELLO}: Il se prend pour notre mère, à nous donner des sobriquets pareils ? #anim:Marcello:angry #playsound:VOX_Marcello_ilseprendmere
     * [Mais vous n'êtes pas seuls...] PLAYER: Vous êtes déjà de trop, cependant ai-je la tristesse de constater que vous n'êtes point seuls... #playsound:VOX_Player_dejadetrop #audience:debate
     * [Si vous êtes ici, c'est que...] PLAYER: Si vous êtes ici, écourtant mon sommeil, c'est qu'on vous a prévenu... #playsound:VOX_Player_siiciprevenu #audience:debate
     * [(Au loin) Vous m'avez trahi...] PLAYER: Vous m'avez trahi. Je pensais pouvoir vous faire confiance... #playsound:VOX_Player_vousmaveztrahi #audience:debate

@@ -108,7 +108,7 @@ SOUFFLEUR: N'oublie pas : dans ce procès, c'est le public que tu dois convaincr
 
 // Witness Arle
 = witness_arle
-- JUGE ERNEST: Le <b>Juge</b> appelle désormais à la barre le premier témoin de ce procès : <b>Arle</b>, la trublionne de la reine <b>Constance</b>. #playsound:Play_MUS_Story_SC_Trial_Arle #position:Arle:8:10 #box #wait:8 #playsound:VOX_Judge_jugeappellearle #anim:Judge:bell #anim:Arle:bow #audience:ovation
+- JUGE ERNEST: Le <b>Juge</b> appelle désormais à la barre le premier témoin de ce procès : <b>Arle</b>, la trublionne de la reine <b>Constance</b>. #playsound:Play_MUS_Story_SC_Trial_Arle #position:Arle:8:10 #box #playsound:VOX_Judge_jugeappellearle #wait:8  #anim:Judge:bell #anim:Arle:bow #audience:ovation
 JUGE ERNEST: Décrivez au jury votre rencontre avec l'<b>Accusé</b>, je vous prie. #playsound:VOX_Judge_decrivezjuryarle
 ARLE: <b>Votre Honneur</b>, vous n'êtes pas sans ignorer que j'ai l'immense privilège d'occuper, au sein de la <b>Couronne</b>, un rôle de tout premier plan... #playsound:VOX_Arle_immenseprivilege
     * [Ne pas l'interrompre.]
