@@ -567,7 +567,7 @@
 													<PropertyList>
 														<Property Name="MakeUpGain" Type="Real64">
 															<ValueList>
-																<Value>-3</Value>
+																<Value>-6</Value>
 															</ValueList>
 														</Property>
 													</PropertyList>
@@ -691,10 +691,54 @@
 														<ActiveSource Name="Silence" ID="{9EAD3788-5A58-46F9-864E-83FD71B154D0}" Platform="Linked"/>
 													</ActiveSourceList>
 												</Sound>
+												<Sound Name="Silence_01" ID="{1D993E9B-CC8C-477C-9783-6862310CEF18}" ShortID="489575618">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<SourcePlugin Name="Silence" ID="{9594ED53-F857-4748-8A4F-C12FAB467544}" ShortID="373619564" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+															<PropertyList>
+																<Property Name="Length" Type="Real32" Value="3.5"/>
+															</PropertyList>
+															<Language>SFX</Language>
+														</SourcePlugin>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Silence" ID="{9594ED53-F857-4748-8A4F-C12FAB467544}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
+												<Sound Name="Silence_02" ID="{3D5A7353-9914-4F42-8F6E-B87FC06AC4E7}" ShortID="530553903">
+													<ReferenceList>
+														<Reference Name="Conversion">
+															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+														</Reference>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<SourcePlugin Name="Silence" ID="{5CFD65AE-D9C1-4E5F-9E6E-8E7DDC2A5276}" ShortID="242014624" PluginName="Wwise Silence" CompanyID="0" PluginID="101">
+															<PropertyList>
+																<Property Name="Length" Type="Real32" Value="3.5"/>
+															</PropertyList>
+															<Language>SFX</Language>
+														</SourcePlugin>
+													</ChildrenList>
+													<ActiveSourceList>
+														<ActiveSource Name="Silence" ID="{5CFD65AE-D9C1-4E5F-9E6E-8E7DDC2A5276}" Platform="Linked"/>
+													</ActiveSourceList>
+												</Sound>
 											</ChildrenList>
 											<Playlist>
 												<ItemRef Name="VOX_NPC_Leviathan_Scream" ID="{7875C7FE-E0E2-4857-AEB2-A1696495F582}"/>
 												<ItemRef Name="Silence" ID="{6670691B-A32E-44AE-A4FA-9A014390FBD4}"/>
+												<ItemRef Name="Silence_01" ID="{1D993E9B-CC8C-477C-9783-6862310CEF18}"/>
+												<ItemRef Name="Silence_02" ID="{3D5A7353-9914-4F42-8F6E-B87FC06AC4E7}"/>
 											</Playlist>
 										</RandomSequenceContainer>
 									</ChildrenList>
@@ -1538,6 +1582,13 @@
 											</ChildrenList>
 										</RandomSequenceContainer>
 										<RandomSequenceContainer Name="Player_Pompes" ID="{7772BC73-F6BA-49B1-89B5-3164772AEC07}" ShortID="151381286">
+											<PropertyList>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-2</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -1550,6 +1601,11 @@
 												<Sound Name="VOX_Player_Emotion_Pompes-001" ID="{811F42E6-074C-40E8-B8B4-16FD15473149}" ShortID="301159822">
 													<PropertyList>
 														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-4</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -1600,6 +1656,11 @@
 												<Sound Name="VOX_Player_Emotion_Pompes-003" ID="{58C77CE8-9F75-4FF2-9033-8B92A17AB254}" ShortID="244334303">
 													<PropertyList>
 														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-2</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -1650,6 +1711,11 @@
 												<Sound Name="VOX_Player_Emotion_Pompes-005" ID="{257A7C9B-A697-4199-8289-E6FDEC6E6F29}" ShortID="975339655">
 													<PropertyList>
 														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-2</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -2091,6 +2157,11 @@
 												<Sound Name="VOX_Arle_bandedeploucs" ID="{4B29A6F4-CAF6-4561-9BEC-E9FE38FBE2AC}" ShortID="484005542">
 													<PropertyList>
 														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>2</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -3366,6 +3437,11 @@
 												<Sound Name="VOX_Arle_milliemedemontalent" ID="{DDC5078E-7B12-4B9C-BD32-7D3477817F2A}" ShortID="766322644">
 													<PropertyList>
 														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>2</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -3866,6 +3942,11 @@
 												<Sound Name="VOX_Arle_publicadorelahonte" ID="{CB765E2C-C257-4681-A85F-523C59F6744E}" ShortID="421878515">
 													<PropertyList>
 														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>4</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -4395,7 +4476,7 @@
 												<Property Name="Color" Type="int16" Value="4"/>
 												<Property Name="MakeUpGain" Type="Real64">
 													<ValueList>
-														<Value>5</Value>
+														<Value>6</Value>
 													</ValueList>
 												</Property>
 												<Property Name="OverrideColor" Type="bool" Value="True"/>
@@ -5162,6 +5243,11 @@
 												<Sound Name="VOX_Capucine_lafermejaidit" ID="{A0BDEA6A-21D0-4C2E-9384-F53E90C02B2F}" ShortID="964743701">
 													<PropertyList>
 														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>4</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -5839,6 +5925,11 @@
 										<ActorMixer Name="Juge" ID="{56993A0D-E8DF-400D-9B4C-75F58C726BD3}" ShortID="671661644">
 											<PropertyList>
 												<Property Name="Color" Type="int16" Value="4"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>1</Value>
+													</ValueList>
+												</Property>
 												<Property Name="OverrideColor" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
@@ -10703,6 +10794,11 @@
 												<Sound Name="VOX_Judge_poursuiveztemoin" ID="{B541755D-7864-4A2B-93DC-D58D92516498}" ShortID="54076150">
 													<PropertyList>
 														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-2</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -13832,6 +13928,11 @@
 										<ActorMixer Name="Passeur" ID="{FB46F687-DDA3-410D-A245-9EA418E39813}" ShortID="505674627">
 											<PropertyList>
 												<Property Name="Color" Type="int16" Value="4"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>2</Value>
+													</ValueList>
+												</Property>
 												<Property Name="OverrideColor" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>
@@ -21406,6 +21507,11 @@
 												<Sound Name="VOX_Player_beaucouptroplongtemps" ID="{56EFE038-8070-4BFD-8023-64F41DDC3D0D}" ShortID="18113525">
 													<PropertyList>
 														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-1</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -26561,6 +26667,11 @@
 												<Sound Name="VOX_Player_unjourellemourra" ID="{2FD8FD27-249F-4CC7-9E30-1A276AEA9997}" ShortID="903177507">
 													<PropertyList>
 														<Property Name="IsVoice" Type="bool" Value="True"/>
+														<Property Name="MakeUpGain" Type="Real64">
+															<ValueList>
+																<Value>-3</Value>
+															</ValueList>
+														</Property>
 													</PropertyList>
 													<ReferenceList>
 														<Reference Name="Conversion">
@@ -29457,6 +29568,11 @@
 										<ActorMixer Name="Agathe" ID="{4F26D9AB-8ACE-4072-AB4B-6F9397835FD1}" ShortID="886907581">
 											<PropertyList>
 												<Property Name="Color" Type="int16" Value="4"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>2</Value>
+													</ValueList>
+												</Property>
 												<Property Name="OverrideColor" Type="bool" Value="True"/>
 											</PropertyList>
 											<ReferenceList>

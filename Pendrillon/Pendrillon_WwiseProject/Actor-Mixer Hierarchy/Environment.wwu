@@ -6342,6 +6342,7 @@
 																		<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 																		<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
 																		<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+																		<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
 																		<Property Name="UserAuxSendVolume0" Type="Real64">
 																			<ValueList>
 																				<Value>-4</Value>
@@ -13060,6 +13061,13 @@
 									</ChildrenList>
 								</ActorMixer>
 								<Sound Name="SFX_SC_Theater_TransitionBasic" ID="{807C26DE-D123-4C0E-8ADA-AEC791E8D4E0}" ShortID="704203577">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
@@ -15239,7 +15247,7 @@
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="MakeUpGain" Type="Real64">
 													<ValueList>
-														<Value>-5</Value>
+														<Value>-9</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -15278,6 +15286,11 @@
 													</ValueList>
 												</Property>
 												<Property Name="EnableAttenuation" Type="bool" Value="False"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 												<Property Name="OverridePositioning" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
 												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
@@ -15558,7 +15571,7 @@
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="MakeUpGain" Type="Real64">
 													<ValueList>
-														<Value>-1</Value>
+														<Value>-4</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -15594,7 +15607,7 @@
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 												<Property Name="MakeUpGain" Type="Real64">
 													<ValueList>
-														<Value>-8</Value>
+														<Value>-9</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>

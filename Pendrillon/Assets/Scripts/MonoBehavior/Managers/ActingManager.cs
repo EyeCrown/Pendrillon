@@ -660,6 +660,7 @@ namespace MonoBehavior.Managers
             // If player won then play boss death anim
             if ((bool) state)
                 _tempestLeviathanAnimator.SetTrigger("death");
+                AkSoundEngine.PostEvent("Stop_BossMusic", gameObject);
         }
         
         void ChangePlayerMastState(object state)
@@ -683,7 +684,7 @@ namespace MonoBehavior.Managers
             else
             {
                 _tempestHarpoonAnimator.SetTrigger("shoot");
-                // play figth sound
+                AkSoundEngine.PostEvent("Play_SFX_Combat_Harpoon_shot", gameObject); 
                 _tempestHarpoonAnimator.SetBool("charged", false);
             }
         }
@@ -698,7 +699,7 @@ namespace MonoBehavior.Managers
             else
             {
                 _tempestCanonAnimator.SetTrigger("shoot");
-                // play figth sound
+                AkSoundEngine.PostEvent("Play_SFX_Combat_Cannon_shot", gameObject);
                 _tempestCanonAnimator.SetBool("charged", false);
             }
         }
@@ -709,6 +710,7 @@ namespace MonoBehavior.Managers
             if ((bool)state)
             {
                 _tempestBarrelAnimator.SetBool("Used", true);
+                AkSoundEngine.PostEvent("Play_SFX_Combat_BarrelExplosion", gameObject);
             }
         }
         
@@ -1549,6 +1551,14 @@ namespace MonoBehavior.Managers
                 case Constants.ReactChoc:
                     break;
                 case Constants.ReactLaughter:
+                    break;
+                case Constants.ReactDisgust:
+                    break;
+                case Constants.ReactEmpathy:
+                    break;
+                case Constants.ReactHush:
+                    break;
+                case Constants.ReactSilent:
                     break;
                 default:
                     Debug.LogError($"AM.HandleTagAudience > Unkwonw reaction | {reaction} |");

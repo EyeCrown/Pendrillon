@@ -117,6 +117,11 @@ public static class Constants
     public const string ReactApplause   = "applause";
     public const string ReactChoc       = "choc";
     public const string ReactLaughter   = "laughter";
+    public const string ReactDisgust    = "disgust"; 
+    public const string ReactEmpathy    = "empathy";
+    public const string ReactHush       = "hush";
+    public const string ReactSilent     = "silent";
+
 
     public static readonly string[] ReactArray = new string[]
     {
@@ -125,7 +130,11 @@ public static class Constants
         ReactDebate,
         ReactApplause,
         ReactChoc,
-        ReactLaughter
+        ReactLaughter,
+        ReactDisgust,
+        ReactEmpathy,
+        ReactHush,
+        ReactSilent
     };
 
     #endregion

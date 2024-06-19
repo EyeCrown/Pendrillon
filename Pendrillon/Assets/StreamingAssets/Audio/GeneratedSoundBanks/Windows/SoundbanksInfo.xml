@@ -9,12 +9,13 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B8353881-7077-73EF-0E52-3A78D774DB84}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{3B51713F-6689-78A0-8796-7336129029BF}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
 				<Custom>
 					<Plugin Id="798834842" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
+					<Plugin Id="1046791854" Name="Recorder (Custom)" LibName="Wwise Recorder" LibId="8650755"/>
 				</Custom>
 				<ShareSets>
 					<Plugin Id="1520064353" Name="Hall_Medium_Bright" LibName="Wwise RoomVerb" LibId="7733251"/>
@@ -42,7 +43,13 @@
 				<Bus Id="2800544509" Name="MainDry"/>
 				<Bus Id="3299242565" Name="Reverb_Voices_01"/>
 				<Bus Id="3367604937" Name="Dry_Emotions"/>
-				<Bus Id="3803692087" Name="Master Audio Bus"/>
+				<Bus Id="3803692087" Name="Master Audio Bus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="1046791854"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
 				<Bus Id="3848410326" Name="Dry_Environment"/>
 				<Bus Id="3852188084" Name="MainHyperacusis"/>
 				<Bus Id="3872602748" Name="Dry_SFX"/>
@@ -97,7 +104,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{60D39B71-DC1C-29AE-9DBB-9A09A9B43C4D}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{A1A95F1D-0E14-0784-733E-93C9CC67F577}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -1497,6 +1504,10 @@
 					<ShortName>VOX_Judge_decrivezjuryarle.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Judge_decrivezjuryarle_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="218168832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Wood_Scrape.wav</ShortName>
+					<CachePath>SFX/Wood_Scrape_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="218361401" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Passeur_Emotion_happy-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Passeur_Emotion_happy-001_3F75BDB9.wem</CachePath>
@@ -2028,6 +2039,10 @@
 				<File Id="292372310" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_unetemperedechirait.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_unetemperedechirait_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="293263580" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BarrelExplode_shot.wav</ShortName>
+					<CachePath>SFX/BarrelExplode_shot_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="293770659" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_lettrenonsignee.wav</ShortName>
@@ -3085,6 +3100,10 @@
 					<ShortName>Amphi_Chatter_Crowd Chatter-031.wav</ShortName>
 					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-031_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="476501378" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cannon_shot.wav</ShortName>
+					<CachePath>SFX/Cannon_shot_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="477088409" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_unesurprisedesagreable.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_unesurprisedesagreable_3F75BDB9.wem</CachePath>
@@ -3902,6 +3921,10 @@
 					<ShortName>VOX_Player_amonreveil.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_amonreveil_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="617295212" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
+					<ShortName>VOX_Player_Emotion_Cri Leviathan.wav</ShortName>
+					<CachePath>Voices/French(FR)/VOX_Player_Emotion_Cri Leviathan_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="617952202" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Surprise_Faible_surprise-001.wav</ShortName>
 					<CachePath>SFX/Surprise_Faible_surprise-001_3F75BDB9.wem</CachePath>
@@ -4575,6 +4598,10 @@
 				<File Id="731746254" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_Barque_MysteriousLetter2.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_Barque_MysteriousLetter2_292EB308.wem</CachePath>
+				</File>
+				<File Id="732103239" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Harpoon_shot.wav</ShortName>
+					<CachePath>SFX/Harpoon_shot_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="732445438" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Judge_marcelloholds1.wav</ShortName>
@@ -6758,7 +6785,9 @@
 			<Plugins>
 				<Custom>
 					<Plugin Id="185346133" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+					<Plugin Id="242014624" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="302264514" Name="Sine" LibName="Wwise Sine" LibId="6553602"/>
+					<Plugin Id="373619564" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="392278705" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="455678034" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 				</Custom>
@@ -7453,6 +7482,11 @@
 						<MediaRef Id="106650222"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1218341571" Name="Play_MUS_Story_SC_Barque_ANewFriend" DurationType="OneShot" DurationMin="10.042677" DurationMax="10.042677">
+					<MediaRefs>
+						<MediaRef Id="693610198"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4096572270" Name="Play_MUS_Story_SC_Barque_ANewName" DurationType="OneShot" DurationMin="3.8878229" DurationMax="3.8878229">
 					<MediaRefs>
 						<MediaRef Id="842031347"/>
@@ -7496,6 +7530,11 @@
 				<Event Id="1241547024" Name="Play_MUS_Story_SC_Barque_TrialInView" DurationType="OneShot" DurationMin="9.947708" DurationMax="9.947708">
 					<MediaRefs>
 						<MediaRef Id="722902401"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="60887761" Name="Play_MUS_Story_SC_Church_Agathe" DurationType="OneShot" DurationMin="16.543282" DurationMax="16.543282">
+					<MediaRefs>
+						<MediaRef Id="326270977"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1018783602" Name="Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter" DurationType="OneShot" DurationMin="9.588031" DurationMax="9.588031">
@@ -7702,8 +7741,12 @@
 				<Event Id="3397818400" Name="Play_RealLeviathan" DurationType="OneShot" DurationMin="6.650146" DurationMax="6.650146">
 					<MediaRefs>
 						<MediaRef Id="312525370"/>
+						<MediaRef Id="617295212"/>
 						<MediaRef Id="1004180969"/>
 					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="656877296" Name="Stop_BossMusic"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="4226378662" Name="Play_SFX_Boat_Hit" DurationType="OneShot" DurationMin="4.2308125" DurationMax="4.2308125">
 					<MediaRefs>
@@ -7712,6 +7755,30 @@
 						<MediaRef Id="312525370"/>
 						<MediaRef Id="794213684"/>
 					</MediaRefs>
+				</Event>
+				<Event Id="1633182254" Name="Play_SFX_Combat_BarrelExplosion" DurationType="OneShot" DurationMin="3.60275" DurationMax="3.60275">
+					<MediaRefs>
+						<MediaRef Id="293263580"/>
+					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="731471392" Name="Play_SFX_NPC_Leviathan_Hurt"/>
+					</ActionPostEvent>
+				</Event>
+				<Event Id="1832265833" Name="Play_SFX_Combat_Cannon_shot" DurationType="OneShot" DurationMin="4.8858647" DurationMax="4.8858647">
+					<MediaRefs>
+						<MediaRef Id="476501378"/>
+					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="731471392" Name="Play_SFX_NPC_Leviathan_Hurt"/>
+					</ActionPostEvent>
+				</Event>
+				<Event Id="3086343677" Name="Play_SFX_Combat_Harpoon_shot" DurationType="OneShot" DurationMin="2.1785312" DurationMax="2.1785312">
+					<MediaRefs>
+						<MediaRef Id="732103239"/>
+					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="731471392" Name="Play_SFX_NPC_Leviathan_Hurt"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="3286192894" Name="Play_SFX_Combat_NPC_Bouffon_Attack1" DurationType="OneShot" DurationMin="1.0658854" DurationMax="1.0658854">
 					<MediaRefs>
@@ -7761,6 +7828,11 @@
 						<MediaRef Id="332836691"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2579169069" Name="Play_SFX_NPC_Leviathan_Defeated" DurationType="OneShot" DurationMin="11.485886" DurationMax="11.485886">
+					<MediaRefs>
+						<MediaRef Id="692255836"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="731471392" Name="Play_SFX_NPC_Leviathan_Hurt" DurationType="OneShot" DurationMin="0.95780206" DurationMax="1.549427">
 					<MediaRefs>
 						<MediaRef Id="109491327"/>
@@ -7768,6 +7840,21 @@
 						<MediaRef Id="869604069"/>
 						<MediaRef Id="953067962"/>
 					</MediaRefs>
+				</Event>
+				<Event Id="473752268" Name="Play_SFX_NPC_Leviathan_Scream" DurationType="OneShot" DurationMin="3.5" DurationMax="7.635479">
+					<MediaRefs>
+						<MediaRef Id="198347337"/>
+						<MediaRef Id="279408314"/>
+						<MediaRef Id="338660528"/>
+						<MediaRef Id="455376796"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="242014624"/>
+							<PluginRef Id="373619564"/>
+							<PluginRef Id="392278705"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="3734683120" Name="Play_SFX_NPC_Leviathan_Spawn" DurationType="Infinite">
 					<MediaRefs>
@@ -8447,6 +8534,8 @@
 					</MediaRefs>
 					<PluginRefs>
 						<Custom>
+							<PluginRef Id="242014624"/>
+							<PluginRef Id="373619564"/>
 							<PluginRef Id="392278705"/>
 						</Custom>
 					</PluginRefs>
@@ -8589,6 +8678,14 @@
 						<MediaRef Id="835406123"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3807038017" Name="Play_VOX_Player_Emotion_pull" DurationType="OneShot" DurationMin="1.6362292" DurationMax="2.0886042">
+					<MediaRefs>
+						<MediaRef Id="421042771"/>
+						<MediaRef Id="553319472"/>
+						<MediaRef Id="745604317"/>
+						<MediaRef Id="835406123"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1972888068" Name="Play_VOX_Player_Emotion_punch" DurationType="OneShot" DurationMin="1.2639166" DurationMax="1.747625">
 					<MediaRefs>
 						<MediaRef Id="99448471"/>
@@ -8668,6 +8765,13 @@
 					<MediaRefs>
 						<MediaRef Id="259209422"/>
 						<MediaRef Id="705128432"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2514854683" Name="Play_VOX_Player_Emotion_wakeup" DurationType="OneShot" DurationMin="1.2566875" DurationMax="1.5845833">
+					<MediaRefs>
+						<MediaRef Id="535603911"/>
+						<MediaRef Id="589780016"/>
+						<MediaRef Id="902325376"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="849245499" Name="Play_VOX_Souffleur_Emotion_angry" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -8848,35 +8952,20 @@
 				</Event>
 				<Event Id="2391403843" Name="Stop_AMB_SC_Trial_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
-						<MediaRef Id="52455275"/>
-						<MediaRef Id="58096542"/>
-						<MediaRef Id="71742877"/>
-						<MediaRef Id="78346071"/>
-						<MediaRef Id="92586305"/>
-						<MediaRef Id="99871185"/>
-						<MediaRef Id="192352510"/>
-						<MediaRef Id="208400254"/>
-						<MediaRef Id="208442806"/>
-						<MediaRef Id="212733977"/>
-						<MediaRef Id="232733815"/>
-						<MediaRef Id="335360850"/>
-						<MediaRef Id="367750095"/>
-						<MediaRef Id="389552647"/>
-						<MediaRef Id="489405462"/>
-						<MediaRef Id="519832428"/>
-						<MediaRef Id="590551012"/>
-						<MediaRef Id="636157940"/>
-						<MediaRef Id="657140677"/>
-						<MediaRef Id="683766544"/>
-						<MediaRef Id="756338795"/>
-						<MediaRef Id="789280311"/>
-						<MediaRef Id="810016171"/>
-						<MediaRef Id="821980279"/>
-						<MediaRef Id="859404060"/>
-						<MediaRef Id="874406933"/>
-						<MediaRef Id="914931857"/>
-						<MediaRef Id="947545656"/>
-						<MediaRef Id="1005052698"/>
+						<MediaRef Id="4491730"/>
+						<MediaRef Id="28965928"/>
+						<MediaRef Id="241125822"/>
+						<MediaRef Id="267449001"/>
+						<MediaRef Id="286381006"/>
+						<MediaRef Id="326595460"/>
+						<MediaRef Id="359339323"/>
+						<MediaRef Id="429151901"/>
+						<MediaRef Id="590653695"/>
+						<MediaRef Id="780001480"/>
+						<MediaRef Id="799810638"/>
+						<MediaRef Id="888645981"/>
+						<MediaRef Id="928569971"/>
+						<MediaRef Id="988007069"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1361922702" Name="Stop_AMC_SC_Eglise_Jour_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
@@ -8890,6 +8979,27 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="656877296" Name="Stop_BossMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1344787364" Name="Stop_CrowdReaction_applauseinfinite" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="46289423"/>
+						<MediaRef Id="71655673"/>
+						<MediaRef Id="145725991"/>
+						<MediaRef Id="234527113"/>
+						<MediaRef Id="619915790"/>
+						<MediaRef Id="673686168"/>
+						<MediaRef Id="865681236"/>
+						<MediaRef Id="897318909"/>
+						<MediaRef Id="975050806"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
 				<Event Id="139643743" Name="Stop_VOX_ALL" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4268385224" Name="Stop_VOX_Emotions" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2408301271" Name="VOX_Agathe_accueilliaccuse" DurationType="OneShot" DurationMin="4.3614793" DurationMax="4.3614793">
@@ -9167,7 +9277,7 @@
 						<MediaRef Id="801487580"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2478899275" Name="VOX_Agathe_mondevoir" DurationType="OneShot" DurationMin="6.4683957" DurationMax="6.4683957">
+				<Event Id="2478899275" Name="VOX_Agathe_mondevoir" DurationType="OneShot" DurationMin="7.4683957" DurationMax="7.4683957">
 					<MediaRefs>
 						<MediaRef Id="245076705"/>
 					</MediaRefs>
@@ -9549,6 +9659,7 @@
 				</Event>
 				<Event Id="1383555470" Name="VOX_Arle_maisquivoila" DurationType="OneShot" DurationMin="4.1966667" DurationMax="4.1966667">
 					<MediaRefs>
+						<MediaRef Id="218168832"/>
 						<MediaRef Id="422040244"/>
 					</MediaRefs>
 				</Event>
@@ -13907,7 +14018,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{02215744-8D32-81B7-6508-299F6D262702}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{15078CD5-437F-D90F-5C34-29645A28DD34}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -15307,6 +15418,10 @@
 					<ShortName>VOX_Judge_decrivezjuryarle.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Judge_decrivezjuryarle_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="218168832" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Wood_Scrape.wav</ShortName>
+					<CachePath>SFX/Wood_Scrape_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="218361401" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Passeur_Emotion_happy-001.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Passeur_Emotion_happy-001_3F75BDB9.wem</CachePath>
@@ -15838,6 +15953,10 @@
 				<File Id="292372310" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_unetemperedechirait.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_unetemperedechirait_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="293263580" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>BarrelExplode_shot.wav</ShortName>
+					<CachePath>SFX/BarrelExplode_shot_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="293770659" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_lettrenonsignee.wav</ShortName>
@@ -16895,6 +17014,10 @@
 					<ShortName>Amphi_Chatter_Crowd Chatter-031.wav</ShortName>
 					<CachePath>SFX/Amphi_Chatter_Crowd Chatter-031_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="476501378" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Cannon_shot.wav</ShortName>
+					<CachePath>SFX/Cannon_shot_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="477088409" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_unesurprisedesagreable.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_unesurprisedesagreable_3F75BDB9.wem</CachePath>
@@ -17712,6 +17835,10 @@
 					<ShortName>VOX_Player_amonreveil.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Player_amonreveil_3F75BDB9.wem</CachePath>
 				</File>
+				<File Id="617295212" Language="French(FR)" Streaming="false" Location="Memory">
+					<ShortName>VOX_Player_Emotion_Cri Leviathan.wav</ShortName>
+					<CachePath>Voices/French(FR)/VOX_Player_Emotion_Cri Leviathan_3F75BDB9.wem</CachePath>
+				</File>
 				<File Id="617952202" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Surprise_Faible_surprise-001.wav</ShortName>
 					<CachePath>SFX/Surprise_Faible_surprise-001_3F75BDB9.wem</CachePath>
@@ -18385,6 +18512,10 @@
 				<File Id="731746254" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MUS_Story_SC_Barque_MysteriousLetter2.wav</ShortName>
 					<CachePath>SFX/MUS_Story_SC_Barque_MysteriousLetter2_292EB308.wem</CachePath>
+				</File>
+				<File Id="732103239" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Harpoon_shot.wav</ShortName>
+					<CachePath>SFX/Harpoon_shot_3F75BDB9.wem</CachePath>
 				</File>
 				<File Id="732445438" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Judge_marcelloholds1.wav</ShortName>
@@ -20568,7 +20699,9 @@
 			<Plugins>
 				<Custom>
 					<Plugin Id="185346133" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
+					<Plugin Id="242014624" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="302264514" Name="Sine" LibName="Wwise Sine" LibId="6553602"/>
+					<Plugin Id="373619564" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="392278705" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 					<Plugin Id="455678034" Name="Silence" LibName="Wwise Silence" LibId="6619138"/>
 				</Custom>
@@ -21263,6 +21396,11 @@
 						<MediaRef Id="106650222"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1218341571" Name="Play_MUS_Story_SC_Barque_ANewFriend" DurationType="OneShot" DurationMin="10.042677" DurationMax="10.042677">
+					<MediaRefs>
+						<MediaRef Id="693610198"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="4096572270" Name="Play_MUS_Story_SC_Barque_ANewName" DurationType="OneShot" DurationMin="3.8878229" DurationMax="3.8878229">
 					<MediaRefs>
 						<MediaRef Id="842031347"/>
@@ -21306,6 +21444,11 @@
 				<Event Id="1241547024" Name="Play_MUS_Story_SC_Barque_TrialInView" DurationType="OneShot" DurationMin="9.947708" DurationMax="9.947708">
 					<MediaRefs>
 						<MediaRef Id="722902401"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="60887761" Name="Play_MUS_Story_SC_Church_Agathe" DurationType="OneShot" DurationMin="16.543282" DurationMax="16.543282">
+					<MediaRefs>
+						<MediaRef Id="326270977"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1018783602" Name="Play_MUS_Story_SC_SecretMeeting_ArleFirstEncounter" DurationType="OneShot" DurationMin="9.588031" DurationMax="9.588031">
@@ -21512,8 +21655,12 @@
 				<Event Id="3397818400" Name="Play_RealLeviathan" DurationType="OneShot" DurationMin="6.650146" DurationMax="6.650146">
 					<MediaRefs>
 						<MediaRef Id="312525370"/>
+						<MediaRef Id="617295212"/>
 						<MediaRef Id="1004180969"/>
 					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="656877296" Name="Stop_BossMusic"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="4226378662" Name="Play_SFX_Boat_Hit" DurationType="OneShot" DurationMin="4.2308125" DurationMax="4.2308125">
 					<MediaRefs>
@@ -21522,6 +21669,30 @@
 						<MediaRef Id="312525370"/>
 						<MediaRef Id="794213684"/>
 					</MediaRefs>
+				</Event>
+				<Event Id="1633182254" Name="Play_SFX_Combat_BarrelExplosion" DurationType="OneShot" DurationMin="3.60275" DurationMax="3.60275">
+					<MediaRefs>
+						<MediaRef Id="293263580"/>
+					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="731471392" Name="Play_SFX_NPC_Leviathan_Hurt"/>
+					</ActionPostEvent>
+				</Event>
+				<Event Id="1832265833" Name="Play_SFX_Combat_Cannon_shot" DurationType="OneShot" DurationMin="4.8858647" DurationMax="4.8858647">
+					<MediaRefs>
+						<MediaRef Id="476501378"/>
+					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="731471392" Name="Play_SFX_NPC_Leviathan_Hurt"/>
+					</ActionPostEvent>
+				</Event>
+				<Event Id="3086343677" Name="Play_SFX_Combat_Harpoon_shot" DurationType="OneShot" DurationMin="2.1785312" DurationMax="2.1785312">
+					<MediaRefs>
+						<MediaRef Id="732103239"/>
+					</MediaRefs>
+					<ActionPostEvent>
+						<ActionPostEventEntry Id="731471392" Name="Play_SFX_NPC_Leviathan_Hurt"/>
+					</ActionPostEvent>
 				</Event>
 				<Event Id="3286192894" Name="Play_SFX_Combat_NPC_Bouffon_Attack1" DurationType="OneShot" DurationMin="1.0658854" DurationMax="1.0658854">
 					<MediaRefs>
@@ -21571,6 +21742,11 @@
 						<MediaRef Id="332836691"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2579169069" Name="Play_SFX_NPC_Leviathan_Defeated" DurationType="OneShot" DurationMin="11.485886" DurationMax="11.485886">
+					<MediaRefs>
+						<MediaRef Id="692255836"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="731471392" Name="Play_SFX_NPC_Leviathan_Hurt" DurationType="OneShot" DurationMin="0.95780206" DurationMax="1.549427">
 					<MediaRefs>
 						<MediaRef Id="109491327"/>
@@ -21578,6 +21754,21 @@
 						<MediaRef Id="869604069"/>
 						<MediaRef Id="953067962"/>
 					</MediaRefs>
+				</Event>
+				<Event Id="473752268" Name="Play_SFX_NPC_Leviathan_Scream" DurationType="OneShot" DurationMin="3.5" DurationMax="7.635479">
+					<MediaRefs>
+						<MediaRef Id="198347337"/>
+						<MediaRef Id="279408314"/>
+						<MediaRef Id="338660528"/>
+						<MediaRef Id="455376796"/>
+					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="242014624"/>
+							<PluginRef Id="373619564"/>
+							<PluginRef Id="392278705"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="3734683120" Name="Play_SFX_NPC_Leviathan_Spawn" DurationType="Infinite">
 					<MediaRefs>
@@ -22257,6 +22448,8 @@
 					</MediaRefs>
 					<PluginRefs>
 						<Custom>
+							<PluginRef Id="242014624"/>
+							<PluginRef Id="373619564"/>
 							<PluginRef Id="392278705"/>
 						</Custom>
 					</PluginRefs>
@@ -22399,6 +22592,14 @@
 						<MediaRef Id="835406123"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3807038017" Name="Play_VOX_Player_Emotion_pull" DurationType="OneShot" DurationMin="1.6362292" DurationMax="2.0886042">
+					<MediaRefs>
+						<MediaRef Id="421042771"/>
+						<MediaRef Id="553319472"/>
+						<MediaRef Id="745604317"/>
+						<MediaRef Id="835406123"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1972888068" Name="Play_VOX_Player_Emotion_punch" DurationType="OneShot" DurationMin="1.2639166" DurationMax="1.747625">
 					<MediaRefs>
 						<MediaRef Id="99448471"/>
@@ -22478,6 +22679,13 @@
 					<MediaRefs>
 						<MediaRef Id="259209422"/>
 						<MediaRef Id="705128432"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2514854683" Name="Play_VOX_Player_Emotion_wakeup" DurationType="OneShot" DurationMin="1.2566875" DurationMax="1.5845833">
+					<MediaRefs>
+						<MediaRef Id="535603911"/>
+						<MediaRef Id="589780016"/>
+						<MediaRef Id="902325376"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="849245499" Name="Play_VOX_Souffleur_Emotion_angry" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -22658,35 +22866,20 @@
 				</Event>
 				<Event Id="2391403843" Name="Stop_AMB_SC_Trial_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
-						<MediaRef Id="52455275"/>
-						<MediaRef Id="58096542"/>
-						<MediaRef Id="71742877"/>
-						<MediaRef Id="78346071"/>
-						<MediaRef Id="92586305"/>
-						<MediaRef Id="99871185"/>
-						<MediaRef Id="192352510"/>
-						<MediaRef Id="208400254"/>
-						<MediaRef Id="208442806"/>
-						<MediaRef Id="212733977"/>
-						<MediaRef Id="232733815"/>
-						<MediaRef Id="335360850"/>
-						<MediaRef Id="367750095"/>
-						<MediaRef Id="389552647"/>
-						<MediaRef Id="489405462"/>
-						<MediaRef Id="519832428"/>
-						<MediaRef Id="590551012"/>
-						<MediaRef Id="636157940"/>
-						<MediaRef Id="657140677"/>
-						<MediaRef Id="683766544"/>
-						<MediaRef Id="756338795"/>
-						<MediaRef Id="789280311"/>
-						<MediaRef Id="810016171"/>
-						<MediaRef Id="821980279"/>
-						<MediaRef Id="859404060"/>
-						<MediaRef Id="874406933"/>
-						<MediaRef Id="914931857"/>
-						<MediaRef Id="947545656"/>
-						<MediaRef Id="1005052698"/>
+						<MediaRef Id="4491730"/>
+						<MediaRef Id="28965928"/>
+						<MediaRef Id="241125822"/>
+						<MediaRef Id="267449001"/>
+						<MediaRef Id="286381006"/>
+						<MediaRef Id="326595460"/>
+						<MediaRef Id="359339323"/>
+						<MediaRef Id="429151901"/>
+						<MediaRef Id="590653695"/>
+						<MediaRef Id="780001480"/>
+						<MediaRef Id="799810638"/>
+						<MediaRef Id="888645981"/>
+						<MediaRef Id="928569971"/>
+						<MediaRef Id="988007069"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1361922702" Name="Stop_AMC_SC_Eglise_Jour_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
@@ -22700,6 +22893,27 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="656877296" Name="Stop_BossMusic" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
+				<Event Id="1344787364" Name="Stop_CrowdReaction_applauseinfinite" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
+					<MediaRefs>
+						<MediaRef Id="46289423"/>
+						<MediaRef Id="71655673"/>
+						<MediaRef Id="145725991"/>
+						<MediaRef Id="234527113"/>
+						<MediaRef Id="619915790"/>
+						<MediaRef Id="673686168"/>
+						<MediaRef Id="865681236"/>
+						<MediaRef Id="897318909"/>
+						<MediaRef Id="975050806"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="4165585856"/>
+						</ShareSets>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="1166417795" Name="Reverb_Crowd"/>
+					</AuxBusRefs>
+				</Event>
 				<Event Id="139643743" Name="Stop_VOX_ALL" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="4268385224" Name="Stop_VOX_Emotions" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2408301271" Name="VOX_Agathe_accueilliaccuse" DurationType="OneShot" DurationMin="4.3614793" DurationMax="4.3614793">
@@ -22977,7 +23191,7 @@
 						<MediaRef Id="801487580"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2478899275" Name="VOX_Agathe_mondevoir" DurationType="OneShot" DurationMin="6.4683957" DurationMax="6.4683957">
+				<Event Id="2478899275" Name="VOX_Agathe_mondevoir" DurationType="OneShot" DurationMin="7.4683957" DurationMax="7.4683957">
 					<MediaRefs>
 						<MediaRef Id="245076705"/>
 					</MediaRefs>
@@ -23359,6 +23573,7 @@
 				</Event>
 				<Event Id="1383555470" Name="VOX_Arle_maisquivoila" DurationType="OneShot" DurationMin="4.1966667" DurationMax="4.1966667">
 					<MediaRefs>
+						<MediaRef Id="218168832"/>
 						<MediaRef Id="422040244"/>
 					</MediaRefs>
 				</Event>
@@ -27718,5 +27933,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{F7199FE2-4204-2DB4-8EF0-68B497DD36DB}</FileHash>
+	<FileHash>{20566235-D94B-D2B3-BFA0-38C465105A21}</FileHash>
 </SoundBanksInfo>
