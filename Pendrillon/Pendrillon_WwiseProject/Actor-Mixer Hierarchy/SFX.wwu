@@ -481,7 +481,7 @@
 									<PropertyList>
 										<Property Name="MakeUpGain" Type="Real64">
 											<ValueList>
-												<Value>6</Value>
+												<Value>1</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -504,6 +504,35 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="BoatCrash" ID="{881C6A21-551B-418D-B0DD-42A77C4DD3BA}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="BoatCrash_RedLeviathan" ID="{1B7E118D-47EC-4981-B315-8CCB3EFD94E3}" ShortID="824356074">
+									<PropertyList>
+										<Property Name="MakeUpGain" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="BoatCrash" ID="{62CE33FF-B3D3-4570-BD80-267B2949F70D}">
+											<Language>SFX</Language>
+											<AudioFile>BoatCrash.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="312525370"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="BoatCrash" ID="{62CE33FF-B3D3-4570-BD80-267B2949F70D}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>

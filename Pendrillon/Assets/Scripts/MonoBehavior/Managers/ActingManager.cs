@@ -63,6 +63,7 @@ namespace MonoBehavior.Managers
         private Animator _tempestBarrelAnimator;
         private Animator _tempestMastAnimator;
         private Animator _tempestLeviathanAnimator;
+        private Animator _tempestRedLeviathanAnimator;
         
         #endregion
 
@@ -494,6 +495,7 @@ namespace MonoBehavior.Managers
             _tempestBarrelAnimator  = _setTempest.transform.Find($"{tempestName}BarilExplosif").GetComponent<Animator>();
             _tempestMastAnimator    = _setTempest.transform.Find($"{tempestName}MatPart01").GetComponent<Animator>();
             _tempestLeviathanAnimator = _setTempest.transform.Find($"{tempestName}Leviathan").GetComponent<Animator>();
+            _tempestRedLeviathanAnimator = _setTempest.transform.Find($"{tempestBaseName}RedLeviathan").GetComponent<Animator>();
         }
 
         void ConnectEvents()
@@ -612,6 +614,10 @@ namespace MonoBehavior.Managers
             GameManager.Instance._story.ObserveVariable ("b_player_won", 
                 (string varName, object newValue) => ResultBossBattle(newValue));
             
+            GameManager.Instance._story.ObserveVariable ("b_player_is_on_top_of_mast", 
+                (string varName, object newValue) => ChangePlayerMastState(newValue));
+            
+            
             // Harpoon
             GameManager.Instance._story.ObserveVariable ("b_harpoon_is_loaded", 
                 (string varName, object newValue) => ChangeHarpoonState(newValue));
@@ -653,6 +659,17 @@ namespace MonoBehavior.Managers
             // If player won then play boss death anim
             if ((bool) state)
                 _tempestLeviathanAnimator.SetTrigger("death");
+        }
+        
+        void ChangePlayerMastState(object state)
+        {
+            Debug.Log($"Player on top of mast: {(bool) state}");
+
+            // If player won then play boss death anim
+            if ((bool)state)
+                StartCoroutine(GameManager.Instance.GetPlayer().MoveHeightPositionCoroutine(6.0f, null));
+            else
+                StartCoroutine(GameManager.Instance.GetPlayer().MoveHeightPositionCoroutine(-6.0f, null));
         }
 
         void ChangeHarpoonState(object state)
@@ -740,7 +757,7 @@ namespace MonoBehavior.Managers
 
         void LauchBossAttack(object isAttacking)
         {
-            //Debug.Log($"Boss is attacking: {(bool) isAttacking}");
+            Debug.Log($"Boss is attacking: {(bool) isAttacking}");
 
             if (!(bool) isAttacking)
                 return;
@@ -1658,7 +1675,7 @@ namespace MonoBehavior.Managers
                     _battleHUD.BattleEnded.Invoke();
                     _tempestLeviathanAnimator.SetTrigger("underwater");
                     _tempestLeviathanAnimator.SetBool("InOut", false);
-
+                    _tempestRedLeviathanAnimator.SetTrigger("endBattle");
                     break;
                 default:
                     Debug.LogError($"AM.HandleTagBattle > Error: Unknown battle state [{state}]");

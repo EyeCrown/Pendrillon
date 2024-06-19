@@ -15237,6 +15237,11 @@
 										<Sound Name="AMB_Trial_Bed_WavesSmall" ID="{917AC8D0-C4BA-4D6F-9847-F8B39DF398B1}" ShortID="302808598">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-5</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -15551,6 +15556,11 @@
 										<Sound Name="AMB_SC_Cale_Bed_WoodCreaking" ID="{83D8A7D2-76BF-406B-A8A7-1B5143D13087}" ShortID="1051403437">
 											<PropertyList>
 												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-1</Value>
+													</ValueList>
+												</Property>
 											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
@@ -15577,6 +15587,42 @@
 											</ChildrenList>
 											<ActiveSourceList>
 												<ActiveSource Name="AMB_SC_Cale_Bed_WoodCreaking" ID="{8C24FF17-8382-47A1-AE26-4167100B402A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="AMB_Trial_Voice" ID="{4E1E1DE5-9EF7-411D-BA3E-AF6D1CBAA0A6}" ShortID="15339495">
+											<PropertyList>
+												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+												<Property Name="MakeUpGain" Type="Real64">
+													<ValueList>
+														<Value>-8</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A051D9C3-24D3-4380-9D6A-8FA996F142CD}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{5BCE52E8-4E77-40DB-9C22-DF7662F4B6C6}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="AMB_Trial_Voice" ID="{CF95358F-E14E-4355-8ABE-55D539AE2524}">
+													<PropertyList>
+														<Property Name="CrossfadeDuration" Type="Real64" Value="4967.105"/>
+														<Property Name="LoopBegin" Type="Real64" Value="5.95700354609929"/>
+														<Property Name="LoopEnd" Type="Real64" Value="27.4423758865248"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>AMB_Trial_Voice.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="267449001"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="AMB_Trial_Voice" ID="{CF95358F-E14E-4355-8ABE-55D539AE2524}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>

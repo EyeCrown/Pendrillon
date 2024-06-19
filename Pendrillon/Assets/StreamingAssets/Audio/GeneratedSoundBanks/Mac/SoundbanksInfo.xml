@@ -97,7 +97,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{ED5AA4D7-108E-605B-4A80-84AB4B8D6FFA}">
+		<SoundBank Id="2228651116" Type="User" Language="English(US)" Hash="{60D39B71-DC1C-29AE-9DBB-9A09A9B43C4D}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>English(US)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -1307,7 +1307,7 @@
 				</File>
 				<File Id="192272369" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Story_SC_Eglise_GuardsSearchingFar_1.wav</ShortName>
-					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_1_0F8DEA6F.wem</CachePath>
+					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_1_43253F30.wem</CachePath>
 				</File>
 				<File Id="192352510" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_4.wav</ShortName>
@@ -1852,6 +1852,10 @@
 				<File Id="267212528" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Ferryman_commentretrouveiciOctave.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Ferryman_commentretrouveiciOctave_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="267449001" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_Trial_Voice.wav</ShortName>
+					<CachePath>SFX/AMB_Trial_Voice_8443F19C.wem</CachePath>
 				</File>
 				<File Id="268980095" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_Emotion_Lancer un baril-003.wav</ShortName>
@@ -3376,7 +3380,7 @@
 				</File>
 				<File Id="527692396" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Story_SC_Eglise_GuardsSearchingFar_3.wav</ShortName>
-					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_3_7B8DBF15.wem</CachePath>
+					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_3_30122D76.wem</CachePath>
 				</File>
 				<File Id="529127242" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Agathe_Emotion_disappointed-002.wav</ShortName>
@@ -4867,6 +4871,10 @@
 				<File Id="779901897" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_ClothRustle_06.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_06_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="780001480" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_Trial_Bed_WavesSmall.wav</ShortName>
+					<CachePath>SFX/AMB_Trial_Bed_WavesSmall_C204B01E.wem</CachePath>
 				</File>
 				<File Id="780103553" Language="English(US)" Streaming="false" Location="Memory" UsingReferenceLanguage="true">
 					<ShortName>VOX_Player_voussavezhospitalite.wav</ShortName>
@@ -6855,7 +6863,6 @@
 				<Event Id="4168969102" Name="Play_AMB_SC_Cale_Ambiance" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="4491730"/>
-						<MediaRef Id="28965928"/>
 						<MediaRef Id="76520908"/>
 						<MediaRef Id="97414156"/>
 						<MediaRef Id="178914549"/>
@@ -6999,20 +7006,20 @@
 				</Event>
 				<Event Id="1105680401" Name="Play_AMB_SC_Trial_Ambiance" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="189742003"/>
-						<MediaRef Id="192591405"/>
-						<MediaRef Id="479016596"/>
-						<MediaRef Id="561017278"/>
-						<MediaRef Id="583238607"/>
-						<MediaRef Id="601057064"/>
-						<MediaRef Id="627020398"/>
-						<MediaRef Id="692405616"/>
-						<MediaRef Id="721833753"/>
-						<MediaRef Id="790654419"/>
-						<MediaRef Id="796709831"/>
-						<MediaRef Id="801773847"/>
-						<MediaRef Id="852967546"/>
-						<MediaRef Id="933823783"/>
+						<MediaRef Id="4491730"/>
+						<MediaRef Id="28965928"/>
+						<MediaRef Id="241125822"/>
+						<MediaRef Id="267449001"/>
+						<MediaRef Id="286381006"/>
+						<MediaRef Id="326595460"/>
+						<MediaRef Id="359339323"/>
+						<MediaRef Id="429151901"/>
+						<MediaRef Id="590653695"/>
+						<MediaRef Id="780001480"/>
+						<MediaRef Id="799810638"/>
+						<MediaRef Id="888645981"/>
+						<MediaRef Id="928569971"/>
+						<MediaRef Id="988007069"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3172007408" Name="Play_AMC_SC_Eglise_Jour_Ambiance" DurationType="Infinite">
@@ -7694,6 +7701,7 @@
 				</Event>
 				<Event Id="3397818400" Name="Play_RealLeviathan" DurationType="OneShot" DurationMin="6.650146" DurationMax="6.650146">
 					<MediaRefs>
+						<MediaRef Id="312525370"/>
 						<MediaRef Id="1004180969"/>
 					</MediaRefs>
 				</Event>
@@ -8730,7 +8738,6 @@
 				<Event Id="1268519836" Name="Stop_AMB_SC_Cale_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="4491730"/>
-						<MediaRef Id="28965928"/>
 						<MediaRef Id="76520908"/>
 						<MediaRef Id="97414156"/>
 						<MediaRef Id="178914549"/>
@@ -13900,7 +13907,7 @@
 				</SwitchGroup>
 			</SwitchGroups>
 		</SoundBank>
-		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{B1733847-672F-EA4A-AE47-C62C6CC9681B}">
+		<SoundBank Id="2228651116" Type="User" Language="French(FR)" Hash="{02215744-8D32-81B7-6508-299F6D262702}">
 			<ShortName>Main_Soundbank</ShortName>
 			<Path>French(FR)/Main_Soundbank.bnk</Path>
 			<Media>
@@ -15110,7 +15117,7 @@
 				</File>
 				<File Id="192272369" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Story_SC_Eglise_GuardsSearchingFar_1.wav</ShortName>
-					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_1_0F8DEA6F.wem</CachePath>
+					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_1_43253F30.wem</CachePath>
 				</File>
 				<File Id="192352510" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>AMB_SC_PontTempete_RND_HugeWave_4.wav</ShortName>
@@ -15655,6 +15662,10 @@
 				<File Id="267212528" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Ferryman_commentretrouveiciOctave.wav</ShortName>
 					<CachePath>Voices/French(FR)/VOX_Ferryman_commentretrouveiciOctave_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="267449001" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_Trial_Voice.wav</ShortName>
+					<CachePath>SFX/AMB_Trial_Voice_8443F19C.wem</CachePath>
 				</File>
 				<File Id="268980095" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_Emotion_Lancer un baril-003.wav</ShortName>
@@ -17179,7 +17190,7 @@
 				</File>
 				<File Id="527692396" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SFX_Story_SC_Eglise_GuardsSearchingFar_3.wav</ShortName>
-					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_3_7B8DBF15.wem</CachePath>
+					<CachePath>SFX/SFX_Story_SC_Eglise_GuardsSearchingFar_3_30122D76.wem</CachePath>
 				</File>
 				<File Id="529127242" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Agathe_Emotion_disappointed-002.wav</ShortName>
@@ -18670,6 +18681,10 @@
 				<File Id="779901897" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FOL_Player_Walk_ClothRustle_06.wav</ShortName>
 					<CachePath>SFX/FOL_Player_Walk_ClothRustle_06_3F75BDB9.wem</CachePath>
+				</File>
+				<File Id="780001480" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>AMB_Trial_Bed_WavesSmall.wav</ShortName>
+					<CachePath>SFX/AMB_Trial_Bed_WavesSmall_C204B01E.wem</CachePath>
 				</File>
 				<File Id="780103553" Language="French(FR)" Streaming="false" Location="Memory">
 					<ShortName>VOX_Player_voussavezhospitalite.wav</ShortName>
@@ -20658,7 +20673,6 @@
 				<Event Id="4168969102" Name="Play_AMB_SC_Cale_Ambiance" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="4491730"/>
-						<MediaRef Id="28965928"/>
 						<MediaRef Id="76520908"/>
 						<MediaRef Id="97414156"/>
 						<MediaRef Id="178914549"/>
@@ -20802,20 +20816,20 @@
 				</Event>
 				<Event Id="1105680401" Name="Play_AMB_SC_Trial_Ambiance" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="189742003"/>
-						<MediaRef Id="192591405"/>
-						<MediaRef Id="479016596"/>
-						<MediaRef Id="561017278"/>
-						<MediaRef Id="583238607"/>
-						<MediaRef Id="601057064"/>
-						<MediaRef Id="627020398"/>
-						<MediaRef Id="692405616"/>
-						<MediaRef Id="721833753"/>
-						<MediaRef Id="790654419"/>
-						<MediaRef Id="796709831"/>
-						<MediaRef Id="801773847"/>
-						<MediaRef Id="852967546"/>
-						<MediaRef Id="933823783"/>
+						<MediaRef Id="4491730"/>
+						<MediaRef Id="28965928"/>
+						<MediaRef Id="241125822"/>
+						<MediaRef Id="267449001"/>
+						<MediaRef Id="286381006"/>
+						<MediaRef Id="326595460"/>
+						<MediaRef Id="359339323"/>
+						<MediaRef Id="429151901"/>
+						<MediaRef Id="590653695"/>
+						<MediaRef Id="780001480"/>
+						<MediaRef Id="799810638"/>
+						<MediaRef Id="888645981"/>
+						<MediaRef Id="928569971"/>
+						<MediaRef Id="988007069"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3172007408" Name="Play_AMC_SC_Eglise_Jour_Ambiance" DurationType="Infinite">
@@ -21497,6 +21511,7 @@
 				</Event>
 				<Event Id="3397818400" Name="Play_RealLeviathan" DurationType="OneShot" DurationMin="6.650146" DurationMax="6.650146">
 					<MediaRefs>
+						<MediaRef Id="312525370"/>
 						<MediaRef Id="1004180969"/>
 					</MediaRefs>
 				</Event>
@@ -22533,7 +22548,6 @@
 				<Event Id="1268519836" Name="Stop_AMB_SC_Cale_Ambiance" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="4491730"/>
-						<MediaRef Id="28965928"/>
 						<MediaRef Id="76520908"/>
 						<MediaRef Id="97414156"/>
 						<MediaRef Id="178914549"/>
@@ -27704,5 +27718,5 @@
 			</SwitchGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7A82B5D9-7153-B428-1240-036634657802}</FileHash>
+	<FileHash>{99D430A6-A8E0-C9D8-1BF7-F3BF6E8DC269}</FileHash>
 </SoundBanksInfo>

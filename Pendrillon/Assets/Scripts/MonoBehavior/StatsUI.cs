@@ -163,7 +163,7 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
         while (!_anim.GetCurrentAnimatorStateInfo(0).IsName(animName))
             yield return null;
         
-        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.5f)
+        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.75f)
             yield return null;
         
         _strength.text = newValue.ToString();
@@ -181,7 +181,7 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             yield return null;
         Debug.Log("Start Anim lvl up");
 
-        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.5f)
+        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.75f)
             yield return null;
         Debug.Log("Change lvl value");
 
@@ -201,7 +201,7 @@ public class StatsUI : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
             yield return null;
         
         Debug.Log($"Before {_charisma.text}");
-        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.5f)
+        while ((_anim.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.75f)
             yield return null;
         _charisma.text = newValue.ToString();
         Debug.Log($"Now {_charisma.text}");
