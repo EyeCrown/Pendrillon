@@ -330,7 +330,7 @@ C'est à votre tour.
 
 // End of the battle
 = end_battle
-- #curtains:close #wait:5 #battle:end
+- #wait:2 #battle:end
 Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
 // {
 //     - b_player_won:

@@ -26,7 +26,6 @@ VAR verdict_is_guilty = false
 #set:trial
 // Set the actor's positions
 // Start the scene
-#curtains:open
 #audience:debate
 #audience:silent
 // Le juge est encore seul sur scène

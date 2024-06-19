@@ -10,13 +10,11 @@ VAR irene_torch_is_on = false
 -> start
 
 = start
-#curtains:close
 // Define the actors
 #actor:Player:PLAYER
 #actor:Agathe:UNE VOIX:PRÊTRESSE AGATHE:AGATHE:PRÊTRESSE
 // Set the location
 #set:church_night
-#curtains:open
 // Set the actor's positions
 #position:Player:8:25
 #position:Agathe:4:5

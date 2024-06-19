@@ -20,8 +20,7 @@
 
 // Start the scene
 #audience:ovation
-- #wait:4 #curtains:open
-VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. #playsound:VOX_Vigie_captaine
+- VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. #playsound:VOX_Vigie_captaine
     * [Sans doute le Léviathan !] PLAYER: Nul doute qu'il s'agit du <shake a=0.5><b>Léviathan</b></shake> ! Nous sommes à l'endroit exact indiqué par la carte. #playsound:VOX_Player_nuldoutelevi
         #audience:surprised
         VIGIE: Si vous l'dites, cap'taine ! #playsound:VOX_Vigie_sivouldites
