@@ -160,7 +160,6 @@ VAR t_4_give_guards_surname = false
 
 // Audience judgment system
 === function audience_judgement(pScore) ===
-    #playsound:Play_SFX_Story_JudgeBellFarTrial
     ~ t_audience_judgement += pScore
     {
         - t_audience_judgement <= 0:

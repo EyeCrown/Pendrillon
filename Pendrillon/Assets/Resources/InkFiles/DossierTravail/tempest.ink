@@ -20,8 +20,7 @@
 
 // Start the scene
 #audience:ovation
-- #wait:4 #curtains:open
-VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. #playsound:VOX_Vigie_captaine
+- VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. #playsound:VOX_Vigie_captaine
     * [Sans doute le Léviathan !] PLAYER: Nul doute qu'il s'agit du <shake a=0.5><b>Léviathan</b></shake> ! Nous sommes à l'endroit exact indiqué par la carte. #playsound:VOX_Player_nuldoutelevi
         #audience:surprised
         VIGIE: Si vous l'dites, cap'taine ! #playsound:VOX_Vigie_sivouldites
@@ -34,17 +33,15 @@ VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. 
 - PLAYER: Quant à moi, je devrais me charger de...
     * [Baisser la voile {t(STRE, lower_sail_mod)}] // 90%
         {sc(STRE, lower_sail_mod): -> lower_sail_S | -> about_tempest}
-        ** (lower_sail_S) 
+        ** (lower_sail_S) #lower_sail
             ~ b_sail_is_down = true
     * [Charger le tonneau d'explosifs. {t(STRE, load_barrel_mod)}] // 90%
         {sc(STRE, load_barrel_mod): -> load_barrel_S | -> about_tempest}
-        ** (load_barrel_S) 
-            -- #anim:Player:load_barrel
+        ** (load_barrel_S) #anim:Player:load_barrel
             ~ b_explosive_barrel_is_loaded = true
     * [Charger le canon. {t(STRE, load_canon_mod)}] // 80%
         {sc(STRE, load_canon_mod): -> load_canon_S | -> about_tempest}
-        ** (load_canon_S) 
-            -- #anim:Player:load_canon
+        ** (load_canon_S) #anim:Player:load_canon
             ~ b_canon_is_loaded = true
 - (about_tempest) PLAYER: Cette tempête... #playsound:VOX_Player_cettetempete
     * [N'annonce rien de bon...] PLAYER: ... Est le signe annonciateur d'une terrible catastrophe, foi de capitaine ! #playsound:VOX_Player_signeterriblecata
@@ -53,22 +50,19 @@ VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. 
 - PLAYER: Et maintenant, la priorité est de...
     * {b_sail_is_down == false} [Baisser la voile {t(STRE, lower_sail_mod)}] // 90%
         {sc(STRE, lower_sail_mod): -> lower_sail_S_2 | -> mouvement_approaching}
-        ** (lower_sail_S_2) 
+        ** (lower_sail_S_2) #lower_sail
             ~ b_sail_is_down = true
     * {b_explosive_barrel_is_loaded == false} [Charger le tonneau d'explosifs. {t(STRE, load_barrel_mod)}] // 90%
         {sc(STRE, load_barrel_mod): -> load_barrel_S_2 | -> mouvement_approaching}
-        ** (load_barrel_S_2) 
-            -- #anim:Player:load_barrel
+        ** (load_barrel_S_2) #anim:Player:load_barrel
             ~ b_explosive_barrel_is_loaded = true
     * {b_canon_is_loaded == false} [Charger le canon. {t(STRE, load_canon_mod)}] // 80%
         {sc(STRE, load_canon_mod): -> load_canon_S_2 | -> mouvement_approaching}
-        ** (load_canon_S_2) 
-            -- #anim:Player:load_canon
+        ** (load_canon_S_2) #anim:Player:load_canon
             ~ b_canon_is_loaded = true
     * [Remonter le harpon. {t(DEXT, load_harpoon_mod)}] // 90%
         {sc(DEXT, load_harpoon_mod): -> load_harpoon_S | -> mouvement_approaching}
-        ** (load_harpoon_S) 
-            -- #anim:Player:load_harpoon
+        ** (load_harpoon_S) #anim:Player:load_harpoon
             ~ b_harpoon_is_loaded = true
 - (mouvement_approaching) VIGIE: Cap'taine ! Cap'taine ! Le mouvement se rapproche ! #playsound:VOX_Vigie_captaine2
 - PLAYER : Le mouvement... se rapproche ? #playsound:VOX_Player_mouvementrapporche

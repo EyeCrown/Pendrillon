@@ -22,7 +22,6 @@ VAR verdict_is_guilty = false
 #position:Naïda:4:20
 
 // Start the scene
-#curtains:open
 #audience:ovation
 #playsound:Play_MUS_Story_SC_Trial_Intro2
 #judge_bell

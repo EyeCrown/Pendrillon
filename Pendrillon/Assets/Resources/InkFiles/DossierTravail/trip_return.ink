@@ -104,7 +104,7 @@ VAR player_won_battle = false // Define if the player won the battle or not
         *** [Derrière le tonneau.] PLAYER: Derrière ce tonneau, vite ! #playsound:VOX_Player_cetonneau #box #move:Naïda:-2:1 #move:Naïda:-2:-3 
             ~ sireine_hideout = "barrel"
             ~ sireine_is_hidden = true
-        *** [Dans la caisse du fond.] PLAYER: Cette caisse, au fond ! Vite ! #playsound:VOX_Player_cettecaisseaufond #box #move:Naïda:-2:7 #move:Naïda:-2:10 
+        *** [Dans la caisse du fond.] PLAYER: Cette caisse, au fond ! Vite ! #playsound:VOX_Player_cettecaisseaufond #box #move:Naïda:-2:7 #move:Naïda:-2:10
             ~ sireine_hideout = "crate_back"
             ~ sireine_is_hidden = true
 * [Attendons.] PLAYER: Pas le temps de se cacher ! #playsound:VOX_Player_pasletempsdecacher

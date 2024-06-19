@@ -92,7 +92,7 @@ SOUFFLEUR: Profitons-en pour en mettre plein les yeux au public, d'accord l'ami 
 SOUFFLEUR: Tu viens de faire une action nécessitant un <b>talent</b>, pas vrai l'ami ? #playsound:VOX_Souffleur_bref
 SOUFFLEUR: Sache que lors d'un combat, tu peux effectuer <b>plusieurs actions</b> de ce type lors d'un <b>même tour</b>. #playsound:VOX_Souffleur_plusieursactions
 SOUFFLEUR: Le nombre de <b>talents</b> que tu peux utiliser avant que ton tour ne se termine est <b>inscrit au-dessus</b>. #playsound:VOX_Souffleur_talentesecritdessus
-SOUFFLEUR: On appelle ça des <shake a=0.5>points d'action™</shake>. Enfin... c'est <i>moi</i> qui les appelle comme ça. #playsound:VOX_Souffleur_pa
+SOUFFLEUR: On appelle ça des <shake a=0.5><b>points d'action™</b></shake>. Enfin... c'est <i>moi</i> qui les appelle comme ça. #playsound:VOX_Souffleur_pa
 SOUFFLEUR: Une dernière chose : tu peux <b>passer ton tour</b> si tu le souhaites. #playsound:VOX_Souffleur_passersontour
 SOUFFLEUR: Tes <b>points d'action</b> seront <b>mis de côté</b> pour le <b>tour suivant</b>. #playsound:VOX_Souffleur_pastored
 SOUFFLEUR: Bonne chance, l'ami ! #playsound:VOX_Souffleur_glhf
@@ -330,7 +330,7 @@ C'est à votre tour.
 
 // End of the battle
 = end_battle
-- #curtains:close #wait:5 #battle:end
+- #wait:2 #battle:end
 Fin du combat. Vous avez {b_player_won: gagné | perdu} le combat.
 // {
 //     - b_player_won:

@@ -20,9 +20,8 @@
 
 // Start the scene
 #audience:ovation
-#move(Player)
-VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. #playsound:VOX_Vigie_captaine
-    * [Sans doute le Léviathan !] PLAYER: Nul doute qu'il s'agit du <b>Léviathan</b> ! Nous sommes à l'endroit exact indiqué par la carte. #playsound:VOX_Player_nuldoutelevi
+- VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. #playsound:VOX_Vigie_captaine
+    * [Sans doute le Léviathan !] PLAYER: Nul doute qu'il s'agit du <shake a=0.5><b>Léviathan</b></shake> ! Nous sommes à l'endroit exact indiqué par la carte. #playsound:VOX_Player_nuldoutelevi
         #audience:surprised
         VIGIE: Si vous l'dites, cap'taine ! #playsound:VOX_Vigie_sivouldites
     * [On appelle cela des vagues.] PLAYER: N'as-tu jamais vu des vagues auparavant, matelot ? #playsound:VOX_Player_jamaisvudevague
@@ -34,7 +33,7 @@ VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. 
 - PLAYER: Quant à moi, je devrais me charger de...
     * [Baisser la voile {t(STRE, lower_sail_mod)}] // 90%
         {sc(STRE, lower_sail_mod): -> lower_sail_S | -> about_tempest}
-        ** (lower_sail_S) #anim:Player:lower_sail
+        ** (lower_sail_S) #lower_sail
             ~ b_sail_is_down = true
     * [Charger le tonneau d'explosifs. {t(STRE, load_barrel_mod)}] // 90%
         {sc(STRE, load_barrel_mod): -> load_barrel_S | -> about_tempest}
@@ -51,7 +50,7 @@ VIGIE: Cap'taine ! Cap'taine ! J'aperçois du mouvement dans l'eau, à tribord. 
 - PLAYER: Et maintenant, la priorité est de...
     * {b_sail_is_down == false} [Baisser la voile {t(STRE, lower_sail_mod)}] // 90%
         {sc(STRE, lower_sail_mod): -> lower_sail_S_2 | -> mouvement_approaching}
-        ** (lower_sail_S_2) #anim:Player:lower_sail
+        ** (lower_sail_S_2) #lower_sail
             ~ b_sail_is_down = true
     * {b_explosive_barrel_is_loaded == false} [Charger le tonneau d'explosifs. {t(STRE, load_barrel_mod)}] // 90%
         {sc(STRE, load_barrel_mod): -> load_barrel_S_2 | -> mouvement_approaching}
