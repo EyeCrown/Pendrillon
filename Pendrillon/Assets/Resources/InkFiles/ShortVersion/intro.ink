@@ -5,6 +5,7 @@
 -> archetype_choice
 
 = archetype_choice
+#set:empty
 #intro
 // Define the actors of the scene
 #actor:Player:PLAYER:VOYAGEUR

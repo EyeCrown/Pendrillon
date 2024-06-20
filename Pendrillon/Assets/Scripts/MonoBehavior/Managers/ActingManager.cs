@@ -7,11 +7,10 @@ using System.Reflection;
 using Febucci.UI.Core;
 using Ink.Runtime;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace MonoBehavior.Managers
@@ -80,6 +79,8 @@ namespace MonoBehavior.Managers
         GameObject _masks;
         GameObject _nameBoxes;
         private string _playerName;
+
+        private Button _mainMenuEndGameButton;
         
         // UI - ParticuleSystems
         private ParticleSystem _particleSystemBoo;
@@ -203,6 +204,7 @@ namespace MonoBehavior.Managers
 
         void Start()
         {
+            _mainMenuEndGameButton.gameObject.SetActive(false);
             _uiParent.SetActive(false);
         }
         
@@ -251,6 +253,7 @@ namespace MonoBehavior.Managers
             {
                 Debug.Log("Story cannot continue.");
                 // Invoke PhaseEnd -> End game
+                PhaseEnded.Invoke();
             }
         }
 
@@ -438,6 +441,10 @@ namespace MonoBehavior.Managers
             _speakerText    = _dialogueBox.transform.Find("SpeakerText").GetComponent<TextMeshProUGUI>();
             _masks          = _dialogueBox.transform.Find("Masks").gameObject;
             _nameBoxes      = _dialogueBox.transform.Find("NameBoxes").gameObject;
+
+            _mainMenuEndGameButton = _uiParent.transform.Find("MainMenuButton").GetComponent<Button>();
+            _mainMenuEndGameButton.onClick.AddListener(() => SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex));
+            
             
             _dialogueTypewriter = _dialogueText.GetComponent<TypewriterCore>();
             
@@ -1088,8 +1095,9 @@ namespace MonoBehavior.Managers
         {
             Debug.Log("AM.OnPhaseEnded()");
             // Clear UI
-            _uiParent.SetActive(false);
+            //_uiParent.SetActive(false);
             ClearUI.Invoke();
+            _mainMenuEndGameButton.gameObject.SetActive(true);
         }
         
         void OnClearUI()
@@ -1211,6 +1219,8 @@ namespace MonoBehavior.Managers
             
             if (GameManager.Instance._intro)
                 IntroEnded.Invoke();
+            
+            _setEmpty.GetComponent<Animator>().SetBool("InOut", false);
             
             // reset character._onStage 
             foreach (var character in GameManager.Instance._characters)
