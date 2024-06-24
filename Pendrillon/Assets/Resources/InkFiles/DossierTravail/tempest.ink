@@ -31,15 +31,15 @@
         #audience:applause
         VIGIE: Bien compris, cap'taine ! #playsound:VOX_Vigie_biencompris
 - PLAYER: Quant à moi, je devrais me charger de...
-    * [Baisser la voile {t(STRE, lower_sail_mod)}] // 90%
+    * [Baisser la voile {t(STRE, lower_sail_mod)}] #move:Player:8:12 #look:Player:back #anim:Player:use // 90%
         {sc(STRE, lower_sail_mod): -> lower_sail_S | -> about_tempest}
         ** (lower_sail_S) #lower_sail
             ~ b_sail_is_down = true
-    * [Charger le tonneau d'explosifs. {t(STRE, load_barrel_mod)}] // 90%
+    * [Charger le tonneau d'explosifs. {t(STRE, load_barrel_mod)}] #move:Player:8:2:run #look:Player:left #anim:Player:use // 90%
         {sc(STRE, load_barrel_mod): -> load_barrel_S | -> about_tempest}
         ** (load_barrel_S) #anim:Player:load_barrel
             ~ b_explosive_barrel_is_loaded = true
-    * [Charger le canon. {t(STRE, load_canon_mod)}] // 80%
+    * [Charger le canon. {t(STRE, load_canon_mod)}] #move:Player:6:10:run #look:Player:back #anim:Player:use // 80%
         {sc(STRE, load_canon_mod): -> load_canon_S | -> about_tempest}
         ** (load_canon_S) #anim:Player:load_canon
             ~ b_canon_is_loaded = true
@@ -48,19 +48,19 @@
     * [Ne nous laissera pas pour morts !] PLAYER: ... Ne vaincra pas un équipage tel que le nôtre, promesse de capitaine ! #playsound:VOX_Player_nevaincrapasequipage
     * [Signale la présence du Léviathan.] PLAYER: ... N'est pas une tempête ordinaire : elle indique peut-être la présence de la mythique créature ! Soyez sur vos gardes, moussaillons ! #playsound:VOX_Player_pastempereordinaire
 - PLAYER: Et maintenant, la priorité est de...
-    * {b_sail_is_down == false} [Baisser la voile {t(STRE, lower_sail_mod)}] // 90%
+    * {b_sail_is_down == false} [Baisser la voile {t(STRE, lower_sail_mod)}] #move:Player:8:12 #look:Player:back #anim:Player:use // 90%
         {sc(STRE, lower_sail_mod): -> lower_sail_S_2 | -> mouvement_approaching}
         ** (lower_sail_S_2) #lower_sail
             ~ b_sail_is_down = true
-    * {b_explosive_barrel_is_loaded == false} [Charger le tonneau d'explosifs. {t(STRE, load_barrel_mod)}] // 90%
+    * {b_explosive_barrel_is_loaded == false} [Charger le tonneau d'explosifs. {t(STRE, load_barrel_mod)}] #move:Player:8:2:run #look:Player:left #anim:Player:use // 90%
         {sc(STRE, load_barrel_mod): -> load_barrel_S_2 | -> mouvement_approaching}
         ** (load_barrel_S_2) #anim:Player:load_barrel
             ~ b_explosive_barrel_is_loaded = true
-    * {b_canon_is_loaded == false} [Charger le canon. {t(STRE, load_canon_mod)}] // 80%
+    * {b_canon_is_loaded == false} [Charger le canon. {t(STRE, load_canon_mod)}] #move:Player:6:10:run #look:Player:back #anim:Player:use // 80%
         {sc(STRE, load_canon_mod): -> load_canon_S_2 | -> mouvement_approaching}
         ** (load_canon_S_2) #anim:Player:load_canon
             ~ b_canon_is_loaded = true
-    * [Remonter le harpon. {t(DEXT, load_harpoon_mod)}] // 90%
+    * [Remonter le harpon. {t(DEXT, load_harpoon_mod)}] #move:Player:6:4:run #look:Player:back #anim:Player:use // 90%
         {sc(DEXT, load_harpoon_mod): -> load_harpoon_S | -> mouvement_approaching}
         ** (load_harpoon_S) #anim:Player:load_harpoon
             ~ b_harpoon_is_loaded = true

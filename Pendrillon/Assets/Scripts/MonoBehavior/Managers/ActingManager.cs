@@ -67,6 +67,8 @@ namespace MonoBehavior.Managers
         #endregion
 
         private string _lastBossState;
+        private int _apPerTurn;
+        private int _currentApPlayer;
         
         #endregion
 
@@ -617,7 +619,9 @@ namespace MonoBehavior.Managers
         void SetTempestObservable()
         {
             
-            _lastBossState = (string) GameManager.Instance._story.variablesState["b_boss_state"];
+            _lastBossState      = (string)  GameManager.Instance._story.variablesState["b_boss_state"];
+            _apPerTurn          = (int)     GameManager.Instance._story.variablesState["b_player_AP_by_turn"];
+            _currentApPlayer    = (int)     GameManager.Instance._story.variablesState["b_player_AP"];
             
             GameManager.Instance._story.ObserveVariable ("b_player_won", 
                 (string varName, object newValue) => ResultBossBattle(newValue));
@@ -649,7 +653,7 @@ namespace MonoBehavior.Managers
             GameManager.Instance._story.ObserveVariable ("b_boss_state", 
                 (string varName, object newValue) => ChangeBossState(newValue));
             GameManager.Instance._story.ObserveVariable ("boss_is_attacking", 
-                (string varName, object newValue) => LauchBossAttack((bool) newValue));
+                (string varName, object newValue) => LauchBossAttack(newValue));
         }
 
         void SetTempestPropsOnStage(bool inOut)
@@ -683,7 +687,7 @@ namespace MonoBehavior.Managers
 
         void ChangeHarpoonState(object state)
         {
-            //Debug.Log($"Harpon new state: {(bool) state}");
+            Debug.Log($"Harpon new state: {(bool) state}");
             if ((bool)state)
             {
                 _tempestHarpoonAnimator.SetBool("charged", true);
@@ -698,7 +702,7 @@ namespace MonoBehavior.Managers
 
         void ChangeCanonState(object state)
         {
-            //Debug.Log($"Canon new state: {(bool) state}");
+            // Debug.Log($"Canon new state: {(bool) state}");
             if ((bool)state)
             {
                 _tempestCanonAnimator.SetBool("charged", true);
@@ -746,34 +750,47 @@ namespace MonoBehavior.Managers
         // Boss Observables
         void ChangeBossState(object state)
         {
+            Debug.Log($"AM.ChangeBossState > New boss state [{(string) state}]");
+
+            _tempestLeviathanAnimator.SetBool("openmouth", false);
+            _tempestLeviathanAnimator.SetBool("onboat", false);
+            _tempestLeviathanAnimator.SetBool("underwater", false);
+            
             switch ((string) state)
             {
                 case Constants.BossDefault :
                     break;
                 case Constants.BossOpenMouth : 
-                    _tempestLeviathanAnimator.SetTrigger("openmouth");
+                    _tempestLeviathanAnimator.SetBool("openmouth", true);
                     break;
                 case Constants.BossOnBoat : 
-                    _tempestLeviathanAnimator.SetTrigger("onboat");
+                    _tempestLeviathanAnimator.SetBool("onboat", true);
                     break;
                 case Constants.BossUnderwater : 
-                    _tempestLeviathanAnimator.SetTrigger("underwater");
+                    _tempestLeviathanAnimator.SetBool("underwater", true);
                     break;
                 default: Debug.LogError($"AM.ChangeBossState > Error: Unknown boss state [{(string) state}]");
                     return;
             }
+            
             _lastBossState = (string)state;
         }
 
         void LauchBossAttack(object isAttacking)
         {
-            Debug.Log($"Boss is attacking: {(bool) isAttacking}");
-
-            if (!(bool) isAttacking)
-                return;
             
-            // Player took damage so
-            switch (_lastBossState)
+            if (!(bool) isAttacking)
+            {
+                Debug.Log($"Boss finish its attack");
+                return;
+            }
+            
+            Debug.Log($"Boss is attacking");
+
+            // Player gain AP so it's end turn
+            _tempestLeviathanAnimator.SetTrigger("attack");
+
+            /*switch (_lastBossState)
             {
                 case Constants.BossDefault :
                     _tempestLeviathanAnimator.SetTrigger("attack");
@@ -789,8 +806,7 @@ namespace MonoBehavior.Managers
                     break;
                 default: Debug.LogError($"LauchBossAttack > Error: this is not supposed to happen [{_lastBossState}]");
                     break;
-            }
-            
+            }*/
         }
 
         #endregion
@@ -992,7 +1008,7 @@ namespace MonoBehavior.Managers
 
         public void OnClickDisplayText(InputAction.CallbackContext context)
         {
-            Debug.Log($"DisplayText > End the typewriter");
+            //Debug.Log($"DisplayText > End the typewriter");
 
             if (_dialogueTypewriter.isShowingText)
             {
