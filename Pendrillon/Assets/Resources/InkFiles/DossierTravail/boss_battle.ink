@@ -300,8 +300,8 @@ C'est à votre tour.
 = end_turn
 //- Fin du tour.
 // Boss attack
-~ boss_attack()
 ~ boss_is_attacking = true
+~ boss_attack()
 {
     - b_mast_is_broken && b_player_is_on_top_of_mast:
         ~ b_player_is_on_top_of_mast = false
