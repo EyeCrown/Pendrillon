@@ -1711,7 +1711,12 @@ namespace MonoBehavior.Managers
                 case Constants.BattleEnd:
                     Debug.Log($"AM.HandleTagBattle > Battle end");
                     _battleHUD.BattleEnded.Invoke();
-                    _tempestLeviathanAnimator.SetTrigger("underwater");
+                    
+                    _tempestLeviathanAnimator.SetBool("underwater", true);
+                    
+                    _tempestLeviathanAnimator.SetBool("onboat",     false);
+                    _tempestLeviathanAnimator.SetBool("openmouth",  false);
+                    
                     _tempestLeviathanAnimator.SetBool("InOut", false);
                     _tempestRedLeviathanAnimator.SetTrigger("endBattle");
                     break;
